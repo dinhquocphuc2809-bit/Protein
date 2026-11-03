@@ -170,6 +170,13 @@ class Storage:
             conn.execute("DELETE FROM usage WHERE created<?", (now - 90 * 86400,))
             conn.execute("DELETE FROM jobs WHERE state IN ('done','failed','cancelled') AND updated<?", (now - 7 * 86400,))
             conn.execute("UPDATE jobs SET payload='{}' WHERE state IN ('done','failed','cancelled') AND payload!='{}'")
+            total = conn.execute("SELECT coalesce(sum(length(cast(result AS BLOB))),0) FROM jobs WHERE state IN ('done','failed','cancelled')").fetchone()[0]
+            while total > self.settings.job_history_limit_bytes:
+                oldest = conn.execute("SELECT id,length(cast(result AS BLOB)) bytes FROM jobs WHERE state IN ('done','failed','cancelled') AND result IS NOT NULL ORDER BY updated LIMIT 1").fetchone()
+                if not oldest:
+                    break
+                conn.execute("DELETE FROM jobs WHERE id=?", (oldest["id"],))
+                total -= oldest["bytes"]
         for path in self.spool.iterdir():
             if path.is_symlink() or not path.is_dir() or not re.fullmatch(r"[a-f0-9]{32}", path.name):
                 continue

@@ -150,3 +150,23 @@ def test_renewal_never_extends_ticket_lifetime(tmp_path):
     with pytest.raises(HTTPException):
         security.renew(ticket["id"])
     asyncio.run(app.state.jobs.close())
+
+
+def test_history_byte_retention_preserves_running_job(tmp_path):
+    conf = settings(tmp_path)
+    conf.job_history_limit_bytes = 100
+    app = build(conf)
+    jobs, db = app.state.jobs, app.state.db
+    ticket = app.state.security.create_ticket("retention", 3600)
+    app.state.security.activate(ticket["code"])
+    first = jobs.submit(ticket["id"], "video", {}, "history-retention-first")
+    db.execute("UPDATE jobs SET state='done',result=?,updated=? WHERE id=?", ('x'*80, time.time()-10, first["id"]))
+    second = jobs.submit(ticket["id"], "video", {}, "history-retention-second")
+    db.execute("UPDATE jobs SET state='done',result=? WHERE id=?", ('y'*80, second["id"]))
+    active = jobs.submit(ticket["id"], "video", {"keep": "active input"}, "history-retention-active")
+    db.execute("UPDATE jobs SET state='running',lease=? WHERE id=?", (time.time()+300, active["id"]))
+    jobs.storage.maintain()
+    assert db.one("SELECT id FROM jobs WHERE id=?", (first["id"],)) is None
+    assert db.one("SELECT id FROM jobs WHERE id=?", (second["id"],))
+    assert 'active input' in db.one("SELECT payload FROM jobs WHERE id=?", (active["id"],))["payload"]
+    asyncio.run(jobs.close())

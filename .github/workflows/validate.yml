@@ -1,0 +1,28 @@
+name: Validate Auvirel
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -e '.[test]'
+      - run: python -m pytest -q
+      - run: node --test tests/extension.test.cjs
+      - run: python -m compileall -q backend gpu native tools deploy
+      - run: python tools/build_extension.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: auvirel-source-only-extensions
+          path: dist/auvirel-*.zip
+          retention-days: 7

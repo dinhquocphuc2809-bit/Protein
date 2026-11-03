@@ -59,7 +59,7 @@ L4 inference or completed comparison is claimed. Detailed evidence is in researc
 Do not stop pre-existing apps in account 4.
 
 Backend public/admin apps, SQLite jobs/auth/cache/key rotation and GPU worker source
-are implemented. 33 Python and 5 JavaScript tests passed after fixing body timeout, download cancellation,
+are implemented. 34 Python and 5 JavaScript tests passed after fixing body timeout, download cancellation,
 existing-file preservation, worker heartbeat, and overlapping ASR transfer windows.
 Public/admin HTTP separation and signed-request replay rejection are tested.
 Production worker deployment and initial provider workflows now pass. Human listening,
@@ -92,8 +92,17 @@ L4 inference, broader site coverage and complete release acceptance remain open.
   this was not independently read through API. Evidence: modal-spend-cap-confirmation.json.
 - Latest observed VPS: about 8.24 GB used, 198.64 GB available (decimal), no disk resize.
   Daily release-retention timer enabled; application spool/cache/log limits active.
+- Completed job result retention additionally capped at 512 MiB; an eviction test
+  confirms running job inputs are preserved. Deployment health failure now restores
+  the prior code symlink without discarding persistent database state.
+- Source-only GitHub Actions validation/build workflow is included; not yet run on
+  GitHub because repository push permission remains blocked.
 
 ## Remaining release gates
+
+- Source committed locally as 25727e5. Push attempt failed HTTP 403 because the active
+  Git credential belongs to phucdinhIA without write access to dinhquocphuc2809-bit/Protein.
+  Owner was asked to grant Write or switch Git credentials. Do not claim GitHub sync.
 
 - L4 runs timed out; T4 remains the measured default. Do not label L4 benchmark passed.
 - No subjective listening sign-off or long-video endurance certification yet.

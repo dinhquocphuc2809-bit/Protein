@@ -51,7 +51,9 @@ key. Do not automatically roll back a schema that has undergone destructive migr
 - SQLite allocation cap: 6 GiB; WAL checkpoint and incremental vacuum during maintenance.
 - Stop admitting new media/cache work below 30 GiB free or above 80% filesystem use.
 - Service journal namespace: 512 MiB disk / 64 MiB runtime cap, seven-day retention.
-- Terminal job payloads removed; results retained seven days, usage records 90 days.
+- Terminal job payloads removed; results retained up to seven days / 512 MiB (oldest
+  first), usage records 90 days. A purged result requires preparing the video again
+  before study chat; the independent translation cache can still avoid model calls.
 - Local compressed audio: extension-origin IndexedDB, 80 MiB and 48-hour TTL.
 
 Application code never enlarges Oracle disks or provisions additional block volumes.

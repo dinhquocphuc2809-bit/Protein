@@ -197,7 +197,7 @@ def build(settings: Settings | None = None, *, admin=False) -> FastAPI:
     @app.get("/admin/stats", dependencies=dependencies)
     def stats():
         disk, memory = psutil.disk_usage(str(settings.data_dir)), psutil.virtual_memory()
-        return {"system": {"cpu_percent": psutil.cpu_percent(), "memory_used": memory.used, "memory_total": memory.total,
+        return {"system": {"cpu_percent": psutil.cpu_percent(interval=.1), "memory_used": memory.used, "memory_total": memory.total,
                            "disk_used": disk.used, "disk_total": disk.total, "disk_free": disk.free},
                 "jobs": db.all("SELECT state,count(*) count FROM jobs GROUP BY state"),
                 "cache": db.one("SELECT count(*) entries,coalesce(sum(bytes),0) bytes FROM cache"),

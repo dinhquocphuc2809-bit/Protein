@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     media_limit_bytes: int = 512 * 1024**2
     spool_limit_bytes: int = 8 * 1024**3
     cache_limit_bytes: int = 4 * 1024**3
+    job_history_limit_bytes: int = 512 * 1024**2
     reserve_free_bytes: int = 30 * 1024**3
     disk_high_water: float = Field(default=0.8, gt=0.1, lt=0.95)
     allowed_origins: list[str] = []
