@@ -46,7 +46,7 @@ and Glo metadata do not establish a complete native subtitle extractor.
 - [x] Run parser, real-extension fixture and existing YouTube regressions, then
       representative public live checks. Record authenticated sites as unverified.
 - [x] Rebuild Chrome/Firefox, update checkpoint/research and scan secrets.
-- [ ] Publish source through the authorized repository and verify CI.
+- [x] Publish source through the authorized repository and verify CI.
 
 ## Acceptance matrix
 
@@ -125,3 +125,12 @@ node tools/analyze_reference_sites.cjs
 The analyzer requires the supplied sibling `Youtube Dubbing/injectScript.js`.
 Raw/full AST metadata stays private. Only factual routing/schema fields, the source
 hash and a transparent per-route coverage table are emitted into tracked files.
+
+## Release verification
+
+Source commit `37fa24d` is published. GitHub Actions run 41606513416 passed Python
+tests, all 15 JavaScript tests, compilation and Chrome/Firefox source-only builds.
+Local actual-extension results: 19 multisite fixtures, 12 YouTube fixtures and two
+Firefox checks passed. Local owner packages include the original 84 voices/8 BGM.
+Install/update from `dist/chrome` or `dist/firefox`, then reload the extension and
+video page so both the worker and early page hooks are replaced.

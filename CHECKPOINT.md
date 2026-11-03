@@ -170,7 +170,9 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 - Per-route factual coverage: `docs/MULTISITE_COVERAGE.md`; private/authenticated
   sites and bespoke APIs outside shared readers remain individual acceptance gates.
 - No backend deployment or extra VPS media storage is needed for this revision.
-- Repository publication/CI verification: pending final push.
+- Source commit `37fa24d` pushed and remote head independently verified. GitHub
+  validation passed (Python/JavaScript checks, compilation and both source-only
+  extension packages): https://github.com/dinhquocphuc2809-bit/Protein/actions/runs/41606513416.
 
 - Earlier HTTP 403 is resolved: owner granted phucdinhIA Write, UI revision `3f5642a`
   was pushed successfully and independently verified with `git ls-remote`.
