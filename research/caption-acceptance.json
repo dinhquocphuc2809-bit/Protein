@@ -1,0 +1,17 @@
+{
+  "scope": "Actual extension with explicit page/provider fixtures; no paid ASR or translation",
+  "checks": [
+    "direct: existing English cues sent to backend, ASR unnecessary",
+    "initial_fallback: existing English cues sent to backend, ASR unnecessary",
+    "player_fetch: existing English cues sent to backend, ASR unnecessary",
+    "player_xhr: existing English cues sent to backend, ASR unnecessary",
+    "xml: existing English cues sent to backend, ASR unnecessary",
+    "cached: existing English cues sent to backend, ASR unnecessary",
+    "transcript: existing English cues sent to backend, ASR unnecessary",
+    "transcript_capture: existing English cues sent to backend, ASR unnecessary",
+    "failure: no backend job on unavailable/unknown captions",
+    "pending: no backend job on unavailable/unknown captions",
+    "confirmed absent: ASR path allowed after repeated current-video checks"
+  ],
+  "passed": true
+}

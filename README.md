@@ -42,6 +42,12 @@ The extension button appears on accessible HTML video pages. It can read TextTra
 probe YouTube captions, or import UTF-8 SRT. When captions are unavailable, the backend
 uses a supported media acquisition path. Protected/DRM content is not bypassed.
 
+Version 0.2.1 distinguishes missing YouTube captions from a failed caption download.
+It reads existing player captions/transcripts first, including native fetch/XHR
+responses. If tracks exist but YouTube returns empty data, it reports the failure
+without spending ASR credits. ASR is allowed only after confirming no tracks exist.
+After updating, reload both the extension and the video page to install early capture.
+
 On a normal YouTube watch page, bilingual subtitles appear above the recommendations
 in the right column, with source text above each translation and clickable timestamps.
 Theater, fullscreen and narrow windows use the video overlay. Summary and study chat

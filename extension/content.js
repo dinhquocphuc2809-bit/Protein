@@ -175,7 +175,7 @@
       }
     }
     if (/(^|\.)youtube\.com$/.test(location.hostname))
-      return send({ type: "youtubeCaptions" }).catch(() => null);
+      return send({ type: "youtubeCaptions" });
     return null;
   }
   async function waitJob(job, epoch) {

@@ -1,0 +1,7 @@
+{
+  "scope": "Real Firefox extension on affected YouTube page; no backend credentials or paid service requests",
+  "message": "Video có phụ đề nhưng YouTube chưa trả dữ liệu. Hãy bật CC hoặc mở Bản chép lời, rồi thử lại. Veloa không tự chuyển sang ASR.",
+  "browser": "159.0",
+  "bridge_installed": true,
+  "passed": true
+}

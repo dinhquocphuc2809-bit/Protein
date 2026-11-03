@@ -160,3 +160,30 @@ error contents. No specific RAM/CORS/CSP fix was confirmed from the retrieved th
   for this variant and tested against the real page. Native player side control opens
   comments in this variant, rather than theater; respect `fixed-panel-expanded` too.
   Evidence: `research/ui-youtube-live.json`; screenshot `.private/ui-qa/youtube-live-mount.png`.
+
+## Caption acquisition incident (2026-11-03)
+
+- Affected title: "$2 Buffet vs $75 Buffet in China", video `3BndvjrGwyE`, duration
+  1,381 seconds. Real player metadata advertises 21 tracks including English `a.en`;
+  first advertised track is Arabic, so picking index zero is incorrect here.
+- Original implementation fetched signed `baseUrl` from the extension background with
+  credentials omitted. Empty HTTP 200 failed JSON parsing. `pageCaptions().catch(() => null)`
+  then converted this download failure into an absence signal, causing paid ASR.
+- Revisited supplied `Neko Dub/caption-capture.js`: it captures native player fetch/XHR
+  because bare caption-track URLs may omit session parameters appended by the player.
+  Revisited `Youtube Dubbing/content-scripts/youtube-caption-probe.js`: it checks
+  matching player/initial-player metadata. Applied these mechanisms with independent,
+  bounded code, current-video checks and no transfer of cookies/session URLs to VPS.
+- New entry scripts run at document_start in MAIN to observe requests before a user
+  clicks Prepare. On-demand injection handles already-open pages too. Native transcript
+  responses are cached; a fallback uses the page's own getTranscript command and context.
+  Native CC selection is restored after capture. Cached payloads omit signed URLs/tokens.
+- Both isolated headless and headed Chromium received empty timedtext responses on
+  this video, including the player's own requests. Direct native-context transcript
+  request returned HTTP 400 failedPrecondition. This is an observed environment limit,
+  not proof that the owner's signed-in session cannot display/download subtitles.
+- `research/caption-acceptance.json`: explicit fixture success for direct JSON3,
+  initial metadata fallback, native fetch/XHR, XML, cached captions, transcript response,
+  unknown/download-failed refusal, and confirmed absence allowing ASR.
+- `research/caption-live.json`: real affected page has 21 tracks; clear error and zero
+  backend job requests. Successful real extraction of this video remains unverified.

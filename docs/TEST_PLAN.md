@@ -60,6 +60,9 @@ sample into a production SLA. Human listening and visual browser QA remain requi
 | --- | --- | --- |
 | Local security/storage/jobs/core | pytest, 34 tests | Passed; includes race/replay/revocation, bounded body, cancellation join, preserved existing files, ASR transfer-window coverage and history byte retention |
 | Client signing/SRT/endpoint/DSP | node --test tests/extension.test.cjs, 5 tests | Passed; sine pitch/duration and cancellation checked |
+| Caption policy/parsing/track choice | node --test tests/extension.test.cjs, 3 additional tests | Errors/unknown metadata never authorize ASR; current-language selection and JSON3 append events |
+| YouTube acquisition branches | research/caption-acceptance.json | 11 explicitly mocked transport scenarios with actual extension; successful captions forwarded unchanged and no job on lookup failure |
+| Affected YouTube video | research/caption-live.json | Actual metadata has 21 tracks; empty responses produce clear error and zero backend jobs; successful download remains unverified in owner's session |
 | Official translation models | research/live-translation.json | All 3 routes passed; cue times unchanged; repeated translation returns cache; translated SRT bypass works |
 | Summary/chat | research/live-translation.json | Passed after fixing schema compatibility; numeric citations additionally requested |
 | YouTube fast ASR | research/live-youtube.json | Passed, real Tunelio and Deepgram URL request |

@@ -4,6 +4,31 @@ Updated: 2026-11-03. This file is the resume point; do not infer completion from
 
 ## Current phase: working deployed release candidate; final packaging and repository delivery
 
+### YouTube caption acquisition fix (0.2.1)
+
+- [x] Reproduce the owner's video: `3BndvjrGwyE`, 1,381 seconds, 21 advertised tracks.
+- [x] Confirm root cause: timedtext returned empty HTTP 200; content script swallowed
+  extraction errors into null and submitted an ASR job. Background also selected the
+  first track (Arabic in this case) rather than the current English track.
+- [x] Remove silent fallback. Only repeated, current-video, explicit no-track results
+  can enter ASR; track download errors and unknown metadata stop before job submission.
+- [x] Add document-start MAIN-world capture of native timedtext fetch/XHR and transcript
+  responses, bounded per-page cache, player-session retrieval, XML/JSON3 parsing,
+  matching initial-player metadata fallback, current-language selection and CC restoration.
+- [x] Verify 11 actual-extension fixture scenarios without paid providers, 8 JS tests,
+  34 Python tests, and existing popup/live-backend acceptance.
+- [x] Verify affected real YouTube page now creates zero backend jobs when subtitles
+  return empty. Report: `research/caption-live.json`.
+- [x] Firefox 159 loads the MAIN-world bridge and reports existing-but-unavailable
+  captions instead of falling into ASR. Report: `research/caption-firefox.json`.
+- [ ] Verify successful extraction in the owner's normal YouTube session. Isolated
+  browser sessions still receive empty native caption responses; do not claim this
+  video's real caption download passed. Native player also did not display caption text.
+
+The earlier HQ job failed with `Alignment produced invalid timestamps` after 266s.
+This caption-priority fix avoids that unnecessary path; it does not repair HQ alignment
+or convert the full-video ASR pipeline into streaming ASR.
+
 ### UI revision requested by owner
 
 - [x] Reinspect both reference popups and Youtube Dubbing's right sidebar.

@@ -1,6 +1,6 @@
 "use strict";
 if (typeof importScripts === "function")
-  importScripts("lib/core.js", "lib/cache.js");
+  importScripts("lib/core.js", "lib/cache.js", "lib/captions.js");
 const api = globalThis.browser || chrome;
 const A = globalThis.Auvirel;
 const ownOrigin = api.runtime.getURL("");
@@ -181,42 +181,22 @@ async function youtubeCaptions(sender) {
     sender.frameId !== 0 ||
     !/^https:\/\/(www\.|m\.)?youtube\.com\//.test(sender.url || "")
   )
-    return null;
-  const result = await api.scripting.executeScript({
-    target: { tabId: sender.tab.id },
+    throw new Error("YouTube captions require the active watch page.");
+  const videoId = new URL(sender.url).searchParams.get("v");
+  const target = { tabId: sender.tab.id, frameIds: [0] };
+  // Also supports pages that were open before the extension was reloaded.
+  await api.scripting.executeScript({
+    target,
     world: "MAIN",
-    func: () => {
-      const player = document.querySelector("#movie_player");
-      return (
-        player?.getPlayerResponse?.()?.captions?.playerCaptionsTracklistRenderer
-          ?.captionTracks || []
-      );
-    },
+    files: ["lib/captions.js", "youtube-main.js"],
   });
-  const tracks = result[0]?.result;
-  if (!Array.isArray(tracks) || !tracks.length) return null;
-  const track = tracks.find((t) => t.kind !== "asr") || tracks[0];
-  const url = new URL(track.baseUrl);
-  if (
-    url.protocol !== "https:" ||
-    !/(^|\.)youtube\.com$/.test(url.hostname) ||
-    url.pathname !== "/api/timedtext"
-  )
-    return null;
-  url.searchParams.set("fmt", "json3");
-  const data = await fetchJson(url.href);
-  const items = (data.events || [])
-    .filter((e) => e.segs && e.dDurationMs > 0)
-    .map((e) => ({
-      start: e.tStartMs / 1000,
-      end: (e.tStartMs + e.dDurationMs) / 1000,
-      text: e.segs
-        .map((s) => s.utf8 || "")
-        .join("")
-        .trim(),
-    }))
-    .filter((c) => c.text);
-  return { cues: A.cues(items), language: track.languageCode };
+  const results = await api.scripting.executeScript({
+    target,
+    world: "MAIN",
+    args: [videoId],
+    func: async (id) => globalThis.__veloaYoutubeCaptions?.acquire(id),
+  });
+  return VeloaCaptions.acquisition(results[0]?.result, videoId, A.cues);
 }
 
 async function handle(message, sender) {

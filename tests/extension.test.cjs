@@ -3,6 +3,37 @@ const assert = require('node:assert/strict');
 const {createHmac, createHash} = require('node:crypto');
 const core = require('../extension/lib/core.js');
 const {stretch} = require('../extension/lib/audio.js');
+const captions = require('../extension/lib/captions.js');
+
+test('caption lookup failure never authorizes ASR; only confirmed absence does', () => {
+  const id = '3BndvjrGwyE';
+  for (const value of [null, {}, {videoId:id,state:'unknown'},
+    {videoId:id,state:'unavailable',trackCount:21}, {videoId:id,state:'absent'},
+    {videoId:'different',state:'absent',confirmed:true,trackCount:0},
+    {videoId:id,state:'ready',cues:[]}]) {
+    assert.throws(()=>captions.acquisition(value,id,core.cues));
+  }
+  assert.equal(captions.acquisition({videoId:id,state:'absent',confirmed:true,trackCount:0},id,core.cues),null);
+  const result = captions.acquisition({videoId:id,state:'ready',language:'en',cues:[{start:0,end:2,text:'Hello'}]},id,core.cues);
+  assert.equal(result.cues.length,1);
+  assert.equal(result.language,'en');
+});
+
+test('choose the active caption language instead of the first dubbed-audio track', () => {
+  const tracks=[{languageCode:'ar',kind:'asr'},{languageCode:'en',kind:'asr'},{languageCode:'en'}];
+  assert.equal(captions.selectTrack(tracks,{languageCode:'en',kind:'asr'},null,0),tracks[1]);
+  assert.equal(captions.selectTrack(tracks,null,'en',0),tracks[2]);
+  assert.equal(captions.selectTrack(tracks,null,null,1),tracks[1]);
+});
+
+test('JSON3 captions preserve times, join tokens and ignore window control events', () => {
+  const rows=captions.json3({events:[{tStartMs:0,wWinId:1},
+    {tStartMs:1000,dDurationMs:2000,segs:[{utf8:'Hello '},{utf8:'world'}]},
+    {tStartMs:2000,dDurationMs:2000,aAppend:1,segs:[{utf8:'again'}]},
+    {tStartMs:4000,dDurationMs:1500,segs:[{utf8:'Next'}]}]});
+  assert.deepEqual(rows,[{start:1,end:4,text:'Hello world again'},{start:4,end:5.5,text:'Next'}]);
+  assert.throws(()=>captions.json3({events:[{tStartMs:0,segs:[{utf8:'No timing'}]}]}));
+});
 
 test('signed requests match backend HMAC contract', async () => {
   const session = {request_key: 'ab'.repeat(32), token: 'test'};
