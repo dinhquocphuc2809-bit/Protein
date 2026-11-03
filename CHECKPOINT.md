@@ -17,7 +17,9 @@ Updated: 2026-11-03. This file is the resume point; do not infer completion from
 - [x] Re-run Firefox 159 real translation and audio playback acceptance.
 - [x] Build local Chrome/Firefox packages with 84 voices and 8 BGM tracks.
 - [x] Record comparison and evidence in `docs/DESIGN_REVISION.md` and `RESEARCH.md`.
-- [ ] Push the UI revision and verify the remote branch (owner confirmed Write access).
+- [x] Push UI revision `3f5642a` and verify `refs/heads/main` resolves to that commit.
+- [x] GitHub Actions for `3f5642a` completed successfully: Python/JS tests,
+  compile check, Chrome/Firefox source-only builds and artifact upload.
 
 Current UI reports: `research/ui-acceptance.json`, `research/ui-youtube-live.json`.
 Screenshots: `.private/ui-qa/`. Local archives: `dist/veloa-chrome.zip`,
@@ -114,13 +116,13 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 - Completed job result retention additionally capped at 512 MiB; an eviction test
   confirms running job inputs are preserved. Deployment health failure now restores
   the prior code symlink without discarding persistent database state.
-- Source-only GitHub Actions validation/build workflow is included; not yet run on
-  GitHub because repository push permission remains blocked.
+- Source-only GitHub Actions validation/build workflow is active after the successful
+  repository push. UI revision run: https://github.com/dinhquocphuc2809-bit/Protein/actions/runs/41596877073.
 
 ## Remaining release gates
 
-- Earlier push failed HTTP 403 for phucdinhIA. Owner has since confirmed Write access;
-  final UI revision push and remote verification are pending below.
+- Earlier HTTP 403 is resolved: owner granted phucdinhIA Write, UI revision `3f5642a`
+  was pushed successfully and independently verified with `git ls-remote`.
 
 - L4 runs timed out; T4 remains the measured default. Do not label L4 benchmark passed.
 - No subjective listening sign-off or long-video endurance certification yet.
