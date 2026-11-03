@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import time
+import tempfile
 
 from playwright.sync_api import sync_playwright
 
@@ -20,7 +21,8 @@ def main():
     xml = '<timedtext><body><p t="1000" d="2200">Existing YouTube captions.</p><p t="4000" d="1800">Do not run ASR.</p></body></timedtext>'
     with sync_playwright() as p:
         extension = ROOT / 'dist/chrome'
-        context = p.chromium.launch_persistent_context(str(output / 'regression-profile'), channel='chromium', headless=True,
+        profile = tempfile.TemporaryDirectory(prefix='profile-', dir=output)
+        context = p.chromium.launch_persistent_context(profile.name, channel='chromium', headless=True,
             args=[f'--disable-extensions-except={extension}', f'--load-extension={extension}'], viewport={'width': 1440, 'height': 1000})
         try:
             worker = context.service_workers[0] if context.service_workers else context.wait_for_event('serviceworker')
@@ -38,7 +40,7 @@ def main():
                 name = scenario['name']
                 if '/api/timedtext' in route.request.url:
                     native = 'native=1' in route.request.url
-                    success = name in ['direct', 'initial_fallback'] or (native and name in ['player_fetch', 'player_xhr', 'xml', 'cached'])
+                    success = name in ['direct', 'embed_direct', 'initial_fallback'] or (native and name in ['player_fetch', 'player_xhr', 'xml', 'cached'])
                     route.fulfill(body=(xml if name == 'xml' else body) if success else '', content_type='text/xml' if name == 'xml' else 'application/json')
                     return
                 if '/youtubei/' in route.request.url:
@@ -76,10 +78,10 @@ def main():
                     <button class="ytp-subtitles-button" aria-pressed="false">CC fixture</button></div><script>''' + script + '</script></body></html>'
                 route.fulfill(body=html, content_type='text/html')
             context.route('https://www.youtube.com/**', youtube)
-            for name in ['direct', 'initial_fallback', 'player_fetch', 'player_xhr', 'xml', 'cached', 'transcript', 'transcript_capture', 'failure', 'pending', 'absent']:
+            for name in ['direct', 'embed_direct', 'initial_fallback', 'player_fetch', 'player_xhr', 'xml', 'cached', 'transcript', 'transcript_capture', 'failure', 'pending', 'absent']:
                 scenario['name'] = name
                 page = context.new_page()
-                page.goto(f'https://www.youtube.com/watch?v={VIDEO}')
+                page.goto(f'https://www.youtube.com/embed/{VIDEO}' if name == 'embed_direct' else f'https://www.youtube.com/watch?v={VIDEO}')
                 page.wait_for_selector('#auvirel-surface', state='attached')
                 page.wait_for_timeout(1300)
                 panel = shadow_eval(page, 'auvirel-surface')
@@ -115,6 +117,7 @@ def main():
             raise
         finally:
             context.close()
+            profile.cleanup()
             (ROOT / 'research/caption-acceptance.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
             print(json.dumps(report))
 

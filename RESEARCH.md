@@ -187,3 +187,42 @@ error contents. No specific RAM/CORS/CSP fix was confirmed from the retrieved th
   unknown/download-failed refusal, and confirmed absence allowing ASR.
 - `research/caption-live.json`: real affected page has 21 tracks; clear error and zero
   backend job requests. Successful real extraction of this video remains unverified.
+
+## Multisite subtitle research and implementation (2026-11-03)
+
+- Full static AST analysis resolves 159 routing rules in Youtube Dubbing 4.3.19,
+  including seven factory-generated ThoughtIndustries/Memberspot entries. Source
+  SHA-256 and sanitized factual routes are in `research/multisite-inventory.json`.
+  Raw reference executable code, bundled credentials and copyrighted UI are not copied.
+- Detailed source anchors, architecture/checklist and limitations are in
+  `docs/MULTISITE_ANALYSIS.md`. `docs/MULTISITE_COVERAGE.md` distinguishes shared
+  engines, schema-specific adapters, and routes without bespoke API implementations.
+- Official documentation retrieved successfully:
+  https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts
+  (MAIN vs ISOLATED worlds, document_start and all_frames),
+  https://developer.mozilla.org/en-US/docs/Web/API/TextTrack/mode (disabled/hidden/showing
+  and cue loading), https://www.rfc-editor.org/rfc/rfc8216.txt (WebVTT subtitle rendition
+  playlists, X-TIMESTAMP-MAP, 33-bit MPEGTS wrap, discontinuities).
+- Official Wistia https://docs.wistia.com/docs/javascript-player-api and JWPlayer
+  https://docs.jwplayer.com/players/reference/getplaylistitem returned HTTP 403 in this
+  environment. SDK compatibility here is grounded in supplied source analysis and
+  explicit fixtures; do not describe those pages as successfully read.
+- Reference patterns are not permanent: the tested Ahrefs lesson now embeds YouTube
+  nocookie, although its reference rule describes Wistia. Generic frame detection
+  routes it to the dedicated YouTube reader. That isolated live embed returned
+  `unknown`, not proof of absent captions; no paid job was submitted.
+- Live Apple WWDC2024/10140: 360 English cues, 7.149 to 1241.297 seconds, acquired
+  from complete HLS subtitles. Preserve the video's data-id across URL-to-blob setup;
+  otherwise the initial manifest cache is invalidated. Public CDN requests first
+  omit credentials; authenticated same-origin APIs keep browser credentials.
+- Live MDN caption-player example: 14 English cues, 0 to 119.5 seconds, from native
+  tracks. Reports: `research/multisite-live.json`; these are real pages, not fixtures.
+- Chromium can retain an old extension service worker in a reused QA profile after
+  rebuilding files with the same version. Caption regression tools now use fresh
+  temporary profiles and clean them after closing the browser. User updates require
+  Reload extension plus reload video page to install current early hooks.
+- SPA sender.url may reflect the original document URL. Validate origin at the
+  background boundary and validate the current URL/media again inside the actual
+  frame. Tests cover stale-response rejection and fresh captions after pushState.
+- Source acquisition stays in the browser. Only sanitized cues/language are sent
+  to the VPS; no additional video/subtitle disk store or provider call is introduced.

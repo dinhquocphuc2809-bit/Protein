@@ -84,3 +84,25 @@ Not yet certified: L4 successful inference, two-hour memory soak, subjective aud
 all 84 voices individually synthesized, every third-party media site, DRM/closed-shadow
 players, all ad/SPA behaviors, and Firefox store signing. The acceptance scripts use short
 controlled video fixtures for browser playback; provider responses are real, not mocks.
+# Multisite caption acceptance (0.3.0)
+
+Run `node --test tests/*.test.cjs`, then build the extension before running:
+
+```powershell
+.venv/Scripts/python.exe tools/multisite_acceptance.py
+.venv/Scripts/python.exe tools/caption_acceptance.py
+.venv/Scripts/python.exe tools/multisite_firefox.py
+.venv/Scripts/python.exe tools/multisite_live.py
+```
+
+The first three use labelled local/provider fixtures and never spend provider
+credits. The last reads public live pages without backend or GPU calls. Reports
+under `research/` retain the exact scenario list, outcome and live limitations.
+Fixture coverage must not be reported as end-to-end certification of 159 websites.
+
+Covered mechanisms: DOM VTT and TTML, open-shadow Mux layout, foreign iframe
+routing, early metadata fetch/XHR, Bilibili JSON, Wistia inline captions, Kinescope
+playlist callback, JWPlayer tracks, HLS master/segments and direct source, stable
+ID across blob swaps, SPA stale/fresh results, multiple videos, incomplete sliding
+TextTracks, failed downloads, explicit ASR popup action and native CC restoration.
+YouTube regression includes embeds as well as watch/player/transcript variants.

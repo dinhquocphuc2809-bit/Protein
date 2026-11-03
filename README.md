@@ -38,9 +38,18 @@ worker through the local bridge or connect the already deployed worker with its 
 credentials. Secrets are in the ignored `.private/HANDOVER.md` in the owner workspace.
 Never upload that file, `.private`, the HAR, or parent credential files.
 
-The extension button appears on accessible HTML video pages. It can read TextTracks,
-probe YouTube captions, or import UTF-8 SRT. When captions are unavailable, the backend
-uses a supported media acquisition path. Protected/DRM content is not bypassed.
+The extension button appears on accessible HTML video pages. Version 0.3.0 reads
+native subtitles through DOM/open-shadow TextTracks, VTT/SRT/TTML, HLS subtitle
+playlists, player SDKs and configured caption metadata APIs. It also probes YouTube
+captions/transcripts and accepts UTF-8 SRT. Unknown or failed acquisition exposes an
+explicit **Use ASR for this video** action; it does not silently spend ASR credits.
+The backend can acquire media only through its configured supported routes.
+Protected/DRM content is not bypassed.
+
+The reference-derived registry contains 159 site/route rules, including embedded
+players and repeated brands. This is not a claim of 159 fully tested live websites.
+See [analysis and limits](docs/MULTISITE_ANALYSIS.md), [route coverage](docs/MULTISITE_COVERAGE.md),
+and the machine-readable [inventory](research/multisite-inventory.json).
 
 Version 0.2.1 distinguishes missing YouTube captions from a failed caption download.
 It reads existing player captions/transcripts first, including native fetch/XHR
@@ -63,7 +72,7 @@ python -m venv .venv
 .venv/Scripts/python.exe tools/import_reference_assets.py
 .venv/Scripts/python.exe tools/build_extension.py --local-assets
 .venv/Scripts/python.exe -m pytest -q
-node --test tests/extension.test.cjs
+node --test tests/*.test.cjs
 .venv/Scripts/python.exe tools/check_secrets.py
 ```
 
@@ -71,6 +80,8 @@ Omit `--local-assets` for a source-only package that accepts personal WAV upload
 FFmpeg is required to normalize imported audio. Node 20+ is used for JavaScript tests.
 Browser acceptance scripts additionally require Playwright/Selenium and their browsers.
 Live test tools consume provider credits and use only short, bounded test media.
+The caption-only tools `caption_acceptance.py`, `multisite_acceptance.py`,
+`multisite_firefox.py`, and `multisite_live.py` do not call paid providers.
 
 ## Client Modal deployment
 

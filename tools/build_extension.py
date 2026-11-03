@@ -59,14 +59,15 @@ def main():
             preset['path'] = 'voices/' + target.name
         bgm = [{'id': path.stem, 'name': path.stem.replace('-', ' ').replace('_', ' ').title(), 'path': 'bgm/' + path.name} for path in sorted((source / 'bgm').glob('*.ogg'))]
     shared = {
-        'manifest_version': 3, 'name': 'Veloa', 'version': '0.2.1', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
+        'manifest_version': 3, 'name': 'Veloa', 'version': '0.3.0', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
         'permissions': ['storage', 'scripting', 'nativeMessaging', 'activeTab'], 'host_permissions': ['https://*/*'],
         'action': {'default_popup': 'popup.html', 'default_title': 'Veloa'},
         'options_ui': {'page': 'options.html', 'open_in_tab': False},
         'icons': {str(size): f'icons/icon-{size}.png' for size in (16, 32, 48, 128)},
         'content_scripts': [
-            {'matches': ['https://www.youtube.com/*', 'https://m.youtube.com/*', 'https://youtube.com/*'], 'js': ['lib/captions.js', 'youtube-main.js'], 'run_at': 'document_start', 'world': 'MAIN'},
-            {'matches': ['https://*/*'], 'js': ['lib/core.js', 'lib/audio.js', 'lib/sidebar.js', 'content.js'], 'run_at': 'document_idle', 'all_frames': True}],
+            {'matches': ['https://*.youtube.com/*', 'https://youtube.com/*', 'https://*.youtube-nocookie.com/*'], 'js': ['lib/captions.js', 'lib/media.js', 'youtube-main.js'], 'run_at': 'document_start', 'world': 'MAIN', 'all_frames': True},
+            {'matches': ['https://*/*'], 'js': ['lib/captions.js', 'lib/sites.js', 'lib/media.js', 'lib/subtitle-formats.js', 'multisite-main.js'], 'run_at': 'document_start', 'world': 'MAIN', 'all_frames': True},
+            {'matches': ['https://*/*'], 'js': ['lib/core.js', 'lib/sites.js', 'lib/media.js', 'lib/audio.js', 'lib/sidebar.js', 'content.js'], 'run_at': 'document_idle', 'all_frames': True}],
         'web_accessible_resources': [{'resources': ['content.css', 'sidebar.css', 'sidebar-page.css', 'assets/bgm/*'], 'matches': ['https://*/*']}],
         'content_security_policy': {'extension_pages': "script-src 'self'; object-src 'none'; base-uri 'none'"},
     }
@@ -80,7 +81,7 @@ def main():
             manifest['minimum_chrome_version'] = '120'
             manifest['background'] = {'service_worker': 'background.js'}
         else:
-            manifest['background'] = {'scripts': ['lib/core.js', 'lib/cache.js', 'lib/captions.js', 'background.js']}
+            manifest['background'] = {'scripts': ['lib/core.js', 'lib/cache.js', 'lib/captions.js', 'lib/media.js', 'background.js']}
             manifest['browser_specific_settings'] = {'gecko': {'id': 'auvirel@protein.local', 'strict_min_version': '128.0', 'data_collection_permissions': {'required': ['websiteContent', 'authenticationInfo']}}}
         (output / 'manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
         for size in (16, 32, 48, 128):

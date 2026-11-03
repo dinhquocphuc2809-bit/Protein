@@ -5,7 +5,7 @@
     cache = new Map();
   let transcriptCache = null;
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  const currentId = () => new URL(location.href).searchParams.get("v");
+  const currentId = () => globalThis.VeloaMedia?.youtubeId(location.href) || new URL(location.href).searchParams.get("v");
   function timedtext(value) {
     try {
       const url = new URL(value, location.href);

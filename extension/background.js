@@ -1,6 +1,11 @@
 "use strict";
 if (typeof importScripts === "function")
-  importScripts("lib/core.js", "lib/cache.js", "lib/captions.js");
+  importScripts(
+    "lib/core.js",
+    "lib/cache.js",
+    "lib/captions.js",
+    "lib/media.js",
+  );
 const api = globalThis.browser || chrome;
 const A = globalThis.Auvirel;
 const ownOrigin = api.runtime.getURL("");
@@ -175,20 +180,21 @@ async function reference(id) {
   };
 }
 
-async function youtubeCaptions(sender) {
+async function youtubeCaptions(sender, message) {
+  const href = message?.href || sender.url;
   if (
     !sender.tab?.id ||
-    sender.frameId !== 0 ||
-    !/^https:\/\/(www\.|m\.)?youtube\.com\//.test(sender.url || "")
+    !VeloaMedia.youtubeId(href || "") ||
+    new URL(href).origin !== new URL(sender.url).origin
   )
     throw new Error("YouTube captions require the active watch page.");
-  const videoId = new URL(sender.url).searchParams.get("v");
-  const target = { tabId: sender.tab.id, frameIds: [0] };
+  const videoId = VeloaMedia.youtubeId(href);
+  const target = { tabId: sender.tab.id, frameIds: [sender.frameId] };
   // Also supports pages that were open before the extension was reloaded.
   await api.scripting.executeScript({
     target,
     world: "MAIN",
-    files: ["lib/captions.js", "youtube-main.js"],
+    files: ["lib/captions.js", "lib/media.js", "youtube-main.js"],
   });
   const results = await api.scripting.executeScript({
     target,
@@ -197,6 +203,52 @@ async function youtubeCaptions(sender) {
     func: async (id) => globalThis.__veloaYoutubeCaptions?.acquire(id),
   });
   return VeloaCaptions.acquisition(results[0]?.result, videoId, A.cues);
+}
+
+async function siteCaptions(message, sender) {
+  if (
+    !sender.tab?.id ||
+    !Number.isInteger(sender.frameId) ||
+    !/^https:\/\//.test(sender.url || "")
+  )
+    throw new Error("Subtitles require an HTTPS video page.");
+  if (
+    typeof message.href !== "string" ||
+    message.href.length > 12000 ||
+    new URL(message.href).origin !== new URL(sender.url).origin ||
+    typeof message.src !== "string" ||
+    message.src.length > 12000
+  )
+    throw new Error("Video changed. Retry subtitle acquisition.");
+  const target = { tabId: sender.tab.id, frameIds: [sender.frameId] };
+  await api.scripting.executeScript({
+    target,
+    world: "MAIN",
+    files: [
+      "lib/captions.js",
+      "lib/sites.js",
+      "lib/media.js",
+      "lib/subtitle-formats.js",
+      "multisite-main.js",
+    ],
+  });
+  const results = await api.scripting.executeScript({
+    target,
+    world: "MAIN",
+    args: [{ href: message.href, src: message.src }],
+    func: async (expected) => globalThis.__veloaSiteCaptions?.acquire(expected),
+  });
+  const result = results[0]?.result;
+  if (
+    result?.state === "ready" &&
+    result.href === message.href &&
+    result.src === message.src
+  )
+    return {
+      cues: A.cues(result.cues),
+      language: VeloaMedia.language(result.language),
+    };
+  return { state: result?.state === "failed" ? "failed" : "unknown" };
 }
 
 async function handle(message, sender) {
@@ -231,7 +283,9 @@ async function handle(message, sender) {
       );
     }
   }
-  if (message.type === "youtubeCaptions") return youtubeCaptions(sender);
+  if (message.type === "youtubeCaptions")
+    return youtubeCaptions(sender, message);
+  if (message.type === "siteCaptions") return siteCaptions(message, sender);
   if (message.type === "job")
     return backend("POST", "/v1/jobs", message.payload, message.idem);
   if (message.type === "summary" || message.type === "chat")

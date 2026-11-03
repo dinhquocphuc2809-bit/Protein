@@ -1,0 +1,25 @@
+{
+  "scope": "Actual Chromium MV3 extension with explicit routed fixtures; no live-site certification",
+  "checks": [
+    "dom_vtt: complete native captions; zero ASR dispatch",
+    "dom_ttml: complete native captions; zero ASR dispatch",
+    "shadow_mux: complete native captions; zero ASR dispatch",
+    "iframe: correct cross-origin frame sends complete captions",
+    "metadata_fetch: complete native captions; zero ASR dispatch",
+    "metadata_xhr: complete native captions; zero ASR dispatch",
+    "bili: complete native captions; zero ASR dispatch",
+    "wistia: complete native captions; zero ASR dispatch",
+    "kinescope: complete native captions; zero ASR dispatch",
+    "jwplayer: complete native captions; zero ASR dispatch",
+    "hls: complete native captions; zero ASR dispatch",
+    "blob_swap: complete native captions; zero ASR dispatch",
+    "hls_source: complete native captions; zero ASR dispatch",
+    "track_failure: no automatic ASR; explicit fallback available",
+    "unknown: no automatic ASR; explicit fallback available",
+    "spa: no automatic ASR; explicit fallback available",
+    "spa_fresh: complete native captions; zero ASR dispatch",
+    "multiple: no automatic ASR; explicit fallback available",
+    "partial: no automatic ASR; explicit fallback available"
+  ],
+  "passed": true
+}

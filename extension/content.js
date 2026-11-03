@@ -53,7 +53,10 @@
     tab = "transcript",
     renderedStart = -1,
     selectedCue = -1,
-    lastUrl = location.href;
+    lastUrl = location.href,
+    lastSource = "",
+    asrAvailable = false,
+    explicitAsr = false;
   const sidebar =
     window.top === window.self
       ? new A.BilingualSidebar({
@@ -117,6 +120,9 @@
     $("start").disabled = false;
     $("stop").disabled = true;
     if (reset) {
+      asrAvailable = false;
+      explicitAsr = false;
+      $("use-asr").hidden = true;
       cues = [];
       imported = null;
       videoJob = null;
@@ -132,19 +138,23 @@
   }
   $("stop").onclick = () => stop().catch(error);
   function chooseVideo() {
-    const candidates = [...document.querySelectorAll("video")].filter(
+    const candidates = VeloaMedia.videos().filter(
       (v) =>
         v.getBoundingClientRect().width > 100 &&
         v.getBoundingClientRect().height > 60,
     );
-    candidates.sort(
-      (a, b) => b.clientWidth * b.clientHeight - a.clientWidth * a.clientHeight,
-    );
     const next = candidates[0] || null;
-    if (video && (next !== video || location.href !== lastUrl))
+    const nextSource = VeloaMedia.source(next);
+    if (
+      video &&
+      (next !== video ||
+        location.href !== lastUrl ||
+        (lastSource && nextSource !== lastSource))
+    )
       stop(true).catch(error);
     video = next;
     lastUrl = location.href;
+    lastSource = nextSource;
     shadow.querySelector(".launcher").hidden = !video;
     shadow.querySelector(".video-title").textContent = video
       ? document.title
@@ -152,31 +162,28 @@
     sidebar?.mount($("mode").value);
   }
   async function pageCaptions() {
-    for (const track of [...video.textTracks]) {
-      if (!["subtitles", "captions"].includes(track.kind)) continue;
-      const previous = track.mode;
-      track.mode = "hidden";
-      try {
-        for (let i = 0; i < 8 && !track.cues?.length; i++)
-          await new Promise((resolve) => setTimeout(resolve, 150));
-        if (track.cues?.length)
-          return {
-            cues: A.cues(
-              [...track.cues].map((c) => ({
-                start: c.startTime,
-                end: c.endTime,
-                text: c.text,
-              })),
-            ),
-            language: track.language || "auto",
-          };
-      } finally {
-        track.mode = previous;
-      }
-    }
-    if (/(^|\.)youtube\.com$/.test(location.hostname))
-      return send({ type: "youtubeCaptions" });
-    return null;
+    if (VeloaMedia.youtubeId(location.href))
+      return send({ type: "youtubeCaptions", href: location.href });
+    const current = video,
+      href = location.href,
+      src = VeloaMedia.source(video),
+      epoch = work;
+    const result = await send({ type: "siteCaptions", href, src });
+    if (
+      epoch !== work ||
+      current !== video ||
+      href !== location.href ||
+      src !== VeloaMedia.source(video)
+    )
+      throw new DOMException("Video changed", "AbortError");
+    if (result?.cues) return result;
+    asrAvailable = true;
+    $("use-asr").hidden = false;
+    throw new Error(
+      result?.state === "failed"
+        ? "Đã thấy phụ đề nhưng chưa đọc được đầy đủ. Bật CC và thử lại, nhập SRT, hoặc chủ động chọn ASR."
+        : "Chưa xác minh được phụ đề trên trang này. Bật CC và thử lại, nhập SRT, hoặc chọn ASR nếu cần.",
+    );
   }
   async function waitJob(job, epoch) {
     activeJob = job.id;
@@ -237,7 +244,20 @@
     if ($("bgm").value)
       await mixer.loadMusic(api.runtime.getURL("assets/" + $("bgm").value));
   }
+  const asrButton = document.createElement("button");
+  asrButton.id = "use-asr";
+  asrButton.className = "secondary wide";
+  asrButton.textContent = "Dùng ASR cho video này";
+  asrButton.hidden = true;
+  shadow.querySelector(".setup").append(asrButton);
+  asrButton.onclick = () => {
+    if (!asrAvailable || $("start").disabled) return;
+    explicitAsr = true;
+    $("start").onclick();
+  };
   $("start").onclick = async () => {
+    const allowAsr = explicitAsr;
+    explicitAsr = false;
     try {
       if (!video) throw new Error("Open a page with a video first.");
       $("start").disabled = true;
@@ -254,9 +274,13 @@
       status("buffering", "Reading the available subtitles");
       const found = imported
         ? { cues: imported, language: "auto" }
-        : await pageCaptions();
+        : allowAsr
+          ? null
+          : await pageCaptions();
       if (epoch !== work || video !== capturedVideo || location.href !== url)
         return;
+      asrAvailable = false;
+      $("use-asr").hidden = true;
       const payload = {
         url,
         title: document.title.slice(0, 300),
@@ -528,6 +552,7 @@
     if (message.command === "state")
       return {
         available: Boolean(video),
+        asrAvailable,
         title: video ? document.title : "",
         busy: $("start").disabled,
         running: Boolean(mixer),
@@ -595,6 +620,10 @@
         throw new Error("Invalid volume");
       $(message.key).value = message.value;
       $(message.key).oninput();
+      return true;
+    }
+    if (message.command === "asr") {
+      $("use-asr").click();
       return true;
     }
     if (message.command === "start") {

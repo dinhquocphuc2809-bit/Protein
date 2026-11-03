@@ -1,0 +1,58 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://developer.apple.com/videos/play/wwdc2024/10140/",
+      "http_status": 200,
+      "frames": [
+        {
+          "cues": 360,
+          "engine": "multisite",
+          "first": 7.149,
+          "host": "developer.apple.com",
+          "language": "en",
+          "last": 1241.297,
+          "state": "ready",
+          "trackCount": 5
+        }
+      ],
+      "acquired": true
+    },
+    {
+      "url": "https://ahrefs.com/academy/seo-training-course/lesson-1-1",
+      "http_status": 200,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "engine": "youtube",
+          "host": "www.youtube-nocookie.com",
+          "state": "unknown",
+          "trackCount": 0
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    },
+    {
+      "url": "https://iandevlin.github.io/mdn/video-player-with-captions/",
+      "http_status": 200,
+      "frames": [
+        {
+          "cues": 14,
+          "engine": "multisite",
+          "first": 0,
+          "host": "iandevlin.github.io",
+          "language": "en",
+          "last": 119.5,
+          "state": "ready",
+          "trackCount": 3
+        }
+      ],
+      "acquired": true
+    }
+  ]
+}

@@ -62,6 +62,8 @@ async function refresh() {
     $("video-title").textContent = state.title || "Mở một video để bắt đầu";
     $("video-title").title = state.title || "";
     $("start").disabled = !pageReady || state.busy;
+    $("use-asr").hidden = !state.asrAvailable;
+    $("use-asr").disabled = state.busy;
     $("stop").disabled = !state.running && !state.busy;
     $("start").querySelector("span").textContent = state.busy
       ? "Đang chuẩn bị…"
@@ -109,7 +111,11 @@ async function initialize(first = true) {
         func: () =>
           Math.max(
             0,
-            ...[...document.querySelectorAll("video")].map((v) => {
+            ...(
+              globalThis.VeloaMedia?.videos() || [
+                ...document.querySelectorAll("video"),
+              ]
+            ).map((v) => {
               const r = v.getBoundingClientRect();
               return r.width > 100 && r.height > 60 ? r.width * r.height : 0;
             }),
@@ -180,6 +186,7 @@ $("start").onclick = async () => {
     $("start").disabled = !pageReady;
   }
 };
+$("use-asr").onclick = () => player("asr").then(refresh).catch(fail);
 $("stop").onclick = () =>
   player("stop")
     .then(() => {

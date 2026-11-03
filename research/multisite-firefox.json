@@ -1,0 +1,9 @@
+{
+  "scope": "Actual Firefox MV3 package; labelled local caption fixtures on example.org; no providers",
+  "checks": [
+    "DOM: full native cues and original CC mode restored",
+    "open shadow: full native cues and original CC mode restored"
+  ],
+  "browser": "159.0",
+  "passed": true
+}

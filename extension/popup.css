@@ -211,6 +211,20 @@ select {
   gap: 10px;
   margin-top: 8px;
 }
+.fallback-action {
+  width: 100%;
+  min-height: 36px;
+  margin-top: 8px;
+  border: 1px solid var(--line, #d7d9dd);
+  border-radius: 10px;
+  background: #f5f5f7;
+  color: var(--ink);
+  font-size: 12px;
+  cursor: pointer;
+}
+.fallback-action:hover:not(:disabled) {
+  background: #e9eaed;
+}
 .advanced {
   margin-top: 8px;
   font-size: 10px;

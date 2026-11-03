@@ -2,6 +2,7 @@
   "scope": "Actual extension with explicit page/provider fixtures; no paid ASR or translation",
   "checks": [
     "direct: existing English cues sent to backend, ASR unnecessary",
+    "embed_direct: existing English cues sent to backend, ASR unnecessary",
     "initial_fallback: existing English cues sent to backend, ASR unnecessary",
     "player_fetch: existing English cues sent to backend, ASR unnecessary",
     "player_xhr: existing English cues sent to backend, ASR unnecessary",

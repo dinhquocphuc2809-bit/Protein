@@ -146,6 +146,32 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 
 ## Remaining release gates
 
+### Active work: multisite subtitle acquisition (2026-11-03)
+
+- Reference catalog statically resolved: 159 routing rules, including mapped
+  ThoughtIndustries/Memberspot entries. Full analysis/implementation checklist:
+  `docs/MULTISITE_ANALYSIS.md`.
+- Scope: shared native-caption engines and site metadata, selected-frame/media
+  ownership, captions-before-ASR guard and per-mechanism regression coverage.
+- No claim that every reference site has been tested live. Existing YouTube empty
+  timedtext in isolated browsers remains a documented live limitation.
+- Implemented Veloa 0.3.0: early all-frame MAIN capture, shared subtitle parsers,
+  DOM/open-shadow discovery, SDK and configured metadata readers, frame/media
+  validation, YouTube embed IDs and explicit ASR fallback for uncertain acquisition.
+- Validated: 34 Python tests, 15 JavaScript tests, 19 actual-extension multisite
+  fixtures, 12 YouTube fixtures, two Firefox 159 acquisition/CC restoration checks.
+  `research/multisite-*.json` and `research/caption-acceptance.json` record evidence.
+- Live success: Apple WWDC2024/10140 has 360 English cues via HLS; MDN example has
+  14 English cues via native tracks. Ahrefs uses a YouTube nocookie embed that remains
+  unknown in the isolated browser. No paid ASR/TTS/translation was called for this work.
+- Source/asset packages rebuilt at `dist/chrome`, `dist/firefox`, `dist/veloa-*.zip`;
+  local builds keep 84 voices/8 BGM. Secret scan passed. Reload extension AND page
+  after updating: early hooks and service worker must use the current bundle.
+- Per-route factual coverage: `docs/MULTISITE_COVERAGE.md`; private/authenticated
+  sites and bespoke APIs outside shared readers remain individual acceptance gates.
+- No backend deployment or extra VPS media storage is needed for this revision.
+- Repository publication/CI verification: pending final push.
+
 - Earlier HTTP 403 is resolved: owner granted phucdinhIA Write, UI revision `3f5642a`
   was pushed successfully and independently verified with `git ls-remote`.
 
