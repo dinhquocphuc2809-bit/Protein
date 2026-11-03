@@ -1,0 +1,1161 @@
+[
+  {
+    "path": "Neko Dub/background.js",
+    "lines_formatted": 13185,
+    "signals": {
+      "modal": [
+        {
+          "term": "modal.run",
+          "count": 2
+        },
+        {
+          "term": "MODAL_DEPLOY",
+          "count": 9
+        },
+        {
+          "term": "modal.com",
+          "count": 2
+        }
+      ],
+      "colab": [
+        {
+          "term": "colab.research.google.com",
+          "count": 5
+        },
+        {
+          "term": "COLAB_",
+          "count": 23
+        }
+      ],
+      "cache": [
+        {
+          "term": "indexedDB",
+          "count": 4
+        },
+        {
+          "term": "createObjectStore",
+          "count": 6
+        }
+      ],
+      "dom": [
+        {
+          "term": "querySelector",
+          "count": 48
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 32
+        }
+      ]
+    }
+  },
+  {
+    "path": "Neko Dub/bilibili-bridge.js",
+    "lines_formatted": 194,
+    "signals": {}
+  },
+  {
+    "path": "Neko Dub/bilibili-identity-beacon.js",
+    "lines_formatted": 55,
+    "signals": {}
+  },
+  {
+    "path": "Neko Dub/caption-capture.js",
+    "lines_formatted": 177,
+    "signals": {
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 1
+        },
+        {
+          "term": "timedtext",
+          "count": 5
+        }
+      ],
+      "network": [
+        {
+          "term": "XMLHttpRequest",
+          "count": 4
+        }
+      ]
+    }
+  },
+  {
+    "path": "Neko Dub/chunks/popup-CPLWi4pT.js",
+    "lines_formatted": 32851,
+    "signals": {
+      "modal": [
+        {
+          "term": "modal.run",
+          "count": 1
+        }
+      ],
+      "colab": [
+        {
+          "term": "colab.research.google.com",
+          "count": 1
+        },
+        {
+          "term": "COLAB_",
+          "count": 2
+        }
+      ],
+      "audio": [
+        {
+          "term": "AudioContext",
+          "count": 7
+        },
+        {
+          "term": "new Audio",
+          "count": 8
+        }
+      ],
+      "cache": [
+        {
+          "term": "indexedDB",
+          "count": 3
+        },
+        {
+          "term": "createObjectStore",
+          "count": 5
+        },
+        {
+          "term": "revokeObjectURL",
+          "count": 1
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 5
+        },
+        {
+          "term": "querySelector",
+          "count": 20
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 16
+        }
+      ]
+    }
+  },
+  {
+    "path": "Neko Dub/content-scripts/colab-overlay.js",
+    "lines_formatted": 3841,
+    "signals": {
+      "colab": [
+        {
+          "term": "colab.research.google.com",
+          "count": 1
+        },
+        {
+          "term": "COLAB_",
+          "count": 8
+        }
+      ],
+      "dom": [
+        {
+          "term": "attachShadow",
+          "count": 2
+        },
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 10
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Neko Dub/content-scripts/content.js",
+    "lines_formatted": 30817,
+    "signals": {
+      "modal": [
+        {
+          "term": "modal.run",
+          "count": 1
+        }
+      ],
+      "colab": [
+        {
+          "term": "COLAB_",
+          "count": 3
+        }
+      ],
+      "audio": [
+        {
+          "term": "AudioContext",
+          "count": 7
+        },
+        {
+          "term": "new Audio",
+          "count": 7
+        },
+        {
+          "term": "preservesPitch",
+          "count": 2
+        },
+        {
+          "term": "createGain",
+          "count": 10
+        }
+      ],
+      "cache": [
+        {
+          "term": "indexedDB",
+          "count": 2
+        },
+        {
+          "term": "createObjectStore",
+          "count": 4
+        },
+        {
+          "term": "revokeObjectURL",
+          "count": 7
+        }
+      ],
+      "dom": [
+        {
+          "term": "attachShadow",
+          "count": 2
+        },
+        {
+          "term": "MutationObserver",
+          "count": 29
+        },
+        {
+          "term": "querySelector",
+          "count": 125
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 11
+        },
+        {
+          "term": "timedtext",
+          "count": 3
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 49
+        }
+      ]
+    }
+  },
+  {
+    "path": "Neko Dub/content-scripts/modal-deploy-overlay.js",
+    "lines_formatted": 3856,
+    "signals": {
+      "modal": [
+        {
+          "term": "MODAL_DEPLOY",
+          "count": 3
+        },
+        {
+          "term": "modal.com",
+          "count": 1
+        }
+      ],
+      "colab": [
+        {
+          "term": "colab.research.google.com",
+          "count": 1
+        }
+      ],
+      "dom": [
+        {
+          "term": "attachShadow",
+          "count": 2
+        },
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 5
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Neko Dub/content-scripts/site-ui.js",
+    "lines_formatted": 2626,
+    "signals": {
+      "colab": [
+        {
+          "term": "COLAB_",
+          "count": 2
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 4
+        },
+        {
+          "term": "querySelector",
+          "count": 13
+        }
+      ]
+    }
+  },
+  {
+    "path": "Neko Dub/innertube-bridge.js",
+    "lines_formatted": 64,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/apify-error-core.js",
+    "lines_formatted": 237,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/apify-resolver-core.js",
+    "lines_formatted": 476,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/asr-language-core.js",
+    "lines_formatted": 95,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/audio-lifecycle-core.js",
+    "lines_formatted": 154,
+    "signals": {
+      "dom": [
+        {
+          "term": "querySelector",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/audio-platform-core.js",
+    "lines_formatted": 108,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/background.js",
+    "lines_formatted": 41176,
+    "signals": {
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 10
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 6
+        },
+        {
+          "term": "timedtext",
+          "count": 6
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 44
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 2
+        }
+      ],
+      "provider": [
+        {
+          "term": "tunelio.dev",
+          "count": 2
+        },
+        {
+          "term": "api.apify.com",
+          "count": 7
+        },
+        {
+          "term": "api.deepgram.com",
+          "count": 4
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/chunks/_plugin-vue_export-helper-s9b7xfAc.js",
+    "lines_formatted": 25861,
+    "signals": {
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 4
+        },
+        {
+          "term": "querySelector",
+          "count": 40
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 2
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/chunks/Dropdown-CFYvsfbz.js",
+    "lines_formatted": 613,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/chunks/errors-DBhr8Giv.js",
+    "lines_formatted": 75,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/chunks/local-player-ZGmBd_r1.js",
+    "lines_formatted": 107078,
+    "signals": {
+      "cache": [
+        {
+          "term": "indexedDB",
+          "count": 5
+        },
+        {
+          "term": "createObjectStore",
+          "count": 1
+        },
+        {
+          "term": "revokeObjectURL",
+          "count": 14
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 12
+        },
+        {
+          "term": "querySelector",
+          "count": 82
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 6
+        },
+        {
+          "term": "timedtext",
+          "count": 2
+        },
+        {
+          "term": "textTracks",
+          "count": 32
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 29
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 9
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/chunks/options-BtE4vpBt.js",
+    "lines_formatted": 6057,
+    "signals": {
+      "dom": [
+        {
+          "term": "querySelector",
+          "count": 1
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/chunks/popup-p2eC7O9h.js",
+    "lines_formatted": 3438,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/chunks/PronunciationVoiceCapabilities-BCl-gm3V.js",
+    "lines_formatted": 105,
+    "signals": {
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/chunks/RealtimeDubbingEngine-dw5e_iKG.js",
+    "lines_formatted": 4566,
+    "signals": {
+      "audio": [
+        {
+          "term": "AudioContext",
+          "count": 4
+        },
+        {
+          "term": "new Audio",
+          "count": 9
+        },
+        {
+          "term": "createGain",
+          "count": 6
+        }
+      ],
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 7
+        }
+      ],
+      "dom": [
+        {
+          "term": "querySelector",
+          "count": 8
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 6
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/chunks/srt-parser-w9jABmuB.js",
+    "lines_formatted": 34,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/chunks/ssa-parser-CtlYyYjB.js",
+    "lines_formatted": 246,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/chunks/static.extrasmall-B-BibU5_.js",
+    "lines_formatted": 180622,
+    "signals": {
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/chunks/SubtitleOverlayStyle-DOfNoHcs.js",
+    "lines_formatted": 165,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/chunks/TranslateEngineModelMigration-FClEe1qP.js",
+    "lines_formatted": 1118,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/apify-deepgram-asr.js",
+    "lines_formatted": 338,
+    "signals": {
+      "dom": [
+        {
+          "term": "querySelector",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/azure-force.js",
+    "lines_formatted": 161,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/bgm-control.js",
+    "lines_formatted": 228,
+    "signals": {
+      "audio": [
+        {
+          "term": "new Audio",
+          "count": 1
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/content.js",
+    "lines_formatted": 317982,
+    "signals": {
+      "audio": [
+        {
+          "term": "AudioContext",
+          "count": 4
+        },
+        {
+          "term": "new Audio",
+          "count": 9
+        },
+        {
+          "term": "createGain",
+          "count": 6
+        }
+      ],
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 10
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 102
+        },
+        {
+          "term": "querySelector",
+          "count": 723
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 6
+        },
+        {
+          "term": "timedtext",
+          "count": 2
+        },
+        {
+          "term": "textTracks",
+          "count": 27
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 80
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 4
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/googleDriveButton.js",
+    "lines_formatted": 69804,
+    "signals": {
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 1
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 13
+        },
+        {
+          "term": "querySelector",
+          "count": 112
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 6
+        },
+        {
+          "term": "timedtext",
+          "count": 2
+        },
+        {
+          "term": "textTracks",
+          "count": 6
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 7
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/kinescopeEarlyCapture.js",
+    "lines_formatted": 93,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/media-audio-unlock.js",
+    "lines_formatted": 61,
+    "signals": {
+      "audio": [
+        {
+          "term": "new Audio",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/metadata.js",
+    "lines_formatted": 71795,
+    "signals": {
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 1
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 16
+        },
+        {
+          "term": "querySelector",
+          "count": 91
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 6
+        },
+        {
+          "term": "timedtext",
+          "count": 2
+        },
+        {
+          "term": "textTracks",
+          "count": 6
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 9
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/sidebar.js",
+    "lines_formatted": 70271,
+    "signals": {
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 1
+        }
+      ],
+      "dom": [
+        {
+          "term": "attachShadow",
+          "count": 1
+        },
+        {
+          "term": "MutationObserver",
+          "count": 13
+        },
+        {
+          "term": "querySelector",
+          "count": 103
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 6
+        },
+        {
+          "term": "timedtext",
+          "count": 2
+        },
+        {
+          "term": "textTracks",
+          "count": 8
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 9
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/ui-translate.js",
+    "lines_formatted": 239,
+    "signals": {
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 8
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/youtube-bilingual-sidebar.js",
+    "lines_formatted": 1024,
+    "signals": {
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 1
+        }
+      ],
+      "dom": [
+        {
+          "term": "attachShadow",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 15
+        }
+      ],
+      "captions": [
+        {
+          "term": "textTracks",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/youtube-caption-probe.js",
+    "lines_formatted": 47,
+    "signals": {
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/injectScript.js",
+    "lines_formatted": 84672,
+    "signals": {
+      "cache": [
+        {
+          "term": "revokeObjectURL",
+          "count": 4
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 13
+        },
+        {
+          "term": "querySelector",
+          "count": 243
+        }
+      ],
+      "captions": [
+        {
+          "term": "captionTracks",
+          "count": 17
+        },
+        {
+          "term": "timedtext",
+          "count": 7
+        },
+        {
+          "term": "textTracks",
+          "count": 58
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 55
+        },
+        {
+          "term": "XMLHttpRequest",
+          "count": 12
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/ios-memory-manager.js",
+    "lines_formatted": 60,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/ios-no-local-video.js",
+    "lines_formatted": 21,
+    "signals": {
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/iosInjectScript.js",
+    "lines_formatted": 6378,
+    "signals": {
+      "captions": [
+        {
+          "term": "timedtext",
+          "count": 5
+        }
+      ],
+      "network": [
+        {
+          "term": "XMLHttpRequest",
+          "count": 5
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/local-audio-extractor.js",
+    "lines_formatted": 433,
+    "signals": {
+      "audio": [
+        {
+          "term": "AudioContext",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/local-player-quick.js",
+    "lines_formatted": 1343,
+    "signals": {
+      "cache": [
+        {
+          "term": "indexedDB",
+          "count": 1
+        },
+        {
+          "term": "revokeObjectURL",
+          "count": 2
+        }
+      ],
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 56
+        }
+      ],
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 2
+        }
+      ],
+      "provider": [
+        {
+          "term": "api.deepgram.com",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/options-embedded.js",
+    "lines_formatted": 4,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/popup-apify-deepgram.js",
+    "lines_formatted": 251,
+    "signals": {
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 8
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/popup-bgm-control.js",
+    "lines_formatted": 240,
+    "signals": {
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 2
+        },
+        {
+          "term": "querySelector",
+          "count": 12
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/popup-settings-integrated.js",
+    "lines_formatted": 114,
+    "signals": {
+      "dom": [
+        {
+          "term": "querySelector",
+          "count": 4
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/popup-ui-polish.js",
+    "lines_formatted": 109,
+    "signals": {
+      "dom": [
+        {
+          "term": "MutationObserver",
+          "count": 1
+        },
+        {
+          "term": "querySelector",
+          "count": 4
+        }
+      ]
+    }
+  },
+  {
+    "path": "Youtube Dubbing/runtime/client-gate-controller.js",
+    "lines_formatted": 81,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/runtime/qa-bootstrap.js",
+    "lines_formatted": 34,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/runtime/session-bridge.js",
+    "lines_formatted": 108,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/runtime/translation-entitlement-background-monitor.js",
+    "lines_formatted": 231,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/runtime/translation-entitlement-monitor.js",
+    "lines_formatted": 220,
+    "signals": {}
+  },
+  {
+    "path": "Youtube Dubbing/ui-translate-background.js",
+    "lines_formatted": 35,
+    "signals": {
+      "network": [
+        {
+          "term": "fetch(",
+          "count": 1
+        }
+      ]
+    }
+  }
+]

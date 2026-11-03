@@ -1,0 +1,26 @@
+{
+  "Qwen/Qwen3-ASR-1.7B": {
+    "status": 200,
+    "sha": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+    "pipeline_tag": "automatic-speech-recognition",
+    "license": "apache-2.0"
+  },
+  "Qwen/Qwen3-ForcedAligner-0.6B": {
+    "status": 200,
+    "sha": "c7cbfc2048c462b0d63a45797104fc9db3ad62b7",
+    "pipeline_tag": "automatic-speech-recognition",
+    "license": "apache-2.0"
+  },
+  "k2-fsa/OmniVoice": {
+    "status": 200,
+    "sha": "c5fdb5ccb189668d56333f77ba2629f4cd7535f4",
+    "pipeline_tag": "text-to-speech",
+    "license": null
+  },
+  "nguyenvulebinh/wav2vec2-base-vi-vlsp2020": {
+    "status": 200,
+    "sha": "50a30dadb3ec98a0d4cdb1eb1ea315aff538f7c2",
+    "pipeline_tag": "automatic-speech-recognition",
+    "license": "cc-by-nc-4.0"
+  }
+}

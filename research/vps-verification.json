@@ -1,0 +1,13 @@
+{
+  "arch": "aarch64",
+  "cpus": 4,
+  "disk": {
+    "total": 206900281344,
+    "used": 7517548544,
+    "free": 199365955584
+  },
+  "tailscale": "Running",
+  "docker": null,
+  "ffmpeg": "/usr/bin/ffmpeg",
+  "ssh_via_tailscale": true
+}

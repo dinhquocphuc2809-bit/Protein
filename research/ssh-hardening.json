@@ -1,0 +1,5 @@
+{
+  "tailscale_only": true,
+  "independent_reconnect": true,
+  "rollback_cancelled": true
+}

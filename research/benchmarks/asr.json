@@ -1,0 +1,784 @@
+{
+  "role": "asr",
+  "started_at": 1793670397.0189815,
+  "preparation": {
+    "prepare_seconds": 13.873358392,
+    "revisions": {
+      "Qwen/Qwen3-ASR-1.7B": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+      "Qwen/Qwen3-ForcedAligner-0.6B": "c7cbfc2048c462b0d63a45797104fc9db3ad62b7"
+    }
+  },
+  "runs": [
+    {
+      "text": "xin chào. Đây là đoạn văn bản mẫu để thử nghiệm giọng nói tiếng Việt. Hãy chọn một giọng nói phù hợp với sở thích.",
+      "words": [
+        {
+          "text": " xin",
+          "start": 0.2,
+          "end": 0.3
+        },
+        {
+          "text": " chào.",
+          "start": 0.3,
+          "end": 0.54
+        },
+        {
+          "text": " Đây",
+          "start": 1.6,
+          "end": 1.7
+        },
+        {
+          "text": " là",
+          "start": 1.7,
+          "end": 1.84
+        },
+        {
+          "text": " đoạn",
+          "start": 1.84,
+          "end": 2.0
+        },
+        {
+          "text": " văn",
+          "start": 2.0,
+          "end": 2.18
+        },
+        {
+          "text": " bản",
+          "start": 2.18,
+          "end": 2.32
+        },
+        {
+          "text": " mẫu",
+          "start": 2.32,
+          "end": 2.66
+        },
+        {
+          "text": " để",
+          "start": 2.74,
+          "end": 2.84
+        },
+        {
+          "text": " thử",
+          "start": 2.84,
+          "end": 2.96
+        },
+        {
+          "text": " nghiệm",
+          "start": 2.96,
+          "end": 3.16
+        },
+        {
+          "text": " giọng",
+          "start": 3.16,
+          "end": 3.38
+        },
+        {
+          "text": " nói",
+          "start": 3.38,
+          "end": 3.46
+        },
+        {
+          "text": " tiếng",
+          "start": 3.46,
+          "end": 3.68
+        },
+        {
+          "text": " Việt.",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "text": " Hãy",
+          "start": 4.52,
+          "end": 4.62
+        },
+        {
+          "text": " chọn",
+          "start": 4.62,
+          "end": 4.78
+        },
+        {
+          "text": " một",
+          "start": 4.78,
+          "end": 4.9
+        },
+        {
+          "text": " giọng",
+          "start": 4.9,
+          "end": 5.14
+        },
+        {
+          "text": " nói",
+          "start": 5.14,
+          "end": 5.26
+        },
+        {
+          "text": " phù",
+          "start": 5.26,
+          "end": 5.48
+        },
+        {
+          "text": " hợp",
+          "start": 5.48,
+          "end": 5.68
+        },
+        {
+          "text": " với",
+          "start": 5.68,
+          "end": 5.78
+        },
+        {
+          "text": " sở",
+          "start": 5.78,
+          "end": 5.96
+        },
+        {
+          "text": " thích.",
+          "start": 5.96,
+          "end": 6.06
+        }
+      ],
+      "aligner": "stable-ts-whisper-small",
+      "input_seconds": 6.32,
+      "vad_regions": [
+        {
+          "start": 0.2,
+          "end": 0.7
+        },
+        {
+          "start": 1.6,
+          "end": 4.0
+        },
+        {
+          "start": 4.5,
+          "end": 6.3
+        }
+      ],
+      "inference_seconds": 5.612204837,
+      "init_seconds": 18.811697195,
+      "call": 1,
+      "gpu": "Tesla T4",
+      "peak_vram_bytes": 7156470272,
+      "peak_rss_kib": 10314952,
+      "rtf": 0.8880070944620253,
+      "gpu_requested": "T4",
+      "repeat": 0,
+      "language": "Vietnamese",
+      "round_trip_seconds": 36.042881500005024
+    },
+    {
+      "text": "xin chào. Đây là đoạn văn bản mẫu để thử nghiệm giọng nói tiếng Việt. Hãy chọn một giọng nói phù hợp với sở thích.",
+      "words": [
+        {
+          "text": " xin",
+          "start": 0.2,
+          "end": 0.3
+        },
+        {
+          "text": " chào.",
+          "start": 0.3,
+          "end": 0.54
+        },
+        {
+          "text": " Đây",
+          "start": 1.6,
+          "end": 1.7
+        },
+        {
+          "text": " là",
+          "start": 1.7,
+          "end": 1.84
+        },
+        {
+          "text": " đoạn",
+          "start": 1.84,
+          "end": 2.0
+        },
+        {
+          "text": " văn",
+          "start": 2.0,
+          "end": 2.18
+        },
+        {
+          "text": " bản",
+          "start": 2.18,
+          "end": 2.32
+        },
+        {
+          "text": " mẫu",
+          "start": 2.32,
+          "end": 2.66
+        },
+        {
+          "text": " để",
+          "start": 2.74,
+          "end": 2.84
+        },
+        {
+          "text": " thử",
+          "start": 2.84,
+          "end": 2.96
+        },
+        {
+          "text": " nghiệm",
+          "start": 2.96,
+          "end": 3.16
+        },
+        {
+          "text": " giọng",
+          "start": 3.16,
+          "end": 3.38
+        },
+        {
+          "text": " nói",
+          "start": 3.38,
+          "end": 3.46
+        },
+        {
+          "text": " tiếng",
+          "start": 3.46,
+          "end": 3.68
+        },
+        {
+          "text": " Việt.",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "text": " Hãy",
+          "start": 4.52,
+          "end": 4.62
+        },
+        {
+          "text": " chọn",
+          "start": 4.62,
+          "end": 4.78
+        },
+        {
+          "text": " một",
+          "start": 4.78,
+          "end": 4.9
+        },
+        {
+          "text": " giọng",
+          "start": 4.9,
+          "end": 5.14
+        },
+        {
+          "text": " nói",
+          "start": 5.14,
+          "end": 5.26
+        },
+        {
+          "text": " phù",
+          "start": 5.26,
+          "end": 5.48
+        },
+        {
+          "text": " hợp",
+          "start": 5.48,
+          "end": 5.68
+        },
+        {
+          "text": " với",
+          "start": 5.68,
+          "end": 5.78
+        },
+        {
+          "text": " sở",
+          "start": 5.78,
+          "end": 5.96
+        },
+        {
+          "text": " thích.",
+          "start": 5.96,
+          "end": 6.06
+        }
+      ],
+      "aligner": "stable-ts-whisper-small",
+      "input_seconds": 6.32,
+      "vad_regions": [
+        {
+          "start": 0.2,
+          "end": 0.7
+        },
+        {
+          "start": 1.6,
+          "end": 4.0
+        },
+        {
+          "start": 4.5,
+          "end": 6.3
+        }
+      ],
+      "inference_seconds": 1.5865985729999963,
+      "init_seconds": 18.811697195,
+      "call": 2,
+      "gpu": "Tesla T4",
+      "peak_vram_bytes": 7156470272,
+      "peak_rss_kib": 10314952,
+      "rtf": 0.2510440780063285,
+      "gpu_requested": "T4",
+      "repeat": 1,
+      "language": "Vietnamese",
+      "round_trip_seconds": 4.31121779998648
+    },
+    {
+      "text": "Uh huh. Oh yeah, yeah. He wasn't even that big when I started listening to him, but and his solo music didn't do overly well, but he did very well when he started writing for other people.",
+      "words": [
+        {
+          "text": "Uh",
+          "start": 0.4,
+          "end": 0.88
+        },
+        {
+          "text": "huh",
+          "start": 1.04,
+          "end": 1.2
+        },
+        {
+          "text": "Oh",
+          "start": 1.2,
+          "end": 1.28
+        },
+        {
+          "text": "yeah",
+          "start": 1.28,
+          "end": 1.52
+        },
+        {
+          "text": "yeah",
+          "start": 1.52,
+          "end": 1.92
+        },
+        {
+          "text": "He",
+          "start": 2.32,
+          "end": 2.4
+        },
+        {
+          "text": "wasn't",
+          "start": 2.4,
+          "end": 2.8
+        },
+        {
+          "text": "even",
+          "start": 2.8,
+          "end": 3.12
+        },
+        {
+          "text": "that",
+          "start": 3.12,
+          "end": 3.36
+        },
+        {
+          "text": "big",
+          "start": 3.36,
+          "end": 3.84
+        },
+        {
+          "text": "when",
+          "start": 3.84,
+          "end": 4.0
+        },
+        {
+          "text": "I",
+          "start": 4.08,
+          "end": 4.24
+        },
+        {
+          "text": "started",
+          "start": 4.24,
+          "end": 4.64
+        },
+        {
+          "text": "listening",
+          "start": 4.64,
+          "end": 5.04
+        },
+        {
+          "text": "to",
+          "start": 5.12,
+          "end": 5.2
+        },
+        {
+          "text": "him",
+          "start": 5.28,
+          "end": 5.52
+        },
+        {
+          "text": "but",
+          "start": 6.0,
+          "end": 6.56
+        },
+        {
+          "text": "and",
+          "start": 6.64,
+          "end": 6.8
+        },
+        {
+          "text": "his",
+          "start": 6.8,
+          "end": 6.96
+        },
+        {
+          "text": "solo",
+          "start": 6.96,
+          "end": 7.44
+        },
+        {
+          "text": "music",
+          "start": 7.44,
+          "end": 8.0
+        },
+        {
+          "text": "didn't",
+          "start": 8.08,
+          "end": 8.72
+        },
+        {
+          "text": "do",
+          "start": 8.72,
+          "end": 9.28
+        },
+        {
+          "text": "overly",
+          "start": 9.52,
+          "end": 10.08
+        },
+        {
+          "text": "well",
+          "start": 10.08,
+          "end": 10.56
+        },
+        {
+          "text": "but",
+          "start": 11.12,
+          "end": 11.28
+        },
+        {
+          "text": "he",
+          "start": 11.28,
+          "end": 11.44
+        },
+        {
+          "text": "did",
+          "start": 11.44,
+          "end": 11.68
+        },
+        {
+          "text": "very",
+          "start": 11.68,
+          "end": 12.24
+        },
+        {
+          "text": "well",
+          "start": 12.24,
+          "end": 12.64
+        },
+        {
+          "text": "when",
+          "start": 12.64,
+          "end": 12.8
+        },
+        {
+          "text": "he",
+          "start": 12.8,
+          "end": 12.88
+        },
+        {
+          "text": "started",
+          "start": 12.88,
+          "end": 13.28
+        },
+        {
+          "text": "writing",
+          "start": 13.28,
+          "end": 13.68
+        },
+        {
+          "text": "for",
+          "start": 13.68,
+          "end": 13.84
+        },
+        {
+          "text": "other",
+          "start": 13.84,
+          "end": 14.08
+        },
+        {
+          "text": "people",
+          "start": 14.08,
+          "end": 14.64
+        }
+      ],
+      "aligner": "qwen-forced-aligner",
+      "input_seconds": 15.05125,
+      "vad_regions": [
+        {
+          "start": 0.4,
+          "end": 2.1
+        },
+        {
+          "start": 2.3,
+          "end": 5.6
+        },
+        {
+          "start": 6.0,
+          "end": 9.3
+        },
+        {
+          "start": 9.5,
+          "end": 10.7
+        },
+        {
+          "start": 11.1,
+          "end": 14.7
+        }
+      ],
+      "inference_seconds": 2.4626172609999983,
+      "init_seconds": 18.811697195,
+      "call": 3,
+      "gpu": "Tesla T4",
+      "peak_vram_bytes": 7060826112,
+      "peak_rss_kib": 10314952,
+      "rtf": 0.16361546456274384,
+      "gpu_requested": "T4",
+      "repeat": 0,
+      "language": "English",
+      "round_trip_seconds": 6.876413700025296
+    },
+    {
+      "text": "Uh huh. Oh yeah, yeah. He wasn't even that big when I started listening to him, but and his solo music didn't do overly well, but he did very well when he started writing for other people.",
+      "words": [
+        {
+          "text": "Uh",
+          "start": 0.4,
+          "end": 0.88
+        },
+        {
+          "text": "huh",
+          "start": 1.04,
+          "end": 1.2
+        },
+        {
+          "text": "Oh",
+          "start": 1.2,
+          "end": 1.28
+        },
+        {
+          "text": "yeah",
+          "start": 1.28,
+          "end": 1.52
+        },
+        {
+          "text": "yeah",
+          "start": 1.52,
+          "end": 1.92
+        },
+        {
+          "text": "He",
+          "start": 2.32,
+          "end": 2.4
+        },
+        {
+          "text": "wasn't",
+          "start": 2.4,
+          "end": 2.8
+        },
+        {
+          "text": "even",
+          "start": 2.8,
+          "end": 3.12
+        },
+        {
+          "text": "that",
+          "start": 3.12,
+          "end": 3.36
+        },
+        {
+          "text": "big",
+          "start": 3.36,
+          "end": 3.84
+        },
+        {
+          "text": "when",
+          "start": 3.84,
+          "end": 4.0
+        },
+        {
+          "text": "I",
+          "start": 4.08,
+          "end": 4.24
+        },
+        {
+          "text": "started",
+          "start": 4.24,
+          "end": 4.64
+        },
+        {
+          "text": "listening",
+          "start": 4.64,
+          "end": 5.04
+        },
+        {
+          "text": "to",
+          "start": 5.12,
+          "end": 5.2
+        },
+        {
+          "text": "him",
+          "start": 5.28,
+          "end": 5.52
+        },
+        {
+          "text": "but",
+          "start": 6.0,
+          "end": 6.56
+        },
+        {
+          "text": "and",
+          "start": 6.64,
+          "end": 6.8
+        },
+        {
+          "text": "his",
+          "start": 6.8,
+          "end": 6.96
+        },
+        {
+          "text": "solo",
+          "start": 6.96,
+          "end": 7.44
+        },
+        {
+          "text": "music",
+          "start": 7.44,
+          "end": 8.0
+        },
+        {
+          "text": "didn't",
+          "start": 8.08,
+          "end": 8.72
+        },
+        {
+          "text": "do",
+          "start": 8.72,
+          "end": 9.28
+        },
+        {
+          "text": "overly",
+          "start": 9.52,
+          "end": 10.08
+        },
+        {
+          "text": "well",
+          "start": 10.08,
+          "end": 10.56
+        },
+        {
+          "text": "but",
+          "start": 11.12,
+          "end": 11.28
+        },
+        {
+          "text": "he",
+          "start": 11.28,
+          "end": 11.44
+        },
+        {
+          "text": "did",
+          "start": 11.44,
+          "end": 11.68
+        },
+        {
+          "text": "very",
+          "start": 11.68,
+          "end": 12.24
+        },
+        {
+          "text": "well",
+          "start": 12.24,
+          "end": 12.64
+        },
+        {
+          "text": "when",
+          "start": 12.64,
+          "end": 12.8
+        },
+        {
+          "text": "he",
+          "start": 12.8,
+          "end": 12.88
+        },
+        {
+          "text": "started",
+          "start": 12.88,
+          "end": 13.28
+        },
+        {
+          "text": "writing",
+          "start": 13.28,
+          "end": 13.68
+        },
+        {
+          "text": "for",
+          "start": 13.68,
+          "end": 13.84
+        },
+        {
+          "text": "other",
+          "start": 13.84,
+          "end": 14.08
+        },
+        {
+          "text": "people",
+          "start": 14.08,
+          "end": 14.64
+        }
+      ],
+      "aligner": "qwen-forced-aligner",
+      "input_seconds": 15.05125,
+      "vad_regions": [
+        {
+          "start": 0.4,
+          "end": 2.1
+        },
+        {
+          "start": 2.3,
+          "end": 5.6
+        },
+        {
+          "start": 6.0,
+          "end": 9.3
+        },
+        {
+          "start": 9.5,
+          "end": 10.7
+        },
+        {
+          "start": 11.1,
+          "end": 14.7
+        }
+      ],
+      "inference_seconds": 2.376263283,
+      "init_seconds": 18.811697195,
+      "call": 4,
+      "gpu": "Tesla T4",
+      "peak_vram_bytes": 7060826624,
+      "peak_rss_kib": 10314952,
+      "rtf": 0.15787813523793706,
+      "gpu_requested": "T4",
+      "repeat": 1,
+      "language": "English",
+      "round_trip_seconds": 4.642274899990298
+    },
+    {
+      "gpu_requested": "L4",
+      "language": "Vietnamese",
+      "repeat": 0,
+      "error_type": "RemoteError",
+      "error": ""
+    }
+  ]
+}

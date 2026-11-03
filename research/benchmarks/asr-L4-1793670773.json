@@ -1,0 +1,20 @@
+{
+  "role": "asr",
+  "started_at": 1793670747.1639202,
+  "preparation": {
+    "prepare_seconds": 16.510003331,
+    "revisions": {
+      "Qwen/Qwen3-ASR-1.7B": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+      "Qwen/Qwen3-ForcedAligner-0.6B": "c7cbfc2048c462b0d63a45797104fc9db3ad62b7"
+    }
+  },
+  "runs": [
+    {
+      "gpu_requested": "L4",
+      "language": "Vietnamese",
+      "repeat": 0,
+      "error_type": "TimeoutError",
+      "error": ""
+    }
+  ]
+}

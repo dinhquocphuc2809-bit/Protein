@@ -1,0 +1,1402 @@
+[
+  {
+    "path": "Neko Dub/_metadata/computed_hashes.json",
+    "bytes": 375083,
+    "sha256": "b22eaf0d63c9df59dfbaaaace59201570ee44afa1d76037782198f6ce333bd2c"
+  },
+  {
+    "path": "Neko Dub/_metadata/verified_contents.json",
+    "bytes": 20893,
+    "sha256": "2733859ee5a55ec3b219d470f998783374ab867df3b491d3a0ec0fae2b0ada4e"
+  },
+  {
+    "path": "Neko Dub/assets/popup-BR0BMk62.css",
+    "bytes": 107745,
+    "sha256": "e531ac65d1da931f47d8d22b63449f742d3735aafb27b0573fe0041b84018891"
+  },
+  {
+    "path": "Neko Dub/background.js",
+    "bytes": 299034,
+    "sha256": "dd4d39c17401ff66a7d87c89bf3e9c13596cc6d624f52b70c476bdd8be4acff8"
+  },
+  {
+    "path": "Neko Dub/bg-1-night.webp",
+    "bytes": 129956,
+    "sha256": "2309f62f3e53d22ad8e4f038eeb7f0862b4d69f189d1047d788c80d696ac927f"
+  },
+  {
+    "path": "Neko Dub/bg-1.webp",
+    "bytes": 144300,
+    "sha256": "56c82918073ca4462fa80eaba21e121a5e06fe63c4f7fe644a1069f448f78528"
+  },
+  {
+    "path": "Neko Dub/bgm/corporate.ogg",
+    "bytes": 1087319,
+    "sha256": "75a30d78f77952182ae6a76fc659c5b934d64342309e3d5400241d7efec43eaa"
+  },
+  {
+    "path": "Neko Dub/bgm/emotional.ogg",
+    "bytes": 859958,
+    "sha256": "bf7067417f185ec30487418340f0c7da6c0c40a8961efc73d62aed21fe76be9d"
+  },
+  {
+    "path": "Neko Dub/bgm/epic.ogg",
+    "bytes": 1023702,
+    "sha256": "3eec1e86e6d033d1a0feed8d18b717b8985fa5bb683722a7ec1da100349e71d7"
+  },
+  {
+    "path": "Neko Dub/bgm/koto.ogg",
+    "bytes": 2157826,
+    "sha256": "fe4ea5d9c24a06eeb9523348e849d5ea34fde2457400ac4f778cce8d3d557a4d"
+  },
+  {
+    "path": "Neko Dub/bgm/minimal.ogg",
+    "bytes": 1499567,
+    "sha256": "f387dce38cfbeae6f980341208ec3da79d0e44ccd156c7b9fc9a8e7444d581a2"
+  },
+  {
+    "path": "Neko Dub/bgm/moonlit.ogg",
+    "bytes": 2183870,
+    "sha256": "f8a9ef5fd41ff229394b8c4915f10fac0d2005300f7ca6ecddfe5a492a8e79d3"
+  },
+  {
+    "path": "Neko Dub/bgm/quirky.ogg",
+    "bytes": 587110,
+    "sha256": "7f7651015a841f16e78e4bf3a3ee76643fbc5e7d632d5931a0e973893e43dde7"
+  },
+  {
+    "path": "Neko Dub/bgm/technology.ogg",
+    "bytes": 827142,
+    "sha256": "652091d1ae13dec203e9ef0d5478a9136e158be9b006852944a484cd84bbd535"
+  },
+  {
+    "path": "Neko Dub/bilibili-bridge.js",
+    "bytes": 6041,
+    "sha256": "04426dbe08f5d10f6a483a371ebd58b4a90f1e7be55211be3ab51e0440414c89"
+  },
+  {
+    "path": "Neko Dub/bilibili-identity-beacon.js",
+    "bytes": 1993,
+    "sha256": "721cd742e47c6133a9312ed9bd582dc489cd5660271e7992b7893f7b8d48af96"
+  },
+  {
+    "path": "Neko Dub/caption-capture.js",
+    "bytes": 5010,
+    "sha256": "eb7dec3cb5ba0f38fd29a6d09253493b2d208056922e916b134442d09700e517"
+  },
+  {
+    "path": "Neko Dub/chunks/popup-CPLWi4pT.js",
+    "bytes": 752903,
+    "sha256": "954bfceb8f255aa61d78ce9f0498323ebf225f7950bb9af676c1c3b2297d44b2"
+  },
+  {
+    "path": "Neko Dub/colab-hero-ready.webp",
+    "bytes": 73010,
+    "sha256": "8981afe837279f1281f2f07f5e1e9413d09508cf1a86a9c1bcf2895c0e814344"
+  },
+  {
+    "path": "Neko Dub/colab-hero-setup.webp",
+    "bytes": 78486,
+    "sha256": "5fac709711591867fb39c3df007160a399d425ad9b466148371cef70cb2f2938"
+  },
+  {
+    "path": "Neko Dub/colab-quota.webp",
+    "bytes": 59954,
+    "sha256": "8684218e0b210c91d166ddf0f7e6046b8867ecc1e2a335a3c5d683a42d91ef6b"
+  },
+  {
+    "path": "Neko Dub/colab-tab.svg",
+    "bytes": 14701,
+    "sha256": "4dbca7b6ab07169a93e766a2a3be1cdfdfcdb34531bbdf3f816f2c2f49b58954"
+  },
+  {
+    "path": "Neko Dub/content-scripts/colab-overlay.css",
+    "bytes": 159,
+    "sha256": "411b312d396672c7cf29fa4caf748abe824ffad93677aef975e0240e996af09c"
+  },
+  {
+    "path": "Neko Dub/content-scripts/colab-overlay.js",
+    "bytes": 105077,
+    "sha256": "5e64499ab267c70c277b0c5c1e7be28fd18c7e6ca139c09e81fe54474d81449c"
+  },
+  {
+    "path": "Neko Dub/content-scripts/content.css",
+    "bytes": 3541,
+    "sha256": "61a96fd3f5654c63e05e41bae438fb93dee25ca8daad17398823a061fa357ad6"
+  },
+  {
+    "path": "Neko Dub/content-scripts/content.js",
+    "bytes": 1060414,
+    "sha256": "7e1655fc16b89ef3bbd0125753a2ef88e2373470b397406a0218f19a7d6ec9c3"
+  },
+  {
+    "path": "Neko Dub/content-scripts/modal-deploy-overlay.js",
+    "bytes": 104252,
+    "sha256": "121e42b921c6b98ddd00a01e0b76f833ee1ab164b34421a91ecc5cb185ca4e4c"
+  },
+  {
+    "path": "Neko Dub/content-scripts/site-ui.js",
+    "bytes": 57449,
+    "sha256": "8df4cd14862741f714898975f55bccb6fb54c7571e1524b55e778fe6a0f00903"
+  },
+  {
+    "path": "Neko Dub/dubbing.png",
+    "bytes": 3947,
+    "sha256": "3502d10e5d0d36d0b61a765e948af34c8013d1eef14c858bd66dcf6f170ca7ac"
+  },
+  {
+    "path": "Neko Dub/edge.png",
+    "bytes": 5750,
+    "sha256": "d8a21a7f4adcb9b98199547b29e6c7d363065774fabd8b349eaeea1e50d25291"
+  },
+  {
+    "path": "Neko Dub/fonts/Lora-Italic-VariableFont_wght.ttf",
+    "bytes": 219120,
+    "sha256": "fe24ffb892efdf883f708bfc445ca76f00e1ee1c334479922b36109779792f39"
+  },
+  {
+    "path": "Neko Dub/fonts/Lora-VariableFont_wght.ttf",
+    "bytes": 210884,
+    "sha256": "53c6817f76828af08d49cb77c9894cb698c929e17ff2c2d81aa34c86e2524c1f"
+  },
+  {
+    "path": "Neko Dub/icon/128.png",
+    "bytes": 14088,
+    "sha256": "4e6e6d31cee0cb5541cbe99dd2618ff8baa7314cf3d0b1297c77813b4eb81e5b"
+  },
+  {
+    "path": "Neko Dub/icon/16.png",
+    "bytes": 878,
+    "sha256": "4396e835ce97afc0ca72d405d050b6930e65bb092bb620123aff337a62f60734"
+  },
+  {
+    "path": "Neko Dub/icon/32.png",
+    "bytes": 2374,
+    "sha256": "d3d25e8dc82e01382c5583c923fd4501e744a976476a28e7941d81612d3f6279"
+  },
+  {
+    "path": "Neko Dub/icon/48.png",
+    "bytes": 3959,
+    "sha256": "f065b0f22c1c85679e38ee9c92c5ce848b24ba5b6465b6fdbfb8c4594493c08d"
+  },
+  {
+    "path": "Neko Dub/icon/96.png",
+    "bytes": 9599,
+    "sha256": "372cc7ff2b7fe9b964d7af405b321fd74f5bff43573d479adfe24e1ddd9552e1"
+  },
+  {
+    "path": "Neko Dub/innertube-bridge.js",
+    "bytes": 1780,
+    "sha256": "684c2cf6ea4572002ba8117ce661c333f259409d0384d40d10866c659e6a3368"
+  },
+  {
+    "path": "Neko Dub/logo-128.png",
+    "bytes": 13481,
+    "sha256": "cfaf4aa1158ebdd978286f4022ed1daf6dce79fa4d0b88ee14f9a18f2e723781"
+  },
+  {
+    "path": "Neko Dub/Logo-bg.png",
+    "bytes": 3580,
+    "sha256": "b49a714a2117326f028fe12e21959eb0e379720f86f074162ece76e7f92675aa"
+  },
+  {
+    "path": "Neko Dub/Logo-cc.svg",
+    "bytes": 6164,
+    "sha256": "d42ea12ecac4e6fa3ea3bda6c0c821bb16a73eaa2ca2be096a8b4a3f475f93d4"
+  },
+  {
+    "path": "Neko Dub/Logo-music.svg",
+    "bytes": 4815,
+    "sha256": "e1bddf70d0ec7537766fbf12c151c9d6ca5c1cf1e71eaf23bc545873bc129721"
+  },
+  {
+    "path": "Neko Dub/Logo-stop.svg",
+    "bytes": 5969,
+    "sha256": "c609f2e92706722396bd99c768e78e186b0ab334afd6ef16b95867f13031de28"
+  },
+  {
+    "path": "Neko Dub/logo.svg",
+    "bytes": 9583,
+    "sha256": "7ce7d97951aa15c58273369a6be422146d8bae82239770c63b076acc1f29c12e"
+  },
+  {
+    "path": "Neko Dub/manifest.json",
+    "bytes": 3669,
+    "sha256": "2eb100566b161cfe3ea8ebe1fc93a93a7837ae212d55b6663954f184a16babe0"
+  },
+  {
+    "path": "Neko Dub/omnivoice-cpu.webp",
+    "bytes": 71956,
+    "sha256": "c2e46aee3c1603b7a46feb2e5ef52957e140a0d03939a6d7b99b81f049475ba2"
+  },
+  {
+    "path": "Neko Dub/omnivoice-generic.webp",
+    "bytes": 75152,
+    "sha256": "973848b12982a9eb57d2fc2551d08804a88c2e7fb765a84a938b8f9a23b5a822"
+  },
+  {
+    "path": "Neko Dub/omnivoice-server-up.webp",
+    "bytes": 74666,
+    "sha256": "b5b04b029e01243a6507ad3d95207eda572be8bfd031d936024f1ba20d1c582d"
+  },
+  {
+    "path": "Neko Dub/omnivoice-step-1.webp",
+    "bytes": 49664,
+    "sha256": "1fe822e29dac5850a15935a154b21f4381d32173bf04bc27c405dd80319a55c5"
+  },
+  {
+    "path": "Neko Dub/omnivoice-step-2.webp",
+    "bytes": 54180,
+    "sha256": "35777c43762666934e83d2da4d73ac4d6b128213dfe21881c8ff5d7576005288"
+  },
+  {
+    "path": "Neko Dub/omnivoice-step-3.webp",
+    "bytes": 47096,
+    "sha256": "f508c787449abae2769352fdd8cb8b93df48a96e64098ca62a2a997868415c56"
+  },
+  {
+    "path": "Neko Dub/omnivoice-step-4.webp",
+    "bytes": 75926,
+    "sha256": "787f14469dec2832db77e081e88a3ac15d91d508e300f18724a5b2c810976eeb"
+  },
+  {
+    "path": "Neko Dub/omnivoice-timeout.webp",
+    "bytes": 74518,
+    "sha256": "4608c4bf396cf877e80929043b62e2b868310a47ea1df44b0402bbff858c08c9"
+  },
+  {
+    "path": "Neko Dub/popup.html",
+    "bytes": 445,
+    "sha256": "dcea172cb62365114c95e84e1da58b56e1bf317197c4c716d7c41300f3ae1ed6"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Bao-Ngoc.wav",
+    "bytes": 406522,
+    "sha256": "696118e00644553cb384b64bf1e83d5c2559a9a3b43fc5f263f7a0a8878e7bcf"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Dang-Khoa.wav",
+    "bytes": 303404,
+    "sha256": "5f2848aec4eb7e47b5e54de4e57901819863f3858860f996e8485edf8bec07c0"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/bao-ngoc/angry.mp3",
+    "bytes": 174288,
+    "sha256": "27009fcc037d2ad9b19be0d6428b8432f70efa000651e530cae438f886b8f469"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/bao-ngoc/bored.mp3",
+    "bytes": 193514,
+    "sha256": "5983be38a114cbe1e06f30d1266b2b36e68b1db1bdec0739754464444205ef52"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/bao-ngoc/excited.mp3",
+    "bytes": 180139,
+    "sha256": "c67e212149ef77f4f29b608b8744a78bddef376d40bd3eb66fb3ddf85866851d"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/bao-ngoc/neutral.mp3",
+    "bytes": 117027,
+    "sha256": "58785220a485181453b18e103a41cf31d4a5956f53937c055e7e871b984ac67e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/bao-ngoc/playful.mp3",
+    "bytes": 198111,
+    "sha256": "86157b4b033553dd9a891f0b26eea78f3f57aafe09617f27852376da09894f9d"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/bao-ngoc/sad.mp3",
+    "bytes": 209814,
+    "sha256": "7f4e7f4214c1aaea145a3e356dd3ce520a3a8274fd6250c21ac5e74a9435b7cd"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/dang-khoa/angry.mp3",
+    "bytes": 150464,
+    "sha256": "38ee1f5d6fdd86da28669d863de2b3431117744573ff3c24607356cf4d075351"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/dang-khoa/bored.mp3",
+    "bytes": 168018,
+    "sha256": "38b326b7c02a31dc6d19b118bb96d1edf9147af68effba71110b507ea63ff487"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/dang-khoa/excited.mp3",
+    "bytes": 152554,
+    "sha256": "4175bf0c9f57b6848d7251c23c8a4f5acb63f149113d73802cefd4bafc1e959e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/dang-khoa/neutral.mp3",
+    "bytes": 101145,
+    "sha256": "cd4915f0b09f4314e3e5c74e02ec4bef2ac5e93c1bbdd321c1fdd1d3facefc96"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/dang-khoa/playful.mp3",
+    "bytes": 166764,
+    "sha256": "0181c7e33d7fdaba472d0f6c9924b9981fba215b42a92b3b9ebfe1dfca6d522e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/dang-khoa/sad.mp3",
+    "bytes": 181393,
+    "sha256": "daab54b738c75ac99e69db45291298d6b460ad81c1027f18f1b645d6693cc440"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/gia-bao/angry.mp3",
+    "bytes": 155479,
+    "sha256": "94448711543aaddd78abf0f67037e194b443a48925f0ce2dbb472c7e216385f8"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/gia-bao/bored.mp3",
+    "bytes": 168854,
+    "sha256": "78184acb5d6a6f7159546a02d58851b50a0bdf13342c0d820d6e92f63e458679"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/gia-bao/excited.mp3",
+    "bytes": 158405,
+    "sha256": "dde125990d96ad8a13454bfd5163ebcb7345de7bbb6e99a835a4edf84aed3a52"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/gia-bao/neutral.mp3",
+    "bytes": 103652,
+    "sha256": "406434c949313a99be1e6a2cc6a0c909d67a31e9222c3c4c2b0b7b00a7fb6993"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/gia-bao/playful.mp3",
+    "bytes": 176377,
+    "sha256": "67bfa8174823e0fb06e9167aa47298962b17205d2a6b05d3fa8a905fba72f084"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/gia-bao/sad.mp3",
+    "bytes": 178049,
+    "sha256": "696d8cdd4682371f9c350614594f645a3c7f3cbcc9809511d8cdfa4996075469"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ha-my/angry.mp3",
+    "bytes": 172616,
+    "sha256": "4e4d45b01e4e49459c0c8802af1180470e2751151d9079173763373dfc8283ce"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ha-my/bored.mp3",
+    "bytes": 206888,
+    "sha256": "5bf0195c30c7ad8227d0ba7f9225e64906d72ce6373464591c4907078c899092"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ha-my/excited.mp3",
+    "bytes": 185990,
+    "sha256": "7fe9d186d723cf3a98cb09511ae7252da19da5a2e6d6ec2e61b8c73873d73d91"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ha-my/neutral.mp3",
+    "bytes": 123714,
+    "sha256": "078d033b3dc11745e4bab997ce4bc05a362c1fc592f5dc512edf38f4ef7cd728"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ha-my/playful.mp3",
+    "bytes": 198529,
+    "sha256": "17bf67db04a2440a08ad01559cab40c7c204ca022da3ef212455d5a0e3b777ed"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ha-my/sad.mp3",
+    "bytes": 211904,
+    "sha256": "212176f5671ddaf460a192810b134850deb33e641278a0deb018ea3fd109fedc"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/hoang-long/angry.mp3",
+    "bytes": 166764,
+    "sha256": "a159bd60507ac256d22dd8bf4faff359fd4ecf7c82c43188f947addfc58e128f"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/hoang-long/bored.mp3",
+    "bytes": 183901,
+    "sha256": "aa407a7fed76ecc4357ea75123c05843bfe3617968cf02d4f9321f218f887e47"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/hoang-long/excited.mp3",
+    "bytes": 165092,
+    "sha256": "eaab3515f151e2d0e04ef2c40a30def79c0330f8b30b2770f76754541c124834"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/hoang-long/neutral.mp3",
+    "bytes": 109504,
+    "sha256": "992b3b19c3f8d1879f89bea3326fbab3fe38f2f4512b9b29b8b1bcd35e3d3c9f"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/hoang-long/playful.mp3",
+    "bytes": 184737,
+    "sha256": "6938d5f18d60714e13c2cb384b5d4baf73c13cb5269e12a5e047f29e2c728e17"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/hoang-long/sad.mp3",
+    "bytes": 191842,
+    "sha256": "96c96f7fbb1776fbdc2f5440a068b794644afc5928ac0ccbc23d9d3e7779e42f"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/khanh-vy/angry.mp3",
+    "bytes": 154643,
+    "sha256": "b632ff8a10af3f88c7549060234e8541c1c764b71426544cbfa568e9fe57bebf"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/khanh-vy/bored.mp3",
+    "bytes": 202291,
+    "sha256": "727e040e8182e6e30a56599e884b2c81a3f5b0f51466fb0bbd761a419656a292"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/khanh-vy/excited.mp3",
+    "bytes": 183901,
+    "sha256": "31b355236c76fd4ff36dc91b34ac7643c8233b0f50cfa0faa4e2703c81fe5fae"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/khanh-vy/neutral.mp3",
+    "bytes": 121207,
+    "sha256": "ec367fbad4470c478097476f0a11a7e16a94c5a05d1e48610d716cf0e1354765"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/khanh-vy/playful.mp3",
+    "bytes": 191842,
+    "sha256": "cb5ba68ba1f0e9f19c49fc7cdee1ebd00ab005585d9c9dcc9d0733779003830a"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/khanh-vy/sad.mp3",
+    "bytes": 210650,
+    "sha256": "61e5e147c077f2c51f80330c2f1a8e22ba01140285dc2d69f37b5646ba27b58e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/lan-anh/angry.mp3",
+    "bytes": 160913,
+    "sha256": "2d6f28958c4fabf162721c6681676497868aa99bda309adea1d46184835dd3ec"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/lan-anh/bored.mp3",
+    "bytes": 173452,
+    "sha256": "c8e9cb3d328541b7dd1c9f95fa43d59b2eda6ff5c28372bb140ac855052e04f1"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/lan-anh/excited.mp3",
+    "bytes": 168854,
+    "sha256": "492f425b5f27204e2ddf2b6de33607d5c0ec6f060678adb048d0453852267c2b"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/lan-anh/neutral.mp3",
+    "bytes": 110340,
+    "sha256": "b6bf9bfbc43ba9fc64eff68487fe3cde447216c681f19220ef3040b300deb931"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/lan-anh/playful.mp3",
+    "bytes": 178049,
+    "sha256": "fc23b315a4fb86b9b291f8bbe2acc9368ade10a7da0421624083c603818c5304"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/lan-anh/sad.mp3",
+    "bytes": 183901,
+    "sha256": "179be914364b1b6586da0e88bf724a58b8cd19cdd090a6cc9183057a890cbb1e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/minh-quan/angry.mp3",
+    "bytes": 140015,
+    "sha256": "880fbb75987a4091423874cf2d08005bdc21560c9906749ad1bdd9e5781374cf"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/minh-quan/bored.mp3",
+    "bytes": 151300,
+    "sha256": "b5188dfdc1101c7270c222082bf501e5fddee21b01f7e8ed58597c86b22542d6"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/minh-quan/excited.mp3",
+    "bytes": 144612,
+    "sha256": "79a6df63167c76fa1128fd7cacfe9ea77c9abe85e9effa2682ade9265ee205e9"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/minh-quan/neutral.mp3",
+    "bytes": 96129,
+    "sha256": "9873df3b666f531cb48bb269f6233135f1e233d862a21fc5bb68c651cd61df27"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/minh-quan/playful.mp3",
+    "bytes": 171362,
+    "sha256": "dba631a02f61d22aecc6b843198a9fc208a9b1c2e1674398601ee03a2d16bfd6"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/minh-quan/sad.mp3",
+    "bytes": 159241,
+    "sha256": "ebadeab9523e7ad0e424f9a68afd71f3598b9026d5a82fbacadf8424d4ae7fb6"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ngoc-linh/angry.mp3",
+    "bytes": 180975,
+    "sha256": "4e7772a1ea1d0fbcf56b861cc24a2b2e9a9b964fa8d1a7844dfee7942d49da40"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ngoc-linh/bored.mp3",
+    "bytes": 177213,
+    "sha256": "841050ad7444ab2674b1f459c25d7ff21d6ac9a0af70f435287bb12a36c10f4b"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ngoc-linh/excited.mp3",
+    "bytes": 178049,
+    "sha256": "ab780342ac91cdc7cf212f72129677d05f15b39499d4c8578c65f2dedf56516a"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ngoc-linh/neutral.mp3",
+    "bytes": 117863,
+    "sha256": "6040bdc9719f4b1c6010bc0903ff6d8bc173c78eb45338ef0129963a92b9967e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ngoc-linh/playful.mp3",
+    "bytes": 191842,
+    "sha256": "d9cfc10d82421f7dd68a1470fef3abfcd763e0e9674fe634c21ba9323ce44de3"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/ngoc-linh/sad.mp3",
+    "bytes": 211904,
+    "sha256": "d84feacb29fb083f7c66e4bead97f979ae1ff092ff3d9d40ad9d2e0ece56f657"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/quang-vinh/angry.mp3",
+    "bytes": 160913,
+    "sha256": "58009b8671e26b5ace142b45cc628e9cf5f0071172d8382bee3ecbefca3c989e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/quang-vinh/bored.mp3",
+    "bytes": 180975,
+    "sha256": "3c2f39fec7d53f0aa7853c117d822e8ad6c36aef18ad22995b5a187a473d192a"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/quang-vinh/excited.mp3",
+    "bytes": 165928,
+    "sha256": "be2499a7b93beb479537dfc2aea4f42fcc3e358b120b8e848937dae31b05be4e"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/quang-vinh/neutral.mp3",
+    "bytes": 107832,
+    "sha256": "9114a547be9ee32bf16b94a202c71fb32c7e8cea4be3b47ddd553a484b087b7b"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/quang-vinh/playful.mp3",
+    "bytes": 188080,
+    "sha256": "4db7e177050516e87499c879e092bcac81090b977ad2b4ac27c080d7aba41888"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/quang-vinh/sad.mp3",
+    "bytes": 188080,
+    "sha256": "4035fa25c17e20294280f3866f00e80fa116e617448edc009f69cc93d8c73525"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/thanh-truc/angry.mp3",
+    "bytes": 154643,
+    "sha256": "bd0adb6117173ff27ae682fdf55a9a233fce51a3125011e3cd1077434abeab4c"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/thanh-truc/bored.mp3",
+    "bytes": 180975,
+    "sha256": "890979df1418d156861ac3ff1b0769031e99db55fb7f3f8c0d886b613531f992"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/thanh-truc/excited.mp3",
+    "bytes": 174706,
+    "sha256": "5ba81d51d18a245313070136d38a13ca5182a20e58d59eb9555e9e494c9239b2"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/thanh-truc/neutral.mp3",
+    "bytes": 110340,
+    "sha256": "e0f6d369cdfc380401420fc4ac032566aa0971d74647397659369522586bcd8d"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/thanh-truc/playful.mp3",
+    "bytes": 171362,
+    "sha256": "f3da781e30e6c6e82ad52dd614d42b835bf9a33328831bc5422e3762b57ee109"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/thanh-truc/sad.mp3",
+    "bytes": 206052,
+    "sha256": "1525ad6687c7f3f084d99695c96f0a2ae577a0b84028fe19a07f07e9e188895b"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/tuan-anh/angry.mp3",
+    "bytes": 178049,
+    "sha256": "cf72260e9f4bdd84240858962252757b2ac56235eb98eebb45987c10b540f943"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/tuan-anh/bored.mp3",
+    "bytes": 176377,
+    "sha256": "99f9143c924520681673fc63a4bf7f8f098db7dea2d3e05fab0b239f3dd7a2f6"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/tuan-anh/excited.mp3",
+    "bytes": 165928,
+    "sha256": "a55c2bef8465baad419a85a82f737f43cc999a3ae092eaaed79c7b27227590b7"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/tuan-anh/neutral.mp3",
+    "bytes": 113266,
+    "sha256": "c430bed91bc769f43feec49d04a55600957f87ff1249c40d17b92585a689e4e5"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/tuan-anh/playful.mp3",
+    "bytes": 180975,
+    "sha256": "8b411eaa5ec8ceaf19f711f29ad3eda5c9c951116290d5ead9e7f54a6ed9fef6"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/emotion/tuan-anh/sad.mp3",
+    "bytes": 194768,
+    "sha256": "fb3a99896dacc1015ad3a654d7d32eac3da7f8ab3bc2829804b9db26ec18e996"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Gia-Bao.wav",
+    "bytes": 417666,
+    "sha256": "2877bd8cf4c0e2d18c9d110621bf60fb061e3708d18b40e105a0569e79d31edb"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Ha-My.wav",
+    "bytes": 483054,
+    "sha256": "13aad076bfa4a643348cec62afad8fc0f7fb60f1a1be8f6b93360864a94c470f"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Hoang-Long.wav",
+    "bytes": 417666,
+    "sha256": "45a7c88f403e12227fd36bda8c9d022f628c04320295f8628d521061203185d8"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Khanh-Vy.wav",
+    "bytes": 356632,
+    "sha256": "ae2abba958939835c53e185bcb081238fd3a5bcad1290732ee98236017aca714"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Lan-Anh.wav",
+    "bytes": 397604,
+    "sha256": "5d4e3ee095403d2309f5f73f7e720e2520a7907aa90c0bd9dbefc82276d5e987"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Minh-Quan.wav",
+    "bytes": 354508,
+    "sha256": "638769367d95cd7e56c1e3ecf8db8b282f1c8f77ad0dc3631647c89f80479d72"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Ngoc-Linh.wav",
+    "bytes": 433270,
+    "sha256": "1d5597e18d742b16430efb3a2a921c0492ac1e7ad1308ff9f9aed7bd68a69f80"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Quang-Vinh.wav",
+    "bytes": 313548,
+    "sha256": "7ab60ea2ab9f0ca16597816f0158fc1611275834ea75d47badac4f139df32cb9"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Thanh-Truc.wav",
+    "bytes": 379028,
+    "sha256": "a7255e6a095cd122106a722b3b25a107619b5779a8444ae719eb87938122c8cb"
+  },
+  {
+    "path": "Neko Dub/presets/vietnamese/Tuan-Anh.wav",
+    "bytes": 318764,
+    "sha256": "6280faad4cfa2a240eb9c1c84930cea4250cf9b2fdbb2661cf2964bf4e6b0192"
+  },
+  {
+    "path": "Neko Dub/redeem-night.webp",
+    "bytes": 23838,
+    "sha256": "c7eb392bca3bcf89b4fb0e9da76fa9a8b8c1e095a935011e64d4070ad1d47b7b"
+  },
+  {
+    "path": "Neko Dub/redeem.webp",
+    "bytes": 24016,
+    "sha256": "d7aaa9274ddcf0b1c3ffd66fad59d0ac93f9c3ceaf2d20a493ffc59188d7aeb9"
+  },
+  {
+    "path": "Neko Dub/vendor/lamejs/COPYING",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "path": "Neko Dub/vendor/lamejs/lame.all.js",
+    "bytes": 530087,
+    "sha256": "026bd88846040f357a937cd85821a48492a362eff0812cda734f23fca55fea3b"
+  },
+  {
+    "path": "Neko Dub/vendor/lamejs/LICENSE",
+    "bytes": 7652,
+    "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+  },
+  {
+    "path": "Neko Dub/vendor/lamejs/README.md",
+    "bytes": 1034,
+    "sha256": "b320118f7ca23be2c0754dba8506f419b4077fced06d673a3918386e8089647b"
+  },
+  {
+    "path": "Neko Dub/wxt.svg",
+    "bytes": 1072,
+    "sha256": "e8b659fcd30b4f55427597cbcdcac33c9946d2e5f9e27ed78d6c5697a1d058e8"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/am/messages.json",
+    "bytes": 74745,
+    "sha256": "2bbdf89b09669def80bcdd207f4ae6c114cb5214f188ee81a00e3f0d77a86ffc"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/bg/messages.json",
+    "bytes": 79879,
+    "sha256": "02ee8436ac14b471b8904c4bf7191a8d86b9d12607ba7b3a301c11400fb450f8"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/bn/messages.json",
+    "bytes": 93466,
+    "sha256": "cd4fd13372f685e10d27c4ac4b0724e0d0cf739b7f69e5fd9533b1b90edce089"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ca/messages.json",
+    "bytes": 63251,
+    "sha256": "e4cdebbff3b4fc8575098dace9ccdab692a1337552d757cc21a9f152d458a2d6"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/cs/messages.json",
+    "bytes": 61596,
+    "sha256": "eeb98bd487c94c731ed2b9bca31c8d6d14e86088fb0ed3861310a1ad52b1f0ea"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/da/messages.json",
+    "bytes": 60243,
+    "sha256": "c9b9c8423e16719afd167de18730dc4c4b36de44619655f91553bba276ff222b"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/de/messages.json",
+    "bytes": 63169,
+    "sha256": "c563c72b17f8bee5cc1025d4bf62f174df1154a9676cd5ba59b9e77a10038b1f"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/el/messages.json",
+    "bytes": 83423,
+    "sha256": "fe1bea16d56d44d916a7aad95e4d398201c94ff8dee5e368537c018c4bc925e4"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/en/messages.json",
+    "bytes": 54242,
+    "sha256": "700acdd2a5e7b82eeb24ea0df7dda7735547d625edc820e80f62cf7497e1e771"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/es/messages.json",
+    "bytes": 61866,
+    "sha256": "7c5dfcc3d2a36e1ab187e1ebeaf413aea3f5d9f92e1db5d655a2f480ef41e9c4"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/et/messages.json",
+    "bytes": 59951,
+    "sha256": "a0e0b5c8ec1efccb9ce511e13c332089368c308be09c37011c9997e8d3f6d4da"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/fi/messages.json",
+    "bytes": 61571,
+    "sha256": "40dcf055be7d3de7439c1cc65d6aa4933ca19f30f11622f8d4cfdfabafaf46dc"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/fil/messages.json",
+    "bytes": 63464,
+    "sha256": "2762b5f1273049f52fd6eeb5b7185b70bf60d3cea0e2cefee7e9695bfd5db679"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/fr/messages.json",
+    "bytes": 62761,
+    "sha256": "2c113d7877919a732b75433dfe82cf26da1ab0e91c9c4cb460772265eb0392e2"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/gu/messages.json",
+    "bytes": 90007,
+    "sha256": "415dcaf7c987c44cc0e1e21af125773ea5757db4d626714259e004a8a2462e65"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/hi/messages.json",
+    "bytes": 90008,
+    "sha256": "e0d470d3de02fa2c6f1e0898869b62c5738238d7d2d10e1d1b0d1b4c6f692719"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/hr/messages.json",
+    "bytes": 60675,
+    "sha256": "43886ac296535a501630d7931ae10de25ed772ae012e0a8d8062749343e6bff9"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/hu/messages.json",
+    "bytes": 63494,
+    "sha256": "ff6281bf9775c5a35b9f1816304aa29292bbe087eeb1ef59d600b930d8affb61"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/id/messages.json",
+    "bytes": 59255,
+    "sha256": "5002d43121257e89b3e873c625e0eee02f90f20ad7fb0c744e3e64332cc6c101"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/it/messages.json",
+    "bytes": 61671,
+    "sha256": "9d0e7b4d8a47b95b18dad9770c592abe3b1cb40786b0dcc2324a215efab9e38d"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ja/messages.json",
+    "bytes": 67020,
+    "sha256": "5daea21b9bf498c9a5dda9c46b07fe6611a2a8ef44f60fb8676fc3de547ee573"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/kn/messages.json",
+    "bytes": 99886,
+    "sha256": "808101f759e3b1c437bc48b62b96ad57ba5c152333f3bced68a84afe424b8b95"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ko/messages.json",
+    "bytes": 63933,
+    "sha256": "e44924911943f411c09f811bc3d0ab2be7cf98bbc13cb5983f9c2d9ede1ead6f"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/lt/messages.json",
+    "bytes": 62083,
+    "sha256": "2f232df37fd0d8c6e6363abeb0868134439cffea3060c6fbfedb09b95c11a4e3"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/lv/messages.json",
+    "bytes": 62000,
+    "sha256": "b07f1604a8fe01006a268efc3b6a33bfcda4d56729258ca26d6b76166b652566"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ml/messages.json",
+    "bytes": 103878,
+    "sha256": "5e736f3e340c85330db92e49903fddbe6cd57a7345ac6b6a48fc56887a04909e"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/mr/messages.json",
+    "bytes": 92159,
+    "sha256": "ff8df5aa3903fae84808f83696b79b76cb35b64ed64023ede6f5054475f17cb3"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ms/messages.json",
+    "bytes": 60646,
+    "sha256": "050f01570093704d0e2d3ccd9c3846d665112a329bbf2b6b89ea908ab3f3d693"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/nb/messages.json",
+    "bytes": 60283,
+    "sha256": "bccd4d7f61e70d87730b159b5b1ec73456e21da26caf9efe88f7924efdc43947"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/nl/messages.json",
+    "bytes": 61407,
+    "sha256": "d04a81c2ecbe314d914376792e2ee7bba9332b5f0dd2e3299073ca144bda86c6"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/no/messages.json",
+    "bytes": 59503,
+    "sha256": "d2795759acf22131353a87adc24d728275ccb4c84dec036a8c288d32608a9442"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/pl/messages.json",
+    "bytes": 61794,
+    "sha256": "06805120c6ba61fb9978cc04e82089b3269689cbc90bdeca8f4805afc51f32df"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/pt_BR/messages.json",
+    "bytes": 60419,
+    "sha256": "d8babd7ff1510d211381ef8827e4a8ddacf6beae29043c6aff8f61dac2eb8501"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/pt_PT/messages.json",
+    "bytes": 62065,
+    "sha256": "e5259e416108645cbcfbeb6cd5f371c43f8d69960700e374ae5f66736ed275ee"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ro/messages.json",
+    "bytes": 63384,
+    "sha256": "50402f128f10beb4ff9ec5cd44ddfc9f37dba27aca170e3614475fdbd821d99d"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ru/messages.json",
+    "bytes": 77867,
+    "sha256": "740304e6a0da6cdd71d31077711a731fe26c9b513024e341d65657555f2b1f88"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/sk/messages.json",
+    "bytes": 61513,
+    "sha256": "213f4bc253c7ef121d9dcb9f66a9fef18fb72cb51f219edbd5f7510fd1f68007"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/sl/messages.json",
+    "bytes": 61021,
+    "sha256": "5a76ba3f236c762df6dfaf92739c5a5c05a909344ea4411db8fe890bb52849e0"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/sr/messages.json",
+    "bytes": 72140,
+    "sha256": "5ed9cc3aefd75d1ce36ab06e766e159dafd6728051e9fa05296cfead130e564e"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/sv/messages.json",
+    "bytes": 61039,
+    "sha256": "febb68b11b5a36626edea16a1a158e4fd9b36e8a528af6b326b4ec617c9eac08"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/sw/messages.json",
+    "bytes": 60955,
+    "sha256": "676641406da77f6bb046aa635dd44fb1891ec33995608b15dfc68acac95c3b0c"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/ta/messages.json",
+    "bytes": 103514,
+    "sha256": "207925be7ddc70eccf773a964ca47568f8dff5bf5e23201810f7b4d679110ad7"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/te/messages.json",
+    "bytes": 99979,
+    "sha256": "35ddc3759e0ac1fe9d2e83bed685b7ef32a6a2aae68115caadf536129f489c0e"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/th/messages.json",
+    "bytes": 88272,
+    "sha256": "338180fab20c7f22af33b1e2a53d1ce910c4bd7afd0c684f71e809e7c5730817"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/tr/messages.json",
+    "bytes": 60683,
+    "sha256": "36d220cde4e56de35e19ccf5c176902a0bee8476242f6252e3c7c431733863b0"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/uk/messages.json",
+    "bytes": 74946,
+    "sha256": "0a250bc503a4a3239c5563441e38dda6871c08cfa6587505ba2154031fe6c076"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/vi/messages.json",
+    "bytes": 59868,
+    "sha256": "65e843796defefdd9e07bef96b0dda8c760cc1274f58d8e78c0c486ed9871909"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/zh_CN/messages.json",
+    "bytes": 56202,
+    "sha256": "6d38789225f88387f4a0357c83c96453f23abb9ea9926a7146dd5446e30dc7d5"
+  },
+  {
+    "path": "Youtube Dubbing/_locales/zh_TW/messages.json",
+    "bytes": 55955,
+    "sha256": "bf6163dfab10951a0324fa6c42e5d5e99c1c10f241b1e17778793d7e054782e9"
+  },
+  {
+    "path": "Youtube Dubbing/apify-error-core.js",
+    "bytes": 9408,
+    "sha256": "9260887bd7725222477b948ebd0319005e1a9baf19d7e1c62391e0e89f018094"
+  },
+  {
+    "path": "Youtube Dubbing/apify-resolver-core.js",
+    "bytes": 17669,
+    "sha256": "b0ece19812ce95257c24d8b237e510824b2ae65b541871f4bd3c0b6f09b372a3"
+  },
+  {
+    "path": "Youtube Dubbing/asr-language-core.js",
+    "bytes": 2660,
+    "sha256": "918874c0b8ff6b1c98eb646d898e6becba900ccd8e7a0e17af52c15b028ef711"
+  },
+  {
+    "path": "Youtube Dubbing/assets/Dropdown-Bm0rdZ66.css",
+    "bytes": 33624,
+    "sha256": "c962a563548d16363af2d80fdbb378c12c54bbb165adaa733c3ed9da49f46548"
+  },
+  {
+    "path": "Youtube Dubbing/assets/local-player-CuWkYub2.css",
+    "bytes": 129818,
+    "sha256": "babd10e4bd31686b69dbff5dfdd205300852ecde77a71ebe8163ea4a9b9357f7"
+  },
+  {
+    "path": "Youtube Dubbing/assets/options-CjyD2wvE.css",
+    "bytes": 314,
+    "sha256": "864b36167875ae89a9d3d7faf2fa17b8d7cc6f5eba5a0970b3e442444af53498"
+  },
+  {
+    "path": "Youtube Dubbing/assets/popup-BEZ7RqYQ.css",
+    "bytes": 2070,
+    "sha256": "0ff16b232ec1dce5110993afe03e101dc4a5bb0ca0f8b7af8cb0fbe3e35da9cf"
+  },
+  {
+    "path": "Youtube Dubbing/assets/RealtimeDubbingEngine-BJi8H_Dl.css",
+    "bytes": 2844,
+    "sha256": "8cb48c37f60ed293a0e18160b1c7037cb14955bfd767b40d5549a37f02a1cec5"
+  },
+  {
+    "path": "Youtube Dubbing/audio-lifecycle-core.js",
+    "bytes": 5201,
+    "sha256": "16081b192e057d84b84eea1b09b8a8c04221060a8ba7c1ed5dff0e9bd403decd"
+  },
+  {
+    "path": "Youtube Dubbing/audio-platform-core.js",
+    "bytes": 4102,
+    "sha256": "3a0c069a49d907f598cfbfb7ebc0f6dee91c4cb6bb7bc34babf0d962d891fc89"
+  },
+  {
+    "path": "Youtube Dubbing/background.js",
+    "bytes": 937464,
+    "sha256": "c530d6519b93f2d40c2ad4f4f9352cab651e85c17a918d3255192306f3abb070"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/corporate.ogg",
+    "bytes": 1087319,
+    "sha256": "75a30d78f77952182ae6a76fc659c5b934d64342309e3d5400241d7efec43eaa"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/emotional.ogg",
+    "bytes": 859958,
+    "sha256": "bf7067417f185ec30487418340f0c7da6c0c40a8961efc73d62aed21fe76be9d"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/epic.ogg",
+    "bytes": 1023702,
+    "sha256": "3eec1e86e6d033d1a0feed8d18b717b8985fa5bb683722a7ec1da100349e71d7"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/koto.ogg",
+    "bytes": 2157826,
+    "sha256": "fe4ea5d9c24a06eeb9523348e849d5ea34fde2457400ac4f778cce8d3d557a4d"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/minimal.ogg",
+    "bytes": 1499567,
+    "sha256": "f387dce38cfbeae6f980341208ec3da79d0e44ccd156c7b9fc9a8e7444d581a2"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/moonlit.ogg",
+    "bytes": 2183870,
+    "sha256": "f8a9ef5fd41ff229394b8c4915f10fac0d2005300f7ca6ecddfe5a492a8e79d3"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/quirky.ogg",
+    "bytes": 587110,
+    "sha256": "7f7651015a841f16e78e4bf3a3ee76643fbc5e7d632d5931a0e973893e43dde7"
+  },
+  {
+    "path": "Youtube Dubbing/bgm/technology.ogg",
+    "bytes": 827142,
+    "sha256": "652091d1ae13dec203e9ef0d5478a9136e158be9b006852944a484cd84bbd535"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/_plugin-vue_export-helper-s9b7xfAc.js",
+    "bytes": 557820,
+    "sha256": "edf8533c5bc99b429ea5fda0177259849367885ab00cfbf45d59032a45914f67"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/Dropdown-CFYvsfbz.js",
+    "bytes": 16371,
+    "sha256": "8ec4da7d5bf2f8c93c6a5ae170f2dc44c38f5f97eba4369fc905b63bfcf524ec"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/errors-DBhr8Giv.js",
+    "bytes": 1302,
+    "sha256": "c7c5355ab8e79b69ad849f187adac18d328ac51ade6e3a1adceb9a25ec99a7af"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/local-player-ZGmBd_r1.js",
+    "bytes": 2758784,
+    "sha256": "97e4de00b3d0e9f37424090c2bc7b8a108d23402d2c75c89bdda869388671eb8"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/options-BtE4vpBt.js",
+    "bytes": 176071,
+    "sha256": "78647e1f0ecd1887b092e40e9f3a8b0ada143216e8e9dfd4ad4c764db28b3e17"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/popup-p2eC7O9h.js",
+    "bytes": 103131,
+    "sha256": "0b5dfd5d290886bce832e243285769d46e9494d51aab460e342ce953ec1fdbfc"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/PronunciationVoiceCapabilities-BCl-gm3V.js",
+    "bytes": 2818,
+    "sha256": "ea60b6aaeaadae7c1e2942da12f78b40a748b8526f7ad22e1180191eb8f88067"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/RealtimeDubbingEngine-dw5e_iKG.js",
+    "bytes": 135393,
+    "sha256": "a16dfd3de38cbfd01c054f4302e58c327997d0e3a8428d3b3f319357adde7e5e"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/srt-parser-w9jABmuB.js",
+    "bytes": 674,
+    "sha256": "cd159d2403b1186986c3de52ea4c70f5d8f30b8fcbd887d6adf9b7cf76172e6f"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/ssa-parser-CtlYyYjB.js",
+    "bytes": 5377,
+    "sha256": "2c162d800df2fd7906f2529620d32b3033253213b41d5fa9d925d3d9a0ee16be"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/static.extrasmall-B-BibU5_.js",
+    "bytes": 977742,
+    "sha256": "b80e80419c57e919a7265a726477e008ffad5f03d256f82f0a225a79d15b7fbf"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/SubtitleOverlayStyle-DOfNoHcs.js",
+    "bytes": 2900,
+    "sha256": "a6302e7d50846e5881d840434ab799c4a2c190d103a45b9df43375820f350ade"
+  },
+  {
+    "path": "Youtube Dubbing/chunks/TranslateEngineModelMigration-FClEe1qP.js",
+    "bytes": 28119,
+    "sha256": "e5f75f1baa15a16332b75f83d57086fdd439b8b6997043a4ebb638eff66af951"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/apify-deepgram-asr.js",
+    "bytes": 11593,
+    "sha256": "52ec1457f26bcfb401ebb55e0085695f68b99547bde058b867fd690aa40ad26b"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/azure-force.js",
+    "bytes": 5155,
+    "sha256": "f13ac34c274c1a59a6724b860d1ed12377e15729f4a9bc8e4d8645f8da4fb8fe"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/bgm-control.js",
+    "bytes": 6725,
+    "sha256": "88bf1b7239b9f01a1a4c8f1ffed18cd9e5b10d1a5122ddddb81b98d06501cb91"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/content.css",
+    "bytes": 74892,
+    "sha256": "ae274d904a54ed89dbe1d0c082230d4a0a69f7a12f08f8673aea5854f14c6c70"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/content.js",
+    "bytes": 4522916,
+    "sha256": "709fdd1c1edf17f8393a6b566b7c479e5b13557c8c45dfd9a712fc1297f21fc4"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/googleDriveButton.css",
+    "bytes": 855,
+    "sha256": "61702b8dc6d97128ff5ad97daeb4be998033c29667a15a884f7f4d560c486506"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/googleDriveButton.js",
+    "bytes": 1740676,
+    "sha256": "9de618a139072d829e561b14adbc34e5e193db899afd6f1c39b8e361267003b1"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/kinescopeEarlyCapture.js",
+    "bytes": 1604,
+    "sha256": "4b5d1592eea7bf56c9c09b6ca0a9235e22450b0d4e96163ed237175f142b5cb9"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/media-audio-unlock.js",
+    "bytes": 4492,
+    "sha256": "ac7aaf1e40df5584e67167b6ba9115d1e4e61283bab825a4cd8e6c7390dc09cf"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/metadata.js",
+    "bytes": 1775844,
+    "sha256": "942f5bba3b04b6cfea1c57d818a525d8b101afc7f550f56c9563aa952cdfeeee"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/sidebar.css",
+    "bytes": 19963,
+    "sha256": "c6fbe971b42f541a82e11945ab40d8405bc30e4615544ad484493fd9241761b0"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/sidebar.js",
+    "bytes": 1748971,
+    "sha256": "f8d95f1f9373cdc040c7cc175eea531f832fd1e4b8c2db86f49e40ada9536fee"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/ui-translate.js",
+    "bytes": 10489,
+    "sha256": "62d8b831a8fa421354df9fbb238471923713c6fa1606e94420cd2706f82d6ba9"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/youtube-bilingual-sidebar.js",
+    "bytes": 39073,
+    "sha256": "f66484444ffd5159db4ae620a599b7dcf19a9fcfaeddeb862f03261a1571adf8"
+  },
+  {
+    "path": "Youtube Dubbing/content-scripts/youtube-caption-probe.js",
+    "bytes": 1521,
+    "sha256": "f635a337daf5bcd24f1a80783a82f556818273423808acf41f0ba97d62267905"
+  },
+  {
+    "path": "Youtube Dubbing/C\u00e1c website extension h\u1ed7 tr\u1ee3.txt",
+    "bytes": 3538,
+    "sha256": "0ea15d94d62f58578781b0ef122e585395921bf3a126d5632a4a3945a59f83d4"
+  },
+  {
+    "path": "Youtube Dubbing/icon/128.png",
+    "bytes": 15178,
+    "sha256": "5f5b5cebb020937e9743fd3d3311a73cbb7a9328c8d6bee84a71746078886b4d"
+  },
+  {
+    "path": "Youtube Dubbing/icon/16.png",
+    "bytes": 628,
+    "sha256": "a7e6a821b3f777470bec4e957daf6f1d0a4fb8cdee1fd7645ee7aa71358611e3"
+  },
+  {
+    "path": "Youtube Dubbing/icon/32.png",
+    "bytes": 1447,
+    "sha256": "541411fb15214cdd9439e9bef4ffd362fa376056882300e78c5e547bbc708291"
+  },
+  {
+    "path": "Youtube Dubbing/icon/48.png",
+    "bytes": 2999,
+    "sha256": "3a43a9245a14e48561fcc7e6432e53882a51c481e3edfdaebfb13f7278dfe732"
+  },
+  {
+    "path": "Youtube Dubbing/icon/96.png",
+    "bytes": 10048,
+    "sha256": "a9e289f11de7a21462fa08bcd210d1179f2c4ea872939436ea5c61d23e017bdf"
+  },
+  {
+    "path": "Youtube Dubbing/images/blue_play_btn.svg",
+    "bytes": 662,
+    "sha256": "f4d66364e4ea3d7b049aa985c5fedb3ff773303e0339e5eb3a3f3e9917d0ebd6"
+  },
+  {
+    "path": "Youtube Dubbing/images/customer-support-avatar.png",
+    "bytes": 344811,
+    "sha256": "442e18d6fd8e30e4d6ee4669ca769e49b056a84dd50add7084b3131cfcbe152d"
+  },
+  {
+    "path": "Youtube Dubbing/images/default_play_btn.png",
+    "bytes": 4416,
+    "sha256": "3e9fcb1701157dc0744564aeb5d6799f05a954ae779a2de08425f1dce60dbe58"
+  },
+  {
+    "path": "Youtube Dubbing/images/green_pause_btn.png",
+    "bytes": 21882,
+    "sha256": "5371d90e84692a56a302132ce096adeff1359b986e206453601c6eef2b428910"
+  },
+  {
+    "path": "Youtube Dubbing/images/green_play_btn.png",
+    "bytes": 4473,
+    "sha256": "82bb77190fea0d4113cf9a54838bca01309c02a8f5cb3e3c23c096956627741f"
+  },
+  {
+    "path": "Youtube Dubbing/images/ios_default.png",
+    "bytes": 5859,
+    "sha256": "51e52161735dc4bd488cc8bda58725b510df8c84b97c6574d49a12d468645fed"
+  },
+  {
+    "path": "Youtube Dubbing/images/red_play_btn.png",
+    "bytes": 4430,
+    "sha256": "915c4c7bab81910d8fd59a1c6df703a46338b00569d34cf4b8cab4514fe29807"
+  },
+  {
+    "path": "Youtube Dubbing/images/subtitle_preview_bg.png",
+    "bytes": 931550,
+    "sha256": "b24cfc64c5a01277e220607529a17dde20538f342391dc8ddecfb01098e5b65b"
+  },
+  {
+    "path": "Youtube Dubbing/images/yellow_play_btn.png",
+    "bytes": 4419,
+    "sha256": "6c532ce09341ffd24422ffc09227fa435514006e1947bb87a5402ff7c9db6776"
+  },
+  {
+    "path": "Youtube Dubbing/injectScript.js",
+    "bytes": 2082811,
+    "sha256": "e8cff06bfd1ad82965f687567e14bb06ae8d2627818a356aee3fdc5e82258e83"
+  },
+  {
+    "path": "Youtube Dubbing/ios-memory-manager.js",
+    "bytes": 2100,
+    "sha256": "f84c2f5d9269c4ef2cd949d2ce86b6e22cd7db7c100c3805383e0992ba9ded30"
+  },
+  {
+    "path": "Youtube Dubbing/ios-no-local-video.js",
+    "bytes": 808,
+    "sha256": "7ddf57041af2d2fae5bafa7ea097eac6cc9e84604bcf77f0765008da41921dbc"
+  },
+  {
+    "path": "Youtube Dubbing/iosInjectScript.js",
+    "bytes": 130336,
+    "sha256": "52dceb682284e293bfdbe13589af02172b118d350f8af995b0a94ca6ffaed89f"
+  },
+  {
+    "path": "Youtube Dubbing/local-audio-extractor.js",
+    "bytes": 14243,
+    "sha256": "b9855eee8f79a95c504a68879c744763fd746fa8c7e502499d549b4e13585710"
+  },
+  {
+    "path": "Youtube Dubbing/local-player-quick.js",
+    "bytes": 56577,
+    "sha256": "3cad8cf5f535313b2843793a03ee2155d7f09a74c9ce03bd71a0a6526cfbdab8"
+  },
+  {
+    "path": "Youtube Dubbing/local-player.html",
+    "bytes": 960,
+    "sha256": "5e8cd80b7c42211c0bbffee34836de7041291fb6b8ffcbe2c6e645104d3cccf7"
+  },
+  {
+    "path": "Youtube Dubbing/manifest.ios.json",
+    "bytes": 7702,
+    "sha256": "7b0ea68ad2c4c3426c534fbb7d99d17f623f24817d41a4cec88cd86d36ddeb75"
+  },
+  {
+    "path": "Youtube Dubbing/manifest.json",
+    "bytes": 5053,
+    "sha256": "334a505f59b419b55ee9829a1eaec922c1440317209f4fb8ca55b33aa3435838"
+  },
+  {
+    "path": "Youtube Dubbing/options-embedded.css",
+    "bytes": 984,
+    "sha256": "69465923a8b0bc58ad93b95369dc1cb91a88b84a66ac759ca601468ab4cbba03"
+  },
+  {
+    "path": "Youtube Dubbing/options-embedded.js",
+    "bytes": 162,
+    "sha256": "e2a41a256361c32b4238111c6c28230bd668a01d9d5fad8193ef8b307308dc37"
+  },
+  {
+    "path": "Youtube Dubbing/options.html",
+    "bytes": 1223,
+    "sha256": "283e70315f64253454e254d372034c6ddd1b82d3c2d018256560fdff4185a488"
+  },
+  {
+    "path": "Youtube Dubbing/popup-apify-deepgram.js",
+    "bytes": 12446,
+    "sha256": "88db69637b26c6593e343b609c9860c747207aee590c5a02654ca7cd29b53ba1"
+  },
+  {
+    "path": "Youtube Dubbing/popup-bgm-control.js",
+    "bytes": 9262,
+    "sha256": "ae264592f6243eee5b708d3f972e33fc1bb5d9b3e117a6a5269fd7d6e84e6bdf"
+  },
+  {
+    "path": "Youtube Dubbing/popup-settings-integrated.js",
+    "bytes": 5886,
+    "sha256": "d2b4fc38b9ec3325558050ea588881eefdd433231c8498e93a9898b0d7fdb12a"
+  },
+  {
+    "path": "Youtube Dubbing/popup-ui-polish.js",
+    "bytes": 5527,
+    "sha256": "a4a5447b555ee8c3f72c3c00c15fbaec729f8b34c4301d82d8f7dd44c4337a5e"
+  },
+  {
+    "path": "Youtube Dubbing/popup.html",
+    "bytes": 1207,
+    "sha256": "21980b56059ca74321ba6ccdff0b20bb1e116d1a8ed4479851f3a64ea617eebb"
+  },
+  {
+    "path": "Youtube Dubbing/runtime/client-gate-controller.js",
+    "bytes": 2395,
+    "sha256": "1068cbe25f671dbf5a7df0e720b4618779d7c884b5fd2272d407de384b3376e1"
+  },
+  {
+    "path": "Youtube Dubbing/runtime/qa-bootstrap.js",
+    "bytes": 1085,
+    "sha256": "4cff4797ff9009b35c26055e5bb13ddf63a6532917fa00391d93335516b9ec4e"
+  },
+  {
+    "path": "Youtube Dubbing/runtime/session-bridge.js",
+    "bytes": 3550,
+    "sha256": "359a943672e3a1e54fe27d5fe29d7ea724e51567aedcd57038e16f14a7b839a8"
+  },
+  {
+    "path": "Youtube Dubbing/runtime/translation-entitlement-background-monitor.js",
+    "bytes": 7119,
+    "sha256": "6e7153efba12ce98bc61bea530172fc3ce2a0922fcb053f43571af129732e870"
+  },
+  {
+    "path": "Youtube Dubbing/runtime/translation-entitlement-monitor.js",
+    "bytes": 6774,
+    "sha256": "28671c9fe7c9193b74a6bdb54f0f6a801befc09b63042ca8907b134ae0704b3c"
+  },
+  {
+    "path": "Youtube Dubbing/ui-translate-background.js",
+    "bytes": 1341,
+    "sha256": "e7a41c71327d7f5749f3c8d91e2b1a88829b003d84e062dc3080bf4a0c1a33ff"
+  },
+  {
+    "path": "Youtube Dubbing/wxt.svg",
+    "bytes": 1072,
+    "sha256": "e8b659fcd30b4f55427597cbcdcac33c9946d2e5f9e27ed78d6c5697a1d058e8"
+  }
+]

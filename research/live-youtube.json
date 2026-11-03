@@ -1,0 +1,46 @@
+{
+  "flow": "youtube",
+  "checks": [
+    {
+      "elapsed": 8.062999999994645,
+      "cues": [
+        {
+          "end": 1.52,
+          "id": 0,
+          "start": 1.12,
+          "text": "Alright.",
+          "translated": "Được rồi."
+        },
+        {
+          "end": 3.7599998,
+          "id": 1,
+          "start": 1.52,
+          "text": "So here we are, one of the elephants.",
+          "translated": "Thế là chúng ta đang ở đây, ngay cạnh một trong những chú voi."
+        },
+        {
+          "end": 10.879999,
+          "id": 2,
+          "start": 5.12,
+          "text": "Cool thing about these guys is that is that they have really, really, really long",
+          "translated": "Điều tuyệt vời ở những anh chàng này là chúng có chiếc vòi"
+        },
+        {
+          "end": 13.759999,
+          "id": 3,
+          "start": 11.92,
+          "text": "plums, and that's that's cool.",
+          "translated": "thực sự, thực sự, thực sự rất dài, và điều đó thật tuyệt."
+        },
+        {
+          "end": 18.4405,
+          "id": 4,
+          "start": 16.6805,
+          "text": "And that's pretty much all there is to say.",
+          "translated": "Và đó hầu như là tất cả những gì cần nói."
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

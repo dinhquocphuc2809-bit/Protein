@@ -1,0 +1,19 @@
+{
+  "role": "tts",
+  "started_at": 1793670757.9069903,
+  "preparation": {
+    "prepare_seconds": 0.1762887580000001,
+    "revisions": {
+      "k2-fsa/OmniVoice": "c5fdb5ccb189668d56333f77ba2629f4cd7535f4"
+    }
+  },
+  "runs": [
+    {
+      "gpu_requested": "L4",
+      "language": "Vietnamese",
+      "repeat": 0,
+      "error_type": "TimeoutError",
+      "error": ""
+    }
+  ]
+}

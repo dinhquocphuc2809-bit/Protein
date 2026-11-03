@@ -1,0 +1,25 @@
+{
+  "flow": "apify",
+  "checks": [
+    {
+      "elapsed": 15.89100000000326,
+      "cues": [
+        {
+          "end": 7.76,
+          "id": 0,
+          "start": 6.72,
+          "text": "Woah.",
+          "translated": "Woah."
+        },
+        {
+          "end": 9.12,
+          "id": 1,
+          "start": 8.24,
+          "text": "Woah.",
+          "translated": "Woah."
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

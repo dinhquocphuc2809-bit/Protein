@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "Firefox MV3 background scripts, presets, real ticket and Modal authentication",
+    "Firefox TextTrack acquisition, real translation and real dubbed audio playback to end"
+  ],
+  "passed": true,
+  "browser_version": "159.0"
+}

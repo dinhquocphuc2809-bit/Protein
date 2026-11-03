@@ -1,0 +1,134 @@
+{
+  "elapsed_seconds": 52.71799999999348,
+  "result": {
+    "words": [
+      {
+        "text": " xin",
+        "start": 0.18,
+        "end": 0.32
+      },
+      {
+        "text": " chào.",
+        "start": 0.32,
+        "end": 0.58
+      },
+      {
+        "text": " đây",
+        "start": 1.7,
+        "end": 1.72
+      },
+      {
+        "text": " là",
+        "start": 1.72,
+        "end": 1.84
+      },
+      {
+        "text": " đoạn",
+        "start": 1.84,
+        "end": 2.0
+      },
+      {
+        "text": " văn",
+        "start": 2.0,
+        "end": 2.18
+      },
+      {
+        "text": " bản",
+        "start": 2.18,
+        "end": 2.32
+      },
+      {
+        "text": " mẫu",
+        "start": 2.32,
+        "end": 2.68
+      },
+      {
+        "text": " để",
+        "start": 2.68,
+        "end": 2.82
+      },
+      {
+        "text": " thử",
+        "start": 2.82,
+        "end": 2.96
+      },
+      {
+        "text": " nghiệm",
+        "start": 2.96,
+        "end": 3.18
+      },
+      {
+        "text": " giọng",
+        "start": 3.18,
+        "end": 3.36
+      },
+      {
+        "text": " nói",
+        "start": 3.36,
+        "end": 3.48
+      },
+      {
+        "text": " tiếng",
+        "start": 3.48,
+        "end": 3.7
+      },
+      {
+        "text": " Việt.",
+        "start": 3.7,
+        "end": 3.88
+      },
+      {
+        "text": " hãy",
+        "start": 4.532,
+        "end": 4.632
+      },
+      {
+        "text": " chọn",
+        "start": 4.632,
+        "end": 4.792
+      },
+      {
+        "text": " một",
+        "start": 4.792,
+        "end": 4.912
+      },
+      {
+        "text": " dòng",
+        "start": 4.912,
+        "end": 5.092
+      },
+      {
+        "text": " nói",
+        "start": 5.092,
+        "end": 5.272
+      },
+      {
+        "text": " phù",
+        "start": 5.272,
+        "end": 5.492
+      },
+      {
+        "text": " hợp",
+        "start": 5.612,
+        "end": 5.712
+      },
+      {
+        "text": " với",
+        "start": 5.712,
+        "end": 5.772
+      },
+      {
+        "text": " sở",
+        "start": 5.772,
+        "end": 5.972
+      },
+      {
+        "text": " thích.",
+        "start": 5.972,
+        "end": 6.212
+      }
+    ],
+    "language": "Vietnamese",
+    "duration": 6.32
+  }
+}

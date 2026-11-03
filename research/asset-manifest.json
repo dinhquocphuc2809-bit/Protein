@@ -1,0 +1,504 @@
+{
+  "source": "User-supplied Neko Dub 1.2.3",
+  "redistribution_license": "not_found",
+  "single_voice_per_session": true,
+  "presets": 84,
+  "assets": [
+    {
+      "path": "presets/vietnamese/Bao-Ngoc.wav",
+      "bytes": 406522,
+      "sha256": "696118e00644553cb384b64bf1e83d5c2559a9a3b43fc5f263f7a0a8878e7bcf",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 6.3506875
+    },
+    {
+      "path": "presets/vietnamese/Dang-Khoa.wav",
+      "bytes": 303404,
+      "sha256": "5f2848aec4eb7e47b5e54de4e57901819863f3858860f996e8485edf8bec07c0",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_seconds": 6.32
+    },
+    {
+      "path": "presets/vietnamese/emotion/bao-ngoc/angry.mp3",
+      "bytes": 174288,
+      "sha256": "27009fcc037d2ad9b19be0d6428b8432f70efa000651e530cae438f886b8f469"
+    },
+    {
+      "path": "presets/vietnamese/emotion/bao-ngoc/bored.mp3",
+      "bytes": 193514,
+      "sha256": "5983be38a114cbe1e06f30d1266b2b36e68b1db1bdec0739754464444205ef52"
+    },
+    {
+      "path": "presets/vietnamese/emotion/bao-ngoc/excited.mp3",
+      "bytes": 180139,
+      "sha256": "c67e212149ef77f4f29b608b8744a78bddef376d40bd3eb66fb3ddf85866851d"
+    },
+    {
+      "path": "presets/vietnamese/emotion/bao-ngoc/neutral.mp3",
+      "bytes": 117027,
+      "sha256": "58785220a485181453b18e103a41cf31d4a5956f53937c055e7e871b984ac67e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/bao-ngoc/playful.mp3",
+      "bytes": 198111,
+      "sha256": "86157b4b033553dd9a891f0b26eea78f3f57aafe09617f27852376da09894f9d"
+    },
+    {
+      "path": "presets/vietnamese/emotion/bao-ngoc/sad.mp3",
+      "bytes": 209814,
+      "sha256": "7f4e7f4214c1aaea145a3e356dd3ce520a3a8274fd6250c21ac5e74a9435b7cd"
+    },
+    {
+      "path": "presets/vietnamese/emotion/dang-khoa/angry.mp3",
+      "bytes": 150464,
+      "sha256": "38ee1f5d6fdd86da28669d863de2b3431117744573ff3c24607356cf4d075351"
+    },
+    {
+      "path": "presets/vietnamese/emotion/dang-khoa/bored.mp3",
+      "bytes": 168018,
+      "sha256": "38b326b7c02a31dc6d19b118bb96d1edf9147af68effba71110b507ea63ff487"
+    },
+    {
+      "path": "presets/vietnamese/emotion/dang-khoa/excited.mp3",
+      "bytes": 152554,
+      "sha256": "4175bf0c9f57b6848d7251c23c8a4f5acb63f149113d73802cefd4bafc1e959e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/dang-khoa/neutral.mp3",
+      "bytes": 101145,
+      "sha256": "cd4915f0b09f4314e3e5c74e02ec4bef2ac5e93c1bbdd321c1fdd1d3facefc96"
+    },
+    {
+      "path": "presets/vietnamese/emotion/dang-khoa/playful.mp3",
+      "bytes": 166764,
+      "sha256": "0181c7e33d7fdaba472d0f6c9924b9981fba215b42a92b3b9ebfe1dfca6d522e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/dang-khoa/sad.mp3",
+      "bytes": 181393,
+      "sha256": "daab54b738c75ac99e69db45291298d6b460ad81c1027f18f1b645d6693cc440"
+    },
+    {
+      "path": "presets/vietnamese/emotion/gia-bao/angry.mp3",
+      "bytes": 155479,
+      "sha256": "94448711543aaddd78abf0f67037e194b443a48925f0ce2dbb472c7e216385f8"
+    },
+    {
+      "path": "presets/vietnamese/emotion/gia-bao/bored.mp3",
+      "bytes": 168854,
+      "sha256": "78184acb5d6a6f7159546a02d58851b50a0bdf13342c0d820d6e92f63e458679"
+    },
+    {
+      "path": "presets/vietnamese/emotion/gia-bao/excited.mp3",
+      "bytes": 158405,
+      "sha256": "dde125990d96ad8a13454bfd5163ebcb7345de7bbb6e99a835a4edf84aed3a52"
+    },
+    {
+      "path": "presets/vietnamese/emotion/gia-bao/neutral.mp3",
+      "bytes": 103652,
+      "sha256": "406434c949313a99be1e6a2cc6a0c909d67a31e9222c3c4c2b0b7b00a7fb6993"
+    },
+    {
+      "path": "presets/vietnamese/emotion/gia-bao/playful.mp3",
+      "bytes": 176377,
+      "sha256": "67bfa8174823e0fb06e9167aa47298962b17205d2a6b05d3fa8a905fba72f084"
+    },
+    {
+      "path": "presets/vietnamese/emotion/gia-bao/sad.mp3",
+      "bytes": 178049,
+      "sha256": "696d8cdd4682371f9c350614594f645a3c7f3cbcc9809511d8cdfa4996075469"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ha-my/angry.mp3",
+      "bytes": 172616,
+      "sha256": "4e4d45b01e4e49459c0c8802af1180470e2751151d9079173763373dfc8283ce"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ha-my/bored.mp3",
+      "bytes": 206888,
+      "sha256": "5bf0195c30c7ad8227d0ba7f9225e64906d72ce6373464591c4907078c899092"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ha-my/excited.mp3",
+      "bytes": 185990,
+      "sha256": "7fe9d186d723cf3a98cb09511ae7252da19da5a2e6d6ec2e61b8c73873d73d91"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ha-my/neutral.mp3",
+      "bytes": 123714,
+      "sha256": "078d033b3dc11745e4bab997ce4bc05a362c1fc592f5dc512edf38f4ef7cd728"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ha-my/playful.mp3",
+      "bytes": 198529,
+      "sha256": "17bf67db04a2440a08ad01559cab40c7c204ca022da3ef212455d5a0e3b777ed"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ha-my/sad.mp3",
+      "bytes": 211904,
+      "sha256": "212176f5671ddaf460a192810b134850deb33e641278a0deb018ea3fd109fedc"
+    },
+    {
+      "path": "presets/vietnamese/emotion/hoang-long/angry.mp3",
+      "bytes": 166764,
+      "sha256": "a159bd60507ac256d22dd8bf4faff359fd4ecf7c82c43188f947addfc58e128f"
+    },
+    {
+      "path": "presets/vietnamese/emotion/hoang-long/bored.mp3",
+      "bytes": 183901,
+      "sha256": "aa407a7fed76ecc4357ea75123c05843bfe3617968cf02d4f9321f218f887e47"
+    },
+    {
+      "path": "presets/vietnamese/emotion/hoang-long/excited.mp3",
+      "bytes": 165092,
+      "sha256": "eaab3515f151e2d0e04ef2c40a30def79c0330f8b30b2770f76754541c124834"
+    },
+    {
+      "path": "presets/vietnamese/emotion/hoang-long/neutral.mp3",
+      "bytes": 109504,
+      "sha256": "992b3b19c3f8d1879f89bea3326fbab3fe38f2f4512b9b29b8b1bcd35e3d3c9f"
+    },
+    {
+      "path": "presets/vietnamese/emotion/hoang-long/playful.mp3",
+      "bytes": 184737,
+      "sha256": "6938d5f18d60714e13c2cb384b5d4baf73c13cb5269e12a5e047f29e2c728e17"
+    },
+    {
+      "path": "presets/vietnamese/emotion/hoang-long/sad.mp3",
+      "bytes": 191842,
+      "sha256": "96c96f7fbb1776fbdc2f5440a068b794644afc5928ac0ccbc23d9d3e7779e42f"
+    },
+    {
+      "path": "presets/vietnamese/emotion/khanh-vy/angry.mp3",
+      "bytes": 154643,
+      "sha256": "b632ff8a10af3f88c7549060234e8541c1c764b71426544cbfa568e9fe57bebf"
+    },
+    {
+      "path": "presets/vietnamese/emotion/khanh-vy/bored.mp3",
+      "bytes": 202291,
+      "sha256": "727e040e8182e6e30a56599e884b2c81a3f5b0f51466fb0bbd761a419656a292"
+    },
+    {
+      "path": "presets/vietnamese/emotion/khanh-vy/excited.mp3",
+      "bytes": 183901,
+      "sha256": "31b355236c76fd4ff36dc91b34ac7643c8233b0f50cfa0faa4e2703c81fe5fae"
+    },
+    {
+      "path": "presets/vietnamese/emotion/khanh-vy/neutral.mp3",
+      "bytes": 121207,
+      "sha256": "ec367fbad4470c478097476f0a11a7e16a94c5a05d1e48610d716cf0e1354765"
+    },
+    {
+      "path": "presets/vietnamese/emotion/khanh-vy/playful.mp3",
+      "bytes": 191842,
+      "sha256": "cb5ba68ba1f0e9f19c49fc7cdee1ebd00ab005585d9c9dcc9d0733779003830a"
+    },
+    {
+      "path": "presets/vietnamese/emotion/khanh-vy/sad.mp3",
+      "bytes": 210650,
+      "sha256": "61e5e147c077f2c51f80330c2f1a8e22ba01140285dc2d69f37b5646ba27b58e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/lan-anh/angry.mp3",
+      "bytes": 160913,
+      "sha256": "2d6f28958c4fabf162721c6681676497868aa99bda309adea1d46184835dd3ec"
+    },
+    {
+      "path": "presets/vietnamese/emotion/lan-anh/bored.mp3",
+      "bytes": 173452,
+      "sha256": "c8e9cb3d328541b7dd1c9f95fa43d59b2eda6ff5c28372bb140ac855052e04f1"
+    },
+    {
+      "path": "presets/vietnamese/emotion/lan-anh/excited.mp3",
+      "bytes": 168854,
+      "sha256": "492f425b5f27204e2ddf2b6de33607d5c0ec6f060678adb048d0453852267c2b"
+    },
+    {
+      "path": "presets/vietnamese/emotion/lan-anh/neutral.mp3",
+      "bytes": 110340,
+      "sha256": "b6bf9bfbc43ba9fc64eff68487fe3cde447216c681f19220ef3040b300deb931"
+    },
+    {
+      "path": "presets/vietnamese/emotion/lan-anh/playful.mp3",
+      "bytes": 178049,
+      "sha256": "fc23b315a4fb86b9b291f8bbe2acc9368ade10a7da0421624083c603818c5304"
+    },
+    {
+      "path": "presets/vietnamese/emotion/lan-anh/sad.mp3",
+      "bytes": 183901,
+      "sha256": "179be914364b1b6586da0e88bf724a58b8cd19cdd090a6cc9183057a890cbb1e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/minh-quan/angry.mp3",
+      "bytes": 140015,
+      "sha256": "880fbb75987a4091423874cf2d08005bdc21560c9906749ad1bdd9e5781374cf"
+    },
+    {
+      "path": "presets/vietnamese/emotion/minh-quan/bored.mp3",
+      "bytes": 151300,
+      "sha256": "b5188dfdc1101c7270c222082bf501e5fddee21b01f7e8ed58597c86b22542d6"
+    },
+    {
+      "path": "presets/vietnamese/emotion/minh-quan/excited.mp3",
+      "bytes": 144612,
+      "sha256": "79a6df63167c76fa1128fd7cacfe9ea77c9abe85e9effa2682ade9265ee205e9"
+    },
+    {
+      "path": "presets/vietnamese/emotion/minh-quan/neutral.mp3",
+      "bytes": 96129,
+      "sha256": "9873df3b666f531cb48bb269f6233135f1e233d862a21fc5bb68c651cd61df27"
+    },
+    {
+      "path": "presets/vietnamese/emotion/minh-quan/playful.mp3",
+      "bytes": 171362,
+      "sha256": "dba631a02f61d22aecc6b843198a9fc208a9b1c2e1674398601ee03a2d16bfd6"
+    },
+    {
+      "path": "presets/vietnamese/emotion/minh-quan/sad.mp3",
+      "bytes": 159241,
+      "sha256": "ebadeab9523e7ad0e424f9a68afd71f3598b9026d5a82fbacadf8424d4ae7fb6"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ngoc-linh/angry.mp3",
+      "bytes": 180975,
+      "sha256": "4e7772a1ea1d0fbcf56b861cc24a2b2e9a9b964fa8d1a7844dfee7942d49da40"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ngoc-linh/bored.mp3",
+      "bytes": 177213,
+      "sha256": "841050ad7444ab2674b1f459c25d7ff21d6ac9a0af70f435287bb12a36c10f4b"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ngoc-linh/excited.mp3",
+      "bytes": 178049,
+      "sha256": "ab780342ac91cdc7cf212f72129677d05f15b39499d4c8578c65f2dedf56516a"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ngoc-linh/neutral.mp3",
+      "bytes": 117863,
+      "sha256": "6040bdc9719f4b1c6010bc0903ff6d8bc173c78eb45338ef0129963a92b9967e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ngoc-linh/playful.mp3",
+      "bytes": 191842,
+      "sha256": "d9cfc10d82421f7dd68a1470fef3abfcd763e0e9674fe634c21ba9323ce44de3"
+    },
+    {
+      "path": "presets/vietnamese/emotion/ngoc-linh/sad.mp3",
+      "bytes": 211904,
+      "sha256": "d84feacb29fb083f7c66e4bead97f979ae1ff092ff3d9d40ad9d2e0ece56f657"
+    },
+    {
+      "path": "presets/vietnamese/emotion/quang-vinh/angry.mp3",
+      "bytes": 160913,
+      "sha256": "58009b8671e26b5ace142b45cc628e9cf5f0071172d8382bee3ecbefca3c989e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/quang-vinh/bored.mp3",
+      "bytes": 180975,
+      "sha256": "3c2f39fec7d53f0aa7853c117d822e8ad6c36aef18ad22995b5a187a473d192a"
+    },
+    {
+      "path": "presets/vietnamese/emotion/quang-vinh/excited.mp3",
+      "bytes": 165928,
+      "sha256": "be2499a7b93beb479537dfc2aea4f42fcc3e358b120b8e848937dae31b05be4e"
+    },
+    {
+      "path": "presets/vietnamese/emotion/quang-vinh/neutral.mp3",
+      "bytes": 107832,
+      "sha256": "9114a547be9ee32bf16b94a202c71fb32c7e8cea4be3b47ddd553a484b087b7b"
+    },
+    {
+      "path": "presets/vietnamese/emotion/quang-vinh/playful.mp3",
+      "bytes": 188080,
+      "sha256": "4db7e177050516e87499c879e092bcac81090b977ad2b4ac27c080d7aba41888"
+    },
+    {
+      "path": "presets/vietnamese/emotion/quang-vinh/sad.mp3",
+      "bytes": 188080,
+      "sha256": "4035fa25c17e20294280f3866f00e80fa116e617448edc009f69cc93d8c73525"
+    },
+    {
+      "path": "presets/vietnamese/emotion/thanh-truc/angry.mp3",
+      "bytes": 154643,
+      "sha256": "bd0adb6117173ff27ae682fdf55a9a233fce51a3125011e3cd1077434abeab4c"
+    },
+    {
+      "path": "presets/vietnamese/emotion/thanh-truc/bored.mp3",
+      "bytes": 180975,
+      "sha256": "890979df1418d156861ac3ff1b0769031e99db55fb7f3f8c0d886b613531f992"
+    },
+    {
+      "path": "presets/vietnamese/emotion/thanh-truc/excited.mp3",
+      "bytes": 174706,
+      "sha256": "5ba81d51d18a245313070136d38a13ca5182a20e58d59eb9555e9e494c9239b2"
+    },
+    {
+      "path": "presets/vietnamese/emotion/thanh-truc/neutral.mp3",
+      "bytes": 110340,
+      "sha256": "e0f6d369cdfc380401420fc4ac032566aa0971d74647397659369522586bcd8d"
+    },
+    {
+      "path": "presets/vietnamese/emotion/thanh-truc/playful.mp3",
+      "bytes": 171362,
+      "sha256": "f3da781e30e6c6e82ad52dd614d42b835bf9a33328831bc5422e3762b57ee109"
+    },
+    {
+      "path": "presets/vietnamese/emotion/thanh-truc/sad.mp3",
+      "bytes": 206052,
+      "sha256": "1525ad6687c7f3f084d99695c96f0a2ae577a0b84028fe19a07f07e9e188895b"
+    },
+    {
+      "path": "presets/vietnamese/emotion/tuan-anh/angry.mp3",
+      "bytes": 178049,
+      "sha256": "cf72260e9f4bdd84240858962252757b2ac56235eb98eebb45987c10b540f943"
+    },
+    {
+      "path": "presets/vietnamese/emotion/tuan-anh/bored.mp3",
+      "bytes": 176377,
+      "sha256": "99f9143c924520681673fc63a4bf7f8f098db7dea2d3e05fab0b239f3dd7a2f6"
+    },
+    {
+      "path": "presets/vietnamese/emotion/tuan-anh/excited.mp3",
+      "bytes": 165928,
+      "sha256": "a55c2bef8465baad419a85a82f737f43cc999a3ae092eaaed79c7b27227590b7"
+    },
+    {
+      "path": "presets/vietnamese/emotion/tuan-anh/neutral.mp3",
+      "bytes": 113266,
+      "sha256": "c430bed91bc769f43feec49d04a55600957f87ff1249c40d17b92585a689e4e5"
+    },
+    {
+      "path": "presets/vietnamese/emotion/tuan-anh/playful.mp3",
+      "bytes": 180975,
+      "sha256": "8b411eaa5ec8ceaf19f711f29ad3eda5c9c951116290d5ead9e7f54a6ed9fef6"
+    },
+    {
+      "path": "presets/vietnamese/emotion/tuan-anh/sad.mp3",
+      "bytes": 194768,
+      "sha256": "fb3a99896dacc1015ad3a654d7d32eac3da7f8ab3bc2829804b9db26ec18e996"
+    },
+    {
+      "path": "presets/vietnamese/Gia-Bao.wav",
+      "bytes": 417666,
+      "sha256": "2877bd8cf4c0e2d18c9d110621bf60fb061e3708d18b40e105a0569e79d31edb",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 6.5248125
+    },
+    {
+      "path": "presets/vietnamese/Ha-My.wav",
+      "bytes": 483054,
+      "sha256": "13aad076bfa4a643348cec62afad8fc0f7fb60f1a1be8f6b93360864a94c470f",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 7.5465
+    },
+    {
+      "path": "presets/vietnamese/Hoang-Long.wav",
+      "bytes": 417666,
+      "sha256": "45a7c88f403e12227fd36bda8c9d022f628c04320295f8628d521061203185d8",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 6.5248125
+    },
+    {
+      "path": "presets/vietnamese/Khanh-Vy.wav",
+      "bytes": 356632,
+      "sha256": "ae2abba958939835c53e185bcb081238fd3a5bcad1290732ee98236017aca714",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_seconds": 7.3445
+    },
+    {
+      "path": "presets/vietnamese/Lan-Anh.wav",
+      "bytes": 397604,
+      "sha256": "5d4e3ee095403d2309f5f73f7e720e2520a7907aa90c0bd9dbefc82276d5e987",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 67108.86396875
+    },
+    {
+      "path": "presets/vietnamese/Minh-Quan.wav",
+      "bytes": 354508,
+      "sha256": "638769367d95cd7e56c1e3ecf8db8b282f1c8f77ad0dc3631647c89f80479d72",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 5.53796875
+    },
+    {
+      "path": "presets/vietnamese/Ngoc-Linh.wav",
+      "bytes": 433270,
+      "sha256": "1d5597e18d742b16430efb3a2a921c0492ac1e7ad1308ff9f9aed7bd68a69f80",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 67108.86396875
+    },
+    {
+      "path": "presets/vietnamese/Quang-Vinh.wav",
+      "bytes": 313548,
+      "sha256": "7ab60ea2ab9f0ca16597816f0158fc1611275834ea75d47badac4f139df32cb9",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_seconds": 6.530625
+    },
+    {
+      "path": "presets/vietnamese/Thanh-Truc.wav",
+      "bytes": 379028,
+      "sha256": "a7255e6a095cd122106a722b3b25a107619b5779a8444ae719eb87938122c8cb",
+      "sample_rate": 32000,
+      "channels": 1,
+      "duration_seconds": 5.92109375
+    },
+    {
+      "path": "presets/vietnamese/Tuan-Anh.wav",
+      "bytes": 318764,
+      "sha256": "6280faad4cfa2a240eb9c1c84930cea4250cf9b2fdbb2661cf2964bf4e6b0192",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_seconds": 6.64
+    },
+    {
+      "path": "bgm/corporate.ogg",
+      "bytes": 1087319,
+      "sha256": "75a30d78f77952182ae6a76fc659c5b934d64342309e3d5400241d7efec43eaa"
+    },
+    {
+      "path": "bgm/emotional.ogg",
+      "bytes": 859958,
+      "sha256": "bf7067417f185ec30487418340f0c7da6c0c40a8961efc73d62aed21fe76be9d"
+    },
+    {
+      "path": "bgm/epic.ogg",
+      "bytes": 1023702,
+      "sha256": "3eec1e86e6d033d1a0feed8d18b717b8985fa5bb683722a7ec1da100349e71d7"
+    },
+    {
+      "path": "bgm/koto.ogg",
+      "bytes": 2157826,
+      "sha256": "fe4ea5d9c24a06eeb9523348e849d5ea34fde2457400ac4f778cce8d3d557a4d"
+    },
+    {
+      "path": "bgm/minimal.ogg",
+      "bytes": 1499567,
+      "sha256": "f387dce38cfbeae6f980341208ec3da79d0e44ccd156c7b9fc9a8e7444d581a2"
+    },
+    {
+      "path": "bgm/moonlit.ogg",
+      "bytes": 2183870,
+      "sha256": "f8a9ef5fd41ff229394b8c4915f10fac0d2005300f7ca6ecddfe5a492a8e79d3"
+    },
+    {
+      "path": "bgm/quirky.ogg",
+      "bytes": 587110,
+      "sha256": "7f7651015a841f16e78e4bf3a3ee76643fbc5e7d632d5931a0e973893e43dde7"
+    },
+    {
+      "path": "bgm/technology.ogg",
+      "bytes": 827142,
+      "sha256": "652091d1ae13dec203e9ef0d5478a9136e158be9b006852944a484cd84bbd535"
+    }
+  ]
+}

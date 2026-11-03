@@ -1,0 +1,40 @@
+{
+  "checks": [
+    "Admin authentication; create/activate/extend/revoke/delete owned test ticket",
+    "No admin route on public API; encrypted provider material absent from admin key response",
+    "Admin browser UI: login, metrics, all keys and live official model catalogs"
+  ],
+  "key_records": 132,
+  "disk_free_bytes": 198639783936,
+  "cache": {
+    "entries": 13,
+    "bytes": 5604
+  },
+  "balance_observations": {
+    "deepgram": {
+      "known": 5,
+      "total": 5
+    },
+    "tunelio": {
+      "known": 120,
+      "total": 120
+    },
+    "deepseek": {
+      "known": 1,
+      "total": 1
+    },
+    "apify": {
+      "known": 2,
+      "total": 2
+    },
+    "gemini": {
+      "known": 0,
+      "total": 1
+    },
+    "modal": {
+      "known": 0,
+      "total": 3
+    }
+  },
+  "passed": true
+}

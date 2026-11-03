@@ -1,0 +1,51 @@
+{
+  "role": "tts",
+  "started_at": 1793670417.8021045,
+  "preparation": {
+    "prepare_seconds": 22.776581748999998,
+    "revisions": {
+      "k2-fsa/OmniVoice": "c5fdb5ccb189668d56333f77ba2629f4cd7535f4"
+    }
+  },
+  "runs": [
+    {
+      "audio_seconds": 3.06,
+      "sample_rate": 24000,
+      "inference_seconds": 2.1722599979999995,
+      "init_seconds": 7.878721498000001,
+      "call": 1,
+      "gpu": "Tesla T4",
+      "peak_vram_bytes": 2319246848,
+      "peak_rss_kib": 8328184,
+      "rtf": 0.709888888235294,
+      "local_audio_file": "tts-T4-0.wav",
+      "gpu_requested": "T4",
+      "repeat": 0,
+      "language": "Vietnamese",
+      "round_trip_seconds": 18.791933799977414
+    },
+    {
+      "audio_seconds": 3.07,
+      "sample_rate": 24000,
+      "inference_seconds": 0.8397376259999998,
+      "init_seconds": 7.878721498000001,
+      "call": 2,
+      "gpu": "Tesla T4",
+      "peak_vram_bytes": 2319246848,
+      "peak_rss_kib": 8328184,
+      "rtf": 0.27353017133550483,
+      "local_audio_file": "tts-T4-1.wav",
+      "gpu_requested": "T4",
+      "repeat": 1,
+      "language": "Vietnamese",
+      "round_trip_seconds": 1.7170849000103772
+    },
+    {
+      "gpu_requested": "L4",
+      "language": "Vietnamese",
+      "repeat": 0,
+      "error_type": "RemoteError",
+      "error": ""
+    }
+  ]
+}

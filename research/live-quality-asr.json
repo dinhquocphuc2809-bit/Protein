@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "elapsed": 34.78200000000652,
+  "result": {
+    "cues": [
+      {
+        "end": 3.424,
+        "id": 0,
+        "start": 1.344,
+        "text": "All right so here we are One of the elephants",
+        "translated": "\u0110\u01b0\u1ee3c r\u1ed3i, ch\u00fang ta \u0111ang \u1edf \u0111\u00e2y, m\u1ed9t trong nh\u1eefng ch\u00fa voi"
+      },
+      {
+        "end": 8.336,
+        "id": 1,
+        "start": 5.216,
+        "text": "Cool thing about these guys is that is that they have really",
+        "translated": "\u0110i\u1ec3m th\u00fa v\u1ecb v\u1ec1 nh\u1eefng ch\u00fa n\u00e0y l\u00e0 ch\u00fang c\u00f3 ph\u1ea7n"
+      },
+      {
+        "end": 10.416,
+        "id": 2,
+        "start": 9.136,
+        "text": "really really long",
+        "translated": "tr\u01b0\u1edbc r\u1ea5t, r\u1ea5t, r\u1ea5t d\u00e0i"
+      },
+      {
+        "end": 14.464,
+        "id": 3,
+        "start": 12.096,
+        "text": "fronts and that's that's cool Let's",
+        "translated": "v\u00e0 \u0111i\u1ec1u \u0111\u00f3... \u0111i\u1ec1u \u0111\u00f3 th\u1eadt tuy\u1ec7t. \u0110i th\u00f4i,"
+      },
+      {
+        "end": 15.744,
+        "id": 4,
+        "start": 15.504,
+        "text": "go let's go",
+        "translated": "ch\u00fang ta \u0111i th\u00f4i"
+      },
+      {
+        "end": 18.368,
+        "id": 5,
+        "start": 16.928,
+        "text": "And that's pretty much all there is to say",
+        "translated": "V\u00e0 \u0111\u00f3 h\u1ea7u nh\u01b0 l\u00e0 t\u1ea5t c\u1ea3 nh\u1eefng g\u00ec c\u1ea7n n\u00f3i"
+      }
+    ],
+    "source_hash": "f48cf95f5671b90dbb98149622104b9c5ed174c791633e61e223d98a2b90070e",
+    "source_language": "en",
+    "target_language": "vi",
+    "title": "",
+    "translation_id": "22773c1635afce4648a06d003d0e3dedb94cbdeddb282ef3519a24142d9142a3",
+    "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+  }
+}

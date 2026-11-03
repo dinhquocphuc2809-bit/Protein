@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Options: live ticket activation and authenticated Modal connection",
+    "Settings: 390px layout has no horizontal overflow",
+    "Page TextTrack -> real translation -> bilingual transcript",
+    "Real OmniVoice audio decoded and played alongside the video through to end",
+    "Seek/replay uses audio cache without another synthesis POST",
+    "Voice change generates another voice without a translation job",
+    "Switching back to the original voice reuses IndexedDB audio",
+    "Injected summary and study chat panels complete real backend jobs"
+  ],
+  "errors": [],
+  "extension_id": "njepcceplllhabnepcaejllfpfhnloil",
+  "passed": true
+}

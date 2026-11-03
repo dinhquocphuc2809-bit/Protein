@@ -1,0 +1,95 @@
+{
+  "flow": "translation",
+  "checks": [
+    {
+      "model": "basic",
+      "elapsed": 1.7189999999827705,
+      "timestamps_preserved": true,
+      "result": [
+        {
+          "end": 4.0,
+          "id": 0,
+          "start": 0.0,
+          "text": "A cache stores results so the same work does not need to run twice.",
+          "translated": "Bộ nhớ đệm lưu trữ các kết quả để không phải thực hiện lại cùng một công việc."
+        },
+        {
+          "end": 8.0,
+          "id": 1,
+          "start": 4.0,
+          "text": "Changing the voice should reuse the translated subtitles.",
+          "translated": "Việc thay đổi giọng đọc nên sử dụng lại các phụ đề đã dịch."
+        }
+      ]
+    },
+    {
+      "model": "advanced",
+      "elapsed": 1.7190000000118744,
+      "timestamps_preserved": true,
+      "result": [
+        {
+          "end": 4.0,
+          "id": 0,
+          "start": 0.0,
+          "text": "A cache stores results so the same work does not need to run twice.",
+          "translated": "Bộ nhớ đệm lưu trữ kết quả để không phải thực hiện lại cùng một tác vụ hai lần."
+        },
+        {
+          "end": 8.0,
+          "id": 1,
+          "start": 4.0,
+          "text": "Changing the voice should reuse the translated subtitles.",
+          "translated": "Việc thay đổi giọng đọc nên tái sử dụng phụ đề đã dịch."
+        }
+      ]
+    },
+    {
+      "model": "deepseek",
+      "elapsed": 1.7189999999827705,
+      "timestamps_preserved": true,
+      "result": [
+        {
+          "end": 4.0,
+          "id": 0,
+          "start": 0.0,
+          "text": "A cache stores results so the same work does not need to run twice.",
+          "translated": "Bộ nhớ đệm lưu lại kết quả để không phải thực hiện cùng một công việc hai lần."
+        },
+        {
+          "end": 8.0,
+          "id": 1,
+          "start": 4.0,
+          "text": "Changing the voice should reuse the translated subtitles.",
+          "translated": "Khi đổi giọng, nên dùng lại phụ đề đã dịch."
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "elapsed": 1.7190000000118744,
+      "result": {
+        "sections": [
+          {
+            "start": 0.0,
+            "text": "Bộ nhớ đệm lưu trữ các kết quả để không phải thực hiện lại cùng một công việc, ví dụ như việc thay đổi giọng đọc nên sử dụng lại các phụ đề đã dịch.",
+            "title": "Khái niệm bộ nhớ đệm"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "chat",
+      "elapsed": 3.312000000005355,
+      "result": {
+        "answer": "Dựa trên video, việc thay đổi giọng đọc nên sử dụng lại các phụ đề đã dịch vì bộ nhớ đệm có chức năng lưu trữ các kết quả để tránh phải thực hiện lại cùng một công việc [00:00]. Do đó, khi thay đổi giọng đọc, hệ thống có thể tận dụng kết quả dịch thuật đã có sẵn mà không cần phải gọi lại quá trình dịch [00:04]."
+      }
+    },
+    {
+      "kind": "translated_srt",
+      "elapsed": 1.7189999999827705,
+      "passed": true
+    }
+  ],
+  "cache_repeat_seconds": 1.7339999999967404,
+  "passed": true
+}

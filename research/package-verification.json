@@ -1,0 +1,121 @@
+[
+  {
+    "package": "qwen-asr",
+    "version": "0.0.6",
+    "requires_dist": [
+      "transformers==4.57.6",
+      "nagisa==0.2.11",
+      "soynlp==0.0.493",
+      "accelerate==1.12.0",
+      "qwen-omni-utils",
+      "librosa",
+      "soundfile",
+      "sox",
+      "gradio",
+      "flask",
+      "pytz",
+      "vllm==0.14.0; extra == \"vllm\""
+    ],
+    "files": [
+      {
+        "name": "qwen_asr-0.0.6-py3-none-any.whl",
+        "sha256": "b9c55a38413298f3a990a4475467399daec6e8f4172363053fc42e2166c2dfd3"
+      },
+      {
+        "name": "qwen_asr-0.0.6.tar.gz",
+        "sha256": "294893f2340dc2d58d1f1d1cb8ce26ac0a79f254805ab432dda2892bd5c8d13c"
+      }
+    ]
+  },
+  {
+    "package": "omnivoice",
+    "version": "0.2.1",
+    "requires_dist": [
+      "accelerate",
+      "gradio",
+      "librosa",
+      "numpy",
+      "pydub",
+      "soundfile",
+      "tensorboardx",
+      "torch>=2.4",
+      "torchaudio>=2.4",
+      "transformers>=5.3.0",
+      "webdataset",
+      "funasr; extra == \"eval\"",
+      "jiwer==3.1.0; extra == \"eval\"",
+      "s3prl; extra == \"eval\"",
+      "unidecode; extra == \"eval\"",
+      "zhconv; extra == \"eval\"",
+      "zhon; extra == \"eval\"",
+      "num2words; extra == \"tn\"",
+      "wetextprocessing; extra == \"tn\""
+    ],
+    "files": [
+      {
+        "name": "omnivoice-0.2.1-py3-none-any.whl",
+        "sha256": "23f113ef51116a16308b55c4c2ac9c08efca7dfb594802f5c8adfb7523313ccc"
+      },
+      {
+        "name": "omnivoice-0.2.1.tar.gz",
+        "sha256": "b55e5078a371f45ec72443b5cdafe4a87fd0c5c27056fbab113d8cccceff5c7c"
+      }
+    ]
+  },
+  {
+    "package": "stable-ts",
+    "version": "2.19.1",
+    "requires_dist": [
+      "numpy",
+      "torch",
+      "torchaudio",
+      "tqdm",
+      "openai-whisper<=20250625,>=20230314",
+      "faster-whisper; extra == \"fw\"",
+      "transformers<=4.47.1,>=4.23.0; extra == \"hf\"",
+      "optimum; extra == \"hf\"",
+      "accelerate; extra == \"hf\"",
+      "mlx-whisper; extra == \"mlx\""
+    ],
+    "files": [
+      {
+        "name": "stable_ts-2.19.1.tar.gz",
+        "sha256": "0ecaf1ed93e029839569618d2da9a57b883ad04db21f0680146e0650caaf4f52"
+      }
+    ]
+  },
+  {
+    "package": "silero-vad",
+    "version": "6.2.3",
+    "requires_dist": [
+      "packaging",
+      "torch>=1.12.0",
+      "numpy; extra == \"all\"",
+      "onnxruntime>=1.16.1; extra == \"all\"",
+      "torchaudio<2.10,>=0.12.0; extra == \"all\"",
+      "torchcodec; python_version >= \"3.9\" and extra == \"all\"",
+      "torchaudio<2.10,>=0.12.0; extra == \"audio\"",
+      "torchcodec; python_version >= \"3.9\" and extra == \"audio\"",
+      "torchcodec; python_version >= \"3.9\" and extra == \"codec\"",
+      "numpy; extra == \"onnx-cpu\"",
+      "onnxruntime>=1.16.1; extra == \"onnx-cpu\"",
+      "numpy; extra == \"onnx-gpu\"",
+      "onnxruntime-gpu>=1.16.1; extra == \"onnx-gpu\"",
+      "pytest; extra == \"test\"",
+      "soundfile; extra == \"test\"",
+      "torch<2.9; extra == \"test\"",
+      "torchaudio<2.10,>=0.12.0; extra == \"test\"",
+      "torchcodec; python_version >= \"3.9\" and extra == \"test\""
+    ],
+    "files": [
+      {
+        "name": "silero_vad-6.2.3-py3-none-any.whl",
+        "sha256": "7b7f5436cfcb02fae583a05b512ea96467fd449fe54cb49a5e4f06c51a1e43b8"
+      },
+      {
+        "name": "silero_vad-6.2.3.tar.gz",
+        "sha256": "d7a23b09202be4953915cb9173089bb307eed0418a9bd4794d9ec5af07fa1996"
+      }
+    ]
+  }
+]

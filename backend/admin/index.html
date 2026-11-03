@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Auvirel | Control room</title>
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+    <header>
+      <a class="brand" href="/" aria-label="Auvirel"
+        ><svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path
+            d="M8 28 20 7l12 21M12 22h16M15 31c3 3 7 3 10 0"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+        >Auvirel<span>CONTROL ROOM</span></a
+      ><span class="private-badge">Tailscale · Private</span>
+    </header>
+    <main>
+      <section id="login" class="login panel">
+        <p class="eyebrow">YOUR PRIVATE STUDIO</p>
+        <h1>Every voice.<br />Under control.</h1>
+        <p>Quản lý quyền truy cập, tài nguyên và dịch vụ từ một nơi.</p>
+        <form id="login-form">
+          <label for="admin-token">Mã quản trị</label
+          ><input
+            id="admin-token"
+            type="password"
+            autocomplete="off"
+            required
+            minlength="32"
+          /><button class="primary" type="submit">
+            Mở bảng điều khiển <span>↗</span>
+          </button>
+        </form>
+      </section>
+      <div id="workspace" hidden>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">SYSTEM OVERVIEW</p>
+            <h1>Không gian vận hành.</h1>
+          </div>
+          <button id="refresh" class="subtle">Làm mới</button
+          ><button id="logout" class="subtle">Khóa</button>
+        </div>
+        <section
+          id="metrics"
+          class="metrics"
+          aria-label="Thống kê hệ thống"
+        ></section>
+        <nav class="tabs" aria-label="Khu vực quản trị">
+          <button data-tab="tickets" aria-selected="true">Access Tickets</button
+          ><button data-tab="keys">API & Compute</button
+          ><button data-tab="jobs">Hoạt động</button
+          ><button data-tab="models">Mô hình</button>
+        </nav>
+        <section id="tab-tickets" class="panel tab-panel">
+          <div class="section-heading">
+            <div>
+              <h2>Quyền truy cập</h2>
+              <p>Thời hạn bắt đầu từ lần kích hoạt đầu tiên.</p>
+            </div>
+          </div>
+          <form id="ticket-form" class="inline-form">
+            <label
+              >Tên ghi nhớ<input name="label" required maxlength="120" /></label
+            ><label
+              >Số ngày<input
+                name="days"
+                type="number"
+                min="1"
+                max="366"
+                value="30"
+                required /></label
+            ><button class="primary">Tạo Ticket</button>
+          </form>
+          <output id="new-ticket" hidden></output>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nhãn</th>
+                  <th>Hiệu lực</th>
+                  <th>Hết hạn</th>
+                  <th>Jobs</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="tickets"></tbody>
+            </table>
+          </div>
+        </section>
+        <section id="tab-keys" class="panel tab-panel" hidden>
+          <h2>Kết nối dịch vụ</h2>
+          <p>Khóa được mã hóa ở server. Giá trị gốc không hiển thị lại.</p>
+          <form id="key-form">
+            <div class="inline-form">
+              <label
+                >Dịch vụ<select name="provider">
+                  <option>tunelio</option>
+                  <option>apify</option>
+                  <option>deepgram</option>
+                  <option>gemini</option>
+                  <option>deepseek</option>
+                  <option>modal</option>
+                </select></label
+              ><label>Nhãn<input name="label" maxlength="80" /></label>
+            </div>
+            <label
+              >Các khóa — mỗi dòng một khóa hoặc lệnh Modal<textarea
+                name="values"
+                rows="4"
+                required
+                spellcheck="false"
+                autocomplete="off"
+              ></textarea></label
+            ><button class="primary">Thêm khóa</button>
+          </form>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dịch vụ</th>
+                  <th>Nhãn</th>
+                  <th>Trạng thái</th>
+                  <th>Số dư</th>
+                  <th>Lượt gọi</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="keys"></tbody>
+            </table>
+          </div>
+        </section>
+        <section id="tab-jobs" class="panel tab-panel" hidden>
+          <h2>Hoạt động gần đây</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tác vụ</th>
+                  <th>Trạng thái</th>
+                  <th>Giai đoạn</th>
+                  <th>Thời gian</th>
+                  <th>Lỗi</th>
+                </tr>
+              </thead>
+              <tbody id="jobs"></tbody>
+            </table>
+          </div>
+        </section>
+        <section id="tab-models" class="panel tab-panel" hidden>
+          <h2>Model routing</h2>
+          <p>
+            Danh sách được lấy trực tiếp từ API chính hãng. Thay model tạo phiên
+            bản cache dịch mới.
+          </p>
+          <button id="load-models" class="subtle">Đọc danh sách model</button>
+          <form id="model-form" hidden>
+            <label>Gemini cơ bản<select name="basic"></select></label
+            ><label>Gemini nâng cao<select name="advanced"></select></label
+            ><label>DeepSeek<select name="deepseek"></select></label
+            ><button class="primary">Lưu cấu hình</button>
+          </form>
+        </section>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <footer>AUVIREL <span>Sound, with understanding.</span></footer>
+    <script src="/admin.js" defer></script>
+  </body>
+</html>
