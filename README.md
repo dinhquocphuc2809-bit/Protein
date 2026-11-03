@@ -1,4 +1,4 @@
-# Auvirel
+# Veloa
 
 Contextual subtitles, single-voice AI dubbing and a video study companion.
 Built for Chrome/Firefox Manifest V3, an Oracle ARM64 VPS, and separate Modal ASR/TTS accounts.
@@ -22,8 +22,8 @@ Real acceptance checks have exercised:
 
 ## Local packages
 
-The owner workspace contains `dist/chrome`, `dist/firefox`, `dist/auvirel-chrome.zip`
-and `dist/auvirel-firefox.zip`. Local builds include 84 reference voice variants and
+The owner workspace contains `dist/chrome`, `dist/firefox`, `dist/veloa-chrome.zip`
+and `dist/veloa-firefox.zip`. Local builds include 84 reference voice variants and
 8 BGM tracks imported from the supplied reference extension. Their redistribution
 license was not found, so these assets are excluded from Git and public artifacts.
 
@@ -32,7 +32,8 @@ Firefox: load `dist/firefox/manifest.json` as a temporary add-on through
 `about:debugging#/runtime/this-firefox`. Permanent consumer Firefox installation
 requires Mozilla signing; a ZIP is not a signed store release.
 
-Open Auvirel settings, activate the supplied owner Ticket, then either deploy a voice
+Click the Veloa toolbar icon to open the control popup. Its settings button opens
+settings inside the same popup. Activate the supplied owner Ticket, then either deploy a voice
 worker through the local bridge or connect the already deployed worker with its proxy
 credentials. Secrets are in the ignored `.private/HANDOVER.md` in the owner workspace.
 Never upload that file, `.private`, the HAR, or parent credential files.
@@ -40,6 +41,13 @@ Never upload that file, `.private`, the HAR, or parent credential files.
 The extension button appears on accessible HTML video pages. It can read TextTracks,
 probe YouTube captions, or import UTF-8 SRT. When captions are unavailable, the backend
 uses a supported media acquisition path. Protected/DRM content is not bypassed.
+
+On a normal YouTube watch page, bilingual subtitles appear above the recommendations
+in the right column, with source text above each translation and clickable timestamps.
+Theater, fullscreen and narrow windows use the video overlay. Summary and study chat
+open a focused panel on the video page. See [design details](docs/DESIGN_REVISION.md).
+Internal `auvirel` service, storage and Native Messaging identifiers remain stable
+so the visual rename does not discard existing connections or caches.
 
 ## Build and verify
 

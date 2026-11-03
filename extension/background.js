@@ -241,7 +241,16 @@ async function handle(message, sender) {
       voiceReady: Boolean(await get("voiceProxy")),
     };
   }
-  if (message.type === "openSettings") return api.runtime.openOptionsPage();
+  if (message.type === "openSettings") {
+    try {
+      await api.action.openPopup();
+      return true;
+    } catch {
+      throw new Error(
+        "Bấm biểu tượng Veloa trên thanh công cụ rồi chọn Cài đặt.",
+      );
+    }
+  }
   if (message.type === "youtubeCaptions") return youtubeCaptions(sender);
   if (message.type === "job")
     return backend("POST", "/v1/jobs", message.payload, message.idem);

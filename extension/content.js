@@ -21,9 +21,9 @@
   shadow.append(style);
   const surface = document.createElement("div");
   surface.className = "auvirel-root";
-  surface.innerHTML = `<button class="launcher" aria-label="Open Auvirel" title="Auvirel"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m6 24 9-18h3l8 18M10 17h12M16 13v12"/></svg></button>
-  <section class="panel" aria-label="Auvirel video companion" hidden>
-    <header><div class="brand"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m6 25 9-19h3l8 19M10 18h12M16 13v13"/></svg></span><div><strong>Auvirel</strong><small>Listen. Understand. Explore.</small></div></div><button class="icon" id="settings" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-.6 2.3-2 .9-2.1-.6-1.8 3.2 1.6 1.7v2.4l-1.6 1.7 1.8 3.2 2.2-.6 2 .9.5 2.3h3.8l.6-2.3 2-.9 2.1.6 1.8-3.2-1.6-1.7v-2.4l1.6-1.7-1.8-3.2-2.1.6-2-.9-.6-2.3Z"/><circle cx="11" cy="11.7" r="3"/></svg></button><button class="icon" id="collapse" aria-label="Minimize"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button></header>
+  surface.innerHTML = `<button class="launcher" aria-label="Open Veloa" title="Veloa"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 12h13M11 20h13"/></svg></button>
+  <section class="panel" aria-label="Veloa video companion" hidden>
+    <header><div class="brand"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 12h13M11 20h13"/></svg></span><div><strong>Veloa</strong><small>Listen. Understand. Explore.</small></div></div><button class="icon" id="settings" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-.6 2.3-2 .9-2.1-.6-1.8 3.2 1.6 1.7v2.4l-1.6 1.7 1.8 3.2 2.2-.6 2 .9.5 2.3h3.8l.6-2.3 2-.9 2.1.6 1.8-3.2-1.6-1.7v-2.4l1.6-1.7-1.8-3.2-2.1.6-2-.9-.6-2.3Z"/><circle cx="11" cy="11.7" r="3"/></svg></button><button class="icon" id="collapse" aria-label="Minimize"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button></header>
     <div class="video-title">Choose a video to begin</div>
     <div class="status" role="status" aria-live="polite"><span class="dot"></span><span id="state">Ready when you are</span></div>
     <div class="setup"><label>Voice<select id="voice"></select></label><div class="row"><label>Translate to<select id="language"><option value="vi">Vietnamese</option><option value="en">English</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="zh">Chinese</option><option value="fr">French</option><option value="de">German</option><option value="es">Spanish</option></select></label><label>Translation<select id="model"><option value="basic">Gemini · Essential</option><option value="advanced">Gemini · Advanced</option><option value="deepseek">DeepSeek</option></select></label></div>
@@ -54,6 +54,17 @@
     renderedStart = -1,
     selectedCue = -1,
     lastUrl = location.href;
+  const sidebar =
+    window.top === window.self
+      ? new A.BilingualSidebar({
+          seek: (seconds, play) => {
+            seek(seconds);
+            if (play) video?.play().catch(error);
+          },
+          prepare: () => $("start").click(),
+          download: () => exportSubtitles(true),
+        })
+      : null;
   function status(kind, text) {
     const element = shadow.querySelector(".status");
     element.dataset.state = kind;
@@ -88,6 +99,7 @@
       status("ready", "Open settings to activate your access code");
   }
   shadow.querySelector(".launcher").onclick = () => {
+    panel.classList.remove("study-only");
     panel.hidden = !panel.hidden;
     if (!panel.hidden) init().catch(error);
   };
@@ -114,6 +126,7 @@
       $("sections").replaceChildren();
       $("messages").replaceChildren();
       overlay.hidden = true;
+      sidebar?.setCues(cues);
     }
     status("ready", "Stopped");
   }
@@ -136,6 +149,7 @@
     shadow.querySelector(".video-title").textContent = video
       ? document.title
       : "No video player found";
+    sidebar?.mount($("mode").value);
   }
   async function pageCaptions() {
     for (const track of [...video.textTracks]) {
@@ -231,6 +245,7 @@
       if (cues.length && videoJob) {
         await createMixer();
         await video.play();
+        $("start").disabled = false;
         return;
       }
       const epoch = ++work,
@@ -289,6 +304,8 @@
     $(id).oninput = () => {
       if ($(id + "-value")) $(id + "-value").textContent = $(id).value + "%";
       mixer?.[method](+$(id).value / 100);
+      if (id === "original" && !mixer && video)
+        video.volume = +$(id).value / 100;
     };
   $("bgm").onchange = () =>
     mixer
@@ -320,6 +337,7 @@
     video.currentTime = seconds;
   }
   function renderTranscript(force = false) {
+    sidebar?.setCues(cues);
     if (!cues.length || !video) return;
     const index = Math.max(0, A.atTime(cues, video.currentTime)),
       start = Math.max(0, index - 10);
@@ -447,7 +465,7 @@
       button.disabled = false;
     }
   };
-  $("export").onclick = () => {
+  function exportSubtitles(bilingual = false) {
     if (!cues.length) return;
     const stamp = (seconds) => {
       const n = Math.round(seconds * 1000);
@@ -456,7 +474,7 @@
     const body = cues
       .map(
         (cue, index) =>
-          `${index + 1}\n${stamp(cue.start)} --> ${stamp(cue.end)}\n${cue.translated || cue.text}\n`,
+          `${index + 1}\n${stamp(cue.start)} --> ${stamp(cue.end)}\n${bilingual ? cue.text + "\n" : ""}${cue.translated || cue.text}\n`,
       )
       .join("\n");
     const url = URL.createObjectURL(
@@ -464,11 +482,19 @@
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "auvirel-subtitles.srt";
+    link.download = bilingual ? "veloa-bilingual.srt" : "veloa-subtitles.srt";
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 5000);
-  };
+  }
+  $("export").onclick = () => exportSubtitles();
   function draw() {
+    sidebar?.mount($("mode").value);
+    sidebar?.update(video ? A.atTime(cues, video.currentTime) : -1);
+    if (sidebar?.owns) {
+      overlay.hidden = true;
+      if (!panel.hidden && tab === "transcript") renderTranscript();
+      return;
+    }
     if (!video || !cues.length || $("mode").value === "off") {
       overlay.hidden = true;
       return;
@@ -498,6 +524,134 @@
   window.addEventListener("pagehide", () => stop().catch(() => {}), {
     once: true,
   });
+  async function control(message) {
+    if (message.command === "state")
+      return {
+        available: Boolean(video),
+        title: video ? document.title : "",
+        busy: $("start").disabled,
+        running: Boolean(mixer),
+        cueCount: cues.length,
+        status: $("state").textContent,
+        translated: $("translated").checked,
+        error: shadow.querySelector(".status").dataset.state === "error",
+        values: Object.fromEntries(
+          [
+            "voice",
+            "language",
+            "mode",
+            "model",
+            "asr",
+            "original",
+            "dub",
+            "music",
+            "bgm",
+          ].map((key) => [key, $(key).value]),
+        ),
+      };
+    if (!video) throw new Error("Không tìm thấy video trên trang này.");
+    if (message.command === "configure") {
+      const values = message.values || {};
+      const reset = ["language", "model", "asr"].some(
+        (key) =>
+          typeof values[key] === "string" && values[key] !== $(key).value,
+      );
+      const voiceChanged =
+        typeof values.voice === "string" && values.voice !== $("voice").value;
+      if (reset) {
+        const source = imported;
+        await stop(true);
+        imported = source;
+      }
+      for (const key of ["voice", "language", "mode", "model", "asr", "bgm"])
+        if (typeof values[key] === "string") {
+          const select = $(key);
+          if (
+            [...select.options].some((option) => option.value === values[key])
+          )
+            select.value = values[key];
+        }
+      for (const key of ["original", "dub", "music"])
+        if (
+          Number.isFinite(Number(values[key])) &&
+          Number(values[key]) >= 0 &&
+          Number(values[key]) <= 100
+        ) {
+          $(key).value = values[key];
+          $(key).oninput();
+        }
+      if (voiceChanged && mixer) await $("voice").onchange();
+      if (mixer) await $("bgm").onchange();
+      sidebar?.mount($("mode").value);
+      return true;
+    }
+    if (message.command === "volume") {
+      if (
+        !["original", "dub", "music"].includes(message.key) ||
+        !Number.isFinite(message.value) ||
+        message.value < 0 ||
+        message.value > 100
+      )
+        throw new Error("Invalid volume");
+      $(message.key).value = message.value;
+      $(message.key).oninput();
+      return true;
+    }
+    if (message.command === "start") {
+      if (!$("start").disabled) $("start").onclick();
+      return true;
+    }
+    if (message.command === "stop") {
+      await stop();
+      return true;
+    }
+    if (message.command === "import") {
+      const next = A.parseSrt(message.text);
+      await stop(true);
+      imported = next;
+      $("translated").checked = Boolean(message.translated);
+      status("ready", `${next.length} subtitles imported`);
+      return true;
+    }
+    if (message.command === "translated") {
+      $("translated").checked = Boolean(message.value);
+      return true;
+    }
+    if (message.command === "show") {
+      if (!["transcript", "summary", "chat"].includes(message.section))
+        throw new Error("Invalid section");
+      if (message.section === "transcript" && sidebar?.mount("bilingual")) {
+        $("mode").value = "bilingual";
+        panel.hidden = true;
+        sidebar.host.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      } else {
+        panel.hidden = false;
+        panel.classList.toggle(
+          "study-only",
+          location.hostname.endsWith("youtube.com"),
+        );
+        shadow.querySelector(`[data-tab="${message.section}"]`).click();
+      }
+      return true;
+    }
+    throw new Error("Unknown player command");
+  }
+  const initialized = init().catch(error);
+  api.runtime.onMessage.addListener((message, sender, respond) => {
+    if (
+      message?.type !== "veloaPlayer" ||
+      sender.id !== api.runtime.id ||
+      !(sender.url || "").startsWith(api.runtime.getURL(""))
+    )
+      return;
+    if (!video && window.top !== window.self) return;
+    initialized
+      .then(() => control(message))
+      .then(
+        (value) => respond({ ok: true, value }),
+        (reason) => respond({ ok: false, error: reason.message }),
+      );
+    return true;
+  });
   chooseVideo();
-  init().catch(error);
 })();

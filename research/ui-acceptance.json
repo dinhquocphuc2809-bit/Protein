@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "Actual toolbar popup is 420px, targets the active video, embeds settings without creating a tab",
+    "Popup starts real subtitle translation; work continues after closing; source-first bilingual rows mount above recommendations",
+    "Sidebar follows dark theme, seeks/highlights rows, hides in theater/narrow mode and restores native captions",
+    "Popup mixer controls the player; summary opens focused page panel; stop works",
+    "Real popup SRT upload and already-translated mode survive a model setting change",
+    "5,000-cue production sidebar renders fewer than 45 nodes, follows distant seeks, and respects manual scroll"
+  ],
+  "errors": [],
+  "scope": "Actual action popup; YouTube layout fixture; live backend subtitle job",
+  "passed": true
+}

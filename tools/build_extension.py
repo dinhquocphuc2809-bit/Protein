@@ -15,23 +15,29 @@ def icon(size):
     def chunk(kind, value):
         return struct.pack('>I', len(value)) + kind + value + struct.pack('>I', zlib.crc32(kind + value))
     rows = bytearray()
-    segments = [(29, 94, 64, 29), (64, 29, 99, 94), (42, 72, 86, 72), (64, 54, 64, 97)]
+    segments = [(33, 48, 84, 48), (45, 79, 96, 79)]
+    def pixel(px, py):
+        corner = max(abs(px-64)-29, 0)**2 + max(abs(py-64)-29, 0)**2
+        if corner > 34**2:
+            return (0, 0, 0, 0)
+        distance = min(((px-max(x1, min(x2, px)))**2+(py-y1)**2)**.5
+                       for x1, y1, x2, _ in segments)
+        if distance < 6:
+            return (255, 255, 255, 255) if py < 64 else (195, 201, 210, 255)
+        t = (px+py)/256
+        return (round(54-29*t), round(57-30*t), round(64-32*t), 255)
+    # Supersampling keeps the rounded mark legible at toolbar sizes.
     for y in range(size):
         rows.append(0)
         for x in range(size):
-            px, py = (x+.5)*128/size, (y+.5)*128/size
-            corner = max(abs(px-64)-29, 0)**2 + max(abs(py-64)-29, 0)**2
-            if corner > 34**2:
-                rows.extend((0, 0, 0, 0)); continue
-            distance = 999
-            for x1, y1, x2, y2 in segments:
-                ratio = max(0, min(1, ((px-x1)*(x2-x1)+(py-y1)*(y2-y1))/((x2-x1)**2+(y2-y1)**2)))
-                distance = min(distance, ((px-x1-ratio*(x2-x1))**2+(py-y1-ratio*(y2-y1))**2)**.5)
-            if distance < 4:
-                rows.extend((242, 251, 255, 255))
+            samples = [pixel((x+(sx+.5)/4)*128/size, (y+(sy+.5)/4)*128/size)
+                       for sy in range(4) for sx in range(4)]
+            opaque = [sample for sample in samples if sample[3]]
+            if not opaque:
+                rows.extend((0, 0, 0, 0))
             else:
-                t = (px+py)/256
-                rows.extend((round(40-21*t), round(97+49*t), round(122+44*t), 255))
+                rows.extend([round(sum(sample[c] for sample in opaque)/len(opaque)) for c in range(3)]
+                            + [round(255*len(opaque)/16)])
     return b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('>IIBBBBB', size, size, 8, 6, 0, 0, 0)) + chunk(b'IDAT', zlib.compress(rows)) + chunk(b'IEND', b'')
 
 
@@ -53,13 +59,13 @@ def main():
             preset['path'] = 'voices/' + target.name
         bgm = [{'id': path.stem, 'name': path.stem.replace('-', ' ').replace('_', ' ').title(), 'path': 'bgm/' + path.name} for path in sorted((source / 'bgm').glob('*.ogg'))]
     shared = {
-        'manifest_version': 3, 'name': 'Auvirel', 'version': '0.1.0', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
-        'permissions': ['storage', 'scripting', 'nativeMessaging'], 'host_permissions': ['https://*/*'],
-        'action': {'default_popup': 'popup.html', 'default_title': 'Auvirel'},
-        'options_ui': {'page': 'options.html', 'open_in_tab': True},
+        'manifest_version': 3, 'name': 'Veloa', 'version': '0.2.0', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
+        'permissions': ['storage', 'scripting', 'nativeMessaging', 'activeTab'], 'host_permissions': ['https://*/*'],
+        'action': {'default_popup': 'popup.html', 'default_title': 'Veloa'},
+        'options_ui': {'page': 'options.html', 'open_in_tab': False},
         'icons': {str(size): f'icons/icon-{size}.png' for size in (16, 32, 48, 128)},
-        'content_scripts': [{'matches': ['https://*/*'], 'js': ['lib/core.js', 'lib/audio.js', 'content.js'], 'run_at': 'document_idle', 'all_frames': True}],
-        'web_accessible_resources': [{'resources': ['content.css', 'assets/bgm/*'], 'matches': ['https://*/*']}],
+        'content_scripts': [{'matches': ['https://*/*'], 'js': ['lib/core.js', 'lib/audio.js', 'lib/sidebar.js', 'content.js'], 'run_at': 'document_idle', 'all_frames': True}],
+        'web_accessible_resources': [{'resources': ['content.css', 'sidebar.css', 'sidebar-page.css', 'assets/bgm/*'], 'matches': ['https://*/*']}],
         'content_security_policy': {'extension_pages': "script-src 'self'; object-src 'none'; base-uri 'none'"},
     }
     for browser in ('chrome', 'firefox'):
@@ -85,6 +91,8 @@ def main():
         if args.local_assets:
             shutil.copytree(source / 'bgm', output / 'assets/bgm')
         shutil.make_archive(str(ROOT / 'dist' / ('auvirel-' + browser)), 'zip', output)
+        shutil.copyfile(ROOT / 'dist' / ('auvirel-' + browser + '.zip'),
+                        ROOT / 'dist' / ('veloa-' + browser + '.zip'))
         print(browser, len(presets), 'voices;', len(bgm), 'BGM; build complete')
 
 

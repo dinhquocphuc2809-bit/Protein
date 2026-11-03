@@ -1,4 +1,8 @@
 "use strict";
+document.documentElement.classList.toggle(
+  "embedded",
+  new URLSearchParams(location.search).has("embedded"),
+);
 const api = globalThis.browser || chrome,
   $ = (id) => document.getElementById(id);
 const send = async (message) => {

@@ -131,3 +131,32 @@ Indexed/scanned code is distinguished from deeply reviewed operational paths. Pr
 read-only success is not a synthesis/download test. Actor metadata existence is not
 per-site compatibility. Forum images were not visually examined; do not infer image-only
 error contents. No specific RAM/CORS/CSP fix was confirmed from the retrieved thread text.
+
+## Veloa design revision (2026-11-03)
+
+- Revisited Neko Dub popup entry/assets and Youtube Dubbing popup, integrated settings,
+  and `youtube-bilingual-sidebar.js`; comparison is in `docs/DESIGN_REVISION.md`.
+- Apple official layout and motion Markdown documentation retrieved successfully:
+  https://developer.apple.com/design/human-interface-guidelines/layout.md and
+  https://developer.apple.com/design/human-interface-guidelines/motion.md.
+  Applied progressive disclosure, aligned groups, brief transitions and reduced motion.
+- Chrome Web Store `https://chromewebstore.google.com/search/Veloa` returned no results.
+  Mozilla HTML search returned a client challenge. Its public v5 addons search API
+  returned fuzzy results; no exact Veloa name on the inspected first page. No global
+  uniqueness or trademark claim is made.
+- Chrome's actual `action.openPopup()` target can be tested through CDP target attachment;
+  it is not necessarily included in Playwright's ordinary `context.pages` list.
+- Long-distance smooth scrolling through estimated row heights can miss the target
+  after measurement. Use immediate distant jumps plus viewport anchoring during height
+  correction; verified with 5,000 cues and bounded rendered rows.
+- A WAV route used in the browser fixture must support Range/206 to validate seeking
+  accurately. Fixture transport was corrected before asserting seek success.
+- UI screenshots and test profiles remain private. Passed interaction evidence is in
+  `research/ui-acceptance.json`; this clearly distinguishes the YouTube DOM fixture
+  from the live backend subtitle calls.
+- Real YouTube now serves a `fixed-default-panels` variant in this browser profile.
+  Its legacy secondary column exists but is initially hidden; a straightforward
+  reference-selector match silently mounts invisible UI. Added a reserved right dock
+  for this variant and tested against the real page. Native player side control opens
+  comments in this variant, rather than theater; respect `fixed-panel-expanded` too.
+  Evidence: `research/ui-youtube-live.json`; screenshot `.private/ui-qa/youtube-live-mount.png`.

@@ -1,4 +1,4 @@
-name: Validate Auvirel
+name: Validate Veloa
 on:
   push:
   pull_request:
@@ -23,6 +23,6 @@ jobs:
       - run: python tools/build_extension.py
       - uses: actions/upload-artifact@v4
         with:
-          name: auvirel-source-only-extensions
-          path: dist/auvirel-*.zip
+          name: veloa-source-only-extensions
+          path: dist/veloa-*.zip
           retention-days: 7

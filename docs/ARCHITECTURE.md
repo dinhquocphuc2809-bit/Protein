@@ -1,8 +1,8 @@
-# Auvirel architecture and implementation gates
+# Veloa architecture and implementation gates
 
-Working brand: **Auvirel** (audio + a clear view). Chrome Web Store search returned
-no results on 2026-11-03; Firefox search returned only unrelated NaviReload. No exact
-match observed in these catalogs. This is not a global trademark/uniqueness guarantee.
+Visible brand: **Veloa**, revised on 2026-11-03 at the owner's request. Internal
+`auvirel` identifiers remain stable for service, storage and native-host compatibility.
+See `DESIGN_REVISION.md` for reference comparison, brand search evidence and UI checks.
 
 ## Decisions grounded in research
 

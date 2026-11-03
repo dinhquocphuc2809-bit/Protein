@@ -31,7 +31,7 @@ def main():
         data = path.read_bytes()
         if any(value in data for value in values) or re.search(rb"-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----|\b(?:ak|as|wk|ws)-[A-Za-z0-9_-]{20,}", data):
             failures.append(name)
-    for archive in (ROOT / 'dist').glob('auvirel-*.zip'):
+    for archive in (ROOT / 'dist').glob('*.zip'):
         with zipfile.ZipFile(archive) as package:
             for name in package.namelist():
                 data = package.read(name)

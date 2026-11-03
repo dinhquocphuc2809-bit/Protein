@@ -2,10 +2,10 @@
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 14px;
-  --ink: #182b3b;
-  --muted: #607485;
-  --accent: #186e9c;
-  --line: rgba(33, 66, 86, 0.13);
+  --ink: #25272c;
+  --muted: #777c85;
+  --accent: #424750;
+  --line: rgba(40, 44, 52, 0.13);
   --spring: cubic-bezier(0.22, 0.8, 0.22, 1);
 }
 .auvirel-root {
@@ -81,7 +81,7 @@ button:active:not(:disabled) {
   width: 52px;
   height: 52px;
   border-radius: 18px;
-  background: linear-gradient(145deg, #1c465c, #0e7893);
+  background: linear-gradient(145deg, #393d45, #202328);
   color: white;
   box-shadow:
     0 8px 30px #16364c35,
@@ -93,7 +93,7 @@ button:active:not(:disabled) {
   height: 30px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2.3;
+  stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -106,7 +106,7 @@ button:active:not(:disabled) {
   overflow: auto;
   border-radius: 26px;
   border: 1px solid #ffffffbc;
-  background: linear-gradient(145deg, #f5fafff5, #edf3f7f2);
+  background: linear-gradient(145deg, #fafafaf5, #f1f2f5f2);
   backdrop-filter: blur(28px) saturate(1.2);
   color: var(--ink);
   box-shadow:
@@ -132,7 +132,7 @@ header {
   width: 36px;
   height: 39px;
   border-radius: 12px;
-  background: linear-gradient(145deg, #225972, #168097);
+  background: linear-gradient(145deg, #393d45, #202328);
   color: white;
   display: grid;
   place-items: center;
@@ -273,12 +273,12 @@ select {
   font-size: 12px;
 }
 .primary {
-  background: linear-gradient(130deg, #257da4, #186184);
+  background: linear-gradient(130deg, #393d45, #25282e);
   color: white;
   box-shadow: 0 4px 10px #17648620;
 }
 .primary:hover {
-  background: #1d789d;
+  background: #454b55;
 }
 .actions .primary {
   flex: 1;
@@ -493,6 +493,13 @@ footer {
   height: 1px;
   overflow: hidden;
   clip-path: inset(50%);
+}
+.panel.study-only .setup,
+.panel.study-only .mixer {
+  display: none;
+}
+.panel.study-only .reading {
+  max-height: min(55vh, 480px);
 }
 .subtitles {
   position: fixed;

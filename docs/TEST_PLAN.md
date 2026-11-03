@@ -68,6 +68,9 @@ sample into a production SLA. Human listening and visual browser QA remain requi
 | Production GPU HTTP/RPC | research/benchmarks/production-voice.json, production-asr.json | Passed on T4; real generated audio and timed words |
 | Chrome/Chromium | research/browser-chromium.json | Actual MV3 extension, live backend/TTS, bilingual display, playback, replay, A->B->A cache, summary/chat |
 | Firefox 159 | research/browser-firefox.json | Actual MV3 addon, live backend/TTS and playback to end |
+| Veloa toolbar popup | research/ui-acceptance.json | Actual Chromium popup, inline settings without new tabs, active-video control, live translation after closing popup, SRT upload preserved across model changes |
+| YouTube sidebar layout | research/ui-acceptance.json | Labelled DOM fixture: source-first rows, light/dark, seek/highlight, theater/narrow fallback, 5,000-cue virtualization and manual-scroll override |
+| Real YouTube layout | research/ui-youtube-live.json | Fixed-panel layout dock stays beside video; mode/native panel transitions and 1000px/800px responsiveness passed; no paid provider calls |
 | Local deployment bridge | research/native-bridge.json | Browser native message deployed account-4 worker and stored working proxy configuration |
 | Admin | research/admin-acceptance.json | Ticket lifecycle, private/public route separation, 132 keys, model list and browser UI passed |
 | SSH | research/ssh-hardening.json | Tailscale-only binding and independent reconnect passed; rollback timer cancelled after verification |

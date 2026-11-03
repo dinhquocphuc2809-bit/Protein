@@ -1,0 +1,21 @@
+html.veloa-sidebar-active .ytp-caption-window-container {
+  visibility: hidden !important;
+}
+ytd-watch-flexy[data-veloa-docked] {
+  width: calc(100% - 444px) !important;
+  max-width: calc(100% - 444px) !important;
+}
+ytd-watch-flexy[data-veloa-docked] #columns {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+ytd-watch-flexy[data-veloa-docked] #primary {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+ytd-watch-flexy[data-veloa-docked] #player-container-outer {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}

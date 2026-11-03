@@ -4,6 +4,25 @@ Updated: 2026-11-03. This file is the resume point; do not infer completion from
 
 ## Current phase: working deployed release candidate; final packaging and repository delivery
 
+### UI revision requested by owner
+
+- [x] Reinspect both reference popups and Youtube Dubbing's right sidebar.
+- [x] Rename visible extension to Veloa 0.2.0; redraw SVG/antialiased toolbar icons.
+- [x] Implement a functional 420px toolbar popup with inline settings; no new tab.
+- [x] Connect popup voice, subtitles, SRT, mixer, start/stop and study controls to video.
+- [x] Recreate the reference's source-first right-column bilingual transcript.
+- [x] Support real YouTube's newer fixed-panel layout with a right dock beside video.
+- [x] Verify actual Chrome popup, live translation after popup closes, SRT import,
+  light/dark sidebar, seek, native panel transitions and 5,000-cue virtualization.
+- [x] Re-run Firefox 159 real translation and audio playback acceptance.
+- [x] Build local Chrome/Firefox packages with 84 voices and 8 BGM tracks.
+- [x] Record comparison and evidence in `docs/DESIGN_REVISION.md` and `RESEARCH.md`.
+- [ ] Push the UI revision and verify the remote branch (owner confirmed Write access).
+
+Current UI reports: `research/ui-acceptance.json`, `research/ui-youtube-live.json`.
+Screenshots: `.private/ui-qa/`. Local archives: `dist/veloa-chrome.zip`,
+`dist/veloa-firefox.zip`; source-only archives are built by CI without reference assets.
+
 - [x] Clone the requested Protein repository (remote contains no commits).
 - [x] Inventory reference packages: Neko Dub 1.2.3, YouTube Dubbing 4.3.19.
 - [x] Count supplied credential records without exposing values.
@@ -100,9 +119,8 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 
 ## Remaining release gates
 
-- Source committed locally as 25727e5. Push attempt failed HTTP 403 because the active
-  Git credential belongs to phucdinhIA without write access to dinhquocphuc2809-bit/Protein.
-  Owner was asked to grant Write or switch Git credentials. Do not claim GitHub sync.
+- Earlier push failed HTTP 403 for phucdinhIA. Owner has since confirmed Write access;
+  final UI revision push and remote verification are pending below.
 
 - L4 runs timed out; T4 remains the measured default. Do not label L4 benchmark passed.
 - No subjective listening sign-off or long-video endurance certification yet.
