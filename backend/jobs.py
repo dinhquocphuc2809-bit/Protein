@@ -176,7 +176,10 @@ class Jobs:
             async def translate():
                 self.event(job, request.model, "translate", len(cues))
                 result = await self.providers.translate(cues, request.source_language, request.target_language, request.model,
-                                                        request.title, lambda stage: self.progress(job, stage))
+                                                        request.title, lambda stage: self.progress(job, stage),
+                                                        load_batch=lambda batch: self.storage.get(key + ":batch-v2:" + str(batch[0].id)),
+                                                        save_batch=lambda batch, value: self.storage.put(
+                                                            key + ":batch-v2:" + str(batch[0].id), "translation_batch", value))
                 return [c.model_dump() for c in result]
             # Per-ticket scope prevents uploaded private subtitles leaking through guessable cache handles.
             key = "translated:" + job["ticket_id"] + ":" + translation_key

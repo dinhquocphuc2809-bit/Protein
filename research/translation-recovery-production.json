@@ -1,0 +1,16 @@
+{
+  "scope": "Deployed VPS public HTTPS API, real Gemini basic, 12 labelled supplied cues; no ASR/TTS",
+  "passed": true,
+  "cues": 12,
+  "timestamps_preserved": true,
+  "elapsed_seconds": 3.5,
+  "repeat_seconds": 1.735,
+  "same_translation": true,
+  "job_ids": [
+    "aba77d77488a4c0ac9849eb2ffbe1bf7",
+    "e53a0eb52edde37af212514c92b9f5fc"
+  ],
+  "deployed_source_verified": true,
+  "repeat_cache_hit": true,
+  "repeat_translation_events": 0
+}

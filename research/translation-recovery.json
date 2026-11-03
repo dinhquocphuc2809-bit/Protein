@@ -1,0 +1,9 @@
+{
+  "scope": "Real Gemini basic, 12 labelled restaurant subtitle cues; no ASR/TTS",
+  "passed": true,
+  "cues": 12,
+  "provider_calls": 1,
+  "elapsed_seconds": 1.735,
+  "timestamps_preserved": true,
+  "checkpoint_repeat_provider_calls": 0
+}

@@ -146,6 +146,27 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 
 ## Remaining release gates
 
+### Translation recovery incident (2026-11-03)
+
+- Owner screenshot: `translation: incomplete_cue_coverage (HTTP 502)`. Production
+  confirms that failed job and a subsequent `gemini: invalid_json` job; the latter
+  received 595 supplied English cues and failed in translation, not ASR.
+- Root causes in code: strict positional ID comparison, no translation response
+  schema, only one whole-batch retry, malformed model JSON cooling a healthy key,
+  and no persistent partial-translation checkpoints.
+- Implemented structured output, strict ID mapping (including out-of-order answers),
+  targeted missing-cue repairs, bounded splitting/size budgets, and ticket-scoped
+  partial cache under existing disk/TTL limits. Never return incomplete translation
+  as success or change original cue timestamps. No DB migration required.
+- Deployed backend and verified exact provider source hash. 43 Python tests pass;
+  real Gemini 12-cue test passes with checkpoint replay causing zero extra calls.
+  Public HTTPS acceptance passes with 12 nonzero IDs, preserved timing and a cache
+  hit on repeat with no translation event. Evidence: `research/translation-recovery*.json`.
+- Original incident inputs are purged by normal retention; no raw model answer was
+  logged. The exact original malformed response and full 595-cue replay are unverified.
+- Backend-only fix: no extension reinstall needed; owner can retry Prepare. New
+  retries preserve successful partial work; work lost before this fix is not recoverable.
+
 ### Active work: multisite subtitle acquisition (2026-11-03)
 
 - Reference catalog statically resolved: 159 routing rules, including mapped

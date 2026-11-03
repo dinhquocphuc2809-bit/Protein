@@ -226,3 +226,35 @@ error contents. No specific RAM/CORS/CSP fix was confirmed from the retrieved th
   frame. Tests cover stale-response rejection and fresh captions after pushState.
 - Source acquisition stays in the browser. Only sanitized cues/language are sent
   to the VPS; no additional video/subtitle disk store or provider call is introduced.
+
+## Translation coverage incident (2026-11-03)
+
+The owner screenshot shows a backend-generated coverage failure, not a network
+gateway outage. Production jobs confirm `incomplete_cue_coverage` followed by
+`gemini: invalid_json`. The second job included 595 supplied English cues, so native
+subtitle discovery succeeded on that attempt. Normal terminal-job retention purged
+the payload before a private copy could be retained. Raw model output was not logged;
+the exact omission/reordering/JSON shape of the first failure cannot be reconstructed.
+
+Code inspection found translation did not pass the structured-output schema already
+supported by the LLM client. It compared results in positional order and retried the
+whole batch once. JSON parsing inside KeyPool.run treated a model formatting failure
+like an unhealthy API credential, preventing immediate recovery when only one key
+exists. Parsing now happens after the successful authenticated provider operation.
+Transport/status failures still use the original key rotation policy.
+
+Translation now validates original integer IDs, rejects duplicate/foreign/empty
+items, maps valid results back to source order, repairs only missing IDs and splits
+persistently invalid batches. The response schema avoids previously rejected Gemini
+minItems/maxItems constraints. There is a maximum of ten inference attempts per
+12-cue/6,000-character group, with cancellation checks between calls. Valid partial
+results use the existing ticket/model/source-scoped translation cache plus a versioned
+batch suffix. Existing total cache quota, TTL, eviction and free-space reserve apply.
+
+Nine dedicated recovery tests cover schema wiring, partial/reordered answers,
+duplicate/wrong IDs, bounded splitting, malformed JSON with a healthy key, size
+limits, cancellation, persistent job retries and ticket cache scope. 43 total Python
+tests pass. Real Gemini and deployed HTTPS checks use 12 explicitly labelled cues,
+not the owner's complete 595-cue transcript; successful complete replay of that
+video remains unverified. Reports: `research/translation-recovery.json` and
+`research/translation-recovery-production.json`. No ASR/TTS calls were used.
