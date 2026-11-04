@@ -24,7 +24,8 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
 - [x] Final code checks: 58 Python / 39 JavaScript tests; secret scan and compilation.
 - [x] Final Chrome live traffic: four synthesis bodies are 193/194/193/194 bytes,
   all registered voice IDs, no inline WAV. Existing audio cache/voice replay passes.
-- [ ] Final repository commit/push and CI.
+- [x] Source commit `0249795` pushed; remote hash verified and GitHub validation
+  passed: https://github.com/dinhquocphuc2809-bit/Protein/actions/runs/41750354149.
 
 Transport warm samples: 2.875-3.406s to receive ~8.2s audio versus old 9.156s for
 same input; submission ~0.6-0.8s versus 6.562s. Small observations, not an SLA.
