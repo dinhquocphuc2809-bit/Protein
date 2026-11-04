@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import re
+import tempfile
 import time
 
 from playwright.sync_api import sync_playwright
@@ -18,9 +19,9 @@ def main():
     voice = re.search(r'https://[^\s]+\.modal\.run', (ROOT / '.private/tts-deploy.log').read_text(encoding='utf-16'))[0]
     report = {'checks': [], 'errors': []}
     requests = []
-    with sync_playwright() as playwright:
+    with tempfile.TemporaryDirectory(dir=output) as profile, sync_playwright() as playwright:
         extension = ROOT / 'dist/chrome'
-        context = playwright.chromium.launch_persistent_context(str(output / 'profile'), channel='chromium', headless=True,
+        context = playwright.chromium.launch_persistent_context(profile, channel='chromium', headless=True,
             args=[f'--disable-extensions-except={extension}', f'--load-extension={extension}', '--autoplay-policy=no-user-gesture-required'], viewport={'width': 1440, 'height': 1000})
         worker = context.service_workers[0] if context.service_workers else context.wait_for_event('serviceworker')
         context.on('request', lambda request: requests.append((request.method, request.url)))

@@ -1,0 +1,10 @@
+{
+  "scope": "Actual Chrome extension and Web Audio playback, labelled provider/audio fixtures; no paid services",
+  "checks": [
+    "Seek during delayed first TTS preempts old audio and prepares only the new paused position",
+    "Stop during resumed preparation cancels work and cannot autoplay when the delayed response arrives"
+  ],
+  "passed": true,
+  "total_syntheses": 3,
+  "total_windows": 2
+}

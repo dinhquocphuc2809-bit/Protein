@@ -4,7 +4,7 @@
   async function stretch(samples, speed, rate, cancelled = () => false) {
     if (!Number.isFinite(speed) || speed < 0.5 || speed > 2)
       throw new Error("Unsupported speech stretch ratio.");
-    if (Math.abs(speed - 1) < 0.015) return samples.slice();
+    if (Math.abs(speed - 1) < 0.015) return edgeFade(samples.slice(), rate);
     const frame = Math.round(rate * 0.04),
       hop = Math.floor(frame / 2),
       search = Math.round(rate * 0.008);
@@ -63,19 +63,29 @@
         -1,
         Math.min(1, result[i] / Math.max(1e-6, weights[i])),
       );
-    const fade = Math.min(Math.round(rate * 0.005), Math.floor(length / 2));
+    return edgeFade(result, rate);
+  }
+
+  function edgeFade(samples, rate) {
+    const fade = Math.min(
+      Math.round(rate * 0.008),
+      Math.floor(samples.length / 2),
+    );
     for (let i = 0; i < fade; i++) {
-      result[i] *= i / fade;
-      result[length - i - 1] *= i / fade;
+      const gain = 0.5 - 0.5 * Math.cos((Math.PI * i) / Math.max(1, fade - 1));
+      samples[i] *= gain;
+      samples[samples.length - i - 1] *= gain;
     }
-    return result;
+    return samples;
   }
 
   class Mixer {
-    constructor(video, send, onState) {
+    constructor(video, send, onState, onNeed = () => {}, onPause = () => {}) {
       this.video = video;
       this.send = send;
       this.onState = onState;
+      this.onNeed = onNeed;
+      this.onPause = onPause;
       this.context = new AudioContext({ sampleRate: 24000 });
       this.gain = this.context.createGain();
       this.gain.connect(this.context.destination);
@@ -85,35 +95,63 @@
       this.original = { volume: video.volume, muted: video.muted };
       this.epoch = 0;
       this.clips = new Map();
+      this.fitted = new Map();
       this.pending = new Map();
       this.failed = new Map();
       this.active = null;
       this.running = false;
       this.hold = null;
       this.expectedPause = false;
+      this.stalled = false;
       this.listeners = new AbortController();
+      this.cursor = 0;
+      this.resumeOffset = null;
+      this.anchor = null;
       const listen = (event, fn) =>
         video.addEventListener(event, fn, { signal: this.listeners.signal });
       listen("seeking", () => this.reanchor());
-      listen("ratechange", () => this.reanchor());
+      listen("ratechange", () => {
+        this.captureOffset();
+        this.invalidate();
+        this.fitted.clear();
+      });
       listen("play", () => {
         this.hold = null;
         this.running = true;
-        this.context.resume();
+        this.context.resume().catch((e) => this.fail(e));
         this.startMusic();
+        this.tick().catch((e) => this.fail(e));
       });
       listen("pause", () => {
         if (this.expectedPause) {
           this.expectedPause = false;
           return;
         }
+        // Native media emits pause before ended. Let the final spoken word finish.
+        if (this.video.ended) return;
+        this.captureOffset();
         this.running = false;
         this.invalidate();
         this.stopMusic();
+        this.onPause();
+      });
+      listen("waiting", () => {
+        if (this.running && !this.hold) {
+          this.stalled = true;
+          this.captureOffset();
+          this.stopAudio();
+          this.stopMusic();
+        }
+      });
+      listen("playing", () => {
+        this.stalled = false;
+        this.startMusic();
+        this.tick().catch((e) => this.fail(e));
       });
       listen("ended", () => {
         this.running = false;
         this.stopMusic();
+        this.onPause();
         for (const task of this.pending.values()) {
           task.abort = true;
           if (task.id)
@@ -122,25 +160,36 @@
         this.pending.clear();
       });
       this.timer = setInterval(
-        () => this.tick().catch((error) => this.fail(error)),
-        60,
+        () => this.tick().catch((e) => this.fail(e)),
+        40,
       );
     }
-    async configure(cues, voiceId, language) {
+    async configure(cues, voiceId, language, requireTranslation = false) {
+      const configuration = (this.configuration =
+        (this.configuration || 0) + 1);
+      const continueHold = Boolean(this.hold) && this.running;
       this.invalidate();
       this.clips.clear();
+      this.fitted.clear();
       this.failed.clear();
       this.voiceHash = null;
       this.cues = cues;
       this.voiceId = voiceId;
       this.language = language.split("-")[0];
-      const epoch = this.epoch;
+      this.requireTranslation = requireTranslation;
+      this.cursor = this.indexAt(this.video.currentTime);
+      this.anchor = this.video.currentTime;
+      this.resumeOffset = null;
       const identity = await this.send({ type: "voiceIdentity", voiceId });
-      if (epoch !== this.epoch) return;
+      if (configuration !== this.configuration) return;
       this.voiceHash = identity;
       await this.context.resume();
-      this.running = !this.video.paused;
-      this.onState("ready", "Voice ready");
+      if (configuration !== this.configuration) return;
+      this.running = !this.video.paused || (continueHold && Boolean(this.hold));
+    }
+    indexAt(time) {
+      const i = this.cues?.findIndex((c) => c.end > time);
+      return i >= 0 ? i : this.cues?.length || 0;
     }
     invalidate() {
       this.epoch++;
@@ -153,12 +202,27 @@
       this.pending.clear();
       this.preparing = null;
     }
+    captureOffset() {
+      if (this.active) {
+        const a = this.active;
+        this.resumeOffset = {
+          index: a.index,
+          seconds:
+            (a.offset + Math.max(0, this.context.currentTime - a.started)) *
+            a.speed,
+        };
+      }
+    }
     reanchor() {
       const resume = Boolean(this.hold);
       this.invalidate();
       this.hold = null;
       this.failed.clear();
+      this.cursor = this.indexAt(this.video.currentTime);
+      this.anchor = this.video.currentTime;
+      this.resumeOffset = null;
       this.running = !this.video.paused || resume;
+      this.onNeed(this.video.currentTime, this.running);
       if (resume)
         this.video
           .play()
@@ -181,14 +245,21 @@
       });
     }
     stopAudio() {
-      if (this.active) {
-        this.active.source.onended = null;
-        try {
-          this.active.source.stop();
-        } catch {}
-        this.active.source.disconnect();
-        this.active = null;
-      }
+      if (!this.active) return;
+      const { source, envelope } = this.active;
+      this.active = null;
+      source.onended = null;
+      const now = this.context.currentTime;
+      envelope.gain.cancelScheduledValues(now);
+      envelope.gain.setValueAtTime(envelope.gain.value, now);
+      envelope.gain.linearRampToValueAtTime(0, now + 0.008);
+      try {
+        source.stop(now + 0.009);
+      } catch {}
+      setTimeout(() => {
+        source.disconnect();
+        envelope.disconnect();
+      }, 20);
     }
     fail(error) {
       if (error.name === "AbortError") return;
@@ -196,198 +267,254 @@
       this.running = false;
       this.invalidate();
       this.stopMusic();
-      if (this.hold) {
-        this.hold = null;
-      }
+      this.onPause();
+      this.hold = null;
+    }
+    async fit(index, epoch) {
+      const rate = this.video.playbackRate,
+        key = index + ":" + rate;
+      if (this.fitted.has(key)) return this.fitted.get(key);
+      const buffer = this.clips.get(index),
+        cue = this.cues[index];
+      const available = Math.max(
+        0.2,
+        Math.min(cue.end, this.cues[index + 1]?.start ?? cue.end) - cue.start,
+      );
+      // Do not stretch short speech to fill silence, or crush syllables to hit a cue edge.
+      const speed = Math.max(
+        0.5,
+        Math.min(
+          2,
+          Math.max(0.92, Math.min(1.22, buffer.duration / available)) * rate,
+        ),
+      );
+      const samples = await stretch(
+        buffer.getChannelData(0),
+        speed,
+        buffer.sampleRate,
+        () => epoch !== this.epoch,
+      );
+      if (epoch !== this.epoch)
+        throw new DOMException("Cancelled", "AbortError");
+      const fitted = this.context.createBuffer(
+        1,
+        samples.length,
+        buffer.sampleRate,
+      );
+      fitted.copyToChannel(samples, 0);
+      const result = { buffer: fitted, speed };
+      this.fitted.set(key, result);
+      return result;
     }
     async synth(index, epoch) {
-      const cue = this.cues[index],
-        text = cue.translated || cue.text;
-      const next = this.cues[index + 1];
-      const duration = Math.min(
-        30,
-        Math.max(0.2, Math.min(cue.end, next?.start ?? cue.end) - cue.start),
-      );
-      const key = await A.sha256(
-        JSON.stringify({
-          text,
-          voice: this.voiceHash,
-          duration,
-          language: this.language,
-          engine: "omnivoice-0.2.1-16-dsp1",
-        }),
-      );
-      if (epoch !== this.epoch) return;
+      if (this.pending.has(index)) return this.pending.get(index).promise;
       const task = { abort: false, id: null };
       this.pending.set(index, task);
-      try {
-        let result = await this.send({ type: "cachedAudio", key });
-        if (task.abort) return;
-        if (!result) {
-          const idem = await A.sha256(key + A.random());
-          task.id = idem;
-          try {
-            await this.send({
-              type: "synthesize",
+      task.promise = (async () => {
+        try {
+          const cue = this.cues[index],
+            text =
+              cue.translated || (!this.requireTranslation ? cue.text : null);
+          if (!text) return;
+          const key = await A.sha256(
+            JSON.stringify({
               text,
-              voiceId: this.voiceId,
-              duration,
+              voice: this.voiceHash,
               language: this.language,
-              idem,
-            });
-          } catch (error) {
-            if (!/Submission in progress/.test(error.message)) throw error;
-          }
-          const deadline = Date.now() + 180000;
-          while (!task.abort && Date.now() < deadline) {
-            result = await this.send({ type: "pollAudio", id: idem, key });
-            if (result.state === "done") break;
-            await new Promise((resolve) => setTimeout(resolve, 700));
-          }
-          if (!task.abort && result?.state !== "done")
-            throw new Error("Voice generation timed out.");
-        }
-        if (task.abort || epoch !== this.epoch) return;
-        const bytes = Uint8Array.from(atob(result.audio), (c) =>
-          c.charCodeAt(0),
-        );
-        const buffer = await this.context.decodeAudioData(bytes.buffer);
-        if (buffer.duration > 60)
-          throw new Error("Voice clip exceeds duration limit.");
-        if (!task.abort && epoch === this.epoch) {
-          this.clips.set(index, buffer);
-          let size = [...this.clips.values()].reduce(
-            (sum, value) => sum + value.length * value.numberOfChannels * 4,
-            0,
+              engine: "omnivoice-0.2.1-16-natural-sentence-dsp2",
+            }),
           );
-          const current = A.atTime(this.cues, this.video.currentTime);
-          for (const id of [...this.clips.keys()].sort(
-            (a, b) => Math.abs(b - current) - Math.abs(a - current),
-          )) {
-            if (size <= 12 * 1024 ** 2) break;
-            if (id === current) continue;
-            const value = this.clips.get(id);
-            size -= value.length * value.numberOfChannels * 4;
-            this.clips.delete(id);
+          if (task.abort || epoch !== this.epoch) return;
+          let result = await this.send({ type: "cachedAudio", key });
+          if (task.abort) return;
+          if (!result) {
+            const idem = await A.sha256(key + A.random());
+            task.id = idem;
+            try {
+              await this.send({
+                type: "synthesize",
+                text,
+                voiceId: this.voiceId,
+                duration: null,
+                language: this.language,
+                idem,
+              });
+            } catch (error) {
+              if (!/Submission in progress/.test(error.message)) throw error;
+            }
+            const deadline = Date.now() + 180000;
+            while (!task.abort && Date.now() < deadline) {
+              result = await this.send({ type: "pollAudio", id: idem, key });
+              if (result.state === "done") break;
+              await new Promise((resolve) => setTimeout(resolve, 350));
+            }
+            if (!task.abort && result?.state !== "done")
+              throw new Error("Voice generation timed out.");
           }
+          if (task.abort || epoch !== this.epoch) return;
+          const bytes = Uint8Array.from(atob(result.audio), (c) =>
+            c.charCodeAt(0),
+          );
+          const buffer = await this.context.decodeAudioData(bytes.buffer);
+          if (
+            !Number.isFinite(buffer.duration) ||
+            buffer.duration <= 0 ||
+            buffer.duration > 60
+          )
+            throw new Error("Invalid voice clip duration.");
+          if (task.abort || epoch !== this.epoch) return;
+          this.clips.set(index, buffer);
+          await this.fit(index, epoch);
+          this.evict();
+        } catch (error) {
+          if (
+            !task.abort &&
+            epoch === this.epoch &&
+            error.name !== "AbortError"
+          )
+            this.failed.set(index, error.message);
+        } finally {
+          if (task.abort && task.id)
+            this.send({ type: "cancelAudio", id: task.id }).catch(() => {});
+          if (this.pending.get(index) === task) this.pending.delete(index);
         }
-      } catch (error) {
-        if (!task.abort && epoch === this.epoch)
-          this.failed.set(index, error.message);
-      } finally {
-        if (task.abort && task.id)
-          this.send({ type: "cancelAudio", id: task.id }).catch(() => {});
-        if (this.pending.get(index) === task) this.pending.delete(index);
+      })();
+      return task.promise;
+    }
+    evict() {
+      for (const index of this.clips.keys())
+        if (index < this.cursor - 1 || index > this.cursor + 5)
+          this.clips.delete(index);
+      for (const key of this.fitted.keys())
+        if (!this.clips.has(Number(key.split(":")[0]))) this.fitted.delete(key);
+      const size = () =>
+        [
+          ...this.clips.values(),
+          ...[...this.fitted.values()].map((v) => v.buffer),
+        ].reduce((s, b) => s + b.length * b.numberOfChannels * 4, 0);
+      for (const index of [...this.clips.keys()].sort(
+        (a, b) => Math.abs(b - this.cursor) - Math.abs(a - this.cursor),
+      )) {
+        if (size() <= 12 * 1024 ** 2) break;
+        if (index === this.cursor) continue;
+        this.clips.delete(index);
+        for (const key of this.fitted.keys())
+          if (key.startsWith(index + ":")) this.fitted.delete(key);
       }
+    }
+    async prime() {
+      const index = this.cursor,
+        epoch = this.epoch;
+      if (!this.cues[index]) return;
+      this.onState("buffering", "Preparing the first complete sentence");
+      let timer;
+      try {
+        await Promise.race([
+          this.synth(index, epoch),
+          new Promise((_, reject) => {
+            timer = setInterval(() => {
+              if (epoch !== this.epoch)
+                reject(new DOMException("Cancelled", "AbortError"));
+            }, 40);
+          }),
+        ]);
+      } finally {
+        clearInterval(timer);
+      }
+      if (epoch !== this.epoch) return;
+      if (this.failed.has(index)) throw new Error(this.failed.get(index));
     }
     async tick() {
       if (
         !this.running ||
         !this.cues?.length ||
         !this.voiceHash ||
-        this.video.seeking
+        this.video.seeking ||
+        this.stalled
       )
         return;
-      const time = this.video.currentTime,
-        index = A.atTime(this.cues, time);
-      const start = Math.max(0, index),
-        epoch = this.epoch;
-      // Retain only the playhead neighborhood; compressed cache lives in extension IndexedDB.
-      let bytes = 0;
-      for (const [id, buffer] of this.clips) {
-        bytes += buffer.length * buffer.numberOfChannels * 4;
-        if (id < start - 1 || id > start + 7) this.clips.delete(id);
-      }
-      if (bytes > 12 * 1024 ** 2)
-        for (const id of [...this.clips.keys()].sort((a, b) => b - a)) {
-          if (id > start + 2) this.clips.delete(id);
-        }
-      for (let i = start; i < Math.min(this.cues.length, start + 7); i++) {
-        if (this.cues[i].end <= time || this.cues[i].start > time + 45)
-          continue;
+      const epoch = this.epoch,
+        time = this.video.currentTime,
+        index = this.cursor,
+        cue = this.cues[index];
+      if (!cue) return;
+      // The speech cursor owns unfinished words even when the video is slightly ahead.
+      this.onNeed(cue.start, true);
+      this.evict();
+      for (let i = index; i < Math.min(this.cues.length, index + 4); i++) {
+        if (i > index && this.cues[i].start > time + 30) break;
         if (this.pending.size >= 2) break;
-        if (!this.clips.has(i) && !this.pending.has(i) && !this.failed.has(i)) {
-          this.pending.set(i, { abort: false, id: null });
-          this.synth(i, epoch).catch((error) => this.fail(error));
-        }
+        if (this.requireTranslation && !this.cues[i].translated) continue;
+        if (!this.clips.has(i) && !this.pending.has(i) && !this.failed.has(i))
+          this.synth(i, epoch).catch((e) => this.fail(e));
       }
       if (this.active) {
-        if (
-          time >= this.active.end - 0.02 &&
-          this.active.source.context.state === "running"
-        )
-          this.pauseFor("finishing");
+        if (time >= this.active.end + 0.75) this.pauseFor("finishing");
         return;
       }
-      const cue = this.cues[index];
-      if (!cue || time >= cue.end) return;
-      if (this.played?.index === index && this.played.epoch === epoch) {
-        this.resumeHold();
-        return;
-      }
+      if (time < cue.start - 0.015) return;
       if (this.failed.has(index)) {
         this.pauseFor("error");
         throw new Error(this.failed.get(index));
       }
       if (!this.clips.has(index)) {
         this.pauseFor("buffering");
-        this.onState("buffering", "Preparing the next sentence");
+        this.onState(
+          "buffering",
+          this.requireTranslation && !cue.translated
+            ? "Translating the current sentence"
+            : "Preparing the next complete sentence",
+        );
         return;
       }
       if (this.preparing) return;
       this.preparing = index + ":" + epoch;
       try {
-        const buffer = this.clips.get(index),
-          end = Math.min(cue.end, this.cues[index + 1]?.start ?? cue.end);
-        const available = Math.max(0.2, end - cue.start),
-          speed = Math.min(
-            1.8,
-            Math.max(
-              0.6,
-              (buffer.duration / available) * this.video.playbackRate,
-            ),
-          );
-        const samples = await stretch(
-          buffer.getChannelData(0),
+        const { buffer, speed } = await this.fit(index, epoch);
+        if (epoch !== this.epoch || !this.running || this.stalled) return;
+        const source = this.context.createBufferSource(),
+          envelope = this.context.createGain();
+        source.buffer = buffer;
+        source.connect(envelope);
+        envelope.connect(this.gain);
+        let offset = 0;
+        if (this.resumeOffset?.index === index)
+          offset = this.resumeOffset.seconds / speed;
+        else if (this.anchor !== null && this.anchor > cue.start + 0.25)
+          offset =
+            ((this.anchor - cue.start) / (cue.end - cue.start)) *
+            buffer.duration;
+        // Only an explicit seek/start anchor or a manual pause may skip audio.
+        this.anchor = null;
+        this.resumeOffset = null;
+        offset = Math.min(
+          Math.max(0, offset),
+          Math.max(0, buffer.duration - 0.001),
+        );
+        const now = this.context.currentTime;
+        envelope.gain.setValueAtTime(0, now);
+        envelope.gain.linearRampToValueAtTime(1, now + 0.008);
+        this.active = {
+          source,
+          envelope,
+          index,
+          end: Math.min(cue.end, this.cues[index + 1]?.start ?? cue.end),
+          offset,
           speed,
-          buffer.sampleRate,
-          () => epoch !== this.epoch,
-        );
-        if (epoch !== this.epoch || !this.running) return;
-        const fitted = this.context.createBuffer(
-          1,
-          samples.length,
-          buffer.sampleRate,
-        );
-        fitted.copyToChannel(samples, 0);
-        const source = this.context.createBufferSource();
-        source.buffer = fitted;
-        source.connect(this.gain);
-        const offset = Math.min(
-          fitted.duration - 0.001,
-          Math.max(
-            0,
-            (this.video.currentTime - cue.start) / this.video.playbackRate,
-          ),
-        );
-        this.active = { source, index, end };
-        source.onended = () => {
-          if (this.active?.source === source) {
-            this.active = null;
-            source.disconnect();
-            this.played = { index, epoch };
-            this.resumeHold();
-          }
+          started: now,
         };
-        if (this.played?.index === index && this.played.epoch === epoch) {
+        source.onended = () => {
+          if (this.active?.source !== source) return;
           this.active = null;
           source.disconnect();
+          envelope.disconnect();
+          this.cursor = index + 1;
           this.resumeHold();
-          return;
-        }
-        source.start(0, offset);
+          this.tick().catch((e) => this.fail(e));
+        };
+        source.start(now, offset);
         this.resumeHold();
-        this.onState("playing", "Single voice · synchronized");
+        this.onState("playing", "Single voice - complete sentences");
       } finally {
         if (this.preparing === index + ":" + epoch) this.preparing = null;
       }
@@ -434,6 +561,7 @@
       }
     }
     async close() {
+      this.configuration = (this.configuration || 0) + 1;
       this.running = false;
       this.invalidate();
       this.stopMusic();
@@ -442,10 +570,13 @@
       this.video.volume = this.original.volume;
       this.video.muted = this.original.muted;
       this.clips.clear();
+      this.fitted.clear();
+      this.onPause();
       await this.context.close();
     }
   }
   A.stretch = stretch;
   A.Mixer = Mixer;
-  if (typeof module !== "undefined") module.exports = { stretch };
+  if (typeof module !== "undefined")
+    module.exports = { stretch, edgeFade, Mixer };
 })(globalThis);

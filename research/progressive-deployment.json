@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "deployed_hashes": {
+    "backend/jobs.py": "619cd434864a7c7d7ca1b959423e999246639c317d2614fc8e225398d81eefdc",
+    "backend/providers.py": "e084135e17f0ce79e947041de108f82eb496e27f18c7d08eaae3a92e3bea049c",
+    "backend/subtitles.py": "8b91ba9c5529dac31f321a62484927698cf3e544ae9805a857cc77143329a380",
+    "backend/app.py": "3afe6537fb9a095c6bfad4c3b851c874725ea28ad0f8648d2104c708ebce2b12"
+  },
+  "initial_translated_units": 1,
+  "seek_unit_id": 8,
+  "repeat_has_no_translation_call": true,
+  "events": {
+    "hit": 1
+  },
+  "disk_free_bytes": 198839447552
+}

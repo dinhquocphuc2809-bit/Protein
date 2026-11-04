@@ -73,7 +73,7 @@ async function refresh() {
     if (state.busy || state.running || state.error)
       status(state.status, Boolean(state.error));
     $("ready-label").textContent = state.cueCount
-      ? `${state.cueCount} câu phụ đề · Bản dịch được lưu tự động`
+      ? `${state.preparedCount ?? state.cueCount}/${state.cueCount} cụm lời đã dịch · Chuẩn bị theo vùng xem`
       : "Dành cho khoảnh khắc bạn muốn hiểu hơn.";
   } catch {
     pageReady = false;

@@ -1,0 +1,56 @@
+{
+  "scope": "Real VPS/Gemini and client Modal OmniVoice on a small region of the owner video; not whole-video TTS",
+  "passed": true,
+  "source_cues": 595,
+  "speech_units": 254,
+  "initial_translated_units": 1,
+  "initial_translation_seconds": 1.969,
+  "all_source_words_preserved": true,
+  "max_unit_seconds": 13.128,
+  "following_translation_seconds": 3.281,
+  "seek_translation_seconds": 3.281,
+  "replay_seconds": 1.703,
+  "startup_job_id": "8b4d5c25e2b5e298203e8ed1717d59c9",
+  "replay_job_id": "6fe8aff2f3fd79903f56ef5ac47f5d35",
+  "voice": "vi-dang-khoa",
+  "clips": [
+    {
+      "unit": 6,
+      "characters": 168,
+      "natural_seconds": 8.193,
+      "fitted_seconds": 8.023,
+      "slot_seconds": 8.023,
+      "speed": 1.021,
+      "roundtrip_seconds": 29.906,
+      "start_zero": true,
+      "end_zero": true,
+      "peak": 0.8398
+    },
+    {
+      "unit": 7,
+      "characters": 35,
+      "natural_seconds": 1.698,
+      "fitted_seconds": 1.846,
+      "slot_seconds": 4.443,
+      "speed": 0.92,
+      "roundtrip_seconds": 7.531,
+      "start_zero": true,
+      "end_zero": true,
+      "peak": 0.47832
+    },
+    {
+      "unit": 8,
+      "characters": 87,
+      "natural_seconds": 3.943,
+      "fitted_seconds": 4.11,
+      "slot_seconds": 4.11,
+      "speed": 0.959,
+      "roundtrip_seconds": 6.516,
+      "start_zero": true,
+      "end_zero": true,
+      "peak": 0.71194
+    }
+  ],
+  "join_discontinuity": 0,
+  "listening_status": "Waveform/timing verified; subjective listening approval not claimed"
+}

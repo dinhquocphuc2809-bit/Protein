@@ -10,6 +10,13 @@ accessible only through the owner's Tailscale network. SSH also listens only on 
 See [CHECKPOINT.md](CHECKPOINT.md) for exact completion status and open acceptance gates.
 This repository does not claim universal site support, zero latency, or perfect voice quality.
 
+Version **0.4.0** prepares one sentence at the current position, then translates and
+synthesizes nearby sentences while the video plays. Seek cancels obsolete work and
+prioritizes the new position. Speech is grouped by punctuation; delayed clips no longer
+lose their opening words. See [implementation and measurements](docs/PROGRESSIVE_DUBBING.md).
+Reload both the extension and video page after updating. A cold voice worker or an
+unprepared seek can still buffer; video holds when needed to finish spoken sentences.
+
 Real acceptance checks have exercised:
 
 - Three translation models with unchanged cue IDs/timestamps; summary and study chat.

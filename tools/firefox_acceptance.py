@@ -28,7 +28,7 @@ def main():
     report = {'checks': []}
     driver = webdriver.Firefox(options=options, service=Service(service_args=['--allow-system-access']))
     try:
-        identity = driver.install_addon(str(ROOT / 'dist/auvirel-firefox.zip'), temporary=True)
+        identity = driver.install_addon(str(ROOT / 'dist/veloa-firefox.zip'), temporary=True)
         origin = 'moz-extension://' + extension_uuid + '/'
         driver.set_window_size(1440, 1000)
         driver.get(origin + 'options.html')
@@ -50,7 +50,8 @@ def main():
         driver.get('https://example.org/')
         audio = base64.b64encode((ROOT / 'assets/imported/presets/vietnamese/Dang-Khoa.wav').read_bytes()).decode()
         driver.execute_script('''document.title='Auvirel Firefox acceptance';document.body.style.cssText='margin:40px;background:#20303d;color:white';
-          const v=document.createElement('video');v.controls=true;v.style.cssText='width:850px;height:480px;background:#0c1a24';v.src='data:audio/wav;base64,'+arguments[0];
+          const v=document.createElement('video');v.controls=true;v.style.cssText='width:850px;height:480px;background:#0c1a24';
+          v.src=URL.createObjectURL(new Blob([Uint8Array.from(atob(arguments[0]),c=>c.charCodeAt(0))],{type:'audio/wav'}));
           const t=v.addTextTrack('subtitles','English','en');t.mode='hidden';t.addCue(new VTTCue(0,3,'A cache stores results for later use.'));t.addCue(new VTTCue(3,6.2,'Changing the voice reuses the translation.'));document.body.prepend(v);''', audio)
         host = wait.until(lambda d: d.find_element(By.ID, 'auvirel-surface'))
         root = host.shadow_root

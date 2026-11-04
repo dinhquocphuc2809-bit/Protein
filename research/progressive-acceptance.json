@@ -1,0 +1,16 @@
+{
+  "scope": "Actual Chrome extension and Web Audio playback, labelled provider/audio fixtures; no paid services",
+  "checks": [
+    "Initial readiness uses one translated sentence and one TTS clip, not 80 cues",
+    "Playback overlaps bounded nearby translation/TTS; manual pause stops lookahead",
+    "Forward/backward/repeated seeks translate and synthesize the new playhead without walking the skipped tail",
+    "Seek replay uses cached audio; current translated sentence is not retransmitted for translation",
+    "Rapid seeks reanchor to the final requested region"
+  ],
+  "initial_ready_seconds": 0.812,
+  "passed": true,
+  "audio_starts": 6,
+  "maximum_requested_position": 219,
+  "total_syntheses": 21,
+  "total_windows": 36
+}

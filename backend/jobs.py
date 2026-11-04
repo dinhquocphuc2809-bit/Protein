@@ -16,7 +16,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 from .providers import ProviderFailure, Providers
 from .security import Security, canonical, digest
 from .storage import Storage, download_public, public_addresses
-from .subtitles import Cue, parse_srt, validate_cues, words_to_cues
+from .subtitles import Cue, parse_srt, speech_units, validate_cues, words_to_cues
 
 
 class VideoRequest(BaseModel):
@@ -30,7 +30,8 @@ class VideoRequest(BaseModel):
     cues: list[Cue] | None = Field(default=None, max_length=20000)
     srt: str | None = Field(default=None, max_length=2*1024**2)
     already_translated: bool = False
-
+    progressive: bool = False
+    position: float = Field(default=0, ge=0, le=14400, allow_inf_nan=False)
     @field_validator("url")
     @classmethod
     def valid_url(cls, value):
@@ -38,6 +39,13 @@ class VideoRequest(BaseModel):
         if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or parsed.port not in (None, 443):
             raise ValueError("A public HTTPS video page is required")
         return value
+
+
+class WindowRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    video_job_id: str = Field(pattern=r"^[a-f0-9]{32}$")
+    position: float = Field(ge=0, le=14400, allow_inf_nan=False)
+    count: int = Field(default=3, ge=1, le=3)
 
 
 class JobCancelled(Exception):
@@ -167,6 +175,21 @@ class Jobs:
                 return [c.model_dump() for c in await self.acquire(job, request)]
             cues = [Cue(**c) for c in await self.cached(job, "source:"+key, "acquiring", acquire)]
         source_hash = digest(canonical([c.model_dump(exclude={"translated"}) for c in cues]).encode())
+        if request.progressive:
+            units = speech_units(cues)
+            model_settings = self.db.all("SELECT key,value FROM config WHERE key LIKE 'model_%' ORDER BY key")
+            identity = digest(canonical({"source": source_hash, "from": request.source_language, "to": request.target_language,
+                                         "model": request.model, "config": model_settings, "title": request.title, "speech_prompt": 1,
+                                         "already_translated": request.already_translated,
+                                         "plan": digest(canonical([c.model_dump() for c in units]).encode())}).encode())
+            video = {"cues": [c.model_dump() for c in units], "translation_id": identity, "progressive": True,
+                     "source_hash": source_hash, "url": request.url, "title": request.title,
+                     "source_language": request.source_language, "target_language": request.target_language,
+                     "model": request.model, "already_translated": request.already_translated}
+            initial = await self.translate_window(job, video, request.position, 1)
+            for translated in initial["cues"]:
+                video["cues"][translated["id"]] = translated
+            return video
         model_settings = self.db.all("SELECT key,value FROM config WHERE key LIKE 'model_%' ORDER BY key")
         translation_key = digest(canonical({"source": source_hash, "from": request.source_language, "to": request.target_language,
                                             "model": request.model, "config": model_settings, "title": request.title, "prompt": 1}).encode())
@@ -187,6 +210,38 @@ class Jobs:
         return {"cues": [c.model_dump() for c in translated], "translation_id": translation_key,
                 "source_hash": source_hash, "url": request.url, "title": request.title,
                 "source_language": request.source_language, "target_language": request.target_language}
+
+    async def translate_window(self, job, video, position, count):
+        cues = [Cue(**c) for c in video["cues"]]
+        index = next((i for i, c in enumerate(cues) if c.end > position), len(cues)-1)
+        result = []
+        for offset in range(index, min(len(cues), index+count)):
+            cue = cues[offset]
+            if cue.start > position+45 and result:
+                break
+            key = "speech:" + job["ticket_id"] + ":" + video["translation_id"] + ":" + str(cue.id)
+            async def translate(cue=cue, offset=offset):
+                if video["already_translated"] or video["source_language"] == video["target_language"]:
+                    return {**cue.model_dump(), "translated": cue.text + ('' if re.search(r'[,.!?\u3002\uff01\uff1f\uff0c]$', cue.text) else '.')}
+                self.event(job, video["model"], "translate", 1)
+                values = await self.providers.translate([cue], video["source_language"], video["target_language"], video["model"],
+                    video["title"], lambda stage: self.progress(job, stage), speech=True,
+                    surrounding_before=[c.text for c in cues[max(0, offset-6):offset]],
+                    surrounding_after=[c.text for c in cues[offset+1:offset+7]])
+                return values[0].model_dump()
+            result.append(await self.cached(job, key, "translating", translate))
+        return {"cues": result, "translation_id": video["translation_id"]}
+
+    async def window(self, job, payload):
+        request = WindowRequest.model_validate(payload)
+        source = self.db.one("SELECT result FROM jobs WHERE id=? AND ticket_id=? AND state='done' AND kind='video'",
+                             (request.video_job_id, job["ticket_id"]))
+        if not source:
+            raise ValueError("Prepared video not found; prepare this video again")
+        video = json.loads(source["result"])
+        if not video.get("progressive"):
+            raise ValueError("Video does not use progressive translation")
+        return await self.translate_window(job, video, request.position, request.count)
 
     async def acquire(self, job, request):
         await self.progress(job, "resolving_media")
@@ -337,7 +392,8 @@ class Jobs:
             try:
                 await self.progress(job, "starting")
                 payload = json.loads(job["payload"])
-                result = await self.guarded(job, self.video(job, payload) if job["kind"] == "video" else self.study(job, payload))
+                operation = self.video(job, payload) if job["kind"] == "video" else self.window(job, payload) if job["kind"] == "window" else self.study(job, payload)
+                result = await self.guarded(job, operation)
                 await self.progress(job, "done")
                 self.db.execute("UPDATE jobs SET state='done',stage='done',result=?,updated=? WHERE id=? AND state='running'", (canonical(result), time.time(), job["id"]))
             except asyncio.CancelledError:

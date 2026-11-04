@@ -46,6 +46,8 @@
     mixer = null,
     cues = [],
     videoJob = null,
+    translationQueue = null,
+    progressive = false,
     imported = null,
     history = [],
     work = 0,
@@ -112,6 +114,7 @@
   $("settings").onclick = () => send({ type: "openSettings" }).catch(error);
   async function stop(reset = false) {
     work++;
+    translationQueue?.pause();
     if (activeJob) send({ type: "cancelJob", id: activeJob }).catch(() => {});
     activeJob = null;
     const current = mixer;
@@ -120,6 +123,9 @@
     $("start").disabled = false;
     $("stop").disabled = true;
     if (reset) {
+      translationQueue?.close();
+      translationQueue = null;
+      progressive = false;
       asrAvailable = false;
       explicitAsr = false;
       $("use-asr").hidden = true;
@@ -236,9 +242,42 @@
     }
   };
   async function createMixer() {
+    const epoch = work;
     if (mixer) await mixer.close();
-    mixer = new A.Mixer(video, send, status);
-    await mixer.configure(cues, $("voice").value, $("language").value);
+    if (epoch !== work) return;
+    translationQueue?.errors.clear();
+    mixer = new A.Mixer(
+      video,
+      send,
+      status,
+      (position, ahead) => translationQueue?.request(position, ahead),
+      () => translationQueue?.pause(),
+    );
+    const current = mixer;
+    await current.configure(
+      cues,
+      $("voice").value,
+      $("language").value,
+      progressive,
+    );
+    const deadline = Date.now() + 180000;
+    while (epoch === work && current === mixer) {
+      const cursor = current.cursor;
+      try {
+        if (progressive) await translationQueue.ensure(video.currentTime);
+        if (epoch !== work || current !== mixer) return;
+        await current.prime();
+        if (cursor === current.cursor) break;
+      } catch (reason) {
+        if (reason.name !== "AbortError") throw reason;
+        if (epoch !== work || current !== mixer) return;
+      }
+      if (Date.now() > deadline)
+        throw new Error(
+          "Preparation timed out; retry at the current position.",
+        );
+    }
+    if (epoch !== work || current !== mixer) return;
     mixer.setOriginal(+$("original").value / 100);
     mixer.setDub(+$("dub").value / 100);
     if ($("bgm").value)
@@ -263,14 +302,18 @@
       $("start").disabled = true;
       $("stop").disabled = false;
       if (cues.length && videoJob) {
+        const epoch = work,
+          capturedVideo = video;
         await createMixer();
+        if (epoch !== work || video !== capturedVideo) return;
         await video.play();
         $("start").disabled = false;
         return;
       }
       const epoch = ++work,
         capturedVideo = video,
-        url = location.href;
+        url = location.href,
+        wasPlaying = !video.paused;
       status("buffering", "Reading the available subtitles");
       const found = imported
         ? { cues: imported, language: "auto" }
@@ -289,17 +332,42 @@
         model: $("model").value,
         asr: $("asr").value,
         already_translated: Boolean(imported && $("translated").checked),
+        progressive: true,
+        position: video.currentTime,
       };
       if (found?.cues) payload.cues = found.cues;
+      video.pause();
       const job = await send({ type: "job", payload, idem: A.random() });
       const result = await waitJob(job, epoch);
       if (epoch !== work) return;
       cues = A.cues(result.cues);
       videoJob = job.id;
+      progressive = Boolean(result.progressive);
+      translationQueue?.close();
+      translationQueue = progressive
+        ? new A.WindowQueue(
+            cues,
+            videoJob,
+            send,
+            () => {
+              renderTranscript(true);
+              sidebar?.setCues(cues);
+            },
+            (reason) => {
+              if (
+                !cues[Math.max(0, A.atTime(cues, video.currentTime))]
+                  ?.translated
+              )
+                error(reason);
+            },
+          )
+        : null;
       renderTranscript(true);
       $("cue-count").textContent = `${cues.length} cues`;
       await createMixer();
+      if (epoch !== work) return;
       status("ready", "Ready. Press play to listen.");
+      if (wasPlaying) await video.play();
       $("start").textContent = "Resume dubbing";
       $("start").disabled = false;
     } catch (reason) {
@@ -310,7 +378,12 @@
   $("voice").onchange = async () => {
     try {
       if (mixer)
-        await mixer.configure(cues, $("voice").value, $("language").value);
+        await mixer.configure(
+          cues,
+          $("voice").value,
+          $("language").value,
+          progressive,
+        );
     } catch (reason) {
       error(reason);
     }
@@ -491,6 +564,12 @@
   };
   function exportSubtitles(bilingual = false) {
     if (!cues.length) return;
+    if (progressive && cues.some((c) => !c.translated))
+      return error(
+        new Error(
+          "Bản dịch đang được chuẩn bị theo vùng xem; chưa thể xuất toàn bộ bản dịch.",
+        ),
+      );
     const stamp = (seconds) => {
       const n = Math.round(seconds * 1000);
       return `${String(Math.floor(n / 3600000)).padStart(2, "0")}:${String(Math.floor(n / 60000) % 60).padStart(2, "0")}:${String(Math.floor(n / 1000) % 60).padStart(2, "0")},${String(n % 1000).padStart(3, "0")}`;
@@ -557,6 +636,7 @@
         busy: $("start").disabled,
         running: Boolean(mixer),
         cueCount: cues.length,
+        preparedCount: cues.filter((c) => c.translated).length,
         status: $("state").textContent,
         translated: $("translated").checked,
         error: shadow.querySelector(".status").dataset.state === "error",

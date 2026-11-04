@@ -106,3 +106,35 @@ playlist callback, JWPlayer tracks, HLS master/segments and direct source, stabl
 ID across blob swaps, SPA stale/fresh results, multiple videos, incomplete sliding
 TextTracks, failed downloads, explicit ASR popup action and native CC restoration.
 YouTube regression includes embeds as well as watch/player/transcript variants.
+
+## Progressive speech acceptance (0.4.0, 2026-11-04)
+
+| Scope | Verification | Result |
+| --- | --- | --- |
+| Sentence planning | Preserve words, overlap ownership, punctuation, abbreviations, dense short cues, long inputs | Python regression passed |
+| Window API/cache | Initial one-unit request, seek region, repeated cache, ticket ownership, translated-SRT cache separation | Python integration passed |
+| Audio scheduling | One-unit prime, delayed clip offset zero, complete sentence before advancing, current translation priority | JavaScript regression passed |
+| Cancellation | Startup seek during pending submission, stale results, pause/Stop, bounded prefetch | Unit and actual Chrome fixture passed |
+| Playback lifecycle | Pause progress, rate changes, network stall, buffering voice change, native end tail | JavaScript regression passed |
+| Seek/cache | Forward/back/repeated/rapid seeks, replay uses compressed audio cache | Actual Chrome fixture passed |
+| Production services | Retained 595-cue plan, initial/window/seek/cache and three OmniVoice clips | `research/progressive-live.json` passed |
+| DSP speech retention | Nova-3 recognizes the same 67 words before and after fitting | `research/progressive-speech-check.json`; no subjective sign-off |
+| Real browser services | Chrome/Firefox real translation and voice playback; Chrome voice/cache and study | Browser acceptance passed |
+
+Run after building:
+
+```powershell
+.venv/Scripts/python.exe -m pytest -q
+node --test tests/*.test.cjs
+.venv/Scripts/python.exe tools/progressive_acceptance.py
+.venv/Scripts/python.exe tools/progressive_acceptance.py --startup-seek
+```
+
+The 51 Python/32 JavaScript tests use labelled fixtures where applicable. Browser
+fixture timings are not production latency. `tools/progressive_live.py` uses owner
+credentials and real paid-service credits for only three clips; the optional
+`tools/progressive_speech_check.py` checks existing clips with two short ASR requests.
+Both verification tools additionally require NumPy, FFmpeg and Node; browser suites
+require Playwright/Chromium or Selenium/Firefox. They are separate from server runtime.
+Human listening, two-hour soak, dense-speech sustained throughput and every voice
+remain open acceptance gates. Refer to `docs/PROGRESSIVE_DUBBING.md` for actual timings.

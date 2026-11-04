@@ -288,6 +288,8 @@ async function handle(message, sender) {
   if (message.type === "siteCaptions") return siteCaptions(message, sender);
   if (message.type === "job")
     return backend("POST", "/v1/jobs", message.payload, message.idem);
+  if (message.type === "windowJob")
+    return backend("POST", "/v1/windows", message.payload, message.idem);
   if (message.type === "summary" || message.type === "chat")
     return backend(
       "POST",

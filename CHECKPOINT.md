@@ -1,8 +1,36 @@
 # Protein checkpoint
 
-Updated: 2026-11-03. This file is the resume point; do not infer completion from planned items.
+Updated: 2026-11-04. This file is the resume point; do not infer completion from planned items.
 
 ## Current phase: working deployed release candidate; final packaging and repository delivery
+
+### Progressive translation and speech (0.4.0)
+
+- [x] Reinspect Neko sentence boundaries and current-window scheduling; root cause and
+  exact reference anchors are in `docs/PROGRESSIVE_DUBBING.md`.
+- [x] One-unit initial translation/TTS, authenticated per-unit translation windows,
+  independent translation/audio caches, bounded lookahead and decoded audio memory.
+- [x] Sentence/clause reflow, punctuation prompt, natural-duration synthesis, gentle
+  WSOLA fitting and edge fades; no ordinary late-playback prefix clipping.
+- [x] Seek/rapid-seek cancellation, pause/resume, rate/stall handling, Stop during
+  initialization, voice change during buffering and native pause-before-ended handling.
+- [x] 51 Python and 32 JavaScript tests; actual Chrome fixture startup/seek tests;
+  12 YouTube and 19 multisite caption regression cases.
+- [x] Real retained 595-cue video: 254 speech units, one initially translated; three
+  real voice samples. Independent ASR returned identical 67 words before/after DSP.
+- [x] Real Chrome and Firefox translation/TTS playback; Chrome replay and voice A-B-A
+  cache reuse, summary/chat. Browser harness uses isolated profiles and Blob media.
+- [x] Backend deployed with health checks; local Chrome/Firefox 0.4.0 packages rebuilt,
+  including existing 84 voices/8 BGM. No GPU redeploy or credential reallocation required.
+- [x] Final deployment hash comparison and real repeated-window DB audit passed:
+  one cache hit, zero new translation calls, 198.84 GB decimal free on VPS.
+- [ ] Subjective listening approval and long-session endurance remain unverified.
+
+Reports: `research/progressive-*.json`. Measured TTS round trips were 29.906s initially,
+then 7.531s and 6.516s; these do not establish sustained realtime throughput. If the
+GPU falls behind, hold the video rather than drop words. Source-less ASR still runs
+before this pipeline. See the detailed implementation/testing document for boundaries.
+Owner audio sample is `.private/progressive-audio/sentence-comparison-new.wav`.
 
 ### YouTube caption acquisition fix (0.2.1)
 

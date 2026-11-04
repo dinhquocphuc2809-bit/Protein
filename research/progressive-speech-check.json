@@ -1,0 +1,11 @@
+{
+  "scope": "Independent ASR of real natural and DSP-fitted TTS samples; not subjective listening",
+  "model": "nova-3",
+  "language": "vi",
+  "natural_words": 67,
+  "fitted_words": 67,
+  "recognition_edits_after_dsp": 0,
+  "recognition_change_rate": 0.0,
+  "same_first_five_words": true,
+  "same_last_five_words": true
+}

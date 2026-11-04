@@ -1,8 +1,31 @@
 # Protein research ledger
 
-Updated: 2026-11-03. Separate observed evidence, interpretation and unverified claims.
+Updated: 2026-11-04. Separate observed evidence, interpretation and unverified claims.
 
 ## Local observations
+
+### Progressive dubbing follow-up (2026-11-03/04)
+
+- Re-read extracted Neko `content-scripts/content.js:8470-8590` (sentence punctuation,
+  abbreviations, comma splits) and `:25575-25680` (current-region priority and seeking).
+  These are source observations, not proof of its live quality or performance.
+- Owner retained transcript uses overlapping YouTube display lifetimes. Treating
+  display ends as speech slots explains incorrect timing; new speech ownership ends
+  at next-cue start and rejoins dangling phrases. 595 cues become 254 bounded units.
+- Old mixer clipped audio using video lateness as an offset, even on normal startup.
+  New normal playback starts at zero and finishes current speech before advancing.
+- A native video's `pause` can precede `ended`; do not cut its current speech tail.
+  Regression includes that event order, stalls and rate changes.
+- Live evidence: `research/progressive-live.json` (real translation/OmniVoice),
+  `research/progressive-speech-check.json` (two short Nova-3 DSP quality checks),
+  `research/progressive-acceptance.json` and `progressive-startup-seek.json` (explicit
+  provider fixtures in actual Chromium). Natural/fitted recognition was identical,
+  67 words; this is not subjective listening certification.
+- First measured TTS round trip ~30s, later ~6.5-7.5s. Progressive scheduling avoids
+  whole-video preparation; it cannot guarantee uninterrupted playback if throughput
+  falls below speech consumption. The video holds without truncating spoken words.
+- Current limits, complete test matrix and sample locations:
+  `docs/PROGRESSIVE_DUBBING.md`, `docs/TEST_PLAN.md`, `CHECKPOINT.md`.
 
 - The requested GitHub remote was reachable and empty when cloned.
 - Neko Dub: manifest v3, version 1.2.3, 145 files, 31,869,577 bytes.

@@ -15,7 +15,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from .config import Settings
 from .database import Database
-from .jobs import Jobs, VideoRequest
+from .jobs import Jobs, VideoRequest, WindowRequest
 from .providers import KeyPool, Providers
 from .security import Security, canonical
 from .storage import Storage
@@ -156,6 +156,10 @@ def build(settings: Settings | None = None, *, admin=False) -> FastAPI:
         @app.get("/v1/jobs/{job_id}")
         def get_job(job_id: str, ticket: str = Depends(security.authenticate)):
             return jobs.get(ticket, job_id)
+
+        @app.post("/v1/windows", status_code=202)
+        def window(body: WindowRequest, ticket: str = Depends(security.authenticate), idempotency_key: str = Header()):
+            return jobs.submit(ticket, "window", body.model_dump(), idempotency_key)
 
         @app.delete("/v1/jobs/{job_id}")
         def cancel_job(job_id: str, ticket: str = Depends(security.authenticate)):
