@@ -6,6 +6,16 @@ Updated: 2026-11-04. Separate observed evidence, interpretation and unverified c
 
 ### Progressive dubbing follow-up (2026-11-03/04)
 
+- Follow-up timing probe: `tools/tts_latency_probe.py` and
+  `research/tts-latency-breakdown.json` separate submission, polling, receipt,
+  FFmpeg decoding and local DSP. Same text/reference gives 26.281s then 9.156s
+  to audio receipt; submission alone costs 8.750s then 6.562s. These observations
+  identify a slow submission phase but do not separate network upload from server
+  storage/spawn calls. There is no server-side GPU phase instrumentation yet.
+- Reference HAR already records Neko TTS p50 6.463s/p95 10.724s (see
+  `docs/REFERENCE_ANALYSIS.md`). This explains the importance of lookahead but is
+  not a fair controlled performance comparison or an excuse for Veloa latency.
+
 - Re-read extracted Neko `content-scripts/content.js:8470-8590` (sentence punctuation,
   abbreviations, comma splits) and `:25575-25680` (current-region priority and seeking).
   These are source observations, not proof of its live quality or performance.

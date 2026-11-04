@@ -1,0 +1,101 @@
+{
+  "scope": "Two real HTTP calls with identical text/reference on existing client account 4; no deployment change",
+  "characters": 168,
+  "reference_bytes": 303404,
+  "cold_state": "Not instrumented; first call must not be labelled a measured cold start",
+  "runs": [
+    {
+      "repeat": 0,
+      "submission_seconds": 8.75,
+      "polls": [
+        {
+          "seconds": 0.812,
+          "status": 202
+        },
+        {
+          "seconds": 0.797,
+          "status": 202
+        },
+        {
+          "seconds": 0.844,
+          "status": 202
+        },
+        {
+          "seconds": 0.796,
+          "status": 202
+        },
+        {
+          "seconds": 0.812,
+          "status": 202
+        },
+        {
+          "seconds": 0.797,
+          "status": 202
+        },
+        {
+          "seconds": 0.797,
+          "status": 202
+        },
+        {
+          "seconds": 0.813,
+          "status": 202
+        },
+        {
+          "seconds": 0.813,
+          "status": 202
+        },
+        {
+          "seconds": 0.797,
+          "status": 202
+        },
+        {
+          "seconds": 0.844,
+          "status": 202
+        },
+        {
+          "seconds": 0.813,
+          "status": 202
+        },
+        {
+          "seconds": 0.797,
+          "status": 202
+        },
+        {
+          "seconds": 2.406,
+          "status": 200
+        }
+      ],
+      "poll_sleep_seconds": 4.55,
+      "audio_received_seconds": 26.281,
+      "audio_seconds": 8.190875,
+      "audio_bytes": 57359,
+      "local_decode_seconds": 0.11,
+      "dsp_seconds": 0.4021,
+      "node_process_seconds": 0.484,
+      "total_probe_seconds": 26.875
+    },
+    {
+      "repeat": 1,
+      "submission_seconds": 6.562,
+      "polls": [
+        {
+          "seconds": 0.797,
+          "status": 202
+        },
+        {
+          "seconds": 1.437,
+          "status": 200
+        }
+      ],
+      "poll_sleep_seconds": 0.35,
+      "audio_received_seconds": 9.156,
+      "audio_seconds": 8.030791666666667,
+      "audio_bytes": 55793,
+      "local_decode_seconds": 0.063,
+      "dsp_seconds": 0.0007,
+      "node_process_seconds": 0.062,
+      "total_probe_seconds": 9.281
+    }
+  ],
+  "completed": true
+}

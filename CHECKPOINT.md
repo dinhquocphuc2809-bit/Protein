@@ -4,6 +4,26 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
 
 ## Current phase: working deployed release candidate; final packaging and repository delivery
 
+### Latency clarification and diagnostic follow-up (2026-11-04)
+
+- Owner asked why initial/later TTS requests are slow and offered additional MCPs.
+  Existing SSH, Modal SDK and browser automation suffice for current diagnosis.
+- Added `tools/tts_latency_probe.py`; two real requests use the same 168-character
+  text and 303,404-byte reference on client account 4. No worker/deployment changes.
+- First/second submission acknowledgement: 8.750s/6.562s. Audio received:
+  26.281s/9.156s; generated audio length: 8.191s/8.031s. These are complete-clip
+  transport timings, not GPU inference time or time-to-first-streamed-sample.
+- Local decode plus DSP is small; first sample DSP 0.402s, second near-unity DSP
+  0.001s. Earlier samples measured 0.096-0.386s for DSP alone.
+- Evidence: `research/tts-latency-breakdown.json`. Worker initialization, reference
+  upload, queueing and actual model inference are not individually instrumented yet.
+  Do not attribute the whole delay to cold start or claim an optimization was deployed.
+- Suspected bottleneck to investigate next: slow submission before result polling,
+  including the repeated reference payload and Modal control-plane calls. Existing
+  worker uses min_containers=0/scaledown_window=30; this diagnostic does not increase
+  idle-GPU allocation. Prefetch helps hide latency but cannot guarantee
+  sustained realtime when synthesis throughput is below speech consumption.
+
 ### Progressive translation and speech (0.4.0)
 
 - [x] Reinspect Neko sentence boundaries and current-window scheduling; root cause and
