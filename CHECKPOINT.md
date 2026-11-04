@@ -2,6 +2,30 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## T4 measured; L4 allocation blocked (2026-11-05)
+
+- User requested evidence whether GPU speed/VRAM/RAM explain Qwen latency.
+- Added isolated `gpu/asr_comparison.py`, launched via `tools/compare_asr_gpu.py`
+  on backend account1. Production apps/accounts and selected GPUs unchanged.
+- Same retained817.0173125s audio (7jb0q3Mo9Rg), exact production load/transcribe
+  methods, pinned revisions,2vCPU/16384MiB host RAM, two full uncached passes/GPU.
+- Measures model load, per-window server/RPC time, VAD/recognition/alignment,
+  allocated/reserved/total VRAM, process RSS, cgroup memory and CPU time.
+- Temporary Modal run; no persistent deployment or new weights volume. Logs:
+  `.private/asr-compare-L4.log`, then `.private/asr-compare-T4.log`.
+- [x] T4 two full passes:323.585/251.944s client wall,182.952/171.226s worker
+  execution; exact same output hashes. Peak allocated6.665GiB/reserved6.998GiB
+  of14.571GiB GPU memory; process peak RSS9.438GiB with16GiB request.
+- [ ] L4: three bounded300s attempts timed out with zero processed chunks:
+  account1 automatic region, account1 us-central, account2 automatic region.
+  These are not L4 inference timings. No speedup or L4 memory result is available.
+- [x] Confirmed all four temporary benchmark apps stopped with zero tasks.
+- Reports: `docs/QWEN_GPU_COMPARISON.md`,
+  `research/benchmarks/qwen-full-video-summary.json`, per-GPU/per-attempt JSON.
+  Cgroup counters unavailable; process RSS is not total host memory pressure.
+- Remaining blocker: Modal must successfully allocate L4 to an authorized
+  backend account to complete the requested comparison. No production GPU switch.
+
 ## Passed: second Qwen video 7jb0q3Mo9Rg (2026-11-05)
 
 - User requested a new real-video regression after the first ASR fix.

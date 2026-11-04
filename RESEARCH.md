@@ -2,6 +2,33 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## Full-video Qwen GPU comparison (2026-11-05)
+
+- User requested T4 versus L4 on the same video with VRAM/RAM diagnosis. Used
+  normalized817.0173125s audio of7jb0q3Mo9Rg, SHA256170b4186164f5fed69f8b603617cac8131a14b9824125a31358b1e831e7b08e5.
+  Exact pinned production methods are invoked in isolated Modal containers with
+  instrumentation wrappers; no transcription/translation cache or TTS.
+- Both requested configurations:2vCPU,16384MiB RAM, FP16, SDPA, batch1,512-token
+  limit, VAD and forced alignment,28s windows/24s stride, same pinned weights.
+  Two T4 full passes completed; each34 windows. Model load17.494s; first RPC46.932s.
+  Client totals323.585/251.944s, worker totals182.952/171.226s. Warm stage totals:
+  VAD13.340s, recognition142.053s, Qwen alignment15.590s. One secondary alignment
+  recovery per pass.2398 retained words/160 pre-reflow cues, identical hashes.
+- T4 memory: total14.571GiB, peak PyTorch allocated6.665GiB/reserved6.998GiB,
+  process lifetime peak RSS9.438GiB. No OOM. No evidence of VRAM capacity
+  exhaustion. This does not measure bandwidth stalls or prove all CPU/RAM
+  bottlenecks absent; cgroup counters were unavailable in this environment.
+- L4 attempts: account1 automatic placement, account1 us-central, account2
+  automatic placement. All timed out at first RPC after300s, zero chunks.
+  Observed no running L4 container in status checks and no model-load output.
+  Underlying scheduler cause is unknown; do not claim L4 inference is slow.
+- All temporary apps confirmed stopped/zero tasks. Production apps untouched.
+- Official Modal GPU/region/pricing pages were read; URL/hash ledger is
+  `research/benchmarks/qwen-comparison-sources.json`. Docs support L4 and note
+  hardware generations do not scale compute and memory throughput equally.
+- Measurements and limitations: `docs/QWEN_GPU_COMPARISON.md`. Comparison remains
+  incomplete until L4 allocation succeeds; no numerical L4 speedup is claimed.
+
 ## Second Qwen live video: 7jb0q3Mo9Rg (2026-11-05)
 
 - Requested sample: https://www.youtube.com/watch?v=7jb0q3Mo9Rg . Used signed

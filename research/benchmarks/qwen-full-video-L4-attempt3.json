@@ -1,0 +1,22 @@
+{
+  "video": "7jb0q3Mo9Rg",
+  "gpu_requested": "L4",
+  "cpu": 2,
+  "ram_mib": 16384,
+  "audio_sha256": "170b4186164f5fed69f8b603617cac8131a14b9824125a31358b1e831e7b08e5",
+  "duration_seconds": 817.0173125,
+  "asr_revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+  "aligner_revision": "c7cbfc2048c462b0d63a45797104fc9db3ad62b7",
+  "production_source_sha256": "5b512b8a7c276e7800e5438dbc5bbbf131ea0f95741991b830d1e35ae0ea1394",
+  "scope": "Two full uncached passes, production VAD/ASR/alignment methods; no download, translation or TTS",
+  "passes": [
+    {
+      "repeat": 0,
+      "chunks": []
+    }
+  ],
+  "region_requested": null,
+  "account": 2,
+  "passed": false,
+  "error_type": "TimeoutError"
+}

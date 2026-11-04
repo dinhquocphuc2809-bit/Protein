@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://modal.com/docs/guide/gpu",
+    "bytes": 76623,
+    "sha256": "4b399228ddb8b01ffd9571699e0035270e2dcc4b10d40f5d8066e98e3e753a47"
+  },
+  {
+    "url": "https://modal.com/docs/guide/region-selection",
+    "bytes": 63052,
+    "sha256": "528074907e69c2c307178ef5ac0d45877364c14e8562168edde786ef36c8f916"
+  },
+  {
+    "url": "https://modal.com/pricing",
+    "bytes": 325669,
+    "sha256": "8e82850ea8c8be83e75d2bdaeda96a72b45a8b364c9e6d8b15bc940af880e2fa"
+  }
+]

@@ -1,0 +1,1917 @@
+{
+  "video": "7jb0q3Mo9Rg",
+  "gpu_requested": "T4",
+  "cpu": 2,
+  "ram_mib": 16384,
+  "audio_sha256": "170b4186164f5fed69f8b603617cac8131a14b9824125a31358b1e831e7b08e5",
+  "duration_seconds": 817.0173125,
+  "asr_revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+  "aligner_revision": "c7cbfc2048c462b0d63a45797104fc9db3ad62b7",
+  "production_source_sha256": "5b512b8a7c276e7800e5438dbc5bbbf131ea0f95741991b830d1e35ae0ea1394",
+  "scope": "Two full uncached passes, production VAD/ASR/alignment methods; no download, translation or TTS",
+  "passes": [
+    {
+      "repeat": 0,
+      "chunks": [
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.654817454,
+          "cpu_seconds": 5.029999999999998,
+          "stages": {
+            "vad": 0.5150461889999995,
+            "recognition": 3.7968425179999947,
+            "qwen_alignment": 0.3379244640000003
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 6,
+            "qwen_alignment": 6
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 1,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6058625024,
+          "peak_reserved_bytes": 6218055680,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 0,
+          "words": 45,
+          "rpc_seconds": 46.9315162999992
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.3325598600000035,
+          "cpu_seconds": 5.710000000000001,
+          "stages": {
+            "vad": 0.41729533400000207,
+            "recognition": 4.4198307650000075,
+            "qwen_alignment": 0.49219913299999973
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 2,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6039249920,
+          "peak_reserved_bytes": 6218055680,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 24,
+          "words": 79,
+          "rpc_seconds": 8.698588400002336
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.967739941000005,
+          "cpu_seconds": 6.3799999999999955,
+          "stages": {
+            "vad": 0.39045389799999697,
+            "recognition": 4.921087030999999,
+            "qwen_alignment": 0.6527363800000003
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 12,
+            "qwen_alignment": 12
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 3,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 5999521280,
+          "peak_reserved_bytes": 6218055680,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 48,
+          "words": 84,
+          "rpc_seconds": 9.561610300006578
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.7325495790000005,
+          "cpu_seconds": 6.080000000000005,
+          "stages": {
+            "vad": 0.3999300369999972,
+            "recognition": 4.818116491000005,
+            "qwen_alignment": 0.5112561270000029
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 4,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6095439872,
+          "peak_reserved_bytes": 6352273408,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 72,
+          "words": 101,
+          "rpc_seconds": 9.011865699998452
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 1,
+          "seconds": 15.319622992,
+          "cpu_seconds": 12.469999999999999,
+          "stages": {
+            "vad": 0.4265920850000029,
+            "recognition": 4.48071262900001,
+            "qwen_alignment": 0.4456510820000048
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 5,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7155994624,
+          "peak_reserved_bytes": 7262437376,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 96,
+          "words": 102,
+          "rpc_seconds": 19.173392999997304
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.040816758000005,
+          "cpu_seconds": 5.43,
+          "stages": {
+            "vad": 0.4184054300000071,
+            "recognition": 4.172518803000017,
+            "qwen_alignment": 0.4467709550000194
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 6,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027364864,
+          "peak_reserved_bytes": 7262437376,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 120,
+          "words": 74,
+          "rpc_seconds": 8.813651600001322
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.093755440999999,
+          "cpu_seconds": 5.569999999999993,
+          "stages": {
+            "vad": 0.46283273900000665,
+            "recognition": 4.173000993000002,
+            "qwen_alignment": 0.45471290400003284
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 7,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009254400,
+          "peak_reserved_bytes": 7262437376,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 144,
+          "words": 82,
+          "rpc_seconds": 8.794485500002338
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.434234498999999,
+          "cpu_seconds": 6.8700000000000045,
+          "stages": {
+            "vad": 0.41520520499999236,
+            "recognition": 5.361731159999977,
+            "qwen_alignment": 0.6537211509999707
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 12,
+            "qwen_alignment": 12
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 8,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6988008448,
+          "peak_reserved_bytes": 7262437376,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 168,
+          "words": 98,
+          "rpc_seconds": 10.95137319999776
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.785717133000006,
+          "cpu_seconds": 6.260000000000005,
+          "stages": {
+            "vad": 0.4540617119999979,
+            "recognition": 4.823502815000026,
+            "qwen_alignment": 0.5047570240000425
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 9,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7046205440,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 192,
+          "words": 81,
+          "rpc_seconds": 9.685781100000895
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.938178672999996,
+          "cpu_seconds": 5.319999999999993,
+          "stages": {
+            "vad": 0.40012405800000295,
+            "recognition": 4.096161045000002,
+            "qwen_alignment": 0.4388242110000107
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 10,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009211904,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 216,
+          "words": 77,
+          "rpc_seconds": 8.18477459999849
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.732955556999997,
+          "cpu_seconds": 7.090000000000003,
+          "stages": {
+            "vad": 0.3747164130000016,
+            "recognition": 5.746648614000037,
+            "qwen_alignment": 0.6080081680000546
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 11,
+            "qwen_alignment": 11
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 11,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009218560,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 240,
+          "words": 118,
+          "rpc_seconds": 9.926741700001003
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.934237486000001,
+          "cpu_seconds": 6.329999999999998,
+          "stages": {
+            "vad": 0.4036340510000116,
+            "recognition": 4.974840931000017,
+            "qwen_alignment": 0.5523795190000271
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 12,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009192960,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 264,
+          "words": 95,
+          "rpc_seconds": 8.431129299999157
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.057904541999989,
+          "cpu_seconds": 6.429999999999993,
+          "stages": {
+            "vad": 0.4001475350000021,
+            "recognition": 5.001175484999976,
+            "qwen_alignment": 0.6533916070000316
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 12,
+            "qwen_alignment": 12
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 13,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009255424,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 288,
+          "words": 59,
+          "rpc_seconds": 8.536792699997022
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.0294978519999916,
+          "cpu_seconds": 5.429999999999993,
+          "stages": {
+            "vad": 0.3883223219999934,
+            "recognition": 4.246650082999992,
+            "qwen_alignment": 0.39144856799998706
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 7,
+            "qwen_alignment": 7
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 14,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027366400,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 312,
+          "words": 89,
+          "rpc_seconds": 8.703663399996003
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.660793133999988,
+          "cpu_seconds": 6.140000000000001,
+          "stages": {
+            "vad": 0.44564674600002263,
+            "recognition": 4.710254285999952,
+            "qwen_alignment": 0.5016338470000505
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 15,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027391488,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 336,
+          "words": 96,
+          "rpc_seconds": 9.681282099998498
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 7.005934312999983,
+          "cpu_seconds": 7.390000000000001,
+          "stages": {
+            "vad": 0.3998075500000198,
+            "recognition": 5.839761020000054,
+            "qwen_alignment": 0.7627552360000038
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 14,
+            "qwen_alignment": 14
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 16,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6987986944,
+          "peak_reserved_bytes": 7375683584,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 360,
+          "words": 91,
+          "rpc_seconds": 10.179042999996454
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.241743478000018,
+          "cpu_seconds": 5.609999999999999,
+          "stages": {
+            "vad": 0.39219554700000003,
+            "recognition": 4.394146463999931,
+            "qwen_alignment": 0.45203159099997947
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 17,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7024016896,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 384,
+          "words": 109,
+          "rpc_seconds": 7.853343499999028
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.326708421000006,
+          "cpu_seconds": 5.689999999999998,
+          "stages": {
+            "vad": 0.3896185790000004,
+            "recognition": 4.436664067999885,
+            "qwen_alignment": 0.49717004700002576
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 18,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027385344,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 408,
+          "words": 92,
+          "rpc_seconds": 8.386186200004886
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.767303370000008,
+          "cpu_seconds": 6.22999999999999,
+          "stages": {
+            "vad": 0.4123381670000015,
+            "recognition": 4.797856785999954,
+            "qwen_alignment": 0.5536639580000156
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 19,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009255424,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 432,
+          "words": 101,
+          "rpc_seconds": 8.434749799998826
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.8436411090000036,
+          "cpu_seconds": 5.230000000000018,
+          "stages": {
+            "vad": 0.3688158230000056,
+            "recognition": 3.9822932499999695,
+            "qwen_alignment": 0.48946675199997003
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 20,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027391488,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 456,
+          "words": 74,
+          "rpc_seconds": 7.955950600000506
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.4964051629999915,
+          "cpu_seconds": 5.900000000000006,
+          "stages": {
+            "vad": 0.4237984920000031,
+            "recognition": 4.555575285999936,
+            "qwen_alignment": 0.5134406560000002
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 21,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6988013568,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 480,
+          "words": 105,
+          "rpc_seconds": 8.087499500004924
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.303377155999982,
+          "cpu_seconds": 4.700000000000017,
+          "stages": {
+            "vad": 0.4201477269999998,
+            "recognition": 3.486338714000027,
+            "qwen_alignment": 0.3936943510000219
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 7,
+            "qwen_alignment": 7
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 22,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009248768,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 504,
+          "words": 79,
+          "rpc_seconds": 7.166777300000831
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.844845082000006,
+          "cpu_seconds": 6.25,
+          "stages": {
+            "vad": 0.41804077700001585,
+            "recognition": 4.871194597000027,
+            "qwen_alignment": 0.5522234019999814
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 23,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009236480,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 528,
+          "words": 100,
+          "rpc_seconds": 8.303217599997879
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.311752141999989,
+          "cpu_seconds": 6.6200000000000045,
+          "stages": {
+            "vad": 0.36904596300001913,
+            "recognition": 5.446867173000015,
+            "qwen_alignment": 0.4923524069999985
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 24,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7046180352,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 552,
+          "words": 133,
+          "rpc_seconds": 8.84148259999347
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.171787448999993,
+          "cpu_seconds": 5.560000000000002,
+          "stages": {
+            "vad": 0.39530792200000064,
+            "recognition": 4.3280900729999985,
+            "qwen_alignment": 0.4453025509999975
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 25,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009235968,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 576,
+          "words": 84,
+          "rpc_seconds": 7.642049800000677
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.794903551000033,
+          "cpu_seconds": 7.179999999999978,
+          "stages": {
+            "vad": 0.377616971000009,
+            "recognition": 5.697614592999969,
+            "qwen_alignment": 0.7160150999999928
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 13,
+            "qwen_alignment": 13
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 26,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009218560,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 600,
+          "words": 115,
+          "rpc_seconds": 9.286628100002417
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.544284323999989,
+          "cpu_seconds": 5.949999999999989,
+          "stages": {
+            "vad": 0.3898918549999735,
+            "recognition": 4.60573715400011,
+            "qwen_alignment": 0.5453951799999572
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 27,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027391488,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 624,
+          "words": 83,
+          "rpc_seconds": 7.959086599999864
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.036039243000005,
+          "cpu_seconds": 6.469999999999999,
+          "stages": {
+            "vad": 0.4507198849999554,
+            "recognition": 5.072782126999982,
+            "qwen_alignment": 0.5092102110000383
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 28,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027385344,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 648,
+          "words": 93,
+          "rpc_seconds": 8.404369600000791
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.273313912999981,
+          "cpu_seconds": 6.659999999999997,
+          "stages": {
+            "vad": 0.431243821999999,
+            "recognition": 5.338625326999988,
+            "qwen_alignment": 0.49985819699998046
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 29,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009242112,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 672,
+          "words": 117,
+          "rpc_seconds": 8.778288699999393
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.318054501999995,
+          "cpu_seconds": 6.710000000000008,
+          "stages": {
+            "vad": 0.39149812199997314,
+            "recognition": 5.423103724000043,
+            "qwen_alignment": 0.49992375099992614
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 30,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7046210560,
+          "peak_reserved_bytes": 7386169344,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 696,
+          "words": 131,
+          "rpc_seconds": 8.657432300002256
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 1.7263310800000227,
+          "cpu_seconds": 2.0999999999999943,
+          "stages": {
+            "vad": 0.3995943539999871,
+            "recognition": 1.2638407100000109,
+            "qwen_alignment": 0.06046471400003384
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 1,
+            "qwen_alignment": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 31,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7065026048,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 720,
+          "words": 41,
+          "rpc_seconds": 4.08028159999958
+        },
+        {
+          "language": null,
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 0.399287935000018,
+          "cpu_seconds": 0.789999999999992,
+          "stages": {
+            "vad": 0.39727221099997223
+          },
+          "stage_calls": {
+            "vad": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 32,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6906777600,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 744,
+          "words": 0,
+          "rpc_seconds": 2.825371399994765
+        },
+        {
+          "language": null,
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 0.4371202030000063,
+          "cpu_seconds": 0.8400000000000034,
+          "stages": {
+            "vad": 0.4351083709999557
+          },
+          "stage_calls": {
+            "vad": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 33,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6906777600,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 768,
+          "words": 0,
+          "rpc_seconds": 3.0636283999992884
+        },
+        {
+          "language": null,
+          "duration": 25.0173125,
+          "alignment_recoveries": 0,
+          "seconds": 0.39411710500002073,
+          "cpu_seconds": 0.7599999999999909,
+          "stages": {
+            "vad": 0.39226634900001045
+          },
+          "stage_calls": {
+            "vad": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 34,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6906777600,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 792,
+          "words": 0,
+          "rpc_seconds": 2.544629799995164
+        }
+      ],
+      "wall_seconds": 323.58496000000014,
+      "words": 2398,
+      "cues": 160,
+      "last": 727.6,
+      "output_sha256": "f93b49785a992fde1798fd8cbe7ad6901aa91e63c060683a29668e91dac7b285",
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "chunks": [
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 3.4979102079999507,
+          "cpu_seconds": 3.880000000000024,
+          "stages": {
+            "vad": 0.38089096600003813,
+            "recognition": 2.784401467000066,
+            "qwen_alignment": 0.329961303999994
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 6,
+            "qwen_alignment": 6
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 35,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027434496,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 0,
+          "words": 45,
+          "rpc_seconds": 5.785052599996561
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.36575646700004,
+          "cpu_seconds": 5.810000000000002,
+          "stages": {
+            "vad": 0.4506787779999968,
+            "recognition": 4.4120194519999245,
+            "qwen_alignment": 0.4999089660000777
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 36,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009206272,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 24,
+          "words": 79,
+          "rpc_seconds": 7.479220499997609
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.974955555000008,
+          "cpu_seconds": 6.390000000000015,
+          "stages": {
+            "vad": 0.38373543699998436,
+            "recognition": 4.941134969000075,
+            "qwen_alignment": 0.6467518399999221
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 12,
+            "qwen_alignment": 12
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 37,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6969451008,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 48,
+          "words": 84,
+          "rpc_seconds": 8.143012499996985
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.757460730999981,
+          "cpu_seconds": 6.139999999999986,
+          "stages": {
+            "vad": 0.3986892280000234,
+            "recognition": 4.849001280000039,
+            "qwen_alignment": 0.5064938579999989
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 38,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7064970240,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 72,
+          "words": 101,
+          "rpc_seconds": 8.126043300006131
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 1,
+          "seconds": 5.462360295999986,
+          "cpu_seconds": 5.840000000000003,
+          "stages": {
+            "vad": 0.3778573199999755,
+            "recognition": 4.500517699999989,
+            "qwen_alignment": 0.4431104639999148
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 39,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7155994624,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 96,
+          "words": 102,
+          "rpc_seconds": 7.781830699997954
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.863936154000044,
+          "cpu_seconds": 5.219999999999999,
+          "stages": {
+            "vad": 0.3606010709999623,
+            "recognition": 4.067880078999963,
+            "qwen_alignment": 0.4324453679999465
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 40,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027364864,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 120,
+          "words": 74,
+          "rpc_seconds": 7.0674841000000015
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.974174430000005,
+          "cpu_seconds": 5.400000000000006,
+          "stages": {
+            "vad": 0.40097324999999273,
+            "recognition": 4.126979535999965,
+            "qwen_alignment": 0.44314348200015274
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 41,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009254400,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 144,
+          "words": 82,
+          "rpc_seconds": 7.298061499997857
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.470064060000027,
+          "cpu_seconds": 6.900000000000006,
+          "stages": {
+            "vad": 0.43889512499998773,
+            "recognition": 5.370171598000013,
+            "qwen_alignment": 0.6575607279997939
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 12,
+            "qwen_alignment": 12
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 42,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6988008448,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 168,
+          "words": 98,
+          "rpc_seconds": 8.804750199997216
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.695053842999982,
+          "cpu_seconds": 6.100000000000023,
+          "stages": {
+            "vad": 0.40575243099999625,
+            "recognition": 4.734922562999884,
+            "qwen_alignment": 0.5512145849999683
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 43,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7046205440,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 192,
+          "words": 81,
+          "rpc_seconds": 8.841204900003504
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.990074141000036,
+          "cpu_seconds": 5.420000000000016,
+          "stages": {
+            "vad": 0.419770753000023,
+            "recognition": 4.125055889999999,
+            "qwen_alignment": 0.44215717500003393
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 44,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009211904,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 216,
+          "words": 77,
+          "rpc_seconds": 7.1875832000005175
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.720204619000015,
+          "cpu_seconds": 7.099999999999966,
+          "stages": {
+            "vad": 0.391233743999976,
+            "recognition": 5.724540554999862,
+            "qwen_alignment": 0.6009162350000565
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 11,
+            "qwen_alignment": 11
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 45,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009218560,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 240,
+          "words": 118,
+          "rpc_seconds": 9.165890800002671
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.951035649000005,
+          "cpu_seconds": 6.410000000000025,
+          "stages": {
+            "vad": 0.44652708600000324,
+            "recognition": 4.952135715999987,
+            "qwen_alignment": 0.5490521570000055
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 46,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009192960,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 264,
+          "words": 95,
+          "rpc_seconds": 8.253342999996676
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.017109546000029,
+          "cpu_seconds": 6.399999999999977,
+          "stages": {
+            "vad": 0.38637971399998605,
+            "recognition": 4.97796046000002,
+            "qwen_alignment": 0.649588341000026
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 12,
+            "qwen_alignment": 12
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 47,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009255424,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 288,
+          "words": 59,
+          "rpc_seconds": 8.463744300002872
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.022489082999982,
+          "cpu_seconds": 5.409999999999968,
+          "stages": {
+            "vad": 0.4111466990000281,
+            "recognition": 4.221327942999892,
+            "qwen_alignment": 0.38692944299998544
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 7,
+            "qwen_alignment": 7
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 48,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027366400,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 312,
+          "words": 89,
+          "rpc_seconds": 7.45120119999774
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.5874084029999835,
+          "cpu_seconds": 5.949999999999989,
+          "stages": {
+            "vad": 0.3766257010000231,
+            "recognition": 4.708477455000036,
+            "qwen_alignment": 0.49902963399995315
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 49,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027391488,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 336,
+          "words": 96,
+          "rpc_seconds": 7.976416999998037
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 7.096758815999976,
+          "cpu_seconds": 7.490000000000009,
+          "stages": {
+            "vad": 0.39410772999997334,
+            "recognition": 5.913991365999948,
+            "qwen_alignment": 0.785053107000067
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 14,
+            "qwen_alignment": 14
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 50,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6987986944,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 360,
+          "words": 91,
+          "rpc_seconds": 9.77249650000158
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.175205296999991,
+          "cpu_seconds": 5.509999999999991,
+          "stages": {
+            "vad": 0.38992925800005196,
+            "recognition": 4.338057280000044,
+            "qwen_alignment": 0.4438815609999551
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 51,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7024016896,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 384,
+          "words": 109,
+          "rpc_seconds": 7.551892100003897
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.343943647000003,
+          "cpu_seconds": 5.740000000000009,
+          "stages": {
+            "vad": 0.387329249000004,
+            "recognition": 4.455155530999946,
+            "qwen_alignment": 0.4981731420000415
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 52,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027385344,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 408,
+          "words": 92,
+          "rpc_seconds": 7.678942599995935
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.881840581000006,
+          "cpu_seconds": 6.2900000000000205,
+          "stages": {
+            "vad": 0.42737045899997383,
+            "recognition": 4.891627339000024,
+            "qwen_alignment": 0.559338509999975
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 53,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009255424,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 432,
+          "words": 101,
+          "rpc_seconds": 8.340118100000836
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.928471036999952,
+          "cpu_seconds": 5.360000000000014,
+          "stages": {
+            "vad": 0.41862385100000665,
+            "recognition": 4.0113062860000355,
+            "qwen_alignment": 0.4953233849999492
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 54,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027391488,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 456,
+          "words": 74,
+          "rpc_seconds": 7.483041200001026
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.449025302999985,
+          "cpu_seconds": 5.899999999999977,
+          "stages": {
+            "vad": 0.4249554689999968,
+            "recognition": 4.526173960000051,
+            "qwen_alignment": 0.4945026489999691
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 55,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6988013568,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 480,
+          "words": 105,
+          "rpc_seconds": 8.236123800001224
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 4.380541151999978,
+          "cpu_seconds": 4.759999999999991,
+          "stages": {
+            "vad": 0.3647740359999716,
+            "recognition": 3.6161360600000307,
+            "qwen_alignment": 0.39662874699996564
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 7,
+            "qwen_alignment": 7
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 56,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009248768,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 504,
+          "words": 79,
+          "rpc_seconds": 6.581738000000769
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.848874133000038,
+          "cpu_seconds": 6.259999999999991,
+          "stages": {
+            "vad": 0.3761956320000195,
+            "recognition": 4.91212351900009,
+            "qwen_alignment": 0.5570878990000665
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 57,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009236480,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 528,
+          "words": 100,
+          "rpc_seconds": 8.187809700000798
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.3673074530000235,
+          "cpu_seconds": 6.720000000000027,
+          "stages": {
+            "vad": 0.3972889359999954,
+            "recognition": 5.471256074999985,
+            "qwen_alignment": 0.4951941339999735
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 58,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7046180352,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 552,
+          "words": 133,
+          "rpc_seconds": 8.738251700000546
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.110194546999992,
+          "cpu_seconds": 5.460000000000036,
+          "stages": {
+            "vad": 0.354268884000021,
+            "recognition": 4.312886461999881,
+            "qwen_alignment": 0.4399409569999193
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 8,
+            "qwen_alignment": 8
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 59,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009235968,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 576,
+          "words": 84,
+          "rpc_seconds": 7.560387900004571
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.738919779000014,
+          "cpu_seconds": 7.099999999999966,
+          "stages": {
+            "vad": 0.383650810000006,
+            "recognition": 5.651069796999877,
+            "qwen_alignment": 0.7004717910000409
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 13,
+            "qwen_alignment": 13
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 60,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009218560,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 600,
+          "words": 115,
+          "rpc_seconds": 9.108549099997617
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.498267893999923,
+          "cpu_seconds": 5.8700000000000045,
+          "stages": {
+            "vad": 0.36828506700010166,
+            "recognition": 4.584813747999988,
+            "qwen_alignment": 0.5419899949998808
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 10,
+            "qwen_alignment": 10
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 61,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027391488,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 624,
+          "words": 83,
+          "rpc_seconds": 7.815048800002842
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 5.9227810840000075,
+          "cpu_seconds": 6.270000000000039,
+          "stages": {
+            "vad": 0.3944195100000343,
+            "recognition": 5.022455702000002,
+            "qwen_alignment": 0.5027099579999685
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 62,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7027385344,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 648,
+          "words": 93,
+          "rpc_seconds": 8.308580199998687
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.125113714999998,
+          "cpu_seconds": 6.5,
+          "stages": {
+            "vad": 0.3643899119999787,
+            "recognition": 5.267377231999944,
+            "qwen_alignment": 0.48998132000008354
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 63,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7009242112,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 672,
+          "words": 117,
+          "rpc_seconds": 8.675687799994193
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 6.212823619000005,
+          "cpu_seconds": 6.579999999999984,
+          "stages": {
+            "vad": 0.3756462300000294,
+            "recognition": 5.3422936719999825,
+            "qwen_alignment": 0.49140176699984295
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 9,
+            "qwen_alignment": 9
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 64,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7046210560,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 696,
+          "words": 131,
+          "rpc_seconds": 8.745548799997778
+        },
+        {
+          "language": "Chinese",
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 1.6656117610000365,
+          "cpu_seconds": 2.0100000000000477,
+          "stages": {
+            "vad": 0.36427203100004135,
+            "recognition": 1.2394573720000608,
+            "qwen_alignment": 0.059559529000011935
+          },
+          "stage_calls": {
+            "vad": 1,
+            "recognition": 1,
+            "qwen_alignment": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 65,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 7065026048,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 720,
+          "words": 41,
+          "rpc_seconds": 4.031236399998306
+        },
+        {
+          "language": null,
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 0.42196590700007164,
+          "cpu_seconds": 0.8199999999999932,
+          "stages": {
+            "vad": 0.4199851950000948
+          },
+          "stage_calls": {
+            "vad": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 66,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6906777600,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 744,
+          "words": 0,
+          "rpc_seconds": 2.274591199995484
+        },
+        {
+          "language": null,
+          "duration": 28.0,
+          "alignment_recoveries": 0,
+          "seconds": 0.3803406899999118,
+          "cpu_seconds": 0.75,
+          "stages": {
+            "vad": 0.3783391010000514
+          },
+          "stage_calls": {
+            "vad": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 67,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6906777600,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 768,
+          "words": 0,
+          "rpc_seconds": 2.7936539000002085
+        },
+        {
+          "language": null,
+          "duration": 25.0173125,
+          "alignment_recoveries": 0,
+          "seconds": 0.32776388500008125,
+          "cpu_seconds": 0.6499999999999773,
+          "stages": {
+            "vad": 0.3259219649999068
+          },
+          "stage_calls": {
+            "vad": 1
+          },
+          "model_load_seconds": 17.494144919,
+          "container_call": 68,
+          "gpu_name": "Tesla T4",
+          "gpu_total_bytes": 15645278208,
+          "peak_allocated_bytes": 6906777600,
+          "peak_reserved_bytes": 7514095616,
+          "peak_rss_bytes": 10133540864,
+          "cgroup": {},
+          "offset": 792,
+          "words": 0,
+          "rpc_seconds": 2.1110823999988497
+        }
+      ],
+      "wall_seconds": 251.94428229999903,
+      "words": 2398,
+      "cues": 160,
+      "last": 727.6,
+      "output_sha256": "f93b49785a992fde1798fd8cbe7ad6901aa91e63c060683a29668e91dac7b285",
+      "passed": true
+    }
+  ],
+  "passed": true
+}
