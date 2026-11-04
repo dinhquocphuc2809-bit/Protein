@@ -240,6 +240,7 @@ async function siteCaptions(message, sender) {
       "lib/media.js",
       "lib/subtitle-formats.js",
       "lib/bilibili.js",
+      "lib/platform-captions.js",
       "multisite-main.js",
     ],
   });

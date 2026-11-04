@@ -1,0 +1,98 @@
+{
+  "scope": "Authorized live Udemy in installed Chrome; source acquisition probe, not packaged MV3 acceptance; no paid providers",
+  "at": "2026-11-04T06:07:35.576332+00:00",
+  "headed": true,
+  "browser": "chrome",
+  "lecture_path": "/course/ccna-complete/learn/lecture/9538164",
+  "network": [
+    {
+      "kind": "api",
+      "path": "/api-2.0/users/me/learning-calendar-reminders/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/courses/1203374/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/courses/1203374/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/courses/1203374/labs/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/users/me/subscribed-courses/1203374/notes/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/users/me/system-messages/has_seen_labs_in_course_prompt/seen/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/shopping-carts/me/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/contexts/me/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/visits/me/datadog-increment-logs/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/visits/me/datadog-increment-logs/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/visits/me/datadog-increment-logs/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/visits/me/datadog-increment-logs/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/braze/auth/",
+      "status": 403
+    },
+    {
+      "kind": "api",
+      "path": "/api-2.0/visits/me/datadog-increment-logs/",
+      "status": 403
+    }
+  ],
+  "checks": [
+    {
+      "name": "source_probe",
+      "frames": [
+        {
+          "state": "no-player"
+        }
+      ]
+    }
+  ],
+  "http_status": 200,
+  "page": {
+    "path": "/course/ccna-complete/learn/lecture/9538164",
+    "videoCount": 0,
+    "loginForm": false,
+    "challenge": false,
+    "title": "Course: Cisco CCNA 200-301 \u2013 The Complete Guide to Getting Certified | Udemy"
+  },
+  "acquired": false
+}

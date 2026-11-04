@@ -1,0 +1,68 @@
+{
+  "scope": "Authorized live Udemy; actual packaged MV3 caption acquisition; no ASR, translation or GPU calls",
+  "at": "2026-11-04T06:00:40.835964+00:00",
+  "lecture_path": "/course/ccna-complete/learn/lecture/9538164",
+  "network": [],
+  "checks": [
+    {
+      "name": "initial",
+      "seconds": 0.015,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        null,
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ]
+    },
+    {
+      "name": "repeat",
+      "seconds": 0.0,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        null,
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ]
+    }
+  ],
+  "extension_version": "0.6.0",
+  "http_status": 200,
+  "page": {
+    "path": "/course/ccna-complete/learn/lecture/9538164",
+    "videoCount": 0,
+    "loginForm": false,
+    "challenge": false,
+    "title": "Course: Cisco CCNA 200-301 \u2013 The Complete Guide to Getting Certified | Udemy"
+  },
+  "acquired": false
+}

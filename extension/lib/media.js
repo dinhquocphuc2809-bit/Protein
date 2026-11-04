@@ -77,6 +77,7 @@
     return [...new Set(found)];
   }
   function videos(scope = document) {
+    const ted = rules(location.href).some((r) => r.family === "ted");
     const selectors = rules(location.href)
       .map((r) => r.selector)
       .filter((s) => s !== "video" && s !== "video, audio");
@@ -99,6 +100,7 @@
     };
     return query("video", scope)
       .filter((v) => {
+        if (ted && v.closest("#ad-container")) return false;
         const rect = v.getBoundingClientRect();
         return rect.width > 100 && rect.height > 60;
       })
@@ -183,7 +185,11 @@
           if (
             matches.length === 1 &&
             query("video", matches[0]).length === 0 &&
-            query("video", scope).length === 1
+            query("video", scope).filter(
+              (v) =>
+                !rules(location.href).some((r) => r.family === "ted") ||
+                !v.closest("#ad-container"),
+            ).length === 1
           )
             return matches[0];
         } catch {

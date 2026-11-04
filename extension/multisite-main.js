@@ -127,7 +127,7 @@
       .filter((t) => !t.kind || ["captions", "subtitles"].includes(t.kind))
       .map((t) => ({
         url: F.safeUrl(t[api.urlField], base),
-        language: String(t[api.language] || "auto"),
+        language: M.language(t[api.language]),
         label: String(t[api.label] || ""),
         default: Boolean(t.default),
       }));
@@ -137,6 +137,7 @@
     try {
       if (type.kind === "metadata") {
         const data = JSON.parse(text);
+        if (!globalThis.VocalmPlatforms?.metadataMatches(url, data)) return;
         if (type.bili && data.code !== undefined && data.code !== 0) return;
         metadata.set(url, {
           tracks: type.bili
@@ -325,7 +326,7 @@
     return null;
   }
   function sdkTracks(video) {
-    const result = [];
+    const result = VocalmPlatforms.videojsTracks(video);
     const append = (list) => {
       if (!Array.isArray(list)) return;
       for (const t of list.slice(0, 100))
@@ -333,11 +334,13 @@
           (!t.kind || ["captions", "subtitles"].includes(t.kind)) &&
           (t.file || t.src || t.url)
         ) {
-          result.push({
-            url: F.safeUrl(t.file || t.src || t.url, location.href),
-            language: t.srclang || t.srcLang || t.language || t.lang || "auto",
-            default: Boolean(t.default),
-          });
+          const candidate = VocalmPlatforms.track(
+            t.file || t.src || t.url,
+            t.srclang || t.srcLang || t.language || t.lang,
+            location.href,
+            { default: Boolean(t.default) },
+          );
+          if (candidate) result.push(candidate);
         }
     };
     const manifest = (value) => {
@@ -369,6 +372,8 @@
         for (const player of Object.values(list))
           if (player?.el?.()?.contains(video)) {
             manifest(player.currentSource?.()?.src);
+            append(player.mediainfo?.text_tracks);
+            append(player.options?.()?.tracks);
             const remote = player.remoteTextTrackEls?.();
             if (remote)
               append(
@@ -384,8 +389,11 @@
   async function special(video, token, budget) {
     const result = [],
       rules = M.rules(location.href);
+    const shadowHost = video.getRootNode()?.host;
     const embed = video.closest(".wistia_embed"),
       wistiaId =
+        (shadowHost?.localName === "wistia-player" &&
+          shadowHost.getAttribute("media-id")?.match(/^[a-zA-Z0-9]+$/)?.[0]) ||
         embed?.className?.match(/\bwistia_async_([a-zA-Z0-9]+)/)?.[1] ||
         (/^fast\.wistia\.(net|com)$/.test(location.hostname) &&
           location.pathname.match(/^\/embed\/iframe\/([a-zA-Z0-9]+)/)?.[1]);
@@ -428,6 +436,45 @@
         });
     }
     return result;
+  }
+  async function recoverMetadata(token, budget) {
+    // Resource timings survive SPA navigation. Only recover schemas whose URL
+    // can be tied to the currently displayed lesson, not generic API matches.
+    if (
+      !M.rules(location.href).some((r) =>
+        ["udemy", "chartacademy"].includes(r.family),
+      )
+    )
+      return;
+    const seen = new Set();
+    for (const entry of performance
+      .getEntriesByType("resource")
+      .slice(-500)
+      .reverse()) {
+      const type = classify(entry.name);
+      if (
+        type?.kind !== "metadata" ||
+        type.bili ||
+        metadata.has(entry.name) ||
+        seen.has(entry.name)
+      )
+        continue;
+      // Lecture APIs can fire before the hook is installed. Re-read only current,
+      // allowlisted metadata URLs; never replay requests with writes or bodies.
+      if (!VocalmPlatforms.metadataMatches(entry.name, null)) continue;
+      seen.add(entry.name);
+      if (seen.size > 3) break;
+      try {
+        remember(
+          entry.name,
+          await load(entry.name, token, budget),
+          type,
+          token,
+        );
+      } catch {
+        /* Normal candidate failure reporting remains available. */
+      }
+    }
   }
   async function acquire(expected) {
     if (busy)
@@ -473,6 +520,7 @@
         failure = e.message;
       }
       if (native) return finish(native);
+      const udemy = M.rules(location.href).some((r) => r.family === "udemy");
       let candidates = [...trackCandidates(video), ...sdkTracks(video)];
       if (bili) {
         try {
@@ -496,14 +544,19 @@
       }
       // API/network resources have no DOM owner. Only accept them in an unambiguous frame.
       if (M.videos().length === 1) {
+        await recoverMetadata(token, budget);
         for (const row of metadata.values())
-          if (!row.owner && same(row.token, token, true))
+          if (
+            !row.owner &&
+            same(row.token, token, true) &&
+            (!udemy || row.tracks.length === 1)
+          )
             candidates.push(...row.tracks);
         prune();
         const rows = [...resources.values()].filter((r) =>
           same(r.token, token, true),
         );
-        for (const row of rows.filter((r) => r.kind === "wistia"))
+        for (const row of rows.filter((r) => !udemy && r.kind === "wistia"))
           try {
             const data = JSON.parse(row.text);
             for (const c of data.captions || [])
@@ -517,11 +570,11 @@
           }
         candidates.push(
           ...rows
-            .filter((r) => r.kind === "hls")
+            .filter((r) => !udemy && r.kind === "hls")
             .map((r) => ({ url: r.url, language: "auto" })),
         );
         // Individual WebVTT network responses may be HLS fragments. Do not use them as a complete transcript.
-        if (!rows.some((r) => r.kind === "hls"))
+        if (!udemy && !rows.some((r) => r.kind === "hls"))
           candidates.push(
             ...rows
               .filter(
@@ -533,32 +586,71 @@
       }
       candidates.sort((a, b) => Number(b.default) - Number(a.default));
       const tried = new Set();
-      for (const candidate of candidates.slice(0, 100)) {
+      const attempt = async (candidate) => {
+        if (!candidate) return null;
+        if (candidate.cues) return finish(candidate);
+        if (tried.has(candidate.url)) return null;
+        tried.add(candidate.url);
+        const value = await load(candidate.url, token, budget);
+        const result = value.trimStart().startsWith("#EXTM3U")
+          ? await F.hls(
+              value,
+              candidate.url,
+              (url) => load(url, token, budget),
+              candidate.language,
+            )
+          : {
+              cues: VocalmPlatforms.parse(value, candidate.format),
+              language: candidate.language,
+            };
+        if (
+          candidate.observed &&
+          (!Number.isFinite(video.duration) ||
+            result.cues.at(-1).end < video.duration - 2)
+        )
+          throw new Error(
+            "Only a partial subtitle response was observed; enable CC and retry",
+          );
+        return finish(result);
+      };
+      const discoverPlatforms = async () => {
+        if (M.videos().length !== 1) return null;
         try {
-          if (candidate.cues) return finish(candidate);
-          if (tried.has(candidate.url)) continue;
-          tried.add(candidate.url);
-          const value = await load(candidate.url, token, budget);
-          const result = value.trimStart().startsWith("#EXTM3U")
-            ? await F.hls(
-                value,
-                candidate.url,
-                (url) => load(url, token, budget),
-                candidate.language,
-              )
-            : { cues: F.parse(value), language: candidate.language };
-          if (
-            candidate.observed &&
-            (!Number.isFinite(video.duration) ||
-              result.cues.at(-1).end < video.duration - 2)
-          )
-            throw new Error(
-              "Only a partial subtitle response was observed; enable CC and retry",
-            );
-          return finish(result);
+          for await (const candidate of VocalmPlatforms.discover({
+            video,
+            check,
+            read: (url, session) => load(url, token, budget, session),
+          })) {
+            check();
+            try {
+              const result = await attempt(candidate);
+              if (result) return result;
+            } catch (e) {
+              failure = e.message;
+            }
+          }
         } catch (e) {
           failure = e.message;
         }
+        return null;
+      };
+      // Udemy exposes dozens of translated tracks; resolve the original course
+      // locale before accepting an arbitrary observed or intercepted caption.
+      if (udemy) {
+        const result = await discoverPlatforms();
+        if (result) return result;
+      }
+      for (const candidate of candidates.slice(0, 100)) {
+        try {
+          const result = await attempt(candidate);
+          if (result) return result;
+        } catch (e) {
+          failure = e.message;
+        }
+      }
+      if (!udemy) {
+        const result = await discoverPlatforms();
+        if (result) return result;
       }
       if (bili) {
         try {

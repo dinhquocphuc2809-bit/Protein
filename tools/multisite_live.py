@@ -13,11 +13,16 @@ PAGES = [
     'https://ahrefs.com/academy/seo-training-course/lesson-1-1',
     'https://iandevlin.github.io/mdn/video-player-with-captions/',
 ]
+PLATFORM_PAGES = [
+    'https://www.ted.com/talks/ken_robinson_do_schools_kill_creativity',
+    'https://www.feynmanlectures.caltech.edu/fml.html',
+]
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--bilibili', action='store_true')
+    parser.add_argument('--platforms', action='store_true')
     args = parser.parse_args()
     output = ROOT / '.private/multisite-live'
     output.mkdir(exist_ok=True)
@@ -29,7 +34,7 @@ def main():
             args=[f'--disable-extensions-except={extension}', f'--load-extension={extension}'], viewport={'width': 1440, 'height': 1000})
         try:
             worker = context.service_workers[0] if context.service_workers else context.wait_for_event('serviceworker')
-            for url in PAGES[:1] if args.bilibili else PAGES:
+            for url in PLATFORM_PAGES if args.platforms else PAGES[:1] if args.bilibili else PAGES:
                 page = context.new_page()
                 row = {'url': url}
                 report['pages'].append(row)
@@ -56,7 +61,7 @@ def main():
         finally:
             context.close()
             profile.cleanup()
-            (ROOT / 'research' / ('bilibili-live.json' if args.bilibili else 'multisite-live.json')).write_text(json.dumps(report, indent=2), encoding='utf-8')
+            (ROOT / 'research' / ('platform-live.json' if args.platforms else 'bilibili-live.json' if args.bilibili else 'multisite-live.json')).write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps(report))
 
 

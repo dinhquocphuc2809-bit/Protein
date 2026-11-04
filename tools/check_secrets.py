@@ -16,6 +16,12 @@ def main():
     modal = ROOT.parent / "modal.com.txt"
     if modal.exists():
         values.update(x.encode() for x in re.findall(r"\b(?:ak|as)-[A-Za-z0-9_-]+", modal.read_text()))
+    cookies = ROOT.parent / "Cookie.txt"
+    if cookies.exists():
+        data = json.loads(cookies.read_text(encoding="utf-8-sig"))
+        rows = data if isinstance(data, list) else data.get("cookies", [])
+        values.update(row['value'].encode() for row in rows
+                      if isinstance(row.get('value'), str) and len(row['value']) >= 24)
     for path in (ROOT / '.private').glob('modal-*-proxy.json'):
         data = json.loads(path.read_bytes())
         values.update(value.encode() for value in data.values() if isinstance(value, str) and len(value) > 15)

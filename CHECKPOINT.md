@@ -357,6 +357,53 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 
 ## Resume details
 
+### Active full-reference parity work (2026-11-04)
+
+- User explicitly requires all reference sites, not only Bilibili/shared readers.
+- [x] Extract family-to-handler factory mapping and AST class/helper excerpts
+  without executing reference code (`tools/audit_reference_extractors.cjs`).
+- [ ] Review every family and per-site override; record exact source/timing/identity.
+- [ ] Implement missing readers in cohesive modules with bounded browser-session I/O.
+- [ ] Add per-reader success, stale identity, empty/auth/error tests; per-route tests.
+- [ ] Run actual extension Chrome/Firefox and public live acceptance.
+- [ ] Authenticated per-site acceptance; owner supplied Udemy lecture 9538164 and
+  explicitly authorized local Cookie.txt import. Cookie-imported Chromium/Chrome
+  reach course HTML but API responses are 403; no player and no caption success.
+- [x] New platform module: edX, Egghead, DataCamp, TED, Naver, Rutube, Substack,
+  Bloomberg, Dailymotion, Archive, Vidyard, Adobe TV, Feynman. Video.js mediainfo
+  and options tracks, Wistia custom-element ownership, current-lecture metadata recovery.
+- [x] 19 new unit tests and 22 packaged Chromium mechanism fixtures pass.
+  Existing 19 multisite fixtures pass after fixing a real regression: performance
+  timings survive SPA changes, so recovery is restricted to verified Udemy/Chart IDs.
+- [ ] Full reader/route matrix, Firefox and new public live cases remain pending.
+- Owner enabled Chrome debug port 57312 and supplied screenshot. Standard /json
+  endpoints return 404; DevToolsActivePort WebSocket works after Chrome consent.
+  `tools/udemy_attached.py` connected to the real playing-capable session: duration
+  335.181356s, paused at 85.538092s, zero native TextTracks, no Vocalm bridge/button.
+  Initial source-only acquisition was unknown because resource timings had no
+  lecture request. Fixed with current course module -> lecture API -> course locale.
+  Locale lookup is necessary: 33 tracks start with German and include multiple
+  manual languages; original English must be selected explicitly.
+- [x] Installed local Vocalm in owner's authorized Chrome through CDP, reloaded
+  only the supplied lecture and restored pause/time. Actual package acquisition:
+  72 English cues, 6.2-334.58s, identical hashes; final calls 1.187s and 1.141s.
+  Native player button is present. No ASR/translation/GPU calls in this test.
+- [x] Final batch: 66 JS / 58 Python tests, 22 platform mechanism fixtures,
+  19 shared multisite fixtures, Firefox 159 DOM/open-shadow regression pass.
+  Bilibili's 17 existing fixtures also passed earlier in this revision.
+- [x] TED live: 427 English cues, native Vocalm button present. Actual site changed
+  from playerData string to videoPlayerData object and adds separate ad videos.
+  Both schema and ad-node selection fixes have explicit regressions.
+- Feynman public live page returns HTTP 403; fixture passes, live acceptance blocked.
+  Evidence: `research/platform-live.json`. Final dist rebuild includes these fixes;
+  user's installed source directory is the same dist/chrome path.
+- [ ] Whole-site parity is still active. Do not represent this Udemy fix as
+  all-platform completion. Current known gaps and reference evidence are in
+  `docs/FULL_SITE_PARITY.md`; source audit index links to that review ledger.
+- Live evidence: `research/udemy-live-headed.json`, `research/udemy-live-chrome.json`,
+  `research/udemy-attached-live.json`. No cookies, signed URLs or caption text in reports.
+- This work is not a completed release. 159 routes are not 159 verified extractors.
+
 - Architecture: `docs/ARCHITECTURE.md`; source analysis: `docs/REFERENCE_ANALYSIS.md`.
 - Full validation matrix: `docs/TEST_PLAN.md`.
 - GPU runner: `.venv/Scripts/python.exe tools/run_benchmark.py asr` (or `tts`).

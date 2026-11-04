@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-04T06:31:53.970527+00:00",
+  "scope": "Live authorized Udemy session; installed local Vocalm MV3 caption acquisition; no translation, ASR or GPU requests",
+  "lecture": "9538164",
+  "checks": [
+    {
+      "name": "initial",
+      "seconds": 1.187,
+      "state": "ready",
+      "reason": null,
+      "cues": 72,
+      "language": "en-US",
+      "first": 6.2,
+      "last": 334.58,
+      "duration": 335.181356,
+      "hash": "33c801e49ed7d0f91dc4b2b0c975c17396f535d3b2f504c95121a86d6ca9f2a0",
+      "validTimes": true,
+      "totalCharacters": 5027
+    },
+    {
+      "name": "repeat",
+      "seconds": 1.141,
+      "state": "ready",
+      "reason": null,
+      "cues": 72,
+      "language": "en-US",
+      "first": 6.2,
+      "last": 334.58,
+      "duration": 335.181356,
+      "hash": "33c801e49ed7d0f91dc4b2b0c975c17396f535d3b2f504c95121a86d6ca9f2a0",
+      "validTimes": true,
+      "totalCharacters": 5027
+    }
+  ],
+  "extension": {
+    "id": "njepcceplllhabnepcaejllfpfhnloil",
+    "name": "Vocalm",
+    "version": "0.6.0"
+  },
+  "package_source_sha256": "352a78753fa670c17b671c7a108f3df38244ec70ecb76f017dcdd3641bf697dd",
+  "before": {
+    "bridge": true,
+    "button": true,
+    "videos": [
+      {
+        "duration": 335.181356,
+        "time": 85.538092,
+        "paused": true,
+        "tracks": 0
+      }
+    ]
+  },
+  "passed": true,
+  "stable": true
+}

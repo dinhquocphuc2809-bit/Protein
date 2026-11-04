@@ -4,6 +4,40 @@ Updated: 2026-11-04. Separate observed evidence, interpretation and unverified c
 
 ## Local observations
 
+### Full platform parity and authorized Udemy session (2026-11-04)
+
+- Reference AST audit now resolves 78 handler families across 159 routes. Extracted
+  class/helper excerpts are private, never executed or shipped. Detailed status:
+  `docs/FULL_SITE_PARITY.md`; route registration is not live certification.
+- New reader evidence: `tests/platform-captions.test.cjs` (19 unit checks),
+  `research/platform-acceptance.json` (22 actual MV3 mechanism fixtures).
+- Live Udemy cookie-import attempts: course HTML 200 in headed Chromium/Chrome,
+  but course/context APIs 403 and no video. Owner confirms ordinary Chrome plays.
+  This does not establish expired credentials or absent captions.
+- Official Chrome article read:
+  https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-browser-session
+  Chrome >=144 supports user-enabled remote debugging and browser consent for
+  connection. Owner supplied enabled endpoint screenshot. `/json/version` and
+  `/json/list` return 404; local DevToolsActivePort WebSocket connects successfully.
+- Attached live lesson 9538164: 335.181356 seconds, paused at 85.538092, no native
+  TextTracks; initial current-source acquisition was unknown. Read-only metadata
+  GET in the same session returns 33 caption tracks. Course locale is en_US;
+  selecting the first descriptor would wrongly choose German.
+- Fixed current course/lecture lookup, asset validation and original-language
+  priority. Installed package in authorized Chrome; final two live runs retrieve
+  identical 72-cue English transcripts in 1.187s/1.141s, ending at 334.58s. Button
+  is present and playback position preserved. `research/udemy-attached-live.json`
+  includes exact package source hash. Other sites are not certified by this result.
+- Chrome protocol definitions checked for Extensions.getExtensions/loadUnpacked:
+  https://raw.githubusercontent.com/ChromeDevTools/devtools-protocol/master/json/browser_protocol.json
+- Public live TED Ken Robinson sample redirects to slug prefixed sir_. Current
+  Next videoData.videoPlayerData is an object, not the reference's playerData JSON
+  string. resources.hls.metadata has subtitles[].webvtt; nativeLanguage en orders
+  the English track before Portuguese. #ad-container owns extra video elements;
+  excluding these on TED prevents false multiple-player ambiguity and restores
+  the native control mount. Final actual package reads 427 cues and mounts button.
+- https://www.feynmanlectures.caltech.edu/fml.html returned HTTP 403; no live pass.
+
 ### Bilibili and native player integration (2026-11-04, Vocalm 0.6.0)
 
 Detailed source comparison, plan and evidence: `docs/MULTISITE_REVISION.md`.

@@ -1,0 +1,139 @@
+{
+  "scope": "Packaged Chromium MV3; explicit metadata fixtures; not live site acceptance",
+  "checks": [
+    {
+      "name": "egghead",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "egghead_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "edx",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "datacamp",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "ted",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "naver",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "rutube",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "substack",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "bloomberg",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "dailymotion",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "archive",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "vidyard",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "adobe",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "feynman",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "videojs_mediainfo",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "videojs_other_player",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "ted_ad_players",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "ted_current_schema",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "videojs_attached",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "udemy_no_history",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "udemy_missed_hook",
+      "passed": true,
+      "state": "ready",
+      "cues": 2,
+      "lecture_requests": 2
+    },
+    {
+      "name": "udemy_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    }
+  ],
+  "passed": true
+}

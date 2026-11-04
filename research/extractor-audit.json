@@ -1,0 +1,2470 @@
+{
+  "sourceSha256": "e8cff06bfd1ad82965f687567e14bb06ae8d2627818a356aee3fdc5e82258e83",
+  "families": [
+    {
+      "family": "youtube",
+      "className": "T0",
+      "parent": "Ve",
+      "bytes": 21808,
+      "sites": [
+        "youtube",
+        "youtube",
+        "youtube"
+      ],
+      "methods": [
+        "constructor",
+        "observeMediaMetadata",
+        "createMetadataObservable",
+        "shouldPublishMetadata",
+        "buildPlatformSubtitleTracks",
+        "findMatchedCaptionTrack",
+        "resolveCaptionTrackLabel",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "releaseLastVideoForRetry",
+        "isTimedtextRequestInfoExpired",
+        "resolveLiveHlsMetadata",
+        "resolveLiveHlsSubtitles",
+        "fetchLiveHlsText",
+        "fetchLiveHlsBytes",
+        "buildLiveGoogleVideoFetchOptions",
+        "applyLiveHlsSubtitleResult",
+        "summarizeSubtitleGaps",
+        "isLiveContentPlayerResponse",
+        "extractLiveTextMp4Tracks",
+        "extractXtagValue",
+        "transformYouTubeMediaUrl",
+        "computeTransformedN",
+        "safeDecodeUriComponent",
+        "getPlayerResponseSafely",
+        "fetchYouTubeSubtitle",
+        "fetchTrackSubtitleByUrl",
+        "buildYouTubeFetchOptions",
+        "buildTrackSubtitleUrl",
+        "captureUserCaptionState",
+        "enableCaptionsWithReset",
+        "readBackAppliedTrack",
+        "restoreUserCaptionState",
+        "checkSubtitleHasPunctuation",
+        "parseYouTubeSubtitle",
+        "isAsrSubtitle",
+        "findFirstSegArray",
+        "shouldUseTextTrackApi",
+        "getSubtitleViaTextTrack",
+        "waitForTextTracks",
+        "findTextTrack",
+        "enableTrackAndWaitForCues",
+        "saveTextTrackModes",
+        "restoreTextTrackModes"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService",
+        "punctuationSubtitleService",
+        "liveHlsSubtitleService",
+        "subtitleRequestObserveTimeoutMs",
+        "captionRestoreDelayMs",
+        "captionRestoreTimer",
+        "savedCaptionState",
+        "savedCaptionStateVideoId",
+        "applyingCaptionsReset",
+        "YouTube subtitle url unavailable",
+        "YouTube subtitle response is empty",
+        "Empty subtitle text",
+        "[YouTubeLiveHls] Failed to resolve live subtitles",
+        "live_hls_subtitle_failed",
+        "inlineSubtitles",
+        "[YouTubeLiveHls] Live subtitles resolved",
+        "live_hls_subtitle_success",
+        "captions",
+        "yt-player-sticky-caption",
+        "yt-player-caption-sticky-language",
+        "subtitles"
+      ]
+    },
+    {
+      "family": "google_drive_youtube",
+      "className": "P$",
+      "parent": "Ve",
+      "bytes": 40664,
+      "sites": [
+        "google_drive_youtube"
+      ],
+      "methods": [
+        "constructor",
+        "logObservableDebug",
+        "logTransformDebug",
+        "buildTextPreview",
+        "buildTimedtextUrlDebug",
+        "readFrameActivationId",
+        "buildVideoEmissionKey",
+        "isStableMetadataForEmission",
+        "shouldStartVideoPipeline",
+        "markVideoPipelineStarted",
+        "finalizeVideoPipeline",
+        "releaseLastVideoForRetry",
+        "buildPlayerDebugSnapshot",
+        "extractCurrentTrackLanguage",
+        "isPlayerCaptionSystemReady",
+        "buildTrackListRetryResult",
+        "scheduleMobileEmbedSubtitleReadyRetry",
+        "clearMobileEmbedSubtitleReadyRetry",
+        "ensureSavedCaptionState",
+        "waitForDelay",
+        "scheduleCaptionRestore",
+        "createMetadataObservable",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "fetchTrackSubtitleByUrl",
+        "buildTrackSubtitleUrl",
+        "loadPlayerTrackFromSubtitleUrl",
+        "tryResolveMetadataFromCachedTimedtextRequest",
+        "waitForPlayerTrackSubtitleUrl",
+        "enableCaptionsWithReset",
+        "restoreUserCaptionState",
+        "parseYouTubeSubtitle",
+        "isAsrSubtitle",
+        "findFirstSegArray",
+        "resolveRawGoogleDriveVideoId",
+        "resolveDriveAuthUser",
+        "buildDirectTimedtextTrackListUrl",
+        "fetchCaptionTracksViaDirectTimedtextList",
+        "fetchCaptionTracksViaTypeList",
+        "buildTimedtextTrackListUrl",
+        "buildTimedtextTrackUrlFromListUrl",
+        "findMatchingCaptionTrack",
+        "findTimedtextUrlsFromPerformance",
+        "buildGoogleDriveMetadataVideoIdsFromTimedtextUrl",
+        "requestTimedtextXmlViaXhr",
+        "getTimedtextXmlRequestErrorReason",
+        "parseTrackListXml",
+        "parseTimedtextXmlAttributes",
+        "decodeTimedtextXmlEntities",
+        "buildCaptionTrackSources"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService",
+        "mobileEmbedSubtitleReadyRetryCountByVideoId",
+        "maxMobileEmbedSubtitleReadyRetryCount",
+        "subtitleRequestObserveTimeoutMs",
+        "captionRestoreDelayMs",
+        "captionRestoreTimer",
+        "savedCaptionState",
+        "captions",
+        "yt-player-sticky-caption",
+        "yt-player-caption-sticky-language",
+        "with-subtitle-metadata",
+        "without-subtitle-metadata",
+        "has-subtitle-metadata",
+        "missing-subtitle-metadata",
+        "before-caption-bootstrap",
+        "subtitle-system-not-ready",
+        "Empty subtitle text",
+        "before-load-platform-subtitle-track",
+        "load-platform-subtitle-track",
+        "restore-captions-skip-no-saved-state",
+        "parse-youtube-subtitle-rate-limited",
+        "parse-youtube-subtitle-empty-text",
+        "subtitle-system-not-ready-missing-video-id",
+        "subtitle-system-not-ready-direct-track-list-error",
+        "subtitle-system-not-ready-no-track-request"
+      ]
+    },
+    {
+      "family": "egghead",
+      "className": "rq",
+      "parent": "Ve",
+      "bytes": 6228,
+      "sites": [
+        "egghead"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readLessonCandidate",
+        "readPostLessonCandidate",
+        "readInitialLessonCandidate",
+        "buildMetadata",
+        "parseSrt",
+        "parseTimestampTranscript",
+        "collectTimestampTranscriptSections",
+        "parseTimestamp",
+        "resolveCueEndSeconds",
+        "readNextData",
+        "readMuxState",
+        "resolveDurationSeconds",
+        "readTranscriptText",
+        "extractSlugFromLocation",
+        "buildVideoId",
+        "readDocumentTitle",
+        "readString",
+        "readNumber",
+        "asRecord",
+        "roundSeconds"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "inlineSubtitles",
+        "#__NEXT_DATA__"
+      ]
+    },
+    {
+      "family": "wistia",
+      "className": "nq",
+      "parent": "Ve",
+      "bytes": 4288,
+      "sites": [
+        "thought_industries_wistia",
+        "thought_industries_wistia",
+        "thought_industries_wistia",
+        "thought_industries_wistia",
+        "thought_industries_wistia",
+        "ardan_labs_thinkific",
+        "thinkific_course_player",
+        "ahrefs_wistia",
+        "comsol_wistia",
+        "rti_wistia",
+        "psychwire_wistia",
+        "kajabi_mobile_wistia_frame",
+        "unrealmasterclass_wistia",
+        "sheridan_wistia"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadata",
+        "fetchJson",
+        "parseCaption",
+        "buildSubtitleMetadata",
+        "selectCaption",
+        "matchesFromLanguage",
+        "resolveCaptionLanguage",
+        "readWistiaState",
+        "readWistiaHashedId",
+        "readWistiaHashedIdFromEmbedUrl",
+        "resolveDuration",
+        "resolveMediaUrl",
+        "roundSeconds"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "kajabi",
+      "className": "lq",
+      "parent": "Ve",
+      "bytes": 4063,
+      "sites": [
+        "kajabi_wistia"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "readKajabiState",
+        "buildMetadata",
+        "fetchJson",
+        "parseCaption",
+        "buildSubtitleMetadata",
+        "selectCaption",
+        "matchesFromLanguage",
+        "resolveCaptionLanguage",
+        "resolvePublicMediaUrl",
+        "resolveNonBlobMediaUrl",
+        "isPublicHttpUrl",
+        "resolveDuration",
+        "roundSeconds"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "inlineSubtitles",
+        "https:",
+        "http:"
+      ]
+    },
+    {
+      "family": "domTrack",
+      "className": "Ra",
+      "parent": "Ve",
+      "bytes": 3605,
+      "sites": [
+        "unrealmasterclass_top_frame",
+        "sheridan_top_frame",
+        "kisskh",
+        "dramawave",
+        "barrons",
+        "wsj",
+        "gamedev",
+        "coursera",
+        "autodesk",
+        "vimeo",
+        "vimeo",
+        "threejs_journey",
+        "deeplearning.ai",
+        "khanacademy",
+        "ucdavis_mobile_kaltura_frame",
+        "kaltura",
+        "masterclass",
+        "jove",
+        "rachelsenglish",
+        "memberspot",
+        "memberspot",
+        "pocketstudio",
+        "fautv",
+        "art21",
+        "dzen",
+        "rumble",
+        "descript_embed"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "findTracks",
+        "findMedia",
+        "buildTrackSignature",
+        "hasTrackWithSrc",
+        "resolveMediaStateKey",
+        "resolveMediaSrc",
+        "tryExtractStableVideoId",
+        "resolveTrackPolicy",
+        "shouldWaitForTrack",
+        "extractMediaMetadata",
+        "getExtractSubtitleService",
+        "matchDubbingPages"
+      ],
+      "hints": [
+        "track[kind=\"captions\"], track[kind=\"subtitles\"]"
+      ]
+    },
+    {
+      "family": "domestika",
+      "className": "pq",
+      "parent": "Xs",
+      "bytes": 2428,
+      "sites": [
+        "domestika"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadataFromRequestInfo",
+        "buildHydratedMetadataForVideo",
+        "fetchDomestikaM3u8Manifest",
+        "extractDomestikaMediaMetadata"
+      ],
+      "hints": []
+    },
+    {
+      "family": "mindvalley",
+      "className": "xq",
+      "parent": "Xs",
+      "bytes": 5330,
+      "sites": [
+        "mindvalley"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "getActiveMindvalleyVideoId",
+        "getActiveMindvalleyRequestSignature",
+        "isMindvalleyRequestInfo",
+        "buildHydratedMetadataForVideo",
+        "buildMp4VttMetadata",
+        "buildMp4MetadataWithoutPlatformCaptions",
+        "isStoryboardVttText",
+        "isMindvalleyMp4Url",
+        "buildMetadataFromRequestInfo",
+        "fetchMindvalleyM3u8Manifest",
+        "extractMindvalleyMediaMetadata"
+      ],
+      "hints": [
+        "Mindvalley MP4 metadata requires a VTT subtitle URL",
+        "Mindvalley captions",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "commonVtt",
+      "className": "P0",
+      "parent": "Ve",
+      "bytes": 2021,
+      "sites": [
+        "hubspot_video",
+        "zenva",
+        "harvard",
+        "zoom_illinois",
+        "linkedin_learning",
+        "unity_learn",
+        "frontendmasters"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "getSubtitleRequestInfoStreamService",
+        "parserVtt",
+        "extractMediaMetadata",
+        "computeVideoId",
+        "extractVideoId",
+        "getSite",
+        "transformMetadata"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "subtitleRequestInfoStreamService",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "commonM3u8",
+      "className": "Xs",
+      "parent": "Ve",
+      "bytes": 6117,
+      "sites": [
+        "nma_art",
+        "cbsnews",
+        "illinois",
+        "esri_kaltura",
+        "brightcove_",
+        "hotmart",
+        "ixl",
+        "apple_developer",
+        "ucdavis_kaltura",
+        "oreilly_learning",
+        "sap_learning",
+        "espn"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadataEmissionKey",
+        "buildSubtitleMetadataKey",
+        "withNmaArtActivePlaylistRefresh",
+        "shouldAcceptM3u8RequestInfo",
+        "getNmaArtActiveRequestSignature",
+        "fetchM3u8Manifest",
+        "shouldUseHeaderMarker",
+        "transformMetadata",
+        "extractMediaMetadata",
+        "getM3u8BestSubtitle",
+        "getM3u8Subtitles",
+        "syncMediaElementSrc",
+        "computeVideoId",
+        "extractVideoId"
+      ],
+      "hints": [
+        "m3u8ExtractSubtitleService",
+        "subtitleRequestInfoStreamService",
+        "punctuationSubtitleService",
+        ".m3u8"
+      ]
+    },
+    {
+      "family": "datacamp",
+      "className": "Mq",
+      "parent": "Ve",
+      "bytes": 3991,
+      "sites": [
+        "datacamp_projector"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "readProjectorState",
+        "findMediaElement",
+        "resolveTitle",
+        "buildMetadata",
+        "resolveSelectedParsedTrack",
+        "buildPlatformTracks",
+        "buildSubtitleMetadata",
+        "parseRemoteVtt",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "fetchTextWithCleanFetch"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "[DataCampMediaMetadataService] failed to parse subtitle track",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "lecturio",
+      "className": "Gq",
+      "parent": "Ve",
+      "bytes": 4221,
+      "sites": [
+        "lecturio"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "readLectureState",
+        "findMediaElement",
+        "resolveTitle",
+        "buildMetadata",
+        "resolveSelectedParsedTrack",
+        "buildPlatformTracks",
+        "buildSubtitleMetadata",
+        "buildTrackUrlToken",
+        "parseRemoteVtt",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "fetchTextWithCleanFetch"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "[LecturioMediaMetadataService] failed to parse subtitle track",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "platzi",
+      "className": "Zq",
+      "parent": "Ve",
+      "bytes": 4189,
+      "sites": [
+        "platzi"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "readLessonState",
+        "findMediaElement",
+        "resolveTitle",
+        "buildMetadata",
+        "resolveSelectedParsedTrack",
+        "buildPlatformTracks",
+        "buildSubtitleMetadata",
+        "buildTrackUrlToken",
+        "parseRemoteVtt",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "fetchTextWithCleanFetch"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "[PlatziMediaMetadataService] failed to parse subtitle track",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "kollus",
+      "className": "ob",
+      "parent": "Ve",
+      "bytes": 4155,
+      "sites": [
+        "kollus"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readPlayerState",
+        "hasFinishedWaitingForCaptionResource",
+        "resolveTitle",
+        "buildMetadata",
+        "buildSubtitleMetadata",
+        "buildPlatformTracks",
+        "parseRemoteSubtitle",
+        "fetchTextResource"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "Kollus subtitles",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "dailymotion",
+      "className": "ub",
+      "parent": "Ve",
+      "bytes": 5067,
+      "sites": [
+        "dailymotion"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "fetchMetadataResponse",
+        "buildSubtitleDescriptors",
+        "resolveSelectedParsedTrack",
+        "buildPlatformTracks",
+        "resolveMediaUrl",
+        "resolveQualityMediaUrl",
+        "isHlsQuality",
+        "normalizeMediaUrl",
+        "buildSubtitleMetadata",
+        "parseRemoteSrt",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "fetchTextWithCleanFetch",
+        "delay",
+        "normalizeLanguage",
+        "readDuration",
+        "readResourceUrls"
+      ],
+      "hints": [
+        "inlineSubtitles",
+        "[DailymotionMediaMetadataService] failed to parse subtitle track"
+      ]
+    },
+    {
+      "family": "bbc",
+      "className": "TG",
+      "parent": "Ve",
+      "bytes": 5397,
+      "sites": [
+        "bbc"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadata",
+        "fetchMediaSelector",
+        "resolveCaptionTracks",
+        "resolveCaptionUrls",
+        "resolveMediaUrl",
+        "findConnectionUrl",
+        "extractMediaInfo",
+        "collectObjects",
+        "readVersionId",
+        "readDuration",
+        "asRecord",
+        "readString",
+        "buildSubtitleMetadata",
+        "normalizeAssetUrl",
+        "labelForLanguage",
+        "readPageState",
+        "fetchJson",
+        "fetchText",
+        "roundSeconds"
+      ],
+      "hints": [
+        "ttmlSubtitleParser",
+        "[BbcMediaMetadataService] failed to fetch caption track",
+        "captions",
+        "inlineSubtitles",
+        "http:",
+        "https:"
+      ]
+    },
+    {
+      "family": "bloomberg",
+      "className": "xG",
+      "parent": "Ve",
+      "bytes": 4446,
+      "sites": [
+        "bloomberg"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadata",
+        "resolveCaptionTracks",
+        "buildSubtitleMetadata",
+        "readPageState",
+        "readMediaIdFromElement",
+        "readMediaIdFromHtml",
+        "extractMediaId",
+        "resolveTitle",
+        "resolveMediaUrl",
+        "readDuration",
+        "normalizeAssetUrl",
+        "labelForLanguage",
+        "hashFromUrl",
+        "fetchJson",
+        "fetchText",
+        "tryFetchResourceFromContent",
+        "fetchJsonWithCleanFetch",
+        "fetchTextWithCleanFetch"
+      ],
+      "hints": [
+        "ttmlSubtitleParser",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "coindesk_jwplayer",
+      "className": "EV",
+      "parent": "Ve",
+      "bytes": 5627,
+      "sites": [
+        "coindesk"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "tryGetPlayer",
+        "buildMetadata",
+        "resolveCaptionTracks",
+        "normalizeCaptions",
+        "buildCaptionCandidate",
+        "isCaptionTrack",
+        "buildSubtitleMetadata",
+        "resolveMediaId",
+        "extractMediaIdFromUrl",
+        "resolveMediaUrl",
+        "readDuration",
+        "normalizeAssetUrl",
+        "isHttpUrl",
+        "fetchText",
+        "mapLanguageCode",
+        "sanitizeCaptionLabel",
+        "resolveLanguageCode",
+        "tryParseLanguageFromLocale",
+        "extractLabelFragments",
+        "hashFromString"
+      ],
+      "hints": [
+        "srtVttSubtitleParser",
+        "[CoinDeskJwPlayerMediaMetadataService] failed to fetch caption track",
+        "captions",
+        "subtitles",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "reuters_jwplayer",
+      "className": "TV",
+      "parent": "Ve",
+      "bytes": 5145,
+      "sites": [
+        "reuters"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "tryGetPlayer",
+        "buildMetadata",
+        "resolveSubtitleTracks",
+        "buildSubtitleMetadata",
+        "parseSubtitleTrack",
+        "parseVttText",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "fetchTextWithCleanFetch",
+        "resolveMediaUrl",
+        "resolveVideoId",
+        "resolveLanguage",
+        "readDuration",
+        "normalizeAssetUrl",
+        "isHlsUrl",
+        "hashFromString"
+      ],
+      "hints": [
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "jwplayer",
+      "className": "V0",
+      "parent": "Ve",
+      "bytes": 5400,
+      "sites": [
+        "streamuj_tv",
+        "nbcnews",
+        "anthropic_skilljar"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "shouldRefreshOnPlayerStateChange",
+        "buildRefreshCandidate",
+        "shouldDeferNoCaptionRefresh",
+        "hasStablePlaylistItem",
+        "tryGetPlayer",
+        "hasUsableCaptions",
+        "buildMetadata",
+        "createMetadataFromPlayer",
+        "normalizeCaptions",
+        "getCaptionEntries",
+        "normalizePlaylistTracks",
+        "isUsableRemoteCaptionUrl",
+        "selectSubtitle",
+        "toSubtitleMetadata",
+        "mapLanguageCode",
+        "sanitizeCaptionLabel",
+        "resolveLanguageCode",
+        "tryParseLanguageFromLocale",
+        "extractLabelFragments"
+      ],
+      "hints": [
+        "pendingNoCaptionRefreshSignature",
+        "pendingNoCaptionRefreshStartedAt",
+        "captions",
+        "subtitles"
+      ]
+    },
+    {
+      "family": "plex",
+      "className": "yz",
+      "parent": "Xs",
+      "bytes": 2450,
+      "sites": [
+        "plex"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "transformMetadata",
+        "rewritePlexSubtitleUrls",
+        "rewriteSubtitleMetadata",
+        "rewritePlatformTrack",
+        "fetchPlexMasterManifest",
+        "readPlexTitle",
+        "buildPlexEmissionKey"
+      ],
+      "hints": []
+    },
+    {
+      "family": "aljazeera_brightcove",
+      "className": "AV",
+      "parent": "Ve",
+      "bytes": 7168,
+      "sites": [
+        "aljazeera"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "fetchPlayback",
+        "resolvePolicyKey",
+        "resolveCaptionTracks",
+        "normalizeCaptionCandidates",
+        "buildSubtitleMetadata",
+        "isCaptionTrack",
+        "resolveMediaUrl",
+        "findActiveBrightcovePlayer",
+        "scorePlayerVisibility",
+        "findMediaElement",
+        "extractPlayerId",
+        "extractPlayerIdFromJsonLd",
+        "readFeaturedMediaId",
+        "extractTitle",
+        "readDuration",
+        "normalizeAssetUrl",
+        "dedupeUrlKey",
+        "isHlsUrl",
+        "resolveLanguage",
+        "fetchJson",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "hashFromString"
+      ],
+      "hints": [
+        "srtVttSubtitleParser",
+        "[AljazeeraBrightcoveMediaMetadataService] failed to fetch caption track",
+        "Captions",
+        "inlineSubtitles",
+        "captions",
+        "subtitles",
+        "https://"
+      ]
+    },
+    {
+      "family": "oracle_mylearn_brightcove",
+      "className": "wV",
+      "parent": "Ve",
+      "bytes": 7455,
+      "sites": [
+        "oracle_mylearn"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "fetchPlayback",
+        "resolvePolicyKey",
+        "resolveCaptionTracks",
+        "normalizeCaptionCandidates",
+        "buildSubtitleMetadata",
+        "isCaptionTrack",
+        "resolveMediaUrl",
+        "findActiveBrightcovePlayer",
+        "scorePlayerVisibility",
+        "findMediaElement",
+        "extractPlayerIdFromClass",
+        "extractTitle",
+        "readAttribute",
+        "readDuration",
+        "resolveTrackUrl",
+        "preferHttpsUrl",
+        "normalizeAssetUrl",
+        "dedupeUrlKey",
+        "isHlsUrl",
+        "resolveLanguage",
+        "fetchJson",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "tryFetchJsonResourceFromContent",
+        "hashFromString"
+      ],
+      "hints": [
+        "srtVttSubtitleParser",
+        "[OracleMylearnBrightcoveMediaMetadataService] failed to fetch caption track",
+        "Captions",
+        "inlineSubtitles",
+        "captions",
+        "subtitles",
+        "https://mylearn.oracle.com"
+      ]
+    },
+    {
+      "family": "sonicwall_brightcove",
+      "className": "IV",
+      "parent": "Ve",
+      "bytes": 6760,
+      "sites": [
+        "sonicwall"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "resolveCaptionTracks",
+        "fetchCaptionText",
+        "normalizeCaptionCandidates",
+        "resolveOriginalTrackUrl",
+        "buildSubtitleMetadata",
+        "resolveMediaUrl",
+        "pickPreferredUrl",
+        "readSourceUrl",
+        "isHlsSource",
+        "findActiveVideoJsPlayer",
+        "scorePlayer",
+        "resolvePlayerElement",
+        "resolveDuration",
+        "resolveLanguage",
+        "readArrayLike",
+        "isSource",
+        "isTextTrack"
+      ],
+      "hints": [
+        "subtitleParser",
+        "caption response is not WEBVTT",
+        "caption response has no cues",
+        "[SonicwallBrightcoveMediaMetadataService] failed to resolve caption",
+        "all advertised caption tracks failed to load",
+        "captions",
+        "subtitles",
+        "Captions",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "servicenow_brightcove",
+      "className": "LV",
+      "parent": "Ve",
+      "bytes": 6765,
+      "sites": [
+        "servicenow"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "resolveCaptionTracks",
+        "fetchCaptionText",
+        "normalizeCaptionCandidates",
+        "resolveOriginalTrackUrl",
+        "buildSubtitleMetadata",
+        "resolveMediaUrl",
+        "pickPreferredUrl",
+        "readSourceUrl",
+        "isHlsSource",
+        "findActiveVideoJsPlayer",
+        "scorePlayer",
+        "resolvePlayerElement",
+        "resolveDuration",
+        "resolveLanguage",
+        "readArrayLike",
+        "isSource",
+        "isTextTrack"
+      ],
+      "hints": [
+        "subtitleParser",
+        "caption response is not WEBVTT",
+        "caption response has no cues",
+        "[ServicenowBrightcoveMediaMetadataService] failed to resolve caption",
+        "all advertised caption tracks failed to load",
+        "captions",
+        "subtitles",
+        "Captions",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "narto",
+      "className": "t7",
+      "parent": "Ve",
+      "bytes": 1605,
+      "sites": [
+        "narto"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataForState"
+      ],
+      "hints": [
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "kinescope",
+      "className": "G7",
+      "parent": "Ve",
+      "bytes": 1611,
+      "sites": [
+        "kinescope"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "createPageStateObservable",
+        "buildMetadataForState",
+        "buildSubtitleCandidate",
+        "selectSubtitleTrack",
+        "matchesLanguage"
+      ],
+      "hints": []
+    },
+    {
+      "family": "sketchy_cloudflare",
+      "className": "tq",
+      "parent": "Ve",
+      "bytes": 2394,
+      "sites": [
+        "sketchy_cloudflare"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "transformMetadata",
+        "readCurrentState",
+        "buildMetadata",
+        "normalizeTrack",
+        "tryParseSelectedTrack",
+        "normalizeLanguage"
+      ],
+      "hints": [
+        "Subtitle",
+        "[SketchyCloudflareMediaMetadataService] Failed to hydrate selected subtitle track"
+      ]
+    },
+    {
+      "family": "jwplayer_hosted",
+      "className": "q0",
+      "parent": "Ve",
+      "bytes": 4313,
+      "sites": [
+        "jwplayer_hosted",
+        "jwplayer_hosted"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildCandidate",
+        "tryGetPlayer",
+        "buildMetadata",
+        "createMetadataFromPlayer",
+        "getCaptionEntries",
+        "normalizeCaptions",
+        "normalizePlaylistTracks",
+        "selectCaption",
+        "toSubtitleMetadata",
+        "resolveLanguage",
+        "selectMediaUrl",
+        "isClearProgressiveVideo",
+        "normalizeRemoteUrl",
+        "isUsableRemoteSubtitleUrl",
+        "buildVideoId"
+      ],
+      "hints": [
+        "pendingNoCaptionSignature",
+        "pendingNoCaptionStartedAt",
+        "captions",
+        "subtitles"
+      ]
+    },
+    {
+      "family": "mux",
+      "className": "O$",
+      "parent": "Ve",
+      "bytes": 1884,
+      "sites": [
+        "aihero",
+        "maven",
+        "maven",
+        "maven",
+        "mux",
+        "crusherfiremedia_mux"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "handleMediaLoadStat",
+        "createObservableFromLoadedMedia",
+        "extractMediaMetadata",
+        "getExtractSubtitleService",
+        "transformMetadata"
+      ],
+      "hints": []
+    },
+    {
+      "family": "bili",
+      "className": "b9",
+      "parent": "Ve",
+      "bytes": 10161,
+      "sites": [
+        "bili",
+        "bili"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "createLegacyUgcMetadataObservable",
+        "createResolvedRouteMetadataObservable",
+        "finalizeResolvedPageMetadata",
+        "readCurrentBiliTitle",
+        "applyChargeSubtitleFallbackMetadata",
+        "transformMetadata",
+        "loadPlatformSubtitleTrack",
+        "resolveBiliPlayerTrackUrl",
+        "fetchPlayerResponse",
+        "isDesktopInitState",
+        "isBiliPlayerTrack",
+        "getSelectedBiliPlayerTrack",
+        "buildSubtitleCacheKey",
+        "rememberResolvedSubtitleUrl",
+        "fetchLegacyPlayerResponse",
+        "resolveBiliPlayerTrackUrlInternal",
+        "readSubtitleUiState",
+        "getActiveSubtitleLanguageItem",
+        "getSubtitleLanguageItem",
+        "getSubtitleCloseSwitch",
+        "activateSubtitleMenu",
+        "waitForSubtitleLanguageItem",
+        "restoreSubtitleUiState",
+        "waitForSubtitleUiState",
+        "waitForSubtitleResourceUrl",
+        "findLatestSubtitleResourceUrlSince",
+        "waitForValue",
+        "sleep",
+        "escapeAttributeValue"
+      ],
+      "hints": [
+        "resolvedSubtitleUrlCache",
+        "pendingSubtitleUrlResolutions",
+        "[BiliBasedMediaMetadataService] failed to load PUGV subtitles",
+        "https://m.bilibili.com/"
+      ]
+    },
+    {
+      "family": "udemy",
+      "className": "j9",
+      "parent": "pd",
+      "bytes": 742,
+      "sites": [
+        "udemy"
+      ],
+      "methods": [
+        "getSearch",
+        "getBestSubtitle",
+        "getSubtitleCandidates",
+        "normalizeUdemySubtitle",
+        "normalizeUdemyLocaleId"
+      ],
+      "hints": []
+    },
+    {
+      "family": "universal",
+      "className": null,
+      "parent": "Error",
+      "bytes": 100,
+      "sites": [
+        "leadconnector_course",
+        "clientclub",
+        "tiktok",
+        "douyin",
+        "codewithmosh_teachable",
+        "openai_article",
+        "spotify_episode",
+        "medbridge",
+        "edusoho-replay",
+        "qiqiuyun",
+        "langchain_academy_multimedia_top_frame",
+        "odysee",
+        "common"
+      ],
+      "methods": [
+        "constructor"
+      ],
+      "hints": []
+    },
+    {
+      "family": "videojs",
+      "className": "T9",
+      "parent": "Ve",
+      "bytes": 681,
+      "sites": [
+        "epicgames"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "getExtractSubtitleService"
+      ],
+      "hints": []
+    },
+    {
+      "family": "dropbox",
+      "className": "x9",
+      "parent": "Ve",
+      "bytes": 1222,
+      "sites": [
+        "dropbox"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "extractMediaMetadata",
+        "transformMetadata"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "subtitleRequestInfoStreamService",
+        "subtitleJson"
+      ]
+    },
+    {
+      "family": "edx",
+      "className": "oV",
+      "parent": "Ve",
+      "bytes": 973,
+      "sites": [
+        "edx"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "getBestSubtitle",
+        "transformMetadata",
+        "loadPlatformSubtitleTrack",
+        "isEdxTranscriptUrl"
+      ],
+      "hints": []
+    },
+    {
+      "family": "internet_archive",
+      "className": "SV",
+      "parent": "Ve",
+      "bytes": 5438,
+      "sites": [
+        "internet_archive"
+      ],
+      "methods": [
+        "constructor",
+        "observeMediaMetadata",
+        "loadPlatformSubtitleTrack",
+        "createMetadataObservable",
+        "readCandidate",
+        "buildMetadata",
+        "resolveActiveMediaUrl",
+        "collectSubtitleCandidates",
+        "toSubtitleMetadata",
+        "fetchItemMetadata",
+        "buildDownloadUrl",
+        "resolveMetadataMediaUrl",
+        "resolveTrackLabel",
+        "resolveLanguageFromTrack",
+        "resolveLanguageFromFileName",
+        "resolveLanguage",
+        "normalizeLanguage",
+        "isSubtitleFile",
+        "fileStem",
+        "isAssociatedSidecar",
+        "findShadowMedia",
+        "resolveDuration",
+        "parsePositiveNumber"
+      ],
+      "hints": [
+        "captions",
+        "subtitles",
+        "Subtitles"
+      ]
+    },
+    {
+      "family": "twitter",
+      "className": null,
+      "parent": "Error",
+      "bytes": 100,
+      "sites": [
+        "x",
+        "twitter"
+      ],
+      "methods": [
+        "constructor"
+      ],
+      "hints": []
+    },
+    {
+      "family": "facebook",
+      "className": null,
+      "parent": "Error",
+      "bytes": 100,
+      "sites": [
+        "facebook"
+      ],
+      "methods": [
+        "constructor"
+      ],
+      "hints": []
+    },
+    {
+      "family": "ted",
+      "className": "iq",
+      "parent": "Ve",
+      "bytes": 3671,
+      "sites": [
+        "ted"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "readPageSnapshot",
+        "readInlineNextData",
+        "readWindowBuildId",
+        "fetchCurrentNextDataSnapshot",
+        "buildPageSnapshotFromNextData",
+        "extractCurrentTalkSlug",
+        "findMainVideo",
+        "buildMetadata",
+        "fetchSubtitleMetadata",
+        "selectSubtitle",
+        "buildTedPlatformTracks"
+      ],
+      "hints": [
+        "#__NEXT_DATA__",
+        "TED subtitle"
+      ]
+    },
+    {
+      "family": "apiIntercept",
+      "className": "pd",
+      "parent": "Ve",
+      "bytes": 868,
+      "sites": [
+        "learn_microsoft",
+        "elevify"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "getSearch"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService"
+      ]
+    },
+    {
+      "family": "artstation",
+      "className": "k0",
+      "parent": "P0",
+      "bytes": 3867,
+      "sites": [
+        "artstation"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "buildMetadataFromCurrentCourse",
+        "buildMetadataFromVttText",
+        "extractCourseContext",
+        "fetchCourse",
+        "findCurrentChapterSubtitleTrack",
+        "readFiniteNumber",
+        "isVttUrl",
+        "readString",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "getSite"
+      ],
+      "hints": [
+        "ArtStation course response did not contain a current chapter VTT subtitle URL"
+      ]
+    },
+    {
+      "family": "internetfundamentals",
+      "className": "F9",
+      "parent": "P0",
+      "bytes": 1813,
+      "sites": [
+        "internetfundamentals"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "getActiveSrcSignature",
+        "buildMetadataFromRequestInfo",
+        "resolveLessonTitle",
+        "getSite"
+      ],
+      "hints": []
+    },
+    {
+      "family": "feynmanlectures",
+      "className": "SG",
+      "parent": "Ve",
+      "bytes": 3011,
+      "sites": [
+        "feynmanlectures"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "parseTrack",
+        "buildPlatformTracks",
+        "buildSubtitleMetadata",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "fetchTextWithCleanFetch",
+        "readDuration"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "motionmagic",
+      "className": "cb",
+      "parent": "Ve",
+      "bytes": 6930,
+      "sites": [
+        "motionmagic"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "readState",
+        "claimEmissionKey",
+        "publishEmissionKey",
+        "releaseEmissionKey",
+        "buildMetadata",
+        "buildPlatformTracks",
+        "buildSubtitleMetadata",
+        "buildSubtitleTracks",
+        "selectTrack",
+        "parseRemoteVtt",
+        "fetchCourseItemData",
+        "fetchPlaybackDetails",
+        "postBackendApi",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "findMediaElement",
+        "readCourseItemId",
+        "resolvePlaybackOrigin",
+        "resolveTitle",
+        "resolveDuration",
+        "readRecord",
+        "readString"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "inlineSubtitles",
+        "https://www.themotionmagic.com"
+      ]
+    },
+    {
+      "family": "mathworks_brightcove",
+      "className": "MV",
+      "parent": "Ve",
+      "bytes": 7054,
+      "sites": [
+        "mathworks"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "resolveCaptionTracks",
+        "fetchCaptionText",
+        "normalizeCaptionCandidates",
+        "resolveOriginalTrackUrl",
+        "buildSubtitleMetadata",
+        "resolveMediaUrl",
+        "isProgressiveVideoSource",
+        "isAudioOnlySource",
+        "pickPreferredUrl",
+        "readSourceUrl",
+        "isHlsSource",
+        "findActiveVideoJsPlayer",
+        "scorePlayer",
+        "resolvePlayerElement",
+        "resolveDuration",
+        "resolveLanguage",
+        "readArrayLike",
+        "isSource",
+        "isTextTrack"
+      ],
+      "hints": [
+        "subtitleParser",
+        "caption response is not WEBVTT",
+        "caption response has no cues",
+        "[MathworksBrightcoveMediaMetadataService] failed to resolve caption",
+        "all advertised caption tracks failed to load",
+        "captions",
+        "subtitles",
+        "Captions",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "pluralsight",
+      "className": "w7",
+      "parent": "Xs",
+      "bytes": 171,
+      "sites": [
+        "pluralsight"
+      ],
+      "methods": [
+        "shouldAcceptM3u8RequestInfo",
+        "extractVideoId"
+      ],
+      "hints": []
+    },
+    {
+      "family": "movebox",
+      "className": "g7",
+      "parent": "Ve",
+      "bytes": 2845,
+      "sites": [
+        "movebox"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadataFromCaptionPayload",
+        "buildMetadataFromRequestInfo",
+        "fetchCaptionJson",
+        "readCaptionTracks",
+        "toCaptionTrack",
+        "findMedia",
+        "buildEmissionKey"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService",
+        "[MoveboxMediaMetadataService] Skip failed caption metadata"
+      ]
+    },
+    {
+      "family": "vidlove",
+      "className": "UK",
+      "parent": "Ve",
+      "bytes": 3270,
+      "sites": [
+        "vidlove"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "loadTrackFromRemoteUrl",
+        "buildMetadataForIdentity",
+        "readIdentity",
+        "buildMetadata",
+        "buildMetadataFromPayload",
+        "fetchMoviePayload",
+        "readSubtitleTracks",
+        "selectHydratedTrack",
+        "tryParseTrack",
+        "resolveMediaUrl",
+        "resolveDuration"
+      ],
+      "hints": [
+        "subtitleParser",
+        "[VidloveMediaMetadataService] failed to parse subtitle"
+      ]
+    },
+    {
+      "family": "oba",
+      "className": "JK",
+      "parent": "Ve",
+      "bytes": 930,
+      "sites": [
+        "oba"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "readCurrentPageState",
+        "buildMetadataForState"
+      ],
+      "hints": []
+    },
+    {
+      "family": "pendo",
+      "className": "iK",
+      "parent": "Ve",
+      "bytes": 4059,
+      "sites": [
+        "pendo_wistia"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "readPendoState",
+        "buildMetadata",
+        "fetchJson",
+        "parseCaption",
+        "buildSubtitleMetadata",
+        "selectCaption",
+        "matchesFromLanguage",
+        "resolveCaptionLanguage",
+        "resolvePublicMediaUrl",
+        "resolveNonBlobMediaUrl",
+        "isPublicHttpUrl",
+        "resolveDuration",
+        "roundSeconds"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "inlineSubtitles",
+        "https:",
+        "http:"
+      ]
+    },
+    {
+      "family": "cursor_blog",
+      "className": "Qz",
+      "parent": "Ve",
+      "bytes": 1287,
+      "sites": [
+        "cursor_blog"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "readCurrentPageState",
+        "buildMetadataFromState",
+        "getExtractSubtitleService",
+        "transformMetadata"
+      ],
+      "hints": [
+        "captions",
+        "subtitles"
+      ]
+    },
+    {
+      "family": "updraft",
+      "className": "ZG",
+      "parent": "Ve",
+      "bytes": 5325,
+      "sites": [
+        "updraft"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataObservable",
+        "buildMetadata",
+        "normalizeSubtitleMetadata",
+        "selectSubtitle",
+        "findSubtitleByLanguage",
+        "readPlaybackCandidate",
+        "readJsonLdVideoObject",
+        "findJsonLdVideoObject",
+        "isVideoObjectType",
+        "normalizeMuxMasterUrl",
+        "extractPlaybackIdFromMuxUrl",
+        "readMediaElement",
+        "readDuration",
+        "readTitle",
+        "normalizeUpdraftTitle",
+        "normalizeText",
+        "normalizeLanguage",
+        "readLocationHref",
+        "warnJsonLdOnce",
+        "buildCandidateKey",
+        "buildMetadataKey"
+      ],
+      "hints": [
+        "Mux master manifest has no subtitle tracks",
+        "Mux master manifest has no selectable subtitle track",
+        "Subtitle"
+      ]
+    },
+    {
+      "family": "osmosis",
+      "className": "CG",
+      "parent": "Ve",
+      "bytes": 7055,
+      "sites": [
+        "osmosis"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "loadPlatformSubtitleTrack",
+        "transformMetadata",
+        "readState",
+        "buildMetadata",
+        "buildPlatformTracks",
+        "buildSubtitleMetadata",
+        "buildSubtitleTracks",
+        "selectTrack",
+        "parseRemoteVtt",
+        "readPageIdentity",
+        "findCaptionSource",
+        "asRawCaption",
+        "findMediaElement",
+        "resolveTitle",
+        "resolveDuration",
+        "resolveCaptionUrl",
+        "fetchJsonResource",
+        "fetchJsonWithCleanFetch",
+        "tryFetchJsonResourceFromContent",
+        "fetchTextResource",
+        "tryFetchTextResourceFromContent",
+        "fetchTextWithCleanFetch",
+        "readString",
+        "readNumber"
+      ],
+      "hints": [
+        "punctuationSubtitleService",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "medbridge_course",
+      "className": "Aq",
+      "parent": "Xs",
+      "bytes": 1305,
+      "sites": [
+        "medbridge_course"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "hasLoadedCourseDuration",
+        "buildCourseMetadataSnapshotKey"
+      ],
+      "hints": [
+        ".m3u8"
+      ]
+    },
+    {
+      "family": "patreon",
+      "className": "QG",
+      "parent": "Ve",
+      "bytes": 6461,
+      "sites": [
+        "patreon"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataObservable",
+        "buildMetadata",
+        "fetchMuxMasterManifest",
+        "normalizeSubtitleMetadata",
+        "selectSubtitle",
+        "findSubtitleByLanguage",
+        "readPlaybackCandidateFromPage",
+        "readPlaybackCandidateFromRequest",
+        "canContainPatreonPlaybackData",
+        "selectMuxUrlForCurrentPost",
+        "extractMuxMasterUrls",
+        "normalizeMuxMasterUrl",
+        "extractPlaybackIdFromMuxUrl",
+        "readPostIdFromLocation",
+        "readTitle",
+        "readScriptTitle",
+        "stripPatreonTitleSuffix",
+        "readMediaElement",
+        "readDuration",
+        "readScriptTexts",
+        "readLocationPathname",
+        "normalizeEscapedText",
+        "normalizeText",
+        "normalizeLanguage",
+        "buildCandidateKey",
+        "buildMetadataKey"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService",
+        "Subtitle",
+        ".m3u8"
+      ]
+    },
+    {
+      "family": "substack",
+      "className": "vj",
+      "parent": "Ve",
+      "bytes": 4418,
+      "sites": [
+        "substack"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataForState",
+        "readCurrentState",
+        "readTranscription",
+        "readTranscriptionLanguage",
+        "readTrustedMediaUrl",
+        "readTrustedTranscriptionUrl",
+        "fetchTranscript",
+        "parseCue",
+        "buildStateKey",
+        "buildLanguageLabel",
+        "normalizeLanguage",
+        "readString",
+        "readNumber",
+        "readDuration"
+      ],
+      "hints": [
+        "inlineSubtitles",
+        "https:"
+      ]
+    },
+    {
+      "family": "mightynetworks",
+      "className": "z9",
+      "parent": "Xs",
+      "bytes": 1404,
+      "sites": [
+        "mightynetworks"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "buildMightyNetworksEmissionKey",
+        "buildMightyNetworksSubtitleMetadataKey",
+        "buildMightyNetworksPlatformTrackKey",
+        "normalizeSignedUrl"
+      ],
+      "hints": []
+    },
+    {
+      "family": "nebula",
+      "className": "O0",
+      "parent": "Xs",
+      "bytes": 1362,
+      "sites": [
+        "nebula"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "hasCaptionMetadata",
+        "claimNebulaEmission",
+        "buildNebulaEmissionKey",
+        "resolveCaptionIdentity",
+        "normalizeText"
+      ],
+      "hints": [
+        "caption"
+      ]
+    },
+    {
+      "family": "vkvideo",
+      "className": "hb",
+      "parent": "Ra",
+      "bytes": 11248,
+      "sites": [
+        "vkvideo"
+      ],
+      "methods": [
+        "constructor",
+        "observeMediaMetadata",
+        "findMedia",
+        "findTracks",
+        "getExtractSubtitleService",
+        "transformMetadata",
+        "observeLatestVkMpdRequest",
+        "hydrateMetadataFromMpd",
+        "prepareVkWebVttForParsing",
+        "stripVkWebVttInlineCueMarkup",
+        "convertVkRollingWebVttCuesToIncremental",
+        "extractVkRollingCueIncrement",
+        "getMeaningfulVkCueLines",
+        "findVkRollingLineOverlap",
+        "findVkRollingTextOverlap",
+        "normalizeVkRollingCueText",
+        "selectVkMpdTrack",
+        "toSubtitleMetadata",
+        "loadPlatformSubtitleTrack",
+        "queryElementsDeep",
+        "scoreMediaElement",
+        "preloadTextTrackCues",
+        "ensureTextTrackCuesLoaded",
+        "waitForTextTrackCues",
+        "areTextTrackCuesComplete",
+        "resolveExpectedDuration",
+        "findMatchingTextTrack",
+        "isTextTrackBackedTrack",
+        "resolveDomTrackUrl",
+        "isSameTrack",
+        "setDebugAttribute",
+        "buildMetadataEmissionKey",
+        "buildSubtitleMetadataEmissionKey",
+        "buildDurationEmissionKey",
+        "buildSubtitleArrayEmissionKey",
+        "buildSubtitleEmissionKey"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService",
+        "srtVttSubtitleParser",
+        "track[kind=\"captions\"], track[kind=\"subtitles\"]",
+        "captions",
+        "subtitles"
+      ]
+    },
+    {
+      "family": "okru",
+      "className": "jG",
+      "parent": "Ve",
+      "bytes": 2099,
+      "sites": [
+        "okru"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataFromFlashvars",
+        "selectTrack",
+        "findByLanguage",
+        "fetchSubtitleText",
+        "toSubtitleMetadata",
+        "buildVideoId"
+      ],
+      "hints": [
+        "srtVttSubtitleParser"
+      ]
+    },
+    {
+      "family": "navertv",
+      "className": "WG",
+      "parent": "Ve",
+      "bytes": 6279,
+      "sites": [
+        "navertv"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "resolveCurrentClipState",
+        "buildMetadataFromState",
+        "readInitialNextData",
+        "extractVodInfo",
+        "fetchVodInfoForClip",
+        "fetchPlayInfo",
+        "extractCaptions",
+        "selectCaption",
+        "findByLanguage",
+        "fetchSubtitleText",
+        "toSubtitleMetadata",
+        "selectBestMedia",
+        "selectDuration",
+        "mediaRank",
+        "extractCurrentClipNo",
+        "buildVideoId",
+        "normalizeString",
+        "normalizeNumber",
+        "normalizePositiveInteger"
+      ],
+      "hints": [
+        "srtVttSubtitleParser",
+        "script#__NEXT_DATA__"
+      ]
+    },
+    {
+      "family": "rutube",
+      "className": "XG",
+      "parent": "Ve",
+      "bytes": 4047,
+      "sites": [
+        "rutube"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "resolveCurrentVideoState",
+        "buildMetadataFromState",
+        "fetchPlayOptions",
+        "extractCaptions",
+        "selectCaption",
+        "findByLanguage",
+        "fetchSubtitleText",
+        "toSubtitleMetadata",
+        "extractMediaUrl",
+        "extractCurrentVideoId",
+        "buildVideoId",
+        "normalizeString",
+        "normalizeUrl",
+        "normalizeDurationSeconds",
+        "normalizeBoolean"
+      ],
+      "hints": [
+        "srtVttSubtitleParser"
+      ]
+    },
+    {
+      "family": "gaia",
+      "className": "IH",
+      "parent": "Ve",
+      "bytes": 7592,
+      "sites": [
+        "gaia"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataForState",
+        "readPlayerState",
+        "findActivePlayerElement",
+        "scorePlayerVisibility",
+        "readActiveAudioLanguage",
+        "readAvailableCueLanguages",
+        "selectMediaNode",
+        "buildCaptionCandidates",
+        "parseTrackFromPlayerCues",
+        "isGaiaSpokenCue",
+        "waitForPlayerTrackCues",
+        "resolveMediaUrl",
+        "normalizeHlsUrl",
+        "normalizeSubtitleUrl",
+        "normalizeLanguage",
+        "buildApiUrl",
+        "fetchJson",
+        "syncVideoIdentity",
+        "readId",
+        "readDuration"
+      ],
+      "hints": [
+        "inlineSubtitles",
+        "captions",
+        "subtitles",
+        "https:"
+      ]
+    },
+    {
+      "family": "skillshare",
+      "className": "gH",
+      "parent": "Ve",
+      "bytes": 3299,
+      "sites": [
+        "skillshare"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataForState",
+        "buildMetadata",
+        "fetchHlsMasterUrl",
+        "isTrustedHlsUrl",
+        "normalizeTrack",
+        "tryParseSelectedTrack",
+        "buildStateKey",
+        "normalizeLanguage"
+      ],
+      "hints": [
+        "https:",
+        "Subtitle",
+        "[SkillshareMediaMetadataService] Failed to hydrate selected subtitle track"
+      ]
+    },
+    {
+      "family": "tella",
+      "className": "AH",
+      "parent": "Ve",
+      "bytes": 3264,
+      "sites": [
+        "tella"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataForState",
+        "buildMetadata",
+        "fetchHlsMasterUrl",
+        "isTrustedHlsUrl",
+        "normalizeTrack",
+        "tryParseSelectedTrack",
+        "buildStateKey",
+        "normalizeLanguage"
+      ],
+      "hints": [
+        "https:",
+        "/media/manifest.m3u8",
+        "Subtitle",
+        "[TellaMediaMetadataService] Failed to hydrate subtitle"
+      ]
+    },
+    {
+      "family": "skool",
+      "className": "sH",
+      "parent": "Ve",
+      "bytes": 3766,
+      "sites": [
+        "skool"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataForState",
+        "withSignature",
+        "buildMetadata",
+        "buildSkoolHlsMetadata",
+        "buildBaseMetadata",
+        "buildPrivateMetadata",
+        "buildSkoolMasterUrl",
+        "withSkoolTrackId",
+        "selectSubtitle",
+        "findSubtitleByLanguage",
+        "normalizeLanguage"
+      ],
+      "hints": [
+        "inlineSubtitles",
+        "Subtitle"
+      ]
+    },
+    {
+      "family": "loom",
+      "className": "jC",
+      "parent": "Ve",
+      "bytes": 5101,
+      "sites": [
+        "loom"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataForState",
+        "buildBaseMetadata",
+        "parseVtt",
+        "parseTranscriptionJson",
+        "collectTranscriptCues",
+        "tryReadCueArray",
+        "readCueLike",
+        "extractSignedUrl",
+        "extractSignedHlsUrl",
+        "extractDurationSeconds",
+        "normalizeHtmlUrls",
+        "fetchText",
+        "readString",
+        "readTimestampSeconds"
+      ],
+      "hints": [
+        "srtVttSubtitleParser",
+        "punctuationSubtitleService",
+        "captions",
+        "inlineSubtitles"
+      ]
+    },
+    {
+      "family": "chartacademy",
+      "className": "_H",
+      "parent": "Ve",
+      "bytes": 2637,
+      "sites": [
+        "chartacademy"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadataFromApiResponse",
+        "getSearch",
+        "buildMetadataEmissionKey",
+        "buildSubtitleMetadataKey",
+        "buildPlatformSubtitleTrackKey",
+        "buildSubtitleCandidates",
+        "buildSubtitleCandidate",
+        "normalizeLocale",
+        "readString",
+        "readNumber"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService"
+      ]
+    },
+    {
+      "family": "circle_academy",
+      "className": "Eb",
+      "parent": "Ve",
+      "bytes": 11209,
+      "sites": [
+        "circle_academy"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "transformMetadata",
+        "buildMetadataFromPostsResponse",
+        "buildMetadataFromCircleResponse",
+        "buildMetadataFromRequestInfo",
+        "waitForCircleAssetToSettle",
+        "delay",
+        "requireFirstVideoCandidate",
+        "buildMetadataFromCircleCandidate",
+        "fetchCircleRequestJson",
+        "selectFirstVideoCandidate",
+        "collectVideoCandidates",
+        "collectLessonVideoCandidates",
+        "collectInlineAttachments",
+        "toVideoCandidate",
+        "toLessonVideoCandidate",
+        "resolveLessonAttachment",
+        "looksLikeCircleVideoRecord",
+        "readTranscriptIds",
+        "readSubtitleFileUrl",
+        "readHlsUrl",
+        "buildMediaTranscriptUrl",
+        "buildVideoId",
+        "buildAssetVideoId",
+        "buildCandidateMetadataIdentityKey",
+        "buildCandidateSubtitleIdentity",
+        "buildMetadataSubtitleIdentity",
+        "buildSubtitleIdentityFromParts",
+        "extractMediaTranscriptPathId",
+        "normalizeSubtitleUrlPath",
+        "assertCurrentCircleAssetIsFresh",
+        "readStableAttachmentId",
+        "buildSubtitleMetadata",
+        "resolveLanguage",
+        "resolveDuration",
+        "readDurationSeconds",
+        "parseRemoteVtt",
+        "readAttachmentString",
+        "readAttachmentValue",
+        "asRecord",
+        "readArray",
+        "readString",
+        "readNumber",
+        "normalizeLanguage",
+        "isHlsUrl",
+        "sanitizeVideoIdToken",
+        "hashStableFallback",
+        "buildMetadataEmissionKey",
+        "safeDecodeURIComponent"
+      ],
+      "hints": [
+        "subtitleRequestInfoStreamService",
+        "srtVttSubtitleParser",
+        "https://circle.local/"
+      ]
+    },
+    {
+      "family": "vidtube",
+      "className": "wd",
+      "parent": "pd",
+      "bytes": 8287,
+      "sites": [
+        "vidtube"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "installNetworkHooksEarly",
+        "installPerformanceObserverEarly",
+        "emitGetSourcesUrl",
+        "normalizeResourceUrl",
+        "buildMetadataFromGetSourcesUrl",
+        "refetchGetSourcesJson",
+        "fetchJsonViaXhr",
+        "buildStateFromPayload",
+        "buildFromState",
+        "transformMetadata",
+        "fetchSubtitleText",
+        "cacheVtt",
+        "fetchTextViaXhr",
+        "looksLikeSubtitleText",
+        "withTimeout",
+        "readCachedVtt",
+        "normalizeVttCacheKey",
+        "resolveVideoId",
+        "normalizeTracks",
+        "normalizeMediaUrl",
+        "normalizeLanguage",
+        "resolveFileId"
+      ],
+      "hints": [
+        "srtVttSubtitleParser",
+        "captions",
+        "subtitles"
+      ]
+    },
+    {
+      "family": "vidyard",
+      "className": "VH",
+      "parent": "Ve",
+      "bytes": 4214,
+      "sites": [
+        "vidyard"
+      ],
+      "methods": [
+        "constructor",
+        "createMetadataObservable",
+        "buildMetadataFromConfig",
+        "readState",
+        "loadPlayerConfig",
+        "selectActiveChapter",
+        "buildCaptionCandidates",
+        "selectMp4Source",
+        "resolveDuration",
+        "syncVideoIdentity",
+        "readPlayerUuid",
+        "normalizeLanguage",
+        "readString"
+      ],
+      "hints": []
+    },
+    {
+      "family": "gumlet",
+      "className": "YH",
+      "parent": "Ra",
+      "bytes": 192,
+      "sites": [
+        "gumlet"
+      ],
+      "methods": [
+        "extractMediaMetadata"
+      ],
+      "hints": []
+    },
+    {
+      "family": "gitir",
+      "className": "Vz",
+      "parent": "Ra",
+      "bytes": 394,
+      "sites": [
+        "gitir"
+      ],
+      "methods": [
+        "extractMediaMetadata",
+        "transformMetadata",
+        "buildLoadedTrackContent"
+      ],
+      "hints": []
+    },
+    {
+      "family": "ftstreaming",
+      "className": "vK",
+      "parent": "Ve",
+      "bytes": 1986,
+      "sites": [
+        "ftstreaming"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "readCurrentPageState",
+        "buildMetadataFromState",
+        "readSubtitleCandidates",
+        "transformMetadata"
+      ],
+      "hints": [
+        "[FtstreamingMediaMetadataService] skip mux subtitle parse",
+        "ftstreaming mux subtitle playlist returned no cues"
+      ]
+    },
+    {
+      "family": "pandavideo",
+      "className": "bz",
+      "parent": "Ve",
+      "bytes": 1308,
+      "sites": [
+        "pandavideo"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "buildMetadataFromState",
+        "readPageState",
+        "buildSubtitleCandidates",
+        "toSubtitleMetadata"
+      ],
+      "hints": []
+    },
+    {
+      "family": "adobetv",
+      "className": "yj",
+      "parent": "Ve",
+      "bytes": 3774,
+      "sites": [
+        "adobe_tv"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "buildMetadataFromBridge",
+        "readPageState",
+        "buildSubtitleCandidates",
+        "resolveTranslationLanguage",
+        "resolveBridgeVideoLanguage",
+        "resolveMediaUrl",
+        "isHttpMediaUrl",
+        "resolveDuration",
+        "readAdobeId",
+        "readPageId",
+        "completeUrl",
+        "normalizeLocale",
+        "readString"
+      ],
+      "hints": [
+        "http:",
+        "https:"
+      ]
+    },
+    {
+      "family": "glo",
+      "className": "z7",
+      "parent": "Ve",
+      "bytes": 1882,
+      "sites": [
+        "glo"
+      ],
+      "methods": [
+        "createMetadataObservable",
+        "readCurrentPageState",
+        "buildMetadataForState",
+        "isReadyClassMedia",
+        "resolveMediaUrl",
+        "readClassId",
+        "buildStableMediaKey",
+        "parseUrl"
+      ],
+      "hints": [
+        "https:"
+      ]
+    }
+  ],
+  "reviewLedger": "docs/FULL_SITE_PARITY.md"
+}

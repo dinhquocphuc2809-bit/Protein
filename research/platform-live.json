@@ -1,0 +1,68 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.ted.com/talks/ken_robinson_do_schools_kill_creativity",
+      "http_status": 200,
+      "frames": [
+        {
+          "cues": 427,
+          "engine": "multisite",
+          "first": 5.607,
+          "host": "www.ted.com",
+          "language": "en",
+          "last": 1143.717,
+          "path": "/talks/sir_ken_robinson_do_schools_kill_creativity",
+          "playerButton": true,
+          "rules": [
+            "ted"
+          ],
+          "state": "ready",
+          "trackCount": 66,
+          "videos": [
+            {
+              "height": 436.5,
+              "parent": "size-full min-h-0",
+              "width": 776
+            }
+          ]
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": true
+    },
+    {
+      "url": "https://www.feynmanlectures.caltech.edu/fml.html",
+      "http_status": 403,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    }
+  ]
+}
