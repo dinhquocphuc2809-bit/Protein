@@ -1,5 +1,6 @@
 """Verify sidebar placement against a real YouTube watch page without paid API calls."""
 import json
+import tempfile
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
@@ -15,7 +16,8 @@ def main():
     report = {'scope': 'Real YouTube watch page layout; no translation or synthesis calls', 'checks': []}
     with sync_playwright() as p:
         extension = ROOT / 'dist/chrome'
-        context = p.chromium.launch_persistent_context(str(output / 'live-profile'), channel='chromium', headless=True,
+        profile = tempfile.TemporaryDirectory(dir=output)
+        context = p.chromium.launch_persistent_context(profile.name, channel='chromium', headless=True,
             args=[f'--disable-extensions-except={extension}', f'--load-extension={extension}'],
             viewport={'width': 1440, 'height': 1000})
         try:
@@ -34,6 +36,11 @@ def main():
             assert bounds['player']['width'] > 400
             report['layout'] = bounds
             report['checks'].append('Visible right sidebar fits the viewport without covering the real video player')
+            page.wait_for_selector('.vocalm-player-button', timeout=10000, state='attached')
+            page.locator('.vocalm-player-button').evaluate('(e)=>e.click()')
+            controls = shadow_eval(page, 'auvirel-surface')
+            assert controls('function(){return !this.querySelector(".quick-menu").hidden}')
+            report['checks'].append('Vocalm button mounted in actual YouTube controls opens quick settings')
             page.screenshot(path=str(output / 'youtube-live-mount.png'))
             panel = shadow_eval(page, 'auvirel-surface')
             panel('function(){this.querySelector("#mode").value="original"}')
@@ -68,6 +75,7 @@ def main():
             raise
         finally:
             context.close()
+            profile.cleanup()
             (ROOT / 'research/ui-youtube-live.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
             print(json.dumps(report))
 

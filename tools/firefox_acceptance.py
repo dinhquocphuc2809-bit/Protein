@@ -71,7 +71,7 @@ def main():
             raise TimeoutError('Firefox subtitle preparation timed out: '+state)
         assert len(root.find_elements(By.CSS_SELECTOR, '.cue')) == 2
         driver.save_screenshot(str(output / 'panel.png'))
-        driver.execute_script('document.querySelector("video").play()')
+        root.find_element(By.CSS_SELECTOR, '.grove-ready').click()
         states = set()
         deadline = time.monotonic()+180
         while time.monotonic() < deadline:

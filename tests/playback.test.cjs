@@ -88,6 +88,61 @@ class Context {
   }
 }
 globalThis.AudioContext = Context;
+test("advertisement events cannot seek, play or synthesize against content time", async () => {
+  const { video, mixer, requests } = await fixture();
+  let ad = false;
+  mixer.isBlocked = () => ad;
+  await mixer.prime();
+  await video.play();
+  await sleep(10);
+  ad = true;
+  video.currentTime = 90;
+  video.dispatchEvent(new Event("seeking"));
+  assert.equal(mixer.suspended, true);
+  assert.equal(mixer.active, null);
+  assert.equal(mixer.running, false);
+  const count = requests.length,
+    starts = mixer.context.sources.length;
+  for (const name of [
+    "play",
+    "playing",
+    "pause",
+    "ended",
+    "ratechange",
+    "waiting",
+  ])
+    video.dispatchEvent(new Event(name));
+  await mixer.tick();
+  assert.equal(requests.length, count);
+  assert.equal(mixer.context.sources.length, starts);
+  video.currentTime = 4;
+  ad = false;
+  await mixer.tick();
+  assert.equal(mixer.suspended, false);
+  assert.equal(mixer.cursor, 2);
+  assert.equal(mixer.running, true);
+  assert.equal(mixer.cues.length, 12);
+  await mixer.close();
+});
+test("video node replacement during an ad retains clips and detaches old events", async () => {
+  const { video, mixer } = await fixture();
+  await mixer.prime();
+  let ad = true;
+  mixer.isBlocked = () => ad;
+  mixer.syncSuspension();
+  const replacement = new Video();
+  mixer.replaceVideo(replacement);
+  assert.equal(mixer.clips.size, 1);
+  video.currentTime = 20;
+  video.dispatchEvent(new Event("seeking"));
+  assert.equal(mixer.cursor, 0);
+  replacement.currentTime = 6;
+  ad = false;
+  await mixer.tick();
+  assert.equal(mixer.cursor, 3);
+  assert.equal(mixer.running, false);
+  await mixer.close();
+});
 async function fixture(send, requireTranslation = false) {
   const video = new Video(),
     requests = [];

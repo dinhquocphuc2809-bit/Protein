@@ -54,8 +54,8 @@
     if (result.state !== "ready")
       throw new Error(
         result.trackCount > 0
-          ? "Video có phụ đề nhưng YouTube chưa trả dữ liệu. Hãy bật CC hoặc mở Bản chép lời, rồi thử lại. Veloa không tự chuyển sang ASR."
-          : "Chưa xác minh được phụ đề YouTube. Hãy đợi trang tải xong rồi thử lại; Veloa chưa gọi ASR.",
+          ? "Video có phụ đề nhưng YouTube chưa trả dữ liệu. Hãy bật CC hoặc mở Bản chép lời, rồi thử lại. Vocalm không tự chuyển sang ASR."
+          : "Chưa xác minh được phụ đề YouTube. Hãy đợi trang tải xong rồi thử lại; Vocalm chưa gọi ASR.",
       );
     return { cues: validate(result.cues), language: result.language || "auto" };
   }

@@ -22,7 +22,7 @@
       this.shadow.append(css);
       const shell = document.createElement("section");
       shell.className = "shell";
-      shell.innerHTML = `<div class="topline"></div><header class="header"><div class="brand" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 6.5h14M5 11h9M5 15.5h6m4 .5 2 2 4-5"/></svg></div><div class="title">Bilingual Transcript</div><button class="icon-btn download" aria-label="Download bilingual subtitles" title="Download bilingual subtitles"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg></button><div class="live"><span class="dot"></span>LIVE</div></header><section class="state"><strong>Preparing transcript…</strong><p>Phụ đề gốc và bản dịch xuất hiện ở đây.</p><button class="prepare">Chuẩn bị phụ đề</button></section><main class="transcript" aria-label="Full bilingual transcript" tabindex="0" hidden><div class="top-space"></div><div class="rows"></div><div class="bottom-space"></div></main><button class="follow" hidden>Theo video ↓</button>`;
+      shell.innerHTML = `<div class="topline"></div><header class="header"><div class="brand" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 6.5h14M5 11h9M5 15.5h6m4 .5 2 2 4-5"/></svg></div><div class="title">Phụ đề song ngữ</div><button class="icon-btn download" aria-label="Download bilingual subtitles" title="Download bilingual subtitles"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg></button><div class="live"><span class="dot"></span>SYNC</div></header><section class="state"><strong>Phụ đề của bạn</strong><p>Phụ đề gốc và bản dịch xuất hiện ở đây.</p><button class="prepare">Chuẩn bị phụ đề</button></section><main class="transcript" aria-label="Full bilingual transcript" tabindex="0" hidden><div class="top-space"></div><div class="rows"></div><div class="bottom-space"></div></main><button class="follow" hidden>Theo video ↓</button>`;
       this.shadow.append(shell);
       this.list = this.shadow.querySelector(".transcript");
       this.container = this.shadow.querySelector(".rows");
@@ -120,7 +120,10 @@
       return visible;
     }
     setCues(rows) {
-      if (this.rows === rows) return;
+      if (this.rows === rows) {
+        this.refreshVisible();
+        return;
+      }
       this.observer.disconnect();
       this.container.replaceChildren();
       this.start = 0;
@@ -138,6 +141,20 @@
       this.list.hidden = !rows.length;
       this.shadow.querySelector(".download").disabled = !rows.length;
       this.render();
+    }
+    refreshVisible() {
+      // WindowQueue patches cues in place. Keep DOM/scroll anchors, update only text.
+      for (const button of this.container.children) {
+        const cue = this.rows[Number(button.dataset.index)];
+        if (!cue) continue;
+        for (const [selector, text] of [
+          [".source", cue.text],
+          [".translation", cue.translated || "Đang chờ dịch…"],
+        ]) {
+          const node = button.querySelector(selector);
+          if (node.textContent !== text) node.textContent = text;
+        }
+      }
     }
     measure() {
       this.prefix = [0];
@@ -194,7 +211,7 @@
         source.textContent = cue.text;
         const translated = document.createElement("span");
         translated.className = "translation";
-        translated.textContent = cue.translated || cue.text;
+        translated.textContent = cue.translated || "Đang chờ dịch…";
         texts.append(source, translated);
         button.append(time, texts);
         fragment.append(button);

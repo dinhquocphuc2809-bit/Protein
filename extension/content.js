@@ -19,11 +19,15 @@
   style.rel = "stylesheet";
   style.href = api.runtime.getURL("content.css");
   shadow.append(style);
+  const playerStyle = document.createElement("link");
+  playerStyle.rel = "stylesheet";
+  playerStyle.href = api.runtime.getURL("player.css");
+  shadow.append(playerStyle);
   const surface = document.createElement("div");
   surface.className = "auvirel-root";
-  surface.innerHTML = `<button class="launcher" aria-label="Open Veloa" title="Veloa"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 12h13M11 20h13"/></svg></button>
-  <section class="panel" aria-label="Veloa video companion" hidden>
-    <header><div class="brand"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 12h13M11 20h13"/></svg></span><div><strong>Veloa</strong><small>Listen. Understand. Explore.</small></div></div><button class="icon" id="settings" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-.6 2.3-2 .9-2.1-.6-1.8 3.2 1.6 1.7v2.4l-1.6 1.7 1.8 3.2 2.2-.6 2 .9.5 2.3h3.8l.6-2.3 2-.9 2.1.6 1.8-3.2-1.6-1.7v-2.4l1.6-1.7-1.8-3.2-2.1.6-2-.9-.6-2.3Z"/><circle cx="11" cy="11.7" r="3"/></svg></button><button class="icon" id="collapse" aria-label="Minimize"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button></header>
+  surface.innerHTML = `<button class="launcher" aria-label="Open Vocalm" title="Vocalm"><img src="${api.runtime.getURL("icons/icon-48.png")}" width="32" height="32" alt=""></button>
+  <section class="panel" aria-label="Vocalm video companion" hidden>
+    <header><div class="brand"><span class="brand-mark"><img src="${api.runtime.getURL("icons/icon-48.png")}" width="32" height="32" alt=""></span><div><strong>Vocalm</strong><small>Nghe trọn. Hiểu sâu.</small></div></div><button class="icon" id="settings" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-.6 2.3-2 .9-2.1-.6-1.8 3.2 1.6 1.7v2.4l-1.6 1.7 1.8 3.2 2.2-.6 2 .9.5 2.3h3.8l.6-2.3 2-.9 2.1.6 1.8-3.2-1.6-1.7v-2.4l1.6-1.7-1.8-3.2-2.1.6-2-.9-.6-2.3Z"/><circle cx="11" cy="11.7" r="3"/></svg></button><button class="icon" id="collapse" aria-label="Minimize"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button></header>
     <div class="video-title">Choose a video to begin</div>
     <div class="status" role="status" aria-live="polite"><span class="dot"></span><span id="state">Ready when you are</span></div>
     <div class="setup"><label>Voice<select id="voice"></select></label><div class="row"><label>Translate to<select id="language"><option value="vi">Vietnamese</option><option value="en">English</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="zh">Chinese</option><option value="fr">French</option><option value="de">German</option><option value="es">Spanish</option></select></label><label>Translation<select id="model"><option value="basic">Gemini · Essential</option><option value="advanced">Gemini · Advanced</option><option value="deepseek">DeepSeek</option></select></label></div>
@@ -59,10 +63,20 @@
     lastSource = "",
     asrAvailable = false,
     explicitAsr = false;
+  const playerUI = new A.PlayerUI(shadow, {
+    start: () => $("start").click(),
+    stop: () => stop().catch(error),
+    ready: () => playReady().catch(error),
+    configure: (values) => control({ command: "configure", values }),
+    source: $,
+    show: (section) => control({ command: "show", section }).catch(error),
+    fail: error,
+  });
   const sidebar =
     window.top === window.self
       ? new A.BilingualSidebar({
           seek: (seconds, play) => {
+            if (playerUI.adActive()) return;
             seek(seconds);
             if (play) video?.play().catch(error);
           },
@@ -74,6 +88,7 @@
     const element = shadow.querySelector(".status");
     element.dataset.state = kind;
     $("state").textContent = text;
+    playerUI.detail(text);
   }
   function error(reason) {
     status("error", reason.message || String(reason));
@@ -106,7 +121,6 @@
   shadow.querySelector(".launcher").onclick = () => {
     panel.classList.remove("study-only");
     panel.hidden = !panel.hidden;
-    if (!panel.hidden) init().catch(error);
   };
   $("collapse").onclick = () => {
     panel.hidden = true;
@@ -114,12 +128,13 @@
   $("settings").onclick = () => send({ type: "openSettings" }).catch(error);
   async function stop(reset = false) {
     work++;
+    playerUI.setStage("");
     translationQueue?.pause();
     if (activeJob) send({ type: "cancelJob", id: activeJob }).catch(() => {});
     activeJob = null;
     const current = mixer;
     mixer = null;
-    if (current) await current.close();
+    const closing = current?.close();
     $("start").disabled = false;
     $("stop").disabled = true;
     if (reset) {
@@ -141,6 +156,7 @@
       sidebar?.setCues(cues);
     }
     status("ready", "Stopped");
+    await closing;
   }
   $("stop").onclick = () => stop().catch(error);
   function chooseVideo() {
@@ -151,17 +167,28 @@
     );
     const next = candidates[0] || null;
     const nextSource = VeloaMedia.source(next);
+    const previousId = VeloaMedia.youtubeId(lastUrl),
+      nextId = VeloaMedia.youtubeId(location.href);
+    const sameYouTube = Boolean(previousId && previousId === nextId);
     if (
       video &&
+      !sameYouTube &&
       (next !== video ||
         location.href !== lastUrl ||
         (lastSource && nextSource !== lastSource))
     )
       stop(true).catch(error);
-    video = next;
+    // Ads may replace the media node or temporarily remove it; the watch ID owns the session.
+    if (next || !sameYouTube) video = next;
+    if (sameYouTube && video && mixer?.video !== video) {
+      mixer?.replaceVideo(video);
+      mixer?.setOriginal(+$("original").value / 100);
+    }
     lastUrl = location.href;
     lastSource = nextSource;
-    shadow.querySelector(".launcher").hidden = !video;
+    playerUI.mount(video);
+    shadow.querySelector(".launcher").hidden =
+      !video || Boolean(playerUI.button?.isConnected);
     shadow.querySelector(".video-title").textContent = video
       ? document.title
       : "No video player found";
@@ -252,6 +279,7 @@
       status,
       (position, ahead) => translationQueue?.request(position, ahead),
       () => translationQueue?.pause(),
+      () => playerUI.adActive(),
     );
     const current = mixer;
     await current.configure(
@@ -260,8 +288,23 @@
       $("language").value,
       progressive,
     );
+    await primeCurrent(current, epoch);
+    if (epoch !== work || current !== mixer) return;
+    mixer.setOriginal(+$("original").value / 100);
+    mixer.setDub(+$("dub").value / 100);
+    mixer.setMusic(+$("music").value / 100);
+    if ($("bgm").value)
+      await mixer.loadMusic(api.runtime.getURL("assets/" + $("bgm").value));
+  }
+  async function primeCurrent(current, epoch) {
     const deadline = Date.now() + 180000;
     while (epoch === work && current === mixer) {
+      if (playerUI.adActive()) {
+        await new Promise((resolve) => setTimeout(resolve, 100));
+        if (Date.now() > deadline)
+          throw new Error("Quảng cáo chưa kết thúc. Hãy thử lại sau.");
+        continue;
+      }
       const cursor = current.cursor;
       try {
         if (progressive) await translationQueue.ensure(video.currentTime);
@@ -277,11 +320,6 @@
           "Preparation timed out; retry at the current position.",
         );
     }
-    if (epoch !== work || current !== mixer) return;
-    mixer.setOriginal(+$("original").value / 100);
-    mixer.setDub(+$("dub").value / 100);
-    if ($("bgm").value)
-      await mixer.loadMusic(api.runtime.getURL("assets/" + $("bgm").value));
   }
   const asrButton = document.createElement("button");
   asrButton.id = "use-asr";
@@ -295,35 +333,57 @@
     $("start").onclick();
   };
   $("start").onclick = async () => {
+    if ($("start").disabled) return;
+    if (playerUI.stage === "ready") return playReady().catch(error);
     const allowAsr = explicitAsr;
     explicitAsr = false;
+    const epoch = ++work;
     try {
       if (!video) throw new Error("Open a page with a video first.");
+      if (playerUI.adActive())
+        throw new Error("Đợi quảng cáo kết thúc rồi bắt đầu lồng tiếng.");
+      playerUI.setStage("captions");
       // Register on CPU while captions/translation are prepared; this does not start a GPU.
       send({ type: "prepareVoice", voiceId: $("voice").value }).catch(() => {});
       $("start").disabled = true;
       $("stop").disabled = false;
       if (cues.length && videoJob) {
-        const epoch = work,
-          capturedVideo = video;
+        playerUI.setStage("voice");
         await createMixer();
-        if (epoch !== work || video !== capturedVideo) return;
-        await video.play();
+        if (epoch !== work) return;
+        status("ready", "Ready. Press play to listen.");
+        playerUI.setStage("ready");
         $("start").disabled = false;
         return;
       }
-      const epoch = ++work,
-        capturedVideo = video,
-        url = location.href,
-        wasPlaying = !video.paused;
+      const capturedVideo = video,
+        url = location.href;
       status("buffering", "Reading the available subtitles");
       const found = imported
         ? { cues: imported, language: "auto" }
         : allowAsr
           ? null
           : await pageCaptions();
-      if (epoch !== work || video !== capturedVideo || location.href !== url)
+      if (
+        epoch !== work ||
+        (!VeloaMedia.youtubeId(url) &&
+          (video !== capturedVideo || location.href !== url))
+      )
         return;
+      const adDeadline = Date.now() + 180000;
+      while (playerUI.adActive() && epoch === work) {
+        await new Promise((resolve) => setTimeout(resolve, 100));
+        if (Date.now() > adDeadline)
+          throw new Error("Quảng cáo chưa kết thúc. Hãy thử lại sau.");
+      }
+      if (epoch !== work) return;
+      if (
+        VeloaMedia.youtubeId(url) &&
+        VeloaMedia.youtubeId(url) !== VeloaMedia.youtubeId(location.href)
+      ) {
+        await stop(true);
+        return;
+      }
       asrAvailable = false;
       $("use-asr").hidden = true;
       const payload = {
@@ -338,6 +398,7 @@
         position: video.currentTime,
       };
       if (found?.cues) payload.cues = found.cues;
+      playerUI.setStage("translation");
       video.pause();
       const job = await send({ type: "job", payload, idem: A.random() });
       const result = await waitJob(job, epoch);
@@ -366,17 +427,45 @@
         : null;
       renderTranscript(true);
       $("cue-count").textContent = `${cues.length} cues`;
+      playerUI.setStage("voice");
       await createMixer();
       if (epoch !== work) return;
       status("ready", "Ready. Press play to listen.");
-      if (wasPlaying) await video.play();
+      playerUI.setStage("ready");
       $("start").textContent = "Resume dubbing";
       $("start").disabled = false;
     } catch (reason) {
+      if (epoch !== work) return;
+      playerUI.setStage("");
+      const failedMixer = mixer;
+      mixer = null;
+      await failedMixer?.close();
       if (reason.name !== "AbortError") error(reason);
       $("start").disabled = false;
+      $("stop").disabled = true;
     }
   };
+  async function playReady() {
+    if (playerUI.stage !== "ready" || playerUI.adActive()) return;
+    const epoch = work;
+    playerUI.setStage("voice");
+    $("start").disabled = true;
+    try {
+      // Re-prime if the user sought while reading the Ready screen.
+      if (!mixer) throw new Error("Hãy chuẩn bị lại giọng đọc.");
+      await primeCurrent(mixer, epoch);
+      if (epoch !== work) return;
+      playerUI.setStage("");
+      await video.play();
+    } catch (reason) {
+      if (epoch === work) {
+        await stop();
+        error(reason);
+      }
+    } finally {
+      if (epoch === work) $("start").disabled = false;
+    }
+  }
   $("voice").onchange = async () => {
     try {
       if (mixer)
@@ -432,7 +521,7 @@
     };
   });
   function seek(seconds) {
-    if (!video || !Number.isFinite(seconds)) return;
+    if (!video || playerUI.adActive() || !Number.isFinite(seconds)) return;
     video.currentTime = seconds;
   }
   function renderTranscript(force = false) {
@@ -587,13 +676,19 @@
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = bilingual ? "veloa-bilingual.srt" : "veloa-subtitles.srt";
+    link.download = bilingual ? "vocalm-bilingual.srt" : "vocalm-subtitles.srt";
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 5000);
   }
   $("export").onclick = () => exportSubtitles();
   function draw() {
+    playerUI.layout();
     sidebar?.mount($("mode").value);
+    if (playerUI.adActive()) {
+      mixer?.syncSuspension();
+      overlay.hidden = true;
+      return;
+    }
     sidebar?.update(video ? A.atTime(cues, video.currentTime) : -1);
     if (sidebar?.owns) {
       overlay.hidden = true;
@@ -637,6 +732,7 @@
         title: video ? document.title : "",
         busy: $("start").disabled,
         running: Boolean(mixer),
+        ready: playerUI.stage === "ready",
         cueCount: cues.length,
         preparedCount: cues.filter((c) => c.translated).length,
         status: $("state").textContent,

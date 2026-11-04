@@ -103,7 +103,7 @@ def main():
         assert evaluate('function(){return this.querySelectorAll(".cue").length}') == 2
         report['checks'].append('Page TextTrack -> real translation -> bilingual transcript')
         video.screenshot(path=str(output / 'panel-desktop.png'), full_page=True)
-        video.evaluate('document.querySelector("video").play()')
+        click('.grove-ready')
         deadline = time.monotonic()+180
         states = set()
         while time.monotonic() < deadline:

@@ -4,6 +4,32 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
 
 ## Current phase: working deployed release candidate; final packaging and repository delivery
 
+### Vocalm player/UI revision (0.5.0, 2026-11-04)
+
+- [x] Owner branding: Vocalm with supplied Bamboo Headphones Icon.png, fern/sage
+  palette, compact listening/sound/account popup, embedded accordion settings.
+- [x] In-place sidebar translation patches preserve mounted rows/scroll position.
+- [x] YouTube watch ID owns the session; ads suspend TTS/music/lookahead without
+  clearing transcript/cache. Source and video-node replacement are covered.
+- [x] Preparation overlay with three actual stages, growing SVG bamboo, keyboard
+  focus, reduced motion, Cancel and explicit Ready. Initial work remains one unit.
+- [x] In-player Vocalm button/menu for voice/language/captions/mixer/BGM/study.
+- [x] Real YouTube layout/button/theater/narrow checks; actual Chrome and Firefox
+  live translation/OmniVoice tests; Chrome cache/voice replay/summary/chat pass.
+- [x] 58 Python / 41 JavaScript tests, compilation and secret scan pass.
+- [x] Browser fixtures cover live row updates, ads/source/node replacement,
+  fullscreen, reduced motion, ready-seek, startup-seek and cancellation.
+- [x] Final error-unlock acceptance and local packages complete. Chrome/Firefox
+  `dist/vocalm-*.zip` include 84 voices and 8 BGM; source-only CI packages omit them.
+- [ ] Repository push/CI verification in progress.
+- Design/review gates: `docs/VOCALM_DESIGN.md`. Evidence:
+  `research/vocalm-ui-acceptance.json`, `research/ui-youtube-live.json`,
+  `research/browser-chromium.json`, `research/browser-firefox.json`.
+- Ad evidence is deterministic fixture coverage, not a claim of live midroll ad
+  verification. Native video-element fullscreen remains a browser limitation;
+  YouTube container fullscreen is covered. No backend/GPU deployment was changed.
+
+
 ### Neko source/HAR latency optimization (0.4.1)
 
 - [x] Re-read supplied Neko Colab/Modal notebook code and translation/TTS client.

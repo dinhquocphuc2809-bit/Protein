@@ -6,6 +6,8 @@ let target = null,
   frameId = 0,
   pageReady = false,
   polling = false;
+let activeView = "listen",
+  readyToPlay = false;
 const send = async (message) => {
   const result = await api.runtime.sendMessage(message);
   if (!result?.ok)
@@ -50,7 +52,26 @@ function settingsView(open) {
   if (open && !$("settings-frame").getAttribute("src"))
     $("settings-frame").src = "options.html?embedded=1";
   if (!open) initialize(false).catch(fail);
+  document
+    .querySelectorAll("[data-view]")
+    .forEach((button) =>
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.view === (open ? "account" : activeView)),
+      ),
+    );
 }
+document.querySelectorAll("[data-view]").forEach((button) => {
+  button.onclick = () => {
+    const view = button.dataset.view;
+    if (view !== "account") {
+      activeView = view;
+      $("listen-view").hidden = view !== "listen";
+      $("sound-view").hidden = view !== "sound";
+    }
+    settingsView(view === "account");
+  };
+});
 $("settings").onclick = () => settingsView($("preferences").hidden);
 $("back").onclick = () => settingsView(false);
 async function refresh() {
@@ -59,6 +80,7 @@ async function refresh() {
   try {
     const state = await player("state");
     pageReady = state.available;
+    readyToPlay = Boolean(state.ready);
     $("video-title").textContent = state.title || "Mở một video để bắt đầu";
     $("video-title").title = state.title || "";
     $("start").disabled = !pageReady || state.busy;
@@ -67,11 +89,27 @@ async function refresh() {
     $("stop").disabled = !state.running && !state.busy;
     $("start").querySelector("span").textContent = state.busy
       ? "Đang chuẩn bị…"
-      : state.cueCount
-        ? "Tiếp tục lồng tiếng"
-        : "Bắt đầu lồng tiếng";
+      : state.ready
+        ? "Sẵn sàng · Phát video"
+        : state.cueCount
+          ? "Tiếp tục lồng tiếng"
+          : "Lồng tiếng";
     if (state.busy || state.running || state.error)
-      status(state.status, Boolean(state.error));
+      status(
+        state.ready
+          ? "Đã sẵn sàng. Bấm phát để bắt đầu nghe."
+          : {
+              "Single voice - complete sentences":
+                "Đang lồng tiếng · Đọc trọn câu",
+              "Reading the available subtitles": "Đang lấy phụ đề có sẵn…",
+              "Preparing the first complete sentence":
+                "Đang chuẩn bị câu đầu tiên…",
+              "Preparing the next complete sentence":
+                "Đang chuẩn bị câu kế tiếp…",
+              "Translating the current sentence": "Đang dịch đoạn đang xem…",
+            }[state.status] || state.status,
+        Boolean(state.error),
+      );
     $("ready-label").textContent = state.cueCount
       ? `${state.preparedCount ?? state.cueCount}/${state.cueCount} cụm lời đã dịch · Chuẩn bị theo vùng xem`
       : "Dành cho khoảnh khắc bạn muốn hiểu hơn.";
@@ -177,7 +215,7 @@ for (const key of ["original", "dub", "music"])
 $("start").onclick = async () => {
   $("start").disabled = true;
   try {
-    await configure();
+    if (!readyToPlay) await configure();
     await player("start");
     status("Đang chuẩn bị phụ đề và giọng đọc…");
     await refresh();

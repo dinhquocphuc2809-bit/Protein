@@ -158,3 +158,29 @@ remain open acceptance gates. Refer to `docs/PROGRESSIVE_DUBBING.md` for actual 
 - Snapshot experiments are retained as reports but are not enabled in production.
   No confirmed restore improvement, no cold-start SLA, no claim of minimum achievable
   latency. Full details and official source links: `docs/TTS_LATENCY.md`.
+# Vocalm player/UI acceptance (0.5.0, 2026-11-04)
+
+| Scope | Check / command | Evidence |
+| --- | --- | --- |
+| Unit regressions | `node --test tests/*.test.cjs`: 41 passing; includes blocked ad events and media-node replacement retaining clips | `tests/playback.test.cjs` |
+| Backend regression | `python -m pytest -q`: 58 passing | Existing backend/GPU tests |
+| Actual Chrome MV3 with labelled providers/media | `python tools/progressive_acceptance.py --youtube-ui` | `research/vocalm-ui-acceptance.json` |
+| Startup cancellation | `python tools/progressive_acceptance.py --startup-seek` | `research/progressive-startup-seek.json` |
+| Real YouTube DOM | `python tools/youtube_layout_acceptance.py` | `research/ui-youtube-live.json` |
+| Real Chrome services | `python tools/browser_acceptance.py` | `research/browser-chromium.json` |
+| Real Firefox services | `python tools/firefox_acceptance.py` | `research/browser-firefox.json` |
+
+The UI fixture covers one-unit startup, locked native playback until Ready,
+in-place translated row updates without scrolling, bounded lookahead, manual
+pause, forward/backward/rapid seeks, cached replay, midroll source swaps and node
+replacement, no ad-time translations/TTS, quick volume changes, light/dark/narrow
+layout, reduced motion, actual container fullscreen, ads during preparation,
+Ready-screen seeking, real watch-ID changes and error recovery/unlocked playback.
+The genuine action popup is inspected at its browser-constrained 420x510 viewport;
+navigation fits and all three views are captured. Settings remain inside the popup.
+
+Browser evidence includes labelled audio tones for controlled synchronization tests;
+it is not subjective voice-quality approval. Live YouTube tests verify DOM/layout
+and the control button, not delivery of an actual midroll advertisement. Native
+video-element fullscreen cannot contain extension DOM; container fullscreen works.
+No new GPU model tuning, backend persistence or infrastructure changes in 0.5.0.

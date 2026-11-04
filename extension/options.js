@@ -15,6 +15,21 @@ function status(text, failed = false) {
   $("status").dataset.error = failed;
 }
 const fail = (error) => status(error.message, true);
+if (document.documentElement.classList.contains("embedded")) {
+  for (const [index, section] of [
+    ...document.querySelectorAll(".grid > section"),
+  ].entries()) {
+    const details = document.createElement("details"),
+      summary = document.createElement("summary"),
+      heading = section.querySelector("h2");
+    details.className = "connection-details";
+    details.open = index === 0;
+    summary.textContent = heading.textContent;
+    heading.remove();
+    details.append(summary, ...section.childNodes);
+    section.append(details);
+  }
+}
 let catalog = [],
   deploymentTimer;
 async function initialize() {
@@ -36,7 +51,14 @@ async function initialize() {
     await fetch(api.runtime.getURL("assets/presets.json"))
   ).json();
   if (conf.connected)
-    $("expiry").textContent = "Access code connected on this device.";
+    $("expiry").textContent = "Ticket đã kết nối trên thiết bị này.";
+  status(
+    conf.connected
+      ? conf.voiceReady
+        ? "Ticket & giọng đọc đã kết nối."
+        : "Ticket đã kết nối. Thêm giọng đọc để bắt đầu."
+      : "Kết nối Ticket và giọng đọc của bạn.",
+  );
 }
 function form(id, action) {
   $(id).onsubmit = async (event) => {

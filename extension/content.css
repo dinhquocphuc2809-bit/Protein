@@ -2,9 +2,9 @@
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 14px;
-  --ink: #25272c;
-  --muted: #777c85;
-  --accent: #424750;
+  --ink: #203d30;
+  --muted: #596c60;
+  --accent: #37664b;
   --line: rgba(40, 44, 52, 0.13);
   --spring: cubic-bezier(0.22, 0.8, 0.22, 1);
 }
@@ -63,7 +63,7 @@ button:focus-visible,
 select:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #2895c5;
+  outline: 3px solid #37664b;
   outline-offset: 3px;
 }
 button {
@@ -81,7 +81,7 @@ button:active:not(:disabled) {
   width: 52px;
   height: 52px;
   border-radius: 18px;
-  background: linear-gradient(145deg, #393d45, #202328);
+  background: linear-gradient(145deg, #4d7655, #284e38);
   color: white;
   box-shadow:
     0 8px 30px #16364c35,
@@ -106,7 +106,7 @@ button:active:not(:disabled) {
   overflow: auto;
   border-radius: 26px;
   border: 1px solid #ffffffbc;
-  background: linear-gradient(145deg, #fafafaf5, #f1f2f5f2);
+  background: linear-gradient(145deg, #fafcf3f5, #ecf2e4f2);
   backdrop-filter: blur(28px) saturate(1.2);
   color: var(--ink);
   box-shadow:
@@ -132,7 +132,7 @@ header {
   width: 36px;
   height: 39px;
   border-radius: 12px;
-  background: linear-gradient(145deg, #393d45, #202328);
+  background: linear-gradient(145deg, #4d7655, #284e38);
   color: white;
   display: grid;
   place-items: center;
@@ -249,7 +249,7 @@ select {
   opacity: 0;
 }
 .file-button:focus-within {
-  outline: 3px solid #2895c5;
+  outline: 3px solid #37664b;
 }
 .check {
   display: flex;
@@ -273,7 +273,7 @@ select {
   font-size: 12px;
 }
 .primary {
-  background: linear-gradient(130deg, #393d45, #25282e);
+  background: linear-gradient(130deg, #4d7655, #25282e);
   color: white;
   box-shadow: 0 4px 10px #17648620;
 }

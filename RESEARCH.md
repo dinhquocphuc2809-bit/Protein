@@ -309,3 +309,44 @@ tests pass. Real Gemini and deployed HTTPS checks use 12 explicitly labelled cue
 not the owner's complete 595-cue transcript; successful complete replay of that
 video remains unverified. Reports: `research/translation-recovery.json` and
 `research/translation-recovery-production.json`. No ASR/TTS calls were used.
+# Vocalm UI and YouTube lifecycle research (2026-11-04)
+
+Sources inspected for this revision:
+
+- Local Neko `content-scripts/content.js`: `mu` checks `.html5-video-player`
+  `ad-showing`, `.ytp-ad-player-overlay` and `.ytp-ad-text`; `yf` observes ad state.
+- Local Youtube Dubbing `content-scripts/content.js`: `createWatchAdsObservable`
+  watches player class changes until `ad-showing` disappears. Reference-only;
+  Vocalm retains its own progressive single-voice implementation.
+- https://developer.apple.com/design/human-interface-guidelines/color
+  (official DocC JSON read): consistent color roles, legibility against materials,
+  redundant state labels, increased contrast and light/dark context checks.
+- https://developer.apple.com/design/human-interface-guidelines/motion
+  (official DocC JSON read): purposeful, brief motion; optional/reduced motion;
+  let users cancel without waiting for animation. Applied to discrete stage-driven
+  shoots and gentle leaf movement, with text/icons conveying the same state.
+- https://developer.chrome.com/docs/extensions/reference/api/action
+  retrieved successfully; retained real `default_popup`, not a replacement tab.
+- Owner artwork: `../Bamboo Headphones Icon.png`, 1254x1254 RGBA, alpha 0..255.
+  Pillow/Lanczos generated committed 16/32/48/128/256 PNG sizes. Builds copy these
+  assets directly; no Pillow/build-time graphics dependency. Bamboo loading art
+  and stage icons are original SVG/CSS, with no remote fonts/scripts/images.
+
+Confirmed causes: sidebar returned early on same-array cue patches and unchanged
+virtual ranges; YouTube source changes triggered `stop(true)` even for ads on the
+same watch ID. Fix updates visible text only and keeps logical video identity
+separate from mutable playback sources. Audio events and 40ms scheduler guard
+advertisement state; a 500ms return grace permits content source/time restoration.
+This grace is an engineering choice, not a YouTube API guarantee. Ad suppression
+uses player `ad-showing`/`ad-interrupting` classes; live ad variants need continued
+field observation. Reference overlay presence alone can be stale, so it is not
+used as a permanent playback block.
+
+Measured WCAG relative-luminance contrast: #203D30 on #F6F8F1 = 11.07:1,
+#37664B on white = 6.64:1, #596C60 on #F6F8F1 = 5.25:1. These are the core text,
+primary-action and secondary-text pairs, not an assertion about every pixel.
+
+Evidence separates real services/YouTube layout from labelled media/provider
+fixtures. Subsecond fixture readiness is not a real OmniVoice latency benchmark.
+Live Chrome tests still submit registered voice IDs (193/194-byte requests), with
+no repeated WAV uploads; previous speed optimizations remain intact.

@@ -289,7 +289,7 @@ async function handle(message, sender) {
       return true;
     } catch {
       throw new Error(
-        "Bấm biểu tượng Veloa trên thanh công cụ rồi chọn Cài đặt.",
+        "Bấm biểu tượng Vocalm trên thanh công cụ rồi chọn Cài đặt.",
       );
     }
   }

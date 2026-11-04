@@ -1,0 +1,278 @@
+:host {
+  --forest: #203d30;
+  --fern: #37664b;
+  --sage: #e5eddf;
+}
+.preparation {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+  background: #10251dcc;
+  backdrop-filter: blur(12px);
+  z-index: 5;
+  overflow: auto;
+  color: var(--forest);
+}
+.grove-card {
+  width: min(420px, 90%);
+  text-align: center;
+  padding: 26px 28px 20px;
+  border: 1px solid #ffffff90;
+  border-radius: 28px;
+  background: radial-gradient(ellipse at 50% 20%, #e6efdd, #fafbf3 70%);
+  box-shadow: 0 24px 90px #071a2450;
+}
+.grove-eyebrow {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #596c60;
+}
+.grove {
+  width: 205px;
+  height: 128px;
+  margin: 4px auto 0;
+  display: block;
+}
+.grove-title {
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  margin: 12px 0 8px;
+  font-weight: 600;
+}
+.grove-detail {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #596c60;
+  margin: 0 auto;
+  min-height: 36px;
+  max-width: 300px;
+}
+.grove-steps {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+  margin: 16px 0;
+}
+.grove-steps li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #68766c;
+}
+.grove-steps span {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d2decb;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+}
+.grove-steps svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.grove-steps [data-state="active"] {
+  color: var(--fern);
+  font-weight: 600;
+}
+.grove-steps [data-state="active"] span {
+  background: #e0ecd8;
+  border-color: #8ca47e;
+  box-shadow: 0 0 0 4px #d8e5cf50;
+}
+.grove-steps [data-state="done"] span {
+  background: var(--fern);
+  border-color: var(--fern);
+  color: #fff;
+}
+.grove-ready {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-height: 44px;
+  width: 100%;
+  background: var(--fern);
+  color: #fff;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.grove-ready:hover {
+  background: #284e38;
+}
+.grove-cancel {
+  background: transparent;
+  color: #596c60;
+  min-height: 36px;
+  margin-top: 6px;
+  font-size: 11px;
+}
+.shoot {
+  transform-box: view-box;
+  transform-origin: 120px 134px;
+  transition: transform 1.2s cubic-bezier(0.22, 0.8, 0.22, 1);
+}
+.shoot-one {
+  transform: scaleY(0.5);
+}
+.shoot-two {
+  transform: scaleY(0.3);
+}
+.shoot-three {
+  transform: scaleY(0.35);
+}
+[data-stage="translation"] .shoot-one,
+[data-stage="voice"] .shoot-one,
+[data-stage="ready"] .shoot-one {
+  transform: scaleY(1);
+}
+[data-stage="translation"] .shoot-two {
+  transform: scaleY(0.6);
+}
+[data-stage="voice"] .shoot-two,
+[data-stage="ready"] .shoot-two {
+  transform: scaleY(1);
+}
+[data-stage="voice"] .shoot-three {
+  transform: scaleY(0.7);
+}
+[data-stage="ready"] .shoot-three {
+  transform: scaleY(1);
+}
+.leaf {
+  transform-origin: 122px 66px;
+  animation: leaf-breath 3s ease-in-out infinite alternate;
+}
+@keyframes leaf-breath {
+  to {
+    transform: rotate(-6deg);
+  }
+}
+.quick-menu {
+  position: fixed;
+  width: min(320px, calc(100vw - 16px));
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  pointer-events: auto;
+  background: #f8faf3f5;
+  backdrop-filter: blur(24px);
+  border: 1px solid #e3ebdc;
+  border-radius: 20px;
+  color: var(--forest);
+  box-shadow: 0 16px 60px #10251d44;
+  z-index: 6;
+  animation: appear 0.2s var(--spring);
+}
+.quick-menu header {
+  padding: 12px 16px;
+  gap: 8px;
+  border-bottom: 1px solid #dfe7d8;
+}
+.quick-menu header strong {
+  flex: 1;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+}
+.quick-close {
+  background: #e9efe2;
+  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  color: var(--forest);
+}
+.quick-fields {
+  padding: 10px 16px;
+  display: grid;
+  gap: 9px;
+}
+.quick-fields label {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: #596c60;
+}
+.quick-fields select {
+  width: 100%;
+  min-height: 32px;
+  background: #eaf0e4;
+  border: 1px solid #dbe4d4;
+  border-radius: 9px;
+  font-size: 12px;
+  color: var(--forest);
+  padding: 3px 6px;
+}
+.quick-fields input {
+  width: 100%;
+  accent-color: var(--fern);
+}
+.quick-actions {
+  padding: 6px 16px 12px;
+  display: flex;
+  gap: 8px;
+}
+.quick-actions button {
+  min-height: 40px;
+  border-radius: 12px;
+  padding: 0 14px;
+  background: #e5eddf;
+  color: var(--forest);
+  font-size: 12px;
+}
+.quick-actions .quick-start {
+  flex: 1;
+  background: var(--fern);
+  color: white;
+}
+.quick-study {
+  display: flex;
+  border-top: 1px solid #dfe7d8;
+  padding: 5px 10px;
+}
+.quick-study button {
+  flex: 1;
+  background: transparent;
+  color: #47634d;
+  min-height: 36px;
+  font-size: 11px;
+}
+@media (max-height: 560px) {
+  .grove-card {
+    padding: 12px 18px;
+  }
+  .grove {
+    height: 70px;
+  }
+  .grove-steps {
+    margin: 8px 0;
+  }
+  .grove-title {
+    font-size: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .leaf {
+    animation: none;
+  }
+  .shoot {
+    transition: none;
+  }
+  .quick-menu {
+    animation: none;
+  }
+}

@@ -80,12 +80,21 @@
   }
 
   class Mixer {
-    constructor(video, send, onState, onNeed = () => {}, onPause = () => {}) {
+    constructor(
+      video,
+      send,
+      onState,
+      onNeed = () => {},
+      onPause = () => {},
+      isBlocked = () => false,
+    ) {
       this.video = video;
       this.send = send;
       this.onState = onState;
       this.onNeed = onNeed;
       this.onPause = onPause;
+      this.isBlocked = isBlocked;
+      this.suspended = false;
       this.context = new AudioContext({ sampleRate: 24000 });
       this.gain = this.context.createGain();
       this.gain.connect(this.context.destination);
@@ -107,8 +116,21 @@
       this.cursor = 0;
       this.resumeOffset = null;
       this.anchor = null;
+      this.bindVideo();
+      this.timer = setInterval(
+        () => this.tick().catch((e) => this.fail(e)),
+        40,
+      );
+    }
+    bindVideo() {
       const listen = (event, fn) =>
-        video.addEventListener(event, fn, { signal: this.listeners.signal });
+        this.video.addEventListener(
+          event,
+          () => {
+            if (!this.syncSuspension()) fn();
+          },
+          { signal: this.listeners.signal },
+        );
       listen("seeking", () => this.reanchor());
       listen("ratechange", () => {
         this.captureOffset();
@@ -159,10 +181,35 @@
         }
         this.pending.clear();
       });
-      this.timer = setInterval(
-        () => this.tick().catch((e) => this.fail(e)),
-        40,
-      );
+    }
+    replaceVideo(video) {
+      if (video === this.video) return;
+      this.listeners.abort();
+      this.video.volume = this.original.volume;
+      this.video.muted = this.original.muted;
+      this.video = video;
+      this.original = { volume: video.volume, muted: video.muted };
+      this.listeners = new AbortController();
+      this.bindVideo();
+      if (!this.syncSuspension()) this.reanchor();
+    }
+    syncSuspension() {
+      const blocked = this.isBlocked();
+      if (blocked === this.suspended) return blocked;
+      this.suspended = blocked;
+      if (blocked) {
+        this.running = false;
+        this.hold = null;
+        this.expectedPause = false;
+        this.invalidate();
+        this.stopMusic();
+        this.onPause();
+      } else {
+        this.stalled = false;
+        this.reanchor();
+        if (this.running) this.startMusic();
+      }
+      return blocked;
     }
     async configure(cues, voiceId, language, requireTranslation = false) {
       const configuration = (this.configuration =
@@ -403,6 +450,8 @@
       }
     }
     async prime() {
+      if (this.syncSuspension())
+        throw new DOMException("Advertisement", "AbortError");
       const index = this.cursor,
         epoch = this.epoch;
       if (!this.cues[index]) return;
@@ -425,6 +474,7 @@
       if (this.failed.has(index)) throw new Error(this.failed.get(index));
     }
     async tick() {
+      if (this.syncSuspension()) return;
       if (
         !this.running ||
         !this.cues?.length ||
@@ -471,7 +521,13 @@
       this.preparing = index + ":" + epoch;
       try {
         const { buffer, speed } = await this.fit(index, epoch);
-        if (epoch !== this.epoch || !this.running || this.stalled) return;
+        if (
+          this.syncSuspension() ||
+          epoch !== this.epoch ||
+          !this.running ||
+          this.stalled
+        )
+          return;
         const source = this.context.createBufferSource(),
           envelope = this.context.createGain();
         source.buffer = buffer;
@@ -545,7 +601,14 @@
       this.startMusic();
     }
     startMusic() {
-      if (!this.music || this.musicSource || !this.running || this.hold) return;
+      if (
+        this.isBlocked() ||
+        !this.music ||
+        this.musicSource ||
+        !this.running ||
+        this.hold
+      )
+        return;
       const source = this.context.createBufferSource();
       source.buffer = this.music;
       source.loop = true;

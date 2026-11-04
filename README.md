@@ -1,4 +1,4 @@
-# Veloa
+# Vocalm
 
 Contextual subtitles, single-voice AI dubbing and a video study companion.
 Built for Chrome/Firefox Manifest V3, an Oracle ARM64 VPS, and separate Modal ASR/TTS accounts.
@@ -9,6 +9,12 @@ The backend is deployed at **https://ubuntu-a1.tail5dab10.ts.net**. The admin se
 accessible only through the owner's Tailscale network. SSH also listens only on Tailscale.
 See [CHECKPOINT.md](CHECKPOINT.md) for exact completion status and open acceptance gates.
 This repository does not claim universal site support, zero latency, or perfect voice quality.
+
+Version **0.5.0** introduces Vocalm's bamboo/forest design, compact toolbar popup,
+YouTube player quick settings and a staged preparation screen with explicit Ready.
+Bilingual translations refresh without scrolling; advertisements preserve the
+transcript while voice playback/lookahead pause. See [design and acceptance](docs/VOCALM_DESIGN.md).
+Reload the extension **and the video page** to use the new scripts and logo.
 
 Version **0.4.1** registers the reference voice once, uses small sentence requests and
 bounded result waits, and overlaps CPU voice setup with subtitle preparation. The
@@ -36,8 +42,8 @@ Real acceptance checks have exercised:
 
 ## Local packages
 
-The owner workspace contains `dist/chrome`, `dist/firefox`, `dist/veloa-chrome.zip`
-and `dist/veloa-firefox.zip`. Local builds include 84 reference voice variants and
+The owner workspace contains `dist/chrome`, `dist/firefox`, `dist/vocalm-chrome.zip`
+and `dist/vocalm-firefox.zip` (legacy ZIP aliases remain available). Local builds include 84 reference voice variants and
 8 BGM tracks imported from the supplied reference extension. Their redistribution
 license was not found, so these assets are excluded from Git and public artifacts.
 
@@ -46,7 +52,7 @@ Firefox: load `dist/firefox/manifest.json` as a temporary add-on through
 `about:debugging#/runtime/this-firefox`. Permanent consumer Firefox installation
 requires Mozilla signing; a ZIP is not a signed store release.
 
-Click the Veloa toolbar icon to open the control popup. Its settings button opens
+Click the Vocalm toolbar icon to open the control popup. Its settings button opens
 settings inside the same popup. Activate the supplied owner Ticket, then either deploy a voice
 worker through the local bridge or connect the already deployed worker with its proxy
 credentials. Secrets are in the ignored `.private/HANDOVER.md` in the owner workspace.

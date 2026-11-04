@@ -1,9 +1,9 @@
 :root {
   color-scheme: light;
-  --ink: #202124;
-  --muted: #797c83;
-  --line: #e6e7eb;
-  --blue: #007aff;
+  --ink: #203d30;
+  --muted: #596c60;
+  --line: #dce5d5;
+  --blue: #37664b;
   --surface: #fff;
   --spring: cubic-bezier(0.22, 0.8, 0.24, 1);
   font:
@@ -19,11 +19,16 @@
 html,
 body {
   width: 420px;
+  height: 580px;
+  max-height: 100dvh;
+  overflow: hidden;
 }
 body {
-  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100dvh;
   margin: 0;
-  background: linear-gradient(165deg, #fafafa, #f2f3f5);
+  background: linear-gradient(165deg, #f8faf2, #eaf0e3);
   overflow-x: hidden;
   font: inherit;
   scrollbar-width: thin;
@@ -51,7 +56,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #007aff80;
+  outline: 3px solid #37664b80;
 }
 button:active:not(:disabled) {
   transform: scale(0.98);
@@ -70,13 +75,14 @@ svg {
   flex-shrink: 0;
 }
 .topbar {
+  flex-shrink: 0;
   height: 62px;
   padding: 12px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e6e7eb;
-  background: #fafafae8;
+  border-bottom: 1px solid #dce5d5;
+  background: #f8faf2e8;
   backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
@@ -109,10 +115,10 @@ svg {
   color: #5c6068;
 }
 .icon-button:hover {
-  background: #e9eaed;
+  background: #dfe9d8;
 }
 .icon-button circle {
-  fill: #fafafa;
+  fill: #f8faf2;
 }
 .now-playing {
   padding: 12px 23px 8px;
@@ -152,7 +158,7 @@ svg {
 #status {
   margin: 0 22px 8px;
   font-size: 11px;
-  color: #777b82;
+  color: #596c60;
   line-height: 1.5;
 }
 #status[data-error="true"] {
@@ -188,13 +194,13 @@ h3 {
 }
 .field {
   display: block;
-  color: #7a7e85;
+  color: #596c60;
   font-size: 10px;
   font-weight: 500;
 }
 select {
   display: block;
-  background: #f5f5f7;
+  background: #edf2e7;
   border: 1px solid transparent;
   border-radius: 10px;
   min-height: 34px;
@@ -217,18 +223,18 @@ select {
   margin-top: 8px;
   border: 1px solid var(--line, #d7d9dd);
   border-radius: 10px;
-  background: #f5f5f7;
+  background: #edf2e7;
   color: var(--ink);
   font-size: 12px;
   cursor: pointer;
 }
 .fallback-action:hover:not(:disabled) {
-  background: #e9eaed;
+  background: #dfe9d8;
 }
 .advanced {
   margin-top: 8px;
   font-size: 10px;
-  color: #797d85;
+  color: #596c60;
 }
 .advanced summary {
   cursor: pointer;
@@ -292,7 +298,7 @@ select {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #7b7f87;
+  color: #596c60;
   white-space: nowrap;
 }
 .check input {
@@ -304,7 +310,7 @@ select {
   margin-top: 13px;
 }
 .primary {
-  background: #24262b;
+  background: #37664b;
   color: white;
   border-radius: 12px;
   min-height: 44px;
@@ -320,7 +326,7 @@ select {
     transform 0.2s var(--spring);
 }
 .primary:hover {
-  background: #3b3f47;
+  background: #284e38;
 }
 .primary svg {
   width: 15px;
@@ -331,7 +337,7 @@ select {
 .stop {
   width: 44px;
   border-radius: 12px;
-  background: #f0f1f3;
+  background: #e5eddf;
   display: grid;
   place-items: center;
   color: #656a74;
@@ -342,7 +348,7 @@ select {
 }
 .caption {
   font-size: 9px;
-  color: #9a9da4;
+  color: #596c60;
 }
 .slider-label {
   display: flex;
@@ -352,7 +358,7 @@ select {
   margin: 9px 0 3px;
 }
 output {
-  color: #979ba3;
+  color: #596c60;
   font-size: 10px;
   font-variant-numeric: tabular-nums;
 }
@@ -360,7 +366,7 @@ input[type="range"] {
   width: 100%;
   height: 17px;
   margin: 0;
-  accent-color: #484c55;
+  accent-color: #37664b;
   cursor: pointer;
 }
 .mixer {
@@ -387,7 +393,7 @@ input[type="range"] {
   font-size: 11px;
 }
 .study-actions button:hover {
-  background: #e9eaed;
+  background: #dfe9d8;
 }
 .study-actions svg {
   width: 16px;
@@ -397,7 +403,7 @@ footer {
   padding: 10px 20px 15px;
   text-align: center;
   font-size: 9px;
-  color: #9a9da5;
+  color: #596c60;
 }
 .preferences-header {
   height: 54px;
@@ -425,7 +431,7 @@ footer {
   width: 100%;
   height: 474px;
   display: block;
-  background: #f5f5f7;
+  background: #edf2e7;
 }
 #home {
   animation: reveal 0.22s var(--spring);
@@ -470,4 +476,125 @@ footer {
   .card {
     border-color: #aaa;
   }
+}
+
+/* Quiet forest surfaces; one focused view at a time. */
+body {
+  background:
+    radial-gradient(ellipse at 85% 0, #dfead1 0, transparent 48%),
+    linear-gradient(160deg, #fbfcf5, #edf2e6);
+}
+.topbar {
+  background: #f6f9efeb;
+  border-bottom-color: #dde6d5;
+}
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.brand h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #203d30;
+}
+.brand span {
+  font-size: 9px;
+}
+.now-playing {
+  padding-top: 10px;
+}
+.now-playing .eyebrow {
+  display: none;
+}
+.now-playing h2 {
+  margin-top: 0;
+  font-size: 14px;
+}
+.card {
+  border-color: #dfe7d7;
+  background: #fffffff0;
+  box-shadow: 0 4px 16px #203d3004;
+}
+#status {
+  max-height: 48px;
+  overflow: auto;
+  color: #596c60;
+}
+.pill {
+  background: #e9f0e0;
+  color: #486443;
+}
+.field,
+.caption,
+output,
+footer,
+.eyebrow {
+  color: #596c60;
+}
+.primary {
+  background: linear-gradient(120deg, #37664b, #446e49);
+}
+#sound-view {
+  min-height: 270px;
+  padding-top: 20px;
+}
+#sound-view .slider-label {
+  margin-top: 24px;
+  font-size: 12px;
+}
+#sound-view input[type="range"] {
+  height: 24px;
+}
+.bottom-nav {
+  display: flex;
+  padding: 6px 16px 9px;
+  gap: 8px;
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid #dce5d5;
+  background: #f5f8efef;
+  backdrop-filter: blur(16px);
+  z-index: 4;
+}
+.bottom-nav button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 45px;
+  border-radius: 12px;
+  color: #596c60;
+  background: transparent;
+  font-size: 10px;
+}
+.bottom-nav button[aria-pressed="true"] {
+  background: #e1ebd7;
+  color: #31593d;
+  font-weight: 600;
+}
+.bottom-nav button:hover {
+  background: #e7eedf;
+}
+#settings-frame {
+  height: calc(100% - 54px);
+}
+#home,
+#preferences {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.bottom-nav {
+  flex-shrink: 0;
+  position: static;
+}
+.study-actions button {
+  color: #47634d;
+}
+footer {
+  padding: 7px 20px 10px;
 }

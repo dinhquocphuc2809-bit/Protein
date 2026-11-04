@@ -2,22 +2,23 @@
   "scope": "Real YouTube watch page layout; no translation or synthesis calls",
   "checks": [
     "Visible right sidebar fits the viewport without covering the real video player",
+    "Vocalm button mounted in actual YouTube controls opens quick settings",
     "Changing subtitle mode removes and restores the reserved sidebar space",
     "Native YouTube player side-panel/theater control hides the sidebar and restores it on return",
     "Sidebar remains reachable at 1000px and falls back to the video overlay below 980px"
   ],
   "layout": {
     "sidebar": {
-      "left": 988,
-      "right": 1368,
-      "width": 380
+      "left": 963.203125,
+      "right": 1424,
+      "width": 460.796875
     },
     "player": {
       "left": 16,
-      "right": 916,
-      "width": 900
+      "right": 947.203125,
+      "width": 931.203125
     },
-    "docked": true
+    "docked": false
   },
   "passed": true
 }

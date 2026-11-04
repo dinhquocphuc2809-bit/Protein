@@ -1,60 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Veloa · Settings</title>
+    <title>Vocalm · Kết nối</title>
     <link rel="stylesheet" href="options.css" />
   </head>
   <body>
     <main>
       <header>
-        <img src="icons/logo.svg" width="56" height="56" alt="" />
+        <img src="icons/icon-128.png" width="56" height="56" alt="" />
         <div>
-          <span class="eyebrow">YOUR VIDEO COMPANION</span>
-          <h1>Veloa</h1>
-          <p>A clearer way to listen.</p>
+          <span class="eyebrow">KHOẢNG RIÊNG ĐỂ LẮNG NGHE</span>
+          <h1>Vocalm</h1>
+          <p>Nghe trọn. Hiểu sâu.</p>
         </div>
       </header>
       <div id="status" role="status" aria-live="polite">
-        Connect your access code and your voice workspace.
+        Kết nối Ticket và giọng đọc của bạn.
       </div>
       <div class="grid">
         <section>
           <span class="number">01</span>
-          <h2>Your access</h2>
-          <p>
-            Connect to the translation service. Your code activates when you
-            first connect.
-          </p>
+          <h2>Ticket của bạn</h2>
           <form id="access-form">
-            <label for="backend">Backend HTTPS address</label
+            <label for="backend">Địa chỉ dịch vụ HTTPS</label
             ><input
               id="backend"
               type="url"
               required
               placeholder="https://your-api.example.com"
               autocomplete="url"
-            /><label for="ticket">Access code</label
+            /><label for="ticket">Mã Ticket</label
             ><input
               id="ticket"
               type="password"
               required
               minlength="16"
               autocomplete="off"
-            /><button class="primary">Activate access</button>
+            /><button class="primary">Kết nối</button>
           </form>
           <p id="expiry" class="note"></p>
         </section>
         <section>
           <span class="number">02</span>
-          <h2>Your voice workspace</h2>
-          <p>
-            Run OmniVoice in your own Modal account. The local bridge deploys
-            the worker and keeps your deployment token on this computer.
-          </p>
+          <h2>Không gian giọng đọc</h2>
+          <p>OmniVoice trên tài khoản Modal của bạn.</p>
           <form id="deploy-form">
-            <label for="command">Modal token command</label
+            <label for="command">Lệnh xác thực Modal</label
             ><textarea
               id="command"
               rows="3"
@@ -62,7 +55,7 @@
               placeholder="modal token set --token-id ak-... --token-secret as-... --profile=..."
             ></textarea>
             <details>
-              <summary>Enter individual fields</summary>
+              <summary>Nhập từng trường</summary>
               <label for="token-id">Token ID</label
               ><input id="token-id" autocomplete="off" /><label
                 for="token-secret"
@@ -72,19 +65,19 @@
             <div class="row">
               <label
                 >GPU<select id="gpu">
-                  <option value="T4">T4 · tested baseline</option>
-                  <option value="L4">L4 · availability varies</option>
+                  <option value="T4">T4 · Đã kiểm thử</option>
+                  <option value="L4">L4 · Tùy khả dụng</option>
                 </select></label
-              ><button class="primary" id="deploy">Deploy OmniVoice</button>
+              ><button class="primary" id="deploy">Triển khai</button>
             </div>
           </form>
           <p class="note">
-            Requires the installed Veloa local bridge. Idle GPU containers scale
-            down after 30 seconds. Deployment may use account credits.
+            Cần cầu nối Vocalm trên máy này. GPU tự nghỉ sau 30 giây không dùng;
+            triển khai sử dụng credit của tài khoản.
           </p>
           <div id="deployment" role="status"></div>
           <details>
-            <summary>Connect an existing worker</summary>
+            <summary>Kết nối worker có sẵn</summary>
             <form id="endpoint-form">
               <label for="endpoint">Modal HTTPS endpoint</label
               ><input id="endpoint" type="url" required /><label for="proxy-id"
@@ -101,32 +94,28 @@
                 required
                 autocomplete="off"
                 placeholder="ws-..."
-              /><button class="secondary">Verify and connect</button>
+              /><button class="secondary">Kiểm tra & kết nối</button>
             </form>
           </details>
         </section>
         <section>
           <span class="number">03</span>
-          <h2>A voice that fits</h2>
-          <p>
-            Choose one voice for each video. Changing the voice reuses your
-            translation.
-          </p>
-          <label for="voice">Voice preset</label
+          <h2>Giọng của bạn</h2>
+          <p>Đổi giọng vẫn giữ nguyên bản dịch.</p>
+          <label for="voice">Giọng mẫu</label
           ><select id="voice"></select
-          ><button class="secondary" id="preview">Preview selected voice</button
+          ><button class="secondary" id="preview">Nghe thử</button
           ><audio id="sample" controls hidden></audio>
           <details>
-            <summary>Use a personal voice</summary>
+            <summary>Thêm giọng cá nhân</summary>
             <form id="voice-form">
-              <label for="wav">Reference WAV · 1–30 seconds</label
+              <label for="wav">Mẫu WAV · 1–30 giây</label
               ><input
                 id="wav"
                 type="file"
                 accept=".wav,audio/wav"
                 required
-              /><label for="reference-text"
-                >Exact words spoken in this sample</label
+              /><label for="reference-text">Lời nói chính xác trong mẫu</label
               ><textarea
                 id="reference-text"
                 maxlength="1200"
@@ -134,17 +123,17 @@
                 required
               ></textarea
               ><label class="check"
-                ><input id="consent" type="checkbox" required />I have
-                permission to use this voice.</label
-              ><button class="secondary">Save personal voice</button>
+                ><input id="consent" type="checkbox" required />Tôi có quyền sử
+                dụng giọng này.</label
+              ><button class="secondary">Lưu giọng</button>
             </form>
           </details>
         </section>
         <section>
           <span class="number">04</span>
-          <h2>Your defaults</h2>
+          <h2>Tùy chọn mặc định</h2>
           <form id="defaults-form">
-            <label for="language">Translation language</label
+            <label for="language">Dịch sang</label
             ><select id="language">
               <option value="vi">Vietnamese</option>
               <option value="en">English</option>
@@ -154,34 +143,31 @@
               <option value="fr">French</option>
               <option value="de">German</option>
               <option value="es">Spanish</option></select
-            ><label for="model">Translation model</label
+            ><label for="model">Mô hình dịch</label
             ><select id="model">
               <option value="basic">Gemini · Essential</option>
               <option value="advanced">Gemini · Advanced</option>
               <option value="deepseek">DeepSeek</option></select
-            ><label for="asr">When the video has no captions</label
+            ><label for="asr">Khi video không có phụ đề</label
             ><select id="asr">
               <option value="fast">Fast · Deepgram Nova-3</option>
               <option value="quality">Quality · Qwen3-ASR</option></select
-            ><label for="subtitle-mode">Subtitles</label
+            ><label for="subtitle-mode">Phụ đề</label
             ><select id="subtitle-mode">
-              <option value="bilingual">Bilingual</option>
-              <option value="translated">Translation</option>
-              <option value="original">Original</option></select
-            ><button class="primary">Save preferences</button>
+              <option value="bilingual">Song ngữ</option>
+              <option value="translated">Bản dịch</option>
+              <option value="original">Bản gốc</option></select
+            ><button class="primary">Lưu tùy chọn</button>
           </form>
         </section>
       </div>
       <footer>
         <div>
-          <strong>Stored on this device</strong>
-          <p>
-            Audio cache is limited to 80 MiB and expires after 48 hours. Backend
-            credentials are never included in the extension.
-          </p>
+          <strong>Lưu trên thiết bị này</strong>
+          <p>Cache âm thanh tối đa 80 MiB, tự hết hạn sau 48 giờ.</p>
         </div>
-        <button id="clear" class="secondary">Clear audio cache</button
-        ><button id="disconnect" class="secondary">Disconnect</button>
+        <button id="clear" class="secondary">Xóa cache</button
+        ><button id="disconnect" class="secondary">Ngắt kết nối</button>
       </footer>
     </main>
     <script src="lib/core.js"></script>
