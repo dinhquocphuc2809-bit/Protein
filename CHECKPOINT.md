@@ -4,6 +4,22 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
 
 ## Current phase: working deployed release candidate; final packaging and repository delivery
 
+### Voice catalog columns (0.5.1, 2026-11-04)
+
+- [x] Verified all 12 base WAVs already present against supplied Neko file hashes.
+  Source name is Dang Khoa (not Dang Quang); no Dang Quang asset was found.
+- [x] Preserve source gender/base ID metadata through import and public settings.
+- [x] Shared two-column male/female picker in popup, options, content panel and
+  YouTube quick menu. Six base voices per column; variants remain selectable in
+  a compact secondary selector. Custom/unknown voices stay outside gender groups.
+- [x] Actual Chrome popup: all 12 IDs select/save correctly; all 12 packaged WAVs
+  decode; variants/Escape/options/quick menu pass. Firefox selection/reload passes.
+- [x] 41 JavaScript regressions and secret scan pass; 84 references/8 BGM retained.
+- Evidence: `research/voice-picker-acceptance.json`,
+  `research/voice-picker-firefox.json`; screenshot in `docs/images/vocalm-voices.png`.
+- No provider/ASR/GPU calls or backend changes required for this revision.
+
+
 ### Vocalm player/UI revision (0.5.0, 2026-11-04)
 
 - [x] Owner branding: Vocalm with supplied Bamboo Headphones Icon.png, fern/sage

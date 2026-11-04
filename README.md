@@ -5,6 +5,11 @@ Built for Chrome/Firefox Manifest V3, an Oracle ARM64 VPS, and separate Modal AS
 
 ## Current delivery
 
+Version **0.5.1** presents the 12 imported base voices in male/female columns in
+the popup and YouTube quick settings, with variants in a secondary selector.
+The supplied reference calls its first male voice **Dang Khoa**, not Dang Quang.
+All original voice IDs, samples and cached dubbing remain compatible.
+
 The backend is deployed at **https://ubuntu-a1.tail5dab10.ts.net**. The admin service is
 accessible only through the owner's Tailscale network. SSH also listens only on Tailscale.
 See [CHECKPOINT.md](CHECKPOINT.md) for exact completion status and open acceptance gates.

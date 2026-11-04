@@ -1,0 +1,91 @@
+{
+  "scope": "Actual packaged assets, Chrome MV3 popup/options/in-player UI; no paid API calls",
+  "groups": {
+    "M": [
+      "\u0110\u0103ng Khoa",
+      "Quang Vinh",
+      "Tu\u1ea5n Anh",
+      "Minh Qu\u00e2n",
+      "Gia B\u1ea3o",
+      "Ho\u00e0ng Long"
+    ],
+    "F": [
+      "Kh\u00e1nh Vy",
+      "Lan Anh",
+      "Ng\u1ecdc Linh",
+      "Thanh Tr\u00fac",
+      "B\u1ea3o Ng\u1ecdc",
+      "H\u00e0 My"
+    ]
+  },
+  "checks": [
+    "12 base reference WAV hashes match supplied Neko assets; 6 male / 6 female from source metadata",
+    "All 12 popup buttons select/persist their exact voice ID; two columns have no horizontal overflow",
+    "Existing emotion variants retain IDs and base highlight; Escape closes the picker",
+    "YouTube quick picker uses the same metadata and changes the active content voice",
+    "Settings picker works and all 12 packaged base voices decode as real audio in Chromium"
+  ],
+  "passed": true,
+  "decoded": [
+    {
+      "id": "vi-dang-khoa",
+      "seconds": 6.32,
+      "rate": 48000
+    },
+    {
+      "id": "vi-khanh-vy",
+      "seconds": 7.3445,
+      "rate": 48000
+    },
+    {
+      "id": "vi-quang-vinh",
+      "seconds": 6.530625,
+      "rate": 48000
+    },
+    {
+      "id": "vi-lan-anh",
+      "seconds": 6.211375,
+      "rate": 48000
+    },
+    {
+      "id": "vi-tuan-anh",
+      "seconds": 6.64,
+      "rate": 48000
+    },
+    {
+      "id": "vi-ngoc-linh",
+      "seconds": 6.768625,
+      "rate": 48000
+    },
+    {
+      "id": "vi-minh-quan",
+      "seconds": 5.538,
+      "rate": 48000
+    },
+    {
+      "id": "vi-thanh-truc",
+      "seconds": 5.921125,
+      "rate": 48000
+    },
+    {
+      "id": "vi-gia-bao",
+      "seconds": 6.5248333333333335,
+      "rate": 48000
+    },
+    {
+      "id": "vi-bao-ngoc",
+      "seconds": 6.350708333333333,
+      "rate": 48000
+    },
+    {
+      "id": "vi-hoang-long",
+      "seconds": 6.5248333333333335,
+      "rate": 48000
+    },
+    {
+      "id": "vi-ha-my",
+      "seconds": 7.5465,
+      "rate": 48000
+    }
+  ]
+}

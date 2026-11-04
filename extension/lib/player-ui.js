@@ -231,6 +231,7 @@
         fields.append(label);
         control[control.type === "range" ? "oninput" : "onchange"] = () =>
           this.configure({ [key]: control.value }).catch(this.fail);
+        if (key === "voice") new A.VoicePicker(control);
       }
       this.menu.querySelector(".quick-start").disabled = Boolean(
         this.stage && this.stage !== "ready",
@@ -255,13 +256,18 @@
           ? this.button.getBoundingClientRect()
           : rect;
         this.menu.style.right = Math.max(8, innerWidth - anchor.right) + "px";
-        this.menu.style.bottom =
+        const bottom = Math.min(
+          Math.max(8, innerHeight - 160),
           Math.max(
             8,
             innerHeight -
               (this.button?.isConnected ? anchor.top : rect.bottom) +
               8,
-          ) + "px";
+          ),
+        );
+        this.menu.style.bottom = bottom + "px";
+        this.menu.style.maxHeight =
+          Math.max(120, innerHeight - bottom - 8) + "px";
       }
     }
   }

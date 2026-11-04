@@ -276,7 +276,7 @@ async function handle(message, sender) {
     return {
       ...conf,
       voices: catalog
-        .map(({ id, name }) => ({ id, name }))
+        .map(({ id, name, gender, baseId }) => ({ id, name, gender, baseId }))
         .concat(custom ? [{ id: "custom", name: "Personal voice" }] : []),
       bgm: await (await fetch(api.runtime.getURL("assets/bgm.json"))).json(),
       connected: Boolean(await get("session")),

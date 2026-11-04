@@ -1,0 +1,128 @@
+.voice-picker {
+  margin: 5px 0;
+  min-width: 0;
+  color: #203d30;
+  font:
+    12px/1.4 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+.voice-picker [hidden] {
+  display: none !important;
+}
+.voice-picker-toggle {
+  width: 100%;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #dce6d4;
+  border-radius: 11px;
+  background: #edf3e7;
+  color: #203d30;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+.voice-picker-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+.voice-picker-panel {
+  padding: 9px;
+  margin-top: 5px;
+  border-radius: 14px;
+  border: 1px solid #dce6d4;
+  background: #f8fbf3;
+}
+.voice-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}
+.voice-picker .voice-columns > section {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+  animation: none;
+  min-width: 0;
+}
+.voice-picker h4 {
+  margin: 0 0 7px;
+  padding: 0 5px;
+  font:
+    600 11px/1.4 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #596c60;
+}
+.voice-picker .voice-choice {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 32px;
+  margin: 2px 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 5px 17px 5px 8px;
+  background: transparent;
+  color: #203d30;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.voice-picker .voice-choice:hover {
+  background: #e7efdf;
+}
+.voice-picker .voice-choice[aria-pressed="true"] {
+  background: #dfebd5;
+  border-color: #9fb891;
+  font-weight: 600;
+}
+.voice-choice[aria-pressed="true"]::after {
+  content: "\2713";
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  font-size: 10px;
+}
+.voice-picker .voice-variant {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #dce6d4;
+  margin-top: 8px;
+  padding-top: 8px;
+  color: #596c60;
+  font-size: 11px;
+}
+.voice-picker .voice-variant select {
+  width: 100%;
+  min-height: 30px;
+  margin: 0;
+  padding: 3px 6px;
+  border: 1px solid #dce6d4;
+  border-radius: 8px;
+  background: #edf3e7;
+  color: #203d30;
+  font: inherit;
+}
+.voice-other {
+  margin-top: 8px;
+}
+.voice-picker button:focus-visible,
+.voice-picker select:focus-visible {
+  outline: 2px solid #37664b;
+  outline-offset: 2px;
+}

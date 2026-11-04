@@ -4,6 +4,23 @@ Updated: 2026-11-04. Separate observed evidence, interpretation and unverified c
 
 ## Local observations
 
+### Voice picker catalog audit (2026-11-04)
+
+Neko `background.js` version-2 catalog explicitly marks six male voices (Dang Khoa,
+Quang Vinh, Tuan Anh, Minh Quan, Gia Bao, Hoang Long) and six female voices (Khanh Vy,
+Lan Anh, Ngoc Linh, Thanh Truc, Bao Ngoc, Ha My). No Dang Quang name or WAV exists in
+the supplied source. All 12 base WAV hashes match previously imported files. The
+84 references are 12 base voices plus 72 variants; they are not 84 different people.
+The original importer discarded gender metadata; it now preserves gender/baseId
+for explicit grouping without inferring gender from names. Audio IDs/cache keys
+and reference transcripts stay unchanged. Source assets remain local/ignored.
+
+Chrome's real packaged audio decoder read all 12 base samples (5.54-7.55 seconds).
+Actual popup testing selected/persisted each base ID; variants and YouTube menu
+selection also passed. Firefox narrow embedded settings persisted selection across
+reload. These checks verify inclusion/selection/decoding, not a new TTS quality study.
+
+
 ### Neko HAR/source latency implementation (2026-11-04)
 
 Detailed source anchors, official links, timing observations and choices are in

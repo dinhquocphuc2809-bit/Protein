@@ -1,0 +1,9 @@
+{
+  "scope": "Actual Firefox MV3 settings; no backend/GPU calls",
+  "checks": [
+    "Six male/six female columns fit narrow Firefox settings",
+    "Selection saves exact voice ID and survives reload with correct highlight"
+  ],
+  "passed": true,
+  "browser_version": "159.0"
+}

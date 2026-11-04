@@ -8,6 +8,7 @@ let target = null,
   polling = false;
 let activeView = "listen",
   readyToPlay = false;
+const voicePicker = new A.VoicePicker($("voice"));
 const send = async (message) => {
   const result = await api.runtime.sendMessage(message);
   if (!result?.ok)
@@ -35,10 +36,12 @@ async function player(command, values = {}) {
 }
 function fill(select, values, selected) {
   select.replaceChildren(
-    ...values.map(({ id, name }) => {
+    ...values.map(({ id, name, gender, baseId }) => {
       const option = document.createElement("option");
       option.value = id;
       option.textContent = name;
+      if (gender) option.dataset.gender = gender;
+      if (baseId) option.dataset.baseId = baseId;
       return option;
     }),
   );
@@ -176,6 +179,7 @@ async function initialize(first = true) {
       $(key + "-value").textContent = $(key).value + "%";
   } catch {}
   await refresh();
+  voicePicker.refresh();
 }
 const values = () =>
   Object.fromEntries(

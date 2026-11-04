@@ -23,6 +23,10 @@
   playerStyle.rel = "stylesheet";
   playerStyle.href = api.runtime.getURL("player.css");
   shadow.append(playerStyle);
+  const voiceStyle = document.createElement("link");
+  voiceStyle.rel = "stylesheet";
+  voiceStyle.href = api.runtime.getURL("voice-picker.css");
+  shadow.append(voiceStyle);
   const surface = document.createElement("div");
   surface.className = "auvirel-root";
   surface.innerHTML = `<button class="launcher" aria-label="Open Vocalm" title="Vocalm"><img src="${api.runtime.getURL("icons/icon-48.png")}" width="32" height="32" alt=""></button>
@@ -72,6 +76,7 @@
     show: (section) => control({ command: "show", section }).catch(error),
     fail: error,
   });
+  const voicePicker = new A.VoicePicker($("voice"));
   const sidebar =
     window.top === window.self
       ? new A.BilingualSidebar({
@@ -99,6 +104,8 @@
         const option = document.createElement("option");
         option.value = row.id;
         option.textContent = row.name;
+        if (row.gender) option.dataset.gender = row.gender;
+        if (row.baseId) option.dataset.baseId = row.baseId;
         return option;
       }),
     );
@@ -109,6 +116,7 @@
     $("voice").value = conf.voiceId;
     if (!$("voice").value && conf.voices.length)
       $("voice").value = conf.voices[0].id;
+    voicePicker.refresh();
     for (const key of ["language", "model", "asr"]) $(key).value = conf[key];
     $("mode").value = conf.subtitleMode;
     options($("bgm"), [
@@ -784,6 +792,7 @@
           $(key).oninput();
         }
       if (voiceChanged && mixer) await $("voice").onchange();
+      voicePicker.refresh();
       if (mixer) await $("bgm").onchange();
       sidebar?.mount($("mode").value);
       return true;

@@ -49,9 +49,11 @@ def main():
     for language, voices in catalog["voices"].items():
         for voice in voices:
             presets.append({"id": voice["id"], "name": voice["name"], "language": language,
+                            "gender": voice.get("gender"), "baseId": voice["id"],
                             "path": voice["audioUrl"], "transcript": voice["transcript"]})
             for emotion, variant in voice.get("emotions", {}).items():
                 presets.append({"id": voice["id"] + "-" + emotion, "name": voice["name"] + " / " + emotion,
+                                "gender": voice.get("gender"), "baseId": voice["id"],
                                 "language": language, "path": variant["audioUrl"], "transcript": variant["transcript"]})
     for folder in ("presets", "bgm"):
         for path in sorted((reference / folder).rglob("*")):

@@ -5,6 +5,7 @@ document.documentElement.classList.toggle(
 );
 const api = globalThis.browser || chrome,
   $ = (id) => document.getElementById(id);
+const voicePicker = new Auvirel.VoicePicker($("voice"));
 const send = async (message) => {
   const result = await api.runtime.sendMessage(message);
   if (!result?.ok) throw new Error(result?.error || "Extension unavailable.");
@@ -43,10 +44,13 @@ async function initialize() {
       const option = document.createElement("option");
       option.value = voice.id;
       option.textContent = voice.name;
+      if (voice.gender) option.dataset.gender = voice.gender;
+      if (voice.baseId) option.dataset.baseId = voice.baseId;
       return option;
     }),
   );
   $("voice").value = conf.voiceId;
+  voicePicker.refresh();
   catalog = await (
     await fetch(api.runtime.getURL("assets/presets.json"))
   ).json();

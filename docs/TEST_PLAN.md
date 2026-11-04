@@ -1,5 +1,12 @@
 # Acceptance and regression plan
 
+Voice-picker 0.5.1: `python tools/voice_picker_acceptance.py` verifies source hashes,
+six voices per column, all 12 saved selections, variants, Escape, popup bounds,
+YouTube control wiring, settings, and decoding all 12 packaged WAVs in Chromium.
+`python tools/voice_picker_firefox.py` verifies narrow settings, grouping and
+selection persistence in Firefox 159. Both pass without paid provider calls.
+Evidence: `research/voice-picker-acceptance.json`, `research/voice-picker-firefox.json`.
+
 Status: planned unless accompanied by recorded execution evidence. Never count test
 fixtures or simulated provider responses as successful live integrations.
 
