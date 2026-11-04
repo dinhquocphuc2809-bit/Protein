@@ -19,12 +19,19 @@ def main():
     voice = re.search(r'https://[^\s]+\.modal\.run', (ROOT / '.private/tts-deploy.log').read_text(encoding='utf-16'))[0]
     report = {'checks': [], 'errors': []}
     requests = []
+    voice_payloads = []
     with tempfile.TemporaryDirectory(dir=output) as profile, sync_playwright() as playwright:
         extension = ROOT / 'dist/chrome'
         context = playwright.chromium.launch_persistent_context(profile, channel='chromium', headless=True,
             args=[f'--disable-extensions-except={extension}', f'--load-extension={extension}', '--autoplay-policy=no-user-gesture-required'], viewport={'width': 1440, 'height': 1000})
         worker = context.service_workers[0] if context.service_workers else context.wait_for_event('serviceworker')
         context.on('request', lambda request: requests.append((request.method, request.url)))
+        def inspect_voice(request):
+            if request.method=='POST' and request.url.endswith('/v1/synthesize'):
+                data=request.post_data_json
+                voice_payloads.append({'has_reference_id':'reference_id' in data,'has_inline_audio':'reference' in data,
+                                       'bytes':len(request.post_data_buffer or b'')})
+        context.on('request',inspect_voice)
         identity = worker.url.split('/')[2]
         page = context.new_page()
         page.on('pageerror', lambda error: report['errors'].append(str(error)))
@@ -138,6 +145,9 @@ def main():
         play_to_end()
         assert sum(method == 'POST' and url.endswith('/v1/synthesize') for method, url in requests) == synthesis_before
         report['checks'].append('Switching back to the original voice reuses IndexedDB audio')
+        assert voice_payloads and all(v['has_reference_id'] and not v['has_inline_audio'] for v in voice_payloads)
+        report['checks'].append('Real voice synthesis uses registered reference IDs without repeated WAV uploads')
+        report['voice_request_bytes']=[v['bytes'] for v in voice_payloads]
         click('[data-tab="summary"]')
         click('#summarize')
         deadline = time.monotonic()+90

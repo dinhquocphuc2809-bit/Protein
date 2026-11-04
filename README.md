@@ -10,6 +10,13 @@ accessible only through the owner's Tailscale network. SSH also listens only on 
 See [CHECKPOINT.md](CHECKPOINT.md) for exact completion status and open acceptance gates.
 This repository does not claim universal site support, zero latency, or perfect voice quality.
 
+Version **0.4.1** registers the reference voice once, uses small sentence requests and
+bounded result waits, and overlaps CPU voice setup with subtitle preparation. The
+client worker includes timing diagnostics. Snapshot experiments were not retained
+because they did not establish a consistent startup improvement. Measurement and
+Neko source/HAR analysis: [TTS latency](docs/TTS_LATENCY.md). Reload the extension and
+video page; account-4 worker is already deployed at its existing endpoint.
+
 Version **0.4.0** prepares one sentence at the current position, then translates and
 synthesizes nearby sentences while the video plays. Seek cancels obsolete work and
 prioritizes the new position. Speech is grouped by punctuation; delayed clips no longer

@@ -59,7 +59,7 @@ def main():
             preset['path'] = 'voices/' + target.name
         bgm = [{'id': path.stem, 'name': path.stem.replace('-', ' ').replace('_', ' ').title(), 'path': 'bgm/' + path.name} for path in sorted((source / 'bgm').glob('*.ogg'))]
     shared = {
-        'manifest_version': 3, 'name': 'Veloa', 'version': '0.4.0', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
+        'manifest_version': 3, 'name': 'Veloa', 'version': '0.4.1', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
         'permissions': ['storage', 'scripting', 'nativeMessaging', 'activeTab'], 'host_permissions': ['https://*/*'],
         'action': {'default_popup': 'popup.html', 'default_title': 'Veloa'},
         'options_ui': {'page': 'options.html', 'open_in_tab': False},
@@ -81,7 +81,7 @@ def main():
             manifest['minimum_chrome_version'] = '120'
             manifest['background'] = {'service_worker': 'background.js'}
         else:
-            manifest['background'] = {'scripts': ['lib/core.js', 'lib/cache.js', 'lib/captions.js', 'lib/media.js', 'background.js']}
+            manifest['background'] = {'scripts': ['lib/core.js', 'lib/cache.js', 'lib/captions.js', 'lib/media.js', 'lib/voice-transport.js', 'background.js']}
             manifest['browser_specific_settings'] = {'gecko': {'id': 'auvirel@protein.local', 'strict_min_version': '128.0', 'data_collection_permissions': {'required': ['websiteContent', 'authenticationInfo']}}}
         (output / 'manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
         for size in (16, 32, 48, 128):

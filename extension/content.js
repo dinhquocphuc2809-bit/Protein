@@ -299,6 +299,8 @@
     explicitAsr = false;
     try {
       if (!video) throw new Error("Open a page with a video first.");
+      // Register on CPU while captions/translation are prepared; this does not start a GPU.
+      send({ type: "prepareVoice", voiceId: $("voice").value }).catch(() => {});
       $("start").disabled = true;
       $("stop").disabled = false;
       if (cues.length && videoJob) {

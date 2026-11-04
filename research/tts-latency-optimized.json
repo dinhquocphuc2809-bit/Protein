@@ -1,0 +1,88 @@
+{
+  "scope": "Real HTTP calls with identical text/reference on existing client account 4",
+  "characters": 168,
+  "reference_bytes": 303404,
+  "cold_state": "Worker counters distinguish first input; infrastructure scheduling/restore time is not individually instrumented",
+  "idle_seconds": 0,
+  "runs": [
+    {
+      "repeat": 0,
+      "submission_seconds": 0.734,
+      "polls": [
+        {
+          "seconds": 10.375,
+          "status": 202
+        },
+        {
+          "seconds": 8.797,
+          "status": 200
+        }
+      ],
+      "reference_recovered": false,
+      "server_submission": {
+        "body_seconds": 0.014278308999999823,
+        "validation_seconds": 0.002251719999999846,
+        "claim_seconds": 0.09668554600000023,
+        "spawn_seconds": 0.3106466669999999,
+        "save_seconds": 0.03682193800000011,
+        "submission_seconds": 0.4606841799999999
+      },
+      "worker": {
+        "container_init_seconds": 1.0240217520000012,
+        "call_in_container": 1,
+        "snapshot_cpu_load_seconds": 10.226791237,
+        "reference_seconds": 1.0794650689999994,
+        "inference_seconds": 1.7782439510000003,
+        "encoding_seconds": 0.043081255000000596,
+        "worker_seconds": 2.900790698
+      },
+      "poll_sleep_seconds": 0.35,
+      "audio_received_seconds": 20.266,
+      "audio_seconds": 8.215125,
+      "audio_bytes": 58419,
+      "local_decode_seconds": 0.078,
+      "dsp_seconds": 0.3839,
+      "node_process_seconds": 0.468,
+      "total_probe_seconds": 20.812
+    },
+    {
+      "repeat": 1,
+      "submission_seconds": 0.579,
+      "polls": [
+        {
+          "seconds": 2.296,
+          "status": 200
+        }
+      ],
+      "reference_recovered": false,
+      "server_submission": {
+        "body_seconds": 0.013442090000001627,
+        "validation_seconds": 0.0017844799999977567,
+        "claim_seconds": 0.035355929000001396,
+        "spawn_seconds": 0.21048854600000055,
+        "save_seconds": 0.04115962899999914,
+        "submission_seconds": 0.3022306740000005
+      },
+      "worker": {
+        "container_init_seconds": 1.0240217520000012,
+        "call_in_container": 2,
+        "snapshot_cpu_load_seconds": 10.226791237,
+        "reference_seconds": 0.0018250120000011805,
+        "inference_seconds": 1.4060705139999996,
+        "encoding_seconds": 0.04155650999999949,
+        "worker_seconds": 1.4494524999999996
+      },
+      "poll_sleep_seconds": 0,
+      "audio_received_seconds": 2.875,
+      "audio_seconds": 8.213791666666667,
+      "audio_bytes": 57523,
+      "local_decode_seconds": 0.079,
+      "dsp_seconds": 0.4143,
+      "node_process_seconds": 0.484,
+      "total_probe_seconds": 3.438
+    }
+  ],
+  "registration_seconds": 4.625,
+  "synthesis_payload_bytes": 495,
+  "completed": true
+}

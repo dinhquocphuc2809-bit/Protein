@@ -1,0 +1,309 @@
+{
+  "source": "Owner-provided nekodub.har",
+  "entries": 725,
+  "scope": "One recorded session; overlap is HTTP requests, not proven GPU parallelism; no seek labels inferred",
+  "endpoints": {
+    "/api/tts/batch": {
+      "count": 518,
+      "statuses": {
+        "200": 518
+      },
+      "duration_ms": {
+        "min": 3396.03,
+        "p50": 6463.01,
+        "p95": 10727.494,
+        "max": 15490.146
+      },
+      "request_body_bytes": {
+        "min": 84,
+        "p50": 175.0,
+        "p95": 233.15,
+        "max": 275
+      },
+      "timings_ms": {
+        "blocked": {
+          "min": 0.353,
+          "p50": 0.848,
+          "p95": 3.088,
+          "max": 779.947
+        },
+        "dns": null,
+        "connect": null,
+        "send": {
+          "min": 0.053,
+          "p50": 0.154,
+          "p95": 0.328,
+          "max": 2.911
+        },
+        "wait": {
+          "min": 3391.092,
+          "p50": 6270.705,
+          "p95": 10710.184,
+          "max": 15396.603
+        },
+        "receive": {
+          "min": 0.22,
+          "p50": 5.287,
+          "p95": 247.727,
+          "max": 646.629
+        }
+      },
+      "json_fields": [
+        "items",
+        "num_step",
+        "speed"
+      ],
+      "peak_overlapping_requests": 12,
+      "items_per_request": {
+        "1": 518
+      },
+      "diffusion_steps": {
+        "16": 518
+      },
+      "inline_reference_requests": 0,
+      "uses_voice_id": 518,
+      "repeated_identical_payloads": 0,
+      "server_reported_elapsed_ms": {
+        "min": 966,
+        "p50": 4051.0,
+        "p95": 5052.45,
+        "max": 7247
+      }
+    },
+    "/api/set-ref-audio": {
+      "count": 16,
+      "statuses": {
+        "200": 16
+      },
+      "duration_ms": {
+        "min": 422.3,
+        "p50": 908.105,
+        "p95": 10351.729,
+        "max": 21237.302
+      },
+      "request_body_bytes": {
+        "min": 170730,
+        "p50": 316220.0,
+        "p95": 3008587.75,
+        "max": 3008764
+      },
+      "timings_ms": {
+        "blocked": {
+          "min": 1.076,
+          "p50": 2.247,
+          "p95": 9199.461,
+          "max": 19995.022
+        },
+        "dns": null,
+        "connect": null,
+        "send": {
+          "min": 0.702,
+          "p50": 126.949,
+          "p95": 523.156,
+          "max": 577.707
+        },
+        "wait": {
+          "min": 330.129,
+          "p50": 730.49,
+          "p95": 2440.466,
+          "max": 4209.564
+        },
+        "receive": {
+          "min": 0.312,
+          "p50": 0.463,
+          "p95": 1.108,
+          "max": 1.403
+        }
+      },
+      "json_fields": [],
+      "peak_overlapping_requests": 2
+    },
+    "/v1/translate/ai": {
+      "count": 12,
+      "statuses": {
+        "200": 12
+      },
+      "duration_ms": {
+        "min": 3858.841,
+        "p50": 14780.419,
+        "p95": 17273.947,
+        "max": 17931.012
+      },
+      "request_body_bytes": {
+        "min": 1982,
+        "p50": 3363.5,
+        "p95": 3916.25,
+        "max": 4161
+      },
+      "timings_ms": {
+        "blocked": {
+          "min": 0.818,
+          "p50": 1.298,
+          "p95": 28.245,
+          "max": 60.769
+        },
+        "dns": null,
+        "connect": null,
+        "send": {
+          "min": 0.231,
+          "p50": 0.326,
+          "p95": 3.424,
+          "max": 7.115
+        },
+        "wait": {
+          "min": 3790.549,
+          "p50": 14778.433,
+          "p95": 17271.889,
+          "max": 17928.676
+        },
+        "receive": {
+          "min": 0.385,
+          "p50": 0.519,
+          "p95": 0.68,
+          "max": 0.702
+        }
+      },
+      "json_fields": [
+        "contextBefore",
+        "genrePreset",
+        "items",
+        "normalizePunctuation",
+        "sourceLanguage",
+        "targetLanguage",
+        "videoDurationSec",
+        "videoId",
+        "videoSummary"
+      ],
+      "peak_overlapping_requests": 1,
+      "items_per_request": {
+        "8": 3,
+        "24": 7,
+        "23": 2
+      },
+      "context_items": {
+        "min": 0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0
+      },
+      "summary_present": 12,
+      "punctuation_requested": 12
+    },
+    "/v1/transcript": {
+      "count": 4,
+      "statuses": {
+        "200": 4
+      },
+      "duration_ms": {
+        "min": 138.742,
+        "p50": 2761.917,
+        "p95": 4451.857,
+        "max": 4547.01
+      },
+      "request_body_bytes": {
+        "min": 278,
+        "p50": 6904.0,
+        "p95": 24913.05,
+        "max": 26922
+      },
+      "timings_ms": {
+        "blocked": {
+          "min": 0.569,
+          "p50": 0.814,
+          "p95": 3.902,
+          "max": 4.408
+        },
+        "dns": null,
+        "connect": null,
+        "send": {
+          "min": 0.12,
+          "p50": 0.303,
+          "p95": 31.598,
+          "max": 37.096
+        },
+        "wait": {
+          "min": 137.681,
+          "p50": 2760.313,
+          "p95": 4415.679,
+          "max": 4504.839
+        },
+        "receive": {
+          "min": 0.243,
+          "p50": 0.52,
+          "p95": 0.721,
+          "max": 0.731
+        }
+      },
+      "json_fields": [
+        "anchorTimeSec",
+        "localTranscript",
+        "pipelineMode",
+        "skipPunctuate",
+        "sourceLanguage",
+        "startupWindowAfterSec",
+        "startupWindowBeforeSec",
+        "targetLanguage",
+        "ttsProfileKey",
+        "videoDurationSec",
+        "videoId"
+      ],
+      "peak_overlapping_requests": 1
+    },
+    "/v1/punctuate/repair": {
+      "count": 1,
+      "statuses": {
+        "200": 1
+      },
+      "duration_ms": {
+        "min": 1723.597,
+        "p50": 1723.597,
+        "p95": 1723.597,
+        "max": 1723.597
+      },
+      "request_body_bytes": {
+        "min": 467,
+        "p50": 467.0,
+        "p95": 467.0,
+        "max": 467
+      },
+      "timings_ms": {
+        "blocked": {
+          "min": 1.018,
+          "p50": 1.018,
+          "p95": 1.018,
+          "max": 1.018
+        },
+        "dns": null,
+        "connect": null,
+        "send": {
+          "min": 0.262,
+          "p50": 0.262,
+          "p95": 0.262,
+          "max": 0.262
+        },
+        "wait": {
+          "min": 1721.778,
+          "p50": 1721.778,
+          "p95": 1721.778,
+          "max": 1721.778
+        },
+        "receive": {
+          "min": 0.539,
+          "p50": 0.539,
+          "p95": 0.539,
+          "max": 0.539
+        }
+      },
+      "json_fields": [
+        "cues",
+        "mode",
+        "repairScope",
+        "sourceLanguage",
+        "videoDurationSec",
+        "videoId"
+      ],
+      "peak_overlapping_requests": 1
+    }
+  },
+  "websocket_messages": 0
+}

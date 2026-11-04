@@ -4,6 +4,37 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
 
 ## Current phase: working deployed release candidate; final packaging and repository delivery
 
+### Neko source/HAR latency optimization (0.4.1)
+
+- [x] Re-read supplied Neko Colab/Modal notebook code and translation/TTS client.
+  No shipped Kaggle integration found. See `docs/TTS_LATENCY.md` for exact scope.
+- [x] Analyze all 725 HAR entries without exporting secrets/content. 518 TTS calls
+  use one item, voice_id, 16 steps and no WAV; median request 175 bytes. Twelve
+  translation calls request punctuation/summary; recorded contextBefore is empty.
+- [x] Implement bounded CPU reference registry, shared client registration/recovery,
+  CPU registration parallel to caption preparation, long polling and CPU concurrency.
+- [x] Preserve old worker protocol, single GPU model execution, 16 steps, cache keys,
+  seek priority and cancellation. Submission/cancel races have dedicated regressions.
+- [x] Deploy client account 4 only; CPU ingress pinned us-east, GPU flexible. Test CPU
+  snapshot, then remove it from production because consistent restore benefit was
+  not established. Keep original 8 GiB GPU-direct model load. No warm pool/ASR changes.
+- [x] Real Chrome/Firefox service tests and actual Chrome regional/seek fixtures pass.
+- [x] Snapshot trial after confirmed empty container inventory; 35.718s startup,
+  creation observed but restoration benefit unproven. Do not advertise as shipped.
+- [x] Final code checks: 58 Python / 39 JavaScript tests; secret scan and compilation.
+- [x] Final Chrome live traffic: four synthesis bodies are 193/194/193/194 bytes,
+  all registered voice IDs, no inline WAV. Existing audio cache/voice replay passes.
+- [ ] Final repository commit/push and CI.
+
+Transport warm samples: 2.875-3.406s to receive ~8.2s audio versus old 9.156s for
+same input; submission ~0.6-0.8s versus 6.562s. Small observations, not an SLA.
+Final non-snapshot first worker call 22.422s; first registration is separate and can
+overlap caption preparation. Cold startup remains open, not solved by warm latency.
+Raw GPU inference ~1.4s warm. The first test of 45s idle cycles kept the same container;
+do not label those calls cold. Reports: `research/tts-latency-*.json` and
+`research/neko-latency-analysis.json`. CPU region adds its documented 1.75x CPU-only
+multiplier; no GPU region multiplier. Details and remaining limits in TTS_LATENCY.md.
+
 ### Latency clarification and diagnostic follow-up (2026-11-04)
 
 - Owner asked why initial/later TTS requests are slow and offered additional MCPs.

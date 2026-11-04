@@ -9,6 +9,7 @@ import struct
 import tempfile
 import time
 import wave
+from urllib.parse import urlsplit
 
 from playwright.sync_api import sync_playwright
 from ui_acceptance import shadow_eval
@@ -33,6 +34,7 @@ def main():
     report = {'scope': 'Actual Chrome extension and Web Audio playback, labelled provider/audio fixtures; no paid services', 'checks': []}
     rows = [{'id': i, 'start': i*3, 'end': i*3+2, 'text': f'Source sentence {i}.', 'translated': None} for i in range(80)]
     jobs, audio, windows, synths, cancellations = {}, {}, [], [], []
+    registrations = []
     clip = base64.b64encode(wav(1.7, True)).decode()
     media = wav(242)
     with tempfile.TemporaryDirectory(dir=folder) as profile, sync_playwright() as p:
@@ -46,9 +48,16 @@ def main():
             def respond(route):
                 req, url = route.request, route.request.url
                 if url.startswith('https://fixture.modal.run'):
-                    identity = req.headers.get('idempotency-key') if req.method == 'POST' else url.rsplit('/', 1)[-1]
+                    path=urlsplit(url).path
+                    if path=='/v1/health':
+                        route.fulfill(json={'capabilities':['voice_registry_v1','long_poll_v1']});return
+                    if path=='/v1/voices':
+                        registrations.append(req.post_data_json)
+                        route.fulfill(json={'reference_id':'b'*64});return
+                    identity = req.headers.get('idempotency-key') if req.method == 'POST' else path.rsplit('/', 1)[-1]
                     if req.method == 'POST':
                         value = req.post_data_json
+                        assert value['reference_id']=='b'*64 and 'reference' not in value
                         assert value['duration'] is None, 'TTS must generate a natural whole sentence'
                         synths.append(value['text']); audio[identity] = {'ready': time.monotonic()+(2 if args.startup_seek else .15)}
                         route.fulfill(status=202, json={'id': identity})
@@ -130,6 +139,7 @@ def main():
                 return
             until(lambda:'Ready. Press play' in state())
             assert len(synths)==1 and not windows, (synths, windows)
+            assert len(registrations)==1
             report['initial_ready_seconds']=round(time.monotonic()-start,3)
             report['checks'].append('Initial readiness uses one translated sentence and one TTS clip, not 80 cues')
             page.evaluate('document.querySelector("video").play()')
@@ -159,6 +169,8 @@ def main():
             until(lambda:'Speech sentence 20.' in synths)
             page.wait_for_timeout(1000)
             report['checks'].append('Rapid seeks reanchor to the final requested region')
+            assert len(registrations)==1
+            report['checks'].append('All synthesis requests reuse one registered reference and omit the WAV payload')
             audit=worker.evaluate('''async tab=>(await chrome.scripting.executeScript({target:{tabId:tab},func:()=>audioAudit}))[0].result''', tab)
             assert audit and audit[0]['offset']==0, audit
             assert all(item['offset']>=0 and item['offset']<item['duration'] for item in audit)

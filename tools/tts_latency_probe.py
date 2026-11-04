@@ -4,6 +4,7 @@ Uses the owner's existing progressive audio selection. No deployment or warm poo
 changes; writes aggregate timing only to the public report, audio stays private.
 """
 import base64
+import argparse
 import json
 from pathlib import Path
 import re
@@ -17,6 +18,12 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--registered', action='store_true')
+    parser.add_argument('--repeats', type=int, choices=range(1,5), default=2)
+    parser.add_argument('--report', choices=['baseline','optimized','snapshot-build','snapshot-restore','snapshot-cycles','final'])
+    parser.add_argument('--idle-seconds', type=int, choices=[0,45,60], default=0)
+    args = parser.parse_args()
     folder = ROOT / '.private/progressive-audio'
     cue = json.loads((folder/'selected.json').read_text(encoding='utf8'))[0]
     preset = next(p for p in json.loads((ROOT/'assets/imported/presets.json').read_text(encoding='utf8')) if p['id']=='vi-dang-khoa')
@@ -26,20 +33,38 @@ def main():
     headers = {k:proxy[k] for k in ['Modal-Key','Modal-Secret']}
     payload = {'text':cue['translated'],'reference':base64.b64encode(reference).decode(),
                'reference_text':preset['transcript'],'language':'vi','duration':None}
-    report = {'scope':'Two real HTTP calls with identical text/reference on existing client account 4; no deployment change',
+    report = {'scope':'Real HTTP calls with identical text/reference on existing client account 4',
               'characters':len(cue['translated']),'reference_bytes':len(reference),
-              'cold_state':'Not instrumented; first call must not be labelled a measured cold start', 'runs':[]}
+              'cold_state':'Worker counters distinguish first input; infrastructure scheduling/restore time is not individually instrumented',
+              'idle_seconds':args.idle_seconds,'runs':[]}
     with httpx.Client(timeout=30) as http:
         try:
-            for repeat in range(2):
+            if args.registered:
+                started=time.monotonic()
+                registration=http.post(endpoint+'/v1/voices',headers=headers,json={k:payload[k] for k in ['reference','reference_text']})
+                registration.raise_for_status()
+                report['registration_seconds']=round(time.monotonic()-started,4)
+                payload={k:v for k,v in payload.items() if k not in ['reference','reference_text']}
+                payload['reference_id']=registration.json()['reference_id']
+            report['synthesis_payload_bytes']=len(json.dumps(payload).encode())
+            for repeat in range(args.repeats):
+                if repeat and args.idle_seconds:time.sleep(args.idle_seconds)
                 identity=secrets.token_hex(32);done=False;started=time.monotonic()
                 try:
                     response=http.post(endpoint+'/v1/synthesize',headers={**headers,'Idempotency-Key':identity},json=payload)
+                    recovered=False
+                    if args.registered and response.status_code==404:
+                        registration=http.post(endpoint+'/v1/voices',headers=headers,json={
+                            'reference':base64.b64encode(reference).decode(),'reference_text':preset['transcript']})
+                        registration.raise_for_status();payload['reference_id']=registration.json()['reference_id']
+                        response=http.post(endpoint+'/v1/synthesize',headers={**headers,'Idempotency-Key':identity},json=payload)
+                        recovered=True
                     response.raise_for_status();submission=time.monotonic()-started
+                    server_submission=response.json().get('timings',{})
                     polls=[];sleeps=0
                     while time.monotonic()-started<180:
                         tick=time.monotonic()
-                        response=http.get(endpoint+'/v1/results/'+identity,headers=headers)
+                        response=http.get(endpoint+'/v1/results/'+identity,headers=headers,params={'wait':10} if args.registered else {})
                         response.raise_for_status();polls.append({'seconds':round(time.monotonic()-tick,4),'status':response.status_code})
                         if response.status_code==200:
                             result=response.json();done=True;break
@@ -57,6 +82,8 @@ def main():
                     tick=time.monotonic()
                     output=subprocess.run(['node','-e',js,str(raw),str(speed)],cwd=ROOT,capture_output=True,text=True,check=True,timeout=30)
                     report['runs'].append({'repeat':repeat,'submission_seconds':round(submission,4),'polls':polls,
+                        'reference_recovered':recovered,
+                        'server_submission':server_submission,'worker':result.get('timings',{}),
                         'poll_sleep_seconds':round(sleeps,4),'audio_received_seconds':round(ready,4),
                         'audio_seconds':result['duration'],'audio_bytes':len(audio),'local_decode_seconds':round(decode,4),
                         'dsp_seconds':round(float(output.stdout),4),'node_process_seconds':round(time.monotonic()-tick,4),
@@ -67,7 +94,9 @@ def main():
                         except httpx.HTTPError:pass
             report['completed']=True
         finally:
-            (ROOT/'research/tts-latency-breakdown.json').write_text(json.dumps(report,indent=2),encoding='utf8')
+            name='tts-latency-optimized.json' if args.registered else 'tts-latency-breakdown.json'
+            if args.report:name='tts-latency-'+args.report+'.json'
+            (ROOT/'research'/name).write_text(json.dumps(report,indent=2),encoding='utf8')
             print(json.dumps(report))
 
 

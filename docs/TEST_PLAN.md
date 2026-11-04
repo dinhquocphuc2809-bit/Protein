@@ -138,3 +138,23 @@ Both verification tools additionally require NumPy, FFmpeg and Node; browser sui
 require Playwright/Chromium or Selenium/Firefox. They are separate from server runtime.
 Human listening, two-hour soak, dense-speech sustained throughput and every voice
 remain open acceptance gates. Refer to `docs/PROGRESSIVE_DUBBING.md` for actual timings.
+
+## Voice transport optimization (0.4.1, 2026-11-04)
+
+- 58 Python tests: seven additional registry/API cases cover WAV validation, memory
+  eviction/expiry, missing references before GPU spend, inline/registered idempotency,
+  concurrent duplicates, cancellation during submission, and bounded/finite waits.
+- 39 JavaScript tests: seven transport cases cover shared registration, container
+  recovery, legacy workers, account changes, CPU-only preparation, bounded retries,
+  authorization failure and seek cancellation during registration/submission.
+- Actual Chromium fixture checks that every TTS request omits reference WAV and the
+  whole short viewing/seek session shares one registration. Startup seek/Stop pass.
+- Actual Chrome/Firefox real service playback passes; Chrome additionally checks
+  replay, voice A-B-A, summary/chat and registered-only synthesis payloads.
+- Live unauthenticated health/register/synthesize all return HTTP 401. CPU proxy auth
+  remains required; no new public secret or reference URL. Existing voices still work.
+- HAR analysis and same-input latency probes are in `tools/analyze_neko_latency.py`
+  and `tools/tts_latency_probe.py --registered --report final`. No GPU step reduction.
+- Snapshot experiments are retained as reports but are not enabled in production.
+  No confirmed restore improvement, no cold-start SLA, no claim of minimum achievable
+  latency. Full details and official source links: `docs/TTS_LATENCY.md`.

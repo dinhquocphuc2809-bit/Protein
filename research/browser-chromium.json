@@ -7,9 +7,16 @@
     "Seek/replay uses audio cache without another synthesis POST",
     "Voice change generates another voice without a translation job",
     "Switching back to the original voice reuses IndexedDB audio",
+    "Real voice synthesis uses registered reference IDs without repeated WAV uploads",
     "Injected summary and study chat panels complete real backend jobs"
   ],
   "errors": [],
+  "voice_request_bytes": [
+    193,
+    194,
+    193,
+    194
+  ],
   "extension_id": "njepcceplllhabnepcaejllfpfhnloil",
   "passed": true
 }

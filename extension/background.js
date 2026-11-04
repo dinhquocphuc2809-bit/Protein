@@ -5,6 +5,7 @@ if (typeof importScripts === "function")
     "lib/cache.js",
     "lib/captions.js",
     "lib/media.js",
+    "lib/voice-transport.js",
   );
 const api = globalThis.browser || chrome;
 const A = globalThis.Auvirel;
@@ -157,6 +158,15 @@ async function voice(method, path, payload, idem) {
 async function presets() {
   return (await fetch(api.runtime.getURL("assets/presets.json"))).json();
 }
+const voiceTransport = new A.VoiceTransport(
+  voice,
+  async () => {
+    const conf = await settings(),
+      proxy = await get("voiceProxy");
+    return conf.voiceEndpoint + ":" + (proxy?.id || "");
+  },
+  reference,
+);
 async function reference(id) {
   if (id === "custom") {
     const custom = await get("customVoice");
@@ -306,6 +316,8 @@ async function handle(message, sender) {
   }
   if (message.type === "cachedAudio")
     return A.cache.get("audio:" + message.key);
+  if (message.type === "prepareVoice")
+    return voiceTransport.prepare(message.voiceId);
   if (message.type === "synthesize") {
     if (
       typeof message.text !== "string" ||
@@ -313,19 +325,7 @@ async function handle(message, sender) {
       !/^[a-f0-9]{64}$/.test(message.idem)
     )
       throw new Error("Invalid synthesis request.");
-    const ref = await reference(message.voiceId);
-    return voice(
-      "POST",
-      "/v1/synthesize",
-      {
-        text: message.text,
-        reference: ref.reference,
-        reference_text: ref.reference_text,
-        duration: message.duration,
-        language: message.language,
-      },
-      message.idem,
-    );
+    return voiceTransport.synthesize(message);
   }
   if (message.type === "voiceIdentity") {
     const ref = await reference(message.voiceId);
@@ -334,10 +334,10 @@ async function handle(message, sender) {
   if (message.type === "pollAudio" || message.type === "cancelAudio") {
     if (!/^[a-f0-9]{64}$/.test(message.id))
       throw new Error("Invalid synthesis ID.");
-    const result = await voice(
-      message.type === "pollAudio" ? "GET" : "DELETE",
-      "/v1/results/" + message.id,
-    );
+    const result =
+      message.type === "pollAudio"
+        ? await voiceTransport.poll(message.id)
+      : await voiceTransport.cancel(message.id);
     if (
       message.type === "pollAudio" &&
       result.state === "done" &&

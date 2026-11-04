@@ -4,6 +4,24 @@ Updated: 2026-11-04. Separate observed evidence, interpretation and unverified c
 
 ## Local observations
 
+### Neko HAR/source latency implementation (2026-11-04)
+
+Detailed source anchors, official links, timing observations and choices are in
+`docs/TTS_LATENCY.md`. Sanitized all-entry HAR aggregates are reproducible with
+`tools/analyze_neko_latency.py`. It records 518 one-item/voice-id requests, 16 separate
+voice uploads, 12 translation batches (8/23/24 items), summaries and punctuation flags.
+No source text, credentials, response audio or signed URL is exported.
+
+Implemented one-time references, bounded long polling and CPU request concurrency.
+Experimented with CPU-load/GPU-transfer snapshots, then removed them because actual
+restore improvement was unproven (one post-retirement call took 35.718s). Fresh Modal concurrency, FunctionCall, snapshot
+and region docs were read directly (web connector unavailable). Same-sentence final
+warm HTTP receipt improved from 9.156s to 2.875s; GPU inference ~1.4s. Only compare the
+same input and separate reference setup, snapshot creation and actual restore.
+The 45-second idle experiment retained one GPU container; elapsed idle time is not
+proof of scale-down. Neko concurrency/HAR overlap does not justify unsafely threading
+the shared model; generation remains serialized. No Kaggle code found in this bundle.
+
 ### Progressive dubbing follow-up (2026-11-03/04)
 
 - Follow-up timing probe: `tools/tts_latency_probe.py` and

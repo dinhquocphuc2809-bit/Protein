@@ -5,12 +5,13 @@
     "Playback overlaps bounded nearby translation/TTS; manual pause stops lookahead",
     "Forward/backward/repeated seeks translate and synthesize the new playhead without walking the skipped tail",
     "Seek replay uses cached audio; current translated sentence is not retransmitted for translation",
-    "Rapid seeks reanchor to the final requested region"
+    "Rapid seeks reanchor to the final requested region",
+    "All synthesis requests reuse one registered reference and omit the WAV payload"
   ],
-  "initial_ready_seconds": 0.812,
+  "initial_ready_seconds": 0.781,
   "passed": true,
   "audio_starts": 6,
   "maximum_requested_position": 219,
   "total_syntheses": 21,
-  "total_windows": 36
+  "total_windows": 37
 }

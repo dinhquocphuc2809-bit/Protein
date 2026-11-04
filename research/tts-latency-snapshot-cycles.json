@@ -1,0 +1,120 @@
+{
+  "scope": "Real HTTP calls with identical text/reference on existing client account 4",
+  "characters": 168,
+  "reference_bytes": 303404,
+  "cold_state": "Worker counters distinguish first input; infrastructure scheduling/restore time is not individually instrumented",
+  "idle_seconds": 45,
+  "runs": [
+    {
+      "repeat": 0,
+      "submission_seconds": 2.375,
+      "polls": [
+        {
+          "seconds": 3.922,
+          "status": 200
+        }
+      ],
+      "reference_recovered": false,
+      "server_submission": {
+        "body_seconds": 0.1598909489999869,
+        "validation_seconds": 0.0018549910000160708,
+        "claim_seconds": 0.19008893699998453,
+        "spawn_seconds": 1.4083948539999938,
+        "save_seconds": 0.19239129600001093,
+        "submission_seconds": 1.9526210269999922
+      },
+      "worker": {
+        "container_init_seconds": 0.9802563790000001,
+        "call_in_container": 3,
+        "snapshot_cpu_load_seconds": 9.366143215000001,
+        "reference_seconds": 0.0018378580000018019,
+        "inference_seconds": 1.35269130799999,
+        "encoding_seconds": 0.043365233000002945,
+        "worker_seconds": 1.3978952329999998
+      },
+      "poll_sleep_seconds": 0,
+      "audio_received_seconds": 6.297,
+      "audio_seconds": 8.191666666666666,
+      "audio_bytes": 58154,
+      "local_decode_seconds": 0.062,
+      "dsp_seconds": 0.4045,
+      "node_process_seconds": 0.453,
+      "total_probe_seconds": 6.812
+    },
+    {
+      "repeat": 1,
+      "submission_seconds": 3.047,
+      "polls": [
+        {
+          "seconds": 3.672,
+          "status": 200
+        }
+      ],
+      "reference_recovered": false,
+      "server_submission": {
+        "body_seconds": 0.16132119099998476,
+        "validation_seconds": 0.0024512159999972027,
+        "claim_seconds": 0.323495510000015,
+        "spawn_seconds": 1.4229847759999927,
+        "save_seconds": 0.18988628500000004,
+        "submission_seconds": 2.1001389779999897
+      },
+      "worker": {
+        "container_init_seconds": 0.9802563790000001,
+        "call_in_container": 4,
+        "snapshot_cpu_load_seconds": 9.366143215000001,
+        "reference_seconds": 0.0017054360000088309,
+        "inference_seconds": 1.3873199919999877,
+        "encoding_seconds": 0.04099100600001293,
+        "worker_seconds": 1.4300173649999977
+      },
+      "poll_sleep_seconds": 0,
+      "audio_received_seconds": 6.719,
+      "audio_seconds": 8.259291666666666,
+      "audio_bytes": 57353,
+      "local_decode_seconds": 0.094,
+      "dsp_seconds": 0.4028,
+      "node_process_seconds": 0.484,
+      "total_probe_seconds": 7.297
+    },
+    {
+      "repeat": 2,
+      "submission_seconds": 2.984,
+      "polls": [
+        {
+          "seconds": 3.422,
+          "status": 200
+        }
+      ],
+      "reference_recovered": false,
+      "server_submission": {
+        "body_seconds": 0.1605916009999646,
+        "validation_seconds": 0.0018637480000052165,
+        "claim_seconds": 0.19291141799999423,
+        "spawn_seconds": 1.458239782000021,
+        "save_seconds": 0.19354475799997317,
+        "submission_seconds": 2.0071513069999583
+      },
+      "worker": {
+        "container_init_seconds": 0.9802563790000001,
+        "call_in_container": 5,
+        "snapshot_cpu_load_seconds": 9.366143215000001,
+        "reference_seconds": 0.0017725810000115416,
+        "inference_seconds": 1.3824975469999856,
+        "encoding_seconds": 0.042506228000007695,
+        "worker_seconds": 1.426777439999995
+      },
+      "poll_sleep_seconds": 0,
+      "audio_received_seconds": 6.406,
+      "audio_seconds": 8.253,
+      "audio_bytes": 57471,
+      "local_decode_seconds": 0.563,
+      "dsp_seconds": 0.3991,
+      "node_process_seconds": 0.484,
+      "total_probe_seconds": 7.453
+    }
+  ],
+  "registration_seconds": 3.484,
+  "synthesis_payload_bytes": 495,
+  "completed": true
+}
