@@ -1,0 +1,93 @@
+{
+  "at": "2026-11-04T22:50:57.209931+00:00",
+  "app": "vocalm-qwen-snapshot-test",
+  "snapshot": true,
+  "audio_sha256": "7012fa4336ffffd77df38b08acb575349a251960002d464267a26126b9a3d334",
+  "cycles": [
+    {
+      "cycle": 0,
+      "prior_container_retired": false,
+      "initialization_id": "16e549a54d35417b8b29830b159600ed",
+      "boot_id": "cc36b23f1fb44bf880efbf00e374c947",
+      "call": 1,
+      "model_load_seconds": 17.459673028,
+      "warmup_seconds": 4.779822386000003,
+      "inference_seconds": 3.7331666970000015,
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "gpu": "Tesla T4",
+      "word_count": 45,
+      "language": "Chinese",
+      "valid_times": true,
+      "output_sha256": "06a8e6c2acfed5ee56f3e51cdc35355957cc934f560ecb254fedd67426e174ca",
+      "rpc_seconds": 42.23763479999616
+    },
+    {
+      "cycle": 1,
+      "prior_container_retired": true,
+      "initialization_id": "f9c3195f38f84b62b4dca711f23c45f7",
+      "boot_id": "36826c3aed3242edb99c0e2315375135",
+      "call": 1,
+      "model_load_seconds": 17.748742026,
+      "warmup_seconds": 6.146503671999998,
+      "inference_seconds": 4.812186523000001,
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "gpu": "Tesla T4",
+      "word_count": 45,
+      "language": "Chinese",
+      "valid_times": true,
+      "output_sha256": "06a8e6c2acfed5ee56f3e51cdc35355957cc934f560ecb254fedd67426e174ca",
+      "rpc_seconds": 61.18939320000209
+    },
+    {
+      "cycle": 2,
+      "prior_container_retired": true,
+      "initialization_id": "550827bace1744c58a9acb7ac7fae347",
+      "boot_id": "c98031e75c654c2fafc12a5733862690",
+      "call": 1,
+      "model_load_seconds": 15.608092435,
+      "warmup_seconds": 4.333357456999998,
+      "inference_seconds": 3.5924755820000023,
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "gpu": "Tesla T4",
+      "word_count": 45,
+      "language": "Chinese",
+      "valid_times": true,
+      "output_sha256": "06a8e6c2acfed5ee56f3e51cdc35355957cc934f560ecb254fedd67426e174ca",
+      "rpc_seconds": 39.81648680000217
+    },
+    {
+      "cycle": 3,
+      "prior_container_retired": true,
+      "initialization_id": "550827bace1744c58a9acb7ac7fae347",
+      "boot_id": "4a9308688bc744e8a40c276b80f2fcce",
+      "call": 1,
+      "model_load_seconds": 15.608092435,
+      "warmup_seconds": 4.333357456999998,
+      "inference_seconds": 3.8746753239999947,
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "gpu": "Tesla T4",
+      "word_count": 45,
+      "language": "Chinese",
+      "valid_times": true,
+      "output_sha256": "06a8e6c2acfed5ee56f3e51cdc35355957cc934f560ecb254fedd67426e174ca",
+      "rpc_seconds": 15.298365700000431
+    }
+  ],
+  "production_changed": false,
+  "app_id": "ap-MkypIfK2Q9M73Ch6Nt8V2x",
+  "inference_passed": true,
+  "snapshot_log_lines": [
+    "2026-11-05 05:51:12+07:00 ta-01M6MC4PY48VH30PBEE9JMN7CR Creating GPU memory snapshot for Function.",
+    "2026-11-05 05:52:44+07:00 ta-01M6MC7G5V87SS1KRGW71JTWKR Creating GPU memory snapshot for Function.",
+    "2026-11-05 05:54:48+07:00 ta-01M6MCB9G3ZQXR4DQFAVA33RER Creating GPU memory snapshot for Function.",
+    "2026-11-05 05:56:17+07:00 ta-01M6MCE0G89AWK9E8QPZRVRPHR Restoring Function from memory snapshot."
+  ],
+  "restore_log_confirmed": true,
+  "stop_requested": true,
+  "stopped": true,
+  "shutdown_recheck": {
+    "state": "stopped",
+    "tasks": "0",
+    "containers": 0
+  }
+}

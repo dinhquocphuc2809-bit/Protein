@@ -2,6 +2,31 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## Qwen GPU snapshot live experiment (2026-11-05)
+
+- Official requirements from the preceding documentation review were applied to
+  an isolated DEPLOYED T4 app. CPU2/RAM16384MiB, min0/max1/scaledown10s;
+  production load/transcribe methods, cached pinned weights, representative warmup.
+- Same28s Chinese audio from7jb0q3Mo9Rg. Snapshot-enabled calls42.238/61.189/
+  39.816s were initialization/capture starts. Fourth call15.298s has explicit
+  Modal `Restoring Function from memory snapshot.` evidence, repeated captured
+  initialization UUID, different post-start UUID and call counter1.
+- Container list was empty before every repeat call, including the restored call.
+  This is real cold restoration, not warm-container reuse.
+- Matched non-snapshot control with the same warmup:53.755/32.444s. Observed
+  reduction52.8-71.5%; one restored call is not a latency percentile or SLA.
+- All six results:45 words, valid timestamp bounds, same word/timestamp SHA256.
+  Restored inference3.875s is similar to the other3.592-4.812s measurements;
+  snapshot chiefly reduces startup, not warm recognition/alignment computation.
+- Captured load/warmup duration fields survive restoration and are NOT durations
+  of repeated loading on the restored boot. Do not sum them into restored RPC.
+- Both test apps independently confirmed stopped/zero tasks/zero containers.
+  Production code/configuration and client account4 untouched. No invoice-level
+  cost comparison, L4 result, whole-video/multilingual/fallback acceptance claimed.
+- Full method and limits: `docs/QWEN_GPU_SNAPSHOT.md`. Raw numerical reports and
+  final assertions: `research/benchmarks/qwen-snapshot-summary.json` plus the two
+  per-app JSON reports. Private logs/audio remain ignored.
+
 ## Modal cold-start documentation recheck (2026-11-05)
 
 - Read current official cold-start, memory-snapshot and scaling guides; hashes in
@@ -30,7 +55,7 @@ Updated: 2026-11-05. Separate observed evidence, interpretation and unverified c
 - min_containers, buffer_containers and longer scaledown_window trade latency
   for billed idle resources. Keep current zero-idle-minimum pending a measured
   alternative consistent with the user's credit limits.
-- No production change or GPU inference was performed in this research turn.
+- No production change or GPU inference was performed in that documentation-only turn.
   Next valid experiment: deploy an isolated snapshot Qwen app, warm up, verify
   container retirement, call again and confirm restore logs across repeated cold
   starts; compare model/input/output/timings with non-snapshot baseline before rollout.

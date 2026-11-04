@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-04T22:56:56.844266+00:00",
+  "app": "vocalm-qwen-cold-control",
+  "snapshot": false,
+  "audio_sha256": "7012fa4336ffffd77df38b08acb575349a251960002d464267a26126b9a3d334",
+  "cycles": [
+    {
+      "cycle": 0,
+      "prior_container_retired": false,
+      "initialization_id": "a4651da0860547d3a7c699ff7638562e",
+      "boot_id": "63792efb5d4c457882f0825ec67b672a",
+      "call": 1,
+      "model_load_seconds": 24.937873852000003,
+      "warmup_seconds": 6.918578507000003,
+      "inference_seconds": 4.540423871999998,
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "gpu": "Tesla T4",
+      "word_count": 45,
+      "language": "Chinese",
+      "valid_times": true,
+      "output_sha256": "06a8e6c2acfed5ee56f3e51cdc35355957cc934f560ecb254fedd67426e174ca",
+      "rpc_seconds": 53.755411600002844
+    },
+    {
+      "cycle": 1,
+      "prior_container_retired": true,
+      "initialization_id": "ac604b3fe70e4f0482f99178d583bcff",
+      "boot_id": "84d429a8d3494ab1b3d02d3c6e85eb96",
+      "call": 1,
+      "model_load_seconds": 14.213114306000001,
+      "warmup_seconds": 4.427718280000001,
+      "inference_seconds": 3.6662150749999967,
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "gpu": "Tesla T4",
+      "word_count": 45,
+      "language": "Chinese",
+      "valid_times": true,
+      "output_sha256": "06a8e6c2acfed5ee56f3e51cdc35355957cc934f560ecb254fedd67426e174ca",
+      "rpc_seconds": 32.44359039999836
+    }
+  ],
+  "production_changed": false,
+  "app_id": "ap-ugPwDyQRTSfxCKPgQHdgLt",
+  "inference_passed": true,
+  "snapshot_log_lines": [],
+  "restore_log_confirmed": false,
+  "stop_requested": true,
+  "stopped": true
+}

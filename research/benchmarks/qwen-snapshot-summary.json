@@ -1,0 +1,51 @@
+{
+  "verified_at": "2026-11-04T23:00:33.999502+00:00",
+  "gpu": "T4",
+  "cpu": 2,
+  "host_memory_mib": 16384,
+  "audio_duration_seconds": 28,
+  "audio_sha256": "7012fa4336ffffd77df38b08acb575349a251960002d464267a26126b9a3d334",
+  "snapshot_creation_calls": 3,
+  "confirmed_restored_calls": 1,
+  "cold_control_calls": 2,
+  "restored_rpc_seconds": 15.298365700000431,
+  "control_rpc_seconds": [
+    53.755411600002844,
+    32.44359039999836
+  ],
+  "reduction_percent_vs_controls": [
+    71.54078957884936,
+    52.84626173803129
+  ],
+  "all_output_hashes_equal": true,
+  "output_sha256": "06a8e6c2acfed5ee56f3e51cdc35355957cc934f560ecb254fedd67426e174ca",
+  "all_timestamp_bounds_valid": true,
+  "all_boot_ids_unique": true,
+  "retirement_verified_before_repeat_calls": true,
+  "restore_log_confirmed": true,
+  "initialization_id_reused_on_restore": true,
+  "shutdown": [
+    {
+      "app": "vocalm-qwen-snapshot-test",
+      "app_id": "ap-MkypIfK2Q9M73Ch6Nt8V2x",
+      "state": "stopped",
+      "tasks": 0,
+      "containers": 0
+    },
+    {
+      "app": "vocalm-qwen-cold-control",
+      "app_id": "ap-ugPwDyQRTSfxCKPgQHdgLt",
+      "state": "stopped",
+      "tasks": 0,
+      "containers": 0
+    }
+  ],
+  "production_changed": false,
+  "limitations": [
+    "One restored request, two cold controls; not a latency distribution or SLA.",
+    "28-second Chinese sample with Qwen alignment, not full-video/multilingual/fallback acceptance.",
+    "Local-to-Modal RPC includes scheduling/network/initialization/inference; not extension end-to-end latency.",
+    "Snapshot cannot remove warm inference time or guarantee GPU allocation.",
+    "No invoice-level GPU snapshot cost comparison."
+  ]
+}

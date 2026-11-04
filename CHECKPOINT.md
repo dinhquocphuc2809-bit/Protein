@@ -2,6 +2,23 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Passed: isolated Qwen GPU snapshot restore (2026-11-05)
+
+- [x] Deployed separate T4 snapshot app on backend account1; production unchanged.
+- [x] Three creation starts followed by one confirmed restore. Verified zero
+  containers before each repeat call, new boot UUID/call1 and reused captured
+  initialization UUID on restore; explicit Modal restore system log present.
+- [x] Same28s audio, production Qwen/VAD/alignment and warmup: restore15.298s;
+  two matched cold controls53.755/32.444s. Observed reduction52.8-71.5%.
+- [x] All six calls:45 words, valid timestamp bounds, identical output hashes.
+- [x] Both experiment apps stopped, zero tasks/containers independently verified.
+- Source: `gpu/asr_snapshot_probe.py`, `tools/qwen_snapshot_test.py`.
+  Report: `docs/QWEN_GPU_SNAPSHOT.md`; evidence: `research/benchmarks/qwen-snapshot-summary.json`.
+- Scope complete: isolated experiment only. One restored short Chinese sample
+  does not establish production reliability or full-video speedup. No rollout.
+- Before a future rollout: repeated restored starts, full-video and multilingual/
+  alignment-fallback regression; actual snapshot cost evaluation still unmeasured.
+
 ## Modal cold-start research rechecked (2026-11-05)
 
 - [x] Read current official cold-start/memory-snapshot/scaling docs. GPU snapshot
@@ -11,8 +28,8 @@ Updated: 2026-11-05. This file is the resume point; do not infer completion from
   retirement/new-container verification; initial creation may cost more time.
 - Current production snapshots remain disabled. Volume weights are cached;
   min_containers=0/scaledown_window=30 retained. No infrastructure change this turn.
-- [ ] Optional next experiment: isolated deployed Qwen snapshot app with actual
-  repeated cold restores, bounded GPU use and output checks. Not yet performed.
+- [x] Isolated deployed Qwen snapshot experiment subsequently performed; actual
+  restore verified. See the completed experiment above for sample-size limits.
 - Sources/results: `docs/MODAL_COLD_START.md`, `research/modal-cold-start-sources.json`.
 
 ## T4 measured; L4 allocation blocked (2026-11-05)

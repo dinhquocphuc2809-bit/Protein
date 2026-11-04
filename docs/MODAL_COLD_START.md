@@ -1,7 +1,7 @@
 # Modal cold-start mechanisms and Vocalm
 
-Reviewed: 2026-11-05 (Asia/Bangkok). This is documentation/configuration research,
-not a successful snapshot benchmark or a production rollout.
+Reviewed: 2026-11-05 (Asia/Bangkok). The isolated Qwen experiment now confirms
+an actual GPU snapshot restore. Production snapshots remain disabled.
 
 ## Findings
 
@@ -51,7 +51,7 @@ An earlier OmniVoice CPU-snapshot experiment was reverted because actual restore
 benefit was not demonstrated; see `docs/TTS_LATENCY.md`. That is not a test of
 Qwen GPU snapshots and does not justify dismissing them categorically.
 
-## Appropriate next experiment
+## Isolated experiment performed
 
 Deploy a separate, bounded Qwen snapshot app using the same model revisions,
 audio and GPU. Measure first snapshot creation separately. Confirm that the
@@ -61,7 +61,20 @@ first-request latency and warm inference with a non-snapshot baseline. Keep
 min_containers=0 and retire/stop the test app afterward. Roll out only if actual
 restore improves the user-visible latency without correctness or cost regressions.
 
-This experiment has not been run in this research turn; production is unchanged.
+Executed on T4 in `vocalm-qwen-snapshot-test`. The first three starts created
+snapshots; the fourth restored one after the previous container retired.
+Modal logged `Restoring Function from memory snapshot.` The captured
+initialization UUID matched the third start, while the post-start UUID changed
+and the request counter reset to one. The first response after restoration took
+15.298 seconds for the 28-second audio sample; inference itself took 3.875 seconds.
+All four calls returned the same word/timestamp hash. The app was stopped and
+independently verified to have zero tasks and zero containers.
+
+The `model_load_seconds` and `warmup_seconds` fields in a restored response are
+values captured in the snapshot, NOT work repeated during that restored boot.
+Do not add them to restore latency. Full measurements, control and limitations
+are recorded in `docs/QWEN_GPU_SNAPSHOT.md` and `research/benchmarks/`.
+Production is unchanged; this short-sample result alone is not rollout acceptance.
 
 ## Official sources
 
