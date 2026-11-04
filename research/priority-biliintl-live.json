@@ -1,0 +1,114 @@
+{
+  "at": "2026-11-04T11:39:03.130208+00:00",
+  "scope": "Live owner Chrome, installed Vocalm; caption acquisition and quick menu only; no Dubbing/ASR/translation/TTS invocation",
+  "pages": [
+    {
+      "url": "https://www.bilibili.tv/en/play/37976",
+      "checks": [
+        {
+          "name": "initial",
+          "seconds": 0.11,
+          "state": "ready",
+          "reason": null,
+          "diagnostic": null,
+          "cues": 279,
+          "language": "en",
+          "first": 16.606,
+          "last": 1488.661,
+          "duration": 1500,
+          "mediaError": null,
+          "validTimes": true,
+          "hash": "fa73d0945b165aea13e72b2bdcf3a2dabb102ad118a09b78baeabd716eef2ca9",
+          "playerButton": true,
+          "rules": [
+            "biliintl"
+          ],
+          "trackCount": 0
+        },
+        {
+          "name": "repeat",
+          "seconds": 0.046,
+          "state": "ready",
+          "reason": null,
+          "diagnostic": null,
+          "cues": 279,
+          "language": "en",
+          "first": 16.606,
+          "last": 1488.661,
+          "duration": 1500,
+          "mediaError": null,
+          "validTimes": true,
+          "hash": "fa73d0945b165aea13e72b2bdcf3a2dabb102ad118a09b78baeabd716eef2ca9",
+          "playerButton": true,
+          "rules": [
+            "biliintl"
+          ],
+          "trackCount": 0
+        }
+      ],
+      "http_status": 200,
+      "destination": "www.bilibili.tv/en/play/37976",
+      "quickMenu": true,
+      "captionsPassed": true,
+      "stable": true,
+      "samplePassed": true
+    },
+    {
+      "url": "https://www.bilibili.tv/en/play/37976/10344397",
+      "checks": [
+        {
+          "name": "initial",
+          "seconds": 0.562,
+          "state": "ready",
+          "reason": null,
+          "diagnostic": null,
+          "cues": 371,
+          "language": "en",
+          "first": 16.647,
+          "last": 1489.521,
+          "duration": 1500,
+          "mediaError": null,
+          "validTimes": true,
+          "hash": "08a3b4e9d155f0d1bcf5616eb2c88367bf96ea342df2a0b55d45d87202a193ed",
+          "playerButton": true,
+          "rules": [
+            "biliintl"
+          ],
+          "trackCount": 0
+        },
+        {
+          "name": "repeat",
+          "seconds": 0.047,
+          "state": "ready",
+          "reason": null,
+          "diagnostic": null,
+          "cues": 371,
+          "language": "en",
+          "first": 16.647,
+          "last": 1489.521,
+          "duration": 1500,
+          "mediaError": null,
+          "validTimes": true,
+          "hash": "08a3b4e9d155f0d1bcf5616eb2c88367bf96ea342df2a0b55d45d87202a193ed",
+          "playerButton": true,
+          "rules": [
+            "biliintl"
+          ],
+          "trackCount": 0
+        }
+      ],
+      "http_status": 200,
+      "destination": "www.bilibili.tv/en/play/37976/10344397",
+      "quickMenu": true,
+      "captionsPassed": true,
+      "stable": true,
+      "samplePassed": true
+    }
+  ],
+  "extension": {
+    "id": "njepcceplllhabnepcaejllfpfhnloil",
+    "name": "Vocalm",
+    "version": "0.6.0"
+  },
+  "package_sha256": "dd8e33dcc9c7c62ec4937a661f2381be5c3ce5b7dd5c20978f255e79d6bb655e"
+}

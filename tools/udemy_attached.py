@@ -23,9 +23,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--lecture', default='9538164')
     parser.add_argument('--require-packaged', action='store_true')
+    parser.add_argument('--report', default='udemy-attached-live.json')
     args = parser.parse_args()
     if not args.lecture.isdigit():
         parser.error('Lecture must be numeric')
+    if Path(args.report).name != args.report or not args.report.endswith('.json'):
+        parser.error('Report must be a JSON filename')
     lines = (Path(os.environ['LOCALAPPDATA']) / 'Google/Chrome/User Data/DevToolsActivePort').read_text().splitlines()
     report = {'at': datetime.now(timezone.utc).isoformat(), 'scope': 'Live authorized Chrome session; source acquisition probe, not full packaged UI/translation acceptance', 'lecture': args.lecture, 'checks': []}
     with sync_playwright() as p:
@@ -74,7 +77,7 @@ def main():
         report['passed'] = all(row['state']=='ready' and row['cues']>0 and row['validTimes'] for row in report['checks'])
         report['stable'] = bool(report['checks'][0].get('hash')) and report['checks'][0].get('hash')==report['checks'][1].get('hash')
         # Leaving Playwright disconnects; do not close the user's browser/context/page.
-    (ROOT/'research/udemy-attached-live.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+    (ROOT/'research'/args.report).write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps(report))
     return 0 if report['passed'] and report['stable'] else 1
 

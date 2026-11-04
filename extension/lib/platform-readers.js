@@ -245,6 +245,20 @@
     if (url.protocol !== "https:") return null;
     const families = new Set(M.rules(href).map((r) => r.family));
     if (
+      families.has("biliintl") &&
+      url.hostname === "api.bilibili.tv" &&
+      url.pathname === "/intl/gateway/web/v2/subtitle"
+    )
+      return "biliintl";
+    if (
+      M.rules(href).some((r) => r.site === "douyin") &&
+      url.origin === page.origin &&
+      /^\/aweme\/v[12]\/web\/(?:aweme\/(?:detail|feed)|module\/feed)\/$/.test(
+        url.pathname,
+      )
+    )
+      return "douyin";
+    if (
       families.has("twitter") &&
       url.origin === page.origin &&
       /^\/i\/api\/(?:graphql\/[^/]+\/[^/]+|2\/timeline\/[^/]+\.json)$/.test(
@@ -282,6 +296,14 @@
       P = root.VocalmPlatforms;
     const page = new URL(href),
       request = new URL(row.url);
+    if (kind === "biliintl") {
+      const owner = M.biliInternationalRoute(href, root.document);
+      if (!owner?.id || request.searchParams.get(owner.kind) !== owner.id)
+        return [];
+      return internationalTracks(data, href);
+    }
+    if (kind === "douyin")
+      return douyinTracks(data, M.douyinId(href, video), href);
     if (kind === "twitter") {
       const result = [];
       const owners = objects(data);
@@ -599,6 +621,57 @@
       check();
       return data;
     };
+    if (families.has("biliintl")) {
+      const owner = M.biliInternationalRoute(href, doc);
+      if (owner?.id) {
+        const locale =
+          { en: "en_US", vi: "vi_VN", th: "th_TH", id: "id_ID", ms: "ms_MY" }[
+            page.pathname.split("/")[1]
+          ] || "en_US";
+        const query = new URLSearchParams({
+          [owner.kind]: owner.id,
+          s_locale: locale,
+          platform: "web",
+        });
+        const data = await json(
+          `https://api.bilibili.tv/intl/gateway/web/v2/subtitle?${query}`,
+          true,
+        );
+        const current = M.biliInternationalRoute(href, doc);
+        if (current?.kind !== owner.kind || current?.id !== owner.id)
+          throw new Error("Bilibili episode changed while reading subtitles");
+        if (data.code !== 0)
+          throw new Error(
+            "Bilibili international subtitles unavailable in this session",
+          );
+        yield* internationalTracks(data, href);
+      }
+    }
+    if (M.rules(href).some((r) => r.site === "douyin")) {
+      const id = M.douyinId(href, video);
+      if (id) {
+        const roots = [win._ROUTER_DATA];
+        const render = doc.querySelector("script#RENDER_DATA")?.textContent;
+        if (render && render.length <= F.MAX_BYTES) {
+          try {
+            roots.push(JSON.parse(decodeURIComponent(render)));
+          } catch {}
+        }
+        const embedded = douyinTracks(roots, id, href);
+        if (embedded.length) yield* embedded;
+        else {
+          const data = await json(
+            `/aweme/v1/web/aweme/detail/?aweme_id=${id}`,
+            true,
+          );
+          if (M.douyinId(href, video) !== id)
+            throw new Error("Douyin video changed");
+          if (data.status_code !== 0)
+            throw new Error("Douyin metadata unavailable in this session");
+          yield* douyinTracks(data, id, href);
+        }
+      }
+    }
     if ([...families].some((family) => family.endsWith("_brightcove"))) {
       const container = video.closest("video-js, .video-js");
       const account = container?.getAttribute("data-account");
@@ -1288,6 +1361,46 @@
       }
     }
   }
+  function douyinTracks(data, id, href) {
+    if (!/^\d{10,24}$/.test(id || "")) return [];
+    const result = [],
+      P = root.VocalmPlatforms;
+    for (const owner of objects(data).filter(
+      (row) => String(row.aweme_id || "") === id,
+    )) {
+      for (const row of list(owner.video?.cla_info?.caption_infos)) {
+        const track = P.track(row.url, row.lang || row.language, href);
+        if (track) result.push(track);
+      }
+      for (const sticker of list(owner.interaction_stickers)) {
+        for (const row of list(
+          sticker.auto_video_caption_info?.auto_captions,
+        )) {
+          for (const address of list(row.url?.url_list, 4)) {
+            const track = P.track(address, row.language, href, {
+              format: "douyin-utterances",
+            });
+            if (track) result.push(track);
+          }
+        }
+      }
+    }
+    return [...new Map(result.map((t) => [t.url, t])).values()].slice(0, 100);
+  }
+  function internationalTracks(data, href) {
+    if (data?.code !== 0) return [];
+    const result = [];
+    const modern = list(data.data?.video_subtitle);
+    for (const row of modern.length ? modern : list(data.data?.subtitles)) {
+      for (const address of [row.srt?.url, row.ass?.url, row.url]) {
+        const track = root.VocalmPlatforms.track(address, row.lang_key, href);
+        if (!track) continue;
+        const url = new URL(track.url);
+        if (/(^|\.)bstarstatic\.com$/.test(url.hostname)) result.push(track);
+      }
+    }
+    return result;
+  }
   root.VocalmReaders = {
     discover,
     manifestAllowed,
@@ -1302,6 +1415,8 @@
     captionUrl,
     observedKind,
     observedTracks,
+    internationalTracks,
+    douyinTracks,
   };
   if (typeof module !== "undefined") module.exports = root.VocalmReaders;
 })(globalThis);

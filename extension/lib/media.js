@@ -64,6 +64,15 @@
           matches(r.domain, matchedUrl) &&
           r.pages.some((p) => matches(p, matchedUrl)),
       );
+      // International Bilibili is a separate player/API, absent from the reference registry.
+      if (biliInternationalRoute(url))
+        cachedRules.push({
+          site: "biliintl",
+          family: "biliintl",
+          selector: "video",
+          controls:
+            ".player-mobile-control-bar-right, .squirtle-controller-right",
+        });
     }
     return cachedRules;
   }
@@ -94,6 +103,7 @@
     activatedPlayers = new WeakMap();
   let activationSequence = 0;
   function videos(scope = document) {
+    const douyin = rules(location.href).some((r) => r.site === "douyin");
     const lessonPlayers = rules(location.href).some((r) =>
       ["domestika", "mindvalley"].includes(r.family),
     );
@@ -123,6 +133,20 @@
     return query("video", scope)
       .filter((v) => {
         if (auxiliary(v)) return false;
+        if (douyin) {
+          const feed = v.closest(
+            '[data-e2e="feed-video"], [data-e2e="feed-active-video"]',
+          );
+          if (feed && feed.getAttribute("data-e2e") !== "feed-active-video")
+            return false;
+          const style = getComputedStyle(v);
+          if (
+            style.visibility === "hidden" ||
+            style.display === "none" ||
+            style.opacity === "0"
+          )
+            return false;
+        }
         if (lessonPlayers && !watchedPlayers.has(v)) {
           watchedPlayers.add(v);
           v.addEventListener("play", () =>
@@ -139,6 +163,12 @@
         return rect.width > 100 && rect.height > 60;
       })
       .sort((a, b) => {
+        if (douyin) {
+          const active =
+            Number(!!b.closest('[data-e2e="feed-active-video"]')) -
+            Number(!!a.closest('[data-e2e="feed-active-video"]'));
+          if (active) return active;
+        }
         const priority = preferred(b) - preferred(a);
         if (priority) return priority;
         const x = a.getBoundingClientRect(),
@@ -168,6 +198,10 @@
   }
   function source(video) {
     if (!video) return "";
+    const intl = biliInternationalRoute(location.href, root.document);
+    if (intl?.id) return `biliintl:${intl.kind}:${intl.id}`;
+    const aweme = douyinId(location.href, video);
+    if (aweme) return "douyin:" + aweme;
     if (rules(location.href).some((r) => r.family === "twitter")) {
       try {
         const poster = new URL(video.poster);
@@ -234,6 +268,62 @@
       return null;
     }
   }
+  function biliInternationalRoute(value, doc) {
+    try {
+      const url = new URL(value);
+      if (
+        url.protocol !== "https:" ||
+        url.username ||
+        url.password ||
+        !/(^|\.)bilibili\.tv$/.test(url.hostname)
+      )
+        return null;
+      const path = url.pathname.match(
+        /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?(video|play)\/(\d{1,24})(?:\/(\d{1,24}))?\/?$/i,
+      );
+      if (!path) return null;
+      if (path[1] === "video" && path[3]) return null;
+      if (path[1] === "video") return { kind: "aid", id: path[2] };
+      let episode = path[3];
+      // The season landing URL does not include the currently selected episode.
+      if (!episode && doc) {
+        const selected = [...doc.querySelectorAll("a.ep-item--active[href]")];
+        if (selected.length === 1) {
+          const current = new URL(selected[0].getAttribute("href"), url);
+          const match = current.pathname.match(/\/play\/(\d+)\/(\d+)\/?$/);
+          if (current.origin === url.origin && match?.[1] === path[2])
+            episode = match[2];
+        }
+      }
+      return { kind: "episode_id", id: episode || null, season: path[2] };
+    } catch {
+      return null;
+    }
+  }
+  function douyinId(value, video) {
+    try {
+      const url = new URL(value);
+      if (
+        url.protocol !== "https:" ||
+        url.username ||
+        url.password ||
+        !/(^|\.)douyin\.com$/.test(url.hostname)
+      )
+        return null;
+      const route =
+        url.searchParams.get("modal_id") ||
+        url.pathname.match(/^\/(?:video|note|lvdetail)\/(\d+)\/?$/)?.[1];
+      const owner = video?.closest("[data-aweme-id], [data-e2e-vid]");
+      const dom =
+        owner?.getAttribute("data-aweme-id") ||
+        owner?.getAttribute("data-e2e-vid");
+      const valid = (x) => /^\d{10,24}$/.test(x || "");
+      if (valid(route) && valid(dom) && route !== dom) return null;
+      return valid(dom) ? dom : valid(route) ? route : null;
+    } catch {
+      return null;
+    }
+  }
   function controls(video) {
     if (!video) return null;
     const selectors = rules(location.href)
@@ -251,6 +341,11 @@
     );
     if (youtubeId(location.href))
       selectors.unshift("#movie_player .ytp-right-controls");
+    if (rules(location.href).some((r) => r.site === "douyin"))
+      selectors.unshift(
+        "xg-right-grid.xg-right-grid",
+        ".douyin-player-controls-right",
+      );
     // Walk outward from the selected video, never attach to another player's controls.
     let scope = video.parentElement || video.getRootNode();
     while (scope && scope !== document) {
@@ -259,6 +354,7 @@
           const matches = [...scope.querySelectorAll(selector)];
           if (
             matches.length === 1 &&
+            !matches[0].matches("video, audio, iframe, object, embed") &&
             query("video", matches[0]).length === 0 &&
             query("video", scope).filter((v) => !auxiliary(v)).length === 1
           )
@@ -304,6 +400,8 @@
     videos,
     source,
     biliRoute,
+    biliInternationalRoute,
+    douyinId,
     controls,
     youtubeId,
     language,

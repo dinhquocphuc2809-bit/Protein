@@ -662,6 +662,84 @@
       "cues": 0
     },
     {
+      "name": "biliintl_episode",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "biliintl_season",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "biliintl_ugc",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "biliintl_unresolved_season",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "biliintl_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "biliintl_empty",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "biliintl_changed_episode",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "biliintl_ass_only",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "douyin_detail",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "douyin_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "douyin_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "douyin_active_feed",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "douyin_auto_caption",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
       "name": "egghead",
       "passed": true,
       "state": "ready",

@@ -159,6 +159,55 @@
     if (Array.isArray(data)) return normalize(data);
     throw new Error("Unrecognized subtitle JSON schema");
   }
+  function ass(text) {
+    let events = false,
+      fields = null;
+    const rows = [];
+    for (const line of text.split(/\r?\n/)) {
+      if (/^\s*\[/.test(line)) {
+        events = /^\s*\[Events\]\s*$/i.test(line);
+        fields = null;
+        continue;
+      }
+      if (!events) continue;
+      if (/^Format:/i.test(line)) {
+        fields = line
+          .slice(line.indexOf(":") + 1)
+          .split(",")
+          .map((x) => x.trim().toLowerCase());
+        if (
+          fields.at(-1) !== "text" ||
+          !fields.includes("start") ||
+          !fields.includes("end")
+        )
+          throw new Error("Unsupported ASS event format");
+      } else if (/^Dialogue:/i.test(line)) {
+        if (!fields) throw new Error("ASS event format is missing");
+        const parts = line.slice(line.indexOf(":") + 1).split(",");
+        if (parts.length < fields.length)
+          throw new Error("Malformed ASS dialogue");
+        let drawing = false,
+          speech = "";
+        for (const part of parts
+          .slice(fields.length - 1)
+          .join(",")
+          .split(/(\{[^}]*\})/)) {
+          if (part.startsWith("{")) {
+            for (const match of part.matchAll(/\\p(\d+)\b/g))
+              drawing = Number(match[1]) > 0;
+          } else if (!drawing) speech += part;
+        }
+        rows.push({
+          start: time(parts[fields.indexOf("start")].trim()),
+          end: time(parts[fields.indexOf("end")].trim()),
+          text: speech.replace(/\\[Nn]/g, "\n").replace(/\\h/g, " "),
+        });
+        if (rows.length > MAX_CUES)
+          throw new Error("Subtitle cue limit exceeded");
+      }
+    }
+    return normalize(rows);
+  }
   function parse(text) {
     if (
       typeof text !== "string" ||
@@ -166,6 +215,7 @@
     )
       throw new Error("Subtitle response exceeds 4 MiB");
     const value = text.trim();
+    if (/^\[Script Info\]|^\[Events\]/i.test(value)) return ass(value);
     if (/^[{[]/.test(value)) return json(JSON.parse(value));
     if (value.startsWith("<")) return ttml(value);
     return vtt(value);
@@ -333,11 +383,10 @@
     return { cues: normalize(rows), language: language || "auto" };
   }
   async function bounded(response) {
-    if (
-      !response.ok ||
-      Number(response.headers.get("content-length")) > MAX_BYTES
-    )
-      throw new Error("Subtitle download failed or exceeds 4 MiB");
+    if (!response.ok)
+      throw new Error(`Subtitle request returned HTTP ${response.status}`);
+    if (Number(response.headers.get("content-length")) > MAX_BYTES)
+      throw new Error("Subtitle response exceeds 4 MiB");
     const reader = response.body?.getReader();
     if (!reader) throw new Error("Empty subtitle response");
     let bytes = 0;
@@ -450,6 +499,7 @@
     vtt,
     ttml,
     json,
+    ass,
     parse,
     playlist,
     hls,

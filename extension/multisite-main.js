@@ -603,7 +603,8 @@
       const facebook = M.rules(location.href).some(
         (r) => r.family === "facebook",
       );
-      if (twitter && M.videos().length > 1) {
+      const douyin = M.rules(location.href).some((r) => r.site === "douyin");
+      if ((twitter || douyin) && M.videos().length > 1) {
         for (const row of resources.values()) {
           if (row.kind !== "reader" || !same(row.token, token, true)) continue;
           try {
@@ -662,6 +663,7 @@
           !udemy &&
           !twitter &&
           !facebook &&
+          !douyin &&
           !rows.some((r) => ["hls", "dash"].includes(r.kind))
         )
           candidates.push(
@@ -733,7 +735,11 @@
         return finish(result);
       };
       const discoverPlatforms = async () => {
-        if (M.videos().length !== 1) return null;
+        if (
+          M.videos().length !== 1 &&
+          !(douyin && M.douyinId(location.href, video))
+        )
+          return null;
         try {
           for await (const candidate of VocalmPlatforms.discover({
             video,
@@ -772,7 +778,7 @@
         const result = await discoverPlatforms();
         if (result) return result;
       }
-      if (bili) {
+      if (bili && diagnostic !== "bili_session") {
         try {
           check();
           const candidate = await VocalmBilibili.menuTrack(video, {

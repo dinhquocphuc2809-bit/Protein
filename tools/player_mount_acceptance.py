@@ -16,6 +16,9 @@ CASES = [
     ('jwplayer', 'https://www.nbcnews.com/now/video/test', '<div class="jw-button-container"></div>'),
     ('shaka', 'https://learn.microsoft.com/en-us/shows/test/lesson', '<div class="shaka-controls-button-panel"></div>'),
     ('udemy', 'https://www.udemy.com/course/test/learn/lecture/123', '<div data-purpose="video-controls"></div>'),
+    ('biliintl', 'https://www.bilibili.tv/en/play/37976/10344255', '<div class="player-mobile-control-bar-right"></div>'),
+    ('douyin', 'https://www.douyin.com/video/6961737553342991651', '<xg-controls><xg-right-grid class="xg-right-grid"></xg-right-grid></xg-controls>'),
+    ('douyin_no_controls', 'https://www.douyin.com/video/6961737553342991651', ''),
     ('mux_shadow', 'https://www.aihero.dev/lesson', '<media-control-bar></media-control-bar>'),
     ('hls_nested_slot', 'https://updraft.cyfrin.io/courses/test/section/lesson', '<media-control-bar></media-control-bar>'),
     ('loom_preview', 'https://www.loom.com/embed/1234567890abcdef1234567890abcdef', '<div class="transportSection"><div class="controls-right"><div data-hide-if-fullscreen="true"><div role="presentation"><button data-name="FullScreenBtn">Fullscreen</button></div></div></div></div>'),
@@ -54,7 +57,7 @@ def main():
                 page.wait_for_selector('#auvirel-surface', state='attached')
                 page.wait_for_timeout(1500)
                 panel = shadow_eval(page, 'auvirel-surface')
-                if name == 'mux_unslotted':
+                if name in ('mux_unslotted', 'douyin_no_controls'):
                     assert page.locator('.vocalm-player-button').count() == 0
                     assert panel('function(){return !this.querySelector(".launcher").hidden}')
                     report['checks'].append(name + ': floating launcher retained; no hidden unslotted button')

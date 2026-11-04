@@ -87,6 +87,9 @@ def main():
                 if name == 'blob_swap':
                     script += 'setTimeout(()=>{video.src=URL.createObjectURL(new Blob(["fixture"],{type:"video/mp4"}))},400);'
                 menu = ''
+                if name == 'session':
+                    menu = '<div class="bpx-player-ctrl-subtitle"><button class="bpx-player-ctrl-subtitle-language-item" data-lan="ai-en">Login required</button><button class="bpx-player-ctrl-subtitle-close-switch bpx-state-active">Off</button></div>'
+                    script += 'window.fixtureSessionMenu=0;document.querySelector(".bpx-player-ctrl-subtitle").addEventListener("mouseenter",()=>fixtureSessionMenu++);'
                 if name.startswith('menu_'):
                     menu = '''<div class="bpx-player-ctrl-btn bpx-player-ctrl-subtitle">
                       <button class="bpx-player-ctrl-subtitle-close-switch">Off</button>
@@ -150,6 +153,8 @@ def main():
                 if name.startswith('menu_'):
                     assert page.locator('.bpx-player-ctrl-subtitle-close-switch').evaluate("e=>e.classList.contains('bpx-state-active')") == (name != 'menu_on'), name
                     assert page.evaluate('fixtureLeave') >= 1, (name, 'Subtitle menu not released')
+                if name == 'session':
+                    assert page.evaluate('fixtureSessionMenu') == 0, 'Must not open login-gated subtitle controls'
                 if name == 'blob_swap':
                     assert len(requests) == request_start, ('Captured metadata lost on blob swap', requests[request_start:])
                 if name == 'active':

@@ -15,6 +15,8 @@ def scenarios():
     video = '<video id="v" style="width:800px;height:450px"></video>'
     from reader_fixtures import scenarios as reader_scenarios
     yield from reader_scenarios(video, CAPTION, VTT)
+    from priority_fixtures import scenarios as priority_scenarios
+    yield from priority_scenarios(video, CAPTION, VTT)
     def case(name, url, script='', body=video, resources=None, ready=True):
         return dict(name=name, url=url, script=script, body=body, resources=resources or {}, ready=ready)
     def next_data(data):

@@ -4,7 +4,8 @@
     "DOM: full native cues and original CC mode restored",
     "open shadow: full native cues and original CC mode restored",
     "DASH inherited BaseURL; reject protected/dynamic tracks; reader module loaded",
-    "Social readers: exact Twitter media ownership; Facebook descriptors without executing getters"
+    "Social readers: exact Twitter media ownership; Facebook descriptors without executing getters",
+    "Priority readers: Bilibili international identity/ASS; Douyin exact owner/millisecond timing"
   ],
   "browser": "159.0",
   "passed": true

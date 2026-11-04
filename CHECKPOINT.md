@@ -2,6 +2,47 @@
 
 Updated: 2026-11-04. This file is the resume point; do not infer completion from planned items.
 
+## Latest scope and acceptance (2026-11-04)
+
+- User narrowed acceptance to YouTube, Udemy, Douyin, Bilibili China and Bilibili
+  international. Keep all other integrations; defer the earlier 52-site effort.
+- [x] International Bilibili: independent episode/UGC metadata reader, required
+  locale, selected-season episode identity, structured captions and ASS fallback.
+- [x] Douyin: active feed selection, exact aweme ownership, observed/embedded/detail
+  caption descriptors and explicitly millisecond-timed auto-caption data.
+- [x] YouTube live sample 3BndvjrGwyE: 595 en cues; repeated retrieval, seek and
+  real pointer-click quick menu passed. Never mistake its advertisement timeline
+  for the selected video during acceptance.
+- [x] Udemy live after user login: 9538164 gives 72 en-US cues; 7868552 gives 58.
+  Repeat/seek and actual pointer quick-menu clicks passed. Historical successful
+  report retained; see priority-pointer-live.json for the stricter checks.
+- [x] International Bilibili episodes: 279 and 371 en cues. In-page episode switch,
+  pause/seek and actual pointer menu clicks passed. UGC 4800774585457664 has no acquired
+  complete track; this is not a UGC success.
+- [ ] Bilibili China sample remains `bili_session`; need authorized CC-capable
+  session. Do not label this absent captions or automatically dispatch ASR.
+- [x] Bilibili China menu fallback now stops on known session restriction, avoiding
+  login-triggered page navigation. Live final repeat is stable and pointer menu passes.
+- [ ] Douyin live sample 6961737553342991651 plays and mounts controls, but its
+  actual detail metadata has no caption descriptors/stickers. Direct reader
+  request returns HTTP403; need a separate-CC sample for successful live evidence.
+- [x] Fixed real Douyin UI bug: generic controls selector returned VIDEO and hid
+  the button inside fallback video content. Exclude media elements as mount targets;
+  mount on observed xg-right-grid/douyin-player-controls-right. Actual pointer menu
+  and screenshot verified. Other sites with media-only selectors keep the launcher.
+- [x] Tests: 96 JS, 61 Python, 145 packaged platform fixtures, 17 Bilibili China
+  fixtures, 19 shared acquisition cases, 18 player-mount cases; Firefox159 checks
+  include international identity/ASS and Douyin owner/millisecond parsing.
+- Reports: `docs/PRIORITY_SITE_ACCEPTANCE.md`, `research/priority-*.json`.
+  `priority-final-live.json` retains earlier pointer failures. Follow-up reports
+  priority-pointer-live.json, priority-douyin-bilicn-final.json and
+  priority-bilicn-session-final.json supersede those UI failures. Captions remain
+  blocked on China/Douyin; UI pointer interaction now passed on all five samples.
+- Current Chrome connects through DevToolsActivePort. Local Vocalm loaded through
+  Extensions.loadUnpacked. Only test-created tabs are navigated/closed. User's
+  existing course tab is lecture7868552; it predates the current package reload.
+- No production/infra/provider/GPU changes or paid jobs in this acceptance batch.
+
 ## Current phase: working deployed release candidate; final packaging and repository delivery
 
 ### Voice catalog columns (0.5.1, 2026-11-04)
@@ -457,7 +498,16 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 - Baseline commit 5edfea4 CI confirmed completed/success. Rebuilds generated
   dist/chrome and dist/firefox; see Git history for the current integration batch.
 
-### Active full-reference parity work (2026-11-04)
+### Priority acceptance scope (2026-11-04, user update)
+
+- Active acceptance scope: YouTube, Udemy, Douyin, Bilibili China and Bilibili international.
+- Preserve all other integrations; the previous 52-site acceptance effort is deferred.
+- Require separate live evidence for correct existing captions and usable Vocalm player controls.
+- Historical Udemy sample passed. YouTube native captions and Bilibili China still need
+  current authorized-session verification; Douyin/international readers require review.
+- Do not count fixtures as live acceptance or trigger paid ASR to hide missing captions.
+
+### Prior full-reference parity work (superseded scope; retained evidence)
 
 - User explicitly requires all reference sites, not only Bilibili/shared readers.
 - [x] Extract family-to-handler factory mapping and AST class/helper excerpts

@@ -145,6 +145,23 @@
     return true;
   }
   function parse(value, format) {
+    if (format === "douyin-utterances") {
+      if (
+        typeof value !== "string" ||
+        new TextEncoder().encode(value).length > F.MAX_BYTES
+      )
+        throw new Error("Subtitle byte limit exceeded");
+      const data = JSON.parse(value);
+      if (!Array.isArray(data.utterances))
+        throw new Error("Invalid Douyin caption data");
+      return F.normalize(
+        data.utterances.map((row) => ({
+          start: row.start_time / 1000,
+          end: row.end_time / 1000,
+          text: row.text,
+        })),
+      );
+    }
     if (format !== "edx") return F.parse(value);
     if (typeof value !== "string" || value.length > F.MAX_BYTES)
       throw new Error("Subtitle byte limit exceeded");

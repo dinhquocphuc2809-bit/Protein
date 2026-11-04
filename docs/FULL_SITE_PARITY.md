@@ -1,6 +1,8 @@
 # Full reference parity work
 
-Status: active. This document supersedes any interpretation that 0.6.0 completes
+Status: broader acceptance deferred by the user on 2026-11-04. Current scope and
+live evidence are in `docs/PRIORITY_SITE_ACCEPTANCE.md`; existing integrations remain.
+This document supersedes any interpretation that 0.6.0 completes
 the user's all-site requirement. Do not mark a route accepted merely because its
 domain matches or a generic VTT test passes.
 

@@ -77,6 +77,23 @@ def main():
         value=result[0]['result']
         assert len(value['tracks'])==1 and value['getterCalls']==0 and value['allowed'] and not value['stale'],value
         report['checks'].append('Social readers: exact Twitter media ownership; Facebook descriptors without executing getters')
+        result=driver.execute_async_script('''const done=arguments[arguments.length-1];
+          (async()=>{const tab=(await browser.tabs.query({})).find(t=>t.url==='https://example.org/');
+            return await browser.scripting.executeScript({target:{tabId:tab.id},world:'MAIN',func:()=>{
+              const route=VeloaMedia.biliInternationalRoute('https://www.bilibili.tv/en/play/37976/10344255');
+              const ass='[Script Info]\\n[Events]\\nFormat: Layer, Start, End, Style, Text\\nDialogue: 0,0:00:01.00,0:00:03.00,Default,Caption, with comma.';
+              const captions=VeloaSubtitleFormats.parse(ass);
+              const id='6961737553342991651';
+              const tracks=VocalmReaders.douyinTracks({aweme_detail:{aweme_id:id,video:{cla_info:{caption_infos:[{url:'https://media.test/caption.vtt',lang:'zh'}]}}}},id,'https://www.douyin.com/video/'+id);
+              const timing=VocalmPlatforms.parse(JSON.stringify({utterances:[{start_time:1000,end_time:3000,text:'Caption.'}]}),'douyin-utterances');
+              return {route,captions,tracks,timing};
+            }});
+          })().then(done,e=>done({error:e.message}));''')
+        assert isinstance(result,list),result
+        value=result[0]['result']
+        assert value['route']['id']=='10344255' and value['captions']==[{'start':1,'end':3,'text':'Caption, with comma.'}],value
+        assert len(value['tracks'])==1 and value['timing']==[{'start':1,'end':3,'text':'Caption.'}],value
+        report['checks'].append('Priority readers: Bilibili international identity/ASS; Douyin exact owner/millisecond timing')
         report['browser'] = driver.capabilities['browserVersion']
         report['passed'] = True
     except Exception as error:

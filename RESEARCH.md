@@ -2,6 +2,63 @@
 
 Updated: 2026-11-04. Separate observed evidence, interpretation and unverified claims.
 
+## Five-platform follow-up (2026-11-04)
+
+The user reduced priority to YouTube/Udemy/Douyin/Bilibili China/international.
+Broader integrations remain. Acceptance: `docs/PRIORITY_SITE_ACCEPTANCE.md`.
+
+- Static local reference audit: content.js class Qwe (DouyinPlayer) inherits Eu
+  (UniversalDubbingPlayer). Qwe resolves modal/path/player aweme IDs and selects
+  the visible active feed video. Eu checks HLS/native/platform captions and may
+  query its own backend cache. This is not evidence that Douyin always publishes
+  downloadable captions. No bilibili.tv/biliintl entries were found in supplied
+  content.js, injectScript.js or background.js. Full source SHA256 values:
+  content.js `709fdd1c1edf17f8393a6b566b7c479e5b13557c8c45dfd9a712fc1297f21fc4`;
+  injectScript.js `e8cff06bfd1ad82965f687567e14bb06ae8d2627818a356aee3fdc5e82258e83`;
+  background.js `c530d6519b93f2d40c2ad4f4f9352cab651e85c17a918d3255192306f3abb070`.
+- Primary international site: https://www.bilibili.tv/en/play/37976 . Official
+  asset https://p.bstarstatic.com/fe-static/bstar-web-new/client/assets/useError-f85f952e.js
+  (SHA256 `7d18a4623c67894acec1e8472c1ea0ef5c7c2bc3060e0b70cef9e58e5fb6640d`)
+  calls `/intl/gateway/web/v2/subtitle` on api.bilibili.tv. `video_subtitle` rows
+  expose lang_key, srt.url and optional ass.url; legacy rows use subtitles[].url.
+  The field named srt.url can contain JSON with body[].from/to/content, not SRT.
+  Direct live request without s_locale failed; en_US (plus platform=web) returned
+  code0 and five languages. Keep official bstarstatic.com caption URLs only.
+- The official player asset biliintl-player-dfb25af7.js has SHA256
+  `bc2d8201b531727c42629775ea63e5572ed08bc7f4e48a0d9d2f51d05c23470b`.
+  Observed native control parent: player-mobile-control-bar-right. Season pages
+  expose the current episode in a.ep-item--active; season ID is not episode ID.
+  Fresh live tests verified two distinct transcripts and SPA episode switching.
+- Secondary schema reference (read, not executed):
+  https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/tiktok.py
+  SHA256 `1bd19075b06c50e84d186086679edca4a7f87388c6b639099689b20940a0ab55`.
+  Douyin detail uses aweme_id. Shared parsing reads video.cla_info.caption_infos
+  and interaction_stickers[].auto_video_caption_info.auto_captions[].url.url_list.
+  Auto-caption utterances explicitly use milliseconds. Implementation is original
+  browser-session code; no yt-dlp invocation/download or signature bypass.
+- Public Douyin sample 6961737553342991651 plays for19.735011s and exposes zero
+  native tracks. The site's own successful detail response has no video caption
+  fields and no interaction stickers. Vocalm mounts its button/menu but cannot
+  claim captions from this sample; unsigned detail request returns403. CC sample
+  remains requested. Search connector was unavailable; source assets and actual
+  website/API observations above were read directly.
+- Current Udemy session initially redirected to login; after user login two
+  lessons passed. Keep both attempts, with chronology. Initial YouTube run hit an
+  ad and failed; after waiting for the real video,595cues were acquired. No ASR
+  or GPU job was used to substitute for platform-caption extraction.
+- Pointer checks exposed a real Douyin defect: registry controls="video" was
+  interpreted as a mountable container. The inserted button had a zero-sized
+  bounding box inside VIDEO. Observed actual control containers are
+  xg-right-grid.xg-right-grid and douyin-player-controls-right. Corrected ownership
+  mounting and media-element exclusion; pointer click and screenshot then passed.
+  Current Douyin window.player owns the selected video, curDefinition.vid matches
+  aweme, plugins.texttrack exists, config.texttrack has style only on this sample.
+  Do not infer that a plugin's presence means a downloadable subtitle track exists.
+- Bilibili China: session-restricted subtitle menu interaction triggered a page
+  navigation and destroyed the acquisition context. Skip menu activation on
+  bili_session. Final live repeated lookup stays on the page and native pointer
+  menu works; caption access still requires a suitable logged-in session.
+
 ## Local observations
 
 ### Full platform parity and authorized Udemy session (2026-11-04)

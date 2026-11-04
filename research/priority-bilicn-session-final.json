@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-04T16:13:26.351724+00:00",
+  "scope": "Live owner Chrome, installed Vocalm; caption acquisition and quick menu only; no Dubbing/ASR/translation/TTS invocation",
+  "pages": [
+    {
+      "url": "https://www.bilibili.com/video/BV1WqYV6cEwq/",
+      "checks": [
+        {
+          "name": "initial",
+          "seconds": 5.281,
+          "state": "unknown",
+          "reason": "No complete subtitle track discovered",
+          "diagnostic": "bili_session",
+          "cues": 0,
+          "language": null,
+          "first": null,
+          "last": null,
+          "duration": 741,
+          "mediaError": null,
+          "validTimes": false,
+          "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "playerButton": true,
+          "rules": [
+            "bili"
+          ],
+          "trackCount": 0
+        },
+        {
+          "name": "repeat",
+          "seconds": 5.297,
+          "state": "unknown",
+          "reason": "No complete subtitle track discovered",
+          "diagnostic": "bili_session",
+          "cues": 0,
+          "language": null,
+          "first": null,
+          "last": null,
+          "duration": 741,
+          "mediaError": null,
+          "validTimes": false,
+          "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "playerButton": true,
+          "rules": [
+            "bili"
+          ],
+          "trackCount": 0
+        }
+      ],
+      "http_status": 200,
+      "destination": "www.bilibili.com/en/video/BV1WqYV6cEwq/",
+      "pointerClick": true,
+      "quickMenu": true,
+      "captionsPassed": false,
+      "stable": true,
+      "samplePassed": false
+    }
+  ],
+  "extension": {
+    "id": "njepcceplllhabnepcaejllfpfhnloil",
+    "name": "Vocalm",
+    "version": "0.6.0"
+  },
+  "package_sha256": "b39c4ff54ba0da4d80ed1513bbde57f2fae6d7752a516ed56e3e88ba917d72c9"
+}
