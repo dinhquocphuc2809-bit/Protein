@@ -21,7 +21,8 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
   fullscreen, reduced motion, ready-seek, startup-seek and cancellation.
 - [x] Final error-unlock acceptance and local packages complete. Chrome/Firefox
   `dist/vocalm-*.zip` include 84 voices and 8 BGM; source-only CI packages omit them.
-- [ ] Repository push/CI verification in progress.
+- [x] Source commit `a050701` pushed; remote hash independently verified. GitHub
+  validation passed: https://github.com/dinhquocphuc2809-bit/Protein/actions/runs/41758995072.
 - Design/review gates: `docs/VOCALM_DESIGN.md`. Evidence:
   `research/vocalm-ui-acceptance.json`, `research/ui-youtube-live.json`,
   `research/browser-chromium.json`, `research/browser-firefox.json`.
