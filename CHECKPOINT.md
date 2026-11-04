@@ -1,6 +1,36 @@
 # Protein checkpoint
 
-Updated: 2026-11-04. This file is the resume point; do not infer completion from planned items.
+Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
+
+## Resolved: Qwen ASR incident, YouTube f6YA_OvKbhY (2026-11-05)
+
+- Production failed job 775e708607b9752be9700d69c4d02691: aligning stage,
+  `Alignment produced invalid timestamps`, 271.831 seconds. Its terminal payload
+  was already scrubbed by maintenance, so do not claim historical request fields.
+- Prior successful job cc32892f6cd7fe0c44f51964145bbf8c matches the video URL;
+  usage confirms Deepgram, 660.9649 seconds of recognized timeline, 9.076s total.
+- [x] Downloaded the supplied video's audio via authorized Tunelio resolution;
+  local diagnostic audio is ignored under `.private/asr-investigation`.
+- [x] Added numeric-only alignment failure diagnostics on account 1 for
+  reproduction. At offset 576, region7 word19 ends at3.520s for3.440s audio:
+  80ms overrun violates the previous50ms limit and fails the entire job.
+  Sanitized progress: `research/qwen-incident-reproduction.json`.
+- [x] Implemented job-local Modal account affinity with depletion failover;
+  added start/chunk usage events. Deployed to VPS; both service health checks pass.
+- [x] Routing/cache/failover tests pass: Qwen errors never use Deepgram, and
+  source caches for fast/quality remain separate. Full Python suite: 75 passed.
+- [x] Added bounded120ms edge normalization, retained collapsed-word text, reject
+  gross invalid timings and realign the same Qwen transcript once if necessary.
+  Fixed offset576 passes on all three ASR accounts; account1 also passes600/624/648.
+- [x] Production fresh quality job f8d194deabaf104e4e26562d411508c3 completed:
+  28 Qwen chunks,93 speech cues through660.8s,230.594s including first translation.
+  Usage confirms Modal/Qwen; no Deepgram. Repeat0fbb0eddc24218c0debae164830852a5
+  completed in2.281s using cache only, identical source/translation/output hashes.
+- [x] Temporary VPS spool returned to zero. All three Modal credentials remain
+  available; account2 handled all28 windows. Account4/client TTS unchanged.
+- Evidence: `docs/QWEN_ASR_INCIDENT.md`, `research/qwen-incident-*.json`.
+  First-run Qwen remains slower than Deepgram; this ASR path processes the full
+  source before progressive translation/TTS. No near-realtime ASR claim is made.
 
 ## Latest scope and acceptance (2026-11-04)
 

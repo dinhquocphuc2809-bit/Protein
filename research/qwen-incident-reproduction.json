@@ -1,0 +1,176 @@
+[
+  {
+    "offset": 0,
+    "seconds": 34.094,
+    "words": 69,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 24,
+    "seconds": 8.5,
+    "words": 79,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 48,
+    "seconds": 6.375,
+    "words": 71,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 72,
+    "seconds": 5.672,
+    "words": 57,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 96,
+    "seconds": 8.829,
+    "words": 88,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 120,
+    "seconds": 7.343,
+    "words": 59,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 144,
+    "seconds": 8.047,
+    "words": 98,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 168,
+    "seconds": 7.344,
+    "words": 107,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 192,
+    "seconds": 7.344,
+    "words": 93,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 216,
+    "seconds": 8.562,
+    "words": 116,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 240,
+    "seconds": 7.563,
+    "words": 97,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 264,
+    "seconds": 7.843,
+    "words": 84,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 288,
+    "seconds": 7.047,
+    "words": 71,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 312,
+    "seconds": 6.235,
+    "words": 68,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 336,
+    "seconds": 7.984,
+    "words": 71,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 360,
+    "seconds": 7.984,
+    "words": 83,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 384,
+    "seconds": 8.297,
+    "words": 98,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 408,
+    "seconds": 8.828,
+    "words": 108,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 432,
+    "seconds": 8.672,
+    "words": 96,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 456,
+    "seconds": 6.734,
+    "words": 76,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 480,
+    "seconds": 7.828,
+    "words": 77,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 504,
+    "seconds": 6.079,
+    "words": 54,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 528,
+    "seconds": 6.156,
+    "words": 62,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 552,
+    "seconds": 7.829,
+    "words": 76,
+    "language": "Chinese",
+    "passed": true
+  },
+  {
+    "offset": 576,
+    "seconds": 6.984,
+    "passed": false,
+    "error": "Alignment produced invalid timestamps: region=7, word=19, previous=2.880, start=3.440, end=3.520, duration=3.440, language=Chinese"
+  }
+]

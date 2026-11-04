@@ -8,7 +8,8 @@ app = modal.App("auvirel-asr")
 weights = modal.Volume.from_name("auvirel-asr-weights", create_if_missing=True)
 image = (modal.Image.debian_slim(python_version="3.11").apt_install("ffmpeg", "libsndfile1", "sox")
          .pip_install("torch==2.8.0", "torchaudio==2.8.0", "soundfile==0.13.1", "qwen-asr==0.0.6", "stable-ts==2.19.1", "silero-vad==6.2.3")
-         .env({"HF_HOME": "/weights/huggingface"}))
+         .env({"HF_HOME": "/weights/huggingface"})
+         .add_local_python_source("gpu"))
 ASR_REV = "7278e1e70fe206f11671096ffdd38061171dd6e5"
 ALIGN_REV = "c7cbfc2048c462b0d63a45797104fc9db3ad62b7"
 LANGUAGES = {"en": "English", "zh": "Chinese", "yue": "Cantonese", "fr": "French", "de": "German", "it": "Italian",
@@ -57,6 +58,7 @@ class Recognizer:
         import numpy as np
         import soundfile as sf
         from silero_vad import get_speech_timestamps
+        from gpu.alignment import bounded_alignment
 
         if not 44 <= len(wav) <= 2*1024**2 or wav[:4] != b"RIFF" or wav[8:12] != b"WAVE":
             raise ValueError("Expected bounded RIFF WAV")
@@ -70,6 +72,7 @@ class Recognizer:
         regions = get_speech_timestamps(self.torch.from_numpy(audio), self.vad, sampling_rate=16000,
                                         max_speech_duration_s=25, speech_pad_ms=160)
         words, detected = [], None
+        recovered = 0
         for region in regions:
             begin, end = int(region["start"]), int(region["end"])
             chunk = audio[begin:end]
@@ -78,10 +81,17 @@ class Recognizer:
             detected = recognized.language
             if not recognized.text.strip():
                 continue
+            local = None
             if detected in ALIGNED:
                 aligned = self.model.forced_aligner.align(audio=(chunk, sr), text=recognized.text, language=detected)[0]
-                local = [{"text": str(w.text), "start": float(w.start_time), "end": float(w.end_time)} for w in aligned]
-            else:
+                try:
+                    local = bounded_alignment(
+                        [{"text": str(w.text), "start": float(w.start_time), "end": float(w.end_time)} for w in aligned], len(chunk)/sr)
+                except ValueError:
+                    recovered += 1
+            if local is None:
+                # Align the Qwen transcript again; never substitute another ASR
+                # provider or accept unbounded model timestamps.
                 import stable_whisper
                 if self.whisper is None:
                     self.whisper = stable_whisper.load_model("small", device="cuda", download_root="/weights/whisper")
@@ -91,14 +101,12 @@ class Recognizer:
                 aligned = self.whisper.align(chunk, recognized.text, language=whisper_code, verbose=False)
                 if aligned is None:
                     raise ValueError("Forced alignment failed")
-                local = [{"text": str(w.word), "start": float(w.start), "end": float(w.end)} for seg in aligned.segments for w in seg.words]
-            previous = 0.0
+                local = bounded_alignment(
+                    [{"text": str(w.word), "start": float(w.start), "end": float(w.end)} for seg in aligned.segments for w in seg.words], len(chunk)/sr)
             for word in local:
-                if not previous <= word["start"] <= word["end"] <= len(chunk)/sr+.05:
-                    raise ValueError("Alignment produced invalid timestamps")
-                previous = word["start"]
                 words.append({"text": word["text"], "start": round(word["start"]+begin/sr, 3), "end": round(min(word["end"]+begin/sr, len(audio)/sr), 3)})
-        return {"words": words, "language": detected, "duration": len(audio)/sr}
+        return {"words": words, "language": detected, "duration": len(audio)/sr,
+                "model": "Qwen/Qwen3-ASR-1.7B", "alignment_recoveries": recovered}
 
 
 @app.local_entrypoint()

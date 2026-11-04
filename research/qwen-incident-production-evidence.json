@@ -1,0 +1,317 @@
+{
+  "at_epoch": 1793813478.5167305,
+  "release": "/opt/auvirel/releases/20261104-172611",
+  "jobs": [
+    {
+      "id": "775e708607b9752be9700d69c4d02691",
+      "state": "failed",
+      "stage": "aligning",
+      "error": "Alignment produced invalid timestamps",
+      "created": 1793812146.9496899,
+      "updated": 1793812418.7806687,
+      "events": [
+        {
+          "provider": "tunelio",
+          "event": "resolve",
+          "amount": 0.0,
+          "created": 1793812148.759976
+        }
+      ]
+    },
+    {
+      "id": "cc32892f6cd7fe0c44f51964145bbf8c",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793811942.8988504,
+      "updated": 1793811951.9751234,
+      "events": [
+        {
+          "provider": "tunelio",
+          "event": "resolve",
+          "amount": 0.0,
+          "created": 1793811944.6644692
+        },
+        {
+          "provider": "deepgram",
+          "event": "asr_seconds",
+          "amount": 660.9649,
+          "created": 1793811949.8164036
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793811949.8272016
+        },
+        {
+          "provider": "deepseek",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793811949.8543413
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793811951.9594793
+        }
+      ]
+    },
+    {
+      "id": "f8d194deabaf104e4e26562d411508c3",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793813222.640732,
+      "updated": 1793813452.6791685,
+      "events": [
+        {
+          "provider": "tunelio",
+          "event": "resolve",
+          "amount": 0.0,
+          "created": 1793813223.3116348
+        },
+        {
+          "provider": "modal",
+          "event": "qwen3_asr_1_7b_started",
+          "amount": 0.0,
+          "created": 1793813223.3221564
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 0.0,
+          "created": 1793813244.520641
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 24.0,
+          "created": 1793813253.2322237
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 48.0,
+          "created": 1793813261.3413293
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 72.0,
+          "created": 1793813267.4785655
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 96.0,
+          "created": 1793813275.2697947
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 120.0,
+          "created": 1793813281.6345856
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 144.0,
+          "created": 1793813290.0401666
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 168.0,
+          "created": 1793813297.807662
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 192.0,
+          "created": 1793813305.5416784
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 216.0,
+          "created": 1793813314.9627163
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 240.0,
+          "created": 1793813323.261324
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 264.0,
+          "created": 1793813331.593296
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 288.0,
+          "created": 1793813339.1071062
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 312.0,
+          "created": 1793813345.64832
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 336.0,
+          "created": 1793813352.5376377
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 360.0,
+          "created": 1793813360.543601
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 384.0,
+          "created": 1793813369.3866527
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 408.0,
+          "created": 1793813378.3564153
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 432.0,
+          "created": 1793813386.7096677
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 456.0,
+          "created": 1793813394.0198486
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 480.0,
+          "created": 1793813402.052014
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 504.0,
+          "created": 1793813408.4465234
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 528.0,
+          "created": 1793813415.1073062
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 552.0,
+          "created": 1793813423.503516
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 576.0,
+          "created": 1793813432.0156333
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 600.0,
+          "created": 1793813439.5205042
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 624.0,
+          "created": 1793813446.6452389
+        },
+        {
+          "provider": "modal",
+          "event": "qwen_chunk_completed",
+          "amount": 648.0,
+          "created": 1793813451.574333
+        },
+        {
+          "provider": "modal",
+          "event": "asr_seconds",
+          "amount": 660.8,
+          "created": 1793813451.5948973
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793813451.607112
+        },
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793813451.6360834
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793813452.663462
+        }
+      ]
+    },
+    {
+      "id": "0fbb0eddc24218c0debae164830852a5",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793813453.2407854,
+      "updated": 1793813453.5276303,
+      "events": [
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793813453.4886608
+        },
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793813453.5143383
+        }
+      ]
+    }
+  ],
+  "modal_accounts": [
+    {
+      "label": "modal 1",
+      "state": "available",
+      "calls": 18
+    },
+    {
+      "label": "modal 2",
+      "state": "available",
+      "calls": 45
+    },
+    {
+      "label": "modal 3",
+      "state": "available",
+      "calls": 17
+    }
+  ],
+  "spool_bytes": 0,
+  "free_bytes": 198730018816
+}

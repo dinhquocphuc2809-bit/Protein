@@ -100,6 +100,33 @@ def test_rotation_classifies_and_retries(core):
         assert error.value.kind == expected
 
 
+def test_modal_job_affinity_reuses_warm_account_and_fails_over(core):
+    db, security, _ = core
+    pool = KeyPool(db, security)
+    for i in range(3):
+        pool.add("modal", f"test-modal-account-{i:020d}")
+    affinity, calls = {}, []
+    async def ok(key):
+        calls.append(key)
+        return "aligned"
+    async def run():
+        for _ in range(3):
+            assert await pool.run("modal", ok, affinity=affinity) == "aligned"
+        assert len(set(calls)) == 1
+        original = calls[0]
+        async def exhausted(key):
+            if key == original:
+                raise ProviderFailure("modal", 402, "depleted")
+            return await ok(key)
+        assert await pool.run("modal", exhausted, affinity=affinity) == "aligned"
+        assert calls[-1] != original
+        await pool.run("modal", ok, affinity=affinity)
+        assert calls[-1] == calls[-2]
+        assert db.one("SELECT state FROM api_keys WHERE id=?", (affinity['modal'],))['state'] == 'available'
+        assert db.one("SELECT count(*) n FROM api_keys WHERE state='depleted'")['n'] == 1
+    asyncio.run(run())
+
+
 def test_srt_validation_and_text():
     cues = parse_srt(b'1\r\n00:00:01,000 --> 00:00:03,200\r\n<b>Hello</b> &amp; goodbye\r\n')
     assert cues[0].text == "Hello & goodbye"

@@ -56,8 +56,10 @@ class KeyPool:
         self.db.execute("INSERT OR IGNORE INTO api_keys(id,provider,label,fingerprint,encrypted) VALUES(?,?,?,?,?)",
                         (secrets.token_hex(16), provider, label[:100], fingerprint, self.security.seal(value)))
 
-    async def run(self, provider: str, operation: Callable[[str], Awaitable]):
+    async def run(self, provider: str, operation: Callable[[str], Awaitable], *, affinity: dict | None = None):
         candidates = self.db.all("SELECT * FROM api_keys WHERE provider=? AND state IN ('available','cooling_down') AND cooldown<=? ORDER BY calls,id", (provider, time.time()))
+        if affinity is not None:
+            candidates.sort(key=lambda row: row['id'] != affinity.get(provider))
         if not candidates:
             raise ProviderFailure(provider, 503, "no_available_keys")
         last = None
@@ -76,6 +78,8 @@ class KeyPool:
                         self.db.execute("UPDATE api_keys SET balance=NULL,checked=?,last_error='balance_scope_unavailable' WHERE id=?", (time.time(), row["id"]))
                 result = await operation(key)
                 self.db.execute("UPDATE api_keys SET calls=calls+1,state='available',last_error=NULL WHERE id=?", (row["id"],))
+                if affinity is not None:
+                    affinity[provider] = row['id']
                 return result
             except ProviderFailure as error:
                 last = error

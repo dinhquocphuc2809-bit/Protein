@@ -1,6 +1,51 @@
 # Protein research ledger
 
-Updated: 2026-11-04. Separate observed evidence, interpretation and unverified claims.
+Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
+
+## Qwen ASR incident: f6YA_OvKbhY (2026-11-05)
+
+- Production failure: `Alignment produced invalid timestamps` during aligning,
+  after 271.831 seconds. Terminal request payloads are scrubbed by maintenance;
+  the original failed job no longer retains URL/request fields. The previous
+  successful job retains this video's URL in its result and its usage confirms
+  Deepgram (660.9649s recognized, 9.076s total). Do not infer the failed request's
+  exact fields from that previous result.
+- Reproduced with the supplied video audio obtained via Tunelio, Qwen3-ASR-1.7B
+  on Modal account 1, automatic language detection. At the 576-second window,
+  VAD region 7 word 19 had start=3.440/end=3.520 against duration=3.440 seconds.
+  Old validation allowed only 50ms overrun, so this 80ms model boundary error
+  failed the whole job. First 24 windows passed; reproduction records exact
+  numeric diagnostics without speech text in `qwen-incident-reproduction.json`.
+- Official Qwen source describes timestamps in seconds converted from discrete
+  model units, and its fix_timestamp enforces monotonicity but does not constrain
+  output to the supplied waveform duration. Qwen ForcedAligner supports 11
+  languages; stable-ts remains the existing aligner for other languages.
+  Sources and SHA256: `research/qwen-incident-sources.json`:
+  https://github.com/QwenLM/Qwen3-ASR and https://github.com/jianfch/stable-ts .
+- Correction: bounded 120ms edge tolerance with waveform clipping; zero-length
+  tokens retain their text in an adjacent aligned interval. NaN, infinities,
+  inversions, nonmonotonic or materially out-of-bounds output remains invalid.
+  If Qwen's alignment fails these checks, stable-ts aligns the SAME Qwen text
+  once; its output must pass the same validator. No Deepgram fallback exists.
+- Performance defect: the least-call key selection rotated every 28-second
+  transfer window across three GPU accounts. Added job-local affinity; invalid,
+  depleted or cooling keys still fail over through existing classification.
+  This avoids unnecessary account switching without keeping idle GPUs running.
+- Added provider-start and per-Qwen-window usage events. Existing cache identity
+  includes asr=fast/quality; regression tests verify no cross-mode reuse or hidden
+  Qwen-to-Deepgram fallback. Account 4/client OmniVoice is unchanged.
+- Actual fixed-worker tests: account 1 passes offsets 576/600/624/648; accounts
+  2 and 3 each pass offset 576. All report model Qwen/Qwen3-ASR-1.7B, Chinese,
+  valid timestamps, and no secondary realignment needed on those samples.
+  Reports: `research/qwen-incident-fixed-account*.json`.
+- End-to-end signed API verification is recorded independently in
+  `research/qwen-incident-live.json`; correlate job IDs with production usage in
+  `research/qwen-incident-production-evidence.json`. Final fresh request passed:
+  28 Qwen windows,93 speech cues through660.8s,230.594 seconds including initial
+  translation. No Deepgram usage. Repeat passed in2.281 seconds with cache-only
+  usage and identical source, translation and output hashes. Account2 processed
+  all28 windows (calls17->45); accounts1/3 counters unchanged. Spool returned to0.
+  This verifies ASR plus first progressive translation, not TTS/audio playback.
 
 ## Authenticated Bilibili China follow-up (2026-11-04)
 

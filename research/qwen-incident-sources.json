@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/main/README.md",
+    "sha256": "27b5d6e31c3dc10c9b4b86e226f215baacca57bede504994779ad334a67275a0",
+    "bytes": 60537
+  },
+  {
+    "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/main/qwen_asr/inference/qwen3_forced_aligner.py",
+    "sha256": "fb586127507c5980d11c6d848b530e652afad3ae0707cba6eb0c90377b2a2111",
+    "bytes": 16411
+  },
+  {
+    "url": "https://raw.githubusercontent.com/jianfch/stable-ts/main/stable_whisper/alignment.py",
+    "sha256": "ec17febfae9baf41c4c0776274e830c458a473bd5a7021701b27b2efe08d262e",
+    "bytes": 54288
+  }
+]

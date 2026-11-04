@@ -251,6 +251,8 @@ class Jobs:
         media = await self.providers.tunelio(request.url) if youtube else await self.providers.apify(request.url, lambda stage: self.progress(job, stage))
         self.event(job, "tunelio" if youtube else "apify", "resolve")
         await self.progress(job, "recognizing")
+        self.event(job, "deepgram" if request.asr == "fast" else "modal",
+                   "nova3_started" if request.asr == "fast" else "qwen3_asr_1_7b_started")
         if youtube and request.asr == "fast":
             cues = await self.providers.deepgram(url=media, language=request.source_language)
         else:
@@ -280,7 +282,7 @@ class Jobs:
             raise
         if process.returncode:
             raise ValueError("Audio normalization failed")
-        words = []
+        words, affinity = [], {}
         for audio, offset, keep_start, keep_end in audio_windows(directory / "normalized.wav", self.settings.max_video_seconds):
             await self.progress(job, "aligning")
             async def invoke(value):
@@ -299,7 +301,9 @@ class Jobs:
                     raise ProviderFailure("modal", 401, "invalid") from None
                 except modal.exception.ResourceExhaustedError:
                     raise ProviderFailure("modal", 429, "cooling_down") from None
-            result = await self.providers.pool.run("modal", invoke)
+            # Keep this job on a warm GPU; the pool still fails over unavailable keys.
+            result = await self.providers.pool.run("modal", invoke, affinity=affinity)
+            self.event(job, "modal", "qwen_chunk_completed", offset)
             words.extend({**word, "start": word["start"]+offset, "end": word["end"]+offset} for word in result["words"]
                          if keep_start <= (word["start"]+word["end"])/2+offset < keep_end)
         words.sort(key=lambda word: word["start"])

@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-04T17:24:43.601531+00:00",
+  "account": 1,
+  "video": "f6YA_OvKbhY",
+  "scope": "Real Qwen RPC on incident audio, no other ASR provider",
+  "checks": [
+    {
+      "offset": 576,
+      "seconds": 33.515,
+      "words": 94,
+      "language": "Chinese",
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "passed": true
+    },
+    {
+      "offset": 600,
+      "seconds": 9.047,
+      "words": 87,
+      "language": "Chinese",
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "passed": true
+    },
+    {
+      "offset": 624,
+      "seconds": 8.469,
+      "words": 86,
+      "language": "Chinese",
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "passed": true
+    },
+    {
+      "offset": 648,
+      "seconds": 6.062,
+      "words": 42,
+      "language": "Chinese",
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "passed": true
+    }
+  ]
+}

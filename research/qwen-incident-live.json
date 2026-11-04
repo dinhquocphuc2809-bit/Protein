@@ -1,0 +1,70 @@
+{
+  "at": "2026-11-04T17:27:03.005817+00:00",
+  "request": {
+    "url": "https://www.youtube.com/watch?v=f6YA_OvKbhY",
+    "asr": "quality",
+    "source_language": "auto",
+    "target_language": "vi",
+    "model": "basic",
+    "progressive": true,
+    "position": 0
+  },
+  "checks": [
+    {
+      "name": "fresh",
+      "job_id": "f8d194deabaf104e4e26562d411508c3",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.141
+        },
+        {
+          "stage": "recognizing",
+          "seconds": 2.203
+        },
+        {
+          "stage": "aligning",
+          "seconds": 8.406
+        },
+        {
+          "stage": "done",
+          "seconds": 230.594
+        }
+      ],
+      "state": "done",
+      "seconds": 230.594,
+      "cues": 93,
+      "first": 2.112,
+      "last": 660.8,
+      "source_hash": "36fa5f813e36ae533a5dc86d4b0d1ecdb48debe63bf91ac3bd58b6c7b7e6a43c",
+      "translation_id": "f9229e2f3a5c46f6dab05c8d8f72c3c6fb9bdbbd477656f113431be9b283597f",
+      "translated": 1,
+      "valid_times": true,
+      "payload_sha256": "6ff96c2b348c181222f041531c77343f32a4c9919115f6f33bc29cef91404a00"
+    },
+    {
+      "name": "repeat",
+      "job_id": "0fbb0eddc24218c0debae164830852a5",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.141
+        },
+        {
+          "stage": "done",
+          "seconds": 2.281
+        }
+      ],
+      "state": "done",
+      "seconds": 2.281,
+      "cues": 93,
+      "first": 2.112,
+      "last": 660.8,
+      "source_hash": "36fa5f813e36ae533a5dc86d4b0d1ecdb48debe63bf91ac3bd58b6c7b7e6a43c",
+      "translation_id": "f9229e2f3a5c46f6dab05c8d8f72c3c6fb9bdbbd477656f113431be9b283597f",
+      "translated": 1,
+      "valid_times": true,
+      "payload_sha256": "6ff96c2b348c181222f041531c77343f32a4c9919115f6f33bc29cef91404a00"
+    }
+  ]
+}

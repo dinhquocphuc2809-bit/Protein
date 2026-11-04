@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-04T17:26:43.397597+00:00",
+  "account": 2,
+  "video": "f6YA_OvKbhY",
+  "scope": "Real Qwen RPC on incident audio, no other ASR provider",
+  "checks": [
+    {
+      "offset": 576,
+      "seconds": 35.937,
+      "words": 94,
+      "language": "Chinese",
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "passed": true
+    }
+  ]
+}
