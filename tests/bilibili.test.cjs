@@ -89,7 +89,7 @@ test("Bilibili metadata binds CID and normalizes AI language prefixes", () => {
   );
 });
 
-test("Bilibili missed response is recovered with authenticated primary/legacy requests", async () => {
+test("Bilibili missed response is recovered with the authenticated current endpoint", async () => {
   globalThis.location = { href: url };
   globalThis.window = { __INITIAL_STATE__: state };
   const requested = [];
@@ -98,7 +98,6 @@ test("Bilibili missed response is recovered with authenticated primary/legacy re
     check: () => {},
     read: async (address, session) => {
       requested.push({ address, session });
-      if (address.includes("/wbi/")) return JSON.stringify({ code: -403 });
       return JSON.stringify({
         code: 0,
         data: {
@@ -116,12 +115,36 @@ test("Bilibili missed response is recovered with authenticated primary/legacy re
     },
   });
   assert.equal(result.tracks[0].language, "zh");
-  assert.equal(requested.length, 2);
+  assert.equal(requested.length, 1);
+  assert.equal(new URL(requested[0].address).pathname, "/x/player/wbi/v2");
   assert.ok(
     requested.every(
       (r) => r.session && new URL(r.address).searchParams.get("cid") === "456",
     ),
   );
+});
+
+test("Bilibili empty, denied and failed requests never query the unreliable legacy endpoint", async () => {
+  globalThis.location = { href: url };
+  globalThis.window = { __INITIAL_STATE__: state };
+  for (const response of [
+    { code: 0, data: { subtitle: { subtitles: [] } } },
+    { code: -403 },
+    null,
+  ]) {
+    const calls = [];
+    const result = await B.discover({
+      observed: () => [],
+      check: () => {},
+      read: async (address) => {
+        calls.push(new URL(address).pathname);
+        if (!response) throw new Error("Network error");
+        return JSON.stringify(response);
+      },
+    });
+    assert.deepEqual(result.tracks, []);
+    assert.deepEqual(calls, ["/x/player/wbi/v2"]);
+  }
 });
 
 test("Bilibili reuses current metadata but does not reuse another part", async () => {

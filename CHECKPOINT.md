@@ -19,8 +19,18 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
 - [x] International Bilibili episodes: 279 and 371 en cues. In-page episode switch,
   pause/seek and actual pointer menu clicks passed. UGC 4800774585457664 has no acquired
   complete track; this is not a UGC success.
-- [ ] Bilibili China sample remains `bili_session`; need authorized CC-capable
-  session. Do not label this absent captions or automatically dispatch ASR.
+- [x] Bilibili China after user login: BV1WqYV6cEwq parts 1/2 return 299/253
+  Chinese cues; BV1c11EBeEGC parts 1/2 return 533/496. Actual forward/back part
+  clicks, repeat, seek, pointer button and quick menu pass. Evidence:
+  `research/bilicn-current-api-live.json`, `docs/BILIBILI_CN_ACCEPTANCE.md`.
+- [x] Removed legacy /x/player/v2 fallback and observation: live responses can
+  return changing subtitle lists for the same CID. Current /x/player/wbi/v2
+  remains, with native CC fallback. Negative sample BV1q1Puz7EUN now consistently
+  stays unknown instead of accepting inconsistent captions; no automatic ASR.
+- [x] Packaged Vocalm 0.6.1 for Chrome/Firefox and loaded the Chrome build into
+  the authorized profile. Existing user tabs were preserved; reload those tabs
+  to replace their prior MAIN-world scripts. Final positive live rerun passed:
+  `research/bilicn-release-live.json` records 0.6.1 and the package JS hash.
 - [x] Bilibili China menu fallback now stops on known session restriction, avoiding
   login-triggered page navigation. Live final repeat is stable and pointer menu passes.
 - [ ] Douyin live sample 6961737553342991651 plays and mounts controls, but its
@@ -30,14 +40,15 @@ Updated: 2026-11-04. This file is the resume point; do not infer completion from
   the button inside fallback video content. Exclude media elements as mount targets;
   mount on observed xg-right-grid/douyin-player-controls-right. Actual pointer menu
   and screenshot verified. Other sites with media-only selectors keep the launcher.
-- [x] Tests: 96 JS, 61 Python, 145 packaged platform fixtures, 17 Bilibili China
+- [x] Tests: 97 JS, 61 Python, 145 packaged platform fixtures, 18 Bilibili China
   fixtures, 19 shared acquisition cases, 18 player-mount cases; Firefox159 checks
   include international identity/ASS and Douyin owner/millisecond parsing.
 - Reports: `docs/PRIORITY_SITE_ACCEPTANCE.md`, `research/priority-*.json`.
   `priority-final-live.json` retains earlier pointer failures. Follow-up reports
   priority-pointer-live.json, priority-douyin-bilicn-final.json and
   priority-bilicn-session-final.json supersede those UI failures. Captions remain
-  blocked on China/Douyin; UI pointer interaction now passed on all five samples.
+  blocked on Douyin; China login restriction is superseded by the authenticated
+  four-track result above. UI pointer interaction passed on all five samples.
 - Current Chrome connects through DevToolsActivePort. Local Vocalm loaded through
   Extensions.loadUnpacked. Only test-created tabs are navigated/closed. User's
   existing course tab is lecture7868552; it predates the current package reload.

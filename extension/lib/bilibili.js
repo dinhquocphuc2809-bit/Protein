@@ -42,10 +42,10 @@
   function matches(info, target) {
     return Boolean(
       info &&
-        target &&
-        info.cid === target.cid &&
-        (!info.aid || info.aid === target.aid) &&
-        (!info.bvid || info.bvid === target.bvid),
+      target &&
+      info.cid === target.cid &&
+      (!info.aid || info.aid === target.aid) &&
+      (!info.bvid || info.bvid === target.bvid),
     );
   }
   function tracks(list, base) {
@@ -104,26 +104,27 @@
     }
     if (result.length) return { tracks: result };
     let diagnostic = "bili_empty";
-    for (const endpoint of ["/x/player/wbi/v2", "/x/player/v2"]) {
+    // The legacy /x/player/v2 returned inconsistent subtitle lists in
+    // live checks even while echoing the requested CID. Never use that fallback.
+    check();
+    try {
+      const url = `https://api.bilibili.com/x/player/wbi/v2?${new URLSearchParams({ aid: target.aid, cid: target.cid })}`;
+      const data = JSON.parse(await read(url, true));
       check();
-      try {
-        const url = `https://api.bilibili.com${endpoint}?${new URLSearchParams({ aid: target.aid, cid: target.cid })}`;
-        const data = JSON.parse(await read(url, true));
-        check();
-        if (data.code !== undefined && data.code !== 0) {
-          diagnostic = [-101, -403].includes(data.code)
-            ? "bili_session"
-            : "bili_metadata";
-          continue;
-        }
-        if (!matches(owner(data, url), target)) continue;
-        const found = tracks(data.data?.subtitle?.subtitles, url);
-        if (found.length) return { tracks: found };
-        if (data.data?.need_login_subtitle) diagnostic = "bili_session";
-      } catch (error) {
-        check();
-        diagnostic = "bili_metadata";
+      if (data.code !== undefined && data.code !== 0) {
+        diagnostic = [-101, -403].includes(data.code)
+          ? "bili_session"
+          : "bili_metadata";
+        return { tracks: [], diagnostic };
       }
+      if (!matches(owner(data, url), target))
+        return { tracks: [], diagnostic: "bili_identity" };
+      const found = tracks(data.data?.subtitle?.subtitles, url);
+      if (found.length) return { tracks: found };
+      if (data.data?.need_login_subtitle) diagnostic = "bili_session";
+    } catch (error) {
+      check();
+      diagnostic = "bili_metadata";
     }
     return { tracks: [], diagnostic };
   }

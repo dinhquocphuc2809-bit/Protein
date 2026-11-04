@@ -70,7 +70,7 @@
     if (
       M.rules(location.href).some((r) => r.site === "bili") &&
       url.hostname === "api.bilibili.com" &&
-      /^\/x\/player\/(?:wbi\/)?v2$/.test(url.pathname)
+      url.pathname === "/x/player/wbi/v2"
     )
       return {
         kind: "metadata",

@@ -47,7 +47,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--urls', nargs='+')
     parser.add_argument('--report', default='priority-live.json')
-    parser.add_argument('--lifecycle', action='store_true', help='Pause/seek and click next Bilibili international episode in test-created tabs')
+    parser.add_argument('--lifecycle', action='store_true', help='Pause/seek and switch available Bilibili parts/episodes in test-created tabs')
     parser.add_argument('--pointer', action='store_true', help='Require a real pointer click on the Vocalm button')
     args = parser.parse_args()
     if Path(args.report).name != args.report or not args.report.endswith('.json'):
@@ -107,6 +107,29 @@ def main():
                     row['seekStable'] = result.get('state') == 'ready' and result.get('hash') == previous
                     page.evaluate('''s=>{const v=VeloaMedia.videos()[0];v.currentTime=s.time;
                       if(!s.paused)v.play().catch(()=>{})}''', original)
+                    if urlsplit(url).hostname == 'www.bilibili.com':
+                        parts = page.locator('.video-pod__list.multip .video-pod__item')
+                        active = next((i for i in range(parts.count())
+                            if 'active' in (parts.nth(i).get_attribute('class') or '').split()), None)
+                        if parts.count() > 1 and active is not None:
+                            target = 1 if active == 0 else 0
+                            parts.nth(target).click(timeout=5000)
+                            page.wait_for_timeout(8000)
+                            changed = page.evaluate(ACQUIRE)
+                            selected = page.evaluate('VeloaMedia.biliRoute(location.href).page')
+                            row['partSwitch'] = {
+                                'page': selected,
+                                'passed': selected == target+1 and changed.get('state') == 'ready'
+                                    and changed.get('validTimes') and changed.get('hash') != previous,
+                                **changed,
+                            }
+                            parts.nth(active).click(timeout=5000)
+                            page.wait_for_timeout(8000)
+                            restored = page.evaluate(ACQUIRE)
+                            row['partReturn'] = {
+                                'passed': restored.get('state') == 'ready' and restored.get('hash') == previous,
+                                **restored,
+                            }
                     if urlsplit(url).hostname == 'www.bilibili.tv':
                         links = page.locator('a.ep-item[href]')
                         target = None
@@ -149,7 +172,8 @@ def main():
                     c.get('state') == 'ready' and c.get('validTimes') for c in row['checks'])
                 row['stable'] = len(row['checks']) == 2 and row['checks'][0].get('hash') == row['checks'][1].get('hash')
                 row['samplePassed'] = bool(row['captionsPassed'] and row['stable'] and row.get('quickMenu')
-                    and row.get('seekStable', True) and row.get('episodeSwitch', {}).get('passed', True))
+                    and row.get('seekStable', True) and row.get('episodeSwitch', {}).get('passed', True)
+                    and row.get('partSwitch', {}).get('passed', True) and row.get('partReturn', {}).get('passed', True))
             except Exception as error:
                 # Playwright exceptions can contain signed request URLs; save only the category.
                 row['errorType'] = type(error).__name__

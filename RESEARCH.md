@@ -2,6 +2,37 @@
 
 Updated: 2026-11-04. Separate observed evidence, interpretation and unverified claims.
 
+## Authenticated Bilibili China follow-up (2026-11-04)
+
+- User confirmed login. Installed Vocalm in that Chrome session acquires 299/253
+  Chinese cues for BV1WqYV6cEwq parts 1/2 and 533/496 for BV1c11EBeEGC parts 1/2.
+  Both videos pass actual part 1 -> 2 -> 1 clicks, transcript hash restoration,
+  pause/seek, pointer click and quick-menu checks. No paid provider jobs invoked.
+- Reference discovery used recommendation links and __INITIAL_STATE__.videoData
+  on the supplied page. The original video has 81 parts; only parts 1/2 were
+  certified here. `bilicn-discovered-samples.json` is discovery, not acceptance.
+- Actual negative sample BV1q1Puz7EUN exposed an unreliable legacy fallback:
+  /x/player/wbi/v2 consistently returned no tracks, while /x/player/v2 could
+  echo the same aid/cid/bvid but return differing subtitle IDs or an empty list.
+  Before correction, repeated acquisition alternated between unknown and
+  transcripts ending at 15.38, 221.38 or 838.52 seconds of a 4053-second video.
+  The evidence does not prove the content of those tracks belongs to this video.
+  Removed both direct legacy fallback and legacy response interception. Do not
+  equate echoed request IDs with reliable subtitle ownership on this endpoint.
+- Current endpoint plus native CC recovery remain. The negative sample now
+  consistently returns unknown/bili_empty; this is not proof that every possible
+  player language/region has no captions. It is not a successful caption sample.
+- Evidence: `research/bilicn-authenticated-live.json` (initial success),
+  `research/bilicn-additional-live.json` (failure retained),
+  `research/bilicn-current-api-live.json` (post-fix),
+  `research/bilicn-metadata-comparison.json` (sanitized endpoint comparison),
+  `research/bilicn-release-live.json` (final 0.6.1 positive lifecycle rerun).
+- Timing in live reports measures acquisition AFTER a 12-second page-settle wait;
+  it is not browser navigation time, translation latency or dubbing latency.
+- Regression: 97 JS tests; 18 packaged Bilibili cases including current-endpoint
+  failure and ignored legacy observations; 19 shared acquisition cases. No
+  production backend, credentials or other platform integrations were changed.
+
 ## Five-platform follow-up (2026-11-04)
 
 The user reduced priority to YouTube/Udemy/Douyin/Bilibili China/international.
@@ -57,7 +88,8 @@ Broader integrations remain. Acceptance: `docs/PRIORITY_SITE_ACCEPTANCE.md`.
 - Bilibili China: session-restricted subtitle menu interaction triggered a page
   navigation and destroyed the acquisition context. Skip menu activation on
   bili_session. Final live repeated lookup stays on the page and native pointer
-  menu works; caption access still requires a suitable logged-in session.
+  menu works. This earlier session limitation is superseded by the authenticated
+  follow-up above.
 
 ## Local observations
 

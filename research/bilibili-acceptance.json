@@ -46,50 +46,56 @@
     {
       "case": "legacy",
       "passed": true,
-      "job_with_cues": true,
-      "metadata_requests": 2
+      "job_with_cues": false,
+      "metadata_requests": 1
+    },
+    {
+      "case": "legacy_observed",
+      "passed": true,
+      "job_with_cues": false,
+      "metadata_requests": 1
     },
     {
       "case": "empty",
       "passed": true,
       "job_with_cues": false,
-      "metadata_requests": 2
+      "metadata_requests": 1
     },
     {
       "case": "session",
       "passed": true,
       "job_with_cues": false,
-      "metadata_requests": 2
+      "metadata_requests": 1
     },
     {
       "case": "malformed_track",
       "passed": true,
       "job_with_cues": false,
-      "metadata_requests": 2
+      "metadata_requests": 1
     },
     {
       "case": "menu_off",
       "passed": true,
       "job_with_cues": true,
-      "metadata_requests": 2
+      "metadata_requests": 1
     },
     {
       "case": "menu_on",
       "passed": true,
       "job_with_cues": true,
-      "metadata_requests": 2
+      "metadata_requests": 1
     },
     {
       "case": "menu_failure",
       "passed": true,
       "job_with_cues": false,
-      "metadata_requests": 2
+      "metadata_requests": 1
     },
     {
       "case": "menu_no_items",
       "passed": true,
       "job_with_cues": false,
-      "metadata_requests": 2
+      "metadata_requests": 1
     },
     {
       "case": "navigate_pending",

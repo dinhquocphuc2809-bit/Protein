@@ -26,7 +26,7 @@ def main():
             preset['path'] = 'voices/' + target.name
         bgm = [{'id': path.stem, 'name': path.stem.replace('-', ' ').replace('_', ' ').title(), 'path': 'bgm/' + path.name} for path in sorted((source / 'bgm').glob('*.ogg'))]
     shared = {
-        'manifest_version': 3, 'name': 'Vocalm', 'version': '0.6.0', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
+        'manifest_version': 3, 'name': 'Vocalm', 'version': '0.6.1', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
         'permissions': ['storage', 'scripting', 'nativeMessaging', 'activeTab'], 'host_permissions': ['https://*/*'],
         'action': {'default_popup': 'popup.html', 'default_title': 'Vocalm'},
         'options_ui': {'page': 'options.html', 'open_in_tab': False},

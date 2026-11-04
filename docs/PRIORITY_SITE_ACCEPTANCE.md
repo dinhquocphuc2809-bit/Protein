@@ -18,7 +18,7 @@ results, not a claim that all videos, variants or the full dubbing chain passed.
 | YouTube | 3BndvjrGwyE: 595 English cues, 0.08-1379.48s of 1381.201s | `research/priority-youtube-douyin-live.json`; stable repeat and quick menu | Additional videos, Shorts/embed and full dubbing integration are separate gates |
 | Udemy | CCNA 9538164: 72 en-US cues; 7868552: 58 en-US cues | `research/priority-udemy-ugc-live.json`; stable repeat, pause/seek, quick menu | Other courses/languages and in-page lecture switching need additional samples |
 | Bilibili international | Season 37976 episode 10344255: 279 English cues; 10344397: 371 | `research/priority-biliintl-live.json`, `research/priority-biliintl-lifecycle.json`; correct in-page episode switch, pause/seek and quick menu | UGC 4800774585457664 returns no complete track; do not certify UGC captions from episode tests |
-| Bilibili China | BV1WqYV6cEwq: video duration 741s, native button present | `research/priority-owner-live.json`: `bili_session`, zero cues | Authorized CC-capable session is required; session-limited failure is not proof of missing subtitles |
+| Bilibili China | BV1WqYV6cEwq parts 1/2: 299/253 Chinese cues; BV1c11EBeEGC parts 1/2: 533/496 | `research/bilicn-current-api-live.json`: authenticated captions, forward/back part clicks, seek, repeat, pointer menu | BV1q1Puz7EUN has no reliable acquired track; other parts, PGC/PUGV and full dubbing remain separate gates |
 | Douyin | 6961737553342991651: video plays, native button and quick menu present | `research/priority-youtube-douyin-live.json`: zero cues | Actual metadata has no caption descriptors or interaction stickers; need a separate CC track sample to validate successful extraction |
 
 `research/priority-final-live.json` records a stricter pointer/lifecycle rerun
@@ -26,8 +26,10 @@ separately, including earlier failed actions. The follow-up reports
 `research/priority-pointer-live.json`, `research/priority-douyin-bilicn-final.json`
 and `research/priority-bilicn-session-final.json` supersede those UI failures.
 Actual pointer clicks and quick-menu opening now pass on samples from all five
-platforms. Successful complete captions are verified on YouTube, Udemy and
-international episodes only. Earlier reports are retained for history.
+platforms. Successful captions are verified on YouTube, Udemy, Bilibili China
+and international episodes. Earlier reports are retained for history. The China
+session failures are superseded by `docs/BILIBILI_CN_ACCEPTANCE.md` and its new
+authenticated reports; the unreliable legacy endpoint is now excluded.
 An earlier Udemy redirect to login was resolved after the user logged in; it does
 not override the later successful two-lecture result.
 
@@ -52,6 +54,9 @@ not override the later successful two-lecture result.
   Sites without a usable native control container retain the floating launcher.
 - Bilibili China no longer opens the subtitle menu after an explicit session
   restriction; this prevents a login-driven navigation in the middle of acquisition.
+- Bilibili China no longer calls or observes legacy /x/player/v2. Live comparison
+  showed inconsistent subtitle lists despite echoed matching IDs. Current WBI
+  metadata and native CC recovery remain; unknown never authorizes automatic ASR.
 
 ## Reproducible checks
 
@@ -79,7 +84,8 @@ Fixture coverage includes exact/wrong IDs, season/episode/UGC routes, empty and
 denied responses, navigation during a request, ASS-only tracks, Douyin active feed,
 stale metadata and millisecond timing. These fixtures do not certify live sites.
 
-Validated: 96 JavaScript tests, 61 Python tests, 145 packaged platform cases,
-17 Bilibili China cases, 19 shared acquisition cases, 18 player-mount cases and
+Validated: 97 JavaScript tests, 61 Python tests, 145 packaged platform cases,
+18 Bilibili China cases, 19 shared acquisition cases, 18 player-mount cases and
 Firefox159 native/shadow/DASH/priority-reader checks. No successful Douyin caption
-extraction or authenticated Bilibili China caption extraction is claimed yet.
+extraction is claimed yet. This Bilibili follow-up reran JS, Bilibili and shared
+acquisition suites; other suite counts are retained from the preceding revision.

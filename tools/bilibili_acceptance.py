@@ -13,7 +13,7 @@ URL = 'https://www.bilibili.com/video/BV1WqYV6cEwq/'
 STATE = {'aid': 123, 'cid': 456, 'bvid': 'BV1WqYV6cEwq', 'videoData': {
     'aid': 123, 'cid': 456, 'bvid': 'BV1WqYV6cEwq', 'pages': [{'page': 1, 'cid': 456}, {'page': 2, 'cid': 789}]}}
 CASES = ['active', 'localized', 'missing_state', 'blob_swap', 'part_two', 'stale_state', 'wrong_cid',
-         'legacy', 'empty', 'session', 'malformed_track', 'menu_off', 'menu_on', 'menu_failure', 'menu_no_items', 'navigate_pending', 'part_switch']
+         'legacy', 'legacy_observed', 'empty', 'session', 'malformed_track', 'menu_off', 'menu_on', 'menu_failure', 'menu_no_items', 'navigate_pending', 'part_switch']
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
                     if name == 'session':
                         route.fulfill(json={'code': -101})
                         return
-                    tracks = [] if name in ['empty', 'menu_off', 'menu_on', 'menu_failure', 'menu_no_items'] else [
+                    tracks = [] if name in ['empty', 'menu_off', 'menu_on', 'menu_failure', 'menu_no_items'] or (name == 'legacy_observed' and '/wbi/' in parsed.path) else [
                         {'subtitle_url': f'https://i.hdslb.com/bfs/subtitle/{cid}.json', 'lan': 'ai-en', 'type': 1}]
                     if name == 'malformed_track':
                         tracks = [{'lan': 'en'}, {'subtitle_url': '', 'lan': 'en'}]
@@ -84,6 +84,8 @@ def main():
                 '''
                 if name in ['blob_swap', 'wrong_cid']:
                     script += 'fetch("https://api.bilibili.com/x/player/wbi/v2?aid=123&cid=' + ('999' if name == 'wrong_cid' else '456') + '").then(r=>r.json());'
+                if name == 'legacy_observed':
+                    script += 'fetch("https://api.bilibili.com/x/player/v2?aid=123&cid=456").then(r=>r.json());'
                 if name == 'blob_swap':
                     script += 'setTimeout(()=>{video.src=URL.createObjectURL(new Blob(["fixture"],{type:"video/mp4"}))},400);'
                 menu = ''
@@ -140,7 +142,7 @@ def main():
                         break
                     page.wait_for_timeout(100)
                 text = panel('function(){return this.querySelector("#state").textContent}')
-                failed = name in ['empty', 'session', 'malformed_track', 'menu_failure', 'menu_no_items', 'navigate_pending']
+                failed = name in ['legacy', 'legacy_observed', 'empty', 'session', 'malformed_track', 'menu_failure', 'menu_no_items', 'navigate_pending']
                 if failed:
                     assert len(jobs) == before, (name, text, jobs[before:])
                     if name != 'navigate_pending':

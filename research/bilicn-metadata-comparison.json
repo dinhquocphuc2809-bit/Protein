@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-04T16:29:10.746514+00:00",
+  "scope": "Read-only live comparison in a new authorized browser tab; no subtitle text, cookies or resource URLs stored",
+  "video": "BV1q1Puz7EUN",
+  "responses": [
+    {
+      "endpoint": "/x/player/wbi/v2",
+      "status": 200,
+      "code": 0,
+      "aid": 116154471290648,
+      "cid": 36380279786,
+      "bvid": "BV1q1Puz7EUN",
+      "needLogin": false,
+      "subtitles": []
+    },
+    {
+      "endpoint": "/x/player/wbi/v2",
+      "status": 200,
+      "code": 0,
+      "aid": 116154471290648,
+      "cid": 36380279786,
+      "bvid": "BV1q1Puz7EUN",
+      "needLogin": false,
+      "subtitles": []
+    },
+    {
+      "endpoint": "/x/player/wbi/v2",
+      "status": 200,
+      "code": 0,
+      "aid": 116154471290648,
+      "cid": 36380279786,
+      "bvid": "BV1q1Puz7EUN",
+      "needLogin": false,
+      "subtitles": []
+    },
+    {
+      "endpoint": "/x/player/v2",
+      "status": 200,
+      "code": 0,
+      "aid": 116154471290648,
+      "cid": 36380279786,
+      "bvid": "BV1q1Puz7EUN",
+      "needLogin": false,
+      "subtitles": [
+        {
+          "id": "1599965963908904192",
+          "lan": "ai-zh",
+          "type": 1,
+          "urlPresent": true
+        }
+      ]
+    },
+    {
+      "endpoint": "/x/player/v2",
+      "status": 200,
+      "code": 0,
+      "aid": 116154471290648,
+      "cid": 36380279786,
+      "bvid": "BV1q1Puz7EUN",
+      "needLogin": false,
+      "subtitles": [
+        {
+          "id": "1610829317703712512",
+          "lan": "zh-Hans",
+          "type": 0,
+          "urlPresent": true
+        },
+        {
+          "id": "1609649368040747776",
+          "lan": "ai-zh",
+          "type": 1,
+          "urlPresent": true
+        }
+      ]
+    },
+    {
+      "endpoint": "/x/player/v2",
+      "status": 200,
+      "code": 0,
+      "aid": 116154471290648,
+      "cid": 36380279786,
+      "bvid": "BV1q1Puz7EUN",
+      "needLogin": false,
+      "subtitles": []
+    }
+  ]
+}
