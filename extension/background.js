@@ -239,6 +239,7 @@ async function siteCaptions(message, sender) {
       "lib/sites.js",
       "lib/media.js",
       "lib/subtitle-formats.js",
+      "lib/bilibili.js",
       "multisite-main.js",
     ],
   });
@@ -258,7 +259,17 @@ async function siteCaptions(message, sender) {
       cues: A.cues(result.cues),
       language: VeloaMedia.language(result.language),
     };
-  return { state: result?.state === "failed" ? "failed" : "unknown" };
+  return {
+    state: result?.state === "failed" ? "failed" : "unknown",
+    diagnostic: [
+      "bili_empty",
+      "bili_session",
+      "bili_metadata",
+      "bili_identity",
+    ].includes(result?.diagnostic)
+      ? result.diagnostic
+      : "",
+  };
 }
 
 async function handle(message, sender) {
@@ -337,7 +348,7 @@ async function handle(message, sender) {
     const result =
       message.type === "pollAudio"
         ? await voiceTransport.poll(message.id)
-      : await voiceTransport.cancel(message.id);
+        : await voiceTransport.cancel(message.id);
     if (
       message.type === "pollAudio" &&
       result.state === "done" &&

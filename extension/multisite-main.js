@@ -65,9 +65,29 @@
       return null;
     }
     if (url.protocol !== "https:") return null;
+    if (
+      M.rules(location.href).some((r) => r.site === "bili") &&
+      url.hostname === "api.bilibili.com" &&
+      /^\/x\/player\/(?:wbi\/)?v2$/.test(url.pathname)
+    )
+      return {
+        kind: "metadata",
+        bili: true,
+        api: {
+          path: "$.data.subtitle.subtitles",
+          urlField: "subtitle_url",
+          language: "lan",
+          label: "lan_doc",
+        },
+      };
     for (const rule of M.rules(location.href)) {
       const api = rule.api;
-      if (!api || (api.exclude && M.matches(api.exclude, url.href))) continue;
+      if (
+        rule.site === "bili" ||
+        !api ||
+        (api.exclude && M.matches(api.exclude, url.href))
+      )
+        continue;
       if (
         api.match === "pattern"
           ? M.matches(api.url, url.href)
@@ -116,8 +136,13 @@
     if (!same(token, identity(), true) || text.length > F.MAX_BYTES) return;
     try {
       if (type.kind === "metadata") {
+        const data = JSON.parse(text);
+        if (type.bili && data.code !== undefined && data.code !== 0) return;
         metadata.set(url, {
-          tracks: tracks(JSON.parse(text), type.api, url),
+          tracks: type.bili
+            ? VocalmBilibili.tracks(data.data?.subtitle?.subtitles, url)
+            : tracks(data, type.api, url),
+          owner: type.bili ? VocalmBilibili.owner(data, url) : null,
           token,
           at: Date.now(),
         });
@@ -211,7 +236,7 @@
       }
     };
   }
-  async function load(url, token, budget) {
+  async function load(url, token, budget, session = false) {
     if (!same(token, identity()))
       throw new Error("Video changed while reading subtitles");
     const cached = resources.get(url);
@@ -223,15 +248,15 @@
     let response;
     try {
       response = await nativeFetch(address, {
-        credentials: sameOrigin ? "include" : "omit",
+        credentials: sameOrigin || session ? "include" : "omit",
         signal: AbortSignal.timeout(
           Math.min(8000, Math.max(1, budget.deadline - Date.now())),
         ),
       });
-      if (!sameOrigin && [401, 403].includes(response.status))
+      if (!sameOrigin && !session && [401, 403].includes(response.status))
         throw new Error("Subtitle requires browser session");
     } catch (reason) {
-      if (sameOrigin || Date.now() > budget.deadline) throw reason;
+      if (sameOrigin || session || Date.now() > budget.deadline) throw reason;
       response = await nativeFetch(address, {
         credentials: "include",
         signal: AbortSignal.timeout(5000),
@@ -402,17 +427,6 @@
           default: Boolean(t.default),
         });
     }
-    if (rules.some((r) => r.site === "bili") && M.videos().length === 1) {
-      const state = window.__INITIAL_STATE__;
-      const list =
-        state?.data?.subtitle?.subtitles || state?.subtitle?.subtitles;
-      if (Array.isArray(list))
-        for (const t of list.slice(0, 100))
-          result.push({
-            url: F.safeUrl(t.subtitle_url, location.href),
-            language: t.lan || "auto",
-          });
-    }
     return result;
   }
   async function acquire(expected) {
@@ -432,6 +446,14 @@
       )
         return { state: "unknown", reason: "Video changed" };
       const budget = { requests: 0, bytes: 0, deadline: Date.now() + 45000 };
+      const check = () => {
+        if (!same(token, identity()))
+          throw new Error("Video changed while reading subtitles");
+      };
+      const bili =
+        M.rules(location.href).some((r) => r.site === "bili") &&
+        M.videos().length === 1;
+      let diagnostic = "";
       const finish = (result) => {
         if (!same(token, identity()))
           return { state: "unknown", reason: "Video changed" };
@@ -452,6 +474,21 @@
       }
       if (native) return finish(native);
       let candidates = [...trackCandidates(video), ...sdkTracks(video)];
+      if (bili) {
+        try {
+          const discovered = await VocalmBilibili.discover({
+            read: (url, session) => load(url, token, budget, session),
+            check,
+            observed: () =>
+              [...metadata.values()].filter((r) => same(r.token, token, true)),
+          });
+          candidates.push(...discovered.tracks);
+          diagnostic = discovered.diagnostic || "";
+        } catch (e) {
+          failure = e.message;
+          diagnostic = "bili_metadata";
+        }
+      }
       try {
         candidates.push(...(await special(video, token, budget)));
       } catch (e) {
@@ -460,7 +497,8 @@
       // API/network resources have no DOM owner. Only accept them in an unambiguous frame.
       if (M.videos().length === 1) {
         for (const row of metadata.values())
-          if (same(row.token, token, true)) candidates.push(...row.tracks);
+          if (!row.owner && same(row.token, token, true))
+            candidates.push(...row.tracks);
         prune();
         const rows = [...resources.values()].filter((r) =>
           same(r.token, token, true),
@@ -522,10 +560,28 @@
           failure = e.message;
         }
       }
+      if (bili) {
+        try {
+          check();
+          const candidate = await VocalmBilibili.menuTrack(video, {
+            check,
+            resources: () =>
+              [...resources.values()].filter((r) => same(r.token, token, true)),
+          });
+          if (candidate)
+            return finish({
+              cues: F.parse(await load(candidate.url, token, budget)),
+              language: candidate.language,
+            });
+        } catch (e) {
+          failure = e.message;
+        }
+      }
       return {
         state:
           candidates.length || video.textTracks.length ? "failed" : "unknown",
         reason: failure || "No complete subtitle track discovered",
+        diagnostic,
         href: token.href,
         src: token.src,
       };

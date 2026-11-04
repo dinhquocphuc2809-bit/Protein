@@ -36,22 +36,37 @@
     }
   }
   let cachedUrl, cachedRegistry, cachedRules;
+  function siteUrl(value) {
+    let url;
+    try {
+      url = new URL(value);
+    } catch {
+      return String(value || "");
+    }
+    if (/(^|\.)bilibili\.com$/.test(url.hostname))
+      url.pathname = url.pathname.replace(
+        /^\/[a-z]{2}(?:-[a-z]{2,4})?\/(?=(?:video|bangumi|cheese|list|medialist|festival)\/)/i,
+        "/",
+      );
+    return url.href;
+  }
   function rules(url) {
     if (cachedUrl !== url || cachedRegistry !== root.VeloaSites) {
       cachedUrl = url;
       cachedRegistry = root.VeloaSites;
+      const matchedUrl = siteUrl(url);
       cachedRules = (root.VeloaSites || []).filter(
         (r) =>
           r.site !== "common" &&
-          matches(r.domain, url) &&
-          r.pages.some((p) => matches(p, url)),
+          matches(r.domain, matchedUrl) &&
+          r.pages.some((p) => matches(p, matchedUrl)),
       );
     }
     return cachedRules;
   }
   function query(selector, scope = document) {
     const found = [],
-      stack = [scope];
+      stack = scope.shadowRoot ? [scope, scope.shadowRoot] : [scope];
     let count = 0;
     while (stack.length && count++ < 256) {
       const current = stack.shift();
@@ -96,6 +111,9 @@
       });
   }
   function source(video) {
+    if (!video) return "";
+    const bili = biliRoute(location.href);
+    if (bili) return "bili:" + bili.key;
     // Stable lesson IDs survive a player's initial URL -> MediaSource blob swap.
     const stable =
       video?.getAttribute("data-video-id") || video?.getAttribute("data-id");
@@ -106,6 +124,75 @@
       video?.querySelector("source")?.src ||
       ""
     );
+  }
+  function biliRoute(value) {
+    try {
+      const url = new URL(siteUrl(value));
+      if (!/(^|\.)bilibili\.com$/.test(url.hostname)) return null;
+      const path = url.pathname.match(/^\/video\/(BV[\w]+|av\d+)/i);
+      const bvid = path?.[1]?.startsWith("BV")
+        ? path[1]
+        : url.searchParams.get("bvid");
+      const aid =
+        path?.[1]?.match(/^av(\d+)$/i)?.[1] || url.searchParams.get("aid");
+      const episode = url.pathname.match(
+        /^\/(?:bangumi|cheese)\/play\/ep(\d+)/,
+      )?.[1];
+      const page = Number(
+        url.searchParams.get("p") || url.searchParams.get("page") || 1,
+      );
+      if (!Number.isSafeInteger(page) || page < 1 || page > 10000) return null;
+      if (
+        !/^BV\w{3,}$/.test(bvid || "") &&
+        !/^[1-9]\d*$/.test(aid || "") &&
+        !episode
+      )
+        return null;
+      const cid = url.searchParams.get("cid");
+      return {
+        bvid: /^BV\w{3,}$/.test(bvid || "") ? bvid : null,
+        aid: /^[1-9]\d*$/.test(aid || "") ? aid : null,
+        episode,
+        page,
+        cid: /^[1-9]\d*$/.test(cid || "") ? cid : null,
+        key: `${episode ? "ep" + episode : bvid || "av" + aid}:${page}:${cid || ""}`,
+      };
+    } catch {
+      return null;
+    }
+  }
+  function controls(video) {
+    if (!video) return null;
+    const selectors = rules(location.href)
+      .map((r) => r.controls)
+      .filter(Boolean);
+    selectors.push(
+      "media-control-bar",
+      ".vjs-control-bar",
+      ".jw-button-container",
+      ".shaka-controls-button-panel",
+    );
+    if (youtubeId(location.href))
+      selectors.unshift("#movie_player .ytp-right-controls");
+    // Walk outward from the selected video, never attach to another player's controls.
+    let scope = video.parentElement || video.getRootNode();
+    while (scope && scope !== document) {
+      for (const selector of selectors) {
+        try {
+          const matches = [...scope.querySelectorAll(selector)];
+          if (
+            matches.length === 1 &&
+            query("video", matches[0]).length === 0 &&
+            query("video", scope).length === 1
+          )
+            return matches[0];
+        } catch {
+          /* A changed site selector leaves the floating launcher available. */
+        }
+      }
+      scope = scope.parentElement || scope.host || null;
+    }
+    return null;
   }
   function youtubeId(value) {
     try {
@@ -135,6 +222,8 @@
     query,
     videos,
     source,
+    biliRoute,
+    controls,
     youtubeId,
     language,
   };

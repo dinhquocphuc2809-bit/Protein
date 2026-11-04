@@ -330,6 +330,30 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 - Reference asset redistribution license is unverified; assets remain local/ignored.
 - Name search found no exact store match at research time, not a trademark guarantee.
 
+## Active revision: Bilibili and native player integration (2026-11-04)
+
+- [x] Re-read the reference Bilibili metadata, route resolver and CC fallback.
+- [x] Reproduce empty acquisition on the supplied live video in an anonymous test browser.
+- [x] Implement active, session-local UGC metadata acquisition with per-part identity and bounded fallback.
+- [x] Mount Vocalm controls using reference routing selectors and selected-player ownership.
+- [x] Test late metadata, blob swaps, part changes, stale responses, CC restoration and failures.
+- [x] Rebuild local Chrome/Firefox 0.6.0 packages with 84 voices/8 BGM and record evidence.
+- [ ] Publish source and verify remote CI.
+- Live discovery found Bilibili redirects to `/en/video/...`, which the previous
+  matcher missed. Locale-aware routing now activates the adapter and mounts the
+  button on the actual sample. Anonymous acquisition returns `bili_session`;
+  do not claim the owner's authenticated subtitle extraction has passed.
+- Passed: 47 JavaScript/58 Python tests, 17 Bilibili fixtures, 19 multisite caption
+  fixtures, 11 native-control layouts, 12 YouTube caption fixtures, progressive
+  playback/UI regressions, Firefox 159 DOM/open-shadow captions; secret scan.
+- Evidence/limits: `docs/MULTISITE_REVISION.md`, `research/bilibili-live.json`,
+  `research/bilibili-acceptance.json`, `research/player-mount-acceptance.json`.
+- PGC/PUGV-specific API parity and individual live certification for all 159
+  routes remain incomplete. Shared fallback remains available without silent ASR.
+- Computer Use is unavailable. This does not block source work or isolated regression
+  testing. The owner's authenticated Bilibili session remains unverified; anonymous
+  empty subtitle metadata does not prove that no subtitle track exists.
+
 ## Resume details
 
 - Architecture: `docs/ARCHITECTURE.md`; source analysis: `docs/REFERENCE_ANALYSIS.md`.

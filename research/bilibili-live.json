@@ -1,0 +1,38 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.bilibili.com/video/BV1WqYV6cEwq/",
+      "http_status": 200,
+      "frames": [
+        {
+          "diagnostic": "bili_session",
+          "engine": "multisite",
+          "host": "www.bilibili.com",
+          "path": "/en/video/BV1WqYV6cEwq/",
+          "playerButton": true,
+          "reason": "No complete subtitle track discovered",
+          "rules": [
+            "bili"
+          ],
+          "state": "unknown",
+          "trackCount": 0,
+          "videos": [
+            {
+              "height": 550,
+              "parent": "bpx-player-video-wrap",
+              "width": 978
+            }
+          ]
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    }
+  ]
+}

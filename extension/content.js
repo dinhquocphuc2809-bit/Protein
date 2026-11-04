@@ -220,10 +220,21 @@
     if (result?.cues) return result;
     asrAvailable = true;
     $("use-asr").hidden = false;
+    const diagnostic = {
+      bili_empty:
+        "Bilibili chưa cung cấp đường phụ đề cho phiên xem này. Kiểm tra menu CC; chữ được ghép vào hình video không phải tệp phụ đề. Có thể nhập SRT hoặc chủ động chọn ASR.",
+      bili_session:
+        "Bilibili yêu cầu phiên đăng nhập có quyền xem phụ đề. Kiểm tra đăng nhập và menu CC, rồi thử lại; hoặc nhập SRT/chọn ASR.",
+      bili_metadata:
+        "Chưa đọc được metadata phụ đề từ Bilibili. Thử lại sau khi trang tải xong, hoặc nhập SRT/chọn ASR.",
+      bili_identity:
+        "Chưa xác định được đúng phần video Bilibili. Đợi trình phát tải xong rồi thử lại, hoặc nhập SRT/chọn ASR.",
+    }[result?.diagnostic];
     throw new Error(
-      result?.state === "failed"
-        ? "Đã thấy phụ đề nhưng chưa đọc được đầy đủ. Bật CC và thử lại, nhập SRT, hoặc chủ động chọn ASR."
-        : "Chưa xác minh được phụ đề trên trang này. Bật CC và thử lại, nhập SRT, hoặc chọn ASR nếu cần.",
+      diagnostic ||
+        (result?.state === "failed"
+          ? "Đã thấy phụ đề nhưng chưa đọc được đầy đủ. Bật CC và thử lại, nhập SRT, hoặc chủ động chọn ASR."
+          : "Chưa xác minh được phụ đề trên trang này. Bật CC và thử lại, nhập SRT, hoặc chọn ASR nếu cần."),
     );
   }
   async function waitJob(job, epoch) {

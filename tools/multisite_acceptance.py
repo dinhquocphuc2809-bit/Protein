@@ -63,7 +63,7 @@ def main():
                     route.fulfill(json={'asset': {'captions': [{'url': '/full.vtt', 'locale_id': 'en_US'}]}})
                     return
                 if '/x/player/wbi/v2?' in url:
-                    route.fulfill(json={'data': {'subtitle': {'subtitles': [{'subtitle_url': 'https://i.hdslb.com/bfs/subtitle/test.json', 'lan': 'en'}]}}})
+                    route.fulfill(json={'code': 0, 'data': {'aid': 123, 'cid': 456, 'subtitle': {'subtitles': [{'subtitle_url': 'https://i.hdslb.com/bfs/subtitle/test.json', 'lan': 'en'}]}}})
                     return
                 if '/bfs/subtitle/' in url:
                     route.fulfill(json={'body': [{'from': 1, 'to': 3, 'content': 'Existing captions.'}, {'from': 4, 'to': 6, 'content': 'Keep original timing.'}]})
@@ -101,7 +101,7 @@ def main():
                 if name == 'metadata_xhr':
                     script += 'const x=new XMLHttpRequest();x.open("GET","/api-2.0/users/me/subscribed-courses/1/lectures/123");x.responseType="json";x.send();'
                 if name == 'bili':
-                    script += 'fetch("/x/player/wbi/v2?bvid=BVtest").then(r=>r.json());'
+                    script += 'window.__INITIAL_STATE__={bvid:"BVtest",aid:123,cid:456};fetch("https://api.bilibili.com/x/player/wbi/v2?aid=123&cid=456").then(r=>r.json());'
                 if name == 'kinescope':
                     script += 'window.onKinescopePlayerCreated?.({getPlaylistItem:async()=>({vtt:[{src:"/full.vtt",srcLang:"en"}]})});'
                 if name == 'jwplayer':

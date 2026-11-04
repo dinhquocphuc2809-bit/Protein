@@ -67,8 +67,8 @@ Full lesson patterns and selectors: research/multisite-inventory.json.
 | maven | *://maven.com/* | mux | Shared DOM/open-shadow/SDK/HLS reader | Not individually live verified |
 | mux | *://whop.com/* | mux | Shared DOM/open-shadow/SDK/HLS reader | Not individually live verified |
 | crusherfiremedia_mux | *://www.crusherfiremedia.com/mux-embed* | mux | Shared DOM/open-shadow/SDK/HLS reader | Not individually live verified |
-| bili | *://*.bilibili.com/* | bili | Configured metadata schema + shared subtitle readers | Not individually live verified |
-| bili | *://www.bilibili.com/* | bili | Configured metadata schema + shared subtitle readers | Not individually live verified |
+| bili | *://*.bilibili.com/* | bili | UGC aid/cid metadata + epInfo + shared/CC fallback; PGC/PUGV APIs incomplete | UGC /en/video sample: native button; anonymous captions require session; other routes unverified |
+| bili | *://www.bilibili.com/* | bili | UGC aid/cid metadata + epInfo + shared/CC fallback; PGC/PUGV APIs incomplete | UGC /en/video sample: native button; anonymous captions require session; other routes unverified |
 | udemy | *://*.udemy.*/* | udemy | Configured metadata schema + shared subtitle readers | Not individually live verified |
 | leadconnector_course | *://*.rapid-flow.shop/* | universal | Shared native tracks/HLS only; bespoke API not implemented | Not individually live verified |
 | clientclub | *://*.app.clientclub.net/* | universal | Shared native tracks/HLS only; bespoke API not implemented | Not individually live verified |

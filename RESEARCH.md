@@ -4,6 +4,34 @@ Updated: 2026-11-04. Separate observed evidence, interpretation and unverified c
 
 ## Local observations
 
+### Bilibili and native player integration (2026-11-04, Vocalm 0.6.0)
+
+Detailed source comparison, plan and evidence: `docs/MULTISITE_REVISION.md`.
+Reference catalog: 159 routes, 158 string player-control selectors. The reference
+Bilibili service actively fetches authenticated aid/cid metadata and has a
+CC-selection/resource-discovery fallback with restoration; Vocalm previously
+had only passive interception and incomplete initial-state lookup.
+
+Live root cause: the supplied Bilibili URL redirects to `/en/video/...` in the
+isolated browser. The old route matcher and reference catalog omit this prefix.
+Before correction: no Bilibili rule or native button. After correction: Bilibili
+rule selected, native button mounted, `bili_session` from anonymous acquisition.
+This does not verify the owner's authenticated captions. Evidence:
+`research/bilibili-live.json`, `research/bilibili-acceptance.json` and
+`research/player-mount-acceptance.json`. Only test-only cookies are used in fixtures.
+
+Official browser references fetched on 2026-11-04 (HTTP 200):
+- https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts
+  (page/isolated execution contexts; keep page session work in MAIN).
+- https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials
+  (`include` sends browser credentials even across origins; it does not bypass CORS).
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot
+  (open shadow roots can be traversed; closed roots return null).
+Retrieval ledger: `research/multisite-revision-sources.json`.
+Bilibili endpoints are internal web-player APIs observed in the supplied reference
+and real requests, not a stable public API contract. PGC/PUGV-specific API parity,
+closed-shadow players and each of the 159 individual live routes remain unverified.
+
 ### Voice picker catalog audit (2026-11-04)
 
 Neko `background.js` version-2 catalog explicitly marks six male voices (Dang Khoa,

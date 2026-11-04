@@ -135,6 +135,10 @@ const minimal = unique.map((r) => {
     domain: r.domain,
     pages: r.dubbingPages.filter((p) => typeof p === "string"),
     selector: typeof r.mediaSelector === "string" ? r.mediaSelector : "video",
+    controls:
+      typeof r.playBtnContainerSelector === "string"
+        ? r.playBtnContainerSelector
+        : null,
     family: r.subtitleFetchMethod,
   };
   const config = r.apiInterceptConfig,
@@ -176,6 +180,9 @@ const coverage = minimal.map((r) => {
     "Shared native tracks/HLS only; bespoke API not implemented";
   if (r.family === "youtube")
     implementation = "Dedicated YouTube player/timedtext/transcript";
+  else if (r.site === "bili")
+    implementation =
+      "UGC aid/cid metadata + epInfo + shared/CC fallback; PGC/PUGV APIs incomplete";
   else if (r.api)
     implementation = "Configured metadata schema + shared subtitle readers";
   else if (r.family === "kinescope")
@@ -191,6 +198,8 @@ const coverage = minimal.map((r) => {
   const live =
     r.site === "apple_developer"
       ? "360 cues acquired on one live sample"
+      : r.site === "bili"
+        ? "UGC /en/video sample: native button; anonymous captions require session; other routes unverified"
       : r.site === "ahrefs_wistia"
         ? "Live page uses YouTube embed; captions unknown"
         : "Not individually live verified";

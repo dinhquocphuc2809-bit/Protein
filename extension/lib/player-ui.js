@@ -167,18 +167,15 @@
     }
     mount(video) {
       this.video = video;
-      const controls = document.querySelector(
-        "#movie_player .ytp-right-controls",
-      );
-      if (controls && globalThis.VeloaMedia.youtubeId(location.href)) {
+      const controls = globalThis.VeloaMedia.controls(video);
+      const youtube = Boolean(globalThis.VeloaMedia.youtubeId(location.href));
+      if (controls) {
         if (!this.button) {
           this.button = document.createElement("button");
-          this.button.className = "ytp-button vocalm-player-button";
+          this.button.type = "button";
           this.button.title = "Vocalm · Giọng đọc & phụ đề";
           this.button.setAttribute("aria-label", this.button.title);
           this.button.setAttribute("aria-haspopup", "dialog");
-          this.button.style.cssText =
-            "width:44px;height:100%;display:inline-grid;place-items:center;vertical-align:top";
           const img = document.createElement("img");
           img.src = api.runtime.getURL("icons/icon-48.png");
           img.alt = "";
@@ -190,6 +187,11 @@
             this.toggle(this.menu.hidden);
           };
         }
+        this.button.className =
+          (youtube ? "ytp-button " : "") + "vocalm-player-button";
+        this.button.style.cssText = youtube
+          ? "width:44px;height:100%;display:inline-grid;place-items:center;vertical-align:top"
+          : "appearance:none;box-sizing:border-box;flex:0 0 36px;width:36px;height:32px;min-width:36px;display:inline-grid;place-items:center;align-self:center;vertical-align:middle;padding:0;margin:0 4px;border:0;border-radius:8px;background:transparent;cursor:pointer;line-height:1";
         if (this.button.parentElement !== controls)
           controls.prepend(this.button);
       } else this.button?.remove();

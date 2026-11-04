@@ -1,0 +1,108 @@
+{
+  "scope": "Actual Chrome MV3 with explicitly routed Bilibili fixtures, not live Bilibili certification",
+  "checks": [
+    {
+      "case": "active",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 1
+    },
+    {
+      "case": "localized",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 1
+    },
+    {
+      "case": "missing_state",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 2
+    },
+    {
+      "case": "blob_swap",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 0
+    },
+    {
+      "case": "part_two",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 1
+    },
+    {
+      "case": "stale_state",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 2
+    },
+    {
+      "case": "wrong_cid",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 1
+    },
+    {
+      "case": "legacy",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 2
+    },
+    {
+      "case": "empty",
+      "passed": true,
+      "job_with_cues": false,
+      "metadata_requests": 2
+    },
+    {
+      "case": "session",
+      "passed": true,
+      "job_with_cues": false,
+      "metadata_requests": 2
+    },
+    {
+      "case": "malformed_track",
+      "passed": true,
+      "job_with_cues": false,
+      "metadata_requests": 2
+    },
+    {
+      "case": "menu_off",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 2
+    },
+    {
+      "case": "menu_on",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 2
+    },
+    {
+      "case": "menu_failure",
+      "passed": true,
+      "job_with_cues": false,
+      "metadata_requests": 2
+    },
+    {
+      "case": "menu_no_items",
+      "passed": true,
+      "job_with_cues": false,
+      "metadata_requests": 2
+    },
+    {
+      "case": "navigate_pending",
+      "passed": true,
+      "job_with_cues": false,
+      "metadata_requests": 1
+    },
+    {
+      "case": "part_switch",
+      "passed": true,
+      "job_with_cues": true,
+      "metadata_requests": 1
+    }
+  ],
+  "passed": true
+}

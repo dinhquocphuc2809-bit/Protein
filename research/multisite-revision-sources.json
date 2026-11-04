@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts",
+    "status": 200,
+    "read_bytes": 205137,
+    "mentions": {
+      "isolated": true,
+      "include": true,
+      "same-origin": false,
+      "open": true,
+      "null": true
+    }
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials",
+    "status": 200,
+    "read_bytes": 152981,
+    "mentions": {
+      "isolated": false,
+      "include": true,
+      "same-origin": true,
+      "open": true,
+      "null": false
+    }
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot",
+    "status": 200,
+    "read_bytes": 173651,
+    "mentions": {
+      "isolated": false,
+      "include": true,
+      "same-origin": false,
+      "open": true,
+      "null": true
+    }
+  }
+]

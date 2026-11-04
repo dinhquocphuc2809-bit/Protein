@@ -2,6 +2,28 @@
   "scope": "Public live pages; acquisition only; no backend or GPU requests",
   "pages": [
     {
+      "url": "https://www.bilibili.com/video/BV1WqYV6cEwq/",
+      "http_status": 200,
+      "frames": [
+        {
+          "diagnostic": "",
+          "engine": "multisite",
+          "host": "www.bilibili.com",
+          "playerButton": false,
+          "reason": "No complete subtitle track discovered",
+          "state": "unknown",
+          "trackCount": 0
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    },
+    {
       "url": "https://developer.apple.com/videos/play/wwdc2024/10140/",
       "http_status": 200,
       "frames": [
@@ -12,6 +34,7 @@
           "host": "developer.apple.com",
           "language": "en",
           "last": 1241.297,
+          "playerButton": false,
           "state": "ready",
           "trackCount": 5
         }
@@ -26,13 +49,14 @@
           "state": "no-player"
         },
         {
-          "engine": "youtube",
-          "host": "www.youtube-nocookie.com",
-          "state": "unknown",
-          "trackCount": 0
+          "state": "no-player"
         },
         {
-          "state": "no-player"
+          "engine": "youtube",
+          "host": "www.youtube-nocookie.com",
+          "playerButton": false,
+          "state": "unknown",
+          "trackCount": 0
         }
       ],
       "acquired": false
@@ -48,6 +72,7 @@
           "host": "iandevlin.github.io",
           "language": "en",
           "last": 119.5,
+          "playerButton": false,
           "state": "ready",
           "trackCount": 3
         }

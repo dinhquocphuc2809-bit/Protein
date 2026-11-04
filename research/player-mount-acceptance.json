@@ -1,0 +1,17 @@
+{
+  "scope": "Actual Chromium MV3; labelled control layouts, not live site certification",
+  "checks": [
+    "bili: owned native control, quick menu and remount",
+    "bili_legacy: owned native control, quick menu and remount",
+    "coursera: owned native control, quick menu and remount",
+    "vimeo: owned native control, quick menu and remount",
+    "videojs: owned native control, quick menu and remount",
+    "jwplayer: owned native control, quick menu and remount",
+    "shaka: owned native control, quick menu and remount",
+    "udemy: owned native control, quick menu and remount",
+    "mux_shadow: owned native control, quick menu and remount",
+    "mux_unslotted: floating launcher retained; no hidden unslotted button",
+    "two_players: owned native control, quick menu and remount"
+  ],
+  "passed": true
+}

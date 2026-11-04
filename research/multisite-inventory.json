@@ -9,6 +9,7 @@
         "*://*.youtube.com/embed/*"
       ],
       "selector": "video",
+      "controls": ".ytp-right-controls, .player-controls-bottom-right",
       "family": "youtube"
     },
     {
@@ -18,6 +19,7 @@
         "*://*.youtube-nocookie.com/embed/*"
       ],
       "selector": "video",
+      "controls": ".ytp-right-controls, .player-controls-bottom-right",
       "family": "youtube"
     },
     {
@@ -27,6 +29,7 @@
         "*://youtube.googleapis.com/embed/*"
       ],
       "selector": "video",
+      "controls": "section[role='tabpanel']",
       "family": "google_drive_youtube"
     },
     {
@@ -38,6 +41,7 @@
         "*://*.youtube.com/live/*"
       ],
       "selector": "video.video-stream.html5-main-video",
+      "controls": ".ytp-right-controls",
       "family": "youtube"
     },
     {
@@ -48,6 +52,7 @@
         "*://egghead.io/*~*"
       ],
       "selector": "mux-player",
+      "controls": "mux-player",
       "family": "egghead"
     },
     {
@@ -57,6 +62,7 @@
         "*://*.thoughtindustries.com/learn/video/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -66,6 +72,7 @@
         "*://learn.getdbt.com/learn/video/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -75,6 +82,7 @@
         "*://learn.getdbt.com/learn/course/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -84,6 +92,7 @@
         "*://academy.tricentis.com/learn/video/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -93,6 +102,7 @@
         "*://learn.educate360.com/learn/video/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -102,6 +112,7 @@
         "*://courses.ardanlabs.com/api/course_player/v2/contents/*/play/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -111,6 +122,7 @@
         "*://*/api/course_player/v2/contents/*/play/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -120,6 +132,7 @@
         "*://ahrefs.com/academy/*/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -130,6 +143,7 @@
         "*://*.comsol.*/video/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -139,6 +153,7 @@
         "*://www.rti.com/gettingstarted*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -149,6 +164,7 @@
         "*://psychwire.com/free-resources/expert-insights/resource-*/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -158,6 +174,7 @@
         "*://fast.wistia.net/embed/iframe/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -167,6 +184,7 @@
         "*://fast.wistia.net/embed/iframe/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -176,6 +194,7 @@
         "*://fast.wistia.net/embed/iframe/*"
       ],
       "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "wistia"
     },
     {
@@ -187,6 +206,7 @@
         "*://*/products/*/categories/*/posts/*"
       ],
       "selector": "video, audio",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "kajabi"
     },
     {
@@ -196,6 +216,7 @@
         "*://www.unrealmasterclass.com/*"
       ],
       "selector": "video, audio",
+      "controls": "video, audio",
       "family": "domTrack"
     },
     {
@@ -206,6 +227,7 @@
         "*://www.sheridanriskmanagement.com/path-player*"
       ],
       "selector": "video, audio",
+      "controls": "video, audio",
       "family": "domTrack"
     },
     {
@@ -216,6 +238,7 @@
         "*://www.domestika.org/*/courses/*/units/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "domestika"
     },
     {
@@ -225,6 +248,7 @@
         "*://home.mindvalley.com/quests/*"
       ],
       "selector": "video[id^='mv-video-item-'], [id^='mv-video-item-'] video.vjs-tech",
+      "controls": ".video-js[id^='mv-video-item-'] .vjs-control-bar, [id^='mv-video-item-'] .vjs-control-bar",
       "family": "mindvalley"
     },
     {
@@ -234,6 +258,7 @@
         "*://*.hubspotvideo.com/v/*/id/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "commonVtt"
     },
     {
@@ -243,6 +268,7 @@
         "*://academy.zenva.com/lesson/*"
       ],
       "selector": "#zva_video video.vjs-tech, video#zva_video_html5_api, video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "commonVtt"
     },
     {
@@ -252,6 +278,7 @@
         "*://www.nma.art/videolessons/*"
       ],
       "selector": "#nma-player-container video.vjs-tech, .video-js video.vjs-tech, video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "commonM3u8"
     },
     {
@@ -261,6 +288,7 @@
         "*://projector.datacamp.com/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "datacamp"
     },
     {
@@ -270,6 +298,7 @@
         "*://app.lecturio.com/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".video-js .vjs-control-bar",
       "family": "lecturio"
     },
     {
@@ -279,6 +308,7 @@
         "*://platzi.com/cursos/*/*"
       ],
       "selector": "video-js.video-js video.vjs-tech, .video-js video.vjs-tech, video.vjs-tech",
+      "controls": "video-js.video-js .vjs-control-bar, .video-js .vjs-control-bar",
       "family": "platzi"
     },
     {
@@ -288,6 +318,7 @@
         "*://v.kr.kollus.com/s*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "kollus"
     },
     {
@@ -297,6 +328,7 @@
         "*://geo.dailymotion.com/player/*"
       ],
       "selector": "video#video, video",
+      "controls": ".controls_bottom_right",
       "family": "dailymotion"
     },
     {
@@ -307,6 +339,7 @@
         "*://*.bbc.com/reel/video/*/watch"
       ],
       "selector": "smp-toucan-player",
+      "controls": "[data-testid='video-page-player']",
       "family": "bbc"
     },
     {
@@ -316,6 +349,7 @@
         "*://*.bloomberg.com/news/videos/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "bloomberg"
     },
     {
@@ -325,6 +359,7 @@
         "*://*.coindesk.com/videos/*"
       ],
       "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
       "family": "coindesk_jwplayer"
     },
     {
@@ -336,6 +371,7 @@
         "*://*.reuters.com/video/*"
       ],
       "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
       "family": "reuters_jwplayer"
     },
     {
@@ -345,6 +381,7 @@
         "*://www.streamuj.tv/video/*"
       ],
       "selector": "video.jw-video, video",
+      "controls": ".jw-controlbar-right-group",
       "family": "jwplayer"
     },
     {
@@ -354,6 +391,7 @@
         "*://kisskh.do/Drama/*/Episode-*"
       ],
       "selector": ".videoplayer video",
+      "controls": ".videoplayer .controls .menu .right",
       "family": "domTrack"
     },
     {
@@ -363,6 +401,7 @@
         "*://dramawave.dramafren.org/index.php*"
       ],
       "selector": "video#player",
+      "controls": "#video-container",
       "family": "domTrack"
     },
     {
@@ -373,6 +412,7 @@
         "*://watch.plex.tv/watch/movie/*"
       ],
       "selector": "video:not([title=\"Advertisement\"])",
+      "controls": null,
       "family": "plex"
     },
     {
@@ -382,6 +422,7 @@
         "*://*.aljazeera.com/video/*"
       ],
       "selector": "video-js.vjs-playing video.vjs-tech, video-js[data-video-id] video.vjs-tech, video.vjs-tech, video",
+      "controls": "video-js.vjs-playing .vjs-control-bar, video-js[data-video-id] .vjs-control-bar, .vjs-control-bar",
       "family": "aljazeera_brightcove"
     },
     {
@@ -391,6 +432,7 @@
         "*://mylearn.oracle.com/ou/course/*"
       ],
       "selector": "video-js[data-video-id] video.vjs-tech, .video-js[data-video-id] video.vjs-tech, video.vjs-tech, video",
+      "controls": "video-js[data-video-id] .vjs-control-bar, .video-js[data-video-id] .vjs-control-bar, .vjs-control-bar",
       "family": "oracle_mylearn_brightcove"
     },
     {
@@ -400,6 +442,7 @@
         "*://www.sonicwall.com/support/video-tutorials/*"
       ],
       "selector": "video-js[data-video-id] video.vjs-tech, .video-js[data-video-id] video.vjs-tech, video.vjs-tech",
+      "controls": "video-js[data-video-id] .vjs-control-bar, .video-js[data-video-id] .vjs-control-bar",
       "family": "sonicwall_brightcove"
     },
     {
@@ -409,6 +452,7 @@
         "*://learning.servicenow.com/lxp/*/pages/learning-course*"
       ],
       "selector": "video-js[data-video-id] video.vjs-tech, .video-js[data-video-id] video.vjs-tech, video.vjs-tech",
+      "controls": "video-js[data-video-id] .vjs-control-bar, .video-js[data-video-id] .vjs-control-bar",
       "family": "servicenow_brightcove"
     },
     {
@@ -418,6 +462,7 @@
         "*://narto-drama.com/detail/watch/*"
       ],
       "selector": "#shorts-stage > #player",
+      "controls": "#shorts-stage > #shorts-hud > .hud-bottom > .custom-controls > .custom-controls-right",
       "family": "narto"
     },
     {
@@ -427,6 +472,7 @@
         "*://kinescope.io/*"
       ],
       "selector": "[id^='player_'] video, video",
+      "controls": "[id^='player_']",
       "family": "kinescope"
     },
     {
@@ -436,6 +482,7 @@
         "*://customer-uvgt1jgt7nqod9np.cloudflarestream.com/*/iframe*"
       ],
       "selector": "stream video, video",
+      "controls": "stream",
       "family": "sketchy_cloudflare"
     },
     {
@@ -446,6 +493,7 @@
         "*://*.nbcnews.com/video/*"
       ],
       "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
       "family": "jwplayer"
     },
     {
@@ -455,6 +503,7 @@
         "*://cdn.jwplayer.com/players/*.html*"
       ],
       "selector": "video.jw-video",
+      "controls": ".jw-button-container",
       "family": "jwplayer_hosted"
     },
     {
@@ -464,6 +513,7 @@
         "*://content.jwplatform.com/players/*.html*"
       ],
       "selector": "video.jw-video",
+      "controls": ".jw-button-container",
       "family": "jwplayer_hosted"
     },
     {
@@ -473,6 +523,7 @@
         "*://*.cbsnews.com/video/*"
       ],
       "selector": "player.player--type-vod .avia-container video[id^='vpjs-container'], .avia-container video[id^='vpjs-container'], video[id^='vpjs-container']",
+      "controls": ".avia-control-group-right",
       "family": "commonM3u8"
     },
     {
@@ -482,6 +533,7 @@
         "*://*.barrons.com/video/*/*"
       ],
       "selector": "#video-player video#videoplayer-video-player, video#videoplayer-video-player",
+      "controls": "#video-controls-video-player",
       "family": "domTrack"
     },
     {
@@ -491,6 +543,7 @@
         "*://*.wsj.com/video/*/*"
       ],
       "selector": "#video-player video#videoplayer-video-player, video#videoplayer-video-player",
+      "controls": "#video-controls-video-player",
       "family": "domTrack"
     },
     {
@@ -500,6 +553,7 @@
         "*://www.aihero.dev/*"
       ],
       "selector": "mux-player",
+      "controls": "mux-player",
       "family": "mux"
     },
     {
@@ -509,6 +563,7 @@
         "*://maven.com/p/*"
       ],
       "selector": "mux-player",
+      "controls": "mux-player",
       "family": "mux"
     },
     {
@@ -520,6 +575,7 @@
         "*://maven.com/*/*/*/syllabus/modules/*/*"
       ],
       "selector": "mux-player",
+      "controls": "mux-player",
       "family": "mux"
     },
     {
@@ -529,6 +585,7 @@
         "*://maven.com/*/*"
       ],
       "selector": "mux-player",
+      "controls": "mux-player",
       "family": "mux"
     },
     {
@@ -538,6 +595,7 @@
         "*://whop.com/*"
       ],
       "selector": "mux-player",
+      "controls": "mux-player",
       "family": "mux"
     },
     {
@@ -547,6 +605,7 @@
         "*://www.crusherfiremedia.com/mux-embed*"
       ],
       "selector": "mux-player",
+      "controls": "mux-player",
       "family": "mux"
     },
     {
@@ -562,6 +621,7 @@
         "*://player.bilibili.com/player.html*"
       ],
       "selector": "video",
+      "controls": ".bpx-player-control-bottom-right",
       "family": "bili",
       "api": {
         "url": "/x/player/wbi/v2?",
@@ -580,6 +640,7 @@
         "*://www.bilibili.com/blackboard/html5player.html*"
       ],
       "selector": "video",
+      "controls": ".bilibili-player-video-control-bottom-right",
       "family": "bili",
       "api": {
         "url": "/x/player/wbi/v2?",
@@ -597,6 +658,7 @@
         "*://*.udemy.*/course/*/learn/lecture/*"
       ],
       "selector": "video",
+      "controls": "div[data-purpose=\"video-controls\"]",
       "family": "udemy",
       "api": {
         "url": "*://*.udemy.*/api-2.0/users/me/subscribed-courses/*/lectures/*",
@@ -615,6 +677,7 @@
         "*://*.rapid-flow.shop/courses/products/*/categories/*/posts/*"
       ],
       "selector": "#post-video video#plyr-video",
+      "controls": "#post-video .plyr__controls",
       "family": "universal"
     },
     {
@@ -625,6 +688,7 @@
         "*://*.app.clientclub.net/products/*/categories/*/posts/*"
       ],
       "selector": "#post-video video#plyr-video",
+      "controls": "#post-video .plyr__controls",
       "family": "universal"
     },
     {
@@ -634,6 +698,7 @@
         "*://iframe.mediadelivery.net/embed/*"
       ],
       "selector": "#main-video",
+      "controls": ".plyr__controls",
       "family": "domTrack"
     },
     {
@@ -643,6 +708,7 @@
         "*://dev.epicgames.com/*/embed.html"
       ],
       "selector": "video",
+      "controls": ".vjs-control-bar",
       "family": "videojs"
     },
     {
@@ -652,6 +718,7 @@
         "*://*.coursera.org/learn/*/lecture/*"
       ],
       "selector": "video",
+      "controls": ".icon-container > div:last-child",
       "family": "domTrack"
     },
     {
@@ -663,6 +730,7 @@
         "*://*.autodesk.com/learn/ondemand/course/*/unit/*"
       ],
       "selector": "video",
+      "controls": ".video-player",
       "family": "domTrack"
     },
     {
@@ -672,6 +740,7 @@
         "*://player.vimeo.com/video/*"
       ],
       "selector": "video",
+      "controls": "div:has(> #fullscreen-control-bar-button)",
       "family": "domTrack"
     },
     {
@@ -681,6 +750,7 @@
         "*://vimeo.com/*"
       ],
       "selector": "video",
+      "controls": "div:has(> #fullscreen-control-bar-button)",
       "family": "domTrack"
     },
     {
@@ -690,6 +760,7 @@
         "*://threejs-journey.com/lessons/*"
       ],
       "selector": "video",
+      "controls": "div.undefined",
       "family": "domTrack"
     },
     {
@@ -701,6 +772,7 @@
         "*://*.dropbox.com/home*"
       ],
       "selector": "video",
+      "controls": "div.undefined",
       "family": "dropbox"
     },
     {
@@ -710,6 +782,7 @@
         "*://mediaspace.illinois.edu/media/*"
       ],
       "selector": "video, audio",
+      "controls": ".playkit-controls-container .playkit-right-controls",
       "family": "commonM3u8"
     },
     {
@@ -719,6 +792,7 @@
         "*://mediaspace.esri.com/media/*"
       ],
       "selector": "video.playkit-engine, video",
+      "controls": ".playkit-bottom-bar .playkit-right-controls",
       "family": "commonM3u8"
     },
     {
@@ -728,6 +802,7 @@
         "*://players.brightcove.net/*"
       ],
       "selector": "video",
+      "controls": ".vjs-control-bar",
       "family": "commonM3u8"
     },
     {
@@ -738,6 +813,7 @@
         "*://*.play.hotmart.com/embed/*"
       ],
       "selector": "video",
+      "controls": ".vjs-control-bar",
       "family": "commonM3u8"
     },
     {
@@ -748,6 +824,7 @@
         "*://learn.deeplearning.ai/specializations/*/lesson/*/*"
       ],
       "selector": "video",
+      "controls": "div:has(> .vds-fullscreen-button)",
       "family": "domTrack"
     },
     {
@@ -757,6 +834,7 @@
         "*://opencast.dcex.harvard.edu/engage/player/watch.html*"
       ],
       "selector": "video, audio",
+      "controls": "#player-container > div.playback-bar.top-mode > div.button-plugins.right-side",
       "family": "commonVtt"
     },
     {
@@ -766,6 +844,7 @@
         "*://illinois.zoom.us/rec/play/*"
       ],
       "selector": "video, audio",
+      "controls": ".vjs-extend-control",
       "family": "commonVtt"
     },
     {
@@ -775,6 +854,7 @@
         "*://*.khanacademy.org/*/*/*/*/v/*"
       ],
       "selector": "video",
+      "controls": ".undefined",
       "family": "domTrack"
     },
     {
@@ -784,6 +864,7 @@
         "*://courses.edx.org/*"
       ],
       "selector": "video",
+      "controls": ".undefined",
       "family": "edx"
     },
     {
@@ -793,6 +874,7 @@
         "*://cdnapisec.kaltura.com/html5/*"
       ],
       "selector": "video, audio",
+      "controls": ".undefined",
       "family": "domTrack"
     },
     {
@@ -802,6 +884,7 @@
         "*://cdnapisec.kaltura.com/html5/*"
       ],
       "selector": "video, audio",
+      "controls": ".undefined",
       "family": "domTrack"
     },
     {
@@ -815,6 +898,7 @@
         "*://www.ixl.com/spanish/*/*"
       ],
       "selector": "video, audio",
+      "controls": ".playkit-controls-container .playkit-right-controls",
       "family": "commonM3u8"
     },
     {
@@ -824,6 +908,7 @@
         "*://www.linkedin.com/learning/*/*"
       ],
       "selector": "video",
+      "controls": ".vjs-control-bar",
       "family": "commonVtt"
     },
     {
@@ -833,6 +918,7 @@
         "*://anthropic.skilljar.com/*/*"
       ],
       "selector": "video",
+      "controls": ".jw-button-container",
       "family": "jwplayer"
     },
     {
@@ -843,6 +929,7 @@
         "*://archive.org/embed/*"
       ],
       "selector": "play-av",
+      "controls": ".jw-button-container",
       "family": "internet_archive"
     },
     {
@@ -852,6 +939,7 @@
         "*://*.tiktok.com/*"
       ],
       "selector": "video",
+      "controls": "video",
       "family": "universal"
     },
     {
@@ -861,6 +949,7 @@
         "*://*.douyin.com/*"
       ],
       "selector": "video",
+      "controls": "video",
       "family": "universal"
     },
     {
@@ -870,6 +959,7 @@
         "*://*.x.com/*"
       ],
       "selector": "video",
+      "controls": "video",
       "family": "twitter"
     },
     {
@@ -879,6 +969,7 @@
         "*://*.twitter.com/*"
       ],
       "selector": "video",
+      "controls": "video",
       "family": "twitter"
     },
     {
@@ -888,6 +979,7 @@
         "*://*.facebook.com/*"
       ],
       "selector": "video",
+      "controls": "video",
       "family": "facebook"
     },
     {
@@ -897,6 +989,7 @@
         "*://codewithmosh.teachable.com/*"
       ],
       "selector": "video, audio",
+      "controls": "video, audio",
       "family": "universal"
     },
     {
@@ -907,6 +1000,7 @@
         "*://openai.com/*/index/*"
       ],
       "selector": "video, audio",
+      "controls": "video, audio",
       "family": "universal"
     },
     {
@@ -916,6 +1010,7 @@
         "*://open.spotify.com/episode/*"
       ],
       "selector": "video, audio",
+      "controls": "body",
       "family": "universal"
     },
     {
@@ -925,6 +1020,7 @@
         "*://*.ted.com/talks/*"
       ],
       "selector": "media-controller#video-player-container video#video",
+      "controls": "media-controller#video-player-container #media-control-bar",
       "family": "ted"
     },
     {
@@ -935,6 +1031,7 @@
         "*://developer.apple.com/*/videos/play/*/*"
       ],
       "selector": ".developer-video-player video#video, .developer-video-player video",
+      "controls": ".developer-video-player",
       "family": "commonM3u8"
     },
     {
@@ -944,6 +1041,7 @@
         "*://learn.microsoft.com/*/shows/*"
       ],
       "selector": "video.shaka-video, video",
+      "controls": ".shaka-controls-button-panel",
       "family": "apiIntercept",
       "api": {
         "url": "*://learn.microsoft.com/api/video/public/v1/entries/*",
@@ -961,6 +1059,7 @@
         "*://learn.unity.com/*/unit/*/tutorial/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "commonVtt"
     },
     {
@@ -970,6 +1069,7 @@
         "*://www.artstation.com/learning/courses/*/*/chapters/*/*"
       ],
       "selector": "video#electraWebPlayer_html5_api.vjs-tech, video.vjs-tech",
+      "controls": ".video-js .vjs-control-bar",
       "family": "artstation"
     },
     {
@@ -979,6 +1079,7 @@
         "*://*.masterclass.com/sessions/classes/*"
       ],
       "selector": "video.mc-video__video, .mc-video video",
+      "controls": ".mc-video__controls",
       "family": "domTrack"
     },
     {
@@ -988,6 +1089,7 @@
         "*://www.jove.com/v/*"
       ],
       "selector": "video.fp-engine, .flowplayer video",
+      "controls": "flowplayer-control.fp-controls, .fp-controls",
       "family": "domTrack"
     },
     {
@@ -997,6 +1099,7 @@
         "*://frontendmasters.com/courses/*/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "commonVtt"
     },
     {
@@ -1006,6 +1109,7 @@
         "*://internetfundamentals.com/watch/*"
       ],
       "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "internetfundamentals"
     },
     {
@@ -1015,6 +1119,7 @@
         "*://www.feynmanlectures.caltech.edu/fml.html*"
       ],
       "selector": "video#vid0_html5_api, video.vjs-tech",
+      "controls": "#vid0 .vjs-control-bar",
       "family": "feynmanlectures"
     },
     {
@@ -1025,6 +1130,7 @@
         "*://rachelsenglish.com/free-course-thank-you*"
       ],
       "selector": ".video-embed video, video.ttetsts, video",
+      "controls": ".video-embed, video",
       "family": "domTrack"
     },
     {
@@ -1034,6 +1140,7 @@
         "*://*.themotionmagic.com/course-item*"
       ],
       "selector": "#main-video-element",
+      "controls": "#video-root-node .flex.items-center.space-x-1",
       "family": "motionmagic"
     },
     {
@@ -1043,6 +1150,7 @@
         "*://community.memberspot.de/library/*/*/*/details"
       ],
       "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
       "family": "domTrack"
     },
     {
@@ -1052,6 +1160,7 @@
         "*://*.mymemberspot.de/library/*/*/*/details"
       ],
       "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
       "family": "domTrack"
     },
     {
@@ -1062,6 +1171,7 @@
         "*://pocketstudio.com.tw/player/*"
       ],
       "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
       "family": "domTrack"
     },
     {
@@ -1071,6 +1181,7 @@
         "*://www.mathworks.com/videos/*"
       ],
       "selector": ".video-js[data-video-id] video.vjs-tech, video-js[data-video-id] video.vjs-tech, #mathworks-brightcove-player video.vjs-tech, video.vjs-tech",
+      "controls": ".video-js[data-video-id] .vjs-control-bar, video-js[data-video-id] .vjs-control-bar, #mathworks-brightcove-player .vjs-control-bar",
       "family": "mathworks_brightcove"
     },
     {
@@ -1080,6 +1191,7 @@
         "*://www.fau.tv/clips/*"
       ],
       "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
       "family": "domTrack"
     },
     {
@@ -1089,6 +1201,7 @@
         "*://video.ucdavis.edu/media/*"
       ],
       "selector": "video.playkit-engine, video",
+      "controls": ".playkit-controls-container .playkit-right-controls",
       "family": "commonM3u8"
     },
     {
@@ -1099,6 +1212,7 @@
         "*://app.pluralsight.com/ilx/video-courses/*/*/*"
       ],
       "selector": "#video-element, video",
+      "controls": "div:has(> [data-text=\"Closed Captions\"])",
       "family": "pluralsight"
     },
     {
@@ -1108,6 +1222,7 @@
         "*://movebox.run/movies/*"
       ],
       "selector": "video.art-video, .artplayer-app video, video",
+      "controls": ".art-controls-right",
       "family": "movebox"
     },
     {
@@ -1118,6 +1233,7 @@
         "*://vidlove.cc/embed/tv/*"
       ],
       "selector": "video",
+      "controls": ".flex.items-center.ml-auto.shrink-0",
       "family": "vidlove"
     },
     {
@@ -1127,6 +1243,7 @@
         "*://oba.gov.tr/documentary/detay/*"
       ],
       "selector": "video#video, video.vjs-tech, .video-js video, video",
+      "controls": ".project-image, video#video, video.course-video",
       "family": "oba"
     },
     {
@@ -1136,6 +1253,7 @@
         "*://art21.org/watch/*/*"
       ],
       "selector": "videogular video, vg-media video, video",
+      "controls": "videogular",
       "family": "domTrack"
     },
     {
@@ -1145,6 +1263,7 @@
         "*://www.pendo.io/resources/*"
       ],
       "selector": "wistia-player, video",
+      "controls": ".w-bottom-bar-right-inner",
       "family": "pendo"
     },
     {
@@ -1155,6 +1274,7 @@
         "*://cursor.com/*/blog/*"
       ],
       "selector": "video",
+      "controls": "media-controller media-control-bar, media-control-bar",
       "family": "cursor_blog"
     },
     {
@@ -1164,6 +1284,7 @@
         "*://learning.oreilly.com/videos/*/*/*"
       ],
       "selector": "video.playkit-engine, video, audio",
+      "controls": ".playkit-controls-container .playkit-right-controls",
       "family": "commonM3u8"
     },
     {
@@ -1173,6 +1294,7 @@
         "*://learning.sap.com/videos/*"
       ],
       "selector": "video.playkit-engine, video",
+      "controls": ".playkit-controls-container .playkit-right-controls",
       "family": "commonM3u8"
     },
     {
@@ -1182,6 +1304,7 @@
         "*://updraft.cyfrin.io/courses/*/*/*"
       ],
       "selector": "#cyfrin-video-player video, video",
+      "controls": "#cyfrin-video-player media-control-bar, #cyfrin-video-player media-controls-group:last-of-type, media-control-bar",
       "family": "updraft"
     },
     {
@@ -1191,6 +1314,7 @@
         "*://www.osmosis.org/learn/*"
       ],
       "selector": "video",
+      "controls": "video",
       "family": "osmosis"
     },
     {
@@ -1200,6 +1324,7 @@
         "*://www.medbridge.com/video/embed/*"
       ],
       "selector": "video.jw-video, video",
+      "controls": ".jw-button-container, .jw-controlbar",
       "family": "universal"
     },
     {
@@ -1209,6 +1334,7 @@
         "*://www.medbridge.com/player/course/*"
       ],
       "selector": "video.jw-video, video",
+      "controls": ".jw-button-container, .jw-controlbar",
       "family": "medbridge_course"
     },
     {
@@ -1219,6 +1345,7 @@
         "*://www.patreon.com/*/posts/*"
       ],
       "selector": "video[class*='Video-module'], video",
+      "controls": "[class*='VideoPlayerRoot'][class*='player'] [class*='controls-container'] > div:first-child > div:last-child",
       "family": "patreon"
     },
     {
@@ -1228,6 +1355,7 @@
         "*://*.substack.com/p/*"
       ],
       "selector": "video[data-video-id]",
+      "controls": "[class*='bottomInnerControlsContainer'] > div:last-child > div:last-child > div:last-child",
       "family": "substack"
     },
     {
@@ -1237,6 +1365,7 @@
         "*://*.mn.co/*"
       ],
       "selector": "video",
+      "controls": ".mighty-video-player-container .vjs-control-bar, .video-js .vjs-control-bar, .vjs-control-bar",
       "family": "mightynetworks"
     },
     {
@@ -1247,6 +1376,7 @@
         "*://nebula.tv/embed/videos/*"
       ],
       "selector": "#video-player video, video",
+      "controls": ".video-player-controls-wrapper div:has(> [aria-label='Subtitles']), .video-player-controls-wrapper div:has(> [aria-label='Settings']), .video-player-controls-wrapper div:has(> button[aria-label='Full screen'])",
       "family": "nebula"
     },
     {
@@ -1257,6 +1387,7 @@
         "*://*.vkvideo.ru/video?*"
       ],
       "selector": "video.player-media, video",
+      "controls": ".controls-right",
       "family": "vkvideo"
     },
     {
@@ -1266,6 +1397,7 @@
         "*://ok.ru/video/*"
       ],
       "selector": "video.player-media, video",
+      "controls": ".controls-right",
       "family": "okru"
     },
     {
@@ -1275,6 +1407,7 @@
         "*://tv.naver.com/v/*"
       ],
       "selector": "#videoPlayer video.webplayer-internal-video, video.webplayer-internal-video, video",
+      "controls": ".pzp-pc__bottom-buttons-right, .pzp-pc__bottom-buttons, .pzp-pc__bottom, #videoPlayer",
       "family": "navertv"
     },
     {
@@ -1284,6 +1417,7 @@
         "*://rutube.ru/video/*"
       ],
       "selector": "video",
+      "controls": ".video-player, .wdp-video-wrapper-module__videoWrapper, .video-page-layout-module__player, video",
       "family": "rutube"
     },
     {
@@ -1293,6 +1427,7 @@
         "*://dzen.ru/video*"
       ],
       "selector": "video",
+      "controls": "[class*='video-controls__composer'], [class*='video-controls'], video",
       "family": "domTrack"
     },
     {
@@ -1303,6 +1438,7 @@
         "*://*.espn.com/video/clip*"
       ],
       "selector": "video.hive-video, video",
+      "controls": ".media-element-container, disney-web-player",
       "family": "commonM3u8"
     },
     {
@@ -1312,6 +1448,7 @@
         "*://rumble.com/v*.html*"
       ],
       "selector": "video",
+      "controls": "video",
       "family": "domTrack"
     },
     {
@@ -1321,6 +1458,7 @@
         "*://www.gaia.com/video/*"
       ],
       "selector": "video-js video.vjs-tech, .video-js video.vjs-tech, video.vjs-tech",
+      "controls": "video-js .vjs-control-bar, .video-js .vjs-control-bar",
       "family": "gaia"
     },
     {
@@ -1331,6 +1469,7 @@
         "*://www.skillshare.com/*/classes/*"
       ],
       "selector": "video.vjs-tech, .video-js video",
+      "controls": ".video-js .vjs-control-bar",
       "family": "skillshare"
     },
     {
@@ -1340,6 +1479,7 @@
         "*://www.tella.tv/video/*"
       ],
       "selector": "#player video#video, #player video:not(.no-unmute)",
+      "controls": "#player div:has(> span > button > svg[aria-label='Fullscreen'])",
       "family": "tella"
     },
     {
@@ -1349,6 +1489,7 @@
         "*://www.skool.com/*/classroom*"
       ],
       "selector": "video",
+      "controls": "video, mux-player, iframe[src*='loom.com/'], [style*='video.skool.com'], [class*='video' i], [class*='player' i]",
       "family": "skool"
     },
     {
@@ -1358,6 +1499,7 @@
         "*://www.loom.com/embed/*"
       ],
       "selector": "video",
+      "controls": "video, [class*='player' i], [class*='video' i]",
       "family": "loom"
     },
     {
@@ -1367,6 +1509,7 @@
         "*://app.elevify.com/slider/*"
       ],
       "selector": "video",
+      "controls": "div:has(> div > input.player-slider) > div[class~='hidden'][class~='lg:flex']",
       "family": "apiIntercept"
     },
     {
@@ -1376,6 +1519,7 @@
         "*://app.chartacademy.com/masterclasses/*/video/*"
       ],
       "selector": "hls-video",
+      "controls": "media-controller media-control-bar",
       "family": "chartacademy",
       "api": {
         "url": "*://app.chartacademy.com/api/master_classes/*/videos/*",
@@ -1394,6 +1538,7 @@
         "*://*/c/*/sections/*/lessons/*"
       ],
       "selector": "hls-video, video",
+      "controls": "media-control-bar",
       "family": "circle_academy"
     },
     {
@@ -1403,6 +1548,7 @@
         "*://vidtube.site/stream/*"
       ],
       "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
       "family": "vidtube",
       "api": {
         "url": "*://vidtube.site/stream/getSources*",
@@ -1420,6 +1566,7 @@
         "*://live.edusoho.com/pc/replay/*"
       ],
       "selector": "#camera_sd_video_box video, #camera_hd_video_box video, video",
+      "controls": ".player__bottom .player__col:last-child",
       "family": "universal"
     },
     {
@@ -1430,6 +1577,7 @@
         "*://*.qiqiuyun.net/js-sdk-v2/media-player/*"
       ],
       "selector": "video.video-js, video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
       "family": "universal"
     },
     {
@@ -1439,6 +1587,7 @@
         "*://play.vidyard.com/*.html*"
       ],
       "selector": "video",
+      "controls": "div:has(> div > button[data-testid='captionsToggle'])",
       "family": "vidyard"
     },
     {
@@ -1448,6 +1597,7 @@
         "*://play.gumlet.io/embed/*"
       ],
       "selector": "video[assetid], video",
+      "controls": "media-control-bar",
       "family": "gumlet"
     },
     {
@@ -1457,6 +1607,7 @@
         "*://git.ir/*"
       ],
       "selector": "#main-video-player, .plyr__video-wrapper > video, .plyr video",
+      "controls": ".plyr__controls",
       "family": "gitir"
     },
     {
@@ -1466,6 +1617,7 @@
         "*://ftstreaming.com/programs/*"
       ],
       "selector": "video-player video[data-program-video-target='video'], video-player video",
+      "controls": "video-player video-controls, video-controls",
       "family": "ftstreaming"
     },
     {
@@ -1475,6 +1627,7 @@
         "*://*.tv.pandavideo.com.br/embed*"
       ],
       "selector": "video",
+      "controls": ".plyr__controls",
       "family": "pandavideo"
     },
     {
@@ -1484,6 +1637,7 @@
         "*://video.tv.adobe.com/v/*"
       ],
       "selector": "video#video, video",
+      "controls": ".controls-row.controls-row__buttons .controls-row__group:last-child",
       "family": "adobetv"
     },
     {
@@ -1493,6 +1647,7 @@
         "*://academy.langchain.com/courses/take/*/multimedia/*"
       ],
       "selector": "iframe[src*='langchain-ai.github.io/lca-lessons/']",
+      "controls": "iframe[src*='langchain-ai.github.io/lca-lessons/']",
       "family": "universal"
     },
     {
@@ -1502,6 +1657,7 @@
         "*://share.descript.com/embed/*"
       ],
       "selector": "video#share-page-video-player",
+      "controls": "div:has(> [data-tooltip-trigger] > button[data-testid='subtitles-toggle'])",
       "family": "domTrack"
     },
     {
@@ -1511,6 +1667,7 @@
         "*://*.odysee.com/@*/*"
       ],
       "selector": ".odysee-skin video, video",
+      "controls": ".odysee-controls--right",
       "family": "universal"
     },
     {
@@ -1520,6 +1677,7 @@
         "*://www.glo.com/class/*"
       ],
       "selector": "video",
+      "controls": "[class*='VideoJSPlayer_rightControls__']:has(button[aria-label='Fullscreen'])",
       "family": "glo"
     },
     {
@@ -1529,6 +1687,7 @@
         "*://*/*"
       ],
       "selector": "video, audio",
+      "controls": "video, audio",
       "family": "universal"
     }
   ]

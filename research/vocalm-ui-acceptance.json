@@ -16,7 +16,7 @@
     "Real watch-ID navigation clears the prior transcript",
     "Provider failure unlocks playback and leaves preparation retryable"
   ],
-  "initial_ready_seconds": 0.75,
+  "initial_ready_seconds": 0.687,
   "popup_bounds": {
     "width": 420,
     "height": 510,
@@ -44,7 +44,7 @@
   },
   "passed": true,
   "audio_starts": 9,
-  "maximum_requested_position": 213,
-  "total_syntheses": 26,
-  "total_windows": 39
+  "maximum_requested_position": 225,
+  "total_syntheses": 24,
+  "total_windows": 43
 }

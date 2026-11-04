@@ -26,14 +26,14 @@ def main():
             preset['path'] = 'voices/' + target.name
         bgm = [{'id': path.stem, 'name': path.stem.replace('-', ' ').replace('_', ' ').title(), 'path': 'bgm/' + path.name} for path in sorted((source / 'bgm').glob('*.ogg'))]
     shared = {
-        'manifest_version': 3, 'name': 'Vocalm', 'version': '0.5.1', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
+        'manifest_version': 3, 'name': 'Vocalm', 'version': '0.6.0', 'description': 'Contextual subtitles, private single-voice dubbing and video study tools.',
         'permissions': ['storage', 'scripting', 'nativeMessaging', 'activeTab'], 'host_permissions': ['https://*/*'],
         'action': {'default_popup': 'popup.html', 'default_title': 'Vocalm'},
         'options_ui': {'page': 'options.html', 'open_in_tab': False},
         'icons': {str(size): f'icons/icon-{size}.png' for size in (16, 32, 48, 128)},
         'content_scripts': [
             {'matches': ['https://*.youtube.com/*', 'https://youtube.com/*', 'https://*.youtube-nocookie.com/*'], 'js': ['lib/captions.js', 'lib/media.js', 'youtube-main.js'], 'run_at': 'document_start', 'world': 'MAIN', 'all_frames': True},
-            {'matches': ['https://*/*'], 'js': ['lib/captions.js', 'lib/sites.js', 'lib/media.js', 'lib/subtitle-formats.js', 'multisite-main.js'], 'run_at': 'document_start', 'world': 'MAIN', 'all_frames': True},
+            {'matches': ['https://*/*'], 'js': ['lib/captions.js', 'lib/sites.js', 'lib/media.js', 'lib/subtitle-formats.js', 'lib/bilibili.js', 'multisite-main.js'], 'run_at': 'document_start', 'world': 'MAIN', 'all_frames': True},
             {'matches': ['https://*/*'], 'js': ['lib/core.js', 'lib/sites.js', 'lib/media.js', 'lib/window-queue.js', 'lib/audio.js', 'lib/sidebar.js', 'lib/voice-picker.js', 'lib/player-ui.js', 'content.js'], 'run_at': 'document_idle', 'all_frames': True}],
         'web_accessible_resources': [{'resources': ['content.css', 'voice-picker.css', 'player.css', 'sidebar.css', 'sidebar-page.css', 'assets/bgm/*', 'icons/icon-*.png'], 'matches': ['https://*/*']}],
         'content_security_policy': {'extension_pages': "script-src 'self'; object-src 'none'; base-uri 'none'"},
