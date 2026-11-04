@@ -1,0 +1,54 @@
+{
+  "duration": 817.0173125,
+  "windows": [
+    {
+      "start": 0,
+      "seconds": 24.0,
+      "peak": 0.149261474609375,
+      "rms_dbfs": -34.58
+    },
+    {
+      "start": 700,
+      "seconds": 24.0,
+      "peak": 0.186370849609375,
+      "rms_dbfs": -34.19
+    },
+    {
+      "start": 720,
+      "seconds": 24.0,
+      "peak": 0.168182373046875,
+      "rms_dbfs": -39.06
+    },
+    {
+      "start": 728,
+      "seconds": 24.0,
+      "peak": 0.0260009765625,
+      "rms_dbfs": -57.94
+    },
+    {
+      "start": 744,
+      "seconds": 24.0,
+      "peak": 0.0,
+      "rms_dbfs": -200.0
+    },
+    {
+      "start": 768,
+      "seconds": 24.0,
+      "peak": 0.0,
+      "rms_dbfs": -200.0
+    },
+    {
+      "start": 792,
+      "seconds": 24.0,
+      "peak": 0.036163330078125,
+      "rms_dbfs": -51.36
+    }
+  ],
+  "tail_digital_silence_spans": [
+    {
+      "start": 728.822438,
+      "end": 815.549188,
+      "seconds": 86.72675
+    }
+  ]
+}

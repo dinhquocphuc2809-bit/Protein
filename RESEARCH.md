@@ -2,6 +2,30 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## Second Qwen live video: 7jb0q3Mo9Rg (2026-11-05)
+
+- Requested sample: https://www.youtube.com/watch?v=7jb0q3Mo9Rg . Used signed
+  production API, quality/auto -> vi, progressive=true, no supplied subtitles.
+  Normalized audio duration read from the actual VPS WAV header:817.0173125s.
+- Initial job aa1ae19ddba277da65bf1bd77cec29bd completed in312.047s with94 speech
+  cues. Production usage contains Qwen start and34 consecutive chunk offsets
+  0,24,...,792; no Deepgram. Account3 calls increased34 while accounts1/2 did not.
+- Repeat5a492f060709b2fb127547f4b3af90b4 completed in2.265s using cache only.
+  Source/translation IDs and full output SHA256 match. Output passes ordering,
+  nonoverlap, nonempty text, unique IDs and audio-duration bounds; VPS spool=0.
+- Last cue ends727.6s, although audio lasts817s. Investigated instead of assuming
+  complete speech coverage from valid numeric timestamps. Downloaded via Tunelio
+  to ignored local `.private/asr-second-video`; PCM samples show exact digital
+  silence728.822438-815.549188s, with brief residual signals on either side.
+- Separate Gemini3.5-flash-lite inline-audio audit on728s-end reports no speech.
+  Its generic description says music throughout, which does not describe the
+  measured long digital silence precisely; use PCM measurements for timing.
+  The speech assessment is independent machine evidence, not manual listening,
+  and does not establish word-level transcription accuracy. Gemini was a separate
+  QA call, not a replacement for Qwen recognition in the production job.
+- Evidence: `research/qwen-second-video-*.json`; scope and reproducer in
+  `docs/QWEN_SECOND_VIDEO_ACCEPTANCE.md`. No further backend/GPU patch was needed.
+
 ## Qwen ASR incident: f6YA_OvKbhY (2026-11-05)
 
 - Production failure: `Alignment produced invalid timestamps` during aligning,

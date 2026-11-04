@@ -2,6 +2,30 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Passed: second Qwen video 7jb0q3Mo9Rg (2026-11-05)
+
+- User requested a new real-video regression after the first ASR fix.
+- Extended the signed API harness with a validated YouTube URL, bounded timeout
+  and stricter cue ordering/text/ID checks. Provider evidence accepts separate
+  report files so the first incident's evidence remains intact.
+- [x] Fresh quality/auto -> Vietnamese completed in 312.047s: 34 Qwen windows,
+  94 speech cues, first10.656s/last727.6s, normalized audio817.0173125s.
+  Job aa1ae19ddba277da65bf1bd77cec29bd has Qwen start/chunk events, no Deepgram.
+- [x] Repeat5a492f060709b2fb127547f4b3af90b4 completed in2.265s with cache-only
+  events and identical output hashes. Account3 handled all34 windows; other
+  backend account counters unchanged. Temporary VPS spool returned to0 bytes.
+- [x] Verified ordered/nonoverlapping, nonempty, uniquely identified cues within
+  actual audio duration. No alignment exception in either job.
+- [x] Investigated the short transcript tail: exact digital silence from
+  728.822438 to815.549188s (86.72675s). Separate Gemini audio audit of728s-end
+  reports no intelligible speech; this is machine assessment, not human listening.
+- Evidence: `research/qwen-second-video-live.json`,
+  `research/qwen-second-video-before.json` (pre-run account/storage baseline).
+  Final assertions: `research/qwen-second-video-verification.json`.
+  Report: `docs/QWEN_SECOND_VIDEO_ACCEPTANCE.md`.
+- No new production changes needed. This verifies ASR and initial progressive
+  translation; it is not a manual word-accuracy audit or TTS playback acceptance.
+
 ## Resolved: Qwen ASR incident, YouTube f6YA_OvKbhY (2026-11-05)
 
 - Production failed job 775e708607b9752be9700d69c4d02691: aligning stage,

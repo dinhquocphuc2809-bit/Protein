@@ -1,0 +1,9 @@
+{
+  "scope": "Independent Gemini audio-content audit, not the ASR provider used by the production job; machine assessment, not human listening",
+  "model": "gemini-3.5-flash-lite",
+  "audio_offset_seconds": 728,
+  "audio_seconds": 89.0173125,
+  "speech_present": false,
+  "speech_intervals": [],
+  "non_speech_description": "Music is playing throughout the audio clip."
+}

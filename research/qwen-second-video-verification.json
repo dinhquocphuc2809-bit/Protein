@@ -1,0 +1,34 @@
+{
+  "video": "7jb0q3Mo9Rg",
+  "passed": true,
+  "checks": {
+    "both_jobs_done": true,
+    "all_34_windows": true,
+    "qwen_start_recorded": true,
+    "no_deepgram": true,
+    "repeat_cache_only": true,
+    "identical_output": true,
+    "cue_validation": true,
+    "within_audio": true,
+    "spool_cleaned": true,
+    "single_account_34_calls": true
+  },
+  "duration_seconds": 817.0173125,
+  "initial_seconds": 312.047,
+  "repeat_seconds": 2.265,
+  "cues": 94,
+  "last_cue_end": 727.6,
+  "account_call_deltas": {
+    "modal 1": 0,
+    "modal 2": 0,
+    "modal 3": 34
+  },
+  "tail_digital_silence_spans": [
+    {
+      "start": 728.822438,
+      "end": 815.549188,
+      "seconds": 86.72675
+    }
+  ],
+  "scope": "Live ASR and first progressive translation unit; timestamp structure/provider/cache/storage checks, not a manual word-level accuracy or TTS playback audit"
+}

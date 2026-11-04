@@ -1,0 +1,48 @@
+{
+  "at_epoch": 1793813709.1962752,
+  "release": "/opt/auvirel/releases/20261104-172611",
+  "jobs": [
+    {
+      "id": "aa1ae19ddba277da65bf1bd77cec29bd",
+      "state": "running",
+      "stage": "aligning",
+      "error": null,
+      "created": 1793813674.4883807,
+      "updated": 1793813696.0347195,
+      "events": [
+        {
+          "provider": "tunelio",
+          "event": "resolve",
+          "amount": 0.0,
+          "created": 1793813676.7064762
+        },
+        {
+          "provider": "modal",
+          "event": "qwen3_asr_1_7b_started",
+          "amount": 0.0,
+          "created": 1793813676.7167792
+        }
+      ],
+      "normalized_audio_seconds": 817.0173125
+    }
+  ],
+  "modal_accounts": [
+    {
+      "label": "modal 1",
+      "state": "available",
+      "calls": 18
+    },
+    {
+      "label": "modal 2",
+      "state": "available",
+      "calls": 45
+    },
+    {
+      "label": "modal 3",
+      "state": "available",
+      "calls": 17
+    }
+  ],
+  "spool_bytes": 38121329,
+  "free_bytes": 198691909632
+}

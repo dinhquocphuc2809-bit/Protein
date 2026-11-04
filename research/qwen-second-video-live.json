@@ -1,0 +1,82 @@
+{
+  "at": "2026-11-04T17:34:34.854349+00:00",
+  "request": {
+    "url": "https://www.youtube.com/watch?v=7jb0q3Mo9Rg",
+    "asr": "quality",
+    "source_language": "auto",
+    "target_language": "vi",
+    "model": "basic",
+    "progressive": true,
+    "position": 0
+  },
+  "checks": [
+    {
+      "name": "initial",
+      "job_id": "aa1ae19ddba277da65bf1bd77cec29bd",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.141
+        },
+        {
+          "stage": "resolving_media",
+          "seconds": 2.219
+        },
+        {
+          "stage": "recognizing",
+          "seconds": 4.281
+        },
+        {
+          "stage": "aligning",
+          "seconds": 10.516
+        },
+        {
+          "stage": "translating",
+          "seconds": 309.922
+        },
+        {
+          "stage": "done",
+          "seconds": 312.047
+        }
+      ],
+      "state": "done",
+      "seconds": 312.047,
+      "cues": 94,
+      "first": 10.656,
+      "last": 727.6,
+      "source_hash": "b7502959cf60b02e33708609d7a9646e7ae00250a77a0f7bd64c1a72584d8cb5",
+      "translation_id": "a3cbabdfe727262912378c231e2b2b98cb325193fc0afcbb37f2c24851a811ba",
+      "translated": 1,
+      "valid_times": true,
+      "unique_ids": true,
+      "nonempty_text": true,
+      "payload_sha256": "5b388ecdd8239dc2b4356417411d19468817180f10f0ff932a7026353fc181a4"
+    },
+    {
+      "name": "repeat",
+      "job_id": "5a492f060709b2fb127547f4b3af90b4",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.14
+        },
+        {
+          "stage": "done",
+          "seconds": 2.265
+        }
+      ],
+      "state": "done",
+      "seconds": 2.265,
+      "cues": 94,
+      "first": 10.656,
+      "last": 727.6,
+      "source_hash": "b7502959cf60b02e33708609d7a9646e7ae00250a77a0f7bd64c1a72584d8cb5",
+      "translation_id": "a3cbabdfe727262912378c231e2b2b98cb325193fc0afcbb37f2c24851a811ba",
+      "translated": 1,
+      "valid_times": true,
+      "unique_ids": true,
+      "nonempty_text": true,
+      "payload_sha256": "5b388ecdd8239dc2b4356417411d19468817180f10f0ff932a7026353fc181a4"
+    }
+  ]
+}

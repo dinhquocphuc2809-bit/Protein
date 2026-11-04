@@ -1,0 +1,24 @@
+{
+  "at_epoch": 1793813673.4057755,
+  "release": "/opt/auvirel/releases/20261104-172611",
+  "jobs": [],
+  "modal_accounts": [
+    {
+      "label": "modal 1",
+      "state": "available",
+      "calls": 18
+    },
+    {
+      "label": "modal 2",
+      "state": "available",
+      "calls": 45
+    },
+    {
+      "label": "modal 3",
+      "state": "available",
+      "calls": 17
+    }
+  ],
+  "spool_bytes": 0,
+  "free_bytes": 198730027008
+}
