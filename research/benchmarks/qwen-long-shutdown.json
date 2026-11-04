@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-04T23:50:23.418353+00:00",
+  "apps": [
+    {
+      "account": 1,
+      "gpu": "T4",
+      "app_id": "ap-Y2ri5Lnr0b1XOxZ2ttSjH6",
+      "state": "stopped",
+      "tasks": 0,
+      "containers": 0
+    },
+    {
+      "account": 2,
+      "gpu": "A10",
+      "app_id": "ap-FK57N1REvjOc6B8jQiIBIz",
+      "state": "stopped",
+      "tasks": 0,
+      "containers": 0
+    }
+  ],
+  "billing": [
+    {
+      "account": 1,
+      "metered_cost_change_usd": 0.49,
+      "billed_cost_usd": 0.0,
+      "attribution": "Account total change; may include delayed or other usage, not an exact experiment invoice"
+    },
+    {
+      "account": 2,
+      "metered_cost_change_usd": 0.66,
+      "billed_cost_usd": 0.0,
+      "attribution": "Account total change; may include delayed or other usage, not an exact experiment invoice"
+    }
+  ]
+}

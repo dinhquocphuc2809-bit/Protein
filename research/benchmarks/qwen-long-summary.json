@@ -1,0 +1,222 @@
+{
+  "video": "YGi-aPUsZrQ",
+  "duration_seconds": 8996.72,
+  "audio_sha256": "df0c4bfc18cce22faa1670e1e9da9f87f6cecb89c1d1a470fc224d3fb9945ac7",
+  "separate_accounts": true,
+  "results": {
+    "T4": {
+      "passed": true,
+      "account": 1,
+      "gpu_names": [
+        "Tesla T4"
+      ],
+      "chunks": 375,
+      "expected_chunks": 375,
+      "complete_window_coverage": true,
+      "errors": 0,
+      "alignment_recoveries": 1,
+      "wall_seconds": 1919.9392353000003,
+      "worker_seconds": 1215.6728860880007,
+      "rpc_seconds": 1915.9577333000198,
+      "first_rpc_seconds": 28.96750470000552,
+      "model_load_seconds": 17.69325423,
+      "cpu_seconds": 1375.7099999999982,
+      "average_process_cpu_cores_during_calls": 1.1316448822240268,
+      "max_chunk_cpu_cores": 1.9984830181569524,
+      "wall_real_time_factor": 0.21340435573186678,
+      "worker_real_time_factor": 0.1351240103157596,
+      "gpu_total_GiB": 14.57080078125,
+      "peak_allocated_GiB": 6.665027618408203,
+      "peak_reserved_GiB": 6.98046875,
+      "sampled_device_used_peak_GiB": 7.1142578125,
+      "process_lifetime_peak_RSS_GiB": 9.488838195800781,
+      "sampled_process_peak_RSS_GiB": 8.873363494873047,
+      "first_quarter_median_RSS_GiB": 7.373771667480469,
+      "last_quarter_median_RSS_GiB": 8.68756103515625,
+      "last_RSS_GiB": 8.68756103515625,
+      "second_half_RSS_slope_GiB_per_audio_hour": 0.00012031542237527869,
+      "first_quarter_median_reserved_GiB": 5.986328125,
+      "last_quarter_median_reserved_GiB": 6.98046875,
+      "gpu_utilization_samples": 1169,
+      "sampled_gpu_utilization_mean_percent": 37.99059024807528,
+      "sampled_gpu_utilization_max_percent": 76.0,
+      "cgroup_fields_available": [
+        "memory/memory.limit_in_bytes",
+        "memory/memory.usage_in_bytes"
+      ],
+      "stage_seconds": {
+        "qwen_alignment": 109.30818803299752,
+        "recognition": 930.5341505969989,
+        "vad": 165.86857796600185
+      },
+      "container_count": 1,
+      "successful_container_calls_sequential": true,
+      "words": 13905,
+      "cues": 1093,
+      "last_cue_end": 8943.2,
+      "output_sha256": "f0e22274bd015de33f3d01c8015945eb1c8f7519f44e8a3a325f597ad7ef2bbe",
+      "shutdown": {
+        "state": "stopped",
+        "tasks": "0",
+        "containers": 0
+      }
+    },
+    "A10": {
+      "passed": true,
+      "account": 2,
+      "gpu_names": [
+        "NVIDIA A10"
+      ],
+      "chunks": 375,
+      "expected_chunks": 375,
+      "complete_window_coverage": true,
+      "errors": 0,
+      "alignment_recoveries": 1,
+      "wall_seconds": 1677.0232676000014,
+      "worker_seconds": 722.5309375449999,
+      "rpc_seconds": 1672.9327170001052,
+      "first_rpc_seconds": 21.826117900003737,
+      "model_load_seconds": 10.702517958000001,
+      "cpu_seconds": 839.6699999999998,
+      "average_process_cpu_cores_during_calls": 1.1621232481103336,
+      "max_chunk_cpu_cores": 2.0468592368834573,
+      "wall_real_time_factor": 0.18640385247067837,
+      "worker_real_time_factor": 0.08031048399249949,
+      "gpu_total_GiB": 22.0576171875,
+      "peak_allocated_GiB": 6.663444519042969,
+      "peak_reserved_GiB": 6.7890625,
+      "sampled_device_used_peak_GiB": 7.0810546875,
+      "process_lifetime_peak_RSS_GiB": 9.470600128173828,
+      "sampled_process_peak_RSS_GiB": 9.04336166381836,
+      "first_quarter_median_RSS_GiB": 7.50726318359375,
+      "last_quarter_median_RSS_GiB": 8.844127655029297,
+      "last_RSS_GiB": 8.844127655029297,
+      "second_half_RSS_slope_GiB_per_audio_hour": 0.00042684662000982705,
+      "first_quarter_median_reserved_GiB": 5.705078125,
+      "last_quarter_median_reserved_GiB": 6.7890625,
+      "gpu_utilization_samples": 692,
+      "sampled_gpu_utilization_mean_percent": 36.171965317919074,
+      "sampled_gpu_utilization_max_percent": 54.0,
+      "cgroup_fields_available": [
+        "memory/memory.limit_in_bytes",
+        "memory/memory.usage_in_bytes"
+      ],
+      "stage_seconds": {
+        "qwen_alignment": 65.63413922700033,
+        "recognition": 540.0324353570004,
+        "vad": 110.63378031599956
+      },
+      "container_count": 1,
+      "successful_container_calls_sequential": true,
+      "words": 13905,
+      "cues": 1093,
+      "last_cue_end": 8943.2,
+      "output_sha256": "f484d24a67e892fc71e8f45910aba168d01812dbf0d0d1ef49574882c3cbc9eb",
+      "shutdown": {
+        "state": "stopped",
+        "tasks": "0",
+        "containers": 0
+      }
+    }
+  },
+  "production_changed": false,
+  "comparison_complete": true,
+  "T4_to_A10_wall_speedup": 1.1448494915921097,
+  "T4_to_A10_worker_speedup": 1.6825201841440698,
+  "word_text_sequence_equal": true,
+  "word_and_timestamp_hash_equal": false,
+  "differing_chunks": [
+    {
+      "index": 5,
+      "offset": 120,
+      "text_equal": true,
+      "word_counts": [
+        35,
+        35
+      ],
+      "max_timestamp_delta_seconds": 0.07999999999999985
+    },
+    {
+      "index": 15,
+      "offset": 360,
+      "text_equal": true,
+      "word_counts": [
+        33,
+        33
+      ],
+      "max_timestamp_delta_seconds": 0.08000000000000185
+    },
+    {
+      "index": 72,
+      "offset": 1728,
+      "text_equal": true,
+      "word_counts": [
+        28,
+        28
+      ],
+      "max_timestamp_delta_seconds": 0.08000000000000007
+    },
+    {
+      "index": 154,
+      "offset": 3696,
+      "text_equal": true,
+      "word_counts": [
+        87,
+        87
+      ],
+      "max_timestamp_delta_seconds": 0.08000000000000007
+    },
+    {
+      "index": 157,
+      "offset": 3768,
+      "text_equal": false,
+      "word_counts": [
+        67,
+        66
+      ],
+      "max_timestamp_delta_seconds": null
+    },
+    {
+      "index": 218,
+      "offset": 5232,
+      "text_equal": true,
+      "word_counts": [
+        82,
+        82
+      ],
+      "max_timestamp_delta_seconds": 0.07999999999999963
+    },
+    {
+      "index": 220,
+      "offset": 5280,
+      "text_equal": true,
+      "word_counts": [
+        70,
+        70
+      ],
+      "max_timestamp_delta_seconds": 0.08000000000000007
+    },
+    {
+      "index": 261,
+      "offset": 6264,
+      "text_equal": true,
+      "word_counts": [
+        64,
+        64
+      ],
+      "max_timestamp_delta_seconds": 0.08000000000000185
+    },
+    {
+      "index": 357,
+      "offset": 8568,
+      "text_equal": true,
+      "word_counts": [
+        39,
+        39
+      ],
+      "max_timestamp_delta_seconds": 0.08000000000000007
+    }
+  ],
+  "timestamp_delta_max_seconds": 0.07999999999992724,
+  "timestamp_delta_mean_seconds": 1.725997842501127e-05
+}

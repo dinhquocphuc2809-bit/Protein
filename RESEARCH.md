@@ -2,6 +2,40 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## Completed long-video comparison (2026-11-05)
+
+- Official GPU/resources/pricing pages fetched directly and hashed in
+  research/benchmarks/qwen-long-video-sources.json (web connector unavailable).
+  A10 supported; prior L4 allocation failures do not establish an account ban.
+- T4/account1 and A10/account2 both allocated and reported actual hardware.
+  Same production model/weights/VAD/aligner, CPU2/RAM16384MiB request,
+  min0/max1, snapshot disabled. Client TTS account4 untouched.
+- Important Modal resource semantics: scalar memory is a request, not an explicit
+  hard limit. Docs allow memory=(request,limit); CPU also permits request/limit.
+  Existing production uses scalars; benchmark matches it. Large cgroup limits
+  exposed by the runtime must not be presented as the requested16GiB hard limit.
+- Source audio from Tunelio quality=opus:8996.741s,129118653 bytes, only Opus
+  audio stream. Normalized8996.72s/287895118 bytes, source removed; local disk
+  only, no VPS media storage. Download42.556s/normalization10.220s measured.
+- Verified375 overlapping audio windows, max896044 bytes each, continuous
+  ownership intervals through the end. No whole-file GPU load or transcript cache.
+- Both full375-window passes completed, no failures/OOM/restarts, apps stopped.
+  T4 wall1919.939s/worker1215.673s; A10 wall1677.023s/worker722.531s.
+  A10 reduces total12.65% and worker40.57%; different automatic placements and
+  RPC overhead prevent attributing every difference solely to GPU hardware.
+- Peak process RSS9.489/9.471GiB, reservedVRAM6.980/6.789GiB; available GPU
+  memory14.571/22.058GiB. CPU averages1.132/1.162 cores during processing.
+- Final13905 retained word texts match exactly,1093cues per run; timestamp
+  maxdelta80ms. Raw9window differences include one overlap token excluded by
+  ownership. No human accuracy score claimed. Every input window was processed.
+- Final cue8943.2s vs audio8996.72s; diagnostic tail is not entirely silence,
+  and no independent human speech-content audit was made of empty tail outputs.
+- Details: docs/QWEN_LONG_VIDEO.md and research/benchmarks/qwen-long-summary.json.
+- Real difficult window offset3960s triggers existing alignment recovery on both
+  GPUs, successfully returning valid timestamps. Mid-run metrics show lazy
+  fallback-model loading raises RSS to8.69GiB(T4)/8.84GiB(A10), then levels off.
+  Do not label this one-time increase an accumulating leak.
+
 ## Qwen GPU snapshot live experiment (2026-11-05)
 
 - Official requirements from the preceding documentation review were applied to

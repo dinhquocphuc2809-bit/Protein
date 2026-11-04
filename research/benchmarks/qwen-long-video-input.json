@@ -1,0 +1,19 @@
+{
+  "video": "YGi-aPUsZrQ",
+  "at": "2026-11-04T23:14:07.886677+00:00",
+  "storage_location": "local Windows workspace, not VPS",
+  "passed": true,
+  "tunelio_record": 1,
+  "download_seconds": 42.55631280000671,
+  "download_bytes": 129118653,
+  "source_duration_seconds": 8996.741,
+  "source_codecs": [
+    "opus"
+  ],
+  "normalization_seconds": 10.219771500000206,
+  "duration_seconds": 8996.72,
+  "normalized_bytes": 287895118,
+  "audio_sha256": "df0c4bfc18cce22faa1670e1e9da9f87f6cecb89c1d1a470fc224d3fb9945ac7",
+  "audio_only": true,
+  "download_source_removed": true
+}

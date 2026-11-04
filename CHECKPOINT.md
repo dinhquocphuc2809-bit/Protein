@@ -2,6 +2,38 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Passed: long-video T4 versus A10 (2026-11-05)
+
+- Owner requests full video YGi-aPUsZrQ on two different backend accounts,
+  time/resource/error measurements, audio-only local acquisition.
+- [x] Tunelio Opus audio-only, source8996.741s; normalized mono16kHz PCM16
+  8996.72s (2h29m56.72s),287895118 bytes. Compressed source removed after
+  validation; no media stored on VPS. Input hash in qwen-long-video-input.json.
+- [x] Recheck official Modal GPU/resources/pricing docs; A10 is supported.
+  Choose T4/account1 and A10/account2 after previous L4 allocation failures.
+- [x] Implement bounded one-pass probe with per-window RAM/VRAM/CPU metrics,
+  identity, timing, error/coverage checks and guaranteed app cleanup.
+- [x] Run both complete audio passes; verify actual GPU type and separate accounts.
+- Completed: T4/account1 app ap-Y2ri5Lnr0b1XOxZ2ttSjH6,
+  A10/account2 app ap-FK57N1REvjOc6B8jQiIBIz. Both allocated and
+  returned their actual GPU names. Reports are research/benchmarks/qwen-long-*.json;
+  console/private transcripts in .private/asr-long-video. Both apps stopped.
+- Both pass offset3960s through existing stable-ts alignment recovery
+  (T4 12.77s/A10 7.76s), no failed windows. RSS rises once when fallback model
+  loads, then levels off around8.69/8.84GiB. No failed windows or OOM.
+- [x] Diagnose any failures: none; all750 windows processed. Raw9-window
+  GPU differences leave identical retained word text, timestamps differ <=80ms.
+- [x] Compare durations, real-time factor, peak/trend RAM/VRAM, CPU demand and
+  errors; verify no skipped windows and sane output timestamps.
+- [x] Stop both temporary apps/verify zero tasks, update report and research ledger.
+- T4 wall1919.939s/worker1215.673s; A10 wall1677.023s/worker722.531s.
+  A10 worker1.683x, total1.145x. Peak RSS9.489/9.471GiB, reservedVRAM6.980/
+  6.789GiB, CPU average1.132/1.162 cores. Full coverage375windows each.
+- Summary: research/benchmarks/qwen-long-summary.json; report:
+  docs/QWEN_LONG_VIDEO.md.16GiB is a request, not an enforced hard limit;
+  cgroup CPU/throttle/pressure counters unavailable. No human accuracy audit.
+- Production remains unchanged. Snapshot disabled on both sides for GPU comparison.
+
 ## Passed: isolated Qwen GPU snapshot restore (2026-11-05)
 
 - [x] Deployed separate T4 snapshot app on backend account1; production unchanged.
