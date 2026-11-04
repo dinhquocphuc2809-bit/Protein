@@ -101,3 +101,8 @@ buttons on Mux wrappers. Buttons remount when a framework replaces its controls.
 None of these results certifies all 159 routes individually. Bespoke APIs and
 authenticated sites still need per-site acceptance. Reload both the extension
 and video page after replacing the build so document_start hooks are current.
+
+Implementation `62ba2ec` is published and its remote hash verified. GitHub Actions
+run 41778599150 passed: Python/JavaScript validation, compilation and both source-only
+packages. Local Chrome/Firefox 0.6.0 archives were checked against current reader
+source bytes and retain 84 voice references/8 BGM files.

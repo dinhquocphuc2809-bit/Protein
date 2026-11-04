@@ -338,7 +338,8 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 - [x] Mount Vocalm controls using reference routing selectors and selected-player ownership.
 - [x] Test late metadata, blob swaps, part changes, stale responses, CC restoration and failures.
 - [x] Rebuild local Chrome/Firefox 0.6.0 packages with 84 voices/8 BGM and record evidence.
-- [ ] Publish source and verify remote CI.
+- [x] Publish source and verify remote CI: implementation `62ba2ec` is on main;
+  GitHub Actions run 41778599150 completed successfully.
 - Live discovery found Bilibili redirects to `/en/video/...`, which the previous
   matcher missed. Locale-aware routing now activates the adapter and mounts the
   button on the actual sample. Anonymous acquisition returns `bili_session`;
