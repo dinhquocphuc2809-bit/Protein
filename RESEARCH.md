@@ -429,3 +429,111 @@ Evidence separates real services/YouTube layout from labelled media/provider
 fixtures. Subsecond fixture readiness is not a real OmniVoice latency benchmark.
 Live Chrome tests still submit registered voice IDs (193/194-byte requests), with
 no repeated WAV uploads; previous speed optimizations remain intact.
+
+## Multi-platform reference and live findings, 2026-11-04
+
+- Static source: local Youtube Dubbing `injectScript.js` and `background.js`.
+  Handler mapping and structural SHA are in `research/extractor-audit.json`;
+  route evidence is in `docs/SITE_ACCEPTANCE_MATRIX.md`. Private source excerpts
+  are not redistributed. The new readers are independently implemented.
+- Brightcove official player configuration guide:
+  https://player.support.brightcove.com/references/player-configuration-guide.html
+  fetched HTTP200; documents video_cloud/policy_key. Read the public config for
+  the owned account/player; use its policy only for edge.api.brightcove.com
+  playback GET. Never use the hard-coded fallback policy found in the reference.
+- Updraft public lesson samples in `research/updraft-live.json`: actual HTML uses
+  VideoObject.embedUrl/contentUrl, an hls-video open shadow root with video inside
+  a slot, and 14 subtitle languages with none marked DEFAULT. Reference explicitly
+  prefers English if no source-language selection exists. Regional matching
+  (en -> en-US) is required. Complete speech tracks verified through packaged MV3.
+- Al Jazeera public samples in `research/aljazeera*-live.json`: video loads after
+  Play video, then preloads five Brightcove carousel players. Only
+  `.vertical-video-player-container.vve-is-active` belongs to the current video.
+  SDK mediainfo identifies caption presence; nearby recommendations must not be
+  used as a fallback. Next video live acquisition passed after ownership fix.
+- Reference source distinguishes support for a video player from existing-caption
+  support: Glo and Oba explicitly emit empty subtitle arrays. Vidlove implements
+  its movie endpoint but throws for TV. VK supports unsegmented MPD text BaseURLs;
+  reference rolling-WebVTT cleanup is still a separate parity task.
+- Dropbox reference segments use startTime/endTime in seconds; Circle derives
+  media_transcripts/{id}.vtt from lesson or video attachment metadata and rejects
+  mosaic thumbnails. Movebox response data.captions uses url/lan, with detailPath
+  needed for ownership. Vocalm accepts these only from bounded observed responses
+  for the active page/player. Unknown acquisition is not authorization for ASR.
+- HTTP403/connection-refused results are recorded separately. These tests did not
+  establish whether authenticated BBC, ArtStation, Osmosis or MathWorks sessions
+  can access captions. No inference of absent captions is justified.
+
+## Owner samples and source overrides, 2026-11-04 follow-up
+
+- Owner Skillshare sample: public isolated browser HTTP403. Authorized owner
+  Chrome WebSocket still timed out after 20 seconds (10:33 UTC). Computer Use
+  browser host unavailable too. No authenticated success or cookie export.
+- Owner Platzi sample: 45 Spanish cues, 1.42-200.76s. Playback error 4 reproduced
+  in isolated Chrome without Vocalm. Exact site/network cause not established.
+- Owner Skool /claudecodeclub/about embeds Loom, not a classroom lesson. Loom
+  has a looping 5-second animatedPreviewVideo alongside LoomShakaVideoPlayer.
+  Another VTT carries 173 thumbnail sprite cues. Both caused false acceptance.
+  Fix: exclude preview players, reject sprite coordinates as text, fetch unique
+  speech VTT by current Loom ID. Final: 55 English cues, 0-184.94s, real duration
+  189.066667s, no media error, Vocalm button present. .transportSection contains
+  FullScreenBtn inside data-hide-if-fullscreen/presentation wrappers; using this
+  observed structure fixes the ambiguous generic controls selector. Regression
+  fixtures cover preview exclusion, storyboard rejection and controls remount.
+- Pluralsight reference w7 and v7/sC/x7/Ld/S7 helpers (static AST): only delivery
+  descriptors ending in /hls/master.m3u8; current clip GUID comes from /clips2/
+  and current lesson route/selected link. Vocalm validates host and clip match.
+  JWT payload is an ownership hint, never authorization. Live course pending.
+- Medbridge Aq delegates to ib=eh, resolved in original AST: segment VTT times
+  are already absolute; timestamp-map offsets are not applied. Vocalm preserves
+  these times, dedupes exact timing/text and requires known video duration. It
+  does not dedupe solely by cue ID because IDs can repeat across segments.
+  Other sites retain strict HLS timestamp-map/segment alignment.
+- CoinDesk EV and hosted JW Zd read getCaptionsList URL IDs and match labels to
+  playlist tracks. Reuters TV reads current item HLS subtitle renditions, which
+  may directly return VTT. Vocalm requires the SDK container to own the video.
+  Live CoinDesk uses /video/ rather than reference /videos/; routing now handles
+  both. Tested clip north-korea-denies-it-was-behind-64b-binance-hack exposes only
+  Off in the SDK, thumbnails in playlist, metadata native track. No caption pass.
+  Reuters /video/ returned HTTP401. Evidence: research/jw-live.json.
+- Mindvalley xq/TC/Z0/wC binds HLS to video/source and rejects storyboard text;
+  Domestika X0 identifies lesson player IDs. Vocalm now recovers attached Video.js
+  source manifests and rejects unrelated observed HLS. Multiple active players
+  and MP4-associated caption recovery remain separate unverified paths.
+- MightyNetworks z9 strips signed queries for emission comparison; Nebula Jd
+  dedupes by video plus selected language/label. These are observable-emission
+  optimizations, not new caption endpoints. Vocalm acquires on demand; copying
+  suppression blindly could hide changed tracks. Live renewal tests remain open.
+- Acceptance ledger tests reject historical false positives and keep caption-only
+  results separate from player evidence. Embedded Loom cannot certify Skool.
+
+## Companion content runtime correction and follow-up
+
+Static inspection of Youtube Dubbing/content-scripts/content.js (hash and method
+index: research/runtime-extractor-audit.json) revealed additional player adapters.
+An unmapped injectScript factory does NOT imply no caption support. Twitter's
+content runtime calls getTwitterM3u8Content with tweet/media ID; background.js maps
+observed GraphQL extended_entities.media[].video_info.variants, including serialized
+unified_card media_entities. Facebook's content runtime uses selected video React
+metadata and background GraphQL maps of videoFBID/caption locales. The previous
+factory-only inference has been corrected in the checkpoint and route ledger.
+
+Vocalm independently implements Twitter's observed-data path with exact media
+ownership: pbs.twimg.com/(ext_tw_video_thumb|amplify_video_thumb)/ID must match
+video.twimg.com/(ext_tw_video|amplify_video)/ID in the HLS variant. Requests remain
+browser-local and no authorization headers are copied or replayed. Serialized card
+JSON and recursive traversal are bounded. Unrelated observed standalone VTT is not
+accepted for a social feed. Current poster ID participates in acquisition identity.
+
+Facebook reads data descriptors from a bounded chain of the selected video's React
+props/fiber memoizedProps; getters and nonplain object traversal are skipped. Caption
+URLs must be on facebook.com/fbcdn.net and share a unique FBID owner. Owner and URL
+are revalidated after loading. Captions from GraphQL-only state still need a separate
+fallback; no authenticated live Facebook result is claimed.
+
+Mindvalley content helpers OIe/PJ/FIe/wg reveal HLS or MP4/VTT source siblings in the
+owned video. Vocalm now includes all bounded source children, accepts one unambiguous
+official asset VTT beside MP4, and rejects sprite text. Domestika/Mindvalley reference
+controls select a video before metadata hydration; Vocalm now prioritizes the playing
+lesson and retains last activation across a preparation pause. Real MediaStream
+fixtures verify cross-world playback state, pause retention, switching and remount.

@@ -2,7 +2,9 @@
   "scope": "Actual Firefox MV3 package; labelled local caption fixtures on example.org; no providers",
   "checks": [
     "DOM: full native cues and original CC mode restored",
-    "open shadow: full native cues and original CC mode restored"
+    "open shadow: full native cues and original CC mode restored",
+    "DASH inherited BaseURL; reject protected/dynamic tracks; reader module loaded",
+    "Social readers: exact Twitter media ownership; Facebook descriptors without executing getters"
   ],
   "browser": "159.0",
   "passed": true

@@ -17,8 +17,12 @@ CASES = [
     ('shaka', 'https://learn.microsoft.com/en-us/shows/test/lesson', '<div class="shaka-controls-button-panel"></div>'),
     ('udemy', 'https://www.udemy.com/course/test/learn/lecture/123', '<div data-purpose="video-controls"></div>'),
     ('mux_shadow', 'https://www.aihero.dev/lesson', '<media-control-bar></media-control-bar>'),
+    ('hls_nested_slot', 'https://updraft.cyfrin.io/courses/test/section/lesson', '<media-control-bar></media-control-bar>'),
+    ('loom_preview', 'https://www.loom.com/embed/1234567890abcdef1234567890abcdef', '<div class="transportSection"><div class="controls-right"><div data-hide-if-fullscreen="true"><div role="presentation"><button data-name="FullScreenBtn">Fullscreen</button></div></div></div></div>'),
     ('mux_unslotted', 'https://www.aihero.dev/lesson', ''),
     ('two_players', 'https://player.vimeo.com/video/123', '<div><button id="fullscreen-control-bar-button">Fullscreen</button></div>'),
+    ('domestika_multiple', 'https://www.domestika.org/en/courses/course/units/lesson', '<div class="vjs-control-bar"></div>'),
+    ('mindvalley_multiple', 'https://home.mindvalley.com/quests/lesson', '<div class="vjs-control-bar"></div>'),
 ]
 
 
@@ -35,10 +39,16 @@ def main():
                 page = context.new_page()
                 video = '<video style="width:800px;height:450px"></video>'
                 markup = '<section id="owned">' + video + controls + '</section>'
+                if name == 'loom_preview':
+                    markup = '<section id="owned"><video class="components_animatedPreviewVideo_Miy" style="width:900px;height:500px"></video>' + video + controls + '</section>'
                 if name == 'two_players':
                     markup += '<section id="other"><video style="width:300px;height:200px"></video>' + controls + '</section>'
+                if name in ('domestika_multiple','mindvalley_multiple'):
+                    markup = '<section id="other"><video style="width:1000px;height:600px"></video>' + controls + '</section>' + markup + '<script>const canvas=document.createElement("canvas");canvas.width=800;canvas.height=450;const ctx=canvas.getContext("2d");setInterval(()=>ctx.fillRect(0,0,800,450),100);const v=document.querySelector("#owned video");v.muted=true;v.srcObject=canvas.captureStream(10);v.play();</script>'
                 if name.startswith('mux_'):
                     markup = '<mux-player id="owned"></mux-player><script>document.querySelector("mux-player").attachShadow({mode:"open"}).innerHTML=' + json.dumps(video + controls) + ';</script>'
+                if name == 'hls_nested_slot':
+                    markup = '<section id="owned"><media-controller><hls-video></hls-video>'+controls+'</media-controller></section><script>document.querySelector("hls-video").attachShadow({mode:"open"}).innerHTML='+json.dumps('<slot name="media">'+video+'</slot>')+';</script>'
                 page.route('https://**/*', lambda route, request, markup=markup: route.fulfill(body='<!doctype html><title>Labelled player mount fixture</title><h1>Controls regression fixture</h1>' + markup, content_type='text/html'))
                 page.goto(url)
                 page.wait_for_selector('#auvirel-surface', state='attached')
@@ -52,6 +62,10 @@ def main():
                     continue
                 assert page.locator('.vocalm-player-button').count() == 1, name
                 assert page.locator('#owned .vocalm-player-button').count() == 1, name
+                if name in ('domestika_multiple','mindvalley_multiple'):
+                    page.locator('#owned video').evaluate('v=>v.pause()')
+                    page.wait_for_timeout(1500)
+                    assert page.locator('#owned .vocalm-player-button').count()==1, name+': pause lost the selected lesson'
                 button = page.locator('.vocalm-player-button')
                 assert button.bounding_box()['width'] >= 30, name
                 button.click()
@@ -61,6 +75,10 @@ def main():
                 button.evaluate('e=>{const c=e.parentElement;const next=c.cloneNode(true);next.querySelector(".vocalm-player-button")?.remove();c.replaceWith(next)}')
                 page.wait_for_timeout(1500)
                 assert page.locator('.vocalm-player-button').count() == 1, name
+                if name in ('domestika_multiple','mindvalley_multiple'):
+                    page.locator('#other video').evaluate('v=>{v.muted=true;v.srcObject=document.querySelector("#owned video").srcObject;return v.play()}')
+                    page.wait_for_timeout(1500)
+                    assert page.locator('#other .vocalm-player-button').count()==1, name+': active lesson did not switch'
                 report['checks'].append(name + ': owned native control, quick menu and remount')
                 page.close()
             report['passed'] = True

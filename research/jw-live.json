@@ -1,0 +1,65 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.coindesk.com/video/north-korea-denies-it-was-behind-64b-binance-hack",
+      "http_status": 200,
+      "frames": [
+        {
+          "diagnostic": "",
+          "duration": 100.4,
+          "engine": "multisite",
+          "host": "www.coindesk.com",
+          "mediaError": null,
+          "path": "/video/north-korea-denies-it-was-behind-64b-binance-hack",
+          "playerButton": true,
+          "reason": "Thumbnail storyboard is not a subtitle track",
+          "rules": [
+            "coindesk"
+          ],
+          "state": "failed",
+          "trackCount": 1,
+          "videos": [
+            {
+              "height": 778.5,
+              "parent": "jw-media jw-reset",
+              "width": 1384
+            }
+          ]
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "frame-unavailable"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    },
+    {
+      "url": "https://www.reuters.com/video/",
+      "http_status": 401,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    }
+  ]
+}

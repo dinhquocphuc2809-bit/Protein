@@ -1,0 +1,5494 @@
+{
+  "scope": "159 reference route entries, not 159 independently verified websites. Live results certify only the listed sample.",
+  "sourceSha256": "e8cff06bfd1ad82965f687567e14bb06ae8d2627818a356aee3fdc5e82258e83",
+  "routes": [
+    {
+      "route": 1,
+      "site": "youtube",
+      "domain": "*://*.youtube.com/*",
+      "pages": [
+        "*://*.youtube.com/embed/*"
+      ],
+      "selector": "video",
+      "controls": ".ytp-right-controls, .player-controls-bottom-right",
+      "family": "youtube",
+      "referenceHandler": "T0",
+      "mechanism": "Player response captionTracks and timedtext; native tracks; separate YouTube bridge",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 2,
+      "site": "youtube",
+      "domain": "*://*.youtube-nocookie.com/*",
+      "pages": [
+        "*://*.youtube-nocookie.com/embed/*"
+      ],
+      "selector": "video",
+      "controls": ".ytp-right-controls, .player-controls-bottom-right",
+      "family": "youtube",
+      "referenceHandler": "T0",
+      "mechanism": "Player response captionTracks and timedtext; native tracks; separate YouTube bridge",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 3,
+      "site": "google_drive_youtube",
+      "domain": "*://youtube.googleapis.com/*",
+      "pages": [
+        "*://youtube.googleapis.com/embed/*"
+      ],
+      "selector": "video",
+      "controls": "section[role='tabpanel']",
+      "family": "google_drive_youtube",
+      "referenceHandler": "P$",
+      "mechanism": "Embedded Drive timedtext/player activation; large specialized pipeline still under review",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "google_drive_youtube",
+          "passed": true
+        },
+        {
+          "name": "google_drive_youtube_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Direct account-specific timedtext list/JSON3 implemented; mobile activation variants and live Drive file pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 4,
+      "site": "youtube",
+      "domain": "*://*.youtube.com/*",
+      "pages": [
+        "*://*.youtube.com/watch*",
+        "*://*.youtube.com/shorts/*",
+        "*://*.youtube.com/live/*"
+      ],
+      "selector": "video.video-stream.html5-main-video",
+      "controls": ".ytp-right-controls",
+      "family": "youtube",
+      "referenceHandler": "T0",
+      "mechanism": "Player response captionTracks and timedtext; native tracks; separate YouTube bridge",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 5,
+      "site": "egghead",
+      "domain": "*://egghead.io/*",
+      "pages": [
+        "*://egghead.io/lessons/*",
+        "*://egghead.io/*~*"
+      ],
+      "selector": "mux-player",
+      "controls": "mux-player",
+      "family": "egghead",
+      "referenceHandler": "rq",
+      "mechanism": "Current Next lesson/videoResource SRT",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "egghead",
+          "passed": true
+        },
+        {
+          "name": "egghead_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 6,
+      "site": "thought_industries_wistia",
+      "domain": "*://*.thoughtindustries.com/*",
+      "pages": [
+        "*://*.thoughtindustries.com/learn/video/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 7,
+      "site": "thought_industries_wistia",
+      "domain": "*://learn.getdbt.com/*",
+      "pages": [
+        "*://learn.getdbt.com/learn/video/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 8,
+      "site": "thought_industries_wistia",
+      "domain": "*://learn.getdbt.com/*",
+      "pages": [
+        "*://learn.getdbt.com/learn/course/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 9,
+      "site": "thought_industries_wistia",
+      "domain": "*://academy.tricentis.com/*",
+      "pages": [
+        "*://academy.tricentis.com/learn/video/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 10,
+      "site": "thought_industries_wistia",
+      "domain": "*://learn.educate360.com/*",
+      "pages": [
+        "*://learn.educate360.com/learn/video/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 11,
+      "site": "ardan_labs_thinkific",
+      "domain": "*://courses.ardanlabs.com/*",
+      "pages": [
+        "*://courses.ardanlabs.com/api/course_player/v2/contents/*/play/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 12,
+      "site": "thinkific_course_player",
+      "domain": "*://*/*",
+      "pages": [
+        "*://*/api/course_player/v2/contents/*/play/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 13,
+      "site": "ahrefs_wistia",
+      "domain": "*://ahrefs.com/*",
+      "pages": [
+        "*://ahrefs.com/academy/*/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [
+        {
+          "report": "multisite-live.json",
+          "url": "https://ahrefs.com/academy/seo-training-course/lesson-1-1",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "engine": "youtube",
+              "host": "www.youtube-nocookie.com",
+              "playerButton": false,
+              "state": "unknown",
+              "trackCount": 0
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 14,
+      "site": "comsol_wistia",
+      "domain": "*://*.comsol.*/*",
+      "pages": [
+        "*://*.comsol.*/video-training/*",
+        "*://*.comsol.*/video/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 15,
+      "site": "rti_wistia",
+      "domain": "*://www.rti.com/*",
+      "pages": [
+        "*://www.rti.com/gettingstarted*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 16,
+      "site": "psychwire_wistia",
+      "domain": "*://psychwire.com/*",
+      "pages": [
+        "*://psychwire.com/free-resources/therapy-demonstrations/resource-*/*",
+        "*://psychwire.com/free-resources/expert-insights/resource-*/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 17,
+      "site": "kajabi_mobile_wistia_frame",
+      "domain": "*://fast.wistia.net/*",
+      "pages": [
+        "*://fast.wistia.net/embed/iframe/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 18,
+      "site": "unrealmasterclass_wistia",
+      "domain": "*://fast.wistia.net/*",
+      "pages": [
+        "*://fast.wistia.net/embed/iframe/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 19,
+      "site": "sheridan_wistia",
+      "domain": "*://fast.wistia.net/*",
+      "pages": [
+        "*://fast.wistia.net/embed/iframe/*"
+      ],
+      "selector": "video[id^='wistia_simple_video_']",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "wistia",
+      "referenceHandler": "nq",
+      "mechanism": "Owned Wistia media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 20,
+      "site": "kajabi_wistia",
+      "domain": "*://*/*",
+      "pages": [
+        "*://www.kajabi.com/learn/*",
+        "*://*.mykajabi.com/products/*/categories/*/posts/*",
+        "*://*/products/*/categories/*/posts/*"
+      ],
+      "selector": "video, audio",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "kajabi",
+      "referenceHandler": "lq",
+      "mechanism": "Owned Wistia custom element/media ID -> captions JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 21,
+      "site": "unrealmasterclass_top_frame",
+      "domain": "*://www.unrealmasterclass.com/*",
+      "pages": [
+        "*://www.unrealmasterclass.com/*"
+      ],
+      "selector": "video, audio",
+      "controls": "video, audio",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 22,
+      "site": "sheridan_top_frame",
+      "domain": "*://www.sheridanriskmanagement.com/*",
+      "pages": [
+        "*://www.sheridanriskmanagement.com/course/*",
+        "*://www.sheridanriskmanagement.com/path-player*"
+      ],
+      "selector": "video, audio",
+      "controls": "video, audio",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 23,
+      "site": "domestika",
+      "domain": "*://www.domestika.org/*",
+      "pages": [
+        "*://www.domestika.org/courses/*/units/*",
+        "*://www.domestika.org/*/courses/*/units/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "domestika",
+      "referenceHandler": "pq",
+      "mechanism": "Current video/source/attached Video.js HLS; reject unowned observed manifests",
+      "runtimeHandler": "Jwe",
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "domestika",
+          "passed": true
+        },
+        {
+          "name": "domestika_stale",
+          "passed": true
+        },
+        {
+          "name": "domestika_denied",
+          "passed": true
+        },
+        {
+          "name": "domestika_multiple",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Owned HLS, active multiple-player fixtures; remote per-video mapping fallback/live course pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 24,
+      "site": "mindvalley",
+      "domain": "*://home.mindvalley.com/*",
+      "pages": [
+        "*://home.mindvalley.com/quests/*"
+      ],
+      "selector": "video[id^='mv-video-item-'], [id^='mv-video-item-'] video.vjs-tech",
+      "controls": ".video-js[id^='mv-video-item-'] .vjs-control-bar, [id^='mv-video-item-'] .vjs-control-bar",
+      "family": "mindvalley",
+      "referenceHandler": "xq",
+      "mechanism": "Current video/source/attached Video.js HLS; reject unowned manifest and storyboard VTT",
+      "runtimeHandler": "VIe",
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "mindvalley",
+          "passed": true
+        },
+        {
+          "name": "mindvalley_stale",
+          "passed": true
+        },
+        {
+          "name": "mindvalley_denied",
+          "passed": true
+        },
+        {
+          "name": "mindvalley_multiple",
+          "passed": true
+        },
+        {
+          "name": "mindvalley_mp4",
+          "passed": true
+        },
+        {
+          "name": "mindvalley_mp4_storyboard",
+          "passed": true
+        },
+        {
+          "name": "mindvalley_mp4_ambiguous",
+          "passed": true
+        },
+        {
+          "name": "mindvalley_mp4_foreign",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Owned HLS and MP4/VTT, active multiple-player fixtures; live entitled course pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 25,
+      "site": "hubspot_video",
+      "domain": "*://*.hubspotvideo.com/*",
+      "pages": [
+        "*://*.hubspotvideo.com/v/*/id/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "commonVtt",
+      "referenceHandler": "P0",
+      "mechanism": "Intercepted VTT; owned native/SDK descriptor preferred",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 26,
+      "site": "zenva",
+      "domain": "*://academy.zenva.com/*",
+      "pages": [
+        "*://academy.zenva.com/lesson/*"
+      ],
+      "selector": "#zva_video video.vjs-tech, video#zva_video_html5_api, video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "commonVtt",
+      "referenceHandler": "P0",
+      "mechanism": "Intercepted VTT; owned native/SDK descriptor preferred",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 27,
+      "site": "nma_art",
+      "domain": "*://www.nma.art/*",
+      "pages": [
+        "*://www.nma.art/videolessons/*"
+      ],
+      "selector": "#nma-player-container video.vjs-tech, .video-js video.vjs-tech, video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 28,
+      "site": "datacamp_projector",
+      "domain": "*://projector.datacamp.com/*",
+      "pages": [
+        "*://projector.datacamp.com/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "datacamp",
+      "referenceHandler": "Mq",
+      "mechanism": "Projector key -> course/language VTT",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "datacamp",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 29,
+      "site": "lecturio",
+      "domain": "*://app.lecturio.com/*",
+      "pages": [
+        "*://app.lecturio.com/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".video-js .vjs-control-bar",
+      "family": "lecturio",
+      "referenceHandler": "Gq",
+      "mechanism": "Owned attached Video.js tracks/options",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 30,
+      "site": "platzi",
+      "domain": "*://platzi.com/*",
+      "pages": [
+        "*://platzi.com/cursos/*/*"
+      ],
+      "selector": "video-js.video-js video.vjs-tech, .video-js video.vjs-tech, video.vjs-tech",
+      "controls": "video-js.video-js .vjs-control-bar, .video-js .vjs-control-bar",
+      "family": "platzi",
+      "referenceHandler": "Zq",
+      "mechanism": "Owned Video.js; base64 subtitles parameter on media URL",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "platzi",
+          "passed": true
+        },
+        {
+          "name": "platzi_malformed",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "owner-samples-live.json",
+          "url": "https://platzi.com/cursos/computacion-basica/computacion-basica-para-principiantes-en/",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Caption acquisition only: 45 Spanish cues; playback fails in isolated Chrome even without Vocalm (platzi-playback-control.json).",
+          "frames": [
+            {
+              "cues": 45,
+              "duration": null,
+              "engine": "multisite",
+              "first": 1.42,
+              "host": "platzi.com",
+              "language": "es",
+              "last": 200.76,
+              "path": "/cursos/computacion-basica/computacion-basica-para-principiantes-en/",
+              "playerButton": true,
+              "rules": [
+                "platzi"
+              ],
+              "state": "ready",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 565.203125,
+                  "parent": "video-js vjs-paused vjs-fluid vjs_video_3-dimensions vjs-workinghover vjs-v8 vjs-user-active vjs-error vjs-controls-disabled",
+                  "width": 1004.8125
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 31,
+      "site": "kollus",
+      "domain": "*://v.kr.kollus.com/*",
+      "pages": [
+        "*://v.kr.kollus.com/s*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "kollus",
+      "referenceHandler": "ob",
+      "mechanism": "Owned KollusPlayers media_content_key -> subtitles; reference also numeric-ID resource lookup",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "kollus",
+          "passed": true
+        },
+        {
+          "name": "kollus_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Numeric-ID resource-history fallback not yet implemented; no live sample",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 32,
+      "site": "dailymotion",
+      "domain": "*://geo.dailymotion.com/*",
+      "pages": [
+        "*://geo.dailymotion.com/player/*"
+      ],
+      "selector": "video#video, video",
+      "controls": ".controls_bottom_right",
+      "family": "dailymotion",
+      "referenceHandler": "ub",
+      "mechanism": "Current player video ID -> video metadata subtitles URLs",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "dailymotion",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 33,
+      "site": "bbc",
+      "domain": "*://*.bbc.com/*",
+      "pages": [
+        "*://*.bbc.com/news/videos/*",
+        "*://*.bbc.com/reel/video/*/watch"
+      ],
+      "selector": "smp-toucan-player",
+      "controls": "[data-testid='video-page-player']",
+      "family": "bbc",
+      "referenceHandler": "TG",
+      "mechanism": "Current BBC path -> content model -> media selector -> captions",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "bbc",
+          "passed": true
+        },
+        {
+          "name": "bbc_denied",
+          "passed": true
+        },
+        {
+          "name": "bbc_ambiguous",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 34,
+      "site": "bloomberg",
+      "domain": "*://*.bloomberg.com/*",
+      "pages": [
+        "*://*.bloomberg.com/news/videos/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "bloomberg",
+      "referenceHandler": "xG",
+      "mechanism": "Owned skylight media ID -> manifest captions",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "bloomberg",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 35,
+      "site": "coindesk",
+      "domain": "*://*.coindesk.com/*",
+      "pages": [
+        "*://*.coindesk.com/videos/*"
+      ],
+      "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
+      "family": "coindesk_jwplayer",
+      "referenceHandler": "EV",
+      "mechanism": "Owned JW getCaptionsList URL/label association; playlist captions fallback",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "coindesk_jwplayer",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "jw-live.json",
+          "url": "https://www.coindesk.com/video/north-korea-denies-it-was-behind-64b-binance-hack",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "diagnostic": "",
+              "duration": 100.4,
+              "engine": "multisite",
+              "host": "www.coindesk.com",
+              "mediaError": null,
+              "path": "/video/north-korea-denies-it-was-behind-64b-binance-hack",
+              "playerButton": true,
+              "reason": "Thumbnail storyboard is not a subtitle track",
+              "rules": [
+                "coindesk"
+              ],
+              "state": "failed",
+              "trackCount": 1,
+              "videos": [
+                {
+                  "height": 778.5,
+                  "parent": "jw-media jw-reset",
+                  "width": 1384
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "frame-unavailable"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 36,
+      "site": "reuters",
+      "domain": "*://*.reuters.com/*",
+      "pages": [
+        "*://*.reuters.com/video/",
+        "*://*.reuters.com/video/watch/*",
+        "*://*.reuters.com/video/*"
+      ],
+      "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
+      "family": "reuters_jwplayer",
+      "referenceHandler": "TV",
+      "mechanism": "Owned JW current item sources -> HLS subtitles, direct VTT or playlist",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "reuters_jwplayer",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "jw-live.json",
+          "url": "https://www.reuters.com/video/",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 401,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 37,
+      "site": "streamuj_tv",
+      "domain": "*://www.streamuj.tv/*",
+      "pages": [
+        "*://www.streamuj.tv/video/*"
+      ],
+      "selector": "video.jw-video, video",
+      "controls": ".jw-controlbar-right-group",
+      "family": "jwplayer",
+      "referenceHandler": "V0",
+      "mechanism": "Owned JW playlist caption tracks/HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 38,
+      "site": "kisskh",
+      "domain": "*://kisskh.do/*",
+      "pages": [
+        "*://kisskh.do/Drama/*/Episode-*"
+      ],
+      "selector": ".videoplayer video",
+      "controls": ".videoplayer .controls .menu .right",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 39,
+      "site": "dramawave",
+      "domain": "*://dramawave.dramafren.org/*",
+      "pages": [
+        "*://dramawave.dramafren.org/index.php*"
+      ],
+      "selector": "video#player",
+      "controls": "#video-container",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 40,
+      "site": "plex",
+      "domain": "*://watch.plex.tv/*",
+      "pages": [
+        "*://watch.plex.tv/*/watch/movie/*",
+        "*://watch.plex.tv/watch/movie/*"
+      ],
+      "selector": "video:not([title=\"Advertisement\"])",
+      "controls": null,
+      "family": "plex",
+      "referenceHandler": "yz",
+      "mechanism": "HLS subtitle URL wrapper -> vod-static.plex.tv VTT",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "plex",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Safe direct subtitle wrapper rewrite implemented; real movie/ad acceptance pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 41,
+      "site": "aljazeera",
+      "domain": "*://*.aljazeera.com/*",
+      "pages": [
+        "*://*.aljazeera.com/video/*"
+      ],
+      "selector": "video-js.vjs-playing video.vjs-tech, video-js[data-video-id] video.vjs-tech, video.vjs-tech, video",
+      "controls": "video-js.vjs-playing .vjs-control-bar, video-js[data-video-id] .vjs-control-bar, .vjs-control-bar",
+      "family": "aljazeera_brightcove",
+      "referenceHandler": "AV",
+      "mechanism": "Owned Brightcove -> public config policy -> playback text_tracks",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "aljazeera_playback",
+          "passed": true
+        },
+        {
+          "name": "brightcove_stale",
+          "passed": true
+        },
+        {
+          "name": "brightcove_denied",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "public-access-live.json",
+          "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 200,
+          "error": "'NoneType' object has no attribute 'get'",
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            null,
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "aljazeera-live.json",
+          "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "diagnostic": "",
+              "duration": 146.16,
+              "engine": "multisite",
+              "host": "www.aljazeera.com",
+              "path": "/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+              "playerButton": true,
+              "reason": "No complete VOD subtitle playlist; enable CC or import SRT",
+              "rules": [
+                "aljazeera"
+              ],
+              "state": "failed",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-0 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-layout-medium vjs-quality-menu vjs-playing vjs-has-started playing",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-1 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-2 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-3 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-4 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "aljazeera-carousel-live.json",
+          "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 14,
+              "duration": 59.519999999999996,
+              "engine": "multisite",
+              "first": 0.52,
+              "host": "www.aljazeera.com",
+              "language": "en-GB",
+              "last": 52.7,
+              "path": "/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+              "playerButton": true,
+              "rules": [
+                "aljazeera"
+              ],
+              "state": "ready",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-3 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-layout-medium vjs-quality-menu vjs-playing vjs-has-started playing",
+                  "width": 504.609375
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Live carousel SDK path passed; config fallback needs DOM account; empty-track videos stay unknown/failed",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 42,
+      "site": "oracle_mylearn",
+      "domain": "*://mylearn.oracle.com/*",
+      "pages": [
+        "*://mylearn.oracle.com/ou/course/*"
+      ],
+      "selector": "video-js[data-video-id] video.vjs-tech, .video-js[data-video-id] video.vjs-tech, video.vjs-tech, video",
+      "controls": "video-js[data-video-id] .vjs-control-bar, .video-js[data-video-id] .vjs-control-bar, .vjs-control-bar",
+      "family": "oracle_mylearn_brightcove",
+      "referenceHandler": "wV",
+      "mechanism": "Owned Brightcove -> public config policy -> playback text_tracks",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "oracle_playback",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 43,
+      "site": "sonicwall",
+      "domain": "*://www.sonicwall.com/support/video-tutorials/*",
+      "pages": [
+        "*://www.sonicwall.com/support/video-tutorials/*"
+      ],
+      "selector": "video-js[data-video-id] video.vjs-tech, .video-js[data-video-id] video.vjs-tech, video.vjs-tech",
+      "controls": "video-js[data-video-id] .vjs-control-bar, .video-js[data-video-id] .vjs-control-bar",
+      "family": "sonicwall_brightcove",
+      "referenceHandler": "IV",
+      "mechanism": "Owned Brightcove mediainfo.text_tracks; public playback fallback",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "sonicwall_playback",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 44,
+      "site": "servicenow",
+      "domain": "*://learning.servicenow.com/*",
+      "pages": [
+        "*://learning.servicenow.com/lxp/*/pages/learning-course*"
+      ],
+      "selector": "video-js[data-video-id] video.vjs-tech, .video-js[data-video-id] video.vjs-tech, video.vjs-tech",
+      "controls": "video-js[data-video-id] .vjs-control-bar, .video-js[data-video-id] .vjs-control-bar",
+      "family": "servicenow_brightcove",
+      "referenceHandler": "LV",
+      "mechanism": "Owned Brightcove mediainfo.text_tracks; public playback fallback",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "servicenow_playback",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 45,
+      "site": "narto",
+      "domain": "*://narto-drama.com/detail/watch/*",
+      "pages": [
+        "*://narto-drama.com/detail/watch/*"
+      ],
+      "selector": "#shorts-stage > #player",
+      "controls": "#shorts-stage > #shorts-hud > .hud-bottom > .custom-controls > .custom-controls-right",
+      "family": "narto",
+      "referenceHandler": "t7",
+      "mechanism": "Selected TextTrack snapshots with transition stability",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 46,
+      "site": "kinescope",
+      "domain": "*://kinescope.io/*",
+      "pages": [
+        "*://kinescope.io/*"
+      ],
+      "selector": "[id^='player_'] video, video",
+      "controls": "[id^='player_']",
+      "family": "kinescope",
+      "referenceHandler": "G7",
+      "mechanism": "Captured owned Kinescope player playlist",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 47,
+      "site": "sketchy_cloudflare",
+      "domain": "*://customer-uvgt1jgt7nqod9np.cloudflarestream.com/*",
+      "pages": [
+        "*://customer-uvgt1jgt7nqod9np.cloudflarestream.com/*/iframe*"
+      ],
+      "selector": "stream video, video",
+      "controls": "stream",
+      "family": "sketchy_cloudflare",
+      "referenceHandler": "tq",
+      "mechanism": "Exact Cloudflare customer host and asset ID -> manifest/video.m3u8",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "sketchy_cloudflare",
+          "passed": true
+        },
+        {
+          "name": "sketchy_cloudflare_denied",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 48,
+      "site": "nbcnews",
+      "domain": "*://*.nbcnews.com/*",
+      "pages": [
+        "*://*.nbcnews.com/now/video/*",
+        "*://*.nbcnews.com/video/*"
+      ],
+      "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
+      "family": "jwplayer",
+      "referenceHandler": "V0",
+      "mechanism": "Owned JW playlist caption tracks/HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 49,
+      "site": "jwplayer_hosted",
+      "domain": "*://cdn.jwplayer.com/players/*.html*",
+      "pages": [
+        "*://cdn.jwplayer.com/players/*.html*"
+      ],
+      "selector": "video.jw-video",
+      "controls": ".jw-button-container",
+      "family": "jwplayer_hosted",
+      "referenceHandler": "q0",
+      "mechanism": "Owned JW getCaptionsList URL IDs, then playlist caption tracks/HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "jwplayer_hosted",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 50,
+      "site": "jwplayer_hosted",
+      "domain": "*://content.jwplatform.com/players/*.html*",
+      "pages": [
+        "*://content.jwplatform.com/players/*.html*"
+      ],
+      "selector": "video.jw-video",
+      "controls": ".jw-button-container",
+      "family": "jwplayer_hosted",
+      "referenceHandler": "q0",
+      "mechanism": "Owned JW getCaptionsList URL IDs, then playlist caption tracks/HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "jwplayer_hosted",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 51,
+      "site": "cbsnews",
+      "domain": "*://*.cbsnews.com/*",
+      "pages": [
+        "*://*.cbsnews.com/video/*"
+      ],
+      "selector": "player.player--type-vod .avia-container video[id^='vpjs-container'], .avia-container video[id^='vpjs-container'], video[id^='vpjs-container']",
+      "controls": ".avia-control-group-right",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 52,
+      "site": "barrons",
+      "domain": "*://*.barrons.com/*",
+      "pages": [
+        "*://*.barrons.com/video/*/*"
+      ],
+      "selector": "#video-player video#videoplayer-video-player, video#videoplayer-video-player",
+      "controls": "#video-controls-video-player",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 53,
+      "site": "wsj",
+      "domain": "*://*.wsj.com/*",
+      "pages": [
+        "*://*.wsj.com/video/*/*"
+      ],
+      "selector": "#video-player video#videoplayer-video-player, video#videoplayer-video-player",
+      "controls": "#video-controls-video-player",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 54,
+      "site": "aihero",
+      "domain": "*://www.aihero.dev/*",
+      "pages": [
+        "*://www.aihero.dev/*"
+      ],
+      "selector": "mux-player",
+      "controls": "mux-player",
+      "family": "mux",
+      "referenceHandler": "O$",
+      "mechanism": "Owned Mux/open-shadow tracks and HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 55,
+      "site": "maven",
+      "domain": "*://maven.com/*",
+      "pages": [
+        "*://maven.com/p/*"
+      ],
+      "selector": "mux-player",
+      "controls": "mux-player",
+      "family": "mux",
+      "referenceHandler": "O$",
+      "mechanism": "Owned Mux/open-shadow tracks and HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 56,
+      "site": "maven",
+      "domain": "*://maven.com/*",
+      "pages": [
+        "*://maven.com/*/*/*/home*",
+        "*://maven.com/*/*/*/syllabus/events/*",
+        "*://maven.com/*/*/*/syllabus/modules/*/*"
+      ],
+      "selector": "mux-player",
+      "controls": "mux-player",
+      "family": "mux",
+      "referenceHandler": "O$",
+      "mechanism": "Owned Mux/open-shadow tracks and HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 57,
+      "site": "maven",
+      "domain": "*://maven.com/*",
+      "pages": [
+        "*://maven.com/*/*"
+      ],
+      "selector": "mux-player",
+      "controls": "mux-player",
+      "family": "mux",
+      "referenceHandler": "O$",
+      "mechanism": "Owned Mux/open-shadow tracks and HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 58,
+      "site": "mux",
+      "domain": "*://whop.com/*",
+      "pages": [
+        "*://whop.com/*"
+      ],
+      "selector": "mux-player",
+      "controls": "mux-player",
+      "family": "mux",
+      "referenceHandler": "O$",
+      "mechanism": "Owned Mux/open-shadow tracks and HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 59,
+      "site": "crusherfiremedia_mux",
+      "domain": "*://www.crusherfiremedia.com/mux-embed*",
+      "pages": [
+        "*://www.crusherfiremedia.com/mux-embed*"
+      ],
+      "selector": "mux-player",
+      "controls": "mux-player",
+      "family": "mux",
+      "referenceHandler": "O$",
+      "mechanism": "Owned Mux/open-shadow tracks and HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 60,
+      "site": "bili",
+      "domain": "*://*.bilibili.com/*",
+      "pages": [
+        "*://*.bilibili.com/video/*",
+        "*://*.bilibili.com/bangumi/play/*",
+        "*://*.bilibili.com/cheese/play/*",
+        "*://*.bilibili.com/list/*",
+        "*://*.bilibili.com/medialist/play/*",
+        "*://*.bilibili.com/festival/*",
+        "*://player.bilibili.com/player.html*"
+      ],
+      "selector": "video",
+      "controls": ".bpx-player-control-bottom-right",
+      "family": "bili",
+      "api": {
+        "url": "/x/player/wbi/v2?",
+        "match": "includes",
+        "path": "$.data.subtitle.subtitles",
+        "urlField": "subtitle_url",
+        "language": "lan",
+        "label": "lan_doc"
+      },
+      "referenceHandler": "b9",
+      "mechanism": "Current CID/aid/bvid -> browser-session metadata -> subtitle JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [
+        {
+          "report": "multisite-live.json",
+          "url": "https://www.bilibili.com/video/BV1WqYV6cEwq/",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "diagnostic": "",
+              "engine": "multisite",
+              "host": "www.bilibili.com",
+              "playerButton": false,
+              "reason": "No complete subtitle track discovered",
+              "state": "unknown",
+              "trackCount": 0
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Anonymous sample no tracks; authenticated and PGC/PUGV paths remain unverified",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 61,
+      "site": "bili",
+      "domain": "*://www.bilibili.com/*",
+      "pages": [
+        "*://www.bilibili.com/html/player.html*",
+        "*://www.bilibili.com/blackboard/html5player.html*"
+      ],
+      "selector": "video",
+      "controls": ".bilibili-player-video-control-bottom-right",
+      "family": "bili",
+      "api": {
+        "url": "/x/player/wbi/v2?",
+        "match": "includes",
+        "path": "$.data.subtitle.subtitles",
+        "urlField": "subtitle_url",
+        "language": "lan",
+        "label": "lan_doc"
+      },
+      "referenceHandler": "b9",
+      "mechanism": "Current CID/aid/bvid -> browser-session metadata -> subtitle JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Anonymous sample no tracks; authenticated and PGC/PUGV paths remain unverified",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 62,
+      "site": "udemy",
+      "domain": "*://*.udemy.*/*",
+      "pages": [
+        "*://*.udemy.*/course/*/learn/lecture/*"
+      ],
+      "selector": "video",
+      "controls": "div[data-purpose=\"video-controls\"]",
+      "family": "udemy",
+      "api": {
+        "url": "*://*.udemy.*/api-2.0/users/me/subscribed-courses/*/lectures/*",
+        "match": "pattern",
+        "exclude": "*://*.udemy.*/api-2.0/users/me/subscribed-courses/*/lectures/*/social-bookmarks/*",
+        "path": "$.asset.captions",
+        "urlField": "url",
+        "language": "locale_id",
+        "label": "video_label"
+      },
+      "referenceHandler": "j9",
+      "mechanism": "Current course/lecture asset.captions -> original course locale -> VTT",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "udemy_no_history",
+          "passed": true
+        },
+        {
+          "name": "udemy_missed_hook",
+          "passed": true
+        },
+        {
+          "name": "udemy_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": "research/udemy-attached-live.json",
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 63,
+      "site": "leadconnector_course",
+      "domain": "*://*.rapid-flow.shop/*",
+      "pages": [
+        "*://*.rapid-flow.shop/courses/products/*/categories/*/posts/*"
+      ],
+      "selector": "#post-video video#plyr-video",
+      "controls": "#post-video .plyr__controls",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 64,
+      "site": "clientclub",
+      "domain": "*://*.app.clientclub.net/*",
+      "pages": [
+        "*://*.app.clientclub.net/courses/products/*/categories/*/posts/*",
+        "*://*.app.clientclub.net/products/*/categories/*/posts/*"
+      ],
+      "selector": "#post-video video#plyr-video",
+      "controls": "#post-video .plyr__controls",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 65,
+      "site": "gamedev",
+      "domain": "*://iframe.mediadelivery.net/*",
+      "pages": [
+        "*://iframe.mediadelivery.net/embed/*"
+      ],
+      "selector": "#main-video",
+      "controls": ".plyr__controls",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 66,
+      "site": "epicgames",
+      "domain": "*://dev.epicgames.com/*",
+      "pages": [
+        "*://dev.epicgames.com/*/embed.html"
+      ],
+      "selector": "video",
+      "controls": ".vjs-control-bar",
+      "family": "videojs",
+      "referenceHandler": "T9",
+      "mechanism": "Owned Video.js remoteTextTracks/options/mediainfo",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 67,
+      "site": "coursera",
+      "domain": "*://*.coursera.org/*",
+      "pages": [
+        "*://*.coursera.org/learn/*/lecture/*"
+      ],
+      "selector": "video",
+      "controls": ".icon-container > div:last-child",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 68,
+      "site": "autodesk",
+      "domain": "*://*.autodesk.com/*",
+      "pages": [
+        "*://*.autodesk.com/learn/ondemand/tutorial/*",
+        "*://*.autodesk.com/learn/ondemand/curated/*/*",
+        "*://*.autodesk.com/learn/ondemand/course/*/unit/*"
+      ],
+      "selector": "video",
+      "controls": ".video-player",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 69,
+      "site": "vimeo",
+      "domain": "*://player.vimeo.com/*",
+      "pages": [
+        "*://player.vimeo.com/video/*"
+      ],
+      "selector": "video",
+      "controls": "div:has(> #fullscreen-control-bar-button)",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 70,
+      "site": "vimeo",
+      "domain": "*://vimeo.com/*",
+      "pages": [
+        "*://vimeo.com/*"
+      ],
+      "selector": "video",
+      "controls": "div:has(> #fullscreen-control-bar-button)",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 71,
+      "site": "threejs_journey",
+      "domain": "*://threejs-journey.com/lessons/*",
+      "pages": [
+        "*://threejs-journey.com/lessons/*"
+      ],
+      "selector": "video",
+      "controls": "div.undefined",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 72,
+      "site": "dropbox",
+      "domain": "*://*.dropbox.com/*",
+      "pages": [
+        "*://*.dropbox.com/preview/*",
+        "*://*.dropbox.com/scl/fi/*",
+        "*://*.dropbox.com/home*"
+      ],
+      "selector": "video",
+      "controls": "div.undefined",
+      "family": "dropbox",
+      "referenceHandler": "x9",
+      "mechanism": "Current-player observed transcript JSON segments in seconds and transcriptLocale",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "dropbox",
+          "passed": true
+        },
+        {
+          "name": "dropbox_invalid",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Observed current-player transcript implemented; missed-hook recovery and live file sample pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 73,
+      "site": "illinois",
+      "domain": "*://mediaspace.illinois.edu/*",
+      "pages": [
+        "*://mediaspace.illinois.edu/media/*"
+      ],
+      "selector": "video, audio",
+      "controls": ".playkit-controls-container .playkit-right-controls",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 74,
+      "site": "esri_kaltura",
+      "domain": "*://mediaspace.esri.com/*",
+      "pages": [
+        "*://mediaspace.esri.com/media/*"
+      ],
+      "selector": "video.playkit-engine, video",
+      "controls": ".playkit-bottom-bar .playkit-right-controls",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 75,
+      "site": "brightcove_",
+      "domain": "*://players.brightcove.net/*",
+      "pages": [
+        "*://players.brightcove.net/*"
+      ],
+      "selector": "video",
+      "controls": ".vjs-control-bar",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 76,
+      "site": "hotmart",
+      "domain": "*://*.hotmart.com/*",
+      "pages": [
+        "*://player.hotmart.com/embed/*",
+        "*://*.play.hotmart.com/embed/*"
+      ],
+      "selector": "video",
+      "controls": ".vjs-control-bar",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 77,
+      "site": "deeplearning.ai",
+      "domain": "*://learn.deeplearning.ai/*",
+      "pages": [
+        "*://learn.deeplearning.ai/courses/*/lesson/*/*",
+        "*://learn.deeplearning.ai/specializations/*/lesson/*/*"
+      ],
+      "selector": "video",
+      "controls": "div:has(> .vds-fullscreen-button)",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 78,
+      "site": "harvard",
+      "domain": "*://opencast.dcex.harvard.edu/*",
+      "pages": [
+        "*://opencast.dcex.harvard.edu/engage/player/watch.html*"
+      ],
+      "selector": "video, audio",
+      "controls": "#player-container > div.playback-bar.top-mode > div.button-plugins.right-side",
+      "family": "commonVtt",
+      "referenceHandler": "P0",
+      "mechanism": "Intercepted VTT; owned native/SDK descriptor preferred",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 79,
+      "site": "zoom_illinois",
+      "domain": "*://illinois.zoom.us/*",
+      "pages": [
+        "*://illinois.zoom.us/rec/play/*"
+      ],
+      "selector": "video, audio",
+      "controls": ".vjs-extend-control",
+      "family": "commonVtt",
+      "referenceHandler": "P0",
+      "mechanism": "Intercepted VTT; owned native/SDK descriptor preferred",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 80,
+      "site": "khanacademy",
+      "domain": "*://*.khanacademy.org/*",
+      "pages": [
+        "*://*.khanacademy.org/*/*/*/*/v/*"
+      ],
+      "selector": "video",
+      "controls": ".undefined",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 81,
+      "site": "edx",
+      "domain": "*://courses.edx.org/*",
+      "pages": [
+        "*://courses.edx.org/*"
+      ],
+      "selector": "video",
+      "controls": ".undefined",
+      "family": "edx",
+      "referenceHandler": "oV",
+      "mechanism": "Owned video data-metadata -> language transcript parallel millisecond arrays",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "edx",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 82,
+      "site": "ucdavis_mobile_kaltura_frame",
+      "domain": "*://cdnapisec.kaltura.com/*",
+      "pages": [
+        "*://cdnapisec.kaltura.com/html5/*"
+      ],
+      "selector": "video, audio",
+      "controls": ".undefined",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 83,
+      "site": "kaltura",
+      "domain": "*://cdnapisec.kaltura.com/*",
+      "pages": [
+        "*://cdnapisec.kaltura.com/html5/*"
+      ],
+      "selector": "video, audio",
+      "controls": ".undefined",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 84,
+      "site": "ixl",
+      "domain": "*://www.ixl.com/*",
+      "pages": [
+        "*://www.ixl.com/math/*/*",
+        "*://www.ixl.com/ela/*/*",
+        "*://www.ixl.com/science/*/*",
+        "*://www.ixl.com/social-studies/*/*",
+        "*://www.ixl.com/spanish/*/*"
+      ],
+      "selector": "video, audio",
+      "controls": ".playkit-controls-container .playkit-right-controls",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 85,
+      "site": "linkedin_learning",
+      "domain": "*://www.linkedin.com/*",
+      "pages": [
+        "*://www.linkedin.com/learning/*/*"
+      ],
+      "selector": "video",
+      "controls": ".vjs-control-bar",
+      "family": "commonVtt",
+      "referenceHandler": "P0",
+      "mechanism": "Intercepted VTT; owned native/SDK descriptor preferred",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 86,
+      "site": "anthropic_skilljar",
+      "domain": "*://anthropic.skilljar.com/*",
+      "pages": [
+        "*://anthropic.skilljar.com/*/*"
+      ],
+      "selector": "video",
+      "controls": ".jw-button-container",
+      "family": "jwplayer",
+      "referenceHandler": "V0",
+      "mechanism": "Owned JW playlist caption tracks/HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 87,
+      "site": "internet_archive",
+      "domain": "*://archive.org/*",
+      "pages": [
+        "*://archive.org/details/*",
+        "*://archive.org/embed/*"
+      ],
+      "selector": "play-av",
+      "controls": ".jw-button-container",
+      "family": "internet_archive",
+      "referenceHandler": "SV",
+      "mechanism": "Owned JW item -> associated archive metadata caption sidecar",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "archive",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 88,
+      "site": "tiktok",
+      "domain": "*://*.tiktok.com/*",
+      "pages": [
+        "*://*.tiktok.com/*"
+      ],
+      "selector": "video",
+      "controls": "video",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 89,
+      "site": "douyin",
+      "domain": "*://*.douyin.com/*",
+      "pages": [
+        "*://*.douyin.com/*"
+      ],
+      "selector": "video",
+      "controls": "video",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 90,
+      "site": "x",
+      "domain": "*://*.x.com/*",
+      "pages": [
+        "*://*.x.com/*"
+      ],
+      "selector": "video",
+      "controls": "video",
+      "family": "twitter",
+      "referenceHandler": null,
+      "mechanism": "Content runtime + background maps Tweet/media ID to HLS; Vocalm matches observed GraphQL variants/cards to selected poster media ID",
+      "runtimeHandler": "Hxe",
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "twitter",
+          "passed": true
+        },
+        {
+          "name": "twitter_legacy",
+          "passed": true
+        },
+        {
+          "name": "twitter_stale",
+          "passed": true
+        },
+        {
+          "name": "twitter_multiple",
+          "passed": true
+        },
+        {
+          "name": "twitter_card",
+          "passed": true
+        },
+        {
+          "name": "twitter_denied",
+          "passed": true
+        },
+        {
+          "name": "twitter_changed",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Poster-bound HLS/card fixtures; live post, missed GraphQL capture and alternate poster formats pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 91,
+      "site": "twitter",
+      "domain": "*://*.twitter.com/*",
+      "pages": [
+        "*://*.twitter.com/*"
+      ],
+      "selector": "video",
+      "controls": "video",
+      "family": "twitter",
+      "referenceHandler": null,
+      "mechanism": "Content runtime + background maps Tweet/media ID to HLS; Vocalm matches observed GraphQL variants/cards to selected poster media ID",
+      "runtimeHandler": "Hxe",
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "twitter",
+          "passed": true
+        },
+        {
+          "name": "twitter_legacy",
+          "passed": true
+        },
+        {
+          "name": "twitter_stale",
+          "passed": true
+        },
+        {
+          "name": "twitter_multiple",
+          "passed": true
+        },
+        {
+          "name": "twitter_card",
+          "passed": true
+        },
+        {
+          "name": "twitter_denied",
+          "passed": true
+        },
+        {
+          "name": "twitter_changed",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Poster-bound HLS/card fixtures; live post, missed GraphQL capture and alternate poster formats pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 92,
+      "site": "facebook",
+      "domain": "*://*.facebook.com/*",
+      "pages": [
+        "*://*.facebook.com/*"
+      ],
+      "selector": "video",
+      "controls": "video",
+      "family": "facebook",
+      "referenceHandler": null,
+      "mechanism": "Content runtime reads selected React videoFBID/caption URLs; bounded owned React reader, no getters or GraphQL replay",
+      "runtimeHandler": "QCe",
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "facebook",
+          "passed": true
+        },
+        {
+          "name": "facebook_denied",
+          "passed": true
+        },
+        {
+          "name": "facebook_ambiguous",
+          "passed": true
+        },
+        {
+          "name": "facebook_foreign_url",
+          "passed": true
+        },
+        {
+          "name": "facebook_getter",
+          "passed": true
+        },
+        {
+          "name": "facebook_changed",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Owned React data descriptors; ambiguous owners/getters rejected; live video and GraphQL recovery pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 93,
+      "site": "codewithmosh_teachable",
+      "domain": "*://codewithmosh.teachable.com/*",
+      "pages": [
+        "*://codewithmosh.teachable.com/*"
+      ],
+      "selector": "video, audio",
+      "controls": "video, audio",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 94,
+      "site": "openai_article",
+      "domain": "*://openai.com/*",
+      "pages": [
+        "*://openai.com/index/*",
+        "*://openai.com/*/index/*"
+      ],
+      "selector": "video, audio",
+      "controls": "video, audio",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 95,
+      "site": "spotify_episode",
+      "domain": "*://open.spotify.com/*",
+      "pages": [
+        "*://open.spotify.com/episode/*"
+      ],
+      "selector": "video, audio",
+      "controls": "body",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 96,
+      "site": "ted",
+      "domain": "*://*.ted.com/*",
+      "pages": [
+        "*://*.ted.com/talks/*"
+      ],
+      "selector": "media-controller#video-player-container video#video",
+      "controls": "media-controller#video-player-container #media-control-bar",
+      "family": "ted",
+      "referenceHandler": "iq",
+      "mechanism": "Current Next talk -> player resources.hls.metadata -> subtitles.webvtt",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "ted",
+          "passed": true
+        },
+        {
+          "name": "ted_ad_players",
+          "passed": true
+        },
+        {
+          "name": "ted_current_schema",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "platform-live.json",
+          "url": "https://www.ted.com/talks/ken_robinson_do_schools_kill_creativity",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 427,
+              "engine": "multisite",
+              "first": 5.607,
+              "host": "www.ted.com",
+              "language": "en",
+              "last": 1143.717,
+              "path": "/talks/sir_ken_robinson_do_schools_kill_creativity",
+              "playerButton": true,
+              "rules": [
+                "ted"
+              ],
+              "state": "ready",
+              "trackCount": 66,
+              "videos": [
+                {
+                  "height": 436.5,
+                  "parent": "size-full min-h-0",
+                  "width": 776
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 97,
+      "site": "apple_developer",
+      "domain": "*://developer.apple.com/*",
+      "pages": [
+        "*://developer.apple.com/videos/play/*/*",
+        "*://developer.apple.com/*/videos/play/*/*"
+      ],
+      "selector": ".developer-video-player video#video, .developer-video-player video",
+      "controls": ".developer-video-player",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [
+        {
+          "report": "multisite-live.json",
+          "url": "https://developer.apple.com/videos/play/wwdc2024/10140/",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 360,
+              "engine": "multisite",
+              "first": 7.149,
+              "host": "developer.apple.com",
+              "language": "en",
+              "last": 1241.297,
+              "playerButton": false,
+              "state": "ready",
+              "trackCount": 5
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 98,
+      "site": "learn_microsoft",
+      "domain": "*://learn.microsoft.com/*",
+      "pages": [
+        "*://learn.microsoft.com/*/shows/*"
+      ],
+      "selector": "video.shaka-video, video",
+      "controls": ".shaka-controls-button-panel",
+      "family": "apiIntercept",
+      "api": {
+        "url": "*://learn.microsoft.com/api/video/public/v1/entries/*",
+        "match": "pattern",
+        "path": "$.publicVideo.captions",
+        "urlField": "url",
+        "language": "language"
+      },
+      "referenceHandler": "pd",
+      "mechanism": "Configured request URL -> exact JSON caption-list path; per-site configuration required",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 99,
+      "site": "unity_learn",
+      "domain": "*://learn.unity.com/*",
+      "pages": [
+        "*://learn.unity.com/tutorial/*",
+        "*://learn.unity.com/*/unit/*/tutorial/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "commonVtt",
+      "referenceHandler": "P0",
+      "mechanism": "Intercepted VTT; owned native/SDK descriptor preferred",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 100,
+      "site": "artstation",
+      "domain": "*://www.artstation.com/*",
+      "pages": [
+        "*://www.artstation.com/learning/courses/*/*/chapters/*/*"
+      ],
+      "selector": "video#electraWebPlayer_html5_api.vjs-tech, video.vjs-tech",
+      "controls": ".video-js .vjs-control-bar",
+      "family": "artstation",
+      "referenceHandler": "k0",
+      "mechanism": "Course hash API -> exact chapter hash -> subtitles.file_url",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "artstation",
+          "passed": true
+        },
+        {
+          "name": "artstation_denied",
+          "passed": true
+        },
+        {
+          "name": "artstation_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 101,
+      "site": "masterclass",
+      "domain": "*://*.masterclass.com/*",
+      "pages": [
+        "*://*.masterclass.com/sessions/classes/*"
+      ],
+      "selector": "video.mc-video__video, .mc-video video",
+      "controls": ".mc-video__controls",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 102,
+      "site": "jove",
+      "domain": "*://www.jove.com/*",
+      "pages": [
+        "*://www.jove.com/v/*"
+      ],
+      "selector": "video.fp-engine, .flowplayer video",
+      "controls": "flowplayer-control.fp-controls, .fp-controls",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 103,
+      "site": "frontendmasters",
+      "domain": "*://frontendmasters.com/*",
+      "pages": [
+        "*://frontendmasters.com/courses/*/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "commonVtt",
+      "referenceHandler": "P0",
+      "mechanism": "Intercepted VTT; owned native/SDK descriptor preferred",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 104,
+      "site": "internetfundamentals",
+      "domain": "*://internetfundamentals.com/*",
+      "pages": [
+        "*://internetfundamentals.com/watch/*"
+      ],
+      "selector": "video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "internetfundamentals",
+      "referenceHandler": "F9",
+      "mechanism": "Observed VTT; current source signature; replay and active lesson title",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 105,
+      "site": "feynmanlectures",
+      "domain": "*://www.feynmanlectures.caltech.edu/*",
+      "pages": [
+        "*://www.feynmanlectures.caltech.edu/fml.html*"
+      ],
+      "selector": "video#vid0_html5_api, video.vjs-tech",
+      "controls": "#vid0 .vjs-control-bar",
+      "family": "feynmanlectures",
+      "referenceHandler": "SG",
+      "mechanism": "Selected lecture index -> FMLCaptions[index].src",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "feynman",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "platform-live.json",
+          "url": "https://www.feynmanlectures.caltech.edu/fml.html",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 403,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 106,
+      "site": "rachelsenglish",
+      "domain": "*://rachelsenglish.com/*",
+      "pages": [
+        "*://rachelsenglish.com/academy/*",
+        "*://rachelsenglish.com/free-course-thank-you*"
+      ],
+      "selector": ".video-embed video, video.ttetsts, video",
+      "controls": ".video-embed, video",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 107,
+      "site": "motionmagic",
+      "domain": "*://*.themotionmagic.com/*",
+      "pages": [
+        "*://*.themotionmagic.com/course-item*"
+      ],
+      "selector": "#main-video-element",
+      "controls": "#video-root-node .flex.items-center.space-x-1",
+      "family": "motionmagic",
+      "referenceHandler": "cb",
+      "mechanism": "Course item RPC -> video playback token -> signedCaptions RPC",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "motionmagic",
+          "passed": true
+        },
+        {
+          "name": "motionmagic_stale",
+          "passed": true
+        },
+        {
+          "name": "motionmagic_locked",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Two strictly allowlisted metadata RPCs implemented; live entitled lesson pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 108,
+      "site": "memberspot",
+      "domain": "*://community.memberspot.de/*",
+      "pages": [
+        "*://community.memberspot.de/library/*/*/*/details"
+      ],
+      "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 109,
+      "site": "memberspot",
+      "domain": "*://*.mymemberspot.de/*",
+      "pages": [
+        "*://*.mymemberspot.de/library/*/*/*/details"
+      ],
+      "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 110,
+      "site": "pocketstudio",
+      "domain": "*://pocketstudio.com.tw/*",
+      "pages": [
+        "*://pocketstudio.com.tw/video/*",
+        "*://pocketstudio.com.tw/player/*"
+      ],
+      "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 111,
+      "site": "mathworks",
+      "domain": "*://www.mathworks.com/*",
+      "pages": [
+        "*://www.mathworks.com/videos/*"
+      ],
+      "selector": ".video-js[data-video-id] video.vjs-tech, video-js[data-video-id] video.vjs-tech, #mathworks-brightcove-player video.vjs-tech, video.vjs-tech",
+      "controls": ".video-js[data-video-id] .vjs-control-bar, video-js[data-video-id] .vjs-control-bar, #mathworks-brightcove-player .vjs-control-bar",
+      "family": "mathworks_brightcove",
+      "referenceHandler": "MV",
+      "mechanism": "Owned Brightcove mediainfo.text_tracks; public playback fallback",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "mathworks_playback",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 112,
+      "site": "fautv",
+      "domain": "*://www.fau.tv/*",
+      "pages": [
+        "*://www.fau.tv/clips/*"
+      ],
+      "selector": "media-player video, video",
+      "controls": "media-controls media-controls-group:last-of-type",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 113,
+      "site": "ucdavis_kaltura",
+      "domain": "*://video.ucdavis.edu/*",
+      "pages": [
+        "*://video.ucdavis.edu/media/*"
+      ],
+      "selector": "video.playkit-engine, video",
+      "controls": ".playkit-controls-container .playkit-right-controls",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 114,
+      "site": "pluralsight",
+      "domain": "*://app.pluralsight.com/*",
+      "pages": [
+        "*://app.pluralsight.com/ilx/video-courses/*/player*",
+        "*://app.pluralsight.com/ilx/video-courses/*/*/*"
+      ],
+      "selector": "#video-element, video",
+      "controls": "div:has(> [data-text=\"Closed Captions\"])",
+      "family": "pluralsight",
+      "referenceHandler": "w7",
+      "mechanism": "JWT descriptor path must be clips2/current-clip/hls/master.m3u8; route or selected lesson link ownership",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "pluralsight",
+          "passed": true
+        },
+        {
+          "name": "pluralsight_stale",
+          "passed": true
+        },
+        {
+          "name": "pluralsight_variant",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Current master/variant/stale-clip fixtures pass; live entitled course pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 115,
+      "site": "movebox",
+      "domain": "*://movebox.run/*",
+      "pages": [
+        "*://movebox.run/movies/*"
+      ],
+      "selector": "video.art-video, .artplayer-app video, video",
+      "controls": ".art-controls-right",
+      "family": "movebox",
+      "referenceHandler": "g7",
+      "mechanism": "Observed caption API id/subjectId/detailPath -> data.captions URL/lan",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "movebox",
+          "passed": true
+        },
+        {
+          "name": "movebox_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 116,
+      "site": "vidlove",
+      "domain": "*://vidlove.cc/*",
+      "pages": [
+        "*://vidlove.cc/embed/movie/*",
+        "*://vidlove.cc/embed/tv/*"
+      ],
+      "selector": "video",
+      "controls": ".flex.items-center.ml-auto.shrink-0",
+      "family": "vidlove",
+      "referenceHandler": "UK",
+      "mechanism": "Movie ID -> api.shows.st/movie -> subtitles[].file; reference TV reader unimplemented",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "vidlove",
+          "passed": true
+        },
+        {
+          "name": "vidlove_denied",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Movie endpoint implemented; TV is unimplemented in reference and still unsupported here; live sample pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 117,
+      "site": "oba",
+      "domain": "*://oba.gov.tr/*",
+      "pages": [
+        "*://oba.gov.tr/documentary/detay/*"
+      ],
+      "selector": "video#video, video.vjs-tech, .video-js video, video",
+      "controls": ".project-image, video#video, video.course-video",
+      "family": "oba",
+      "referenceHandler": "JK",
+      "mechanism": "Reference only identifies ready media; explicitly empty caption tracks",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Reference does not supply existing captions; native fallback only; no live sample",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 118,
+      "site": "art21",
+      "domain": "*://art21.org/*",
+      "pages": [
+        "*://art21.org/watch/*/*"
+      ],
+      "selector": "videogular video, vg-media video, video",
+      "controls": "videogular",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 119,
+      "site": "pendo_wistia",
+      "domain": "*://www.pendo.io/*",
+      "pages": [
+        "*://www.pendo.io/resources/*"
+      ],
+      "selector": "wistia-player, video",
+      "controls": ".w-bottom-bar-right-inner",
+      "family": "pendo",
+      "referenceHandler": "iK",
+      "mechanism": "Owned Wistia custom media-id -> captions hash.lines; media title lookup not needed for captions",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 120,
+      "site": "cursor_blog",
+      "domain": "*://cursor.com/*",
+      "pages": [
+        "*://cursor.com/blog/*",
+        "*://cursor.com/*/blog/*"
+      ],
+      "selector": "video",
+      "controls": "media-controller media-control-bar, media-control-bar",
+      "family": "cursor_blog",
+      "referenceHandler": "Qz",
+      "mechanism": "Selected Mux TextTrack snapshots",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 121,
+      "site": "oreilly_learning",
+      "domain": "*://learning.oreilly.com/*",
+      "pages": [
+        "*://learning.oreilly.com/videos/*/*/*"
+      ],
+      "selector": "video.playkit-engine, video, audio",
+      "controls": ".playkit-controls-container .playkit-right-controls",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 122,
+      "site": "sap_learning",
+      "domain": "*://learning.sap.com/*",
+      "pages": [
+        "*://learning.sap.com/videos/*"
+      ],
+      "selector": "video.playkit-engine, video",
+      "controls": ".playkit-controls-container .playkit-right-controls",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 123,
+      "site": "updraft",
+      "domain": "*://updraft.cyfrin.io/*",
+      "pages": [
+        "*://updraft.cyfrin.io/courses/*/*/*"
+      ],
+      "selector": "#cyfrin-video-player video, video",
+      "controls": "#cyfrin-video-player media-control-bar, #cyfrin-video-player media-controls-group:last-of-type, media-control-bar",
+      "family": "updraft",
+      "referenceHandler": "ZG",
+      "mechanism": "Owned JSON-LD Mux contentUrl -> HLS; English/source language priority",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "updraft",
+          "passed": true
+        },
+        {
+          "name": "updraft_denied",
+          "passed": true
+        },
+        {
+          "name": "updraft_stale",
+          "passed": true
+        },
+        {
+          "name": "updraft_original_language",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "reader-live.json",
+          "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/a-message-from-gmx",
+          "acquired": true,
+          "status": "rejected",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Rejected: wrong original language. Corrected and retested with speech-bearing lessons in updraft-live.json.",
+          "frames": [
+            {
+              "cues": 1,
+              "engine": "multisite",
+              "first": 0,
+              "host": "updraft.cyfrin.io",
+              "language": "bg-BG",
+              "last": 2.58,
+              "path": "/courses/blockchain-basics/introduction-to-updraft/a-message-from-gmx",
+              "playerButton": false,
+              "rules": [
+                "updraft"
+              ],
+              "state": "ready",
+              "trackCount": 14,
+              "videos": [
+                {
+                  "height": 504,
+                  "parent": "",
+                  "width": 896
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "report": "updraft-live.json",
+          "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/welcome-to-updraft",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 223,
+              "duration": 514.726,
+              "engine": "multisite",
+              "first": 0,
+              "host": "updraft.cyfrin.io",
+              "language": "en-US",
+              "last": 514.68,
+              "path": "/courses/blockchain-basics/introduction-to-updraft/welcome-to-updraft",
+              "playerButton": true,
+              "rules": [
+                "updraft"
+              ],
+              "state": "ready",
+              "trackCount": 14,
+              "videos": [
+                {
+                  "height": 504,
+                  "parent": "",
+                  "width": 896
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "report": "updraft-live.json",
+          "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/best-practices",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 243,
+              "duration": 532.90933,
+              "engine": "multisite",
+              "first": 0,
+              "host": "updraft.cyfrin.io",
+              "language": "en-US",
+              "last": 532.96,
+              "path": "/courses/blockchain-basics/introduction-to-updraft/best-practices",
+              "playerButton": true,
+              "rules": [
+                "updraft"
+              ],
+              "state": "ready",
+              "trackCount": 14,
+              "videos": [
+                {
+                  "height": 504,
+                  "parent": "",
+                  "width": 896
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 124,
+      "site": "osmosis",
+      "domain": "*://www.osmosis.org/*",
+      "pages": [
+        "*://www.osmosis.org/learn/*"
+      ],
+      "selector": "video",
+      "controls": "video",
+      "family": "osmosis",
+      "referenceHandler": "CG",
+      "mechanism": "Current slug/language learnData -> unique caption owner -> CloudFront VTT",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "osmosis",
+          "passed": true
+        },
+        {
+          "name": "osmosis_localized",
+          "passed": true
+        },
+        {
+          "name": "osmosis_denied",
+          "passed": true
+        },
+        {
+          "name": "osmosis_stale",
+          "passed": true
+        },
+        {
+          "name": "osmosis_ambiguous",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "reader-live.json",
+          "url": "https://www.osmosis.org/learn/Heart_failure",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 403,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 125,
+      "site": "medbridge",
+      "domain": "*://www.medbridge.com/*",
+      "pages": [
+        "*://www.medbridge.com/video/embed/*"
+      ],
+      "selector": "video.jw-video, video",
+      "controls": ".jw-button-container, .jw-controlbar",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 126,
+      "site": "medbridge_course",
+      "domain": "*://www.medbridge.com/*",
+      "pages": [
+        "*://www.medbridge.com/player/course/*"
+      ],
+      "selector": "video.jw-video, video",
+      "controls": ".jw-button-container, .jw-controlbar",
+      "family": "medbridge_course",
+      "referenceHandler": "Aq",
+      "mechanism": "Course HLS segments carry absolute cue times; preserve and deduplicate, bound to loaded duration",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "medbridge_course",
+          "passed": true
+        },
+        {
+          "name": "medbridge_course_duration_missing",
+          "passed": true
+        },
+        {
+          "name": "medbridge_course_out_of_range",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Absolute timing and overlap fixtures pass; live entitled course pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 127,
+      "site": "patreon",
+      "domain": "*://www.patreon.com/*",
+      "pages": [
+        "*://www.patreon.com/posts/*",
+        "*://www.patreon.com/*/posts/*"
+      ],
+      "selector": "video[class*='Video-module'], video",
+      "controls": "[class*='VideoPlayerRoot'][class*='player'] [class*='controls-container'] > div:first-child > div:last-child",
+      "family": "patreon",
+      "referenceHandler": "QG",
+      "mechanism": "Current post-associated Mux bootstrap URL; reference text proximity heuristic not adopted",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "patreon",
+          "passed": true
+        },
+        {
+          "name": "patreon_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Exact post-owned bootstrap reader implemented; alternate escaped script formats and live post pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 128,
+      "site": "substack",
+      "domain": "*://*.substack.com/*",
+      "pages": [
+        "*://*.substack.com/p/*"
+      ],
+      "selector": "video[data-video-id]",
+      "controls": "[class*='bottomInnerControlsContainer'] > div:last-child > div:last-child > div:last-child",
+      "family": "substack",
+      "referenceHandler": "vj",
+      "mechanism": "Owned videoUpload -> extractedAudio transcription CDN JSON",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "substack",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 129,
+      "site": "mightynetworks",
+      "domain": "*://*.mn.co/*",
+      "pages": [
+        "*://*.mn.co/*"
+      ],
+      "selector": "video",
+      "controls": ".mighty-video-player-container .vjs-control-bar, .video-js .vjs-control-bar, .vjs-control-bar",
+      "family": "mightynetworks",
+      "referenceHandler": "z9",
+      "mechanism": "Common HLS; reference dedupes emissions ignoring signed query, Vocalm acquires on demand",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 130,
+      "site": "nebula",
+      "domain": "*://nebula.tv/*",
+      "pages": [
+        "*://nebula.tv/videos/*",
+        "*://nebula.tv/embed/videos/*"
+      ],
+      "selector": "#video-player video, video",
+      "controls": ".video-player-controls-wrapper div:has(> [aria-label='Subtitles']), .video-player-controls-wrapper div:has(> [aria-label='Settings']), .video-player-controls-wrapper div:has(> button[aria-label='Full screen'])",
+      "family": "nebula",
+      "referenceHandler": "O0",
+      "mechanism": "Common HLS; reference dedupes by video/language, Vocalm acquires on demand",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 131,
+      "site": "vkvideo",
+      "domain": "*://*.vkvideo.ru/*",
+      "pages": [
+        "*://*.vkvideo.ru/video-*",
+        "*://*.vkvideo.ru/video?*"
+      ],
+      "selector": "video.player-media, video",
+      "controls": ".controls-right",
+      "family": "vkvideo",
+      "referenceHandler": "hb",
+      "mechanism": "Native/open-shadow tracks, direct MPD BaseURL caption tracks; rolling-cue cleanup",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "vkvideo_mpd",
+          "passed": true
+        },
+        {
+          "name": "vkvideo_mpd_segmented",
+          "passed": true
+        },
+        {
+          "name": "vkvideo_mpd_dynamic",
+          "passed": true
+        },
+        {
+          "name": "vkvideo_mpd_protected",
+          "passed": true
+        },
+        {
+          "name": "vkvideo_mpd_malformed",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Direct MPD and overlapping rolling-caption cleanup implemented; live sample pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 132,
+      "site": "okru",
+      "domain": "*://ok.ru/video/*",
+      "pages": [
+        "*://ok.ru/video/*"
+      ],
+      "selector": "video.player-media, video",
+      "controls": ".controls-right",
+      "family": "okru",
+      "referenceHandler": "jG",
+      "mechanism": "Current movie ID -> data-options flashvars.metadata -> subtitleTracks",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "okru",
+          "passed": true
+        },
+        {
+          "name": "okru_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 133,
+      "site": "navertv",
+      "domain": "*://tv.naver.com/*",
+      "pages": [
+        "*://tv.naver.com/v/*"
+      ],
+      "selector": "#videoPlayer video.webplayer-internal-video, video.webplayer-internal-video, video",
+      "controls": ".pzp-pc__bottom-buttons-right, .pzp-pc__bottom-buttons, .pzp-pc__bottom, #videoPlayer",
+      "family": "navertv",
+      "referenceHandler": "WG",
+      "mechanism": "Current Next clip -> videoId/inKey -> play API captions.list",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "naver",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 134,
+      "site": "rutube",
+      "domain": "*://rutube.ru/*",
+      "pages": [
+        "*://rutube.ru/video/*"
+      ],
+      "selector": "video",
+      "controls": ".video-player, .wdp-video-wrapper-module__videoWrapper, .video-page-layout-module__player, video",
+      "family": "rutube",
+      "referenceHandler": "XG",
+      "mechanism": "Current video ID -> play/options captions.file",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "rutube",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 135,
+      "site": "dzen",
+      "domain": "*://dzen.ru/*",
+      "pages": [
+        "*://dzen.ru/video*"
+      ],
+      "selector": "video",
+      "controls": "[class*='video-controls__composer'], [class*='video-controls'], video",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 136,
+      "site": "espn",
+      "domain": "*://*.espn.com/*",
+      "pages": [
+        "*://*.espn.com/watch/syndicatedplayer*",
+        "*://*.espn.com/video/clip*"
+      ],
+      "selector": "video.hive-video, video",
+      "controls": ".media-element-container, disney-web-player",
+      "family": "commonM3u8",
+      "referenceHandler": "Xs",
+      "mechanism": "Observed/owned HLS master -> subtitle rendition -> VTT segments",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 137,
+      "site": "rumble",
+      "domain": "*://rumble.com/*",
+      "pages": [
+        "*://rumble.com/v*.html*"
+      ],
+      "selector": "video",
+      "controls": "video",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 138,
+      "site": "gaia",
+      "domain": "*://www.gaia.com/video/*",
+      "pages": [
+        "*://www.gaia.com/video/*"
+      ],
+      "selector": "video-js video.vjs-tech, .video-js video.vjs-tech, video.vjs-tech",
+      "controls": "video-js .vjs-control-bar, .video-js .vjs-control-bar",
+      "family": "gaia",
+      "referenceHandler": "IH",
+      "mechanism": "Owned Video.js page node -> feature/preview media-info -> textTracks VTT",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "gaia",
+          "passed": true
+        },
+        {
+          "name": "gaia_denied",
+          "passed": true
+        },
+        {
+          "name": "gaia_preview",
+          "passed": true
+        },
+        {
+          "name": "gaia_stale",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 139,
+      "site": "skillshare",
+      "domain": "*://www.skillshare.com/*",
+      "pages": [
+        "*://www.skillshare.com/classes/*",
+        "*://www.skillshare.com/*/classes/*"
+      ],
+      "selector": "video.vjs-tech, .video-js video",
+      "controls": ".video-js .vjs-control-bar",
+      "family": "skillshare",
+      "referenceHandler": "gH",
+      "mechanism": "Current active session rank -> session stream -> Cloudflare HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "skillshare",
+          "passed": true
+        },
+        {
+          "name": "skillshare_denied",
+          "passed": true
+        },
+        {
+          "name": "skillshare_ambiguous",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "owner-samples-live.json",
+          "url": "https://www.skillshare.com/en/classes/how-to-draw-a-beginners-guide-part-1-of-the-drawing-laboratory/1607370408",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 403,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 140,
+      "site": "tella",
+      "domain": "*://www.tella.tv/video/*",
+      "pages": [
+        "*://www.tella.tv/video/*"
+      ],
+      "selector": "#player video#video, #player video:not(.no-unmute)",
+      "controls": "#player div:has(> span > button > svg[aria-label='Fullscreen'])",
+      "family": "tella",
+      "referenceHandler": "AH",
+      "mechanism": "Owned story -> manifest-refresh -> signed matching HLS",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "tella",
+          "passed": true
+        },
+        {
+          "name": "tella_denied",
+          "passed": true
+        },
+        {
+          "name": "tella_wrong_story",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 141,
+      "site": "skool",
+      "domain": "*://www.skool.com/*/classroom*",
+      "pages": [
+        "*://www.skool.com/*/classroom*"
+      ],
+      "selector": "video",
+      "controls": "video, mux-player, iframe[src*='loom.com/'], [style*='video.skool.com'], [class*='video' i], [class*='player' i]",
+      "family": "skool",
+      "referenceHandler": "sH",
+      "mechanism": "Current classroom module -> Next video playbackId/token -> signed HLS; Loom iframe separate",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "skool",
+          "passed": true
+        },
+        {
+          "name": "skool_stale",
+          "passed": true
+        },
+        {
+          "name": "skool_locked",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Requires exact md/selectedModule; alternate nested state shapes need live account sample",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 142,
+      "site": "loom",
+      "domain": "*://www.loom.com/embed/*",
+      "pages": [
+        "*://www.loom.com/embed/*"
+      ],
+      "selector": "video",
+      "controls": "video, [class*='player' i], [class*='video' i]",
+      "family": "loom",
+      "referenceHandler": "jC",
+      "mechanism": "Current share/embed ID -> page-specific unique VTT; JSON timing guesses excluded",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "loom",
+          "passed": true
+        },
+        {
+          "name": "loom_denied",
+          "passed": true
+        },
+        {
+          "name": "loom_missing",
+          "passed": true
+        },
+        {
+          "name": "loom_preview",
+          "passed": true
+        },
+        {
+          "name": "loom_storyboard",
+          "passed": true
+        }
+      ],
+      "liveSamples": [
+        {
+          "report": "owner-samples-live.json",
+          "url": "https://www.skool.com/claudecodeclub/about?utm_source=skooldotcom&utm_medium=website&utm_campaign=discovery_browse_group_link",
+          "acquired": true,
+          "status": "rejected",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Initial probe used a 5-second preview player; rejected for playback acceptance. Corrected and retested in skool-loom-live.json.",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "cues": 55,
+              "duration": 5,
+              "engine": "multisite",
+              "first": 0,
+              "host": "www.loom.com",
+              "language": "auto",
+              "last": 184.94,
+              "path": "/embed/fc783b441bc14c4f9d20c308cccbdd73",
+              "playerButton": true,
+              "rules": [
+                "loom"
+              ],
+              "state": "ready",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 396,
+                  "parent": "components_wrapper_cKT",
+                  "width": 704
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "skool-loom-live.json",
+          "url": "https://www.skool.com/claudecodeclub/about",
+          "acquired": true,
+          "status": "captions-and-player-sample",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "cues": 55,
+              "duration": 189.066667,
+              "engine": "multisite",
+              "first": 0,
+              "host": "www.loom.com",
+              "language": "en",
+              "last": 184.94,
+              "mediaError": null,
+              "path": "/embed/fc783b441bc14c4f9d20c308cccbdd73",
+              "playerButton": true,
+              "rules": [
+                "loom"
+              ],
+              "state": "ready",
+              "trackCount": 1,
+              "videos": [
+                {
+                  "height": 340,
+                  "parent": "video-player_wrapper_BNP",
+                  "width": 704
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Owner Skool about embed passed acquisition and native control; Skool classroom remains separate",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 143,
+      "site": "elevify",
+      "domain": "*://app.elevify.com/slider/*",
+      "pages": [
+        "*://app.elevify.com/slider/*"
+      ],
+      "selector": "video",
+      "controls": "div:has(> div > input.player-slider) > div[class~='hidden'][class~='lg:flex']",
+      "family": "apiIntercept",
+      "referenceHandler": "pd",
+      "mechanism": "Configured request URL -> exact JSON caption-list path; per-site configuration required",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 144,
+      "site": "chartacademy",
+      "domain": "*://app.chartacademy.com/*",
+      "pages": [
+        "*://app.chartacademy.com/masterclasses/*/video/*"
+      ],
+      "selector": "hls-video",
+      "controls": "media-controller media-control-bar",
+      "family": "chartacademy",
+      "api": {
+        "url": "*://app.chartacademy.com/api/master_classes/*/videos/*",
+        "match": "pattern",
+        "path": "$.captions",
+        "urlField": "url",
+        "language": "locale",
+        "label": "label"
+      },
+      "referenceHandler": "_H",
+      "mechanism": "Current masterclass/video API -> captions[].url/locale",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 145,
+      "site": "circle_academy",
+      "domain": "*://*/*",
+      "pages": [
+        "*://circle-academy.circle.so/c/*",
+        "*://*/c/*/sections/*/lessons/*"
+      ],
+      "selector": "hls-video, video",
+      "controls": "media-control-bar",
+      "family": "circle_academy",
+      "referenceHandler": "Eb",
+      "mechanism": "Lesson/post video attachment -> transcript ID or webvtt_file_url; asset ownership required",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "circle_academy",
+          "passed": true
+        },
+        {
+          "name": "circle_academy_stale",
+          "passed": true
+        },
+        {
+          "name": "circle_academy_mosaic",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Observed matching lesson/attachment transcript implemented; missed-hook recovery and live lesson pending",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 146,
+      "site": "vidtube",
+      "domain": "*://vidtube.site/*",
+      "pages": [
+        "*://vidtube.site/stream/*"
+      ],
+      "selector": "video.jw-video, video",
+      "controls": ".jw-button-container",
+      "family": "vidtube",
+      "api": {
+        "url": "*://vidtube.site/stream/getSources*",
+        "match": "pattern",
+        "path": "$.tracks",
+        "urlField": "file",
+        "language": "label",
+        "label": "label"
+      },
+      "referenceHandler": "wd",
+      "mechanism": "getSources JSON tracks; owned JW fallback",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 147,
+      "site": "edusoho-replay",
+      "domain": "*://live.edusoho.com/*",
+      "pages": [
+        "*://live.edusoho.com/pc/replay/*"
+      ],
+      "selector": "#camera_sd_video_box video, #camera_hd_video_box video, video",
+      "controls": ".player__bottom .player__col:last-child",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 148,
+      "site": "qiqiuyun",
+      "domain": "*://*.qiqiuyun.net/*",
+      "pages": [
+        "*://service-cdn.qiqiuyun.net/*",
+        "*://*.qiqiuyun.net/js-sdk-v2/media-player/*"
+      ],
+      "selector": "video.video-js, video.vjs-tech, video",
+      "controls": ".vjs-control-bar",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 149,
+      "site": "vidyard",
+      "domain": "*://play.vidyard.com/*",
+      "pages": [
+        "*://play.vidyard.com/*.html*"
+      ],
+      "selector": "video",
+      "controls": "div:has(> div > button[data-testid='captionsToggle'])",
+      "family": "vidyard",
+      "referenceHandler": "VH",
+      "mechanism": "Active chapter identity -> player JSON captions.vttUrl",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "vidyard",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 150,
+      "site": "gumlet",
+      "domain": "*://play.gumlet.io/*",
+      "pages": [
+        "*://play.gumlet.io/embed/*"
+      ],
+      "selector": "video[assetid], video",
+      "controls": "media-control-bar",
+      "family": "gumlet",
+      "referenceHandler": "YH",
+      "mechanism": "Owned DOM track subtitles; override only supplies duration/media/title",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 151,
+      "site": "gitir",
+      "domain": "*://git.ir/*",
+      "pages": [
+        "*://git.ir/*"
+      ],
+      "selector": "#main-video-player, .plyr__video-wrapper > video, .plyr video",
+      "controls": ".plyr__controls",
+      "family": "gitir",
+      "referenceHandler": "Vz",
+      "mechanism": "DOM track reader with video identity and cue normalization overrides",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 152,
+      "site": "ftstreaming",
+      "domain": "*://ftstreaming.com/*",
+      "pages": [
+        "*://ftstreaming.com/programs/*"
+      ],
+      "selector": "video-player video[data-program-video-target='video'], video-player video",
+      "controls": "video-player video-controls, video-controls",
+      "family": "ftstreaming",
+      "referenceHandler": "vK",
+      "mechanism": "Owned video/source Mux HLS -> subtitle renditions",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 153,
+      "site": "pandavideo",
+      "domain": "*://*.tv.pandavideo.com.br/*",
+      "pages": [
+        "*://*.tv.pandavideo.com.br/embed*"
+      ],
+      "selector": "video",
+      "controls": ".plyr__controls",
+      "family": "pandavideo",
+      "referenceHandler": "bz",
+      "mechanism": "Ready player config subtitles -> library/video/language VTT",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "pandavideo",
+          "passed": true
+        },
+        {
+          "name": "pandavideo_denied",
+          "passed": true
+        },
+        {
+          "name": "pandavideo_not_ready",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 154,
+      "site": "adobe_tv",
+      "domain": "*://video.tv.adobe.com/*",
+      "pages": [
+        "*://video.tv.adobe.com/v/*"
+      ],
+      "selector": "video#video, video",
+      "controls": ".controls-row.controls-row__buttons .controls-row__group:last-child",
+      "family": "adobetv",
+      "referenceHandler": "yj",
+      "mechanism": "Current bridge humanID -> translations.vttPath",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "dedicated-and-shared",
+      "fixtureChecks": [
+        {
+          "name": "adobe",
+          "passed": true
+        }
+      ],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 155,
+      "site": "langchain_academy_multimedia_top_frame",
+      "domain": "*://academy.langchain.com/*",
+      "pages": [
+        "*://academy.langchain.com/courses/take/*/multimedia/*"
+      ],
+      "selector": "iframe[src*='langchain-ai.github.io/lca-lessons/']",
+      "controls": "iframe[src*='langchain-ai.github.io/lca-lessons/']",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 156,
+      "site": "descript_embed",
+      "domain": "*://share.descript.com/*",
+      "pages": [
+        "*://share.descript.com/embed/*"
+      ],
+      "selector": "video#share-page-video-player",
+      "controls": "div:has(> [data-tooltip-trigger] > button[data-testid='subtitles-toggle'])",
+      "family": "domTrack",
+      "referenceHandler": "Ra",
+      "mechanism": "Owned HTML track URLs/native cues; site DOM selectors",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Per-route live acceptance still required; shared fixtures do not certify the site",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 157,
+      "site": "odysee",
+      "domain": "*://*.odysee.com/*",
+      "pages": [
+        "*://*.odysee.com/@*/*"
+      ],
+      "selector": ".odysee-skin video, video",
+      "controls": ".odysee-controls--right",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 158,
+      "site": "glo",
+      "domain": "*://www.glo.com/class/*",
+      "pages": [
+        "*://www.glo.com/class/*"
+      ],
+      "selector": "video",
+      "controls": "[class*='VideoJSPlayer_rightControls__']:has(button[aria-label='Fullscreen'])",
+      "family": "glo",
+      "referenceHandler": "z7",
+      "mechanism": "Reference only identifies ready MP4 media; explicitly empty caption tracks",
+      "runtimeHandler": null,
+      "review": "mechanism-identified; detailed gaps remain",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [],
+      "authorizedEvidence": null,
+      "remaining": "Reference does not supply existing captions; native fallback only; no live sample",
+      "acceptedAllRoutes": false
+    },
+    {
+      "route": 159,
+      "site": "common",
+      "domain": "*://*/*",
+      "pages": [
+        "*://*/*"
+      ],
+      "selector": "video, audio",
+      "controls": "video, audio",
+      "family": "universal",
+      "referenceHandler": null,
+      "mechanism": "Unmapped injectScript factory; content runtime audit required",
+      "runtimeHandler": null,
+      "review": "runtime-review-pending",
+      "implementation": "shared-path-only",
+      "fixtureChecks": [],
+      "liveSamples": [
+        {
+          "report": "multisite-live.json",
+          "url": "https://www.bilibili.com/video/BV1WqYV6cEwq/",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "diagnostic": "",
+              "engine": "multisite",
+              "host": "www.bilibili.com",
+              "playerButton": false,
+              "reason": "No complete subtitle track discovered",
+              "state": "unknown",
+              "trackCount": 0
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "multisite-live.json",
+          "url": "https://developer.apple.com/videos/play/wwdc2024/10140/",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 360,
+              "engine": "multisite",
+              "first": 7.149,
+              "host": "developer.apple.com",
+              "language": "en",
+              "last": 1241.297,
+              "playerButton": false,
+              "state": "ready",
+              "trackCount": 5
+            }
+          ]
+        },
+        {
+          "report": "multisite-live.json",
+          "url": "https://ahrefs.com/academy/seo-training-course/lesson-1-1",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "engine": "youtube",
+              "host": "www.youtube-nocookie.com",
+              "playerButton": false,
+              "state": "unknown",
+              "trackCount": 0
+            }
+          ]
+        },
+        {
+          "report": "multisite-live.json",
+          "url": "https://iandevlin.github.io/mdn/video-player-with-captions/",
+          "acquired": true,
+          "status": "captions-only",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 14,
+              "engine": "multisite",
+              "first": 0,
+              "host": "iandevlin.github.io",
+              "language": "en",
+              "last": 119.5,
+              "playerButton": false,
+              "state": "ready",
+              "trackCount": 3
+            }
+          ]
+        },
+        {
+          "report": "platform-live.json",
+          "url": "https://www.ted.com/talks/ken_robinson_do_schools_kill_creativity",
+          "acquired": true,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 427,
+              "engine": "multisite",
+              "first": 5.607,
+              "host": "www.ted.com",
+              "language": "en",
+              "last": 1143.717,
+              "path": "/talks/sir_ken_robinson_do_schools_kill_creativity",
+              "playerButton": true,
+              "rules": [
+                "ted"
+              ],
+              "state": "ready",
+              "trackCount": 66,
+              "videos": [
+                {
+                  "height": 436.5,
+                  "parent": "size-full min-h-0",
+                  "width": 776
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "platform-live.json",
+          "url": "https://www.feynmanlectures.caltech.edu/fml.html",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 403,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "reader-live.json",
+          "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/a-message-from-gmx",
+          "acquired": true,
+          "status": "rejected",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Rejected: wrong original language. Corrected and retested with speech-bearing lessons in updraft-live.json.",
+          "frames": [
+            {
+              "cues": 1,
+              "engine": "multisite",
+              "first": 0,
+              "host": "updraft.cyfrin.io",
+              "language": "bg-BG",
+              "last": 2.58,
+              "path": "/courses/blockchain-basics/introduction-to-updraft/a-message-from-gmx",
+              "playerButton": false,
+              "rules": [
+                "updraft"
+              ],
+              "state": "ready",
+              "trackCount": 14,
+              "videos": [
+                {
+                  "height": 504,
+                  "parent": "",
+                  "width": 896
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "report": "reader-live.json",
+          "url": "https://www.osmosis.org/learn/Heart_failure",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 403,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "updraft-live.json",
+          "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/welcome-to-updraft",
+          "acquired": true,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 223,
+              "duration": 514.726,
+              "engine": "multisite",
+              "first": 0,
+              "host": "updraft.cyfrin.io",
+              "language": "en-US",
+              "last": 514.68,
+              "path": "/courses/blockchain-basics/introduction-to-updraft/welcome-to-updraft",
+              "playerButton": true,
+              "rules": [
+                "updraft"
+              ],
+              "state": "ready",
+              "trackCount": 14,
+              "videos": [
+                {
+                  "height": 504,
+                  "parent": "",
+                  "width": 896
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "report": "updraft-live.json",
+          "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/best-practices",
+          "acquired": true,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 243,
+              "duration": 532.90933,
+              "engine": "multisite",
+              "first": 0,
+              "host": "updraft.cyfrin.io",
+              "language": "en-US",
+              "last": 532.96,
+              "path": "/courses/blockchain-basics/introduction-to-updraft/best-practices",
+              "playerButton": true,
+              "rules": [
+                "updraft"
+              ],
+              "state": "ready",
+              "trackCount": 14,
+              "videos": [
+                {
+                  "height": 504,
+                  "parent": "",
+                  "width": 896
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "report": "public-access-live.json",
+          "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 200,
+          "error": "'NoneType' object has no attribute 'get'",
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            null,
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "public-access-live.json",
+          "url": "https://www.artstation.com/learning",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": null,
+          "error": "Page.goto: net::ERR_CONNECTION_REFUSED at https://www.artstation.com/learning\nCall log:\n  - navigating to \"https://www.artstation.com/learning\", waiting until \"domcontentloaded\"\n",
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": []
+        },
+        {
+          "report": "public-access-live.json",
+          "url": "https://www.bbc.com/news/videos",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": null,
+          "error": "Page.goto: net::ERR_CONNECTION_REFUSED at https://www.bbc.com/news/videos\nCall log:\n  - navigating to \"https://www.bbc.com/news/videos\", waiting until \"domcontentloaded\"\n",
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": []
+        },
+        {
+          "report": "aljazeera-live.json",
+          "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "diagnostic": "",
+              "duration": 146.16,
+              "engine": "multisite",
+              "host": "www.aljazeera.com",
+              "path": "/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+              "playerButton": true,
+              "reason": "No complete VOD subtitle playlist; enable CC or import SRT",
+              "rules": [
+                "aljazeera"
+              ],
+              "state": "failed",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-0 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-layout-medium vjs-quality-menu vjs-playing vjs-has-started playing",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-1 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-2 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-3 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                },
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-4 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+                  "width": 504.609375
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "aljazeera-carousel-live.json",
+          "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+          "acquired": true,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "cues": 14,
+              "duration": 59.519999999999996,
+              "engine": "multisite",
+              "first": 0.52,
+              "host": "www.aljazeera.com",
+              "language": "en-GB",
+              "last": 52.7,
+              "path": "/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+              "playerButton": true,
+              "rules": [
+                "aljazeera"
+              ],
+              "state": "ready",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 896.65625,
+                  "parent": "video-js vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-3 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-layout-medium vjs-quality-menu vjs-playing vjs-has-started playing",
+                  "width": 504.609375
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "owner-samples-live.json",
+          "url": "https://www.skillshare.com/en/classes/how-to-draw-a-beginners-guide-part-1-of-the-drawing-laboratory/1607370408",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 403,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "owner-samples-live.json",
+          "url": "https://platzi.com/cursos/computacion-basica/computacion-basica-para-principiantes-en/",
+          "acquired": true,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Caption acquisition only: 45 Spanish cues; playback fails in isolated Chrome even without Vocalm (platzi-playback-control.json).",
+          "frames": [
+            {
+              "cues": 45,
+              "duration": null,
+              "engine": "multisite",
+              "first": 1.42,
+              "host": "platzi.com",
+              "language": "es",
+              "last": 200.76,
+              "path": "/cursos/computacion-basica/computacion-basica-para-principiantes-en/",
+              "playerButton": true,
+              "rules": [
+                "platzi"
+              ],
+              "state": "ready",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 565.203125,
+                  "parent": "video-js vjs-paused vjs-fluid vjs_video_3-dimensions vjs-workinghover vjs-v8 vjs-user-active vjs-error vjs-controls-disabled",
+                  "width": 1004.8125
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "owner-samples-live.json",
+          "url": "https://www.skool.com/claudecodeclub/about?utm_source=skooldotcom&utm_medium=website&utm_campaign=discovery_browse_group_link",
+          "acquired": true,
+          "status": "rejected",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Initial probe used a 5-second preview player; rejected for playback acceptance. Corrected and retested in skool-loom-live.json.",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "cues": 55,
+              "duration": 5,
+              "engine": "multisite",
+              "first": 0,
+              "host": "www.loom.com",
+              "language": "auto",
+              "last": 184.94,
+              "path": "/embed/fc783b441bc14c4f9d20c308cccbdd73",
+              "playerButton": true,
+              "rules": [
+                "loom"
+              ],
+              "state": "ready",
+              "trackCount": 0,
+              "videos": [
+                {
+                  "height": 396,
+                  "parent": "components_wrapper_cKT",
+                  "width": 704
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "skool-loom-live.json",
+          "url": "https://www.skool.com/claudecodeclub/about",
+          "acquired": true,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "cues": 55,
+              "duration": 189.066667,
+              "engine": "multisite",
+              "first": 0,
+              "host": "www.loom.com",
+              "language": "en",
+              "last": 184.94,
+              "mediaError": null,
+              "path": "/embed/fc783b441bc14c4f9d20c308cccbdd73",
+              "playerButton": true,
+              "rules": [
+                "loom"
+              ],
+              "state": "ready",
+              "trackCount": 1,
+              "videos": [
+                {
+                  "height": 340,
+                  "parent": "video-player_wrapper_BNP",
+                  "width": 704
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "jw-live.json",
+          "url": "https://www.coindesk.com/video/north-korea-denies-it-was-behind-64b-binance-hack",
+          "acquired": false,
+          "status": "no-caption-result",
+          "http_status": 200,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "diagnostic": "",
+              "duration": 100.4,
+              "engine": "multisite",
+              "host": "www.coindesk.com",
+              "mediaError": null,
+              "path": "/video/north-korea-denies-it-was-behind-64b-binance-hack",
+              "playerButton": true,
+              "reason": "Thumbnail storyboard is not a subtitle track",
+              "rules": [
+                "coindesk"
+              ],
+              "state": "failed",
+              "trackCount": 1,
+              "videos": [
+                {
+                  "height": 778.5,
+                  "parent": "jw-media jw-reset",
+                  "width": 1384
+                }
+              ]
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "frame-unavailable"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        },
+        {
+          "report": "jw-live.json",
+          "url": "https://www.reuters.com/video/",
+          "acquired": false,
+          "status": "access-blocked",
+          "http_status": 401,
+          "error": null,
+          "acceptance": "Acquisition only; inspect language/timing/player evidence",
+          "frames": [
+            {
+              "state": "no-player"
+            },
+            {
+              "state": "no-player"
+            }
+          ]
+        }
+      ],
+      "authorizedEvidence": null,
+      "remaining": "Player-specific content runtime review required; injectScript factory alone cannot establish absence of captions",
+      "acceptedAllRoutes": false
+    }
+  ]
+}

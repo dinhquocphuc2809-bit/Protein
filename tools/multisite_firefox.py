@@ -44,6 +44,39 @@ def main():
             assert value['result']['cues'][0] == {'start': 1, 'end': 3, 'text': 'Firefox caption fixture.'}
             assert value['mode'] == 'disabled'
             report['checks'].append(('open shadow' if shadow else 'DOM') + ': full native cues and original CC mode restored')
+        result=driver.execute_async_script('''const done=arguments[arguments.length-1];
+          (async()=>{const tab=(await browser.tabs.query({})).find(t=>t.url==='https://example.org/');
+            return await browser.scripting.executeScript({target:{tabId:tab.id},world:'MAIN',func:()=>{
+              const F=VeloaSubtitleFormats;
+              const xml='<MPD xmlns="urn:mpeg:dash:schema:mpd:2011"><BaseURL>https://captions.test/base/</BaseURL><Period><AdaptationSet mimeType="text/vtt" lang="en"><BaseURL>lesson.vtt</BaseURL><Representation id="en"/></AdaptationSet></Period></MPD>';
+              const tracks=F.mpd(xml,'https://media.test/master.mpd');
+              const protectedTracks=F.mpd(xml.replace('<Representation','<ContentProtection/><Representation'),'https://media.test/master.mpd');
+              let rejected=false;try{F.mpd(xml.replace('<MPD ','<MPD type="dynamic" '),'https://media.test/master.mpd')}catch{rejected=true}
+              return {tracks,protectedTracks,rejected,reader:typeof VocalmReaders.discover};
+            }});
+          })().then(done,e=>done({error:e.message}));''')
+        assert isinstance(result,list),result
+        value=result[0]['result']
+        assert value['tracks']==[{'url':'https://captions.test/base/lesson.vtt','language':'en'}],value
+        assert value['protectedTracks']==[] and value['rejected'] and value['reader']=='function',value
+        report['checks'].append('DASH inherited BaseURL; reject protected/dynamic tracks; reader module loaded')
+        result=driver.execute_async_script('''const done=arguments[arguments.length-1];
+          (async()=>{const tab=(await browser.tabs.query({})).find(t=>t.url==='https://example.org/');
+            return await browser.scripting.executeScript({target:{tabId:tab.id},world:'MAIN',func:()=>{
+              let getterCalls=0;const props={videoFBID:'123456789012345',sideLoadCaptionsUrl:'https://scontent.test.fbcdn.net/captions.vtt'};
+              Object.defineProperty(props,'danger',{enumerable:true,get(){getterCalls++;throw Error('Do not execute')}});
+              const video={__reactProps$fixture:{video:props},querySelectorAll:()=>[],parentElement:null};
+              const tracks=VocalmReaders.sourceCaptions(video,'https://www.facebook.com/watch/?v=123456789012345');
+              const poster={poster:'https://pbs.twimg.com/ext_tw_video_thumb/12345/pu/img/preview.jpg'};
+              const allowed=VocalmReaders.manifestAllowed('https://video.twimg.com/ext_tw_video/12345/pu/pl/master.m3u8',poster,'https://x.com/user/status/999');
+              const stale=VocalmReaders.manifestAllowed('https://video.twimg.com/ext_tw_video/99999/pu/pl/master.m3u8',poster,'https://x.com/user/status/999');
+              return {tracks,getterCalls,allowed,stale};
+            }});
+          })().then(done,e=>done({error:e.message}));''')
+        assert isinstance(result,list),result
+        value=result[0]['result']
+        assert len(value['tracks'])==1 and value['getterCalls']==0 and value['allowed'] and not value['stale'],value
+        report['checks'].append('Social readers: exact Twitter media ownership; Facebook descriptors without executing getters')
         report['browser'] = driver.capabilities['browserVersion']
         report['passed'] = True
     except Exception as error:

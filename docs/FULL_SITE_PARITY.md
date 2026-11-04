@@ -4,6 +4,38 @@ Status: active. This document supersedes any interpretation that 0.6.0 completes
 the user's all-site requirement. Do not mark a route accepted merely because its
 domain matches or a generic VTT test passes.
 
+Current per-route ledger: `docs/SITE_ACCEPTANCE_MATRIX.md` with structured evidence
+in `research/site-acceptance-matrix.json`. Older "pending" findings below describe
+the initial audit; this batch implements the following paths without certifying
+all real sites: ArtStation, Platzi, PandaVideo, Tella, Skillshare, Updraft, BBC,
+Loom, Osmosis, Gaia, Brightcove playback fallback, Kollus, Skool, OK.ru, Sketchy
+Cloudflare, Plex, direct DASH/VK, Dropbox, Circle, Movebox, MotionMagic, Patreon,
+Vidlove movie and direct Drive embedded timedtext. Live and fixture gates remain
+separate. Some reference handlers (Glo, Oba) explicitly have no subtitle reader.
+
+Owner-supplied sample results: Platzi returns 45 Spanish captions but isolated
+Chrome also fails video playback without Vocalm (error 4); playback is not signed
+off. Skillshare returns HTTP403. Skool's /about URL embeds Loom, not a Skool
+classroom module. Loom preview clips and thumbnail VTT were real bugs; both have
+explicit regressions. Final Skool/Loom evidence is `research/skool-loom-live.json`.
+The final Loom test has 55 English cues and a mounted native control on the real
+189-second player. This does not certify Skool classroom modules.
+
+Additional reviewed and implemented paths: current-clip Pluralsight master
+filtering, Medbridge absolute course-clock segments, owned JW SDK caption IDs,
+Mindvalley/Domestika attached source recovery and stale-manifest rejection.
+They have labelled success/failure fixtures. Live CoinDesk sample has no usable
+speech track; Reuters returns 401. Neither is counted as a successful extraction.
+
+Latest companion-runtime pass adds Mindvalley MP4/VTT siblings, Domestika/Mindvalley
+active lesson selection with pause retention, poster-bound Twitter GraphQL/card HLS
+and Facebook owned React caption metadata. These have bounded reads and explicit
+stale/denied/ambiguous/getter tests. There are 132 passing packaged mechanism cases,
+15 native-control cases and 19 shared acquisition cases; these counts describe
+fixtures, not websites. Twitter/Facebook live acceptance and recovery variants remain
+open. Unit checks: 90 JavaScript and 61 Python; Firefox native/shadow/DASH/social
+reader checks passed with the actual package.
+
 ## Evidence and approach
 
 `tools/audit_reference_extractors.cjs` parses the supplied reference AST and resolves
@@ -12,6 +44,13 @@ factory aliases, inheritance and helper functions. Private excerpts stay in
 `research/extractor-audit.json` indexes each family and its methods. Some factory
 branches provide media identification/ASR only, not an existing-caption reader;
 these must be documented explicitly rather than fabricated as successful readers.
+
+Correction from the companion runtime audit: missing injectScript factory mappings
+do not mean a platform has no caption reader. `content-scripts/content.js` contains
+Twitter and Facebook readers and additional Domestika/Mindvalley player adapters.
+`tools/audit_reference_runtime.cjs` records their class/method/source hashes without
+executing or redistributing code. `research/runtime-extractor-audit.json` is joined
+into the matrix. Universal player implementations remain an explicit review gap.
 
 ## Gates for every reader
 
@@ -89,23 +128,25 @@ The native Vocalm player button is present. No translation, TTS, or ASR was call
   Vocalm omits the reference's unconditional first-lecture fallback. Fixture covered.
 - Video.js/Lecturio/Platzi: attached player/player_, textTracks/remoteTextTracks,
   tracks_, src_/options_/track fields; owned-player descriptors now supported.
-  Platzi's base64 subtitles query fallback remains pending.
+  Platzi base64/base64url subtitles query fallback now has fixtures and a live caption sample.
 - Kajabi/Pendo: owned Wistia custom element media-id -> captions JSON. Added
   owner detection; their individual live/host fixture checks remain pending.
 - JW/CoinDesk/Reuters/hosted: playlist tracks and HLS, some SDK caption lists;
   shared reader exists but exact SDK and per-site parity is still under review.
 - Sonicwall/ServiceNow/MathWorks Brightcove: owned player.mediainfo.text_tracks;
   Aljazeera/Oracle additionally read player config and playback API. SDK path
-  implemented; exact playback API fallback and live tests remain pending.
+  implemented with strict public playback policy fallback and fixtures; live access remains site-dependent.
 - ArtStation: current course/chapter hashes -> course API chapters[].subtitles;
-  dedicated fallback not yet implemented.
+  dedicated fallback implemented and fixture-tested; live request was refused.
 - Mindvalley: HLS or associated MP4/VTT, rejects storyboard VTT. Domestika:
   current lesson HLS binding. Site-specific parity remains pending.
-- Plex rewrites subtitle URLs; Medbridge uses custom HLS timing; Pluralsight
-  filters its HLS requests; MightyNetworks/Nebula dedupe signed-URL emissions.
-  Shared HLS passing does not certify these site-specific differences.
+- Plex wrapper rewriting is host-restricted. Medbridge absolute cue times now
+  retain course timing and overlap deduplication within known duration. Pluralsight
+  accepts only a current-clip master descriptor. MightyNetworks/Nebula reference
+  overrides dedupe observable emissions; Vocalm uses explicit acquisition rather
+  than those event streams. Live signed-URL renewal still needs acceptance.
 - Updraft uses JSON-LD Mux contentUrl; Patreon associates Mux URL with post;
   Tella refreshes signed manifest by story ID; Skool uses per-video playback token
-  or Loom. Dedicated paths remain pending.
+  or Loom. Dedicated readers now exist; per-site live gates remain open.
 - Loom's reference fallback guesses timestamp units/ends for some transcript JSON.
   Do not copy this heuristic as verified timing; prefer existing VTT/explicit ends.

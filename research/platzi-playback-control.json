@@ -1,0 +1,13 @@
+{
+  "scope": "Installed Chrome isolated profile WITHOUT Vocalm; owner supplied Platzi playback control test",
+  "url": "https://platzi.com/cursos/computacion-basica/computacion-basica-para-principiantes-en/",
+  "http_status": 200,
+  "video": [
+    {
+      "duration": null,
+      "error": 4,
+      "message": "PipelineStatus::DEMUXER_ERROR_COULD_NOT_OPEN: MediaSource endOfStream before demuxer initialization completes (before HAVE_METADATA) is treated as an error. This may also occur as consequence of other MediaSource errors before HAVE_METADATA.",
+      "ready": 0
+    }
+  ]
+}

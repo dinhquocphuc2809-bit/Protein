@@ -16,7 +16,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ['lib/captions.js', 'lib/sites.js', 'lib/media.js', 'lib/subtitle-formats.js',
-           'lib/bilibili.js', 'lib/platform-captions.js', 'multisite-main.js']
+           'lib/bilibili.js', 'lib/platform-captions.js', 'lib/platform-readers.js', 'multisite-main.js']
 
 
 def main():

@@ -48,6 +48,9 @@
         /^\/[a-z]{2}(?:-[a-z]{2,4})?\/(?=(?:video|bangumi|cheese|list|medialist|festival)\/)/i,
         "/",
       );
+    // CoinDesk now links individual clips under /video/; the catalog uses /videos/.
+    if (/(^|\.)coindesk\.com$/.test(url.hostname))
+      url.pathname = url.pathname.replace(/^\/video\//, "/videos/");
     return url.href;
   }
   function rules(url) {
@@ -76,8 +79,27 @@
     }
     return [...new Set(found)];
   }
+  function auxiliary(video) {
+    const families = rules(location.href).map((r) => r.family);
+    return (
+      (families.includes("ted") && !!video.closest("#ad-container")) ||
+      (families.includes("loom") &&
+        (String(video.className).includes("animatedPreviewVideo") ||
+          /cdn\.loom\.com\/sessions\/thumbnails\//.test(
+            video.currentSrc || video.src,
+          )))
+    );
+  }
+  const watchedPlayers = new WeakSet(),
+    activatedPlayers = new WeakMap();
+  let activationSequence = 0;
   function videos(scope = document) {
-    const ted = rules(location.href).some((r) => r.family === "ted");
+    const lessonPlayers = rules(location.href).some((r) =>
+      ["domestika", "mindvalley"].includes(r.family),
+    );
+    const aljazeera = rules(location.href).some(
+      (r) => r.family === "aljazeera_brightcove",
+    );
     const selectors = rules(location.href)
       .map((r) => r.selector)
       .filter((s) => s !== "video" && s !== "video, audio");
@@ -100,7 +122,19 @@
     };
     return query("video", scope)
       .filter((v) => {
-        if (ted && v.closest("#ad-container")) return false;
+        if (auxiliary(v)) return false;
+        if (lessonPlayers && !watchedPlayers.has(v)) {
+          watchedPlayers.add(v);
+          v.addEventListener("play", () =>
+            activatedPlayers.set(v, ++activationSequence),
+          );
+          if (!v.paused && !v.ended)
+            activatedPlayers.set(v, ++activationSequence);
+        }
+        const carousel =
+          aljazeera && v.closest(".vertical-video-player-container");
+        if (carousel && !carousel.classList.contains("vve-is-active"))
+          return false;
         const rect = v.getBoundingClientRect();
         return rect.width > 100 && rect.height > 60;
       })
@@ -109,13 +143,50 @@
         if (priority) return priority;
         const x = a.getBoundingClientRect(),
           y = b.getBoundingClientRect();
+        if (lessonPlayers) {
+          const playing =
+            Number(!b.paused && !b.ended) - Number(!a.paused && !a.ended);
+          if (playing) return playing;
+          // Buffering/prepare pauses must not switch the session to a neighboring lesson.
+          const active =
+            (activatedPlayers.get(b) || 0) - (activatedPlayers.get(a) || 0);
+          if (active) return active;
+          const visible = (rect) =>
+            Math.max(
+              0,
+              Math.min(rect.right, innerWidth) - Math.max(rect.left, 0),
+            ) *
+            Math.max(
+              0,
+              Math.min(rect.bottom, innerHeight) - Math.max(rect.top, 0),
+            );
+          const area = visible(y) - visible(x);
+          if (area) return area;
+        }
         return y.width * y.height - x.width * x.height;
       });
   }
   function source(video) {
     if (!video) return "";
+    if (rules(location.href).some((r) => r.family === "twitter")) {
+      try {
+        const poster = new URL(video.poster);
+        const id =
+          poster.hostname === "pbs.twimg.com" &&
+          poster.pathname.match(
+            /^\/(?:ext_tw_video_thumb|amplify_video_thumb)\/(\d+)\//,
+          )?.[1];
+        if (id) return "twitter-media:" + id;
+      } catch {}
+    }
     const bili = biliRoute(location.href);
     if (bili) return "bili:" + bili.key;
+    const brightcove =
+      rules(location.href).some((r) => r.family.endsWith("_brightcove")) &&
+      video
+        ?.closest("video-js[data-video-id], .video-js[data-video-id]")
+        ?.getAttribute("data-video-id");
+    if (brightcove) return "brightcove:" + brightcove;
     // Stable lesson IDs survive a player's initial URL -> MediaSource blob swap.
     const stable =
       video?.getAttribute("data-video-id") || video?.getAttribute("data-id");
@@ -166,7 +237,11 @@
   function controls(video) {
     if (!video) return null;
     const selectors = rules(location.href)
-      .map((r) => r.controls)
+      .map((r) =>
+        r.family === "loom"
+          ? '.transportSection div:has(> div[data-hide-if-fullscreen] > div[role="presentation"] > button[data-name="FullScreenBtn"])'
+          : r.controls,
+      )
       .filter(Boolean);
     selectors.push(
       "media-control-bar",
@@ -185,18 +260,18 @@
           if (
             matches.length === 1 &&
             query("video", matches[0]).length === 0 &&
-            query("video", scope).filter(
-              (v) =>
-                !rules(location.href).some((r) => r.family === "ted") ||
-                !v.closest("#ad-container"),
-            ).length === 1
+            query("video", scope).filter((v) => !auxiliary(v)).length === 1
           )
             return matches[0];
         } catch {
           /* A changed site selector leaves the floating launcher available. */
         }
       }
-      scope = scope.parentElement || scope.host || null;
+      scope =
+        scope.parentElement ||
+        scope.host ||
+        scope.getRootNode?.()?.host ||
+        null;
     }
     return null;
   }

@@ -185,6 +185,15 @@
     };
     const next = () => nextData(doc);
     const props = (data) => data?.props?.pageProps || data?.pageProps;
+    if (root.VocalmReaders)
+      yield* root.VocalmReaders.discover({
+        video,
+        read,
+        check,
+        win,
+        doc,
+        href,
+      });
     if (families.has("udemy")) {
       const lecture = page.pathname.match(/\/learn\/lecture\/(\d+)/)?.[1];
       const raw = doc

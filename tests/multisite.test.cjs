@@ -42,6 +42,15 @@ test("registry routes domains, wildcard roots and embeds without suffix confusio
   assert.equal(M.language("en_US"), "en-US");
   assert.equal(M.language("zh-Hans"), "zh");
   assert.equal(M.language("unknown"), "auto");
+  assert.ok(
+    M.rules("https://www.coindesk.com/video/current-clip").some(
+      (r) => r.family === "coindesk_jwplayer",
+    ),
+  );
+  assert.equal(
+    M.rules("https://coindesk.com.evil.test/video/current-clip").length,
+    0,
+  );
 });
 test("VTT/SRT preserve IDs, settings, multiline and entities without markup", () => {
   const rows = F.parse(

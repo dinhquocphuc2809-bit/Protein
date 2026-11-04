@@ -357,6 +357,106 @@ L4 inference, broader site coverage and complete release acceptance remain open.
 
 ## Resume details
 
+### Companion runtime and social readers (2026-11-04, latest)
+
+- [x] Audit content-scripts/content.js in addition to injectScript/background.
+  Added reproducible AST audit and hash in research/runtime-extractor-audit.json.
+  Corrected the prior inference that empty Twitter/Facebook factory mappings
+  meant no existing-caption implementation. Both have separate runtime readers.
+- [x] Mindvalley MP4 + VTT source siblings: exact official asset host, selected
+  video scope, reject ambiguous caption sources and thumbnail VTT.
+- [x] Domestika/Mindvalley multiple-player selection: prioritize actual playback,
+  preserve selected player during prepare/pause, then switch on another play.
+  Control tests use a real canvas MediaStream, not page-only property overrides.
+- [x] X/Twitter: observe same-origin GraphQL/timeline responses, match HLS variant
+  to exact selected poster media ID; include serialized unified-card metadata.
+  Reject another clip/host and obsolete results after poster/media change.
+- [x] Facebook: selected video's bounded React props/fiber memoizedProps; exact
+  FBID owner and caption locale URLs, official caption CDN only. Skip getters,
+  reject ambiguous owners; recheck ownership after network completion. No cookie
+  export, token extraction, request replay or ASR dispatch added.
+- [x] 132/132 packaged Chromium mechanism cases and 90 JS/61 Python tests pass.
+  Firefox 159 passes native/shadow/DASH plus social-reader ownership tests.
+  19 shared acquisition cases and 15 player-control cases pass, including real
+  playback/pause/switch/remount checks for the multiple-lesson fixtures.
+- [ ] New social/lesson paths are fixture-tested, not live-site certified. Facebook
+  GraphQL recovery and Twitter missed-hook/alternate poster variants remain gaps.
+  Full universal content-player audit and remaining authenticated live tests remain.
+
+### Owner URLs and additional overrides (2026-11-04, latest)
+
+- [x] Skool owner's about page: activate embedded Loom player, reject its 5-second
+  animated preview, retrieve 55 English speech cues (0-184.94s, video 189.066667s),
+  mount Vocalm in the real transport controls. `research/skool-loom-live.json`.
+  This is NOT Skool classroom acceptance; no classroom URL was supplied.
+- [x] Fix thumbnail WebVTT misclassification. Sprite coordinates can never enter
+  translation/TTS. Loom preview, storyboard-only and real speech regressions pass.
+- [x] Platzi owner URL: 45 Spanish cues acquired. Video error also reproduced in
+  clean Chrome without Vocalm. Playback remains unaccepted. Skillshare HTTP403;
+  owner Chrome connection still times out at 20s (latest attempt 10:33 UTC).
+  Browser connector also unavailable. No cookies exported or original tabs changed.
+- [x] Pluralsight: decoded manifest descriptor must refer to current clip's HLS
+  master; reject variant manifests, old clips, malformed payload, wrong hosts.
+  JWT payload only selects metadata; it never grants access.
+- [x] Medbridge course: preserve absolute segment cue times, dedupe repeated cues,
+  enforce loaded duration and reject out-of-course timing. Live course still needed.
+- [x] JW Player: owned getCaptionsList URL IDs and label-to-playlist association,
+  current-caption priority, foreign-player rejection. CoinDesk actual /video/
+  routes now match controls. Live sample exposes thumbnails only; NOT a caption pass.
+  Reuters public sample returns 401. `research/jw-live.json`.
+- [x] Mindvalley/Domestika: recover owned attached Video.js source manifest and
+  reject unrelated observed HLS. Success/denied/stale fixtures; live courses pending.
+- [x] Acceptance ledger separates rejected probes, captions-only, captions with
+  player evidence, access-blocked and no-result. Embedded Loom never certifies Skool.
+- [x] Latest validation: 88 JS, 61 Python; 113 packaged platform mechanism cases;
+  19 shared acquisition cases; 13 player-mount cases; Firefox 159 DOM/shadow/DASH.
+  Build includes 84 voices and 8 BGM. Compile check and supplied-secret scan pass.
+- [ ] Whole-platform acceptance remains unfinished: see the per-route matrix for
+  authenticated/live samples, alternate variants and remaining source override gaps.
+  No paid provider/GPU work or infrastructure change in this batch.
+
+### Expanded readers and per-route evidence (2026-11-04, active)
+
+- [x] Add `platform-readers.js`: ArtStation, Platzi media descriptors, PandaVideo,
+  Tella signed manifests, Skillshare session streams, Updraft JSON-LD/Mux, BBC,
+  Loom VTT, Osmosis learnData, Gaia feature/preview, Kollus SDK, Skool current
+  module, OK.ru flashvars, Sketchy Cloudflare. Brightcove public config/playback
+  fallback covers Al Jazeera, Oracle, Sonicwall, ServiceNow and MathWorks.
+- [x] Add observed response readers for Dropbox transcript seconds, Circle
+  current lesson/owned attachment, Movebox detailPath. No cookie/header export;
+  no replay of requests with writes; no paid ASR fallback.
+- [x] Add direct DASH BaseURL subtitles (VK path); reject dynamic, encrypted or
+  segmented text tracks. Plex wrapper unwrap is restricted to HTTPS VTT on
+  vod-static.plex.tv. HLS now supports direct VTT renditions and language regions.
+- [x] Latest packaged Chromium platform cases pass (see report for count).
+  New reader unit cases pass. Shared 19 acquisition cases and 13 control mounting
+  cases pass. Firefox 159.0 passes DOM/open-shadow plus new DASH parser checks.
+  Final regression and secret scan completed; latest counts are recorded above.
+- [x] Updraft REAL speech lessons: welcome-to-updraft 223 English cues,
+  0-514.68s / duration 514.726s; best-practices 243 cues, 0-532.96s / 532.90933s.
+  Native buttons present. Fixed first-language selection and nested-slot mounting.
+  First music-only sample has exactly one cue in its complete original VTT;
+  earlier Bulgarian selection is explicitly rejected in reader-live.json.
+- [x] Al Jazeera REAL carousel: click Play then Next video; 14 en-GB cues,
+  0.52-52.7s; button present. Exclude inactive carousel players and use stable
+  Brightcove ID. Starting sample has no caption tracks, not a successful extraction.
+- [x] `docs/SITE_ACCEPTANCE_MATRIX.md` and machine-readable JSON cover all 159
+  registry routes / 78 handler families. They identify mechanisms and gaps;
+  they do NOT certify all routes or claim full detailed source review is finished.
+- [ ] Live blocks: Osmosis and Feynman HTTP403; BBC/ArtStation connection refused;
+  MathWorks sample HTTP403. Keep failures distinct from absence of subtitles.
+- [x] Added direct Drive timedtext, allowlisted MotionMagic metadata RPCs, exact
+  Patreon post-owned bootstrap and Vidlove movie endpoint with mechanism fixtures.
+- [ ] Full parity still requires Drive mobile activation, remaining per-site
+  overrides and authenticated live tests. Glo/Oba reference has no caption reader;
+  injectScript factories alone do not establish runtime caption support: Twitter
+  and Facebook have separate content/background readers, now audited and partially
+  integrated. Universal content-player paths still require broader review.
+- [x] Owner supplied Skillshare, Platzi and Skool URLs; tested and recorded below.
+  Skool URL is an about page with Loom embed, not a classroom lesson.
+- Baseline commit 5edfea4 CI confirmed completed/success. Rebuilds generated
+  dist/chrome and dist/firefox; see Git history for the current integration batch.
+
 ### Active full-reference parity work (2026-11-04)
 
 - User explicitly requires all reference sites, not only Bilibili/shared readers.

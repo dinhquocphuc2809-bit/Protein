@@ -13,6 +13,8 @@ CAPTION = 'https://captions.fixture.test/full.vtt'
 
 def scenarios():
     video = '<video id="v" style="width:800px;height:450px"></video>'
+    from reader_fixtures import scenarios as reader_scenarios
+    yield from reader_scenarios(video, CAPTION, VTT)
     def case(name, url, script='', body=video, resources=None, ready=True):
         return dict(name=name, url=url, script=script, body=body, resources=resources or {}, ready=ready)
     def next_data(data):
@@ -67,14 +69,39 @@ def main():
                 def route(r):
                     url=r.request.url
                     path=urlsplit(url).path
+                    origin=urlsplit(case['url'])
+                    cors={'Access-Control-Allow-Origin':origin.scheme+'://'+origin.netloc,'Access-Control-Allow-Credentials':'true'}
                     requests.append(path)
                     if r.request.is_navigation_request() and r.request.frame==page.main_frame:
                         r.fulfill(body='<!doctype html><html><head><title>Platform fixture</title></head><body>'+case['body']+'<script>'+case['script']+'</script></body></html>', content_type='text/html')
                     elif url==CAPTION:
-                        r.fulfill(body=VTT, content_type='text/vtt', headers={'Access-Control-Allow-Origin':'*'})
+                        r.fulfill(body=VTT, content_type='text/vtt', headers=cors)
+                    elif path=='/u/0/timedtext' and case.get('drive_tracks'):
+                        from urllib.parse import parse_qs
+                        query=parse_qs(urlsplit(url).query)
+                        if query.get('type')==['list']:
+                            r.fulfill(body='<transcript_list><track lang_code="en" lang_default="true" name=""/></transcript_list>',content_type='application/xml',headers=cors)
+                        else:
+                            r.fulfill(json={'events':[{'tStartMs':1000,'dDurationMs':2000,'segs':[{'utf8':'Existing caption.'}]},{'tStartMs':4000,'dDurationMs':2000,'segs':[{'utf8':'Correct lesson.'}]}]},headers=cors)
+                    elif path=='/api' and case.get('rpc_responses'):
+                        if r.request.method=='OPTIONS':
+                            r.fulfill(status=204,headers={**cors,'Access-Control-Allow-Methods':'POST','Access-Control-Allow-Headers':'content-type'})
+                            return
+                        payload=r.request.post_data_json or {}
+                        operation=(payload.get('data') or [{}])[0].get('context',{}).get('functionName')
+                        result=case['rpc_responses'].get(operation)
+                        r.fulfill(status=200 if result else 403,json=[{'output':{'status':'ok','data':{'response':result}}}],headers=cors)
                     elif path in case['resources']:
+                        if path == case.get('change_on_path'):
+                            r.request.frame.evaluate(case['change_script'])
+                        if path.startswith('/playback/v1/') and r.request.headers.get('accept') != 'application/json;pk=public-fixture-policy':
+                            r.fulfill(status=403,body='Missing public playback policy',headers=cors)
+                            return
+                        if case.get('denied'):
+                            r.fulfill(status=403, body='Fixture: denied',headers=cors)
+                            return
                         data=case['resources'][path]
-                        r.fulfill(body=data if isinstance(data,str) else json.dumps(data), content_type='text/vtt' if isinstance(data,str) else 'application/json', headers={'Access-Control-Allow-Origin':'*'})
+                        r.fulfill(body=data if isinstance(data,str) else json.dumps(data), content_type='text/vtt' if isinstance(data,str) else 'application/json', headers=cors)
                     else:
                         r.fulfill(status=404, body='Fixture: resource absent')
                 page.route('**/*', route)

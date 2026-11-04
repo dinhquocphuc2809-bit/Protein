@@ -2,6 +2,666 @@
   "scope": "Packaged Chromium MV3; explicit metadata fixtures; not live site acceptance",
   "checks": [
     {
+      "name": "artstation",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "artstation_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "platzi",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "pandavideo",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "pandavideo_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "tella",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "tella_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "skillshare",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "skillshare_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "updraft",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "updraft_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "bbc",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "bbc_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "loom",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "loom_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "artstation_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "platzi_malformed",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "pandavideo_not_ready",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "tella_wrong_story",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "skillshare_ambiguous",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "updraft_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "bbc_ambiguous",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "loom_missing",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "osmosis",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "osmosis_localized",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "osmosis_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "osmosis_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "osmosis_ambiguous",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "gaia",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "gaia_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "gaia_preview",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "gaia_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "aljazeera_playback",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "oracle_playback",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "sonicwall_playback",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "servicenow_playback",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "mathworks_playback",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "brightcove_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "brightcove_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "kollus",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "kollus_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "skool",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "skool_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "skool_locked",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "updraft_original_language",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "okru",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "okru_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "sketchy_cloudflare",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "sketchy_cloudflare_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "plex",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "vkvideo_mpd",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "vkvideo_mpd_segmented",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "vkvideo_mpd_dynamic",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "vkvideo_mpd_protected",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "vkvideo_mpd_malformed",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "aljazeera_carousel",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "dropbox",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "dropbox_invalid",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "circle_academy",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "circle_academy_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "circle_academy_mosaic",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "movebox",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "movebox_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "motionmagic",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "motionmagic_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "motionmagic_locked",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "vidlove",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "vidlove_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "patreon",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "patreon_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "google_drive_youtube",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "google_drive_youtube_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "loom_preview",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "loom_storyboard",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "storyboard_only",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "pluralsight",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "pluralsight_stale",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "pluralsight_variant",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "medbridge_course",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "medbridge_course_duration_missing",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "medbridge_course_out_of_range",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "coindesk_jwplayer",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "jwplayer_hosted",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "jwplayer_foreign",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "reuters_jwplayer",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "mindvalley",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "mindvalley_stale",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "mindvalley_denied",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "mindvalley_multiple",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "domestika",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "domestika_stale",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "domestika_denied",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "domestika_multiple",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "mindvalley_mp4",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "mindvalley_mp4_storyboard",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "mindvalley_mp4_ambiguous",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "mindvalley_mp4_foreign",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "twitter",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "twitter_legacy",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "twitter_stale",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "twitter_multiple",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "twitter_card",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "twitter_denied",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "facebook",
+      "passed": true,
+      "state": "ready",
+      "cues": 2
+    },
+    {
+      "name": "facebook_denied",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "facebook_ambiguous",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "facebook_foreign_url",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "facebook_getter",
+      "passed": true,
+      "state": "unknown",
+      "cues": 0
+    },
+    {
+      "name": "facebook_changed",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
+      "name": "twitter_changed",
+      "passed": true,
+      "state": "failed",
+      "cues": 0
+    },
+    {
       "name": "egghead",
       "passed": true,
       "state": "ready",

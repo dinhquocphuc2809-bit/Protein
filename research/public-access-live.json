@@ -1,0 +1,36 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+      "http_status": 200,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        null,
+        {
+          "state": "no-player"
+        }
+      ],
+      "error": "'NoneType' object has no attribute 'get'"
+    },
+    {
+      "url": "https://www.artstation.com/learning",
+      "error": "Page.goto: net::ERR_CONNECTION_REFUSED at https://www.artstation.com/learning\nCall log:\n  - navigating to \"https://www.artstation.com/learning\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "url": "https://www.bbc.com/news/videos",
+      "error": "Page.goto: net::ERR_CONNECTION_REFUSED at https://www.bbc.com/news/videos\nCall log:\n  - navigating to \"https://www.bbc.com/news/videos\", waiting until \"domcontentloaded\"\n"
+    }
+  ]
+}

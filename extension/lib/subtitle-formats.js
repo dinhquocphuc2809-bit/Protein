@@ -37,6 +37,9 @@
         end = Number(row.end),
         text = clean(row.text);
       if (!text) continue;
+      // Preview sprite coordinates use WebVTT timing too, but contain no speech.
+      if (/^\S+#xywh=(?:pixel:)?\d+,\d+,\d+,\d+$/i.test(text))
+        throw new Error("Thumbnail storyboard is not a subtitle track");
       if (
         !Number.isFinite(start) ||
         !Number.isFinite(end) ||
@@ -228,16 +231,33 @@
       throw new Error("Subtitle playlist exceeds limits");
     return { renditions, segments, complete: text.includes("#EXT-X-ENDLIST") };
   }
-  async function hls(text, url, load, language) {
+  async function hls(text, url, load, language, options = {}) {
+    const mediaTimeline = options.timing === "media";
+    if (
+      mediaTimeline &&
+      !(Number.isFinite(options.duration) && options.duration > 0)
+    )
+      throw new Error(
+        "Media duration is required for absolute subtitle timing",
+      );
     let list = playlist(text, url);
     if (list.renditions.length) {
       const track =
         list.renditions.find((t) => t.language === language) ||
+        list.renditions.find(
+          (t) =>
+            language &&
+            language !== "auto" &&
+            t.language.toLowerCase().split(/[-_]/)[0] ===
+              language.toLowerCase().split(/[-_]/)[0],
+        ) ||
         list.renditions.find((t) => t.default) ||
         list.renditions[0];
       url = track.url;
       language = track.language;
       text = await load(url);
+      if (text.trimStart().startsWith("WEBVTT"))
+        return { cues: vtt(text), language };
       list = playlist(text, url);
     }
     if (!list.complete || !list.segments.length)
@@ -275,7 +295,10 @@
         value = values[i];
       const map = value.match(/X-TIMESTAMP-MAP=([^\r\n]+)/)?.[1];
       let shift = 0;
-      if (map) {
+      if (mediaTimeline) {
+        // Medbridge segments already use the course clock, including overlapping cues.
+        shift = 0;
+      } else if (map) {
         const local = time(map.match(/LOCAL:([^,]+)/)?.[1]),
           raw = Number(map.match(/MPEGTS:(\d+)/)?.[1]);
         if (!Number.isFinite(raw)) throw new Error("Invalid HLS timestamp map");
@@ -295,10 +318,11 @@
         end: c.end + shift,
       }));
       if (
-        cues.some(
-          (c) =>
-            c.end < segment.start - 0.5 ||
-            c.start > segment.start + segment.duration + 1,
+        cues.some((c) =>
+          mediaTimeline
+            ? c.start < 0 || c.end > options.duration + 1
+            : c.end < segment.start - 0.5 ||
+              c.start > segment.start + segment.duration + 1,
         )
       )
         throw new Error("Ambiguous HLS subtitle timing");
@@ -347,6 +371,77 @@
     }
     return new TextDecoder().decode(output);
   }
+  function mpd(text, address) {
+    if (text.length > MAX_BYTES || /<!DOCTYPE|<!ENTITY/i.test(text))
+      throw new Error("Invalid MPD document");
+    const xml = new DOMParser().parseFromString(text, "application/xml");
+    if (
+      xml.documentElement?.localName !== "MPD" ||
+      xml.getElementsByTagName("parsererror").length
+    )
+      throw new Error("Invalid MPD XML");
+    if (xml.documentElement.getAttribute("type") === "dynamic")
+      throw new Error("Live DASH captions require a complete track");
+    const periods = [...xml.documentElement.children].filter(
+      (node) => node.localName === "Period",
+    );
+    if (
+      periods.length > 1 ||
+      periods.some(
+        (node) =>
+          node.hasAttribute("start") &&
+          !/^PT0+(?:\.0+)?S$/.test(node.getAttribute("start")),
+      )
+    )
+      throw new Error(
+        "Multi-period DASH captions require explicit timestamp alignment",
+      );
+    const direct = (node, tag) =>
+      [...node.children].filter((el) => el.localName === tag);
+    const result = [];
+    const visit = (
+      node,
+      base,
+      language = "auto",
+      mime = "",
+      content = "",
+      segmented = false,
+    ) => {
+      const tag = node.localName;
+      language = node.getAttribute("lang") || language;
+      mime = node.getAttribute("mimeType") || mime;
+      content = node.getAttribute("contentType") || content;
+      segmented ||= [
+        "SegmentTemplate",
+        "SegmentList",
+        "SegmentBase",
+        "ContentProtection",
+      ].some((name) => direct(node, name).length);
+      const bases = direct(node, "BaseURL");
+      const ownBase = bases[0]?.textContent?.trim();
+      if (ownBase) base = safeUrl(ownBase, base);
+      if (
+        ["AdaptationSet", "Representation"].includes(tag) &&
+        !segmented &&
+        (ownBase || /\.(?:vtt|webvtt|ttml)(?:[?#]|$)/i.test(base)) &&
+        (tag === "Representation" || !direct(node, "Representation").length) &&
+        (/^(text\/(?:web)?vtt|application\/ttml\+xml)$/.test(mime) ||
+          (content === "text" && /\.(?:vtt|webvtt|ttml)(?:[?#]|$)/i.test(base)))
+      ) {
+        result.push({ url: base, language });
+      }
+      if (result.length > 100) throw new Error("Too many DASH subtitle tracks");
+      for (const child of node.children)
+        if (
+          ["Period", "AdaptationSet", "Representation"].includes(
+            child.localName,
+          )
+        )
+          visit(child, base, language, mime, content, segmented);
+    };
+    visit(xml.documentElement, address);
+    return result;
+  }
   const api = {
     MAX_BYTES,
     clean,
@@ -358,6 +453,7 @@
     parse,
     playlist,
     hls,
+    mpd,
     bounded,
     safeUrl,
   };

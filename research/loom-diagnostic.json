@@ -1,0 +1,55 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.loom.com/embed/fc783b441bc14c4f9d20c308cccbdd73",
+      "http_status": 200,
+      "activation": "Clicked embedded Loom Play video button",
+      "frames": [
+        {
+          "cues": 173,
+          "duration": 189.066667,
+          "engine": "multisite",
+          "first": 0,
+          "host": "www.loom.com",
+          "language": "auto",
+          "last": 189.066,
+          "mediaError": null,
+          "path": "/embed/fc783b441bc14c4f9d20c308cccbdd73",
+          "playerButton": false,
+          "rules": [
+            "loom"
+          ],
+          "samples": [
+            {
+              "end": 0.945,
+              "start": 0,
+              "text": "fc783b441bc14c4f9d20c308cccbdd73.jpg#xywh=0,0,249,140"
+            },
+            {
+              "end": 1.8900000000000001,
+              "start": 0.945,
+              "text": "fc783b441bc14c4f9d20c308cccbdd73.jpg#xywh=249,0,249,140"
+            },
+            {
+              "end": 2.836,
+              "start": 1.8900000000000001,
+              "text": "fc783b441bc14c4f9d20c308cccbdd73.jpg#xywh=498,0,249,140"
+            }
+          ],
+          "state": "ready",
+          "trackCount": 1,
+          "videos": [
+            {
+              "height": 930,
+              "parent": "video-player_wrapper_BNP",
+              "width": 1440
+            }
+          ]
+        }
+      ],
+      "acquired": true,
+      "acceptance": "REJECTED: 173 cues were thumbnail sprite coordinates, not speech. Corrected by storyboard rejection and direct Loom VTT priority; see skool-loom-live.json."
+    }
+  ]
+}

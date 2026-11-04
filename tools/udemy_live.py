@@ -62,7 +62,7 @@ def main():
                 worker = context.service_workers[0] if context.service_workers else context.wait_for_event("serviceworker")
                 report["extension_version"] = worker.evaluate("chrome.runtime.getManifest().version")
             else:
-                scripts=['lib/captions.js','lib/sites.js','lib/media.js','lib/subtitle-formats.js','lib/bilibili.js','lib/platform-captions.js','multisite-main.js']
+                scripts=['lib/captions.js','lib/sites.js','lib/media.js','lib/subtitle-formats.js','lib/bilibili.js','lib/platform-captions.js', 'lib/platform-readers.js','multisite-main.js']
                 context.add_init_script(script='\n;\n'.join((ROOT/'extension'/name).read_text(encoding='utf-8') for name in scripts))
             page = context.new_page()
 

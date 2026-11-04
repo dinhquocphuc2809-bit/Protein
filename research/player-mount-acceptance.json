@@ -10,8 +10,12 @@
     "shaka: owned native control, quick menu and remount",
     "udemy: owned native control, quick menu and remount",
     "mux_shadow: owned native control, quick menu and remount",
+    "hls_nested_slot: owned native control, quick menu and remount",
+    "loom_preview: owned native control, quick menu and remount",
     "mux_unslotted: floating launcher retained; no hidden unslotted button",
-    "two_players: owned native control, quick menu and remount"
+    "two_players: owned native control, quick menu and remount",
+    "domestika_multiple: owned native control, quick menu and remount",
+    "mindvalley_multiple: owned native control, quick menu and remount"
   ],
   "passed": true
 }

@@ -65,6 +65,8 @@
       return null;
     }
     if (url.protocol !== "https:") return null;
+    if (VocalmReaders.observedKind(url.href, location.href))
+      return { kind: "reader" };
     if (
       M.rules(location.href).some((r) => r.site === "bili") &&
       url.hostname === "api.bilibili.com" &&
@@ -98,6 +100,7 @@
     if (/\.(vtt|webvtt|srt|ttml|dfxp)(?:$|\/)/i.test(url.pathname))
       return { kind: "caption" };
     if (/\.m3u8$/i.test(url.pathname)) return { kind: "hls" };
+    if (/\.mpd$/i.test(url.pathname)) return { kind: "dash" };
     if (
       /(^|\.)wistia\.(com|net)$/.test(url.hostname) &&
       /^\/embed\/captions\/[\w-]+\.json$/.test(url.pathname)
@@ -237,19 +240,34 @@
       }
     };
   }
-  async function load(url, token, budget, session = false) {
+  async function load(
+    url,
+    token,
+    budget,
+    session = false,
+    policyKey = null,
+    rpc = null,
+  ) {
     if (!same(token, identity()))
       throw new Error("Video changed while reading subtitles");
     const cached = resources.get(url);
-    if (cached && same(cached.token, token, true)) return cached.text;
+    if (!policyKey && !rpc && cached && same(cached.token, token, true))
+      return cached.text;
     if (++budget.requests > 1204 || Date.now() > budget.deadline)
       throw new Error("Subtitle acquisition deadline exceeded");
-    const address = F.safeUrl(url, location.href);
+    const address = VocalmReaders.captionUrl(
+      F.safeUrl(url, location.href),
+      location.href,
+    );
+    const headers = VocalmReaders.playbackHeaders(address, policyKey);
+    const request = VocalmReaders.motionRequest(address, rpc, location.href);
     const sameOrigin = new URL(address).origin === location.origin;
     let response;
     try {
       response = await nativeFetch(address, {
         credentials: sameOrigin || session ? "include" : "omit",
+        headers,
+        ...request,
         signal: AbortSignal.timeout(
           Math.min(8000, Math.max(1, budget.deadline - Date.now())),
         ),
@@ -257,9 +275,11 @@
       if (!sameOrigin && !session && [401, 403].includes(response.status))
         throw new Error("Subtitle requires browser session");
     } catch (reason) {
-      if (sameOrigin || session || Date.now() > budget.deadline) throw reason;
+      if (request || sameOrigin || session || Date.now() > budget.deadline)
+        throw reason;
       response = await nativeFetch(address, {
         credentials: "include",
+        headers,
         signal: AbortSignal.timeout(5000),
       });
     }
@@ -326,7 +346,10 @@
     return null;
   }
   function sdkTracks(video) {
-    const result = VocalmPlatforms.videojsTracks(video);
+    const result = [
+      ...VocalmPlatforms.videojsTracks(video),
+      ...VocalmReaders.sourceCaptions(video, location.href),
+    ];
     const append = (list) => {
       if (!Array.isArray(list)) return;
       for (const t of list.slice(0, 100))
@@ -344,13 +367,14 @@
         }
     };
     const manifest = (value) => {
-      if (typeof value === "string" && /\.m3u8(?:[?#]|$)/i.test(value))
+      if (typeof value === "string" && /\.(?:m3u8|mpd)(?:[?#]|$)/i.test(value))
         append([{ src: value }]);
     };
     for (const value of [
       video.currentSrc,
       video.src,
       ...[...video.querySelectorAll("source")].map((s) => s.src),
+      ...VocalmReaders.mediaUrls(video),
     ])
       manifest(value);
     let parent = video.getRootNode()?.host;
@@ -361,7 +385,32 @@
     try {
       const container = video.closest(".jwplayer");
       if (container && typeof window.jwplayer === "function") {
-        const item = window.jwplayer(container.id).getPlaylistItem();
+        const player = window.jwplayer(container.id);
+        if (
+          typeof player.getContainer === "function" &&
+          !player.getContainer()?.contains(video)
+        )
+          throw new Error("Different JW player");
+        const item = player.getPlaylistItem();
+        const captions = player.getCaptionsList?.();
+        if (Array.isArray(captions)) {
+          const selected = player.getCurrentCaptions?.();
+          for (const [index, caption] of captions.slice(0, 100).entries()) {
+            if (!caption || caption.id === "off") continue;
+            const matching = (item?.tracks || []).filter(
+              (t) =>
+                ["captions", "subtitles"].includes(t.kind) &&
+                (t.file === caption.id ||
+                  (caption.label && t.label === caption.label)),
+            );
+            const own = matching.length === 1 ? matching[0] : {};
+            const url = /^(?:https:)?\/\//.test(caption.id || "")
+              ? caption.id
+              : own.file;
+            if (url)
+              append([{ ...own, file: url, default: index === selected }]);
+          }
+        }
         append(item?.tracks);
         for (const source of item?.sources || []) manifest(source.file);
       }
@@ -504,18 +553,24 @@
       const finish = (result) => {
         if (!same(token, identity()))
           return { state: "unknown", reason: "Video changed" };
+        const cues = F.normalize(result.cues);
         return {
           state: "ready",
-          cues: F.normalize(result.cues),
+          cues: M.rules(location.href).some((r) => r.family === "vkvideo")
+            ? VocalmReaders.incrementalCues(cues)
+            : cues,
           language: result.language || "auto",
           href: token.href,
           src: token.src,
         };
       };
+      const platformFirst = M.rules(location.href).some((r) =>
+        ["udemy", "updraft", "loom"].includes(r.family),
+      );
       let native = null,
         failure = "";
       try {
-        native = await nativeTracks(video);
+        if (!platformFirst) native = await nativeTracks(video);
       } catch (e) {
         failure = e.message;
       }
@@ -542,6 +597,24 @@
       } catch (e) {
         failure = e.message;
       }
+      const twitter = M.rules(location.href).some(
+        (r) => r.family === "twitter",
+      );
+      const facebook = M.rules(location.href).some(
+        (r) => r.family === "facebook",
+      );
+      if (twitter && M.videos().length > 1) {
+        for (const row of resources.values()) {
+          if (row.kind !== "reader" || !same(row.token, token, true)) continue;
+          try {
+            candidates.push(
+              ...VocalmReaders.observedTracks(row, video, location.href),
+            );
+          } catch (e) {
+            failure = e.message;
+          }
+        }
+      }
       // API/network resources have no DOM owner. Only accept them in an unambiguous frame.
       if (M.videos().length === 1) {
         await recoverMetadata(token, budget);
@@ -556,6 +629,15 @@
         const rows = [...resources.values()].filter((r) =>
           same(r.token, token, true),
         );
+        for (const row of rows.filter((r) => r.kind === "reader")) {
+          try {
+            candidates.push(
+              ...VocalmReaders.observedTracks(row, video, location.href),
+            );
+          } catch (e) {
+            failure = e.message;
+          }
+        }
         for (const row of rows.filter((r) => !udemy && r.kind === "wistia"))
           try {
             const data = JSON.parse(row.text);
@@ -570,11 +652,18 @@
           }
         candidates.push(
           ...rows
-            .filter((r) => !udemy && r.kind === "hls")
+            .filter(
+              (r) => !udemy && !facebook && ["hls", "dash"].includes(r.kind),
+            )
             .map((r) => ({ url: r.url, language: "auto" })),
         );
         // Individual WebVTT network responses may be HLS fragments. Do not use them as a complete transcript.
-        if (!udemy && !rows.some((r) => r.kind === "hls"))
+        if (
+          !udemy &&
+          !twitter &&
+          !facebook &&
+          !rows.some((r) => ["hls", "dash"].includes(r.kind))
+        )
           candidates.push(
             ...rows
               .filter(
@@ -591,13 +680,34 @@
         if (candidate.cues) return finish(candidate);
         if (tried.has(candidate.url)) return null;
         tried.add(candidate.url);
+        if (
+          /\.m3u8(?:[?#]|$)/i.test(candidate.url) &&
+          !VocalmReaders.manifestAllowed(candidate.url, video, location.href)
+        )
+          throw new Error("Manifest does not belong to the active lesson");
         const value = await load(candidate.url, token, budget);
+        if (/<(?:\w+:)?MPD\b/.test(value)) {
+          for (const track of F.mpd(value, candidate.url)) {
+            try {
+              const result = await attempt(track);
+              if (result) return result;
+            } catch (e) {
+              failure = e.message;
+            }
+          }
+          throw new Error("No supported complete DASH subtitle track");
+        }
         const result = value.trimStart().startsWith("#EXTM3U")
           ? await F.hls(
               value,
               candidate.url,
               (url) => load(url, token, budget),
               candidate.language,
+              M.rules(location.href).some(
+                (r) => r.family === "medbridge_course",
+              )
+                ? { timing: "media", duration: video.duration }
+                : {},
             )
           : {
               cues: VocalmPlatforms.parse(value, candidate.format),
@@ -611,6 +721,15 @@
           throw new Error(
             "Only a partial subtitle response was observed; enable CC and retry",
           );
+        if (
+          candidate.ownerKey &&
+          !VocalmReaders.sourceCaptions(video, location.href).some(
+            (current) =>
+              current.ownerKey === candidate.ownerKey &&
+              current.url === candidate.url,
+          )
+        )
+          throw new Error("Caption owner changed while loading");
         return finish(result);
       };
       const discoverPlatforms = async () => {
@@ -619,7 +738,8 @@
           for await (const candidate of VocalmPlatforms.discover({
             video,
             check,
-            read: (url, session) => load(url, token, budget, session),
+            read: (url, session, policyKey, rpc) =>
+              load(url, token, budget, session, policyKey, rpc),
           })) {
             check();
             try {
@@ -636,7 +756,7 @@
       };
       // Udemy exposes dozens of translated tracks; resolve the original course
       // locale before accepting an arbitrary observed or intercepted caption.
-      if (udemy) {
+      if (platformFirst) {
         const result = await discoverPlatforms();
         if (result) return result;
       }
@@ -648,7 +768,7 @@
           failure = e.message;
         }
       }
-      if (!udemy) {
+      if (!platformFirst) {
         const result = await discoverPlatforms();
         if (result) return result;
       }

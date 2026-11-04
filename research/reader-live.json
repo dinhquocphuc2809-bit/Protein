@@ -1,0 +1,48 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/a-message-from-gmx",
+      "http_status": 200,
+      "frames": [
+        {
+          "cues": 1,
+          "engine": "multisite",
+          "first": 0,
+          "host": "updraft.cyfrin.io",
+          "language": "bg-BG",
+          "last": 2.58,
+          "path": "/courses/blockchain-basics/introduction-to-updraft/a-message-from-gmx",
+          "playerButton": false,
+          "rules": [
+            "updraft"
+          ],
+          "state": "ready",
+          "trackCount": 14,
+          "videos": [
+            {
+              "height": 504,
+              "parent": "",
+              "width": 896
+            }
+          ]
+        }
+      ],
+      "acquired": true,
+      "acceptance": "Rejected: wrong original language. Corrected and retested with speech-bearing lessons in updraft-live.json."
+    },
+    {
+      "url": "https://www.osmosis.org/learn/Heart_failure",
+      "http_status": 403,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    }
+  ]
+}

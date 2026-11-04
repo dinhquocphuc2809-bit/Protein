@@ -1,0 +1,98 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.skillshare.com/en/classes/how-to-draw-a-beginners-guide-part-1-of-the-drawing-laboratory/1607370408",
+      "http_status": 403,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    },
+    {
+      "url": "https://platzi.com/cursos/computacion-basica/computacion-basica-para-principiantes-en/",
+      "http_status": 200,
+      "frames": [
+        {
+          "cues": 45,
+          "duration": null,
+          "engine": "multisite",
+          "first": 1.42,
+          "host": "platzi.com",
+          "language": "es",
+          "last": 200.76,
+          "path": "/cursos/computacion-basica/computacion-basica-para-principiantes-en/",
+          "playerButton": true,
+          "rules": [
+            "platzi"
+          ],
+          "state": "ready",
+          "trackCount": 0,
+          "videos": [
+            {
+              "height": 565.203125,
+              "parent": "video-js vjs-paused vjs-fluid vjs_video_3-dimensions vjs-workinghover vjs-v8 vjs-user-active vjs-error vjs-controls-disabled",
+              "width": 1004.8125
+            }
+          ]
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": true,
+      "acceptance": "Caption acquisition only: 45 Spanish cues; playback fails in isolated Chrome even without Vocalm (platzi-playback-control.json)."
+    },
+    {
+      "url": "https://www.skool.com/claudecodeclub/about?utm_source=skooldotcom&utm_medium=website&utm_campaign=discovery_browse_group_link",
+      "http_status": 200,
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "cues": 55,
+          "duration": 5,
+          "engine": "multisite",
+          "first": 0,
+          "host": "www.loom.com",
+          "language": "auto",
+          "last": 184.94,
+          "path": "/embed/fc783b441bc14c4f9d20c308cccbdd73",
+          "playerButton": true,
+          "rules": [
+            "loom"
+          ],
+          "state": "ready",
+          "trackCount": 0,
+          "videos": [
+            {
+              "height": 396,
+              "parent": "components_wrapper_cKT",
+              "width": 704
+            }
+          ]
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": true,
+      "acceptance": "Initial probe used a 5-second preview player; rejected for playback acceptance. Corrected and retested in skool-loom-live.json."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.aljazeera.com/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+      "http_status": 200,
+      "activation": "Clicked public Play video button",
+      "frames": [
+        {
+          "diagnostic": "",
+          "duration": 146.16,
+          "engine": "multisite",
+          "host": "www.aljazeera.com",
+          "path": "/video/by-the-numbers-3/2026/11/3/who-decides-the-us-midterms",
+          "playerButton": true,
+          "reason": "No complete VOD subtitle playlist; enable CC or import SRT",
+          "rules": [
+            "aljazeera"
+          ],
+          "state": "failed",
+          "trackCount": 0,
+          "videos": [
+            {
+              "height": 896.65625,
+              "parent": "video-js vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-0 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-layout-medium vjs-quality-menu vjs-playing vjs-has-started playing",
+              "width": 504.609375
+            },
+            {
+              "height": 896.65625,
+              "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-1 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+              "width": 504.609375
+            },
+            {
+              "height": 896.65625,
+              "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-2 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+              "width": 504.609375
+            },
+            {
+              "height": 896.65625,
+              "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-3 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+              "width": 504.609375
+            },
+            {
+              "height": 896.65625,
+              "parent": "video-js vjs-paused vjs-controls-enabled vjs-workinghover vjs-v8 vjs-user-active bc-player-VANIsd8MG_default bc-player-VANIsd8MG_default-index-4 vjs-mouse pause-controller vjs-plugins-ready vjs-player-info vjs-contextmenu-ui vjs-viewability vjs-errors vjs-quality-menu vjs-layout-medium",
+              "width": 504.609375
+            }
+          ]
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": false
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/welcome-to-updraft",
+      "http_status": 200,
+      "frames": [
+        {
+          "cues": 223,
+          "duration": 514.726,
+          "engine": "multisite",
+          "first": 0,
+          "host": "updraft.cyfrin.io",
+          "language": "en-US",
+          "last": 514.68,
+          "path": "/courses/blockchain-basics/introduction-to-updraft/welcome-to-updraft",
+          "playerButton": true,
+          "rules": [
+            "updraft"
+          ],
+          "state": "ready",
+          "trackCount": 14,
+          "videos": [
+            {
+              "height": 504,
+              "parent": "",
+              "width": 896
+            }
+          ]
+        }
+      ],
+      "acquired": true
+    },
+    {
+      "url": "https://updraft.cyfrin.io/courses/blockchain-basics/introduction-to-updraft/best-practices",
+      "http_status": 200,
+      "frames": [
+        {
+          "cues": 243,
+          "duration": 532.90933,
+          "engine": "multisite",
+          "first": 0,
+          "host": "updraft.cyfrin.io",
+          "language": "en-US",
+          "last": 532.96,
+          "path": "/courses/blockchain-basics/introduction-to-updraft/best-practices",
+          "playerButton": true,
+          "rules": [
+            "updraft"
+          ],
+          "state": "ready",
+          "trackCount": 14,
+          "videos": [
+            {
+              "height": 504,
+              "parent": "",
+              "width": 896
+            }
+          ]
+        }
+      ],
+      "acquired": true
+    }
+  ]
+}

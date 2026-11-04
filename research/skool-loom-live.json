@@ -1,0 +1,52 @@
+{
+  "scope": "Public live pages; acquisition only; no backend or GPU requests",
+  "pages": [
+    {
+      "url": "https://www.skool.com/claudecodeclub/about",
+      "http_status": 200,
+      "activation": "Clicked embedded Loom Play video button",
+      "frames": [
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "state": "no-player"
+        },
+        {
+          "cues": 55,
+          "duration": 189.066667,
+          "engine": "multisite",
+          "first": 0,
+          "host": "www.loom.com",
+          "language": "en",
+          "last": 184.94,
+          "mediaError": null,
+          "path": "/embed/fc783b441bc14c4f9d20c308cccbdd73",
+          "playerButton": true,
+          "rules": [
+            "loom"
+          ],
+          "state": "ready",
+          "trackCount": 1,
+          "videos": [
+            {
+              "height": 340,
+              "parent": "video-player_wrapper_BNP",
+              "width": 704
+            }
+          ]
+        },
+        {
+          "state": "no-player"
+        }
+      ],
+      "acquired": true
+    }
+  ]
+}
