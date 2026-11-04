@@ -2,6 +2,19 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Modal cold-start research rechecked (2026-11-05)
+
+- [x] Read current official cold-start/memory-snapshot/scaling docs. GPU snapshot
+  remains Alpha; installed Modal1.6.3 accepts its experimental option.
+- Snapshot creation requires a DEPLOYED app. An ephemeral modal run benchmark
+  cannot establish snapshot restore performance. Require actual restore logs and
+  retirement/new-container verification; initial creation may cost more time.
+- Current production snapshots remain disabled. Volume weights are cached;
+  min_containers=0/scaledown_window=30 retained. No infrastructure change this turn.
+- [ ] Optional next experiment: isolated deployed Qwen snapshot app with actual
+  repeated cold restores, bounded GPU use and output checks. Not yet performed.
+- Sources/results: `docs/MODAL_COLD_START.md`, `research/modal-cold-start-sources.json`.
+
 ## T4 measured; L4 allocation blocked (2026-11-05)
 
 - User requested evidence whether GPU speed/VRAM/RAM explain Qwen latency.

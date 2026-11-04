@@ -1,0 +1,25 @@
+[
+  {
+    "name": "cold-start",
+    "url": "https://modal.com/docs/guide/cold-start",
+    "sha256": "c9908dcf00187ebe3ac4cd19e899031cc8e1a1b551673af86c7300b966df2582",
+    "bytes": 74014
+  },
+  {
+    "name": "memory-snapshot",
+    "url": "https://modal.com/docs/guide/memory-snapshot",
+    "sha256": "89956a9733dfe4535514d4b62751839e67a8a02031f3adf539f6d4d3d6531628",
+    "bytes": 89300
+  },
+  {
+    "name": "gpu-memory-snapshot",
+    "url": "https://modal.com/docs/guide/gpu-memory-snapshot",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "scaling",
+    "url": "https://modal.com/docs/guide/scale",
+    "sha256": "ca973710cd060a53ac3674c6f184ab37a71b8bc83af985c3a0122456917377af",
+    "bytes": 72016
+  }
+]

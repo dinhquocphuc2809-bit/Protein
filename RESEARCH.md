@@ -2,6 +2,39 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## Modal cold-start documentation recheck (2026-11-05)
+
+- Read current official cold-start, memory-snapshot and scaling guides; hashes in
+  `research/modal-cold-start-sources.json`, saved text under ignored
+  `.private/modal-cold-start`. Separate GPU-memory-snapshot URL returned404;
+  current GPU snapshot documentation is part of the memory-snapshot guide.
+- Cold-start guide separates queueing until a warm container is available from
+  initialization. We cannot equate the L4 zero-container timeout with model load.
+- Memory snapshots are created ONLY for deployed apps, not ephemeral modal run
+  experiments. CPU snapshot: enable_memory_snapshot=True and enter(snap=True).
+  CPU-only snapshots must avoid CUDA initialization; GPU move happens after restore.
+- GPU snapshots currently Alpha: enable_memory_snapshot=True plus
+  experimental_options={'enable_gpu_snapshot': True}; GPU init/warmup belongs in
+  enter(snap=True). Installed Modal1.6.3 exposes both decorator parameters.
+- Docs explicitly warn snapshots generally do not improve storage-bandwidth-bound
+  weight loading and can worsen it; gains primarily skip imports/JIT/initialization.
+  Snapshots do not remove GPU allocation requirements or speed up steady-state
+  transcription. Qwen T4 warm worker measured171.226s versus17.494s model loading.
+- Verify actual restore via Containers startup markers or exact restore log,
+  not merely snapshot enabled/creation. Code/config/GPU changes invalidate prior
+  snapshots. GPU functions may create2-3 snapshots for underlying worker coverage.
+- Current ASR/TTS production uses cached pinned weights on Modal Volume,
+  min_containers=0, scaledown_window=30, regular enter; snapshots are NOT enabled.
+  Prior OmniVoice CPU snapshot experiment did not prove restored-start benefit
+  and was reverted. That does not prove GPU snapshots cannot help Qwen.
+- min_containers, buffer_containers and longer scaledown_window trade latency
+  for billed idle resources. Keep current zero-idle-minimum pending a measured
+  alternative consistent with the user's credit limits.
+- No production change or GPU inference was performed in this research turn.
+  Next valid experiment: deploy an isolated snapshot Qwen app, warm up, verify
+  container retirement, call again and confirm restore logs across repeated cold
+  starts; compare model/input/output/timings with non-snapshot baseline before rollout.
+
 ## Full-video Qwen GPU comparison (2026-11-05)
 
 - User requested T4 versus L4 on the same video with VRAM/RAM diagnosis. Used
