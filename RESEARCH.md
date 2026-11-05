@@ -2,6 +2,33 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## Completed A100 40GB/80GB follow-up (2026-11-05)
+
+- Same retained8996.72s audio and production source hash;375windows each,
+  CPU2/RAM16GiB request, no snapshots, separate backend accounts1/2.
+- Actual hardware allocated: A100-SXM4-40GB versus A10080GB PCIe. These differ
+  in form factor as well as capacity; do not describe a capacity-only experiment.
+- GPU/resources/pricing pages re-fetched; current SDK rates GPU40GB $2.10/h,
+  GPU80GB $2.50/h, CPU $0.0473/core-hour, memory $0.008/GiB-hour.
+  Sources/hashes/rates: research/benchmarks/qwen-a100-before.json.
+- Installed Modal SDK billing report explicitly attributes resource costs to
+  object_id (including Apps) in hourly buckets. CLI billing report with
+  --show-resources --json returns object_id/resource/cost. A future end boundary
+  includes currently accumulating hour data, which can lag. Early A100 rows
+  are partial; historical T4/A10 exact app rows are present.
+- Both375-window runs complete,0errors/OOM/restarts; one successful alignment
+  recovery each.40GB wall1510.888s/worker885.245s;80GB wall1400.227s/worker709.896s.
+  Peak RSS8.949/9.495GiB, reservedVRAM6.787/6.787GiB. Two word substitutions
+  per retained transcript vs T4; no ground-truth accuracy score claimed.
+- Exact app/resource billing rows sum T4 $0.43248585,A10 $0.61477561,
+  A10040GB $0.96129844,A10080GB $1.05576323 at retrieval. Costs may still lag;
+  implied GPU duration/clientwall ratios0.998/0.998/0.986/0.997. Consistent
+  wall-duration estimates0.4334/0.6161/0.9748/1.0590 support the same conclusion.
+- T4 cheapest for this sequential pipeline.80GB fastest total, but worker only
+  1.75% faster than A10.40GB worker slower than A10; placement/CPU and RPC
+  overhead confound pure GPU comparisons. Neither A100 is cost-optimal here.
+- Reports: docs/QWEN_A100_COMPARISON.md and research/benchmarks/qwen-a100-summary.json.
+
 ## Completed long-video comparison (2026-11-05)
 
 - Official GPU/resources/pricing pages fetched directly and hashed in

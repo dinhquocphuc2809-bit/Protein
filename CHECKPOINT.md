@@ -2,6 +2,35 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Passed: long-video A100 40GB versus 80GB (2026-11-05)
+
+- Owner requests the same YGi-aPUsZrQ audio and a time/cost comparison.
+- [x] Reuse validated8996.72s audio/hash; no second download or VPS media storage.
+- [x] Official GPU/resources/pricing rechecked, current billing rates recorded in
+  research/benchmarks/qwen-a100-before.json. GPU/hour:40GB $2.10,80GB $2.50;
+  CPU $0.0473/core-hour, RAM $0.008/GiB-hour. Credits do not imply zero resource cost.
+- [x] Extend isolated harness GPU allowlist/account mapping only.
+- Completed: A100-40GB/account1, A100-80GB/account2; both apps stopped.
+  App IDs ap-Pe9Bux5qsMu759J7S5CXpE and ap-oMy6t9f8Rh8wFXzfkd6zoI.
+  Actual hardware: NVIDIA A100-SXM4-40GB / NVIDIA A100 80GB PCIe.
+  Reports research/benchmarks/qwen-long-A100-*.json; console logs and audio in
+  .private/asr-long-video. Do not start duplicate runs. Production unchanged.
+- [x] Confirm actual allocated GPU, full375-window coverage, timestamps/resources.
+- [x] Stop apps/zero tasks, compare time and consistently estimated costs with
+  completed T4/A10 reports. Distinguish account billing changes from exact invoices.
+- [x] Update report/research and validate: all750 live windows, full coverage,
+  stopped-app checks, script compilation, secret scan and whitespace checks.
+- Full wall40GB1510.888s/80GB1400.227s; worker885.245s/709.896s. No failed
+  windows/OOM/restarts. Each transcript has two substituted word items vs T4.
+- App-attributed observed costs: T4 $0.4325,A10 $0.6148,A10040GB $0.9613,
+  A10080GB $1.0558 (may lag, before credits). Uniform wall-rate estimates:
+  $0.4334/$0.6161/$0.9748/$1.0590. T4 cheapest;80GB fastest observed wall.
+- Report docs/QWEN_A100_COMPARISON.md; research/benchmarks/qwen-a100-summary.json.
+- Billing API report supports per-object app costs. Historical T4/A10 report
+  rows found by exact app IDs; current A100 rows can lag. tools/summarize_a100.py
+  compares completed runs, consistent wall-duration estimates and observed
+  app/resource billing with explicit lag caveat. Do not call partial costs final.
+
 ## Passed: long-video T4 versus A10 (2026-11-05)
 
 - Owner requests full video YGi-aPUsZrQ on two different backend accounts,

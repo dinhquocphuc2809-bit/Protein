@@ -18,11 +18,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gpu', required=True, choices=['T4', 'A10', 'L40S'])
+    parser.add_argument('--gpu', required=True, choices=['T4', 'A10', 'L40S', 'A100-40GB', 'A100-80GB'])
     parser.add_argument('--account', required=True, type=int, choices=[1, 2])
     args = parser.parse_args()
-    if args.account != (1 if args.gpu == 'T4' else 2):
-        parser.error('Use account1 for T4 and account2 for the comparison GPU')
+    if args.account != (1 if args.gpu in {'T4', 'A100-40GB'} else 2):
+        parser.error('Use account1 for T4/A100-40GB and account2 for A10/L40S/A100-80GB')
     env = environment(args.account)
     env.update(VOCALM_COMPARE_GPU=args.gpu, VOCALM_COMPARE_ACCOUNT=str(args.account), PYTHONPATH=str(ROOT))
     os.environ.update(env)

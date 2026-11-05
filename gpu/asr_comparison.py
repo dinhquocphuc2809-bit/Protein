@@ -9,8 +9,8 @@ import modal
 from gpu.asr import Recognizer, image, weights, ASR_REV, ALIGN_REV
 
 GPU = os.environ.get('VOCALM_COMPARE_GPU', 'T4')
-if GPU not in {'T4', 'L4', 'A10', 'L40S'}:
-    raise ValueError('Expected T4, L4, A10 or L40S')
+if GPU not in {'T4', 'L4', 'A10', 'L40S', 'A100-40GB', 'A100-80GB'}:
+    raise ValueError('Unsupported benchmark GPU')
 app = modal.App('vocalm-qwen-comparison-' + GPU.lower())
 
 

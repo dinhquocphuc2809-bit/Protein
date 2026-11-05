@@ -1,0 +1,514 @@
+{
+  "at": "2026-11-05T04:13:41.668282+00:00",
+  "video": "YGi-aPUsZrQ",
+  "duration_seconds": 8996.72,
+  "audio_sha256": "df0c4bfc18cce22faa1670e1e9da9f87f6cecb89c1d1a470fc224d3fb9945ac7",
+  "production_changed": false,
+  "rates_usd_per_hour": {
+    "gpu_hour_cost_t4": "0.59000",
+    "gpu_hour_cost_a10g": "1.10000",
+    "gpu_hour_cost_a100_40gb": "2.10000",
+    "gpu_hour_cost_a100_80gb": "2.50000",
+    "cpu_hour_cost": "0.04730",
+    "mem_gib_hour_cost": "0.00800"
+  },
+  "results": {
+    "T4": {
+      "passed": true,
+      "account": 1,
+      "gpu_names": [
+        "Tesla T4"
+      ],
+      "chunks": 375,
+      "expected_chunks": 375,
+      "complete_window_coverage": true,
+      "errors": 0,
+      "alignment_recoveries": 1,
+      "wall_seconds": 1919.9392353000003,
+      "worker_seconds": 1215.6728860880007,
+      "rpc_seconds": 1915.9577333000198,
+      "first_rpc_seconds": 28.96750470000552,
+      "model_load_seconds": 17.69325423,
+      "cpu_seconds": 1375.7099999999982,
+      "average_process_cpu_cores_during_calls": 1.1316448822240268,
+      "max_chunk_cpu_cores": 1.9984830181569524,
+      "wall_real_time_factor": 0.21340435573186678,
+      "worker_real_time_factor": 0.1351240103157596,
+      "gpu_total_GiB": 14.57080078125,
+      "peak_allocated_GiB": 6.665027618408203,
+      "peak_reserved_GiB": 6.98046875,
+      "sampled_device_used_peak_GiB": 7.1142578125,
+      "process_lifetime_peak_RSS_GiB": 9.488838195800781,
+      "sampled_process_peak_RSS_GiB": 8.873363494873047,
+      "first_quarter_median_RSS_GiB": 7.373771667480469,
+      "last_quarter_median_RSS_GiB": 8.68756103515625,
+      "last_RSS_GiB": 8.68756103515625,
+      "second_half_RSS_slope_GiB_per_audio_hour": 0.00012031542237527869,
+      "first_quarter_median_reserved_GiB": 5.986328125,
+      "last_quarter_median_reserved_GiB": 6.98046875,
+      "gpu_utilization_samples": 1169,
+      "sampled_gpu_utilization_mean_percent": 37.99059024807528,
+      "sampled_gpu_utilization_max_percent": 76.0,
+      "cgroup_fields_available": [
+        "memory/memory.limit_in_bytes",
+        "memory/memory.usage_in_bytes"
+      ],
+      "stage_seconds": {
+        "qwen_alignment": 109.30818803299752,
+        "recognition": 930.5341505969989,
+        "vad": 165.86857796600185
+      },
+      "container_count": 1,
+      "successful_container_calls_sequential": true,
+      "words": 13905,
+      "cues": 1093,
+      "last_cue_end": 8943.2,
+      "output_sha256": "f0e22274bd015de33f3d01c8015945eb1c8f7519f44e8a3a325f597ad7ef2bbe",
+      "shutdown": {
+        "state": "stopped",
+        "tasks": "0",
+        "containers": 0
+      },
+      "cost": {
+        "gpu_usd_per_hour": 0.59,
+        "requested_gpu_cpu_ram_usd_per_hour": 0.8126,
+        "wall_duration_estimate_usd": 0.43337295072355003,
+        "estimate_method": "Measured client wall seconds times GPU + requested 2 CPU + 16 GiB hourly rates. Approximation, not invoice; excludes build/storage and exact container lifecycle differences.",
+        "reported_app_resources_usd": {
+          "Memory": 0.06812477,
+          "CPU": 0.05034846,
+          "T4": 0.31401262
+        },
+        "reported_app_total_usd": 0.43248585,
+        "reported_gpu_seconds": 1916.009206779661,
+        "reported_gpu_seconds_over_client_wall": 0.9979530453630606,
+        "reported_usage_may_be_delayed": true,
+        "app_billing_rows": [
+          {
+            "object_id": "ap-Y2ri5Lnr0b1XOxZ2ttSjH6",
+            "description": "vocalm-qwen-long-t4",
+            "environment": "main",
+            "interval_start": "2026-11-04T23:00:00",
+            "resource": "Memory",
+            "cost": "0.06812477"
+          },
+          {
+            "object_id": "ap-Y2ri5Lnr0b1XOxZ2ttSjH6",
+            "description": "vocalm-qwen-long-t4",
+            "environment": "main",
+            "interval_start": "2026-11-04T23:00:00",
+            "resource": "CPU",
+            "cost": "0.05034846"
+          },
+          {
+            "object_id": "ap-Y2ri5Lnr0b1XOxZ2ttSjH6",
+            "description": "vocalm-qwen-long-t4",
+            "environment": "main",
+            "interval_start": "2026-11-04T23:00:00",
+            "resource": "T4",
+            "cost": "0.31401262"
+          }
+        ]
+      },
+      "retained_text_matches_T4": true,
+      "max_timestamp_difference_from_T4_seconds": 0.0,
+      "wall_speedup_vs_T4": 1.0,
+      "worker_speedup_vs_T4": 1.0
+    },
+    "A10": {
+      "passed": true,
+      "account": 2,
+      "gpu_names": [
+        "NVIDIA A10"
+      ],
+      "chunks": 375,
+      "expected_chunks": 375,
+      "complete_window_coverage": true,
+      "errors": 0,
+      "alignment_recoveries": 1,
+      "wall_seconds": 1677.0232676000014,
+      "worker_seconds": 722.5309375449999,
+      "rpc_seconds": 1672.9327170001052,
+      "first_rpc_seconds": 21.826117900003737,
+      "model_load_seconds": 10.702517958000001,
+      "cpu_seconds": 839.6699999999998,
+      "average_process_cpu_cores_during_calls": 1.1621232481103336,
+      "max_chunk_cpu_cores": 2.0468592368834573,
+      "wall_real_time_factor": 0.18640385247067837,
+      "worker_real_time_factor": 0.08031048399249949,
+      "gpu_total_GiB": 22.0576171875,
+      "peak_allocated_GiB": 6.663444519042969,
+      "peak_reserved_GiB": 6.7890625,
+      "sampled_device_used_peak_GiB": 7.0810546875,
+      "process_lifetime_peak_RSS_GiB": 9.470600128173828,
+      "sampled_process_peak_RSS_GiB": 9.04336166381836,
+      "first_quarter_median_RSS_GiB": 7.50726318359375,
+      "last_quarter_median_RSS_GiB": 8.844127655029297,
+      "last_RSS_GiB": 8.844127655029297,
+      "second_half_RSS_slope_GiB_per_audio_hour": 0.00042684662000982705,
+      "first_quarter_median_reserved_GiB": 5.705078125,
+      "last_quarter_median_reserved_GiB": 6.7890625,
+      "gpu_utilization_samples": 692,
+      "sampled_gpu_utilization_mean_percent": 36.171965317919074,
+      "sampled_gpu_utilization_max_percent": 54.0,
+      "cgroup_fields_available": [
+        "memory/memory.limit_in_bytes",
+        "memory/memory.usage_in_bytes"
+      ],
+      "stage_seconds": {
+        "qwen_alignment": 65.63413922700033,
+        "recognition": 540.0324353570004,
+        "vad": 110.63378031599956
+      },
+      "container_count": 1,
+      "successful_container_calls_sequential": true,
+      "words": 13905,
+      "cues": 1093,
+      "last_cue_end": 8943.2,
+      "output_sha256": "f484d24a67e892fc71e8f45910aba168d01812dbf0d0d1ef49574882c3cbc9eb",
+      "shutdown": {
+        "state": "stopped",
+        "tasks": "0",
+        "containers": 0
+      },
+      "cost": {
+        "gpu_usd_per_hour": 1.1,
+        "requested_gpu_cpu_ram_usd_per_hour": 1.3226,
+        "wall_duration_estimate_usd": 0.6161197149243782,
+        "estimate_method": "Measured client wall seconds times GPU + requested 2 CPU + 16 GiB hourly rates. Approximation, not invoice; excludes build/storage and exact container lifecycle differences.",
+        "reported_app_resources_usd": {
+          "Memory": 0.05949741,
+          "CPU": 0.04397231,
+          "A10G": 0.51130589
+        },
+        "reported_app_total_usd": 0.61477561,
+        "reported_gpu_seconds": 1673.364730909091,
+        "reported_gpu_seconds_over_client_wall": 0.997818434149607,
+        "reported_usage_may_be_delayed": true,
+        "app_billing_rows": [
+          {
+            "object_id": "ap-FK57N1REvjOc6B8jQiIBIz",
+            "description": "vocalm-qwen-long-a10",
+            "environment": "main",
+            "interval_start": "2026-11-04T23:00:00",
+            "resource": "Memory",
+            "cost": "0.05949741"
+          },
+          {
+            "object_id": "ap-FK57N1REvjOc6B8jQiIBIz",
+            "description": "vocalm-qwen-long-a10",
+            "environment": "main",
+            "interval_start": "2026-11-04T23:00:00",
+            "resource": "CPU",
+            "cost": "0.04397231"
+          },
+          {
+            "object_id": "ap-FK57N1REvjOc6B8jQiIBIz",
+            "description": "vocalm-qwen-long-a10",
+            "environment": "main",
+            "interval_start": "2026-11-04T23:00:00",
+            "resource": "A10G",
+            "cost": "0.51130589"
+          }
+        ]
+      },
+      "retained_text_matches_T4": true,
+      "max_timestamp_difference_from_T4_seconds": 0.07999999999992724,
+      "wall_speedup_vs_T4": 1.1448494915921097,
+      "worker_speedup_vs_T4": 1.6825201841440698
+    },
+    "A100-40GB": {
+      "passed": true,
+      "account": 1,
+      "gpu_names": [
+        "NVIDIA A100-SXM4-40GB"
+      ],
+      "chunks": 375,
+      "expected_chunks": 375,
+      "complete_window_coverage": true,
+      "errors": 0,
+      "alignment_recoveries": 1,
+      "wall_seconds": 1510.8875700999997,
+      "worker_seconds": 885.245480061,
+      "rpc_seconds": 1506.671357500025,
+      "first_rpc_seconds": 24.11732199999824,
+      "model_load_seconds": 14.507376934999998,
+      "cpu_seconds": 1051.2699999999993,
+      "average_process_cpu_cores_during_calls": 1.1875463062828167,
+      "max_chunk_cpu_cores": 2.0116324426403476,
+      "wall_real_time_factor": 0.16793760060333096,
+      "worker_real_time_factor": 0.09839646894212557,
+      "gpu_total_GiB": 39.51531982421875,
+      "peak_allocated_GiB": 6.663444519042969,
+      "peak_reserved_GiB": 6.787109375,
+      "sampled_device_used_peak_GiB": 7.2978515625,
+      "process_lifetime_peak_RSS_GiB": 8.949188232421875,
+      "sampled_process_peak_RSS_GiB": 8.418716430664062,
+      "first_quarter_median_RSS_GiB": 6.9457244873046875,
+      "last_quarter_median_RSS_GiB": 8.418716430664062,
+      "last_RSS_GiB": 8.418716430664062,
+      "second_half_RSS_slope_GiB_per_audio_hour": 0.0,
+      "first_quarter_median_reserved_GiB": 5.705078125,
+      "last_quarter_median_reserved_GiB": 6.787109375,
+      "gpu_utilization_samples": 845,
+      "sampled_gpu_utilization_mean_percent": 26.462721893491125,
+      "sampled_gpu_utilization_max_percent": 40.0,
+      "cgroup_fields_available": [
+        "memory/memory.limit_in_bytes",
+        "memory/memory.usage_in_bytes"
+      ],
+      "stage_seconds": {
+        "qwen_alignment": 81.64327609400519,
+        "recognition": 645.1437801389991,
+        "vad": 151.61963844299896
+      },
+      "container_count": 1,
+      "successful_container_calls_sequential": true,
+      "words": 13905,
+      "cues": 1093,
+      "last_cue_end": 8943.2,
+      "output_sha256": "c5dd7ba952aca9be555649350350f0e0e2b3c57eca5df9ccf00f9dd923da2b7c",
+      "shutdown": {
+        "state": "stopped",
+        "tasks": "0",
+        "containers": 0
+      },
+      "cost": {
+        "gpu_usd_per_hour": 2.1,
+        "requested_gpu_cpu_ram_usd_per_hour": 2.3226,
+        "wall_duration_estimate_usd": 0.9747742973095165,
+        "estimate_method": "Measured client wall seconds times GPU + requested 2 CPU + 16 GiB hourly rates. Approximation, not invoice; excludes build/storage and exact container lifecycle differences.",
+        "reported_app_resources_usd": {
+          "Memory": 0.05297778,
+          "CPU": 0.03915389,
+          "A100-40GB": 0.86916677
+        },
+        "reported_app_total_usd": 0.96129844,
+        "reported_gpu_seconds": 1490.0001771428572,
+        "reported_gpu_seconds_over_client_wall": 0.9861754154508267,
+        "reported_usage_may_be_delayed": true,
+        "app_billing_rows": [
+          {
+            "object_id": "ap-Pe9Bux5qsMu759J7S5CXpE",
+            "description": "vocalm-qwen-long-a100-40gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T03:00:00",
+            "resource": "Memory",
+            "cost": "0.02524442"
+          },
+          {
+            "object_id": "ap-Pe9Bux5qsMu759J7S5CXpE",
+            "description": "vocalm-qwen-long-a100-40gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T03:00:00",
+            "resource": "CPU",
+            "cost": "0.01865720"
+          },
+          {
+            "object_id": "ap-Pe9Bux5qsMu759J7S5CXpE",
+            "description": "vocalm-qwen-long-a100-40gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T03:00:00",
+            "resource": "A100-40GB",
+            "cost": "0.41416626"
+          },
+          {
+            "object_id": "ap-Pe9Bux5qsMu759J7S5CXpE",
+            "description": "vocalm-qwen-long-a100-40gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T04:00:00",
+            "resource": "Memory",
+            "cost": "0.02773336"
+          },
+          {
+            "object_id": "ap-Pe9Bux5qsMu759J7S5CXpE",
+            "description": "vocalm-qwen-long-a100-40gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T04:00:00",
+            "resource": "CPU",
+            "cost": "0.02049669"
+          },
+          {
+            "object_id": "ap-Pe9Bux5qsMu759J7S5CXpE",
+            "description": "vocalm-qwen-long-a100-40gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T04:00:00",
+            "resource": "A100-40GB",
+            "cost": "0.45500051"
+          }
+        ]
+      },
+      "retained_text_matches_T4": false,
+      "text_differences_from_T4": [
+        {
+          "operation": "replace",
+          "T4_word_count": 1,
+          "current_word_count": 1,
+          "T4_start_seconds": 4570.848,
+          "current_start_seconds": 4570.848
+        },
+        {
+          "operation": "replace",
+          "T4_word_count": 1,
+          "current_word_count": 1,
+          "T4_start_seconds": 6869.072,
+          "current_start_seconds": 6869.072
+        }
+      ],
+      "text_difference_note": "Comparison to another ASR output, not ground truth or a word-error-rate score.",
+      "wall_speedup_vs_T4": 1.2707360053090695,
+      "worker_speedup_vs_T4": 1.3732607660467602
+    },
+    "A100-80GB": {
+      "passed": true,
+      "account": 2,
+      "gpu_names": [
+        "NVIDIA A100 80GB PCIe"
+      ],
+      "chunks": 375,
+      "expected_chunks": 375,
+      "complete_window_coverage": true,
+      "errors": 0,
+      "alignment_recoveries": 1,
+      "wall_seconds": 1400.2268934000022,
+      "worker_seconds": 709.896312245,
+      "rpc_seconds": 1395.9686328999305,
+      "first_rpc_seconds": 23.908509400003823,
+      "model_load_seconds": 15.199379365999999,
+      "cpu_seconds": 832.0799999999998,
+      "average_process_cpu_cores_during_calls": 1.1721148365577532,
+      "max_chunk_cpu_cores": 2.0186444296601764,
+      "wall_real_time_factor": 0.155637487150873,
+      "worker_real_time_factor": 0.07890612492608418,
+      "gpu_total_GiB": 79.2724609375,
+      "peak_allocated_GiB": 6.663444519042969,
+      "peak_reserved_GiB": 6.787109375,
+      "sampled_device_used_peak_GiB": 7.2978515625,
+      "process_lifetime_peak_RSS_GiB": 9.495399475097656,
+      "sampled_process_peak_RSS_GiB": 8.982547760009766,
+      "first_quarter_median_RSS_GiB": 7.553798675537109,
+      "last_quarter_median_RSS_GiB": 8.84490966796875,
+      "last_RSS_GiB": 8.84524154663086,
+      "second_half_RSS_slope_GiB_per_audio_hour": 0.000513774734858432,
+      "first_quarter_median_reserved_GiB": 5.705078125,
+      "last_quarter_median_reserved_GiB": 6.787109375,
+      "gpu_utilization_samples": 694,
+      "sampled_gpu_utilization_mean_percent": 24.99135446685879,
+      "sampled_gpu_utilization_max_percent": 39.0,
+      "cgroup_fields_available": [
+        "memory/memory.limit_in_bytes",
+        "memory/memory.usage_in_bytes"
+      ],
+      "stage_seconds": {
+        "qwen_alignment": 66.6796458310018,
+        "recognition": 526.2653461909963,
+        "vad": 110.36665796599935
+      },
+      "container_count": 1,
+      "successful_container_calls_sequential": true,
+      "words": 13905,
+      "cues": 1093,
+      "last_cue_end": 8943.2,
+      "output_sha256": "307b452190bb6ec3e2e0c111e2316e3183feb404895d04d7cb911de19b97e2de",
+      "shutdown": {
+        "state": "stopped",
+        "tasks": "0",
+        "containers": 0
+      },
+      "cost": {
+        "gpu_usd_per_hour": 2.5,
+        "requested_gpu_cpu_ram_usd_per_hour": 2.7226,
+        "wall_duration_estimate_usd": 1.0589604833252348,
+        "estimate_method": "Measured client wall seconds times GPU + requested 2 CPU + 16 GiB hourly rates. Approximation, not invoice; excludes build/storage and exact container lifecycle differences.",
+        "reported_app_resources_usd": {
+          "Memory": 0.04963553,
+          "CPU": 0.03668376,
+          "A100-80GB": 0.96944394
+        },
+        "reported_app_total_usd": 1.05576323,
+        "reported_gpu_seconds": 1395.9992736000002,
+        "reported_gpu_seconds_over_client_wall": 0.9969807608895894,
+        "reported_usage_may_be_delayed": true,
+        "app_billing_rows": [
+          {
+            "object_id": "ap-oMy6t9f8Rh8wFXzfkd6zoI",
+            "description": "vocalm-qwen-long-a100-80gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T03:00:00",
+            "resource": "Memory",
+            "cost": "0.02488887"
+          },
+          {
+            "object_id": "ap-oMy6t9f8Rh8wFXzfkd6zoI",
+            "description": "vocalm-qwen-long-a100-80gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T03:00:00",
+            "resource": "CPU",
+            "cost": "0.01839443"
+          },
+          {
+            "object_id": "ap-oMy6t9f8Rh8wFXzfkd6zoI",
+            "description": "vocalm-qwen-long-a100-80gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T03:00:00",
+            "resource": "A100-80GB",
+            "cost": "0.48611072"
+          },
+          {
+            "object_id": "ap-oMy6t9f8Rh8wFXzfkd6zoI",
+            "description": "vocalm-qwen-long-a100-80gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T04:00:00",
+            "resource": "Memory",
+            "cost": "0.02474666"
+          },
+          {
+            "object_id": "ap-oMy6t9f8Rh8wFXzfkd6zoI",
+            "description": "vocalm-qwen-long-a100-80gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T04:00:00",
+            "resource": "CPU",
+            "cost": "0.01828933"
+          },
+          {
+            "object_id": "ap-oMy6t9f8Rh8wFXzfkd6zoI",
+            "description": "vocalm-qwen-long-a100-80gb",
+            "environment": "main",
+            "interval_start": "2026-11-05T04:00:00",
+            "resource": "A100-80GB",
+            "cost": "0.48333322"
+          }
+        ]
+      },
+      "retained_text_matches_T4": false,
+      "text_differences_from_T4": [
+        {
+          "operation": "replace",
+          "T4_word_count": 1,
+          "current_word_count": 1,
+          "T4_start_seconds": 4512.768,
+          "current_start_seconds": 4512.768
+        },
+        {
+          "operation": "replace",
+          "T4_word_count": 1,
+          "current_word_count": 1,
+          "T4_start_seconds": 6869.072,
+          "current_start_seconds": 6869.072
+        }
+      ],
+      "text_difference_note": "Comparison to another ASR output, not ground truth or a word-error-rate score.",
+      "wall_speedup_vs_T4": 1.371162948197662,
+      "worker_speedup_vs_T4": 1.7124654194124715
+    }
+  },
+  "cheapest_by_consistent_wall_estimate": "T4",
+  "fastest_observed_wall": "A100-80GB",
+  "comparison_complete": true,
+  "limitations": [
+    "One full pass per GPU; runs on different hosts and at different times.",
+    "A100 40GB was SXM4, 80GB was PCIe: not a VRAM-capacity-only experiment.",
+    "Reported app costs can lag; consistent estimates are not exact charges.",
+    "Credit-funded resource consumption is not zero cost."
+  ]
+}

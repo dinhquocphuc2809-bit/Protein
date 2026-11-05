@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-05T04:14:11.581712+00:00",
+  "apps": [
+    {
+      "account": 1,
+      "gpu": "A100-40GB",
+      "app_id": "ap-Pe9Bux5qsMu759J7S5CXpE",
+      "state": "stopped",
+      "tasks": 0,
+      "containers": 0
+    },
+    {
+      "account": 2,
+      "gpu": "A100-80GB",
+      "app_id": "ap-oMy6t9f8Rh8wFXzfkd6zoI",
+      "state": "stopped",
+      "tasks": 0,
+      "containers": 0
+    }
+  ],
+  "accounts": [
+    {
+      "account": 1,
+      "metered_cost_usd": 2.13322933,
+      "billed_cost_usd": 0.0,
+      "note": "Account cumulative totals, not per-experiment invoice"
+    },
+    {
+      "account": 2,
+      "metered_cost_usd": 2.04360443,
+      "billed_cost_usd": 0.0,
+      "note": "Account cumulative totals, not per-experiment invoice"
+    }
+  ]
+}

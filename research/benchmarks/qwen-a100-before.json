@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-05T03:47:37.077399+00:00",
+  "accounts": [
+    {
+      "account": 1,
+      "metered_cost_usd": 1.01322933,
+      "billed_cost_usd": 0.0
+    },
+    {
+      "account": 2,
+      "metered_cost_usd": 0.90360443,
+      "billed_cost_usd": 0.0
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://modal.com/docs/guide/gpu",
+      "sha256": "da639942f677944f92746f09f842b4c26493052f1753b9a15f872a0acbbaf81a",
+      "bytes": 80835
+    },
+    {
+      "url": "https://modal.com/docs/guide/resources",
+      "sha256": "d8bfc56ca0d7ae751bcd020d051393ed583d3c11b6b6458623c4c79234983f60",
+      "bytes": 66299
+    },
+    {
+      "url": "https://modal.com/pricing",
+      "sha256": "20e1d6517ae0d19afb2213072b6a13f2931a5987888608bab232ce4b6e3b7805",
+      "bytes": 325668
+    }
+  ],
+  "rates_usd_per_hour": {
+    "gpu_hour_cost_t4": "0.59000",
+    "gpu_hour_cost_a10g": "1.10000",
+    "gpu_hour_cost_a100_40gb": "2.10000",
+    "gpu_hour_cost_a100_80gb": "2.50000",
+    "cpu_hour_cost": "0.04730",
+    "mem_gib_hour_cost": "0.00800"
+  }
+}
