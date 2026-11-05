@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://ai.google.dev/gemini-api/docs/audio",
+    "sha256": "b1b88d6742143c9b70cc67e1070abe291fa265680a33243671dc9c972406a60a"
+  },
+  {
+    "url": "https://developers.deepgram.com/docs/models-languages-overview",
+    "sha256": "3b0b8cad0e1cc73af4d8adf8f268a5257620c02e4e1b73aee687b937d1d6a2ca"
+  }
+]

@@ -1,0 +1,202 @@
+{
+  "video": "YGi-aPUsZrQ",
+  "duration_seconds": 8996.72,
+  "scope": "Full retained T4 structural audit and sampled blinded audio references; no human ground truth",
+  "retained_sha256": "f0e22274bd015de33f3d01c8015945eb1c8f7519f44e8a3a325f597ad7ef2bbe",
+  "words": 13905,
+  "cues": 1093,
+  "speech_units": 788,
+  "all_word_times_finite_in_bounds": true,
+  "cues_with_punctuation": 0,
+  "cues_ending_in_punctuation": 0,
+  "cues_with_spaces_between_cjk": 1063,
+  "overlapping_identical_token_candidates": [
+    {
+      "first": {
+        "end": 1154.064,
+        "start": 1153.904,
+        "text": "\u4e3a"
+      },
+      "second": {
+        "end": 1154.08,
+        "start": 1153.92,
+        "text": "\u4e3a"
+      },
+      "overlap_seconds": 0.144,
+      "nearest_ownership_boundary": 1154,
+      "raw_window_contexts": [
+        {
+          "index": 47,
+          "text": "\u8981\u60f3\u751f\u5b58\u4e0b\u53bb\u5fc5\u987b\u6210\u4e3a\u5f3a\u8005"
+        },
+        {
+          "index": 48,
+          "text": "\u751f\u5b58\u4e0b\u53bb\u5fc5\u987b\u6210\u4e3a\u5f3a\u8005\u5927\u4e56\u5f00\u59cb\u6559"
+        }
+      ],
+      "retained_context": "\u8981\u60f3\u751f\u5b58\u4e0b\u53bb\u5fc5\u987b\u6210\u4e3a\u4e3a\u5f3a\u8005\u5927\u4e56\u5f00\u59cb\u6559"
+    },
+    {
+      "first": {
+        "end": 1922.064,
+        "start": 1921.824,
+        "text": "\u5988"
+      },
+      "second": {
+        "end": 1922.176,
+        "start": 1922.016,
+        "text": "\u5988"
+      },
+      "overlap_seconds": 0.048,
+      "nearest_ownership_boundary": 1922,
+      "raw_window_contexts": [
+        {
+          "index": 79,
+          "text": "\u7684\u73af\u5883\u6bcf\u4e00\u4e2a\u5e74\u8f7b\u7684\u5988\u5988\u90fd\u4f1a\u5728\u672a\u6765\u7684\u51e0"
+        },
+        {
+          "index": 80,
+          "text": "\u6bcf\u4e00\u4e2a\u5e74\u8f7b\u7684\u5988\u5988\u90fd\u4f1a\u5728\u672a\u6765\u7684\u51e0\u4e2a\u6708\u65f6\u95f4\u91cc"
+        }
+      ],
+      "retained_context": "\u7684\u73af\u5883\u6bcf\u4e00\u4e2a\u5e74\u8f7b\u7684\u5988\u5988\u90fd\u4f1a\u5728\u672a\u6765\u7684\u51e0\u4e2a\u6708\u65f6\u95f4\u91cc"
+    },
+    {
+      "first": {
+        "end": 2594.16,
+        "start": 2593.84,
+        "text": "\u4e00"
+      },
+      "second": {
+        "end": 2594.112,
+        "start": 2593.872,
+        "text": "\u4e00"
+      },
+      "overlap_seconds": 0.24,
+      "nearest_ownership_boundary": 2594,
+      "raw_window_contexts": [
+        {
+          "index": 107,
+          "text": "\u9ad8\u5c71\u6df1\u5904\u6709\u5f88\u591a\u96be\u5f97\u4e00\u89c1\u7684\u7a00\u6709\u690d\u7269"
+        },
+        {
+          "index": 108,
+          "text": "\u6709\u5f88\u591a\u96be\u5f97\u4e00\u89c1\u7684\u7a00\u6709\u690d\u7269"
+        }
+      ],
+      "retained_context": "\u9ad8\u5c71\u6df1\u5904\u6709\u5f88\u591a\u96be\u5f97\u4e00\u4e00\u89c1\u7684\u7a00\u6709\u690d\u7269"
+    },
+    {
+      "first": {
+        "end": 4370.112,
+        "start": 4369.872,
+        "text": "\u4e0d"
+      },
+      "second": {
+        "end": 4370.08,
+        "start": 4369.92,
+        "text": "\u4e0d"
+      },
+      "overlap_seconds": 0.16,
+      "nearest_ownership_boundary": 4370,
+      "raw_window_contexts": [
+        {
+          "index": 181,
+          "text": "\u5c01\u4faf\u4eec\u5f88\u4e0d\u6ee1\u4ed6\u4eec\u5bf9\u81ea\u5df1\u9886"
+        },
+        {
+          "index": 182,
+          "text": "\u5c01\u4faf\u4eec\u5f88\u4e0d\u6ee1\u4ed6\u4eec\u5bf9\u81ea\u5df1\u9886\u5730\u7684\u8d38\u7136\u4fb5"
+        }
+      ],
+      "retained_context": "\u5c01\u4faf\u4eec\u5f88\u4e0d\u4e0d\u6ee1\u4ed6\u4eec\u5bf9\u81ea\u5df1\u9886\u5730\u7684\u8d38\u7136\u4fb5"
+    },
+    {
+      "first": {
+        "end": 8210.16,
+        "start": 8209.84,
+        "text": "\u8fbd"
+      },
+      "second": {
+        "end": 8210.096,
+        "start": 8209.856,
+        "text": "\u8fbd"
+      },
+      "overlap_seconds": 0.24,
+      "nearest_ownership_boundary": 8210,
+      "raw_window_contexts": [
+        {
+          "index": 341,
+          "text": "\u6210\u7fa4\u7684\u9e8b\u9e7f\u98de\u5954\u5728\u8fd9\u8fbd\u9614\u7684\u6cbc\u6cfd\u6c34\u57df"
+        },
+        {
+          "index": 342,
+          "text": "\u7684\u9e8b\u9e7f\u98de\u5954\u5728\u8fd9\u8fbd\u9614\u7684\u6cbc\u6cfd\u6c34\u57df\u5341\u516b\u4e16\u7eaa"
+        }
+      ],
+      "retained_context": "\u6210\u7fa4\u7684\u9e8b\u9e7f\u98de\u5954\u5728\u8fd9\u8fbd\u8fbd\u9614\u7684\u6cbc\u6cfd\u6c34\u57df\u5341\u516b\u4e16\u7eaa"
+    }
+  ],
+  "candidate_interpretation": "Four duplicated single occurrences at 1154, 2594, 4370, 8210; 1922 is legitimate mama, not a proven duplication.",
+  "silent_tail_reference_rejection": {
+    "index": 374,
+    "offset": 8976,
+    "duration_seconds": 20.72,
+    "all_pcm_bytes_zero": true,
+    "conclusion": "Gemini speech on this digital-silent clip is a false positive; Qwen and Deepgram return empty."
+  },
+  "references": {
+    "gemini": {
+      "model": "gemini-3.8-flash",
+      "windows": 21,
+      "sample_audio_seconds": 580.72,
+      "indices": [
+        0,
+        1,
+        19,
+        40,
+        70,
+        100,
+        130,
+        151,
+        157,
+        165,
+        181,
+        187,
+        190,
+        200,
+        220,
+        260,
+        286,
+        300,
+        350,
+        372,
+        374
+      ]
+    },
+    "deepgram": {
+      "model": "nova-3",
+      "windows": 14,
+      "sample_audio_seconds": 384.72,
+      "indices": [
+        1,
+        19,
+        130,
+        157,
+        165,
+        181,
+        187,
+        190,
+        200,
+        220,
+        260,
+        286,
+        372,
+        374
+      ]
+    }
+  },
+  "production_changed": false,
+  "accuracy_score": null,
+  "accuracy_score_reason": "No manually verified reference transcript; model disagreements are not CER/WER."
+}

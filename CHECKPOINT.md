@@ -2,6 +2,46 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Completed assessment: Qwen source-subtitle quality, YGi-aPUsZrQ (2026-11-05)
+
+- Owner corrected request: evaluate Qwen Chinese ASR output, not Vietnamese translation.
+- No further translation calls. Earlier sampling completed before correction;
+  retained separately and not presented as the current task result.
+- [x] Recheck official Gemini audio and Deepgram languages docs; source hashes
+  research/qwen-quality-sources.json. gemini-3.8-flash confirmed by models API.
+- [x] Completed 21 Gemini blinded audio clips (580.72s) and 14 overlapping
+  Deepgram cross-check clips (384.72s). No active audit or GPU process remains.
+- [x] Inspect differences, independently corroborate lead-bull and elephant-family
+  homophone errors; proper-name spellings remain uncertain. No human CER/WER.
+- [x] Full retained structural audit: 1093 cues, zero with punctuation, 1063 with
+  CJK inter-character spaces; four confirmed overlap-merger token duplications.
+  Fifth overlapping equal-token candidate is legitimate mama; do not deduplicate
+  blindly. All word timestamps finite/in bounds, not a playback-sync acceptance.
+- [x] Reject Gemini counting hallucination on final 20.72s all-zero PCM clip;
+  Qwen/Deepgram empty is correct there. No false Qwen omission finding.
+- Report docs/QWEN_SUBTITLE_QUALITY.md; numeric research/qwen-quality-*.json.
+  Offline reproducer tools/summarize_qwen_quality.py. No production changes.
+- Assessment complete: sampled narration broadly recognizable, polished source
+  subtitles not accepted. Merger, punctuation/CJK and glossary fixes are proposed,
+  not implemented in this assessment. No full-video semantic accuracy claim.
+- Validation: offline structural reproducer completed; three audit scripts compile;
+  secret scan passed for311 Git-visible files and archives; whitespace check passed.
+
+## Superseded: Vietnamese translation quality sampling (2026-11-05)
+
+- Owner asks whether translation quality is acceptable. Earlier GPU benchmarks
+  covered ASR/alignment only. Read-only VPS query found no retained job for this video.
+- Source is CCTV nature documentary UNEXPLORED LAND, Chinese. Retained T4
+  transcript becomes788 speech units via production reflow; no ASR rerun needed.
+- Completed real signed VPS basic/progressive translation sampling:63cues,
+  tools/audit_video_translation.py, .private/translation-audit/basic-console.log.
+ 24 positions spread every450s plus difficult/end sections, up to3cues/window.
+  Public numeric report research/translation-long-video-audit.json; full source/
+  translated text stays ignored under .private/translation-audit.
+- User corrected the objective before semantic translation review. Stop this
+  branch; no translation quality acceptance or further provider calls.
+- Production code/prompt unchanged while assessing quality.
+
 ## Passed: long-video A100 40GB versus 80GB (2026-11-05)
 
 - Owner requests the same YGi-aPUsZrQ audio and a time/cost comparison.

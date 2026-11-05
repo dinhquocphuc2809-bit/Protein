@@ -1,0 +1,271 @@
+{
+  "at": "2026-11-05T04:24:57.868118+00:00",
+  "video": "YGi-aPUsZrQ",
+  "scope": "Stratified sample, real VPS progressive translation, not full-video semantic acceptance",
+  "model_selection": "basic",
+  "windows": [
+    {
+      "position": 0,
+      "job_id": "c9a5641a3cd5165063a2e0f53b5c16d0",
+      "ids": [
+        0,
+        1
+      ],
+      "seconds": 3.297,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 450,
+      "job_id": "dedb5804280dbc0467b9801171b05173",
+      "ids": [
+        40,
+        41,
+        42
+      ],
+      "seconds": 4.922,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 900,
+      "job_id": "61f0afc11d8fc1f7bb5a9f7c93247a06",
+      "ids": [
+        90,
+        91,
+        92
+      ],
+      "seconds": 4.875,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 1350,
+      "job_id": "c0ac188883885945bcbcbbf8b69fef69",
+      "ids": [
+        134,
+        135,
+        136
+      ],
+      "seconds": 4.922,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 1800,
+      "job_id": "6b671b6f8b1bd699c866f27aeb7a726f",
+      "ids": [
+        160
+      ],
+      "seconds": 1.734,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 2250,
+      "job_id": "c87285d49010f72b5e0254b4c8f7898b",
+      "ids": [
+        199,
+        200,
+        201
+      ],
+      "seconds": 4.859,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 2700,
+      "job_id": "0e82f70357fa987dc82982a170914945",
+      "ids": [
+        247,
+        248,
+        249
+      ],
+      "seconds": 4.891,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 3150,
+      "job_id": "ec19e460b9cc257af10be462135fb935",
+      "ids": [
+        293
+      ],
+      "seconds": 1.75,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 3600,
+      "job_id": "8ebc948b0f1a354ba17d23bfcd07f9cf",
+      "ids": [
+        325,
+        326,
+        327
+      ],
+      "seconds": 4.859,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 3960,
+      "job_id": "35ff5fb684307adfa97ee7fc835bc59f",
+      "ids": [
+        357,
+        358,
+        359
+      ],
+      "seconds": 4.859,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 4050,
+      "job_id": "573a2399819445af7739dc5afcc92841",
+      "ids": [
+        364,
+        365,
+        366
+      ],
+      "seconds": 4.859,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 4500,
+      "job_id": "3102c0fb02fdedfb5203d6905f08b561",
+      "ids": [
+        407,
+        408,
+        409
+      ],
+      "seconds": 4.875,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 4512,
+      "job_id": "9686bcd885df985fec0cb79a95aa0ae4",
+      "ids": [
+        409,
+        410,
+        411
+      ],
+      "seconds": 3.313,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 4950,
+      "job_id": "5ee44c62da81765a353e4d0f532a8f25",
+      "ids": [
+        434,
+        435,
+        436
+      ],
+      "seconds": 9.578,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 5400,
+      "job_id": "550142ee840304761d757750be944079",
+      "ids": [
+        467,
+        468
+      ],
+      "seconds": 3.282,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 5850,
+      "job_id": "30343579c095039ab9812af339536833",
+      "ids": [
+        501,
+        502,
+        503
+      ],
+      "seconds": 4.921,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 6300,
+      "job_id": "6be5a54f90514ca75868c520457e24c0",
+      "ids": [
+        541,
+        542
+      ],
+      "seconds": 3.281,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 6750,
+      "job_id": "85f76f52c2bf52d648fb8b7db2017b5e",
+      "ids": [
+        574,
+        575,
+        576
+      ],
+      "seconds": 4.891,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 6864,
+      "job_id": "9f687e1154fa5a45fddccca8017d7182",
+      "ids": [
+        584,
+        585,
+        586
+      ],
+      "seconds": 3.296,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 7200,
+      "job_id": "7ed8b20a0a1b58cd897d745e3376ee74",
+      "ids": [
+        615,
+        616
+      ],
+      "seconds": 3.313,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 7650,
+      "job_id": "94c9297c369b3f8117bbb49a63b9e197",
+      "ids": [
+        655,
+        656,
+        657
+      ],
+      "seconds": 4.891,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 8100,
+      "job_id": "e52ec327dac1afa193df97597268d5b5",
+      "ids": [
+        702,
+        703,
+        704
+      ],
+      "seconds": 4.906,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 8550,
+      "job_id": "e40f698817af6a0b3ca75581f40969df",
+      "ids": [
+        750,
+        751,
+        752
+      ],
+      "seconds": 3.328,
+      "timestamps_preserved": true
+    },
+    {
+      "position": 8900,
+      "job_id": "3473c34ce9c40f67ac71763ebc463b29",
+      "ids": [
+        784,
+        785,
+        786
+      ],
+      "seconds": 4.891,
+      "timestamps_preserved": true
+    }
+  ],
+  "passed_transport_checks": true,
+  "video_job_id": "388bb343a7c3f09aa83d45ee0b119784",
+  "total_speech_units": 788,
+  "preparation_seconds": 2.062000000005355,
+  "sampled_cues": 63,
+  "missing_final_punctuation": [],
+  "output_sha256": "1c11a367a2b3cd5436463079e14e1f00f8532bfba68b9a7933143fecc2723297"
+}

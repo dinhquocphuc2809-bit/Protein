@@ -2,6 +2,31 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## Qwen original subtitle quality (2026-11-05)
+
+- Owner clarified ASR source quality, superseding Vietnamese translation review.
+- Same retained YGi-aPUsZrQ benchmark audio. Gemini audio docs:
+  https://ai.google.dev/gemini-api/docs/audio; Deepgram model/language docs:
+  https://developers.deepgram.com/docs/models-languages-overview.
+  Retrieval hashes: research/qwen-quality-sources.json; model availability checked.
+- 21 blinded Gemini clips/580.72s, 14 overlapping Deepgram clips/384.72s. Automated
+  cross-checks, no human reference/CER/WER or exhaustive semantic review.
+- Strongly corroborated wrong homophones at 4807s (elephant family) and 6888s
+  (lead bull written as bird), present on all four tested GPU outputs. Species
+  and proper-name spellings need a glossary; reference systems also make mistakes.
+- Full T4 output has 1093 cues, none containing punctuation, 1063 with CJK spaces.
+  Aligner output discards source-text structure, cue builder joins with spaces.
+- Four confirmed cross-window duplicates at 1154/2594/4370/8210s: independently
+  aligned token midpoints cross the ownership boundary and both copies survive.
+  A fifth equal-token overlap at1922s is legitimate repeated characters (mother).
+- Final20.72s is all-zero PCM. Gemini hallucinated counting; Qwen/Deepgram empty.
+  Exclude this false reference from quality/omission claims.
+- All word times bounded/finite, no measured playback timing error. Execution
+  acceptance from GPU benchmark remains separate from linguistic acceptance.
+- Report docs/QWEN_SUBTITLE_QUALITY.md, offline reproducer
+  tools/summarize_qwen_quality.py, research/qwen-quality-summary.json.
+  Assessment only; production unchanged. Proposed fix/test priorities in report.
+
 ## Completed A100 40GB/80GB follow-up (2026-11-05)
 
 - Same retained8996.72s audio and production source hash;375windows each,
