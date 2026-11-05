@@ -2,6 +2,10 @@
 
 Date: 2026-11-05 (Asia/Bangkok).
 
+Historical experiment. Subsequent optimized-worker validation and rollout status
+are recorded in QWEN_T4_REMEDIATION.md; the production-disabled statements below
+describe the state at the time of this earlier experiment.
+
 ## Result
 
 Actual GPU snapshot restoration succeeded on an isolated deployed T4 app.

@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-05T10:16:36.766799+00:00",
+  "accounts": [
+    {
+      "account": 1,
+      "deployed": true,
+      "smoke_passed": true,
+      "rpc_seconds": 38.54291449999437,
+      "words": 18
+    },
+    {
+      "account": 2,
+      "deployed": true,
+      "smoke_passed": true,
+      "rpc_seconds": 90.18322770000668,
+      "words": 18
+    },
+    {
+      "account": 3,
+      "deployed": true,
+      "smoke_passed": true,
+      "rpc_seconds": 159.19100010000693,
+      "words": 18
+    }
+  ],
+  "client_account_touched": false,
+  "snapshot": true,
+  "gpu": "T4",
+  "cpu": 2,
+  "ram_mib": 16384,
+  "inference_batch": 4,
+  "max_windows_per_rpc": 4,
+  "source_sha256": "b214e350d4073f55c42ff9a7627fa03dab59cafd3141b802d9449f72db54b134",
+  "passed": true
+}

@@ -1,0 +1,73 @@
+{
+  "scope": "Real Gemini terminology and sampled translations of retained Chinese Qwen output",
+  "passed": true,
+  "plan_seconds": 0.012708399997791275,
+  "terms": 28,
+  "edits": 67,
+  "checks": [
+    {
+      "timestamp": 4352,
+      "cue_id": 699,
+      "source_changed": true,
+      "timestamps_preserved": true,
+      "translated": true
+    },
+    {
+      "timestamp": 4493,
+      "cue_id": 720,
+      "source_changed": false,
+      "timestamps_preserved": true,
+      "translated": true
+    },
+    {
+      "timestamp": 4512,
+      "cue_id": 725,
+      "source_changed": true,
+      "timestamps_preserved": true,
+      "translated": true
+    },
+    {
+      "timestamp": 4804,
+      "cue_id": 766,
+      "source_changed": false,
+      "timestamps_preserved": true,
+      "translated": true
+    },
+    {
+      "timestamp": 4807,
+      "cue_id": 767,
+      "source_changed": true,
+      "timestamps_preserved": true,
+      "translated": true
+    },
+    {
+      "timestamp": 4814,
+      "cue_id": 769,
+      "source_changed": true,
+      "timestamps_preserved": true,
+      "translated": true
+    },
+    {
+      "timestamp": 4822,
+      "cue_id": 771,
+      "source_changed": false,
+      "timestamps_preserved": true,
+      "translated": true
+    },
+    {
+      "timestamp": 6888,
+      "cue_id": 1071,
+      "source_changed": true,
+      "timestamps_preserved": true,
+      "translated": true
+    }
+  ],
+  "known_error_regressions": {
+    "two_names_consistent": true,
+    "bird_mistranslation_absent": true,
+    "elephant_context_retained": true,
+    "loris_not_owl": true
+  },
+  "seconds": 12.47229089999746,
+  "calls": 8
+}

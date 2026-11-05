@@ -2,6 +2,51 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Completed rollout: T4 optimization and source-quality remediation (2026-11-05)
+
+- User selected T4 /2vCPU /16GiB; fixes deployed and scoped acceptance passed.
+- [x] Official Qwen batch/context, Modal snapshots, Gemini generation docs read;
+  research/qwen-improvement-sources.json. Production snapshot OFF at turn start.
+- [x] Text/time seam merger fixes four real duplicates, keeps legitimate mama;
+  five permanent real boundary fixtures. Unresolved/conflicting seams retain
+  conservative time ownership and telemetry, not a claim of universal accuracy.
+- [x] Retain Qwen punctuation, CJK joining, bounded cue builder; source cachev2.
+- [x] Four-window RPC/batch4 with serial OOM fallback, cancellation/lease renewal.
+- [x] Full375-window run completed:963.742s warm wall,702.669s worker vs prior
+  1919.939s cold-inclusive wall/1215.673s worker.94RPCs,1container,1alignment recovery,
+  peakRSS8.690GiB/reservedVRAM6.947GiB, no failures/OOM. All test apps stopped so far.
+- [x] Final merger replay:1510cues,0missing end punctuation,0CJK-space cues, four
+  old duplicates fixed;16 seams use conservative fallback. research/benchmarks/qwen-optimized-summary.json.
+- [x] Corrected image environment propagation:4 proven restores on account2,
+  same initialization/different boots/call1,10.148-14.984s vs42.226s initial.
+  Early sample/full runs lacked enter(snap=True) inside remote import; do NOT claim
+  their log-only restores loaded the initialized model. Dedicated restore report does.
+- [x]111 Python tests pass; cached immutable terminology plan, phonetic guard,
+  advanced LOW analysis, automatic advanced translation only for disputed ASR terms.
+  Real full-source sample passes two names, bird/elephant/loris regression checks.
+- [x] Final multilingual suite and genuine retired Vietnamese restore passed,
+  including same word/timestamp output. All isolated apps stopped/zero containers.
+- [x] All3backend production accounts deployed snapshotON/T4/batch4 and each
+  returned real Qwen batch output. First calls38.543/90.183/159.191s; third had
+  explicit Modal GPU capacity wait. Account4 untouched.
+- [x] Backend deployed and healthy (current .private/deployment/release.json).
+  Additional timeout-to-key-failover correction deployed before live jobs;
+ 113Python tests pass. Previous rollback baseline20261104-172611.
+- [x] Real f6YA_OvKbhY job53f0ea348232adc87a4ad18a4ecfd3ca passed153.219s,
+ 28Qwen windows, no Deepgram; repeat6904decf2135ddb6e0ec2b3a5fc8e261 took2.25s, cache only.
+- [x] Real7jb0q3Mo9Rg initial098105e0d4bc56abe17a69335c2aa730 passed190.5s,
+ 34Qwen windows/noDeepgram; repeatf80226aebe521ee527831d2005e031b8 took2.266s cache only.
+- [x] Signed seeks300/0/540/300/540 pass identical repeat hashes and source/timing
+  preservation; last2jobs show cache-only events. Evidence qwen-optimized-seek-*.json.
+- [x] Final3productionapps deployed, zero tasks/containers; activeVPSjobs0,
+  spool0bytes,198714048512bytes free. Five deployed source hashes match local.
+  Finalrelease20261105-102325; docs/QWEN_T4_REMEDIATION.md contains rollback baseline.
+- Known limits:16uncertain/conflicting seams use conservative time ownership;
+  semantic checks are targeted, not human full-video ground truth. Snapshot restore
+  does not guarantee GPU availability. No guarantee of zero errors on future videos.
+- Plan/test matrix: docs/QWEN_T4_REMEDIATION.md. Update final evidence, rollback,
+  resource/cost limitations recorded; commit/push final source and evidence.
+
 ## Completed assessment: Qwen source-subtitle quality, YGi-aPUsZrQ (2026-11-05)
 
 - Owner corrected request: evaluate Qwen Chinese ASR output, not Vietnamese translation.

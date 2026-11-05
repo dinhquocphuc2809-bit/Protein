@@ -1,0 +1,96 @@
+{
+  "account": 2,
+  "passed": true,
+  "cases": [
+    {
+      "name": "english",
+      "language": "en",
+      "rpc_seconds": 39.18550810001034,
+      "word_counts": [
+        18
+      ],
+      "detected": [
+        "English"
+      ],
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "rss_bytes": 6264287232,
+      "peak_reserved_bytes": 6056574976
+    },
+    {
+      "name": "vietnamese",
+      "language": "vi",
+      "rpc_seconds": 12.649477500002831,
+      "word_counts": [
+        14
+      ],
+      "detected": [
+        "Vietnamese"
+      ],
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "rss_bytes": 7873036288,
+      "peak_reserved_bytes": 7277117440
+    },
+    {
+      "name": "chinese_fallback",
+      "language": "zh",
+      "rpc_seconds": 5.767479799993453,
+      "word_counts": [
+        44
+      ],
+      "detected": [
+        "Chinese"
+      ],
+      "alignment_recoveries": 1,
+      "valid_times": true,
+      "rss_bytes": 7874785280,
+      "peak_reserved_bytes": 7283408896
+    },
+    {
+      "name": "mixed_auto",
+      "language": "auto",
+      "rpc_seconds": 6.746803300004103,
+      "word_counts": [
+        18,
+        78,
+        0
+      ],
+      "detected": [
+        "English",
+        "Chinese",
+        null
+      ],
+      "alignment_recoveries": 0,
+      "valid_times": true,
+      "rss_bytes": 7879913472,
+      "peak_reserved_bytes": 7428112384
+    }
+  ],
+  "source_sha256": "ed77255fde9ce9ea62658f9e222ea5acc48fe55db076b46ecd03a5e9fdbd3dee",
+  "retired_vietnamese_cycles": [
+    {
+      "rpc_seconds": 39.23586879999493,
+      "different_boot": true,
+      "known_initialization": false,
+      "call": 1,
+      "same_words": true
+    },
+    {
+      "rpc_seconds": 23.265461000002688,
+      "different_boot": true,
+      "known_initialization": true,
+      "call": 1,
+      "same_words": true
+    }
+  ],
+  "restored_vietnamese": {
+    "rpc_seconds": 23.265461000002688,
+    "different_boot": true,
+    "known_initialization": true,
+    "call": 1,
+    "same_words": true
+  },
+  "app_id": "ap-HZtfEfjghnIfslp4wogcZm",
+  "zero_containers": true
+}

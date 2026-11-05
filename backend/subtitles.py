@@ -5,6 +5,7 @@ import math
 import re
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from .asr_text import join_text
 
 
 def plain_text(text: str) -> str:
@@ -78,8 +79,15 @@ def parse_srt(data: bytes) -> list[Cue]:
     return validate_cues(cues)
 
 
-def words_to_cues(words: list[dict]) -> list[Cue]:
+def words_to_cues(words: list[dict], *, ensure_punctuation=False) -> list[Cue]:
     cues, pending = [], []
+    def emit(sentence=False):
+        text = join_text(w[2] for w in pending)
+        if ensure_punctuation and not re.search(r'[,.;:!?\u3002\uff0c\uff01\uff1f]$', text):
+            chinese = bool(re.search(r'[\u3400-\u9fff]', text))
+            text += ('\u3002' if chinese else '.') if sentence else ('\uff0c' if chinese else ',')
+        cues.append(Cue(id=len(cues), start=pending[0][0], end=max(pending[-1][1], pending[0][0]+.01), text=text))
+        pending.clear()
     for word in words:
         text = str(word.get("punctuated_word", word.get("text", word.get("word", "")))).strip()
         start, end = float(word["start"]), float(word["end"])
@@ -87,15 +95,16 @@ def words_to_cues(words: list[dict]) -> list[Cue]:
             continue
         if not all(map(math.isfinite, [start, end])) or end < start:
             raise ValueError("Invalid word timestamps")
-        if pending and (start - pending[0][0] > 5 or start - pending[-1][1] > 0.7):
-            cues.append(Cue(id=len(cues), start=pending[0][0], end=max(pending[-1][1], pending[0][0] + .01), text=" ".join(w[2] for w in pending)))
-            pending = []
+        # Qwen's retained punctuation provides natural boundaries. Allow a longer
+        # clause before a safety cut instead of splitting a word at five seconds.
+        limit = 8 if ensure_punctuation else 5
+        if pending and (start - pending[0][0] > limit or start - pending[-1][1] > 0.7):
+            emit(sentence=start-pending[-1][1] > .7)
         pending.append((start, end, text))
         if re.search(r"[.!?。！？]$", text):
-            cues.append(Cue(id=len(cues), start=pending[0][0], end=max(end, pending[0][0] + .01), text=" ".join(w[2] for w in pending)))
-            pending = []
+            emit(sentence=True)
     if pending:
-        cues.append(Cue(id=len(cues), start=pending[0][0], end=max(pending[-1][1], pending[0][0] + .01), text=" ".join(w[2] for w in pending)))
+        emit(sentence=True)
     return validate_cues(cues)
 
 
@@ -108,7 +117,7 @@ def speech_units(cues: list[Cue]) -> list[Cue]:
     for cue in cues:
         if merged and cue.start == merged[-1].start:
             previous = merged[-1]
-            merged[-1] = Cue(id=previous.id, start=previous.start, end=max(previous.end, cue.end), text=previous.text+' '+cue.text)
+            merged[-1] = Cue(id=previous.id, start=previous.start, end=max(previous.end, cue.end), text=join_text([previous.text, cue.text]))
         else:
             merged.append(cue)
     for index, original in enumerate(merged):
@@ -117,7 +126,7 @@ def speech_units(cues: list[Cue]) -> list[Cue]:
         cue = original.model_copy(update={"end": min(original.end, merged[index+1].start) if index+1 < len(merged) else original.end})
         text = cue.text
         cuts = []
-        for match in re.finditer(r'[.!?,;:\u3002\uff01\uff1f\uff0c](?:["\u201d\u2019\')\]]*)(?=\s|$)', text):
+        for match in re.finditer(r'(?:[.!?,;:](?:["\u201d\u2019\')\]]*)(?=\s|$)|[\u3002\uff01\uff1f\uff0c])', text):
             before = text[:match.start()].rsplit(' ', 1)[-1].lower()
             if text[match.start()] == '.' and (before in abbreviations or len(before) == 1):
                 continue
@@ -140,7 +149,7 @@ def speech_units(cues: list[Cue]) -> list[Cue]:
     def flush():
         if pending:
             units.append(Cue(id=len(units), start=pending[0][0], end=pending[-1][1],
-                             text=' '.join(p[2] for p in pending)))
+                             text=join_text(p[2] for p in pending)))
             pending.clear()
     for start, end, text in pieces:
         if pending and (start-pending[-1][1] > .8 or end-pending[0][0] > 14 or sum(len(p[2])+1 for p in pending)+len(text) > 600):
@@ -167,7 +176,7 @@ def speech_units(cues: list[Cue]) -> list[Cue]:
         if (previous and unit.start-previous.end <= .35 and unit.end-previous.start <= 10
                 and len(previous.text)+len(unit.text) < 550
                 and (previous.end-previous.start < 2.5 or unit.end-unit.start < 1)):
-            combined[-1] = Cue(id=previous.id, start=previous.start, end=unit.end, text=previous.text+' '+unit.text)
+            combined[-1] = Cue(id=previous.id, start=previous.start, end=unit.end, text=join_text([previous.text, unit.text]))
         else:
             combined.append(unit.model_copy(update={"id": len(combined)}))
     return validate_cues(combined)

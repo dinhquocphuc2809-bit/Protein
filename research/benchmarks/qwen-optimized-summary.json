@@ -1,0 +1,68 @@
+{
+  "video": "YGi-aPUsZrQ",
+  "audio_seconds": 8996.72,
+  "windows": 375,
+  "rpcs": 94,
+  "baseline_wall_seconds": 1919.9392353000003,
+  "optimized_warm_wall_seconds": 963.7415781000018,
+  "baseline_worker_seconds": 1215.6728860880007,
+  "optimized_worker_seconds": 702.6692941420006,
+  "wall_comparison_caveat": "Baseline includes its initial cold request; optimized throughput follows explicit snapshot cycles. Download/normalization/translation excluded in both.",
+  "peak_rss_gib": 8.690040588378906,
+  "peak_reserved_vram_gib": 6.947265625,
+  "cpu_seconds": 911.9399999999998,
+  "boot_count_full": 1,
+  "alignment_recoveries": 1,
+  "seam_modes": {
+    "silence_boundary": 139,
+    "temporal_conflicting_text": 2,
+    "temporal_unresolved": 14,
+    "text_time_anchor": 219
+  },
+  "words": 13903,
+  "cues": 1510,
+  "speech_units": 1364,
+  "recognized_segments": 1864,
+  "recognized_segments_with_punctuation": 1864,
+  "cues_missing_end_punctuation": 0,
+  "cjk_space_cues": 0,
+  "regressions": [
+    {
+      "seconds": 1154,
+      "passed": true,
+      "expected": "\u6210\u4e3a\u5f3a\u8005"
+    },
+    {
+      "seconds": 2594,
+      "passed": true,
+      "expected": "\u96be\u5f97\u4e00\u89c1"
+    },
+    {
+      "seconds": 4370,
+      "passed": true,
+      "expected": "\u5f88\u4e0d\u6ee1"
+    },
+    {
+      "seconds": 8210,
+      "passed": true,
+      "expected": "\u8fbd\u9614"
+    },
+    {
+      "seconds": 1922,
+      "passed": true,
+      "expected": "\u5988\u5988"
+    }
+  ],
+  "snapshot_initial_rpc_seconds": 42.2261748000019,
+  "snapshot_restored_rpc_seconds": [
+    10.14760430000024,
+    14.984045300006983,
+    12.964899400001741,
+    13.748269399991841
+  ],
+  "snapshot_distinct_boots": 5,
+  "snapshot_restore_logs": 4,
+  "backend_merger_sha256": "749da2b908bbbc6fac187c91246d00bdb85f43e7247022dd3717fb968f57b27b",
+  "semantic_accuracy_percentage": null,
+  "passed": true
+}

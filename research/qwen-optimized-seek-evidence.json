@@ -1,0 +1,117 @@
+{
+  "at_epoch": 1793874586.7237387,
+  "release": "/opt/auvirel/releases/20261105-102325",
+  "jobs": [
+    {
+      "id": "2406d2e7733d59b89c362211801c7905",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793874530.160112,
+      "updated": 1793874533.4231899,
+      "events": [
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793874530.7571864
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793874533.4070756
+        }
+      ]
+    },
+    {
+      "id": "8bf5bf567950d5d799517a7319f17469",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793874534.9866004,
+      "updated": 1793874535.467347,
+      "events": [
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793874535.4563167
+        }
+      ]
+    },
+    {
+      "id": "e687b44e55d9136df4d645f7ca5eec6c",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793874536.6905172,
+      "updated": 1793874538.6230805,
+      "events": [
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793874537.5011835
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793874538.6079314
+        }
+      ]
+    },
+    {
+      "id": "46f28771901e47974eb7f70876b53c07",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793874539.95593,
+      "updated": 1793874540.663493,
+      "events": [
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793874540.6537848
+        }
+      ]
+    },
+    {
+      "id": "74050bd17382bf504d7ff61137035f77",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793874541.6767182,
+      "updated": 1793874541.7190068,
+      "events": [
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793874541.7074373
+        }
+      ]
+    }
+  ],
+  "modal_accounts": [
+    {
+      "label": "modal 1",
+      "state": "available",
+      "calls": 29
+    },
+    {
+      "label": "modal 2",
+      "state": "available",
+      "calls": 45
+    },
+    {
+      "label": "modal 3",
+      "state": "available",
+      "calls": 51
+    }
+  ],
+  "spool_bytes": 38170185,
+  "free_bytes": 198675963904
+}

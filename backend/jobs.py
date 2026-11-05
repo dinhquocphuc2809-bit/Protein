@@ -7,6 +7,7 @@ import re
 import secrets
 import threading
 import time
+from itertools import islice
 from urllib.parse import urlsplit
 
 import modal
@@ -17,6 +18,8 @@ from .providers import ProviderFailure, Providers
 from .security import Security, canonical, digest
 from .storage import Storage, download_public, public_addresses
 from .subtitles import Cue, parse_srt, speech_units, validate_cues, words_to_cues
+from .asr_merge import WindowMerger
+from .terminology import VERSION as TERMINOLOGY_VERSION, apply_plan
 
 
 class VideoRequest(BaseModel):
@@ -133,6 +136,21 @@ class Jobs:
         if not current or current["state"] != "running" or self.stopping.is_set():
             raise JobCancelled()
         self.db.execute("UPDATE jobs SET stage=?,updated=?,lease=? WHERE id=? AND state='running'", (stage, time.time(), time.time()+300, job["id"]))
+        self.db.execute('UPDATE cache_locks SET expires=? WHERE owner=?', (time.time()+1800, job['id']))
+
+    async def leased(self, job, stage, operation):
+        task = asyncio.create_task(operation)
+        try:
+            while not task.done():
+                await asyncio.wait({task}, timeout=30)
+                current = self.db.one('SELECT stage FROM jobs WHERE id=?', (job['id'],)) if stage is None else None
+                await self.progress(job, stage or (current or {}).get('stage', 'running'))
+            return await task
+        finally:
+            if not task.done():
+                task.cancel()
+            with contextlib.suppress(asyncio.CancelledError, Exception):
+                await task
 
     def event(self, job, provider, event, amount=0):
         self.db.execute("INSERT INTO usage(ticket_id,job_id,provider,event,amount,created) VALUES(?,?,?,?,?,?)",
@@ -151,7 +169,7 @@ class Jobs:
                 claimed = conn.execute("INSERT OR IGNORE INTO cache_locks VALUES(?,?,?)", (key, job["id"], time.time()+1800)).rowcount
             if claimed:
                 try:
-                    value = await operation()
+                    value = await self.leased(job, None, operation())
                     self.storage.put(key, kind, value)
                     self.event(job, "cache", "miss")
                     return value
@@ -169,37 +187,50 @@ class Jobs:
         else:
             if request.already_translated:
                 raise ValueError("Already-translated mode requires subtitles")
-            key = digest(canonical({"url": request.url, "source": request.source_language, "asr": request.asr, "version": 1}).encode())
+            key = digest(canonical({"url": request.url, "source": request.source_language, "asr": request.asr, "version": 2 if request.asr == 'quality' else 1}).encode())
             # Unauthenticated public media may be shared; user-provided/private cues are content-addressed below.
             async def acquire():
                 return [c.model_dump() for c in await self.acquire(job, request)]
             cues = [Cue(**c) for c in await self.cached(job, "source:"+key, "acquiring", acquire)]
         source_hash = digest(canonical([c.model_dump(exclude={"translated"}) for c in cues]).encode())
+        terminology, source_repairs = {'version': TERMINOLOGY_VERSION, 'terms': []}, []
+        model_settings = self.db.all("SELECT key,value FROM config WHERE key LIKE 'model_%' ORDER BY key")
+        if request.asr == 'quality' and not supplied and request.source_language != request.target_language:
+            plan_key = 'terminology:' + job['ticket_id'] + ':' + digest(canonical({
+                'source': source_hash, 'target': request.target_language, 'language': request.source_language,
+                'title': request.title, 'selection': request.model, 'config': model_settings, 'version': TERMINOLOGY_VERSION}).encode())
+            terminology = await self.cached(job, plan_key, 'translating', lambda: self.providers.terminology(
+                cues, request.source_language, request.target_language, request.model, request.title))
+            cues, source_repairs = apply_plan(cues, terminology)
+        quality = {'terminology': terminology, 'source_repairs': source_repairs,
+                   'raw_source_hash': source_hash, 'quality_version': TERMINOLOGY_VERSION}
         if request.progressive:
             units = speech_units(cues)
             model_settings = self.db.all("SELECT key,value FROM config WHERE key LIKE 'model_%' ORDER BY key")
             identity = digest(canonical({"source": source_hash, "from": request.source_language, "to": request.target_language,
-                                         "model": request.model, "config": model_settings, "title": request.title, "speech_prompt": 1,
+                                         "model": request.model, "config": model_settings, "title": request.title, "speech_prompt": 2,
+                                         "terminology": terminology,
                                          "already_translated": request.already_translated,
                                          "plan": digest(canonical([c.model_dump() for c in units]).encode())}).encode())
             video = {"cues": [c.model_dump() for c in units], "translation_id": identity, "progressive": True,
                      "source_hash": source_hash, "url": request.url, "title": request.title,
                      "source_language": request.source_language, "target_language": request.target_language,
-                     "model": request.model, "already_translated": request.already_translated}
+                     "model": request.model, "already_translated": request.already_translated, **quality}
             initial = await self.translate_window(job, video, request.position, 1)
             for translated in initial["cues"]:
                 video["cues"][translated["id"]] = translated
             return video
         model_settings = self.db.all("SELECT key,value FROM config WHERE key LIKE 'model_%' ORDER BY key")
         translation_key = digest(canonical({"source": source_hash, "from": request.source_language, "to": request.target_language,
-                                            "model": request.model, "config": model_settings, "title": request.title, "prompt": 1}).encode())
+                                            "model": request.model, "config": model_settings, "title": request.title, "prompt": 2,
+                                            "terminology": terminology}).encode())
         if request.already_translated or request.source_language == request.target_language:
             translated = [Cue(**{**c.model_dump(), "translated": c.text}) for c in cues]
         else:
             async def translate():
                 self.event(job, request.model, "translate", len(cues))
                 result = await self.providers.translate(cues, request.source_language, request.target_language, request.model,
-                                                        request.title, lambda stage: self.progress(job, stage),
+                                                        request.title, lambda stage: self.progress(job, stage), terminology=terminology,
                                                         load_batch=lambda batch: self.storage.get(key + ":batch-v2:" + str(batch[0].id)),
                                                         save_batch=lambda batch, value: self.storage.put(
                                                             key + ":batch-v2:" + str(batch[0].id), "translation_batch", value))
@@ -209,7 +240,7 @@ class Jobs:
             translated = [Cue(**c) for c in await self.cached(job, key, "translating", translate)]
         return {"cues": [c.model_dump() for c in translated], "translation_id": translation_key,
                 "source_hash": source_hash, "url": request.url, "title": request.title,
-                "source_language": request.source_language, "target_language": request.target_language}
+                "source_language": request.source_language, "target_language": request.target_language, **quality}
 
     async def translate_window(self, job, video, position, count):
         cues = [Cue(**c) for c in video["cues"]]
@@ -226,6 +257,7 @@ class Jobs:
                 self.event(job, video["model"], "translate", 1)
                 values = await self.providers.translate([cue], video["source_language"], video["target_language"], video["model"],
                     video["title"], lambda stage: self.progress(job, stage), speech=True,
+                    terminology=video.get('terminology'),
                     surrounding_before=[c.text for c in cues[max(0, offset-6):offset]],
                     surrounding_after=[c.text for c in cues[offset+1:offset+7]])
                 return values[0].model_dump()
@@ -282,8 +314,9 @@ class Jobs:
             raise
         if process.returncode:
             raise ValueError("Audio normalization failed")
-        words, affinity = [], {}
-        for audio, offset, keep_start, keep_end in audio_windows(directory / "normalized.wav", self.settings.max_video_seconds):
+        merger, affinity = WindowMerger(), {}
+        windows = iter(audio_windows(directory / "normalized.wav", self.settings.max_video_seconds))
+        while group := list(islice(windows, 4)):
             await self.progress(job, "aligning")
             async def invoke(value):
                 credentials = json.loads(value)
@@ -291,9 +324,9 @@ class Jobs:
                     client = await modal.Client.from_credentials.aio(credentials["token_id"], credentials["token_secret"])
                     cls = modal.Cls.from_name("auvirel-asr", "Recognizer", client=client)
                     worker = cls()
-                    call = await worker.transcribe.spawn.aio(audio, language)
+                    call = await worker.transcribe_many.spawn.aio([entry[0] for entry in group], language)
                     try:
-                        return await call.get.aio(timeout=180)
+                        return await call.get.aio(timeout=240)
                     except BaseException:
                         await call.cancel.aio()
                         raise
@@ -301,13 +334,19 @@ class Jobs:
                     raise ProviderFailure("modal", 401, "invalid") from None
                 except modal.exception.ResourceExhaustedError:
                     raise ProviderFailure("modal", 429, "cooling_down") from None
+                except modal.exception.TimeoutError:
+                    raise ProviderFailure("modal", 503, "cooling_down", retry_after=60) from None
             # Keep this job on a warm GPU; the pool still fails over unavailable keys.
-            result = await self.providers.pool.run("modal", invoke, affinity=affinity)
-            self.event(job, "modal", "qwen_chunk_completed", offset)
-            words.extend({**word, "start": word["start"]+offset, "end": word["end"]+offset} for word in result["words"]
-                         if keep_start <= (word["start"]+word["end"])/2+offset < keep_end)
-        words.sort(key=lambda word: word["start"])
-        return words_to_cues(words)
+            results = await self.leased(job, 'aligning', self.providers.pool.run("modal", invoke, affinity=affinity))
+            if not isinstance(results, list) or len(results) != len(group):
+                raise ValueError("Incomplete Qwen batch")
+            for (_, offset, _, _), result in zip(group, results):
+                if result.get('model') != 'Qwen/Qwen3-ASR-1.7B':
+                    raise ValueError('Unexpected ASR model')
+                merger.append(result['words'], offset, result['duration'])
+                self.event(job, "modal", "qwen_chunk_completed", offset)
+        self.event(job, 'modal', 'qwen_unresolved_seams', sum(s['mode'] == 'temporal_unresolved' for s in merger.seams))
+        return words_to_cues(merger.words, ensure_punctuation=True)
 
     async def study(self, job, payload):
         source = self.db.one("SELECT result FROM jobs WHERE id=? AND ticket_id=? AND state='done' AND kind='video'", (payload["video_job_id"], job["ticket_id"]))

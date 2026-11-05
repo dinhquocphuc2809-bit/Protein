@@ -2,6 +2,9 @@
 
 Date: 2026-11-05. Video: https://www.youtube.com/watch?v=YGi-aPUsZrQ
 
+Historical baseline audit. Subsequent fixes and measured acceptance are in
+QWEN_T4_REMEDIATION.md. The findings below describe the pre-fix output.
+
 ## Verdict
 
 The sampled narration is broadly recognizable, but the output is not accepted as

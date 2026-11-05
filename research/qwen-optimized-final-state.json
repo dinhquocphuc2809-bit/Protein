@@ -1,0 +1,40 @@
+{
+  "accounts": [
+    {
+      "account": 1,
+      "app_id": "ap-F47CPOCGlypJkQ9aAaxRqX",
+      "state": "deployed",
+      "tasks": 0,
+      "containers": 0
+    },
+    {
+      "account": 2,
+      "app_id": "ap-wWRmYQuwBxQkBtraUC0GEm",
+      "state": "deployed",
+      "tasks": 0,
+      "containers": 0
+    },
+    {
+      "account": 3,
+      "app_id": "ap-RD1vSl1J9muxw6ZyXxkFZb",
+      "state": "deployed",
+      "tasks": 0,
+      "containers": 0
+    }
+  ],
+  "vps": {
+    "release": "/opt/auvirel/releases/20261105-102325",
+    "active_jobs": 0,
+    "spool_bytes": 0,
+    "disk_free_bytes": 198714048512,
+    "source_hashes": {
+      "backend/jobs.py": "ebde7ea32e43517f4b006bbb7db855239635b5e891b640b128ca5dd08d29665f",
+      "backend/providers.py": "116619d36827a3b2c8227179190422c37f5801d47aba695477196df351c91593",
+      "backend/asr_merge.py": "749da2b908bbbc6fac187c91246d00bdb85f43e7247022dd3717fb968f57b27b",
+      "backend/terminology.py": "221030229bc3e12af940f2a5a3775f61947fdbe8e978cb6cdc73c4fdb72629a6",
+      "backend/subtitles.py": "4ab4e878aeb6502531ff4ca0180bc527298b849da79e22c8046a20a9564bae84"
+    }
+  },
+  "backend_source_matches_local": true,
+  "client_account_touched": false
+}

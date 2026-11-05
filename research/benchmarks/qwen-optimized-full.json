@@ -1,0 +1,6793 @@
+{
+  "at": "2026-11-05T09:45:53.950347+00:00",
+  "snapshot": true,
+  "account": 1,
+  "cpu": 2,
+  "ram_mib": 16384,
+  "gpu": "T4",
+  "full": true,
+  "calls": [
+    {
+      "seconds": 7.3817073040000025,
+      "cpu_seconds": 9.719999999999999,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 21895757824,
+          "VmRSS_bytes": 7794638848
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7631507456",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7813967872,
+          "gpu_used_peak_bytes": 6518996992,
+          "gpu_utilization_max": 48.0,
+          "gpu_utilization_mean": 31.571428571428573
+        },
+        "process": {
+          "VmSize_bytes": 22097084416,
+          "VmRSS_bytes": 7813967872
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7646748672",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6057849856,
+      "peak_reserved_bytes": 6375342080,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 2,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.154612800004543,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "word_counts": [
+        0,
+        55,
+        39,
+        69
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.165452199000001,
+      "cpu_seconds": 9.32,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22097084416,
+          "VmRSS_bytes": 7822376960
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7655157760",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7822409728,
+          "gpu_used_peak_bytes": 6607077376,
+          "gpu_utilization_max": 52.0,
+          "gpu_utilization_mean": 26.0
+        },
+        "process": {
+          "VmSize_bytes": 22197747712,
+          "VmRSS_bytes": 7822409728
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7655297024",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6060319232,
+      "peak_reserved_bytes": 6463422464,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 3,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.791759400002775,
+      "indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "word_counts": [
+        43,
+        35,
+        69,
+        13
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 5.774566190000002,
+      "cpu_seconds": 7.890000000000001,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22197747712,
+          "VmRSS_bytes": 7825993728
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7658881024",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 7826026496,
+          "gpu_used_peak_bytes": 6607077376,
+          "gpu_utilization_max": 52.0,
+          "gpu_utilization_mean": 29.6
+        },
+        "process": {
+          "VmSize_bytes": 22197747712,
+          "VmRSS_bytes": 7826026496
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7658946560",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6052657152,
+      "peak_reserved_bytes": 6463422464,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 4,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 9.37568850000389,
+      "indices": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "word_counts": [
+        6,
+        44,
+        39,
+        17
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.564783929000001,
+      "cpu_seconds": 8.580000000000005,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22197747712,
+          "VmRSS_bytes": 7826026496
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7658946560",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 7835000832,
+          "gpu_used_peak_bytes": 6718226432,
+          "gpu_utilization_max": 76.0,
+          "gpu_utilization_mean": 36.166666666666664
+        },
+        "process": {
+          "VmSize_bytes": 22298411008,
+          "VmRSS_bytes": 7835000832
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7688585216",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6071135232,
+      "peak_reserved_bytes": 6574571520,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 5,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.255090299993753,
+      "indices": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "word_counts": [
+        31,
+        18,
+        45,
+        33
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.9439711630000005,
+      "cpu_seconds": 8.969999999999999,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22298411008,
+          "VmRSS_bytes": 7837097984
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7667634176",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7837138944,
+          "gpu_used_peak_bytes": 6718226432,
+          "gpu_utilization_max": 72.0,
+          "gpu_utilization_mean": 36.714285714285715
+        },
+        "process": {
+          "VmSize_bytes": 22298411008,
+          "VmRSS_bytes": 7837138944
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7667687424",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6046703616,
+      "peak_reserved_bytes": 6574571520,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 6,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.598545900007593,
+      "indices": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "word_counts": [
+        39,
+        3,
+        60,
+        31
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.870511622999999,
+      "cpu_seconds": 14.689999999999998,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22298411008,
+          "VmRSS_bytes": 7837138944
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7667724288",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 7837171712,
+          "gpu_used_peak_bytes": 6718226432,
+          "gpu_utilization_max": 62.0,
+          "gpu_utilization_mean": 27.555555555555557
+        },
+        "process": {
+          "VmSize_bytes": 22298411008,
+          "VmRSS_bytes": 7837171712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7667838976",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6057845760,
+      "peak_reserved_bytes": 6574571520,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 7,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.363225600012811,
+      "indices": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "word_counts": [
+        39,
+        29,
+        43,
+        68
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.686629044,
+      "cpu_seconds": 9.900000000000006,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22368829440,
+          "VmRSS_bytes": 7845527552
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7676424192",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 7845543936,
+          "gpu_used_peak_bytes": 6718226432,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 28.5
+        },
+        "process": {
+          "VmSize_bytes": 22368829440,
+          "VmRSS_bytes": 7845543936
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7676485632",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6062450176,
+      "peak_reserved_bytes": 6574571520,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 8,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.71582660000422,
+      "indices": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "word_counts": [
+        39,
+        43,
+        39,
+        54
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.978232168999995,
+      "cpu_seconds": 10.14,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22368829440,
+          "VmRSS_bytes": 7845543936
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7676485632",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 7874285568,
+          "gpu_used_peak_bytes": 7183794176,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 34.0
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7874285568
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7702163456",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6127157760,
+      "peak_reserved_bytes": 7040139264,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 9,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.007068800012348,
+      "indices": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "word_counts": [
+        55,
+        49,
+        34,
+        43
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.048973573000012,
+      "cpu_seconds": 11.269999999999996,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7874285568
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7702163456",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 7874289664,
+          "gpu_used_peak_bytes": 7183794176,
+          "gpu_utilization_max": 55.0,
+          "gpu_utilization_mean": 35.5
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7874289664
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7702204416",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6047209472,
+      "peak_reserved_bytes": 7040139264,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 10,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 12.099335300008534,
+      "indices": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "word_counts": [
+        41,
+        51,
+        69,
+        64
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.798982046000006,
+      "cpu_seconds": 9.879999999999995,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7874289664
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7702204416",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 7874297856,
+          "gpu_used_peak_bytes": 7183794176,
+          "gpu_utilization_max": 74.0,
+          "gpu_utilization_mean": 37.375
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7874297856
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7702212608",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6056022016,
+      "peak_reserved_bytes": 7040139264,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 11,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.741295600004378,
+      "indices": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "word_counts": [
+        73,
+        36,
+        57,
+        19
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.836666985999983,
+      "cpu_seconds": 6.8700000000000045,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7874297856
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7702212608",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7874322432,
+          "gpu_used_peak_bytes": 7183794176,
+          "gpu_utilization_max": 50.0,
+          "gpu_utilization_mean": 23.5
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7874322432
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7702237184",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6059555328,
+      "peak_reserved_bytes": 7040139264,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 12,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 6.570545400012634,
+      "indices": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "word_counts": [
+        17,
+        13,
+        35,
+        27
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.700586299999998,
+      "cpu_seconds": 10.949999999999989,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7875883008
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7703797760",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 7878017024,
+          "gpu_used_peak_bytes": 7183794176,
+          "gpu_utilization_max": 73.0,
+          "gpu_utilization_mean": 37.111111111111114
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7878017024
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7705939968",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6086286336,
+      "peak_reserved_bytes": 7040139264,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 13,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 14.563114999997197,
+      "indices": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "word_counts": [
+        69,
+        69,
+        49,
+        35
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.717660789000007,
+      "cpu_seconds": 8.699999999999989,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7878017024
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7705939968",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7878021120,
+          "gpu_used_peak_bytes": 7183794176,
+          "gpu_utilization_max": 55.0,
+          "gpu_utilization_mean": 28.714285714285715
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7878021120
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7705952256",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6047335424,
+      "peak_reserved_bytes": 7040139264,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 14,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.403599900004338,
+      "indices": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "word_counts": [
+        39,
+        26,
+        51,
+        24
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.42368526300001,
+      "cpu_seconds": 8.420000000000016,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7878021120
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7705952256",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7878021120,
+          "gpu_used_peak_bytes": 7183794176,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 23.428571428571427
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7878021120
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7705952256",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6037448704,
+      "peak_reserved_bytes": 7040139264,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 15,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.058778199992958,
+      "indices": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "word_counts": [
+        25,
+        7,
+        53,
+        52
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.551259095999995,
+      "cpu_seconds": 11.54000000000002,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7878021120
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7705952256",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 7880192000,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 59.0,
+          "gpu_utilization_mean": 36.44444444444444
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880192000
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709376512",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6084160000,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 16,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 12.831479500004207,
+      "indices": [
+        56,
+        57,
+        58,
+        59
+      ],
+      "word_counts": [
+        70,
+        62,
+        53,
+        73
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 5.298401431000002,
+      "cpu_seconds": 7.219999999999999,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880192000
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709376512",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 7880253440,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 27.2
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6077323264,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 17,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.000499100002344,
+      "indices": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "word_counts": [
+        70,
+        0,
+        0,
+        47
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.456375066999982,
+      "cpu_seconds": 6.319999999999993,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7880253440,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 57.0,
+          "gpu_utilization_mean": 25.5
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6043042816,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 18,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 6.106335599994054,
+      "indices": [
+        64,
+        65,
+        66,
+        67
+      ],
+      "word_counts": [
+        4,
+        8,
+        40,
+        21
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 5.51152569300001,
+      "cpu_seconds": 7.439999999999998,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 7880253440,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 45.0,
+          "gpu_utilization_mean": 24.8
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6057746432,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 19,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.1469544999999925,
+      "indices": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "word_counts": [
+        0,
+        0,
+        26,
+        69
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 3.381956348000017,
+      "cpu_seconds": 5.400000000000006,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7880253440,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 42.0,
+          "gpu_utilization_mean": 13.25
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6011901440,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 20,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 4.999125400005141,
+      "indices": [
+        72,
+        73,
+        74,
+        75
+      ],
+      "word_counts": [
+        27,
+        0,
+        0,
+        0
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.199943017999999,
+      "cpu_seconds": 11.219999999999999,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 7880253440,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 31.22222222222222
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6057728000,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 21,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 12.959616600011941,
+      "indices": [
+        76,
+        77,
+        78,
+        79
+      ],
+      "word_counts": [
+        34,
+        69,
+        59,
+        64
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.437974835000006,
+      "cpu_seconds": 8.370000000000005,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880253440
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709626368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 7880257536,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 54.0,
+          "gpu_utilization_mean": 31.833333333333332
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880257536
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709630464",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6038729216,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 22,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.120590200007427,
+      "indices": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "word_counts": [
+        46,
+        28,
+        26,
+        61
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.080582637999981,
+      "cpu_seconds": 9.030000000000001,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880257536
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709630464",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7880257536,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 59.0,
+          "gpu_utilization_mean": 33.714285714285715
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880257536
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709630464",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6062498304,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 23,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.123158100002911,
+      "indices": [
+        84,
+        85,
+        86,
+        87
+      ],
+      "word_counts": [
+        57,
+        74,
+        31,
+        26
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.269006473000019,
+      "cpu_seconds": 11.900000000000006,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880257536
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709630464",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 7880269824,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 76.0,
+          "gpu_utilization_mean": 38.0
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880269824
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709650944",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6071061504,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 24,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 12.077694999999949,
+      "indices": [
+        88,
+        89,
+        90,
+        91
+      ],
+      "word_counts": [
+        51,
+        59,
+        60,
+        60
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.925857450999985,
+      "cpu_seconds": 9.310000000000002,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880269824
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709650944",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 7880273920,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 29.166666666666668
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880273920
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709655040",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6062577152,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 25,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.629299599997466,
+      "indices": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "word_counts": [
+        37,
+        41,
+        51,
+        32
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.57247750800002,
+      "cpu_seconds": 9.80000000000004,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880273920
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709655040",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7880294400,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 31.571428571428573
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880294400
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709675520",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6071262208,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 26,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.384153000006336,
+      "indices": [
+        96,
+        97,
+        98,
+        99
+      ],
+      "word_counts": [
+        42,
+        51,
+        57,
+        67
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.856031573999985,
+      "cpu_seconds": 9.069999999999993,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880294400
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709675520",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7880302592,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 57.0,
+          "gpu_utilization_mean": 33.714285714285715
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880302592
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709683712",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6056014848,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 27,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 9.853732200004742,
+      "indices": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "word_counts": [
+        35,
+        59,
+        56,
+        34
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.758179345999963,
+      "cpu_seconds": 8.699999999999989,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880302592
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709683712",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 7880372224,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 29.833333333333332
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880372224
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709753344",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6079410176,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 28,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.440316599997459,
+      "indices": [
+        104,
+        105,
+        106,
+        107
+      ],
+      "word_counts": [
+        17,
+        30,
+        52,
+        68
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 10.12313191100003,
+      "cpu_seconds": 12.310000000000002,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880372224
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709753344",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 7880454144,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 56.0,
+          "gpu_utilization_mean": 37.55555555555556
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880450048
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709847552",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6078892544,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 29,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 15.674327599990647,
+      "indices": [
+        108,
+        109,
+        110,
+        111
+      ],
+      "word_counts": [
+        72,
+        77,
+        56,
+        53
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 15.642319745000009,
+      "cpu_seconds": 23.909999999999968,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880450048
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709847552",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 15,
+          "gpu_samples": 15,
+          "rss_peak_bytes": 7880482816,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 17.6
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880482816
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709880320",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6077414400,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 30,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 20.783605099990382,
+      "indices": [
+        112,
+        113,
+        114,
+        115
+      ],
+      "word_counts": [
+        0,
+        62,
+        73,
+        64
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 10.389322964999963,
+      "cpu_seconds": 12.589999999999975,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880581120
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709978624",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 10,
+          "gpu_samples": 10,
+          "rss_peak_bytes": 7880581120,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 49.0,
+          "gpu_utilization_mean": 35.0
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880581120
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709978624",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6060233216,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 31,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 15.442025299998932,
+      "indices": [
+        116,
+        117,
+        118,
+        119
+      ],
+      "word_counts": [
+        72,
+        84,
+        76,
+        52
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.182833227999993,
+      "cpu_seconds": 9.96999999999997,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880581120
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7709978624",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7880626176,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 25.428571428571427
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6084225536,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 32,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.940952400007518,
+      "indices": [
+        120,
+        121,
+        122,
+        123
+      ],
+      "word_counts": [
+        49,
+        0,
+        29,
+        74
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.780078168999978,
+      "cpu_seconds": 8.949999999999989,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7880626176,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 24.857142857142858
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6065392640,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 33,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.479174199994304,
+      "indices": [
+        124,
+        125,
+        126,
+        127
+      ],
+      "word_counts": [
+        52,
+        26,
+        46,
+        26
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.701066852999986,
+      "cpu_seconds": 9.870000000000005,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7880626176,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 52.0,
+          "gpu_utilization_mean": 33.57142857142857
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6047392768,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 34,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 14.43187339999713,
+      "indices": [
+        128,
+        129,
+        130,
+        131
+      ],
+      "word_counts": [
+        8,
+        73,
+        92,
+        43
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.013674189999961,
+      "cpu_seconds": 6.060000000000002,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7880626176,
+          "gpu_used_peak_bytes": 7190085632,
+          "gpu_utilization_max": 46.0,
+          "gpu_utilization_mean": 20.0
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6037448704,
+      "peak_reserved_bytes": 7046430720,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 35,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 5.7229693999979645,
+      "indices": [
+        132,
+        133,
+        134,
+        135
+      ],
+      "word_counts": [
+        0,
+        14,
+        30,
+        18
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 10.639935464000018,
+      "cpu_seconds": 13.139999999999986,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7880626176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7710023680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 11,
+          "gpu_samples": 11,
+          "rss_peak_bytes": 7882780672,
+          "gpu_used_peak_bytes": 7196377088,
+          "gpu_utilization_max": 58.0,
+          "gpu_utilization_mean": 34.36363636363637
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882780672
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712178176",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6091280384,
+      "peak_reserved_bytes": 7052722176,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 36,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.674133200009237,
+      "indices": [
+        136,
+        137,
+        138,
+        139
+      ],
+      "word_counts": [
+        65,
+        86,
+        89,
+        78
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.898229937999986,
+      "cpu_seconds": 6.910000000000025,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882780672
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712178176",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7882780672,
+          "gpu_used_peak_bytes": 7196377088,
+          "gpu_utilization_max": 46.0,
+          "gpu_utilization_mean": 23.0
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882780672
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712178176",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6080760320,
+      "peak_reserved_bytes": 7052722176,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 37,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 6.650354400000651,
+      "indices": [
+        140,
+        141,
+        142,
+        143
+      ],
+      "word_counts": [
+        11,
+        19,
+        41,
+        27
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.206261496000025,
+      "cpu_seconds": 8.270000000000039,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882780672
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712178176",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 7882854400,
+          "gpu_used_peak_bytes": 7196377088,
+          "gpu_utilization_max": 59.0,
+          "gpu_utilization_mean": 32.5
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882854400
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712251904",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6088001536,
+      "peak_reserved_bytes": 7052722176,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 38,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 9.236882800003514,
+      "indices": [
+        144,
+        145,
+        146,
+        147
+      ],
+      "word_counts": [
+        31,
+        20,
+        70,
+        57
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.2733259400000065,
+      "cpu_seconds": 6.259999999999991,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882854400
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712251904",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7882854400,
+          "gpu_used_peak_bytes": 7196377088,
+          "gpu_utilization_max": 77.0,
+          "gpu_utilization_mean": 30.5
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882854400
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712251904",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6097884672,
+      "peak_reserved_bytes": 7052722176,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 39,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 5.956002999999328,
+      "indices": [
+        148,
+        149,
+        150,
+        151
+      ],
+      "word_counts": [
+        17,
+        0,
+        0,
+        56
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.509558432000006,
+      "cpu_seconds": 11.639999999999986,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882854400
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712251904",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 7882862592,
+          "gpu_used_peak_bytes": 7196377088,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 34.55555555555556
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882862592
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712260096",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6099450368,
+      "peak_reserved_bytes": 7052722176,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 40,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 12.474852600003942,
+      "indices": [
+        152,
+        153,
+        154,
+        155
+      ],
+      "word_counts": [
+        57,
+        43,
+        87,
+        39
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 10.701526450000017,
+      "cpu_seconds": 12.810000000000002,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7882862592
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7712260096",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 10,
+          "gpu_samples": 10,
+          "rss_peak_bytes": 7887745024,
+          "gpu_used_peak_bytes": 7196377088,
+          "gpu_utilization_max": 73.0,
+          "gpu_utilization_mean": 38.5
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7887745024
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7717281792",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6108151296,
+      "peak_reserved_bytes": 7052722176,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 41,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.754706699997769,
+      "indices": [
+        156,
+        157,
+        158,
+        159
+      ],
+      "word_counts": [
+        79,
+        67,
+        81,
+        71
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.730940151000027,
+      "cpu_seconds": 9.840000000000032,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7887745024
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7717285888",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 7887745024,
+          "gpu_used_peak_bytes": 7196377088,
+          "gpu_utilization_max": 57.0,
+          "gpu_utilization_mean": 33.57142857142857
+        },
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7887745024
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7717285888",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6059638272,
+      "peak_reserved_bytes": 7052722176,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 42,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.853980399988359,
+      "indices": [
+        160,
+        161,
+        162,
+        163
+      ],
+      "word_counts": [
+        75,
+        64,
+        64,
+        10
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 17.39729631199998,
+      "cpu_seconds": 18.03000000000003,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 22872145920,
+          "VmRSS_bytes": 7887876096
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7717416960",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 16,
+          "gpu_samples": 16,
+          "rss_peak_bytes": 9327321088,
+          "gpu_used_peak_bytes": 7466909696,
+          "gpu_utilization_max": 76.0,
+          "gpu_utilization_mean": 19.125
+        },
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327321088
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9150627840",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7157813248,
+      "peak_reserved_bytes": 7321157632,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 43,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 24.28218169999309,
+      "indices": [
+        164,
+        165,
+        166,
+        167
+      ],
+      "word_counts": [
+        57,
+        44,
+        68,
+        58
+      ],
+      "alignment_recoveries": 1
+    },
+    {
+      "seconds": 8.90395952199998,
+      "cpu_seconds": 10.940000000000055,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327321088
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9150685184",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 9327329280,
+          "gpu_used_peak_bytes": 7466909696,
+          "gpu_utilization_max": 54.0,
+          "gpu_utilization_mean": 30.333333333333332
+        },
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327329280
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152065536",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7042213888,
+      "peak_reserved_bytes": 7321157632,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 44,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 14.026012899994384,
+      "indices": [
+        168,
+        169,
+        170,
+        171
+      ],
+      "word_counts": [
+        52,
+        52,
+        50,
+        75
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 12.127871760999994,
+      "cpu_seconds": 14.210000000000036,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327329280
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152073728",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 12,
+          "gpu_samples": 12,
+          "rss_peak_bytes": 9327329280,
+          "gpu_used_peak_bytes": 7466909696,
+          "gpu_utilization_max": 69.0,
+          "gpu_utilization_mean": 34.833333333333336
+        },
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327329280
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152413696",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7040548864,
+      "peak_reserved_bytes": 7321157632,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 45,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 17.1986590000015,
+      "indices": [
+        172,
+        173,
+        174,
+        175
+      ],
+      "word_counts": [
+        65,
+        73,
+        76,
+        70
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.372730061000027,
+      "cpu_seconds": 10.479999999999961,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327329280
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152454656",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9327345664,
+          "gpu_used_peak_bytes": 7466909696,
+          "gpu_utilization_max": 45.0,
+          "gpu_utilization_mean": 32.25
+        },
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327345664
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152512000",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7055767040,
+      "peak_reserved_bytes": 7321157632,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 46,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.389055200008443,
+      "indices": [
+        176,
+        177,
+        178,
+        179
+      ],
+      "word_counts": [
+        49,
+        38,
+        81,
+        44
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.602284466000015,
+      "cpu_seconds": 10.600000000000023,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24321376256,
+          "VmRSS_bytes": 9327345664
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152552960",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9328406528,
+          "gpu_used_peak_bytes": 7466909696,
+          "gpu_utilization_max": 55.0,
+          "gpu_utilization_mean": 34.625
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328406528
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152598016",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7045803520,
+      "peak_reserved_bytes": 7321157632,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 47,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.58525049999298,
+      "indices": [
+        180,
+        181,
+        182,
+        183
+      ],
+      "word_counts": [
+        62,
+        46,
+        50,
+        78
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.092985220999935,
+      "cpu_seconds": 10.230000000000018,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328406528
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152647168",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9328472064,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 34.0
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328472064
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152765952",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7065852416,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 48,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.158598299996811,
+      "indices": [
+        184,
+        185,
+        186,
+        187
+      ],
+      "word_counts": [
+        61,
+        55,
+        34,
+        71
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.195887878000008,
+      "cpu_seconds": 8.159999999999968,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328472064
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152819200",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9328484352,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 52.0,
+          "gpu_utilization_mean": 30.5
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328484352
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152835584",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7055754752,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 49,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.882066500009387,
+      "indices": [
+        188,
+        189,
+        190,
+        191
+      ],
+      "word_counts": [
+        60,
+        48,
+        48,
+        0
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 3.5294573939999054,
+      "cpu_seconds": 5.660000000000025,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328484352
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152851968",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 9328484352,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 11.75
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328484352
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152851968",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7030278656,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 50,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 5.160082400005194,
+      "indices": [
+        192,
+        193,
+        194,
+        195
+      ],
+      "word_counts": [
+        0,
+        0,
+        0,
+        35
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.856717649000075,
+      "cpu_seconds": 12.080000000000041,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328582656
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9152954368",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 10,
+          "gpu_samples": 10,
+          "rss_peak_bytes": 9328590848,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 56.0,
+          "gpu_utilization_mean": 33.2
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328590848
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153044480",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7042193408,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 51,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.03485229999933,
+      "indices": [
+        196,
+        197,
+        198,
+        199
+      ],
+      "word_counts": [
+        77,
+        67,
+        84,
+        49
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.598680274000003,
+      "cpu_seconds": 8.690000000000055,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328590848
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153073152",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9328607232,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 65.0,
+          "gpu_utilization_mean": 34.57142857142857
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328607232
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153105920",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7083004416,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 52,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.309435899995151,
+      "indices": [
+        200,
+        201,
+        202,
+        203
+      ],
+      "word_counts": [
+        78,
+        19,
+        56,
+        0
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.820370940000089,
+      "cpu_seconds": 6.779999999999973,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328607232
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153122304",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 9328607232,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 67.0,
+          "gpu_utilization_mean": 29.8
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328607232
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153126400",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7033783808,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 53,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 6.494993800006341,
+      "indices": [
+        204,
+        205,
+        206,
+        207
+      ],
+      "word_counts": [
+        0,
+        0,
+        17,
+        83
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.694749739000031,
+      "cpu_seconds": 8.729999999999905,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328607232
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153159168",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9328615424,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 59.0,
+          "gpu_utilization_mean": 31.5
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328615424
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153179648",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7045718528,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 54,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.408679400003166,
+      "indices": [
+        208,
+        209,
+        210,
+        211
+      ],
+      "word_counts": [
+        35,
+        66,
+        23,
+        51
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 5.438539107999986,
+      "cpu_seconds": 7.3700000000000045,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328615424
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153212416",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 9328627712,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 28.0
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153236992",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7069350400,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 55,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.176409599996987,
+      "indices": [
+        212,
+        213,
+        214,
+        215
+      ],
+      "word_counts": [
+        35,
+        26,
+        34,
+        43
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.352040680000073,
+      "cpu_seconds": 11.549999999999955,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153286144",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 9328627712,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 34.55555555555556
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153368064",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7052367360,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 56,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 12.405980299998191,
+      "indices": [
+        216,
+        217,
+        218,
+        219
+      ],
+      "word_counts": [
+        49,
+        51,
+        82,
+        64
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.075205352000012,
+      "cpu_seconds": 10.519999999999982,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153421312",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9328627712,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 50.0,
+          "gpu_utilization_mean": 32.625
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153454080",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7042106368,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 57,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 9.781463600011193,
+      "indices": [
+        220,
+        221,
+        222,
+        223
+      ],
+      "word_counts": [
+        70,
+        42,
+        49,
+        0
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.15365389100009,
+      "cpu_seconds": 6.269999999999982,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153486848",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 9328627712,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 78.0,
+          "gpu_utilization_mean": 30.75
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153486848",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7043752448,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 58,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 5.818746099990676,
+      "indices": [
+        224,
+        225,
+        226,
+        227
+      ],
+      "word_counts": [
+        0,
+        0,
+        32,
+        37
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 5.595856094999931,
+      "cpu_seconds": 7.550000000000068,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153490944",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 9328627712,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 52.0,
+          "gpu_utilization_mean": 29.4
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153507328",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7032041984,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 59,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.304748900001869,
+      "indices": [
+        228,
+        229,
+        230,
+        231
+      ],
+      "word_counts": [
+        28,
+        0,
+        34,
+        44
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.57039128200006,
+      "cpu_seconds": 9.549999999999955,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328627712
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153540096",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9328635904,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 35.0
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153568768",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7071112704,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 60,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.358906399997068,
+      "indices": [
+        232,
+        233,
+        234,
+        235
+      ],
+      "word_counts": [
+        63,
+        42,
+        38,
+        49
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.850344583000037,
+      "cpu_seconds": 9.879999999999995,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153601536",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9328635904,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 73.0,
+          "gpu_utilization_mean": 36.5
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153662976",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7042307072,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 61,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.973058100003982,
+      "indices": [
+        236,
+        237,
+        238,
+        239
+      ],
+      "word_counts": [
+        77,
+        84,
+        52,
+        4
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.982624048000048,
+      "cpu_seconds": 8.950000000000045,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153712128",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9328635904,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 54.0,
+          "gpu_utilization_mean": 33.714285714285715
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153744896",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7035560448,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 62,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.100106600002619,
+      "indices": [
+        240,
+        241,
+        242,
+        243
+      ],
+      "word_counts": [
+        20,
+        38,
+        79,
+        54
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.661671634000072,
+      "cpu_seconds": 9.680000000000064,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153789952",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9328635904,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 52.0,
+          "gpu_utilization_mean": 32.285714285714285
+        },
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153810432",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7033667072,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 63,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.692284999997355,
+      "indices": [
+        244,
+        245,
+        246,
+        247
+      ],
+      "word_counts": [
+        22,
+        57,
+        55,
+        63
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 5.674262155000065,
+      "cpu_seconds": 7.75,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24322424832,
+          "VmRSS_bytes": 9328635904
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153847296",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9329684480,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 76.0,
+          "gpu_utilization_mean": 34.166666666666664
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153863680",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7019107840,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 64,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.419716499993228,
+      "indices": [
+        248,
+        249,
+        250,
+        251
+      ],
+      "word_counts": [
+        77,
+        7,
+        0,
+        57
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.631468060000088,
+      "cpu_seconds": 9.789999999999964,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153908736",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9329684480,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 33.875
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153957888",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7063276544,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 65,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.675148700000136,
+      "indices": [
+        252,
+        253,
+        254,
+        255
+      ],
+      "word_counts": [
+        33,
+        41,
+        65,
+        43
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.991844644000025,
+      "cpu_seconds": 12.129999999999995,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9153990656",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 9329684480,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 54.0,
+          "gpu_utilization_mean": 35.44444444444444
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154068480",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7042156544,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 66,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.012288300000364,
+      "indices": [
+        256,
+        257,
+        258,
+        259
+      ],
+      "word_counts": [
+        56,
+        68,
+        77,
+        43
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.160340666000025,
+      "cpu_seconds": 10.370000000000005,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154117632",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9329684480,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 55.0,
+          "gpu_utilization_mean": 28.75
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154121728",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7040528384,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 67,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.24573209999653,
+      "indices": [
+        260,
+        261,
+        262,
+        263
+      ],
+      "word_counts": [
+        76,
+        64,
+        44,
+        23
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.603514157000063,
+      "cpu_seconds": 6.560000000000059,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154134016",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 9329684480,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 45.0,
+          "gpu_utilization_mean": 16.8
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154146304",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7037270016,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 68,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 6.399927600010415,
+      "indices": [
+        264,
+        265,
+        266,
+        267
+      ],
+      "word_counts": [
+        0,
+        25,
+        41,
+        24
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.866345081000077,
+      "cpu_seconds": 10.759999999999991,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154146304",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9329684480,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 77.0,
+          "gpu_utilization_mean": 29.625
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154158592",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7031859712,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 69,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 9.542539300004137,
+      "indices": [
+        268,
+        269,
+        270,
+        271
+      ],
+      "word_counts": [
+        30,
+        41,
+        61,
+        14
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.756174867000027,
+      "cpu_seconds": 9.970000000000027,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329684480
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154179072",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9329704960,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 58.0,
+          "gpu_utilization_mean": 29.714285714285715
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329704960
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154199552",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7076088832,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 70,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.884772899997188,
+      "indices": [
+        272,
+        273,
+        274,
+        275
+      ],
+      "word_counts": [
+        49,
+        70,
+        58,
+        14
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.463890859999992,
+      "cpu_seconds": 9.579999999999927,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329704960
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154232320",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9329704960,
+          "gpu_used_peak_bytes": 7469006848,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 25.428571428571427
+        },
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329704960
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154269184",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7011911168,
+      "peak_reserved_bytes": 7323254784,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 71,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.656663799993112,
+      "indices": [
+        276,
+        277,
+        278,
+        279
+      ],
+      "word_counts": [
+        54,
+        18,
+        54,
+        59
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.697046918999945,
+      "cpu_seconds": 10.970000000000027,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24323473408,
+          "VmRSS_bytes": 9329704960
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154318336",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9329717248,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 58.0,
+          "gpu_utilization_mean": 35.0
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329717248
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154379776",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7101881344,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 72,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.732282800003304,
+      "indices": [
+        280,
+        281,
+        282,
+        283
+      ],
+      "word_counts": [
+        60,
+        54,
+        73,
+        51
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.098277671000005,
+      "cpu_seconds": 11.309999999999945,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329717248
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154428928",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 9329717248,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 32.77777777777778
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329717248
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154514944",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7033779712,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 73,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 12.17184090000228,
+      "indices": [
+        284,
+        285,
+        286,
+        287
+      ],
+      "word_counts": [
+        69,
+        18,
+        78,
+        57
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.722121469000058,
+      "cpu_seconds": 9.839999999999918,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329717248
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154547712",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9329745920,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 57.0,
+          "gpu_utilization_mean": 36.42857142857143
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329745920
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154592768",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7054268928,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 74,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.79011580000224,
+      "indices": [
+        288,
+        289,
+        290,
+        291
+      ],
+      "word_counts": [
+        48,
+        48,
+        34,
+        79
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.290880611000034,
+      "cpu_seconds": 10.579999999999927,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329745920
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154600960",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 65.0,
+          "gpu_utilization_mean": 36.25
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154637824",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7064235008,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 75,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.413569799988181,
+      "indices": [
+        292,
+        293,
+        294,
+        295
+      ],
+      "word_counts": [
+        36,
+        80,
+        53,
+        53
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.117198886999972,
+      "cpu_seconds": 8.240000000000009,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154658304",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 46.0,
+          "gpu_utilization_mean": 25.0
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154670592",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7011866112,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 76,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.838451899995562,
+      "indices": [
+        296,
+        297,
+        298,
+        299
+      ],
+      "word_counts": [
+        35,
+        68,
+        10,
+        0
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.648338011999954,
+      "cpu_seconds": 8.979999999999905,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154699264",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 78.0,
+          "gpu_utilization_mean": 35.5
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154711552",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7050557440,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 77,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.297671499996795,
+      "indices": [
+        300,
+        301,
+        302,
+        303
+      ],
+      "word_counts": [
+        0,
+        42,
+        43,
+        45
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.698789305999981,
+      "cpu_seconds": 9.839999999999918,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154752512",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 73.0,
+          "gpu_utilization_mean": 35.142857142857146
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154760704",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7063303168,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 78,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 9.294850299993414,
+      "indices": [
+        304,
+        305,
+        306,
+        307
+      ],
+      "word_counts": [
+        15,
+        46,
+        47,
+        66
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.60082164000005,
+      "cpu_seconds": 13.269999999999982,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154797568",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 50.0,
+          "gpu_utilization_mean": 24.77777777777778
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154813952",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7045382656,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 79,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 15.005951200000709,
+      "indices": [
+        308,
+        309,
+        310,
+        311
+      ],
+      "word_counts": [
+        58,
+        44,
+        44,
+        27
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.593786851999994,
+      "cpu_seconds": 8.779999999999973,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154830336",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 55.0,
+          "gpu_utilization_mean": 31.0
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154867200",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7047259648,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 80,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.310738700005459,
+      "indices": [
+        312,
+        313,
+        314,
+        315
+      ],
+      "word_counts": [
+        4,
+        48,
+        69,
+        42
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.093345062000026,
+      "cpu_seconds": 8.25,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154912256",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 50.0,
+          "gpu_utilization_mean": 28.833333333333332
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154916352",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7035470336,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 81,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.849942600005306,
+      "indices": [
+        316,
+        317,
+        318,
+        319
+      ],
+      "word_counts": [
+        53,
+        10,
+        28,
+        32
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.37815939099994,
+      "cpu_seconds": 9.649999999999977,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154920448",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 60.0,
+          "gpu_utilization_mean": 27.285714285714285
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154924544",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7042193408,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 82,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.404900699999416,
+      "indices": [
+        320,
+        321,
+        322,
+        323
+      ],
+      "word_counts": [
+        48,
+        67,
+        38,
+        43
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.26036227599991,
+      "cpu_seconds": 9.379999999999995,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154961408",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 25.285714285714285
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9154973696",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7043857920,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 83,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.923519399992074,
+      "indices": [
+        324,
+        325,
+        326,
+        327
+      ],
+      "word_counts": [
+        48,
+        44,
+        32,
+        33
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.409161550000022,
+      "cpu_seconds": 8.530000000000086,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155010560",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 77.0,
+          "gpu_utilization_mean": 35.333333333333336
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155014656",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7052320256,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 84,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.09153759999026,
+      "indices": [
+        328,
+        329,
+        330,
+        331
+      ],
+      "word_counts": [
+        50,
+        26,
+        31,
+        39
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.321870806999982,
+      "cpu_seconds": 9.469999999999914,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155055616",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9329778688,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 31.857142857142858
+        },
+        "process": {
+          "VmSize_bytes": 24491245568,
+          "VmRSS_bytes": 9329778688
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155063808",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7037124608,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 85,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.99585640001169,
+      "indices": [
+        332,
+        333,
+        334,
+        335
+      ],
+      "word_counts": [
+        59,
+        37,
+        28,
+        27
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.735953935999987,
+      "cpu_seconds": 9.0,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330827264
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155080192",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9330827264,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 29.833333333333332
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330827264
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155092480",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7015307264,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 86,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.449094399999012,
+      "indices": [
+        336,
+        337,
+        338,
+        339
+      ],
+      "word_counts": [
+        44,
+        27,
+        47,
+        42
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 9.912542747000089,
+      "cpu_seconds": 12.259999999999991,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330827264
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155125248",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 9,
+          "gpu_samples": 9,
+          "rss_peak_bytes": 9330851840,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 54.0,
+          "gpu_utilization_mean": 35.44444444444444
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155317760",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7079340544,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 87,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 13.099207899998873,
+      "indices": [
+        340,
+        341,
+        342,
+        343
+      ],
+      "word_counts": [
+        57,
+        52,
+        93,
+        71
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 8.307899749999933,
+      "cpu_seconds": 10.440000000000055,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155268608",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9330851840,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 33.5
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155502080",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7043881472,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 88,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 11.469416299994919,
+      "indices": [
+        344,
+        345,
+        346,
+        347
+      ],
+      "word_counts": [
+        49,
+        45,
+        41,
+        51
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.0629696980000745,
+      "cpu_seconds": 8.230000000000018,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155543040",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9330851840,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 48.0,
+          "gpu_utilization_mean": 29.666666666666668
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155551232",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7044073984,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 89,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 7.7968101000005845,
+      "indices": [
+        348,
+        349,
+        350,
+        351
+      ],
+      "word_counts": [
+        29,
+        12,
+        37,
+        51
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.856767801999922,
+      "cpu_seconds": 10.050000000000068,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155559424",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9330851840,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 31.875
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155567616",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7047281152,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 90,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 10.862455800001044,
+      "indices": [
+        352,
+        353,
+        354,
+        355
+      ],
+      "word_counts": [
+        35,
+        33,
+        50,
+        58
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.693000773999984,
+      "cpu_seconds": 8.870000000000005,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330851840
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155596288",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 6,
+          "gpu_samples": 6,
+          "rss_peak_bytes": 9330860032,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 50.0,
+          "gpu_utilization_mean": 31.0
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155604480",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7045811712,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 91,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.413749599989387,
+      "indices": [
+        356,
+        357,
+        358,
+        359
+      ],
+      "word_counts": [
+        43,
+        39,
+        36,
+        42
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 4.5439869819999785,
+      "cpu_seconds": 6.610000000000014,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155612672",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 9330860032,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 83.0,
+          "gpu_utilization_mean": 34.0
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155629056",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7052327424,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 92,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 6.199553700003889,
+      "indices": [
+        360,
+        361,
+        362,
+        363
+      ],
+      "word_counts": [
+        32,
+        36,
+        14,
+        0
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 6.72170273200004,
+      "cpu_seconds": 8.909999999999968,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155665920",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 7,
+          "gpu_samples": 7,
+          "rss_peak_bytes": 9330860032,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 57.0,
+          "gpu_utilization_mean": 29.142857142857142
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155674112",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7037119488,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 93,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 8.422871100003249,
+      "indices": [
+        364,
+        365,
+        366,
+        367
+      ],
+      "word_counts": [
+        48,
+        27,
+        38,
+        53
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 7.869400560000031,
+      "cpu_seconds": 10.059999999999945,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155678208",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 8,
+          "gpu_samples": 8,
+          "rss_peak_bytes": 9330860032,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 56.0,
+          "gpu_utilization_mean": 35.0
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155706880",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 7063968256,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 94,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 9.508405999993556,
+      "indices": [
+        368,
+        369,
+        370,
+        371
+      ],
+      "word_counts": [
+        40,
+        66,
+        55,
+        3
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 3.029566339999974,
+      "cpu_seconds": 4.4500000000000455,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155739648",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 3,
+          "gpu_samples": 3,
+          "rss_peak_bytes": 9330860032,
+          "gpu_used_peak_bytes": 7605321728,
+          "gpu_utilization_max": 47.0,
+          "gpu_utilization_mean": 15.666666666666666
+        },
+        "process": {
+          "VmSize_bytes": 24492294144,
+          "VmRSS_bytes": 9330860032
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "9155747840",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6979889664,
+      "peak_reserved_bytes": 7459569664,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 95,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 4.613294300012058,
+      "indices": [
+        372,
+        373,
+        374
+      ],
+      "word_counts": [
+        29,
+        0,
+        0
+      ],
+      "alignment_recoveries": 0
+    }
+  ],
+  "cycles": [
+    {
+      "seconds": 3.868072025,
+      "cpu_seconds": 4.420000000000002,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 19736375296,
+          "VmRSS_bytes": 6762881024
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "6577401856",
+          "memory/memory.limit_in_bytes": "364305764352"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7829426176,
+          "gpu_used_peak_bytes": 6353321984,
+          "gpu_utilization_max": 53.0,
+          "gpu_utilization_mean": 24.75
+        },
+        "process": {
+          "VmSize_bytes": 21905219584,
+          "VmRSS_bytes": 7829426176
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7638282240",
+          "memory/memory.limit_in_bytes": "364305764352"
+        }
+      },
+      "peak_allocated_bytes": 6040816128,
+      "peak_reserved_bytes": 6209667072,
+      "initialization_id": "1183724fdbf94829aba88e44d8022103",
+      "boot_id": "d018e142f17d4969bc30468253227f3b",
+      "call": 1,
+      "load_seconds": 17.898554027,
+      "rpc_seconds": 31.854197100008605,
+      "indices": [
+        1
+      ],
+      "word_counts": [
+        55
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 5.588424543000002,
+      "cpu_seconds": 6.380000000000003,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 19734241280,
+          "VmRSS_bytes": 6786519040
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "6560772096",
+          "memory/memory.limit_in_bytes": "113448677376"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 5,
+          "gpu_samples": 5,
+          "rss_peak_bytes": 7829979136,
+          "gpu_used_peak_bytes": 6354370560,
+          "gpu_utilization_max": 48.0,
+          "gpu_utilization_mean": 20.8
+        },
+        "process": {
+          "VmSize_bytes": 21626245120,
+          "VmRSS_bytes": 7829979136
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7619108864",
+          "memory/memory.limit_in_bytes": "113448677376"
+        }
+      },
+      "peak_allocated_bytes": 6040816128,
+      "peak_reserved_bytes": 6209667072,
+      "initialization_id": "372ba8df31dc4b249bf758ec1932dcfb",
+      "boot_id": "c305ac4613e74b79973a97132de73da8",
+      "call": 1,
+      "load_seconds": 30.238050643,
+      "rpc_seconds": 46.63665519999631,
+      "indices": [
+        1
+      ],
+      "word_counts": [
+        55
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 3.8729399419999595,
+      "cpu_seconds": 4.479999999999997,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 19725037568,
+          "VmRSS_bytes": 6771204096
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "6570995712",
+          "memory/memory.limit_in_bytes": "364305764352"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 4,
+          "gpu_samples": 4,
+          "rss_peak_bytes": 7837450240,
+          "gpu_used_peak_bytes": 6353321984,
+          "gpu_utilization_max": 51.0,
+          "gpu_utilization_mean": 23.5
+        },
+        "process": {
+          "VmSize_bytes": 21893881856,
+          "VmRSS_bytes": 7837450240
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7636094976",
+          "memory/memory.limit_in_bytes": "364305764352"
+        }
+      },
+      "peak_allocated_bytes": 6040816128,
+      "peak_reserved_bytes": 6209667072,
+      "initialization_id": "edef326502d14cb1b09029ee6c45ac3f",
+      "boot_id": "205e197d977f4289a0684d7f9465ce08",
+      "call": 1,
+      "load_seconds": 18.812062798,
+      "rpc_seconds": 30.38761560000421,
+      "indices": [
+        1
+      ],
+      "word_counts": [
+        55
+      ],
+      "alignment_recoveries": 0
+    },
+    {
+      "seconds": 3.4281471450000005,
+      "cpu_seconds": 3.960000000000001,
+      "batch": 4,
+      "gpu": "Tesla T4",
+      "before": {
+        "process": {
+          "VmSize_bytes": 19726913536,
+          "VmRSS_bytes": 6719791104
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "6565400576",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "after": {
+        "samples": {
+          "samples": 3,
+          "gpu_samples": 3,
+          "rss_peak_bytes": 7785562112,
+          "gpu_used_peak_bytes": 6353321984,
+          "gpu_utilization_max": 49.0,
+          "gpu_utilization_mean": 30.333333333333332
+        },
+        "process": {
+          "VmSize_bytes": 21895757824,
+          "VmRSS_bytes": 7785562112
+        },
+        "cgroup": {
+          "memory/memory.usage_in_bytes": "7622430720",
+          "memory/memory.limit_in_bytes": "179834437632"
+        }
+      },
+      "peak_allocated_bytes": 6040816128,
+      "peak_reserved_bytes": 6209667072,
+      "initialization_id": "d5377c92d41944f3bd97885449d5e3db",
+      "boot_id": "f0b6f17fda154919b82bc6a036759b93",
+      "call": 1,
+      "load_seconds": 16.620816559999998,
+      "rpc_seconds": 27.616409700000077,
+      "indices": [
+        1
+      ],
+      "word_counts": [
+        55
+      ],
+      "alignment_recoveries": 0
+    }
+  ],
+  "passed": true,
+  "production_changed": false,
+  "source_sha256": "ed5490a9657123126f45b524778f89966e50c6f116cf1cd5be1c3746c0fa5c03",
+  "app_id": "ap-ZOsk0FBAsc7nyfvSYrj6tP",
+  "windows": 375,
+  "cues": 1530,
+  "speech_units": 1364,
+  "seams": [
+    {
+      "offset": 24,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 48,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 72,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 96,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 120,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 144,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 168,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 192,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 216,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 240,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 264,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 288,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 312,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 336,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 360,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 384,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 408,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 432,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 456,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 480,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 504,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 528,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 552,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 576,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 600,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 624,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 648,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 672,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 696,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 720,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 744,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 768,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 792,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 816,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 840,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 864,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 888,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 912,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 936,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 960,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 984,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1008,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1032,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1056,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1080,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1104,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1128,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1152,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1176,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1200,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1224,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1248,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1272,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1296,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1320,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1344,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1368,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1392,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1416,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1440,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1464,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1488,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1512,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1536,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1560,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1584,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1608,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1632,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1656,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1680,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1704,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1728,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1752,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1776,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1800,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1824,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1848,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1872,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1896,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1920,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 1944,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1968,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 1992,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2016,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2040,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2064,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2088,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2112,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2136,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2160,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2184,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2208,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2232,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2256,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 2280,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2304,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2328,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2352,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2376,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2400,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2424,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2448,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2472,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2496,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2520,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2544,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2568,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2592,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2616,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2640,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2664,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2688,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2712,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2736,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2760,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2784,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2808,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2832,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2856,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2880,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2904,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2928,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 2952,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 2976,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3000,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3024,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3048,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3072,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3096,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3120,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3144,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3168,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3192,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3216,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3240,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3264,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3288,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3312,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3336,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3360,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3384,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3408,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3432,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3456,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3480,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3504,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3528,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3552,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3576,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3600,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3624,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3648,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3672,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3696,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3720,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3744,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3768,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 3792,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3816,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3840,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3864,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3888,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3912,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 3936,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 3960,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 3984,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4008,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4032,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4056,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4080,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4104,
+      "mode": "temporal_conflicting_text"
+    },
+    {
+      "offset": 4128,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4152,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4176,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4200,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4224,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4248,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4272,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4296,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4320,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4344,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4368,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4392,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4416,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4440,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4464,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4488,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4512,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4536,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4560,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4584,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4608,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4632,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4656,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4680,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4704,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4728,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4752,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4776,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4800,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 4824,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4848,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4872,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4896,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4920,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4944,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 4968,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 4992,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5016,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5040,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5064,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5088,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5112,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5136,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5160,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5184,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 5208,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5232,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5256,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5280,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5304,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5328,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5352,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5376,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5400,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5424,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5448,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5472,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5496,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5520,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5544,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5568,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 5592,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5616,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5640,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5664,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5688,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5712,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5736,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5760,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5784,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5808,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5832,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5856,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5880,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 5904,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5928,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5952,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 5976,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6000,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6024,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6048,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6072,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6096,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6120,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 6144,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6168,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6192,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6216,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6240,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6264,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6288,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6312,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6336,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6360,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6384,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 6408,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6432,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6456,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6480,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6504,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6528,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6552,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6576,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6600,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6624,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6648,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6672,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6696,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6720,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6744,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6768,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6792,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6816,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6840,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6864,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6888,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6912,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6936,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 6960,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 6984,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7008,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7032,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7056,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7080,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 7104,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7128,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7152,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7176,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7200,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7224,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7248,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7272,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7296,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7320,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7344,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 7368,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7392,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7416,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7440,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7464,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7488,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7512,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7536,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7560,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 7584,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7608,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7632,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7656,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7680,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7704,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7728,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7752,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7776,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7800,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7824,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7848,
+      "mode": "temporal_unresolved"
+    },
+    {
+      "offset": 7872,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7896,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7920,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7944,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 7968,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 7992,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8016,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8040,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8064,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8088,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8112,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8136,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8160,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8184,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8208,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8232,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8256,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8280,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8304,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8328,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8352,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8376,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8400,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8424,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8448,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8472,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8496,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8520,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8544,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8568,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8592,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8616,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8640,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8664,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8688,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8712,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8736,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8760,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8784,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8808,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8832,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8856,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8880,
+      "mode": "text_time_anchor"
+    },
+    {
+      "offset": 8904,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8928,
+      "mode": "temporal_conflicting_text"
+    },
+    {
+      "offset": 8952,
+      "mode": "silence_boundary"
+    },
+    {
+      "offset": 8976,
+      "mode": "silence_boundary"
+    }
+  ],
+  "wall_seconds": 963.7415781000018,
+  "snapshot_lines": [
+    "2026-11-05 16:46:08+07:00 ta-01M6NHKXCQP79R5AC9XM6HPYPR Creating GPU memory snapshot for Function.",
+    "2026-11-05 16:48:24+07:00 ta-01M6NHR1G0QHZ0SJGKQVSGGA3R Creating GPU memory snapshot for Function.",
+    "2026-11-05 16:50:34+07:00 ta-01M6NHW0MPJTX7XR4G09SQPXAR Restoring Function from memory snapshot.",
+    "2026-11-05 16:52:47+07:00 ta-01M6NJ038E7C217VW09REAB2XR Creating GPU memory snapshot for Function."
+  ],
+  "stop_requested": true,
+  "zero_containers": true
+}

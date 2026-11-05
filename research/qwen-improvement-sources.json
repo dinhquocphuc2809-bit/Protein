@@ -1,0 +1,32 @@
+[
+  {
+    "name": "qwen",
+    "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/main/README.md",
+    "sha256": "27b5d6e31c3dc10c9b4b86e226f215baacca57bede504994779ad334a67275a0",
+    "status": 200
+  },
+  {
+    "name": "qwen-inference",
+    "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/main/qwen_asr/inference/qwen3_asr.py",
+    "sha256": "0b1770f8e907b6c5a0a1e9ebce037cb63f48555f3cd15eaf6ea2078e9df41a7b",
+    "status": 200
+  },
+  {
+    "name": "modal-snapshot",
+    "url": "https://modal.com/docs/guide/memory-snapshot",
+    "sha256": "ff7ca3a7502e2b1e3861f6d56a29bccb435c85fccc7c4cf9dbfc40ecd23f0711",
+    "status": 200
+  },
+  {
+    "name": "modal-batching",
+    "url": "https://modal.com/docs/guide/dynamic-batching",
+    "sha256": "74a533155f78313019277a77d444da06e466b4d859b56458b6d785f73df6dd89",
+    "status": 200
+  },
+  {
+    "name": "gemini-generation",
+    "url": "https://aistudio.google.com/api-reference/generate-content",
+    "sha256": "c667e245ce8d2e70094d31511ae101e7894e3128a59f5c8de1f25e326139894d",
+    "status": 200
+  }
+]

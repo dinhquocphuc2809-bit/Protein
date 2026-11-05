@@ -1,0 +1,46 @@
+{
+  "video_job_id": "53f0ea348232adc87a4ad18a4ecfd3ca",
+  "checks": [
+    {
+      "position": 300,
+      "job_id": "2406d2e7733d59b89c362211801c7905",
+      "seconds": 4.828000000008615,
+      "cue_id": 78,
+      "timestamps_preserved": true,
+      "response_sha256": "093f6b1f555ad371c7af2def86bd6c203611cb98ccdcd649aedfce88e13b9447"
+    },
+    {
+      "position": 0,
+      "job_id": "8bf5bf567950d5d799517a7319f17469",
+      "seconds": 1.7039999999979045,
+      "cue_id": 0,
+      "timestamps_preserved": true,
+      "response_sha256": "a595a76948c3d4d84fd5f1fa3594d36ee08efd704485a3e2773ea54781bb0d64"
+    },
+    {
+      "position": 540,
+      "job_id": "e687b44e55d9136df4d645f7ca5eec6c",
+      "seconds": 3.264999999999418,
+      "cue_id": 146,
+      "timestamps_preserved": true,
+      "response_sha256": "edf2bb1e51e2cd2c61ee0df59912822f63ce2538458c44c1410da0175c70cc78"
+    },
+    {
+      "position": 300,
+      "job_id": "46f28771901e47974eb7f70876b53c07",
+      "seconds": 1.7189999999973224,
+      "cue_id": 78,
+      "timestamps_preserved": true,
+      "response_sha256": "093f6b1f555ad371c7af2def86bd6c203611cb98ccdcd649aedfce88e13b9447"
+    },
+    {
+      "position": 540,
+      "job_id": "74050bd17382bf504d7ff61137035f77",
+      "seconds": 0.17200000000593718,
+      "cue_id": 146,
+      "timestamps_preserved": true,
+      "response_sha256": "edf2bb1e51e2cd2c61ee0df59912822f63ce2538458c44c1410da0175c70cc78"
+    }
+  ],
+  "passed": true
+}

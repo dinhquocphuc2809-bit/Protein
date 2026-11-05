@@ -2,6 +2,49 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## T4 remediation and optimized measurements (2026-11-05)
+
+- Official Qwen inference API accepts lists of audio arrays and bounded inference
+  batch sizes. Implemented4transfer windows/RPC and4VAD regions/inference batch,
+  one GPU model instance; serial retry after CUDA OOM releases traceback tensors.
+- Same8996.72s audio:94RPCs/375windows,963.742s warm clientwall,702.669s worker;
+  prior T4 1919.939s cold-inclusive wall/1215.673s worker. This is49.80% observed
+  wall and42.20% worker reduction, not pure GPU-only or equal-cold-state comparison.
+  PeakRSS8.690GiB/reservedVRAM6.947GiB, one container, one successful forced-align
+  recovery. CPU averaged1.298cores during measured worker calls, not full2core use.
+- Critical Modal finding: snapshot flag must survive remote Python module import.
+  Earlier candidate logged restore but initialization UUID changed every time.
+  Setting VOCALM_ASR_SNAPSHOT explicitly on image before add_local_python_source
+  fixes it. Corrected experiment:1init/5boots,4restores10.148-14.984s vs42.226s init.
+  Final Vietnamese restore23.265s includes lazy aligner loading; identical output.
+- Text/time anchored window seam fixes all4known duplicated-token boundaries and
+  preserves genuine mama;14unresolved/2conflicting seams retain conservative time
+  ownership rather than selecting a conflicting word. No universal accuracy claim.
+- Projection preserves source punctuation from all1864recognized segments. Final
+  1510cues/1364speech units have zero missing final punctuation/CJK-space defects.
+- Real LLM evaluation rejected an unrelated-species repair before rollout. Added
+  pronunciation/length/number/negation checks; names require attested spelling.
+  Two video-scoped plans separate entity names from ASR corrections, cached by
+  content/model/target/title/ticket. Forced target-name validation has bounded retries.
+- Large advanced thinking output initially truncated. Official generation docs
+  support thinkingConfig.thinkingLevel LOW for Gemini3; bounded analysis now uses
+  configured advanced Gemini with LOW, ~20s for sampled whole-video plans. Ordinary
+  translations keep selected model; only flagged ASR-term batches use advanced.
+- Source correction evidence is retained; ASR target gloss is not treated as final
+  translation truth because a model produced a contradictory gender gloss. Live
+  full-source checks pass stable Dolly/Dai A, elephant context, no bird for takin,
+  loris not owl. Eight outputs are not a full-video semantic acceptance score.
+- Deployment of all3backend Modal accounts succeeded, real English batch smoke
+  passed on each. First RPC38.543/90.183/159.191s; account3logs explicitly show T4
+  capacity scheduling wait. Snapshots do not eliminate GPU capacity waits. Client
+  account4 untouched. Final backend release20261105-102325 health/source hashes pass.
+- Real signed videos f6YA_OvKbhY/7jb0q3Mo9Rg pass153.219/190.5s,28/34Qwen windows,
+  noDeepgram. Repeats2.25/2.266s cache only; seek300/0/540/300/540 stable and
+  repeated positions cache only.113Python tests pass. Final3apps idle/zero tasks,
+  VPSspool0,~198.7GBfree. research/qwen-optimized-final-state.json records evidence.
+- Sources: research/qwen-improvement-sources.json. Plan/results:
+  docs/QWEN_T4_REMEDIATION.md; research/benchmarks/qwen-optimized-*.json.
+
 ## Qwen original subtitle quality (2026-11-05)
 
 - Owner clarified ASR source quality, superseding Vietnamese translation review.
