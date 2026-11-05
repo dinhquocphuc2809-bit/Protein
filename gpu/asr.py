@@ -76,7 +76,7 @@ class Recognizer:
         import numpy as np
         import soundfile as sf
         from silero_vad import get_speech_timestamps
-        from gpu.alignment import bounded_alignment
+        from gpu.alignment import bounded_alignment, whisper_alignment_language
         from backend.asr_text import restore_punctuation
 
         if not isinstance(wavs, list) or not 1 <= len(wavs) <= 4:
@@ -144,8 +144,8 @@ class Recognizer:
                 if self.whisper is None:
                     self.whisper = stable_whisper.load_model("small", device="cuda", download_root="/weights/whisper")
                 whisper_code = next((k for k, v in LANGUAGES.items() if v == detected), code)
-                if whisper_code == "fil":
-                    whisper_code = "tl"
+                from whisper.tokenizer import LANGUAGES as WHISPER_LANGUAGES
+                whisper_code = whisper_alignment_language(whisper_code, tuple(WHISPER_LANGUAGES)[:self.whisper.num_languages])
                 aligned = self.whisper.align(chunk, recognized.text, language=whisper_code, verbose=False)
                 if aligned is None:
                     raise ValueError("Forced alignment failed")

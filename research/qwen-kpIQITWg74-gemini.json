@@ -1,0 +1,82 @@
+{
+  "video": "kp_IQITWg74",
+  "engine": "gemini",
+  "blinded_to_qwen": true,
+  "scope": "Sampled automated audio references, not human ground truth or CER/WER",
+  "samples": [
+    {
+      "offset": 24,
+      "duration_seconds": 28.0,
+      "characters": 120,
+      "sha256": "3a51f16d5107f76e7c9cd77b811159482ba18d48176d5e0e957a832abff3d5eb",
+      "cached": true,
+      "seconds": 0.005524799998966046
+    },
+    {
+      "offset": 300,
+      "duration_seconds": 28.0,
+      "characters": 133,
+      "sha256": "0feb924837c6105f6964753f6de08eb67dca0fa06826bcbe4938168b54aef22b",
+      "cached": true,
+      "seconds": 0.0040324000001419336
+    },
+    {
+      "offset": 600,
+      "duration_seconds": 28.0,
+      "characters": 140,
+      "sha256": "e506f2613e13c397684af1a8c7eac23e42d3a89f868fb3a04ef5c5dd51006081",
+      "cached": true,
+      "seconds": 0.005298599993693642
+    },
+    {
+      "offset": 900,
+      "duration_seconds": 28.0,
+      "characters": 86,
+      "sha256": "6bbd94b0416c132245a4352cf4374588181b3f4969687989f7f92e242838d518",
+      "cached": true,
+      "seconds": 0.0037444000045070425
+    },
+    {
+      "offset": 1200,
+      "duration_seconds": 28.0,
+      "characters": 129,
+      "sha256": "5616f0ac73a7369a69d7b2d76c8909ced603a6de6ee1af5255e77878ee1c8275",
+      "cached": true,
+      "seconds": 0.00452709999808576
+    },
+    {
+      "offset": 1500,
+      "duration_seconds": 28.0,
+      "characters": 115,
+      "sha256": "4e1ec6cf36e28a17f517be80d166c717811ca1f118c6dc714478d1101487ec7b",
+      "cached": true,
+      "seconds": 0.004497000001720153
+    },
+    {
+      "offset": 1800,
+      "duration_seconds": 28.0,
+      "characters": 141,
+      "sha256": "c923f837079c94131a3af0ab1f0bdc75ab9155add99780e8abb3d00219d04f0a",
+      "cached": true,
+      "seconds": 0.004993900001863949
+    },
+    {
+      "offset": 2100,
+      "duration_seconds": 28.0,
+      "characters": 127,
+      "sha256": "d2634e76efbc62f814e5c57207b1fe611763575cb4e7509c83a5deaaaa38f113",
+      "cached": false,
+      "seconds": 4.146564599999692
+    },
+    {
+      "offset": 2400,
+      "duration_seconds": 28.0,
+      "characters": 129,
+      "sha256": "c3f89f317883b6e80a1f38004efe4fb6fe7cbff72e9e8f4a5b7507e2554c7c2f",
+      "cached": false,
+      "seconds": 3.7788765000004787
+    }
+  ],
+  "completed": true,
+  "sample_audio_seconds": 252.0
+}

@@ -2,6 +2,20 @@
 import math
 
 
+def whisper_alignment_language(code, supported):
+    """Select a tokenizer language supported by the actual loaded Whisper model."""
+    code = code.lower().split('-')[0]
+    code = {'fil': 'tl'}.get(code, code)
+    if code in supported:
+        return code
+    # Whisper small has 99 language tokens; Cantonese was added as the 100th
+    # token for later models. Chinese tokenization aligns the original Chinese
+    # script here; this never transcribes or translates the Qwen text again.
+    if code == 'yue' and 'zh' in supported:
+        return 'zh'
+    raise ValueError('Detected language is unsupported by the fallback aligner')
+
+
 def bounded_alignment(words, duration, tolerance=0.12):
     if not math.isfinite(duration) or duration <= 0:
         raise ValueError("Invalid alignment audio duration")

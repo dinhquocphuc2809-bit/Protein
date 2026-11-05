@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-05T11:15:03.491619+00:00",
+  "request": {
+    "url": "https://www.youtube.com/watch?v=kp_IQITWg74",
+    "asr": "quality",
+    "source_language": "auto",
+    "target_language": "vi",
+    "model": "basic",
+    "progressive": true,
+    "position": 0
+  },
+  "checks": [
+    {
+      "name": "initial",
+      "job_id": "39d5e2e0811c0f4339fcc454ae1cc7f8",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.14
+        },
+        {
+          "stage": "recognizing",
+          "seconds": 2.203
+        },
+        {
+          "stage": "aligning",
+          "seconds": 18.781
+        },
+        {
+          "stage": "cancelled",
+          "seconds": 103.609
+        }
+      ],
+      "state": "cancelled",
+      "seconds": 103.609,
+      "error": null
+    }
+  ]
+}

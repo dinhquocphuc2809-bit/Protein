@@ -1,0 +1,22 @@
+{
+  "video": "kp_IQITWg74",
+  "offset": 24,
+  "raw_qwen_contains_decimal": true,
+  "changes": [
+    {
+      "before": {
+        "text": "193",
+        "start": 10.336,
+        "end": 11.056
+      },
+      "after": {
+        "text": "1.93",
+        "start": 10.336,
+        "end": 11.056
+      }
+    }
+  ],
+  "timestamps_identical": true,
+  "reference_models_agree": true,
+  "root_cause": "Forced alignment strips decimal; edge-only punctuation projection loses separators within numeric tokens."
+}

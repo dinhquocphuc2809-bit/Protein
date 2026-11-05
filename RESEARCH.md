@@ -2,6 +2,61 @@
 
 Updated: 2026-11-05. Separate observed evidence, interpretation and unverified claims.
 
+## New-video failure: Whisper language token compatibility (2026-11-05)
+
+- Owner video kp_IQITWg74, CCTV panda rewilding,2457.588375s. Production Qwen
+  failed at412.219s after76windows. Worker traceback reaches Whisper tokenizer
+  langs.index(self.language), ValueError tuple.index(x):x not in tuple.
+- Exact isolated four-window76-79batch reproduces failure: Qwen labels2short
+  segments Cantonese, Whisper-small exposes num_languages99, yue is token100.
+  This is tokenizer/model compatibility, not OOM or a Deepgram fallback.
+- Official sources and hashes in research/qwen-kpIQITWg74-sources.json.
+  Whisper tokenizer slices language keys by actual model.num_languages; use that
+  list rather than assuming all package language names exist in every model.
+- Fix: gpu.alignment.whisper_alignment_language maps yue->zh only if actual model
+  lacks yue and has zh, keeps native yue when supported, retains fil->tl, rejects
+  unknown language clearly. Qwen transcript and real forced alignment preserved.
+- Same isolated batch after fix passes81/103/118/100word items,2recoveries and
+  valid times. Before/after reports kept separately; both isolated apps stopped.
+- Three-worker rollout passed. Full retry: 103 windows, 613.156s; repeat 2.250s.
+  Five forward/back seeks pass; repeated responses identical. No production Deepgram.
+- Independent references cover 252s (nine Gemini clips; six overlapping Deepgram
+  clips add no extra coverage). No human-verified ground truth/CER/WER.
+- Numeric corruption at 32.736-35.936s is a pipeline defect, not Qwen decoding:
+  exact isolated audio returns raw 1.93, aligned 193. Token-edge-only punctuation
+  projection cannot restore the internal decimal. Full matching digit spans now
+  restore decimal/group separators and merge split aligned numeric tokens without
+  inventing internal timestamps. Mismatched digit spans are not guessed/repaired.
+- Exact fixed T4 rerun changes only this numeric token; timestamps identical.
+  132 tests pass. Cache version 3 prevents reuse of older corrupted source entries.
+- Proper-name/reference disagreement and technical dialect errors remain. Context
+  repair fixes some homophones (e.g. release-to-wild vs violate-rules) but is not
+  proof of accurate transcription. Sample review must not be reported as a whole
+  video semantic pass.
+
+## Final new-video acceptance after both fixes (2026-11-05)
+
+- Final backend release 20261105-111816; local/remote jobs.py and asr_text.py hashes
+  match. All three worker English and real numeric smokes pass, client 4 unused.
+- Full final job: 552.954s / 103 windows, cache repeat 2.312s. No production Deepgram.
+  Earlier 613.156s run was after the tokenizer fix but before decimal recovery.
+  These end-to-end times include download/alignment/terminology/initial translation;
+  they are not a controlled GPU speed benchmark or full-video translation times.
+- 795 raw cues have exactly one changed text entry (193 -> 1.93) vs prior full
+  run; all cue times match. Latest terminology plan has 30 terms / 38 edits.
+- Signed three-cue seeks at 1200/33/2400s: 4.844-4.906s first time, 1.703s repeats.
+  Identical repeat hashes, preserved times and IDs, no ASR on seek. Numeric phrase
+  translated to 19,300 square kilometers, verified from actual Vietnamese response.
+- Resource audit: 0 active containers across three backend accounts, 0-byte spool,
+  198,497,558,528 bytes free on VPS. Retained test audio is local and Git-ignored.
+- Numerical ambiguity guard additionally requires complete lexical coverage: if
+  one of two identical digit runs is missing, it must not borrow the other's dot.
+- The final source still has the sampled dialect/technical errors. A regenerated
+  glossary changes the ending's raw increase-in-value homophone into reproduction;
+  this is not equivalent to a verified verbatim transcript of having children.
+- Final report: docs/QWEN_PANDA_VIDEO_ACCEPTANCE.md, quality-review.json, final-live,
+  final-evidence, acceptance-final, final-seek-evidence and final-resources reports.
+
 ## T4 remediation and optimized measurements (2026-11-05)
 
 - Official Qwen inference API accepts lists of audio arrays and bounded inference

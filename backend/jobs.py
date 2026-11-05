@@ -187,7 +187,7 @@ class Jobs:
         else:
             if request.already_translated:
                 raise ValueError("Already-translated mode requires subtitles")
-            key = digest(canonical({"url": request.url, "source": request.source_language, "asr": request.asr, "version": 2 if request.asr == 'quality' else 1}).encode())
+            key = digest(canonical({"url": request.url, "source": request.source_language, "asr": request.asr, "version": 3 if request.asr == 'quality' else 1}).encode())
             # Unauthenticated public media may be shared; user-provided/private cues are content-addressed below.
             async def acquire():
                 return [c.model_dump() for c in await self.acquire(job, request)]

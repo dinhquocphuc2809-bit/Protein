@@ -20,18 +20,57 @@ def lexical(text):
 
 
 def restore_punctuation(words, transcript):
-    """Project separators only at matched token edges; never replace aligned words."""
+    """Retain matched numeric separators and token-edge sentence punctuation."""
     output = [dict(word) for word in words]
+    transcript = unicodedata.normalize('NFKC', transcript)
     source, separators = [], {}
-    for char in unicodedata.normalize('NFKC', transcript):
+    for position, char in enumerate(transcript):
         if char.isalnum():
             source.extend(char.casefold())
         elif char in ',.;:!?\u3002\u3001':
+            if (char in '.,' and 0 < position < len(transcript)-1
+                    and transcript[position-1].isdigit() and transcript[position+1].isdigit()):
+                continue
             separators[len(source)-1] = separators.get(len(source)-1, '') + char
     target = ''.join(lexical(w['text']) for w in output)
     mapping = {}
     for match in SequenceMatcher(None, ''.join(source), target, autojunk=False).get_matching_blocks():
         mapping.update((match.b+i, match.a+i) for i in range(match.size))
+    # Forced aligners may return 193 for a correctly recognized 1.93. Match the
+    # complete digit run before restoring it, including across word boundaries;
+    # never guess a decimal position from numeric plausibility or an LLM.
+    inverse = {source_index: target_index for target_index, source_index in mapping.items()}
+    numeric_spans = []
+    # If lexical coverage differs, a repeated digit run can map to the wrong
+    # occurrence (e.g. 1.93 ... 193 with one occurrence missing). Do not guess.
+    numbers = re.finditer(r'\d+(?:[.,]\d+)+', transcript) if ''.join(source) == target else ()
+    for number in numbers:
+        begin = len(lexical(transcript[:number.start()]))
+        size = len(lexical(number.group()))
+        first = inverse.get(begin)
+        if first is not None and all(mapping.get(first+i) == begin+i for i in range(size)):
+            numeric_spans.append((first, first+size, number.group()))
+    cursor, indexed = 0, []
+    for word in output:
+        size = len(lexical(word['text']))
+        indexed.append((cursor, cursor+size, word))
+        cursor += size
+    # Whole aligned numeric tokens can be joined without inventing internal
+    # timestamps. Other token shapes remain untouched instead of rewriting text.
+    for begin, end, number in reversed(numeric_spans):
+        selected = [i for i, (a, b, _) in enumerate(indexed) if a < end and b > begin]
+        if not selected:
+            continue
+        first, last = selected[0], selected[-1]
+        group = indexed[first:last+1]
+        if group[0][0] != begin or group[-1][1] != end:
+            continue
+        if any(not re.fullmatch(r'[\d.,\s]+', item['text']) for _, _, item in group):
+            continue
+        restored = {**group[0][2], 'text': number,
+                    'end': max(item['end'] for _, _, item in group)}
+        indexed[first:last+1] = [(begin, end, restored)]
+    output = [item for _, _, item in indexed]
     cursor = 0
     for word in output:
         count = len(lexical(word['text']))

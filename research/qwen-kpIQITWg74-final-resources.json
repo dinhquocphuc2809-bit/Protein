@@ -1,0 +1,25 @@
+{
+  "checked_epoch": 1793878242.4995933,
+  "production_accounts": [
+    {
+      "account": 1,
+      "app_id": "ap-F47CPOCGlypJkQ9aAaxRqX",
+      "active_containers": 0
+    },
+    {
+      "account": 2,
+      "app_id": "ap-wWRmYQuwBxQkBtraUC0GEm",
+      "active_containers": 0
+    },
+    {
+      "account": 3,
+      "app_id": "ap-RD1vSl1J9muxw6ZyXxkFZb",
+      "active_containers": 0
+    }
+  ],
+  "all_idle": true,
+  "spool_bytes": 0,
+  "vps_free_bytes": 198497558528,
+  "backend_release": "/opt/auvirel/releases/20261105-111816",
+  "client_account_touched": false
+}

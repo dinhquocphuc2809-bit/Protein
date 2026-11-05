@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/openai/whisper/main/whisper/tokenizer.py",
+    "sha256": "a8ed292b81ac422db8a840ec23827d02d7a105fc9bf895d33b4104e238abf7df"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/main/qwen_asr/inference/utils.py",
+    "sha256": "db89e24f94c803a49fe83ad9960660cdcfc18d91defcf20a7264f79facaf2d47"
+  }
+]

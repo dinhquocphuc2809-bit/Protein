@@ -1,0 +1,24 @@
+[
+  {
+    "account": 1,
+    "app_id": "ap-F47CPOCGlypJkQ9aAaxRqX",
+    "tasks": 1,
+    "snapshot_lines": [
+      "2026-11-05 17:16:41+07:00 => Step 1: ENV VOCALM_ASR_SNAPSHOT=1",
+      "2026-11-05 17:16:50+07:00 Creating GPU memory snapshot for Function.",
+      "2026-11-05 17:24:47+07:00 Restoring Function from memory snapshot.",
+      "2026-11-05 17:28:01+07:00 Restoring Function from memory snapshot.",
+      "2026-11-05 17:40:16+07:00 Restoring Function from memory snapshot."
+    ]
+  },
+  {
+    "account": 2,
+    "app_id": "ap-wWRmYQuwBxQkBtraUC0GEm",
+    "tasks": 0
+  },
+  {
+    "account": 3,
+    "app_id": "ap-RD1vSl1J9muxw6ZyXxkFZb",
+    "tasks": 0
+  }
+]

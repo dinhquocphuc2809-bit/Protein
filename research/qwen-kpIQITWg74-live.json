@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-05T10:39:53.188015+00:00",
+  "request": {
+    "url": "https://www.youtube.com/watch?v=kp_IQITWg74",
+    "asr": "quality",
+    "source_language": "auto",
+    "target_language": "vi",
+    "model": "basic",
+    "progressive": true,
+    "position": 0
+  },
+  "checks": [
+    {
+      "name": "initial",
+      "job_id": "5cf39ba036148adc91ae64302216889e",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.156
+        },
+        {
+          "stage": "resolving_media",
+          "seconds": 2.219
+        },
+        {
+          "stage": "recognizing",
+          "seconds": 4.297
+        },
+        {
+          "stage": "aligning",
+          "seconds": 18.797
+        }
+      ],
+      "state": "failed",
+      "seconds": 412.219,
+      "error": "tuple.index(x): x not in tuple"
+    }
+  ]
+}

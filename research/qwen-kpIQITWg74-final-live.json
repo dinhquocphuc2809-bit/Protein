@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-05T11:20:21.537063+00:00",
+  "request": {
+    "url": "https://www.youtube.com/watch?v=kp_IQITWg74",
+    "asr": "quality",
+    "source_language": "auto",
+    "target_language": "vi",
+    "model": "basic",
+    "progressive": true,
+    "position": 0
+  },
+  "checks": [
+    {
+      "name": "initial",
+      "job_id": "bcbedc1697d92dca907e6d56d4c36479",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.141
+        },
+        {
+          "stage": "recognizing",
+          "seconds": 2.219
+        },
+        {
+          "stage": "aligning",
+          "seconds": 18.782
+        },
+        {
+          "stage": "translating",
+          "seconds": 529.969
+        },
+        {
+          "stage": "done",
+          "seconds": 552.954
+        }
+      ],
+      "state": "done",
+      "seconds": 552.954,
+      "cues": 674,
+      "first": 8.832,
+      "last": 2456.64,
+      "source_hash": "c0efcbfddb31eecef5d2e6ed8ec35bcd50a5623e95be3e31dd5f189cfa8c5a34",
+      "translation_id": "b8d0a7ddc66d24055704a2034a699e0c67c57a4e7716a5f57a3a500f61c5491b",
+      "translated": 1,
+      "valid_times": true,
+      "unique_ids": true,
+      "nonempty_text": true,
+      "payload_sha256": "c6e378019357f404ee2b985112459d68831cf69123324b15f04cabfb52540f0f"
+    },
+    {
+      "name": "repeat",
+      "job_id": "38e6509b5a020bf81ab8926d69781095",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.14
+        },
+        {
+          "stage": "done",
+          "seconds": 2.312
+        }
+      ],
+      "state": "done",
+      "seconds": 2.312,
+      "cues": 674,
+      "first": 8.832,
+      "last": 2456.64,
+      "source_hash": "c0efcbfddb31eecef5d2e6ed8ec35bcd50a5623e95be3e31dd5f189cfa8c5a34",
+      "translation_id": "b8d0a7ddc66d24055704a2034a699e0c67c57a4e7716a5f57a3a500f61c5491b",
+      "translated": 1,
+      "valid_times": true,
+      "unique_ids": true,
+      "nonempty_text": true,
+      "payload_sha256": "c6e378019357f404ee2b985112459d68831cf69123324b15f04cabfb52540f0f"
+    }
+  ]
+}

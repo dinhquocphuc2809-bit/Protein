@@ -1,0 +1,51 @@
+{
+  "label": "numeric-fixed",
+  "indices": [
+    1
+  ],
+  "account": 1,
+  "production_changed": false,
+  "app_id": "ap-M2OmyGFeqwqAJvfWETQBQ6",
+  "seconds": 32.993361999993795,
+  "ok": true,
+  "detected": [
+    {
+      "language": "Chinese",
+      "characters": 5
+    },
+    {
+      "language": "Chinese",
+      "characters": 10
+    },
+    {
+      "language": "Chinese",
+      "characters": 24
+    },
+    {
+      "language": "Chinese",
+      "characters": 18
+    },
+    {
+      "language": "Chinese",
+      "characters": 17
+    },
+    {
+      "language": "Chinese",
+      "characters": 22
+    },
+    {
+      "language": "Chinese",
+      "characters": 14
+    },
+    {
+      "language": "Chinese",
+      "characters": 9
+    }
+  ],
+  "words": [
+    106
+  ],
+  "valid_times": true,
+  "alignment_recoveries": 0,
+  "zero_containers": true
+}

@@ -1,0 +1,23 @@
+{
+  "same_source_count": true,
+  "changed_cues": 1,
+  "timestamps_identical": true,
+  "changes": [
+    {
+      "old": {
+        "id": 7,
+        "start": 32.736000000000004,
+        "end": 35.936,
+        "text": "\u56db\u5ddd\u7247\u533a\u7684\u9762\u79ef\u4e3a 193 \u4e07\u5e73\u65b9\u5343\u7c73\u3002",
+        "translated": null
+      },
+      "new": {
+        "id": 7,
+        "start": 32.736000000000004,
+        "end": 35.936,
+        "text": "\u56db\u5ddd\u7247\u533a\u7684\u9762\u79ef\u4e3a 1.93 \u4e07\u5e73\u65b9\u5343\u7c73\u3002",
+        "translated": null
+      }
+    }
+  ]
+}

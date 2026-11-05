@@ -1,0 +1,247 @@
+{
+  "at_epoch": 1793878221.756188,
+  "release": "/opt/auvirel/releases/20261105-111816",
+  "jobs": [
+    {
+      "id": "94ced74c46fce6e6576ec02fdde6a0b9",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793878184.4557717,
+      "updated": 1793878189.049229,
+      "events": [
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878185.1044834
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878186.49706
+        },
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878186.5182354
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878187.8568027
+        },
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878187.8763356
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878189.0327685
+        }
+      ]
+    },
+    {
+      "id": "bda3dd8de8f0892224795c94d2786266",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793878189.309583,
+      "updated": 1793878193.868642,
+      "events": [
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878190.0848775
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878191.2547867
+        },
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878191.2760284
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878192.5201318
+        },
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878192.5447352
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878193.854128
+        }
+      ]
+    },
+    {
+      "id": "65fc5013758e4029818d56d26aa3012a",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793878194.2158415,
+      "updated": 1793878198.1366582,
+      "events": [
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878194.904095
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878196.0060802
+        },
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878196.0264788
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878197.193383
+        },
+        {
+          "provider": "basic",
+          "event": "translate",
+          "amount": 1.0,
+          "created": 1793878197.21334
+        },
+        {
+          "provider": "cache",
+          "event": "miss",
+          "amount": 0.0,
+          "created": 1793878198.12121
+        }
+      ]
+    },
+    {
+      "id": "28542aab8e6368a09c6e2413b931acef",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793878199.0533123,
+      "updated": 1793878199.216964,
+      "events": [
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878199.1735902
+        },
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878199.1890986
+        },
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878199.2050958
+        }
+      ]
+    },
+    {
+      "id": "f1a42f956f5d31a3ae689f72768a27c5",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793878200.7602625,
+      "updated": 1793878201.2999923,
+      "events": [
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878201.2546666
+        },
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878201.2711945
+        },
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878201.28728
+        }
+      ]
+    },
+    {
+      "id": "01d3454b1a20923a16420c80facf1338",
+      "state": "done",
+      "stage": "done",
+      "error": null,
+      "created": 1793878202.462765,
+      "updated": 1793878203.3732252,
+      "events": [
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878203.3287923
+        },
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878203.3456826
+        },
+        {
+          "provider": "cache",
+          "event": "hit",
+          "amount": 0.0,
+          "created": 1793878203.3607752
+        }
+      ]
+    }
+  ],
+  "modal_accounts": [
+    {
+      "label": "modal 1",
+      "state": "available",
+      "calls": 53
+    },
+    {
+      "label": "modal 2",
+      "state": "available",
+      "calls": 71
+    },
+    {
+      "label": "modal 3",
+      "state": "available",
+      "calls": 78
+    }
+  ],
+  "spool_bytes": 0,
+  "free_bytes": 198497558528
+}

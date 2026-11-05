@@ -1,0 +1,61 @@
+{
+  "video": "kp_IQITWg74",
+  "video_job_id": "bcbedc1697d92dca907e6d56d4c36479",
+  "checks": [
+    {
+      "position": 1200,
+      "job_id": "94ced74c46fce6e6576ec02fdde6a0b9",
+      "seconds": 4.8439999999973224,
+      "response_sha256": "e206af20ae8a0c31653cd113891aa5e120b49de1c0d6bd8c542999f04e1aa218",
+      "times_preserved": true
+    },
+    {
+      "position": 33,
+      "job_id": "bda3dd8de8f0892224795c94d2786266",
+      "seconds": 4.9060000000026776,
+      "response_sha256": "756ac321adff5185c131458ec9c0036110a9d33f7fe2ffbff07a5a475408374d",
+      "times_preserved": true
+    },
+    {
+      "position": 2400,
+      "job_id": "65fc5013758e4029818d56d26aa3012a",
+      "seconds": 4.8439999999973224,
+      "response_sha256": "725104d271c542f97041028ba903875fd3e71373b8930188ebbc2059829aee08",
+      "times_preserved": true
+    },
+    {
+      "position": 1200,
+      "job_id": "28542aab8e6368a09c6e2413b931acef",
+      "seconds": 1.7030000000086147,
+      "response_sha256": "e206af20ae8a0c31653cd113891aa5e120b49de1c0d6bd8c542999f04e1aa218",
+      "times_preserved": true
+    },
+    {
+      "position": 2400,
+      "job_id": "f1a42f956f5d31a3ae689f72768a27c5",
+      "seconds": 1.7029999999940628,
+      "response_sha256": "725104d271c542f97041028ba903875fd3e71373b8930188ebbc2059829aee08",
+      "times_preserved": true
+    },
+    {
+      "position": 33,
+      "job_id": "01d3454b1a20923a16420c80facf1338",
+      "seconds": 1.7029999999940628,
+      "response_sha256": "756ac321adff5185c131458ec9c0036110a9d33f7fe2ffbff07a5a475408374d",
+      "times_preserved": true
+    }
+  ],
+  "passed": true,
+  "source_cues": 795,
+  "speech_units": 674,
+  "duration_seconds": 2457.588375,
+  "terminology_terms": 30,
+  "source_repairs": 38,
+  "source_time_bounds_valid": true,
+  "source_ordered": true,
+  "source_missing_final_punctuation": 0,
+  "cjk_space_cues": 0,
+  "source_sha256": "2d1956458d0f17d48fef7f856cec003c6c046e4153262dd60debb89aaf414c83",
+  "decimal_preserved": true,
+  "scope": "API, structure, cache and seek checks; not full semantic accuracy"
+}

@@ -2,6 +2,49 @@
 
 Updated: 2026-11-05. This file is the resume point; do not infer completion from planned items.
 
+## Completed test: kp_IQITWg74; semantic limitations remain (2026-11-05)
+
+- Real video duration 2457.588375s, 103 windows. Private exact PCM16/mono/16kHz
+  audio: `.private/qwen-kpIQITWg74/audio.wav`, 78,642,906 bytes.
+- [x] Initial job failed after 412.219s/76 windows. Isolated windows 76-79 proved
+  Cantonese/yue is unsupported by Whisper-small's 99-language tokenizer.
+  Added actual-model language guard; original Qwen text retained for alignment.
+- [x] Three backend workers deployed; English batch smokes passed; account 4 unused.
+- [x] Full retry df68467c2bc93ef27c337e25ea2b8ef6 completed 103 windows in 613.156s;
+  repeat 2.250s. Production usage proves Qwen, no Deepgram substitution.
+- [x] Five seek checks passed in 1.688-3.266s, repeated outputs identical.
+  Source: 795 cues / 674 speech units, valid ordered times, zero missing end
+  punctuation or CJK-space defects. This is structural, NOT semantic acceptance.
+- [x] Nine blinded Gemini samples (252s), six overlapping Deepgram samples (168s)
+  completed. Audit references only; neither human ground truth nor full-video WER.
+- [x] Numerical corruption confirmed at 32.736-35.936s: raw Qwen correctly says
+  1.93; aligner returns 193; edge-only punctuation recovery loses decimal.
+  Added full-digit-match restoration, including split numeric tokens. Targeted
+  real T4 rerun changes ONLY 193 -> 1.93, with identical timestamps.
+- [x] 132 Python tests pass. A further numeric guard requires complete lexical
+  coverage so omitted repeated digits cannot attach punctuation to the wrong number.
+- [x] Initial numeric rollout passed all three workers. Backend release
+  20261105-111351 passed public/private health checks (source-cache version 3).
+- Final candidate job 39d5e2e0811c0f4339fcc454ae1cc7f8 intentionally cancelled at
+  103.609s to add the numeric-ambiguity guard; not a successful or failed ASR run.
+- [x] Final guard rollout: all three workers passed English and exact numeric
+  audio smokes, including matching original word timestamps. Snapshot ON/T4/2CPU/16GiB.
+- [x] Backend release 20261105-111816 deployed, public/private health passed.
+- [x] Final job bcbedc1697d92dca907e6d56d4c36479 completed 103/103 windows in
+  552.954s; repeat 38e6509b5a020bf81ab8926d69781095 took 2.312s, cache only.
+- [x] Final 795 raw cues differ from the previous full run only by 193 -> 1.93;
+  all source timestamps identical. 674 speech units; 30 terms / 38 source repairs.
+- [x] Six signed seeks: 1200/33/2400 seconds and repeats. Three-cue fresh windows
+  4.844-4.906s; cached repeats 1.703s, identical hashes. No ASR during seeks.
+  Correct Vietnamese numeric response: 19.300 km vuong (19,300 square kilometers).
+- [x] All three Modal workers idle (0 containers); VPS spool 0 bytes and
+  198,497,558,528 bytes free. No observed OOM, but no peak-memory benchmark claimed.
+- [x] 132 Python tests, helper compilation and final source/release hashes verified.
+  Secret/whitespace checks and repository handoff recorded in the final response.
+- Residual speech recognition errors remain in dialect/technical interview near
+  35min and ending homophones. Do not claim perfect accuracy or human listening.
+- Details: docs/QWEN_PANDA_VIDEO_ACCEPTANCE.md. Earlier failure/retry evidence retained.
+
 ## Completed rollout: T4 optimization and source-quality remediation (2026-11-05)
 
 - User selected T4 /2vCPU /16GiB; fixes deployed and scoped acceptance passed.

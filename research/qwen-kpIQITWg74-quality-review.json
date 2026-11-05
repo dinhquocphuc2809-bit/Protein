@@ -1,0 +1,71 @@
+{
+  "video": "kp_IQITWg74",
+  "audit": "automated sampled audio comparison",
+  "unique_audio_seconds": 252,
+  "video_seconds": 2457.588375,
+  "coverage_percent": 10.254,
+  "gemini_samples": 9,
+  "deepgram_overlapping_samples": 6,
+  "human_ground_truth": false,
+  "full_video_semantic_pass": false,
+  "findings": [
+    {
+      "time_seconds": [
+        32.736,
+        35.936
+      ],
+      "type": "confirmed_pipeline_bug",
+      "raw_qwen_number": "1.93",
+      "aligned_number_before": "193",
+      "restored_number_after": "1.93",
+      "evidence": "Exact isolated raw/word capture, both reference models agree, unchanged word timestamps",
+      "status": "fixed; final full production replay and Vietnamese translation verified"
+    },
+    {
+      "time_seconds": [
+        2106,
+        2130
+      ],
+      "type": "residual_recognition_quality",
+      "description": "Dialect/technical population and ecological-corridor phrases remain inaccurate or uncertain. Other ASR also struggles. Context repair fixes some homophones but not every phrase.",
+      "status": "not fully resolved"
+    },
+    {
+      "time_seconds": [
+        2425.152,
+        2425.552
+      ],
+      "type": "likely_homophone",
+      "description": "Qwen phrase means increase in value; family context and independent reference suggest having children.",
+      "human_confirmed": false,
+      "status": "not fully resolved",
+      "final_context_repair": "Final glossary changes the raw phrase to reproduction; not a verified verbatim having-children phrase."
+    },
+    {
+      "time_seconds": [
+        600,
+        628
+      ],
+      "type": "reference_disagreement",
+      "description": "Mountain-top vs mountain-bottom phrase; no manual ground truth.",
+      "status": "uncertain"
+    },
+    {
+      "time_seconds": [
+        1800,
+        1828
+      ],
+      "type": "likely_homophone",
+      "description": "Feeding terminology differs from ordinary same-sounding words.",
+      "status": "uncertain"
+    }
+  ],
+  "reference_limitations": [
+    "Independent models disagree on person names.",
+    "Gemini damages a programme title at 900s that Qwen and Deepgram agree on.",
+    "Overlapping Deepgram clips do not increase unique coverage.",
+    "No TTS listening or full-video WER/CER is claimed."
+  ],
+  "final_terms": 30,
+  "final_repairs": 38
+}

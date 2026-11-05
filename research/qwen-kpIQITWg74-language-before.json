@@ -1,0 +1,213 @@
+{
+  "label": "before",
+  "indices": [
+    76,
+    77,
+    78,
+    79
+  ],
+  "account": 1,
+  "production_changed": false,
+  "app_id": "ap-PHA8mmSAt8fJgwWGGJaLQo",
+  "seconds": 46.10565199999837,
+  "ok": false,
+  "detected": [
+    {
+      "language": "Chinese",
+      "characters": 6
+    },
+    {
+      "language": "Chinese",
+      "characters": 15
+    },
+    {
+      "language": "Chinese",
+      "characters": 5
+    },
+    {
+      "language": "Chinese",
+      "characters": 15
+    },
+    {
+      "language": "Chinese",
+      "characters": 7
+    },
+    {
+      "language": "Chinese",
+      "characters": 11
+    },
+    {
+      "language": "Chinese",
+      "characters": 2
+    },
+    {
+      "language": "Chinese",
+      "characters": 28
+    },
+    {
+      "language": "Chinese",
+      "characters": 4
+    },
+    {
+      "language": "Chinese",
+      "characters": 4
+    },
+    {
+      "language": "Chinese",
+      "characters": 5
+    },
+    {
+      "language": "Chinese",
+      "characters": 6
+    },
+    {
+      "language": "Chinese",
+      "characters": 6
+    },
+    {
+      "language": "Chinese",
+      "characters": 6
+    },
+    {
+      "language": "Chinese",
+      "characters": 6
+    },
+    {
+      "language": "Chinese",
+      "characters": 30
+    },
+    {
+      "language": "Chinese",
+      "characters": 7
+    },
+    {
+      "language": "Chinese",
+      "characters": 13
+    },
+    {
+      "language": "Chinese",
+      "characters": 14
+    },
+    {
+      "language": "Chinese",
+      "characters": 7
+    },
+    {
+      "language": "Chinese",
+      "characters": 9
+    },
+    {
+      "language": "Chinese",
+      "characters": 18
+    },
+    {
+      "language": "Chinese",
+      "characters": 9
+    },
+    {
+      "language": "Chinese",
+      "characters": 10
+    },
+    {
+      "language": "Chinese",
+      "characters": 10
+    },
+    {
+      "language": "Chinese",
+      "characters": 23
+    },
+    {
+      "language": "Chinese",
+      "characters": 3
+    },
+    {
+      "language": "Chinese",
+      "characters": 18
+    },
+    {
+      "language": "Chinese",
+      "characters": 5
+    },
+    {
+      "language": "Chinese",
+      "characters": 12
+    },
+    {
+      "language": "Chinese",
+      "characters": 15
+    },
+    {
+      "language": "Chinese",
+      "characters": 27
+    },
+    {
+      "language": "Chinese",
+      "characters": 7
+    },
+    {
+      "language": "Cantonese",
+      "characters": 2
+    },
+    {
+      "language": "Chinese",
+      "characters": 2
+    },
+    {
+      "language": "Chinese",
+      "characters": 9
+    },
+    {
+      "language": "Chinese",
+      "characters": 3
+    },
+    {
+      "language": "Cantonese",
+      "characters": 2
+    },
+    {
+      "language": "Chinese",
+      "characters": 2
+    },
+    {
+      "language": "Chinese",
+      "characters": 14
+    },
+    {
+      "language": "Chinese",
+      "characters": 7
+    },
+    {
+      "language": "Chinese",
+      "characters": 6
+    },
+    {
+      "language": "Chinese",
+      "characters": 11
+    },
+    {
+      "language": "Chinese",
+      "characters": 15
+    },
+    {
+      "language": "Chinese",
+      "characters": 29
+    },
+    {
+      "language": "Chinese",
+      "characters": 16
+    },
+    {
+      "language": "Chinese",
+      "characters": 8
+    },
+    {
+      "language": "Chinese",
+      "characters": 16
+    }
+  ],
+  "error_type": "ValueError",
+  "error": "tuple.index(x): x not in tuple",
+  "whisper_num_languages": 99,
+  "yue_supported": false,
+  "zero_containers": true
+}

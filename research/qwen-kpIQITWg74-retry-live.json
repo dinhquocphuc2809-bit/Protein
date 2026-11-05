@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-05T10:53:17.390006+00:00",
+  "request": {
+    "url": "https://www.youtube.com/watch?v=kp_IQITWg74",
+    "asr": "quality",
+    "source_language": "auto",
+    "target_language": "vi",
+    "model": "basic",
+    "progressive": true,
+    "position": 0
+  },
+  "checks": [
+    {
+      "name": "initial",
+      "job_id": "df68467c2bc93ef27c337e25ea2b8ef6",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.141
+        },
+        {
+          "stage": "recognizing",
+          "seconds": 2.219
+        },
+        {
+          "stage": "aligning",
+          "seconds": 18.797
+        },
+        {
+          "stage": "translating",
+          "seconds": 588.235
+        },
+        {
+          "stage": "done",
+          "seconds": 613.156
+        }
+      ],
+      "state": "done",
+      "seconds": 613.156,
+      "cues": 674,
+      "first": 8.832,
+      "last": 2456.64,
+      "source_hash": "f68bde94168a678d6b31175614a6835ccc65c68cccffc79c742fd381a8283152",
+      "translation_id": "41784591fe57c715635209945304a265a822351aabb89014b9d2acbde980fbb9",
+      "translated": 1,
+      "valid_times": true,
+      "unique_ids": true,
+      "nonempty_text": true,
+      "payload_sha256": "de061144b00ea498824f040f97bd084d7af1d557740e07e0b28ca34efce9b9c6"
+    },
+    {
+      "name": "repeat",
+      "job_id": "a9bf595ec852f418b29108423d443b1a",
+      "stages": [
+        {
+          "stage": "queued",
+          "seconds": 0.125
+        },
+        {
+          "stage": "done",
+          "seconds": 2.25
+        }
+      ],
+      "state": "done",
+      "seconds": 2.25,
+      "cues": 674,
+      "first": 8.832,
+      "last": 2456.64,
+      "source_hash": "f68bde94168a678d6b31175614a6835ccc65c68cccffc79c742fd381a8283152",
+      "translation_id": "41784591fe57c715635209945304a265a822351aabb89014b9d2acbde980fbb9",
+      "translated": 1,
+      "valid_times": true,
+      "unique_ids": true,
+      "nonempty_text": true,
+      "payload_sha256": "de061144b00ea498824f040f97bd084d7af1d557740e07e0b28ca34efce9b9c6"
+    }
+  ]
+}

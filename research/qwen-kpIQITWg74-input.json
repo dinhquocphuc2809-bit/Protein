@@ -1,0 +1,9 @@
+{
+  "video": "kp_IQITWg74",
+  "job_id": "5cf39ba036148adc91ae64302216889e",
+  "duration_seconds": 2457.588375,
+  "bytes": 78642906,
+  "sha256": "2d3ac92d4edd6e59ad50a35c1713c74906e2a5a32c6489213b02d0ddec3e65b3",
+  "source": "Exact production normalized audio copied read-only over pinned SSH; no second resolver call",
+  "local_storage": true
+}

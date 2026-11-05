@@ -56,6 +56,42 @@ def test_cjk_spacing_and_latin_words():
     assert join_text(['Xin', 'chao', 'ban.']) == 'Xin chao ban.'
 
 
+@pytest.mark.parametrize('parts,number', [
+    (['193'], '1.93'), (['1', '93'], '1.93'), (['1', '.', '93'], '1.93'),
+    (['1.93'], '1.93'), (['123456'], '1,234.56'), (['1', '234', '56'], '1,234.56'),
+    (['123456'], '1.234,56'), (['314'], '3,14'),
+])
+def test_numeric_separators_survive_alignment(parts, number):
+    original = [{'text': text, 'start': i*.1, 'end': (i+1)*.1} for i, text in enumerate(parts)]
+    output = restore_punctuation(original, number)
+    assert len(output) == 1
+    assert output[0] == {'text': number, 'start': 0, 'end': len(parts)*.1}
+    assert lexical(join_text(w['text'] for w in output)) == lexical(number)
+    cues = words_to_cues(output, ensure_punctuation=True)
+    assert len(cues) == 1 and cues[0].text == number + '.'
+
+
+def test_numeric_restoration_requires_complete_matching_digits():
+    original = [{'text': '194', 'start': 1, 'end': 2}]
+    assert restore_punctuation(original, '1.93') == original
+    assert restore_punctuation(original, '193') == original
+    split = [{'text': '1', 'start': 1, 'end': 2}, {'text': '94', 'start': 2, 'end': 3}]
+    assert restore_punctuation(split, '1.93') == split
+
+
+def test_numeric_restoration_keeps_sentence_boundaries_and_repeated_numbers():
+    original = [{'text': text, 'start': i, 'end': i+1}
+                for i, text in enumerate(['193', 'and', '193', 'million'])]
+    output = restore_punctuation(original, '1.93 and 193 million.')
+    assert [w['text'] for w in output] == ['1.93', 'and', '193', 'million.']
+    assert [(w['start'], w['end']) for w in output] == [(w['start'], w['end']) for w in original]
+
+
+def test_incomplete_alignment_does_not_guess_between_identical_digit_runs():
+    original = [{'text': '193', 'start': 0, 'end': 1}]
+    assert restore_punctuation(original, '1.93 and 193') == original
+
+
 def test_source_cues_have_bounded_times_punctuation_and_no_cjk_spaces():
     original = words('\u4e2d\u534e\u79cb\u6c99\u9e2d'*20, 0)
     cues = words_to_cues(original, ensure_punctuation=True)

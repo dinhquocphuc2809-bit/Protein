@@ -1,0 +1,53 @@
+{
+  "video": "kp_IQITWg74",
+  "video_job_id": "df68467c2bc93ef27c337e25ea2b8ef6",
+  "checks": [
+    {
+      "position": 1200,
+      "job_id": "7997282b812328823f57299babbd697e",
+      "seconds": 1.7340000000112923,
+      "response_sha256": "9fce3c648851ac92b2dd1f522288c08b0d31f232f87ecb8bf8091b19fd8d6def",
+      "times_preserved": true
+    },
+    {
+      "position": 24,
+      "job_id": "bb34e4c7abc21269a1ec19fb2f3c924c",
+      "seconds": 3.2659999999887077,
+      "response_sha256": "dea0fc0f30dbd9f0285928383167e4a2ad609057569c48d89466efaef3093d52",
+      "times_preserved": true
+    },
+    {
+      "position": 2400,
+      "job_id": "5c0702640ddd02f7618ec3a02c1af4b0",
+      "seconds": 1.7340000000112923,
+      "response_sha256": "c92ccc71f9c23eaa5c21952341d9744ec01932ecc0cbadcf07d860daf513491f",
+      "times_preserved": true
+    },
+    {
+      "position": 1200,
+      "job_id": "ffcd8c97431759b2cca46e93d2edc1b0",
+      "seconds": 1.7029999999940628,
+      "response_sha256": "9fce3c648851ac92b2dd1f522288c08b0d31f232f87ecb8bf8091b19fd8d6def",
+      "times_preserved": true
+    },
+    {
+      "position": 2400,
+      "job_id": "1fc93b3e24b6394ad0afe63b62b81c08",
+      "seconds": 1.687999999994645,
+      "response_sha256": "c92ccc71f9c23eaa5c21952341d9744ec01932ecc0cbadcf07d860daf513491f",
+      "times_preserved": true
+    }
+  ],
+  "passed": true,
+  "source_cues": 795,
+  "speech_units": 674,
+  "duration_seconds": 2457.588375,
+  "terminology_terms": 24,
+  "source_repairs": 34,
+  "source_time_bounds_valid": true,
+  "source_ordered": true,
+  "source_missing_final_punctuation": 0,
+  "cjk_space_cues": 0,
+  "source_sha256": "ae09ec012047eb4f4fe744d082bac14124b810945ae7f5ec4f739a8c16722493",
+  "scope": "Initial API/structure/cache/seek checks before numeric fix; not semantic acceptance"
+}

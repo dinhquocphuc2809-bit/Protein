@@ -1,0 +1,8 @@
+{
+  "release": "/opt/auvirel/releases/20261105-111816",
+  "files": {
+    "backend/jobs.py": "3dc61a879f51bd8b4d90ea66b455b468dde203ef7f34cbb807f93b197686785e",
+    "backend/asr_text.py": "693ae4ada60fa150c7f2e847787a5eab5c861c51c0e93720f038d47d5508f9ab"
+  },
+  "local_matches": true
+}

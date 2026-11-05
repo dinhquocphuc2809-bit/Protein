@@ -1,6 +1,6 @@
 import pytest
 
-from gpu.alignment import bounded_alignment
+from gpu.alignment import bounded_alignment, whisper_alignment_language
 
 
 def test_incident_80ms_tail_overrun_retains_text_without_extending_audio():
@@ -28,3 +28,19 @@ def test_nonmonotonic_alignment_requires_real_realigning():
     with pytest.raises(ValueError):
         bounded_alignment([{'text': 'one', 'start': .5, 'end': .7},
                            {'text': 'two', 'start': .2, 'end': .4}], 1)
+
+
+def test_cantonese_fallback_on_99_language_whisper_uses_chinese_tokenizer():
+    assert whisper_alignment_language('yue', ('en','zh','vi','tl')) == 'zh'
+    assert whisper_alignment_language('yue', ('en','zh','yue')) == 'yue'
+
+
+@pytest.mark.parametrize('code,expected', [('fil','tl'),('zh-CN','zh'),('vi','vi'),('en','en')])
+def test_fallback_language_aliases_and_supported_languages(code,expected):
+    assert whisper_alignment_language(code, ('en','zh','vi','tl')) == expected
+
+
+@pytest.mark.parametrize('code', ['auto','unknown','yue'])
+def test_unsupported_language_has_clear_error_not_tokenizer_index_failure(code):
+    with pytest.raises(ValueError,match='unsupported by the fallback aligner'):
+        whisper_alignment_language(code, ('en',))
